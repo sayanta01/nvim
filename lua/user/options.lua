@@ -37,13 +37,12 @@ local options = {
 
   wrap = false,
   number = true,
-  --relativenumber = false,
   scrolloff = 6,
   sidescrolloff = 8,
   lazyredraw = true,
-  copyindent = true,  --Copy the previous indentation on autoindenting
-  fillchars = { eob = " " },  --Disable `~` on nonexistent lines
-  preserveindent = true,  --Preserve indent structure as much as possible
+  copyindent = true,  -- Copy the previous indentation on autoindenting
+  fillchars = { eob = " " },  -- Disable `~` on nonexistent lines
+  preserveindent = true,  -- Preserve indent structure as much as possible
 }
 
 for k, v in pairs(options) do

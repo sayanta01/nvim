@@ -81,9 +81,10 @@ local mappings = {
 
    a = { "<cmd>Alpha<cr>", "Dashboard" },
    b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
-   c = { ":e ~/.config/nvim/init.lua<cr>", "Edit config" },
+   c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" },
    e = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
-   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files"},
+   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find Files"},
+   i = { "<cmd>Telescope media_files<CR>", "Media files" },
    w = { "<cmd>w!<CR>", "Save" },
    q = { "<cmd>q!<CR>", "Quit" },
    Q = { ":wq<cr>", "Save & Quit" },
