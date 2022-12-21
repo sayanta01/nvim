@@ -86,6 +86,12 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+-- Edit same word all together
+keymap("n", "<leader>j", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+
+-- chmod +x 
+keymap("n", "<leader>k", "<cmd>!chmod +x %<CR>", { silent = true })
+
 
 -- Insert --
 -- Press jk fast to enter
