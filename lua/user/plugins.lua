@@ -12,6 +12,14 @@ packer.init {
   },
 }
 
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
+
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   use "nvim-lua/plenary.nvim"
@@ -34,7 +42,6 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "akinsho/toggleterm.nvim"
   use "kyazdani42/nvim-tree.lua"
-  use "ahmedkhalf/project.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope.nvim"
   use "folke/which-key.nvim"
