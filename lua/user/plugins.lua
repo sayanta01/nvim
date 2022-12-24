@@ -32,6 +32,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "goolord/alpha-nvim"
   use "lewis6991/impatient.nvim"
+  use "morhetz/gruvbox"
   use "LunarVim/darkplus.nvim"
   use "LunarVim/onedarker.nvim"
   use "folke/tokyonight.nvim"
