@@ -27,8 +27,8 @@ local options = {
   signcolumn = "yes",
 
   expandtab = true,
-  shiftwidth = 2,
-  tabstop = 2,
+  shiftwidth = 4,
+  tabstop = 4,
 
   hlsearch = true,
   ignorecase = true,
