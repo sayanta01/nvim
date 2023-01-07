@@ -22,11 +22,8 @@ require "user.lualine"
 -- Dynamic
 require "user.autocommands"
 require "user.nvim-tree"
-require "user.cmp"
 require "user.telescope"
-
 require "user.whichkey"
+require "user.cmp"
 require "user.lsp"
 require "user.dap"
-
-

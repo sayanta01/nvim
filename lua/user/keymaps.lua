@@ -36,7 +36,7 @@ keymap("n", "<C-c-a>", ":%y+ <CR>", opts)
 keymap("n", "<C-b>", "<ESC>^i", opts)
 keymap("n", "<C-e>", "<End>", opts)
 
--- Line num
+-- Line number
 keymap("n", "<leader>n", "<cmd> set nu! <CR>", opts)
 keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
 keymap("n", "<leader>m", "<cmd> set cursorcolumn! <CR>", opts)
@@ -72,22 +72,8 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("n", "<C-v>", "<cmd>vsplit<cr>", opts)
 keymap("n", "<C-s>", "<cmd>split<cr>", opts)
 
--- DAP
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
-keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
-keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
-keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
-keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
-
--- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
 -- Edit same word all together
-keymap("n", "<leader>j", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- chmod +x 
 --[[ keymap("n", "<leader>k", "<cmd>!chmod +x %<CR>", { silent = true }) ]]
@@ -126,5 +112,3 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
-

@@ -22,12 +22,12 @@ local options = {
     ignore_list = {},
   },
   diagnostics = {
-    enable = true,
+    enable = false,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
     },
   },
   view = {
@@ -67,7 +67,7 @@ local options = {
     },
     icons = {
       padding = " ",
-      symlink_arrow = "  ",
+      symlink_arrow = "  ",
       show = {
         file = true,
         folder = true,
@@ -82,7 +82,7 @@ local options = {
           empty = "",
           empty_open = "",
           open = "",
-          symlink = "",
+          symlink = "",
           symlink_open = "",
           arrow_open = "",
           arrow_closed = "",
@@ -101,7 +101,7 @@ local options = {
   },
 }
 
--- check for any override
+-- Check for any override
 nvimtree.setup(options)
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")

@@ -32,10 +32,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "goolord/alpha-nvim"
   use "lewis6991/impatient.nvim"
-  use "morhetz/gruvbox"
-  use "LunarVim/darkplus.nvim"
-  use "LunarVim/onedarker.nvim"
-  use "folke/tokyonight.nvim"
+
   use "windwp/nvim-autopairs" -- Autopairs, integrates with cmp & treesitter
   use "nvim-lualine/lualine.nvim"
   use "ahmedkhalf/project.nvim"
@@ -46,6 +43,12 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope.nvim"
   use "folke/which-key.nvim"
+
+  -- Themes
+  use "morhetz/gruvbox"
+  use "LunarVim/darkplus.nvim"
+  use "LunarVim/onedarker.nvim"
+  use "folke/tokyonight.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp"

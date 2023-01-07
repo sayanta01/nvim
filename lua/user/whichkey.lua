@@ -77,27 +77,32 @@ local opts = {
 }
 
 local mappings = {
-   --f = {"<cmd>Telescope find_files<cr>", "Find Files"},
-
-   a = { "<cmd>Alpha<cr>", "Dashboard" },
-   b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
-   c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" },
-   e = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
-   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find Files"},
-   i = { "<cmd>Telescope media_files<CR>", "Media files" },
+   [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
    w = { "<cmd>w!<CR>", "Save" },
+   W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
    q = { "<cmd>q!<CR>", "Quit" },
    Q = { ":wq<cr>", "Save & Quit" },
-   r = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
    x = {":bdelete<cr>", "Close Buffer"},
    X = {":bdelete!<cr>", "Force Close Buffer"},
+   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
+   b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
+   e = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
+   c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" },
+   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find Files"},
+   --f = {"<cmd>Telescope find_files<cr>", "Find Files"},
+   i = { "<cmd>Telescope media_files<CR>", "Media files" },
+   r = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
 
   g = {
     name = "Git",
-    -- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+    C = {
+          "<cmd>Telescope git_bcommits<cr>",
+          "Checkout commit(for current file)",
+        },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -122,27 +127,28 @@ local mappings = {
     n = {'<cmd>lua vim.diagnostic.goto_next()<CR>', "Go to next diagnostic"},
     p = {'<cmd>lua vim.diagnostic.goto_prev()<CR>', "Go to previous diagnostic"},
     k = {'<cmd>lua vim.lsp.buf.signature_help()<CR>', "Signature help"},
-    K = {'<cmd>lua vim.lsp.buf.hover()<CR>', "Hover"},
+    h = {'<cmd>lua vim.lsp.buf.hover()<CR>', "Hover"},
     t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition"},
     g = {'<cmd>lua vim.lsp.buf.definition()<CR>', "Go to definition"},
     G = {'<cmd>lua vim.lsp.buf.delaration()<CR>', "Go to declaration"},
-
-    l = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', "List workspace folder"},
+    m = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', "List workspace folder"},
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    d = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols"},
+    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols"},
+    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+    e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
   },
 
   s = {
     name = "Find with Telescope",
-    --r = { "<cmd>Telescope lsp_references<cr>", "Find References" },
-    --C = { "<cmd>Telescope lsp_code_actions<cr>", "Code Actions" },
     c = { "<cmd>Telescope commands<cr>", "Commands" },
     b = { "<cmd>Telescope builtin<cr>", "Telescope builtin" },
     d = { "<cmd>Telescope diagnostics<cr>", "Document Diagnostics" },
     D = { "<cmd>lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    i = { "<cmd>Telescope media_files<cr>", "Media Files" },
+    H = { "<cmd>Telescope highlights<cr>", "Highlights" },
+    i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+    --[[ i = { "<cmd>Telescope media_files<cr>", "Media Files" }, ]]
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     l = { "<cmd>Telescope resume<cr>", "Last Search" },
     m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
@@ -151,6 +157,9 @@ local mappings = {
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    t = { "<cmd>Telescope grep_string<cr>", "Find String" },
+    --[[ r = { "<cmd>Telescope lsp_references<cr>", "Find References" }, ]]
+    --[[ C = { "<cmd>Telescope lsp_code_actions<cr>", "Code Actions" }, ]]
   },
 
   o = {
@@ -168,13 +177,32 @@ local mappings = {
     u = {":PackerUpdate<cr>", "Update Plugins"}
   },
 
-  d = {
+  z = {
     name = "Buffer",
     h = { "<cmd>BufferLineCloseLeft<CR>", "Close all to left" },
     --j = { "<cmd>BufferLinePick<CR>", "Jump" },
     l = { "<cmd>BufferLineCloseRight<CR>", "Close all to right" },
     --p = { "<cmd>BufferLineTogglePin<CR>", "Toggle pin" },
   },
+
+  d = {
+    name = "Debug",
+    t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
+    c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
+    C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+    d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
+    g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
+    i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
+    o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
+    O = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
+    p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
+    r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+    q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+    u = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+    l = { "<cmd>lua require'dap'.run_last()<cr>", "Last Run"},
+    x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
+      },
 
   t = {
     name = "Terminal",
