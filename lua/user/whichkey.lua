@@ -119,26 +119,26 @@ local mappings = {
     a = {'<cmd>lua vim.lsp.buf.code_action()<cr>', "Code actions"},
     f = {'<cmd>lua vim.lsp.buf.format { async = true }()<cr>', "Format File"},
     r = {'<cmd>lua vim.lsp.buf.rename()<cr>', "Rename"},
-    R = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"},
     i = {'<cmd>LspInstallInfo<cr>', 'Install language server'},
     I = {":LspInfo<cr>", "Connected Language Servers"},
     w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add workspace folder"},
     W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove workspace folder"},
     n = {'<cmd>lua vim.diagnostic.goto_next()<cr>', "Go to next diagnostic"},
     p = {'<cmd>lua vim.diagnostic.goto_prev()<cr>', "Go to previous diagnostic"},
-    k = {'<cmd>lua vim.lsp.buf.signature_help()<cr>', "Signature help"},
-    h = {'<cmd>lua vim.lsp.buf.hover()<cr>', "Hover"},
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols"},
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-
-    t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type definition"},
-    d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go to definition"},
-    D = {'<cmd>lua vim.lsp.buf.delaration()<cr>', "Go to declaration"},
-
     L = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List workspace folder"},
+
+    --[[ R = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"}, ]]
+    --[[ k = {'<cmd>lua vim.lsp.buf.signature_help()<cr>', "Signature help"}, ]]
+    --[[ h = {'<cmd>lua vim.lsp.buf.hover()<cr>', "Hover"}, ]]
+    --[[ t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type definition"}, ]]
+    --[[ d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go to definition"}, ]]
+    --[[ D = {'<cmd>lua vim.lsp.buf.delaration()<cr>', "Go to declaration"}, ]]
+
   },
 
   s = {
