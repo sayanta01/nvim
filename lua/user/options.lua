@@ -1,4 +1,6 @@
 local options = {
+  showcmd = false,
+  showmode = false,
   timeoutlen = 400,
   fileencoding = "utf-8",
   writebackup = false,
@@ -8,49 +10,43 @@ local options = {
   undofile = true,
   updatetime = 250,
   backup = false,
-
-  --cmdheight = 2,
-  --showtabline = 2,
-  --pumheight = 9,
-  showcmd = false,
-  confirm = true,
-  spell = true,
-  termguicolors = true,
-  showmode = true,
-  completeopt = { "menuone", "noselect" },
-  clipboard = "unnamedplus",
-  mouse = "a",
-  splitbelow = true,
-  splitright = true,
   cursorline = true,
-  signcolumn = "yes",
-
   expandtab = true,
   shiftwidth = 4,
   tabstop = 4,
-
-  hlsearch = true,
-  ignorecase = true,
+  completeopt = { "menuone", "noselect" },
+  clipboard = "unnamedplus",
+  mouse = "a",
+  confirm = true,
+  splitbelow = true,
+  splitright = true,
+  signcolumn = "yes",
   smartcase = true,
-  smartindent = true,
-
+  ignorecase = true,
+  hlsearch = true,
   wrap = false,
   number = true,
   scrolloff = 6,
   sidescrolloff = 8,
-  copyindent = true,  -- Copy the previous indentation on autoindenting
-  fillchars = { eob = " " },  -- Disable `~` on nonexistent lines
-  preserveindent = true,  -- Preserve indent structure as much as possible
+  termguicolors = true,
+  --showtabline = 2,
+  --pumheight = 9,
+  --cmdheight = 2,
+  --[[ spell = true, ]]
+  --[[ smartindent = true, ]]
+  --[[ copyindent = true,  -- Copy the previous indentation on autoindenting ]]
+  --[[ fillchars = { eob = " " },  -- Disable `~` on nonexistent lines ]]
+  --[[ preserveindent = true,  -- Preserve indent structure as much as possible ]]
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-vim.opt.spelllang:append "cjk"
-vim.opt.shortmess:append("sI")  -- disable nvim intro
-vim.opt.whichwrap:append("<,>,[,],h,l")
-vim.opt.shortmess:append("c")
-vim.opt.iskeyword:append("-")
+vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)
+vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
+vim.opt.shortmess:append "sI"  -- disable nvim intro
+vim.opt.whichwrap:append "<,>,[,],h,l"
+vim.opt.iskeyword:append "-"
 vim.opt.fillchars.eob=" "
 
 -- Disable builtin plugins

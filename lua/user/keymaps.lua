@@ -17,20 +17,16 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 --   visual_block_mode = "x",
 
+-- Normal --
 -- Wrap Text 
 keymap("n", "<C-w>", "<ESC>:set wrap <CR>", opts)
--- keymap("i", "<C-w>", "<ECS>:set wrap <CR>", opts)
+-- keymap("i", "<C-w-w>", "<ECS>:set wrap <CR>", opts)
 keymap("v", "<C-w>", "<ESC>:set wrap <CR>", opts)
 
 -- No Wrap Text 
 keymap("n", "<C-M-w>", "<ESC>:set nowrap <CR>", opts)
 keymap("i", "<C-M-w>", "<ESC>:set nowrap <CR>", opts)
 keymap("v", "<C-M-w>", "<ESC>:set nowrap <CR>", opts)
-
-
--- Normal --
--- Copy whole file
-keymap("n", "<C-c-a>", ":%y+ <CR>", opts)
 
 -- Beginning & End
 keymap("n", "<C-b>", "<ESC>^i", opts)
@@ -40,6 +36,9 @@ keymap("n", "<C-e>", "<End>", opts)
 keymap("n", "<leader>n", "<cmd> set nu! <CR>", opts)
 keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts)
 keymap("n", "<leader>m", "<cmd> set cursorcolumn! <CR>", opts)
+
+-- Clear highlights
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -53,14 +52,11 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-o>","<cmd>BufferLineMoveNext<cr>", opts)
-keymap("n", "<S-i>","<cmd>BufferLineMovePrev<cr>", opts)
+keymap("n", "<S-o>","<cmd>BufferLineMoveNext<CR>", opts)
+keymap("n", "<S-i>","<cmd>BufferLineMovePrev<CR>", opts)
 
 -- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
@@ -69,14 +65,11 @@ keymap("n", "<S-b>", ":enew <CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
-keymap("n", "<C-v>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<C-s>", "<cmd>split<cr>", opts)
+keymap("n", "<C-v>", "<cmd>vsplit<CR>", opts)
+keymap("n", "<C-s>", "<cmd>split<CR>", opts)
 
 -- Edit same word all together
 keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
-
--- chmod +x 
---[[ keymap("n", "<leader>k", "<cmd>!chmod +x %<CR>", { silent = true }) ]]
 
 
 -- Insert --
@@ -105,6 +98,7 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
+
 
 -- Visual Block --
 -- Move text up and down

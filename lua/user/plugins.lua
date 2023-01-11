@@ -21,18 +21,17 @@ vim.cmd([[
 ]])
 
 return packer.startup(function(use)
+  -- Dependence
   use "wbthomason/packer.nvim"
   use "nvim-lua/plenary.nvim"
   use "nvim-lua/popup.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "norcalli/nvim-colorizer.lua"
-  use "p00f/nvim-ts-rainbow"
-  use "numToStr/Comment.nvim"
   use "moll/vim-bbye"
-  use "goolord/alpha-nvim"
   use "lewis6991/impatient.nvim"
 
+  use "goolord/alpha-nvim"
+  use "numToStr/Comment.nvim"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with cmp & treesitter
   use "nvim-lualine/lualine.nvim"
   use "ahmedkhalf/project.nvim"
@@ -46,21 +45,25 @@ return packer.startup(function(use)
 
   -- Themes
   use "morhetz/gruvbox"
+  use "rose-pine/neovim"
   use "LunarVim/darkplus.nvim"
   use "LunarVim/onedarker.nvim"
   use "folke/tokyonight.nvim"
+  use "p00f/nvim-ts-rainbow"
+  use "folke/zen-mode.nvim"
+  use "norcalli/nvim-colorizer.lua"
 
-  -- cmp plugins
+  -- Cmp plugins
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lsp"
-  use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/cmp-nvim-lua"
+  use "saadparwaiz1/cmp_luasnip"
   use "f3fora/cmp-spell"
 
-  -- snippets
+  -- Snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 

@@ -5,7 +5,8 @@ end
 
 toggleterm.setup({
 	size = 20,
-	open_mapping = [[<c-\>]],
+	--[[ open_mapping = [[<c-\>]]  -- default keybind ]]
+    open_mapping = [[<leader>\]],
 	hide_numbers = true,
 	shade_terminals = true,
 	shading_factor = 2,
@@ -27,11 +28,11 @@ toggleterm.setup({
 })
 
 local Terminal = require("toggleterm.terminal").Terminal
---local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
---function _LAZYGIT_TOGGLE()
-	--lazygit:toggle()
---end
+function _LAZYGIT_TOGGLE()
+	lazygit:toggle()
+end
 
 local node = Terminal:new({ cmd = "node", hidden = true })
 function _NODE_TOGGLE()
