@@ -1,8 +1,8 @@
 require("zen-mode").setup {
   window = {
     backdrop = 0.95,
-    width = 176,
-    height = 0.9,
+    width = 200,
+    height = 0.4,
     options = {signcolumn = "no", number = false, cursorline = false}
   },
   plugins = {

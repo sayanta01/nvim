@@ -18,6 +18,7 @@ require "user.impatient"
 require "user.autopairs"
 require "user.comment"
 require "user.lualine"
+require "user.zen-mode"
 
 -- Dynamic
 require "user.autocommands"
