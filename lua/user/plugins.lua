@@ -39,8 +39,8 @@ return packer.startup(function(use)
   use "akinsho/bufferline.nvim"
   use "akinsho/toggleterm.nvim"
   use "kyazdani42/nvim-tree.lua"
-  use "nvim-telescope/telescope-media-files.nvim"
   use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
   use "folke/which-key.nvim"
 
   -- Themes

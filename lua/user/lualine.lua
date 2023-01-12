@@ -2,37 +2,37 @@ local lualine = require('lualine')
 local colors = {
   bg       = '#',
   fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
+  yellow   = '#ecbe7b',
   cyan     = '#008080',
   darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
+  green    = '#50fa7b',
+  orange   = '#ff8800',
   violet   = '#a9a1e1',
   magenta  = '#c678dd',
   blue     = '#51afef',
-  red      = '#ec5f67',
+  red      = '#ff5555',
 }
 
-local conditions = {
-  buffer_not_empty = function()
-    return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
-  end,
-  hide_in_width = function()
-    return vim.fn.winwidth(0) > 80
-  end,
-  check_git_workspace = function()
-    local filepath = vim.fn.expand('%:p:h')
-    local gitdir = vim.fn.finddir('.git', filepath .. ';')
-    return gitdir and #gitdir > 0 and #gitdir < #filepath
-  end,
-}
+--[[ local conditions = { ]]
+--[[   buffer_not_empty = function() ]]
+--[[     return vim.fn.empty(vim.fn.expand('%:t')) ~= 1 ]]
+--[[   end, ]]
+--[[   hide_in_width = function() ]]
+--[[     return vim.fn.winwidth(0) > 80 ]]
+--[[   end, ]]
+--[[   check_git_workspace = function() ]]
+--[[     local filepath = vim.fn.expand('%:p:h') ]]
+--[[     local gitdir = vim.fn.finddir('.git', filepath .. ';') ]]
+--[[     return gitdir and #gitdir > 0 and #gitdir < #filepath ]]
+--[[   end, ]]
+--[[ } ]]
 
 -- Config
 local config = {
   options = {
     -- Disable sections and component separators
-    component_separators = '',
-    section_separators = '',
+    --[[ component_separators = '', ]]
+    component_separators = { left = ' ', right = ' '},
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -76,7 +76,8 @@ end
 ins_left {
   -- mode component
   function()
-    return ' '
+    --[[ return ' ' ]]
+    return '  '
   end,
   color = function()
     -- auto change color according to neovims mode
@@ -112,7 +113,7 @@ ins_left {
   path = 1,
   cond = nil,
   --cond = conditions.hide_in_width,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.magenta, gui = 'italic' },
 }
 
 ins_left { 'location' }
@@ -153,36 +154,31 @@ ins_left {
     end
     return msg
   end,
-  icon = 'LSP ',
-  color = { fg = '#44466a', gui = 'bold' },
+  icon = 'Lsp -',
+  color = { fg = '#44466a', },
 }
 
---ins_right {
-  --'filetype',
-  --icons_enabled = true,
-  --cond = nil,
---}
+--[[ ins_right { ]]
+  --[[ 'filetype', ]]
+  --[[ icons_enabled = true, ]]
+  --[[ cond = nil, ]]
+--[[ } ]]
 
 ins_right {
   -- filesize component
   'filesize',
   cond = nil,
+  color = { gui = 'italic' },
   --cond = conditions.hide_in_width,
 }
 
-ins_right {
-  'branch',
-  icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_right {
-  'fileformat',
-  fmt = string.upper,
-  icons = '',
-  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.violet, gui = 'bold' },
-}
+--[[ ins_right { ]]
+--[[   'fileformat', ]]
+--[[   fmt = string.upper, ]]
+--[[   icons = '', ]]
+--[[   icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh ]]
+--[[   color = { fg = colors.violet, gui = 'bold' }, ]]
+--[[ } ]]
 
 -- Add components to right sections
 ins_right {
@@ -190,12 +186,18 @@ ins_right {
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = nil,
   --cond = conditions.hide_in_width,
-  color = { fg = colors.green, gui = 'bold' },
+  color = { fg = colors.violet, gui = 'italic' },
+}
+
+ins_right {
+  'branch',
+  icon = '',
+  color = { fg = colors.violet, gui = 'bold' },
 }
 
 ins_right {
   'diff',
-  symbols = { added = '洛', modified = '柳 ', removed = ' ' },
+  symbols = { added = ' ', modified = ' ', removed = ' ' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },

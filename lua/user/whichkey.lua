@@ -33,7 +33,7 @@ local setup = {
   },
   icons = {
     breadcrumb = "»",
-    separator = "",
+    separator = " ",
     group = "+",
   },
   popup_mappings = {
@@ -138,7 +138,6 @@ local mappings = {
     --[[ t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type definition"}, ]]
     --[[ d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go to definition"}, ]]
     --[[ D = {'<cmd>lua vim.lsp.buf.delaration()<cr>', "Go to declaration"}, ]]
-
   },
 
   s = {

@@ -9,7 +9,7 @@ local actions = require "telescope.actions"
 telescope.setup {
   defaults = {
     prompt_prefix = " ",
-    selection_caret = "",
+    selection_caret = " ",
     path_display = { "smart" },
          entry_prefix = "  ",
       initial_mode = "insert",
@@ -65,7 +65,6 @@ telescope.setup {
 
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-
         ["<Down>"] = actions.move_selection_next,
         ["<Up>"] = actions.move_selection_previous,
 
