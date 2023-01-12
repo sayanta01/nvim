@@ -137,7 +137,7 @@ local mappings = {
     --[[ h = {'<cmd>lua vim.lsp.buf.hover()<cr>', "Hover" }, ]]
     --[[ t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type definition" }, ]]
     --[[ d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go to definition" }, ]]
-    --[[ D = {'<cmd>lua vim.lsp.buf.delaration()<cr>', "Go to declaration" }, ]]
+    --[[ D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go to declaration" }, ]]
   },
 
   s = {
