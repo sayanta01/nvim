@@ -32,7 +32,7 @@ local setup = {
     -- ["<tab>"] = "TAB",
   },
   icons = {
-    breadcrumb = "»",
+    breadcrumb = "",
     separator = " ",
     group = "+",
   },
@@ -82,15 +82,15 @@ local mappings = {
    W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
    q = { "<cmd>q!<cr>", "Quit" },
    Q = { ":wq<cr>", "Save & Quit" },
-   x = {":bdelete<cr>", "Close Buffer"},
-   X = {":bdelete!<cr>", "Force Close Buffer"},
+   x = {":bdelete<cr>", "Close Buffer" },
+   X = {":bdelete!<cr>", "Force Close Buffer" },
    ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
-   b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
+   b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
    e = { "<cmd>NvimTreeToggle<cr>", "NvimTree" },
    c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" },
-   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find Files"},
+   f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find Files" },
    --f = {"<cmd>Telescope find_files<cr>", "Find Files"},
-   r = {"<cmd>Telescope live_grep<cr>", "Live Grep"},
+   r = {"<cmd>Telescope live_grep<cr>", "Live Grep" },
    i = { "<cmd>Telescope media_files<cr>", "Media files" },
 
   g = {
@@ -116,28 +116,28 @@ local mappings = {
 
   l = {
     name = "LSP",
-    a = {'<cmd>lua vim.lsp.buf.code_action()<cr>', "Code actions"},
-    f = {'<cmd>lua vim.lsp.buf.format { async = true }()<cr>', "Format File"},
-    r = {'<cmd>lua vim.lsp.buf.rename()<cr>', "Rename"},
-    i = {'<cmd>LspInstallInfo<cr>', 'Install language server'},
-    I = {":LspInfo<cr>", "Connected Language Servers"},
-    w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add workspace folder"},
-    W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove workspace folder"},
-    n = {'<cmd>lua vim.diagnostic.goto_next()<cr>', "Go to next diagnostic"},
-    p = {'<cmd>lua vim.diagnostic.goto_prev()<cr>', "Go to previous diagnostic"},
+    a = {'<cmd>lua vim.lsp.buf.code_action()<cr>', "Code actions" },
+    f = {'<cmd>lua vim.lsp.buf.format { async = true }()<cr>', "Format File" },
+    r = {'<cmd>lua vim.lsp.buf.rename()<cr>', "Rename" },
+    i = {'<cmd>LspInstallInfo<cr>', 'Install language server' },
+    I = {":LspInfo<cr>", "Connected Language Servers" },
+    w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add workspace folder" },
+    W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove workspace folder" },
+    n = {'<cmd>lua vim.diagnostic.goto_next()<cr>', "Go to next diagnostic" },
+    p = {'<cmd>lua vim.diagnostic.goto_prev()<cr>', "Go to previous diagnostic" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols"},
+    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
     L = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List workspace folder" },
 
-    --[[ R = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"}, ]]
-    --[[ k = {'<cmd>lua vim.lsp.buf.signature_help()<cr>', "Signature help"}, ]]
-    --[[ h = {'<cmd>lua vim.lsp.buf.hover()<cr>', "Hover"}, ]]
-    --[[ t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type definition"}, ]]
-    --[[ d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go to definition"}, ]]
-    --[[ D = {'<cmd>lua vim.lsp.buf.delaration()<cr>', "Go to declaration"}, ]]
+    --[[ R = {'<cmd>lua vim.lsp.buf.references()<cr>', "References" }, ]]
+    --[[ k = {'<cmd>lua vim.lsp.buf.signature_help()<cr>', "Signature help" }, ]]
+    --[[ h = {'<cmd>lua vim.lsp.buf.hover()<cr>', "Hover" }, ]]
+    --[[ t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type definition" }, ]]
+    --[[ d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go to definition" }, ]]
+    --[[ D = {'<cmd>lua vim.lsp.buf.delaration()<cr>', "Go to declaration" }, ]]
   },
 
   s = {
@@ -178,12 +178,12 @@ local mappings = {
 
   p = {
     name = "Packer",
-    c = {":PackerCompile<cr>", "Compile Plugins"},
-    i = {":PackerInstall<cr>", "Install Plugins"},
-    r = {":PackerClean<cr>", "Remove Unused Plugins"},
-    s = {":PackerSync<cr>", "Sync Plugins"},
-    S = {":PackerStatus<cr>", "Packer Status"},
-    u = {":PackerUpdate<cr>", "Update Plugins"}
+    c = {":PackerCompile<cr>", "Compile Plugins" },
+    i = {":PackerInstall<cr>", "Install Plugins" },
+    r = {":PackerClean<cr>", "Remove Unused Plugins" },
+    s = {":PackerSync<cr>", "Sync Plugins" },
+    S = {":PackerStatus<cr>", "Packer Status" },
+    u = {":PackerUpdate<cr>", "Update Plugins" }
   },
 
   B = {
@@ -210,7 +210,7 @@ local mappings = {
     q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
     u = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 
-    l = { "<cmd>lua require'dap'.run_last()<cr>", "Last Run"},
+    l = { "<cmd>lua require'dap'.run_last()<cr>", "Last Run" },
     x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
       },
 

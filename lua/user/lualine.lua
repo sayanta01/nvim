@@ -1,7 +1,7 @@
 local lualine = require('lualine')
 local colors = {
   bg       = '#',
-  fg       = '#bbc2cf',
+  fg       = '#9399b1',
   yellow   = '#ecbe7b',
   cyan     = '#008080',
   darkblue = '#081633',
@@ -110,13 +110,16 @@ ins_left {
 
 ins_left {
   'filename',
-  path = 1,
+  path = 3,
   cond = nil,
   --cond = conditions.hide_in_width,
   color = { fg = colors.magenta, gui = 'italic' },
 }
 
-ins_left { 'location' }
+ins_left {
+    'location',
+      color = { fg = colors.fg, gui = 'italic' },
+}
 
 ins_left {
   'diagnostics',
@@ -168,7 +171,7 @@ ins_right {
   -- filesize component
   'filesize',
   cond = nil,
-  color = { gui = 'italic' },
+  color = { fg = colors.violet, gui = 'italic' },
   --cond = conditions.hide_in_width,
 }
 
@@ -191,7 +194,7 @@ ins_right {
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = nil,
   --cond = conditions.hide_in_width,
-  color = { fg = colors.violet, gui = 'italic' },
+  color = { fg = colors.fg, gui = 'italic' },
 }
 
 ins_right {

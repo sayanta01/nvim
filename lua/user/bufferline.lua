@@ -13,7 +13,7 @@ bufferline.setup {
     indicator = " ",
     buffer_close_icon = "x",
     modified_icon = "",
-    close_icon = "",
+    close_icon = " ",  -- 
     left_trunc_marker = "",
     right_trunc_marker = "",
     max_name_length = 28,
