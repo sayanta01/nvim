@@ -13,7 +13,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 #sudo apt install -y nodejs npm ccls shfmt shellcheck ueberzug && cargo install stylua ttyper bat procs
 
 # Arch
-#sudo pacman -S --noconfirm nodejs npm ccls shfmt shellcheck ueberzug stylua lazygit 
+sudo pacman -S --noconfirm nodejs npm ccls shfmt shellcheck ueberzug stylua lazygit 
 
 # Void
 #sudo xbps-install -Sy nodejs ccls shfmt shellcheck ueberzug lazygit && cargo install stylua ttyper

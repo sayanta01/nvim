@@ -172,13 +172,18 @@ ins_right {
   --cond = conditions.hide_in_width,
 }
 
---[[ ins_right { ]]
---[[   'fileformat', ]]
---[[   fmt = string.upper, ]]
---[[   icons = '', ]]
---[[   icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh ]]
---[[   color = { fg = colors.violet, gui = 'bold' }, ]]
---[[ } ]]
+ins_right {
+  'fileformat',
+  fmt = string.upper,
+  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+    symbols = {
+        unix = '',
+        dos = '',
+        mac = '',
+      },
+      --[[ color = { fg = '#44475a', }, ]]
+  color = { fg = colors.fg, },
+}
 
 -- Add components to right sections
 ins_right {

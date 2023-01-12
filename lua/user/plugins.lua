@@ -42,6 +42,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
   use "folke/which-key.nvim"
+  use "ThePrimeagen/vim-be-good"
 
   -- Themes
   use "morhetz/gruvbox"
@@ -52,6 +53,7 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use "folke/zen-mode.nvim"
   use "norcalli/nvim-colorizer.lua"
+  use "uga-rosa/ccc.nvim"
 
   -- Cmp plugins
   use "hrsh7th/nvim-cmp"

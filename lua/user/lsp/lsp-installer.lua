@@ -17,6 +17,7 @@ local servers = {
   "pylsp",
   "jsonls",
   "sumneko_lua",
+  "rust_analyzer",
   "bashls",
   "clangd",
   "yamlls",

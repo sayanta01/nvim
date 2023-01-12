@@ -130,7 +130,7 @@ local mappings = {
     q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    L = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List workspace folder"},
+    L = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List workspace folder" },
 
     --[[ R = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"}, ]]
     --[[ k = {'<cmd>lua vim.lsp.buf.signature_help()<cr>', "Signature help"}, ]]
@@ -166,10 +166,14 @@ local mappings = {
   o = {
     name = "Options",
     s = { "<cmd>lua vim.o.spell = not vim.o.spell<cr>", "Toggle spell check" },
-    z = { "<cmd>ZenMode<cr>", "ZenMode"},
-    p = { "<cmd>!chmod +x %<cr>", "Chmod +x"},
-    m = { "<cmd>set showmode!<cr>", "Show-mode in statusline"},
-    c = { ":%y+ <cr>", "Copy whole file"},
+    z = { "<cmd>ZenMode<cr>", "ZenMode" },
+    p = { "<cmd>!chmod +x %<cr>", "Chmod +x" },
+    m = { "<cmd>set showmode!<cr>", "Show-mode in statusline" },
+    y = { ":%y+ <cr>", "Copy whole file" },
+    v = { "<cmd>VimBeGood<cr>", "Vim practice" },
+    c = { "<cmd>CccPick<cr>", "Color pick" },
+    C = { "<cmd>CccConvert<cr>", "Change color format" },
+    r = { "<cmd>CccHighlighterToggle<cr>", "Color enable" },
   },
 
   p = {
