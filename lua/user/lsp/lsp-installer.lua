@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local servers = {
-  --"angularls",
+  "angularls",
   "cssls",
   "tailwindcss",
   "cssmodules_ls",

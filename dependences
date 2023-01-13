@@ -4,16 +4,16 @@
 #sudo apt install -y ninja-build gettext libtool libtool-bin cmake pkg-config doxygen
 #git clone https://github.com/neovim/neovim.git ~/.config/neovim && cd ~/.config/neovim
 #make -j4 && sudo make install
-       
+
 # packer install
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+	~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-# Debian 
+# Debian
 # sudo apt install -y nodejs npm ccls shfmt shellcheck ueberzug && cargo install stylua ttyper bat procs
 
 # Arch
-# sudo pacman -S --noconfirm nodejs npm ccls shfmt shellcheck ueberzug stylua lazygit 
+# sudo pacman -S --noconfirm nodejs npm ccls shfmt shellcheck ueberzug stylua lazygit
 
 # Void
 # sudo xbps-install -Sy nodejs ccls shfmt shellcheck ueberzug lazygit && cargo install stylua ttyper
@@ -21,5 +21,5 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 # npm dependences
 sudo npm i -g prettier astyle luacheck emmet eslint html tailwindcss live-server
 
-# pip dependences 
-pip install pynvim black flake8 sourcery 
+# pip dependences
+pip install pynvim black flake8 sourcery
