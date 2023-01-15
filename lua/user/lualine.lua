@@ -118,7 +118,7 @@ ins_left {
 
 ins_left {
     'location',
-      color = { fg = colors.fg, gui = 'italic' },
+      color = { fg = colors.fg, },
 }
 
 ins_left {

@@ -1,0 +1,27 @@
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "sumneko_lua",
+        "angularls",
+        "tsserver",
+        "graphql",
+        "rust_analyzer",
+        "cssls",
+        "tailwindcss",
+        "cssmodules_ls",
+        "tsserver",
+        "html",
+        "emmet_ls",
+        "eslint",
+        "jedi_language_server",
+        "pyright",
+        "pylsp",
+        "jsonls",
+        "sumneko_lua",
+        "rust_analyzer",
+        "bashls",
+        "clangd",
+        "yamlls",
+    },
+    automatic_installation = true,
+})

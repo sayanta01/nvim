@@ -32,7 +32,7 @@ local options = {
   --showtabline = 2,
   --pumheight = 9,
   --cmdheight = 2,
-  --[[ spell = true, ]]
+  spell = true,
   --[[ smartindent = true, ]]
   --[[ copyindent = true,  -- Copy the previous indentation on autoindenting ]]
   --[[ fillchars = { eob = " " },  -- Disable `~` on nonexistent lines ]]
