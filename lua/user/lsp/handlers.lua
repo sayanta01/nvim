@@ -39,6 +39,7 @@ local on_attach = function(client, bufnr)
 	vim.diagnostic.config(config)
 
 	--[[ buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc") ]]
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	local opts = { noremap = true, silent = true }
 	buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)

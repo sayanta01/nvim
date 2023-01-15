@@ -19,6 +19,7 @@ require("user.comment")
 require("user.bufferline")
 require("user.autopairs")
 require("user.lualine")
+require("user.illuminate")
 
 require("user.telescope")
 require("user.project")
@@ -29,8 +30,5 @@ require("user.autocommands")
 require("user.nvim-tree")
 require("user.whichkey")
 require("user.cmp")
-
--- Need to work 
 require("user.lsp")
 require("user.dap")
-require("user.illuminate")

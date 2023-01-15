@@ -18,14 +18,14 @@ comment.setup({
 			key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
 			location = location,
 
-			extra = {
-				---Add comment on the line above
-				above = "gcO",
-				---Add comment on the line below
-				below = "gco",
-				---Add comment at the end of line
-				eol = "gcA",
-			},
+			--[[ extra = { ]]
+			--[[ 	---Add comment on the line above ]]
+			--[[ 	above = "gcO", ]]
+			--[[ 	---Add comment on the line below ]]
+			--[[ 	below = "gco", ]]
+			--[[ 	---Add comment at the end of line ]]
+			--[[ 	eol = "gcA", ]]
+			--[[ }, ]]
 		})
 	end,
 })
