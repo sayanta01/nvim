@@ -9,9 +9,9 @@ local on_attach = function(client, bufnr)
 	end
 	illuminate.on_attach(client)
 
-	--[[ local function buf_set_option(...) ]]
-	--[[ 	vim.api.nvim_buf_set_option(bufnr, ...) ]]
-	--[[ end ]]
+	local function buf_set_option(...)
+		vim.api.nvim_buf_set_option(bufnr, ...)
+	end
 
 	local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 	for type, icon in pairs(signs) do
@@ -38,7 +38,7 @@ local on_attach = function(client, bufnr)
 	}
 	vim.diagnostic.config(config)
 
-	--[[ buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc") ]]
+	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	local opts = { noremap = true, silent = true }

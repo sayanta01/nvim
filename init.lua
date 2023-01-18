@@ -12,6 +12,10 @@ require("user.impatient")
 require("user.indentline")
 require("user.mason")
 
+require("user.telescope")
+require("user.project")
+require("user.alpha")
+
 require("user.treesitter")
 require("user.rainbow-bracket")
 require("user.comment")
@@ -20,10 +24,6 @@ require("user.bufferline")
 require("user.autopairs")
 require("user.lualine")
 require("user.illuminate")
-
-require("user.telescope")
-require("user.project")
-require("user.alpha")
 
 -- Dynamic
 require("user.autocommands")

@@ -137,12 +137,12 @@ local mappings = {
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		L = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List workspace folder" },
 
-		D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go to declaration" },
-		d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go to definition" },
-		h = {'<cmd>lua vim.lsp.buf.hover()<cr>', "Hover" },
-		R = {'<cmd>lua vim.lsp.buf.references()<cr>', "References" },
-		k = {'<cmd>lua vim.lsp.buf.signature_help()<cr>', "Signature help" },
-		t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type definition" },
+		D = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
+		d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Go to definition" },
+		h = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover" },
+		R = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+		k = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature help" },
+		t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Type definition" },
 	},
 
 	s = {
@@ -169,14 +169,19 @@ local mappings = {
 	o = {
 		name = "Options",
 		s = { "<cmd>set spell!<cr>", "Toggle spell check" },
-		m = { "<cmd>set showmode!<cr>", "Show-mode in statusline" },
 		p = { "<cmd>!chmod +x %<cr>", "Chmod +x" },
 		y = { ":%y+ <cr>", "Copy whole file" },
 		z = { "<cmd>ZenMode<cr>", "ZenMode" },
-		v = { "<cmd>VimBeGood<cr>", "Vim practice" },
-		c = { "<cmd>CccPick<cr>", "Color pick" },
-		C = { "<cmd>CccConvert<cr>", "Change color format" },
-		r = { "<cmd>CccHighlighterToggle<cr>", "Color enable" },
+		v = { "<cmd>VimBeGood<cr>", "Vim Practice" },
+		c = { "<cmd>CccPick<cr>", "Color Pick" },
+		C = { "<cmd>CccConvert<cr>", "Change Color Format" },
+		r = { "<cmd>CccHighlighterToggle<cr>", "Color Enable" },
+		n = { "<cmd>set rnu!<cr>", "Relativenumber" },
+		N = { "<cmd>set cursorcolumn!<cr>", "Cursorcolumn" },
+		w = { "<cmd>set wrap<cr>", "Wrap Text" },
+		W = { "<cmd>set nowrap<cr>", "No Wrap Text" },
+		m = { "<cmd>set showmode!<cr>", "Show-mode in Statusline" },
+		M = { "<cmd> set cursorcolumn!<cr>", "Relativenumber" },
 	},
 
 	p = {

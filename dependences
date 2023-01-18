@@ -20,7 +20,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 # sudo xbps-install -Sy nodejs ccls shfmt shellcheck ueberzug lazygit && cargo install stylua ttyper
 
 # npm dependences
-sudo npm i -g prettier astyle luacheck emmet eslint html tailwindcss live-server
+sudo npm i -g prettier astyle luacheck emmet eslint eslint_d html tailwindcss live-server
 
 # pip dependences
 pip install pynvim black flake8 sourcery
