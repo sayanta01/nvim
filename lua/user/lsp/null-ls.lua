@@ -7,9 +7,9 @@ local sources = {
 	--[[ formatting ]]
 	formatting.shfmt,
 	formatting.stylua,
-	formatting.clang_format,
 	formatting.gofumpt,
 	formatting.phpcbf,
+	--[[ formatting.clang_format, ]]
 	formatting.prettier.with({
 		extra_filetypes = { "toml" },
 		extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },

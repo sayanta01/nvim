@@ -99,6 +99,7 @@ require("lspconfig")["sumneko_lua"].setup({
 				library = {
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
+					vim.fn.stdpath("data") .. "/lazy/emmylua-nvim",
 				},
 			},
 			telemetry = {
