@@ -119,27 +119,37 @@ telescope.setup({
 			},
 		},
 	},
+	file_ignore_patterns = {},
+
 	pickers = {
 		-- Default configuration for builtin pickers goes here:
-		-- Picker_name = {
-		--   picker_config_key = value,
-		--   ...
-		-- }
-		-- Now the picker_config_key will be applied every time you call this
-		-- Builtin picker
+		find_files = {
+			hidden = true,
+		},
+		live_grep = {
+			--[[ @usage don't include the filename in the search results ]]
+			only_sort_text = true,
+		},
+		grep_string = {
+			only_sort_text = true,
+		},
+		planets = {
+			show_pluto = true,
+			show_moon = false,
+		},
+		git_files = {
+			hidden = true,
+			show_untracked = true,
+		},
+		colorscheme = {
+			enable_preview = true,
+		},
 	},
 	extensions = {
+		-- Your extension configuration goes here:
 		media_files = {
-			-- filetypes whitelist
-			-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-			filetypes = { "png", "webp", "jpg", "jpeg" },
+			filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
 			find_cmd = "rg", -- find command (defaults to `fd`)
 		},
-		-- filetypes whitelist
-		-- Your extension configuration goes here:
-		-- extension_name = {
-		--   extension_config_key = value,
-		-- }
-		-- Please take a look at the Readme of the extension you want to configure
 	},
 })

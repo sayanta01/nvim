@@ -137,20 +137,23 @@ require("lspconfig")["gopls"].setup({
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	--[[   settings = { ]]
-	--[[   json = { ]]
-	--[[     schemas = require("schemastore").json.schemas(), ]]
-	--[[   }, ]]
-	--[[ }, ]]
-	--[[ setup = { ]]
-	--[[   commands = { ]]
-	--[[     Format = { ]]
-	--[[       function() ]]
-	--[[         vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$", 0 }) ]]
-	--[[       end, ]]
-	--[[     }, ]]
-	--[[   }, ]]
-	--[[ }, ]]
+	settings = {
+		json = {
+			--[[ schemas = require("schemastore").json.schemas(), ]]
+		},
+	},
+	init_options = {
+		provideFormatter = true,
+	},
+	setup = {
+		commands = {
+			Format = {
+				function()
+					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+				end,
+			},
+		},
+	},
 })
 
 require("lspconfig")["marksman"].setup({
@@ -158,17 +161,12 @@ require("lspconfig")["marksman"].setup({
 	capabilities = capabilities,
 })
 
---[[ require("lspconfig")["ltex"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
---[[]]
---[[ require("lspconfig")["texlab"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
---[[]]
---[[ require("lspconfig")["hls"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
+require("lspconfig")["ltex"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["texlab"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

@@ -31,11 +31,11 @@ local colors = {
 local config = {
 	options = {
 		-- Disable sections and component separators
-		--[[ component_separators = '', ]]
-		component_separators = { left = " ", right = " " },
+		component_separators = "",
+		--[[ component_separators = { left = " ", right = " " }, ]]
 		theme = {
 			-- We are going to use lualine_c an lualine_x as left and
-			-- right section. Both are highlighted by c theme .  So we
+			-- right section. Both are highlighted by c theme. So we
 			-- are just setting default looks o statusline
 			normal = { c = { fg = colors.fg, bg = colors.bg } },
 			inactive = { c = { fg = colors.fg, bg = colors.bg } },
@@ -111,7 +111,6 @@ ins_left({
 	"filename",
 	path = 3,
 	cond = nil,
-	--cond = conditions.hide_in_width,
 	color = { fg = colors.magenta, gui = "italic" },
 })
 
@@ -140,7 +139,6 @@ ins_left({
 })
 
 ins_left({
-	-- Lsp server name .
 	function()
 		local msg = "No Active Lsp"
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
@@ -167,7 +165,6 @@ ins_left({
 --[[ } ]]
 
 ins_right({
-	-- filesize component
 	"filesize",
 	cond = nil,
 	color = { fg = colors.violet, gui = "italic" },
@@ -183,7 +180,6 @@ ins_right({
 		dos = "",
 		mac = "",
 	},
-	--[[ color = { fg = '#44475a', }, ]]
 	color = { fg = colors.fg },
 })
 
