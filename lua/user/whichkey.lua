@@ -122,7 +122,8 @@ local mappings = {
 
 	l = {
 		name = "LSP",
-		f = { "<cmd>lua vim.lsp.buf.format { async = true }()<cr>", "Format File" },
+		--[[ f = { "<cmd>lua vim.lsp.buf.format { async = true }()<cr>", "Format File" }, ]]
+		f = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format File" },
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions" },
 		n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Go to next diagnostic" },
 		p = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Go to previous diagnostic" },
