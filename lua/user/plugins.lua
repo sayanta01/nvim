@@ -69,13 +69,13 @@ return require("packer").startup(function(use)
 
 	-- Cmp plugins
 	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-nvim-lua")
 	use("saadparwaiz1/cmp_luasnip")
+	use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-calc")
+	use "f3fora/cmp-spell"
 	use("hrsh7th/cmp-cmdline")
-	--[[ use "f3fora/cmp-spell" ]]
 
 	-- Snippets
 	use("L3MON4D3/LuaSnip")
@@ -87,7 +87,7 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("RRethy/vim-illuminate")
-	use("onsails/lspkind.nvim")
+	--[[ use("onsails/lspkind.nvim") ]]
 
 	-- Treesitter
 	use({

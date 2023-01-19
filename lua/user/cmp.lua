@@ -10,10 +10,10 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
---[[ local check_backspace = function() ]]
---[[   local col = vim.fn.col "." - 1 ]]
---[[   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s" ]]
---[[ end ]]
+local check_backspace = function()
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+end
 
 local kind_icons = {
 	Text = "",
@@ -73,8 +73,8 @@ cmp.setup({
 				luasnip.expand()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
-				--[[ elseif check_backspace() then ]]
-				--[[ fallback() ]]
+			elseif check_backspace() then
+				fallback()
 			else
 				fallback()
 			end
@@ -108,6 +108,9 @@ cmp.setup({
 				buffer = "[Buffer]",
 				nvim_lua = "[LSP_LUA]",
 				path = "[Path]",
+				spell = "[Spell]",
+				calc = "[Calc]",
+				cmdline = "[Cmd]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -115,11 +118,13 @@ cmp.setup({
 
 	sources = {
 		{ name = "nvim_lua" },
-		{ name = "nvim_lsp" },
-		{ name = "path" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
-		--[[ { name = "spell" }, ]]
+		{ name = "nvim_lsp" },
+		{ name = "path" },
+		{ name = "spell" },
+		{ name = "calc" },
+		{ name = "cmdline" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

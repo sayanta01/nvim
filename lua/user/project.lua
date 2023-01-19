@@ -11,10 +11,10 @@ project.setup({
 	patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
 
 	-- show hidden files in telescope when searching for files in a project
-  show_hidden = false,
+	show_hidden = false,
 
-  -- when set to false, you will get a message when project.nvim changes your directory.
-  silent_chdir = true,
+	-- when set to false, you will get a message when project.nvim changes your directory.
+	silent_chdir = true,
 })
 
 local tele_status_ok, telescope = pcall(require, "telescope")
@@ -22,4 +22,4 @@ if not tele_status_ok then
 	return
 end
 
-telescope.load_extension('projects')
+telescope.load_extension("projects")
