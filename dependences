@@ -23,4 +23,4 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 sudo npm i -g prettier astyle luacheck emmet eslint eslint_d html tailwindcss live-server
 
 # pip dependences
-pip install pynvim black flake8 sourcery
+pip install pynvim black flake8 sourcery debugpy

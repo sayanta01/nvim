@@ -110,7 +110,7 @@ cmp.setup({
 				path = "[Path]",
 				spell = "[Spell]",
 				calc = "[Calc]",
-				cmdline = "[Cmd]",
+				--[[ cmdline = "[Cmd]", ]]
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -124,7 +124,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "spell" },
 		{ name = "calc" },
-		{ name = "cmdline" },
+		--[[ { name = "cmdline" }, ]]
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
