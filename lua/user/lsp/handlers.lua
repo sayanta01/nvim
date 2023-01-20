@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
 	end
 
 	local config = {
-		virtual_text = true, -- disable virtual text
+		virtual_text = false, -- disable virtual text
 		signs = {
 			active = signs, -- show signs
 		},
@@ -77,6 +77,11 @@ require("lspconfig")["pyright"].setup({
 		python = {
 			analysis = {
 				typeCheckingMode = "off",
+				diagnosticMode = "workspace",
+				inlayHints = {
+					variableTypes = true,
+					functionReturnTypes = true,
+				},
 			},
 		},
 	},
@@ -127,6 +132,19 @@ require("lspconfig")["cssls"].setup({
 require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		typescript = {
+			inlayHints = {
+				includeInlayEnumMemberValueHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayVariableTypeHints = true,
+			},
+		},
+	},
 })
 
 require("lspconfig")["gopls"].setup({
@@ -134,12 +152,17 @@ require("lspconfig")["gopls"].setup({
 	capabilities = capabilities,
 })
 
+local status_ok, schemastore = pcall(require, "schemastore")
+if not status_ok then
+	return
+end
+
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
 		json = {
-			--[[ schemas = require("schemastore").json.schemas(), ]]
+			schemas = schemastore.json.schemas(),
 		},
 	},
 	init_options = {
@@ -169,6 +192,11 @@ require("lspconfig")["dockerls"].setup({
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	yaml = {
+		schemaStore = {
+			enable = true,
+		},
+	},
 })
 
 require("lspconfig")["rust_analyzer"].setup({
