@@ -161,6 +161,41 @@ require("lspconfig")["marksman"].setup({
 	capabilities = capabilities,
 })
 
+require("lspconfig")["dockerls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["yamlls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["rust_analyzer"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		["rust-analyzer"] = {
+			assist = {
+				importMergeBehavior = "last",
+				importPrefix = "by_self",
+			},
+			diagnostics = {
+				disabled = { "unresolved-import" },
+			},
+			cargo = {
+				loadOutDirsFromCheck = true,
+			},
+			procMacro = {
+				enable = true,
+			},
+			checkOnSave = {
+				command = "clippy",
+			},
+		},
+	},
+})
+
 require("lspconfig")["ltex"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
