@@ -28,10 +28,12 @@ require("lazy").setup({
 	"akinsho/bufferline.nvim",
 	"akinsho/toggleterm.nvim",
 	"kyazdani42/nvim-tree.lua",
-	"nvim-telescope/telescope.nvim",
-	"nvim-telescope/telescope-media-files.nvim",
 	"folke/which-key.nvim",
 	"ThePrimeagen/vim-be-good",
+	"nvim-telescope/telescope.nvim",
+	"nvim-telescope/telescope-media-files.nvim",
+	"nvim-telescope/telescope-file-browser.nvim",
+	--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, ]]
 
 	-- Themes
 	"morhetz/gruvbox",
@@ -43,6 +45,13 @@ require("lazy").setup({
 	"folke/zen-mode.nvim",
 	"norcalli/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
+
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 
 	-- Cmp plugins
 	"hrsh7th/nvim-cmp",
@@ -61,19 +70,21 @@ require("lazy").setup({
 	-- LSP
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
+	"VonHeikemen/lsp-zero.nvim",
 	"neovim/nvim-lspconfig",
 	"jose-elias-alvarez/null-ls.nvim",
 	"RRethy/vim-illuminate",
 
 	-- Treesitter
-	"nvim-treesitter/nvim-treesitter",
-	--[[ run = ":TSUpdate", ]]
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"JoosepAlviste/nvim-ts-context-commentstring",
 
 	-- DAP
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
+	"theHamsta/nvim-dap-virtual-text",
 	"ravenxrz/DAPInstall.nvim",
+	"mfussenegger/nvim-dap-python",
 
 	-- Git
 	"lewis6991/gitsigns.nvim",

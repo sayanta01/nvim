@@ -95,7 +95,7 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find Files",
 	},
-	--f = {"<cmd>Telescope find_files<cr>", "Find Files"},
+	--[[ f = {"<cmd>Telescope find_files<cr>", "Find Files"}, ]]
 	r = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 	i = { "<cmd>Telescope media_files<cr>", "Media files" },
 
@@ -122,7 +122,6 @@ local mappings = {
 
 	l = {
 		name = "LSP",
-		--[[ f = { "<cmd>lua vim.lsp.buf.format { async = true }()<cr>", "Format File" }, ]]
 		f = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format File" },
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions" },
 		n = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Go to next diagnostic" },
@@ -165,6 +164,7 @@ local mappings = {
 		m = { "<cmd>Telescope marks<cr>", "Marks" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		f = { "<cmd>Telescope lsp_references<cr>", "Find References" },
+		t = { "<cmd>Telescope file_browser<cr>", "File Browser" },
 	},
 
 	o = {
@@ -173,16 +173,17 @@ local mappings = {
 		p = { "<cmd>!chmod +x %<cr>", "Chmod +x" },
 		y = { ":%y+ <cr>", "Copy whole file" },
 		z = { "<cmd>ZenMode<cr>", "ZenMode" },
-		v = { "<cmd>VimBeGood<cr>", "Vim Practice" },
+		t = { "<cmd>VimBeGood<cr>", "Vim Practice" },
 		c = { "<cmd>CccPick<cr>", "Color Pick" },
 		C = { "<cmd>CccConvert<cr>", "Change Color Format" },
-		r = { "<cmd>CccHighlighterToggle<cr>", "Color Enable" },
+		h = { "<cmd>CccHighlighterToggle<cr>", "Color Enable" },
 		n = { "<cmd>set rnu!<cr>", "Relativenumber" },
 		N = { "<cmd>set cursorcolumn!<cr>", "Cursorcolumn" },
 		w = { "<cmd>set wrap<cr>", "Wrap Text" },
 		W = { "<cmd>set nowrap<cr>", "No Wrap Text" },
 		m = { "<cmd>set showmode!<cr>", "Show-mode in Statusline" },
-		M = { "<cmd> set cursorcolumn!<cr>", "Relativenumber" },
+		M = { "<cmd>set cursorcolumn!<cr>", "Relative number" },
+		d = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
 	},
 
 	p = {

@@ -51,10 +51,13 @@ return require("packer").startup(function(use)
 	use("akinsho/bufferline.nvim")
 	use("akinsho/toggleterm.nvim")
 	use("kyazdani42/nvim-tree.lua")
-	use("nvim-telescope/telescope.nvim")
-	use("nvim-telescope/telescope-media-files.nvim")
 	use("folke/which-key.nvim")
 	use("ThePrimeagen/vim-be-good")
+	use("iamcco/markdown-preview.nvim")
+	use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope-media-files.nvim")
+	use("nvim-telescope/telescope-file-browser.nvim")
+	--[[ use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) ]]
 
 	-- Themes
 	use("morhetz/gruvbox")
@@ -73,8 +76,8 @@ return require("packer").startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("saadparwaiz1/cmp_luasnip")
 	use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-calc")
-	use "f3fora/cmp-spell"
+	use("hrsh7th/cmp-calc")
+	use("f3fora/cmp-spell")
 	use("hrsh7th/cmp-cmdline")
 
 	-- Snippets
@@ -84,6 +87,7 @@ return require("packer").startup(function(use)
 	-- LSP
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	use("VonHeikemen/lsp-zero.nvim")
 	use("neovim/nvim-lspconfig")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("RRethy/vim-illuminate")
@@ -99,9 +103,9 @@ return require("packer").startup(function(use)
 	-- DAP
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/nvim-dap-ui")
-    use("theHamsta/nvim-dap-virtual-text")
+	use("theHamsta/nvim-dap-virtual-text")
 	use("ravenxrz/DAPInstall.nvim")
-    use("mfussenegger/nvim-dap-python")
+	use("mfussenegger/nvim-dap-python")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
