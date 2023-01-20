@@ -8,7 +8,7 @@
 # packer install
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
 	~/.local/share/nvim/site/pack/packer/start/packer.nvim
-         
+
 # Debian
 # sudo apt install -y nodejs npm ccls shfmt shellcheck ueberzug && cargo install stylua ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
