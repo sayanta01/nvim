@@ -177,6 +177,12 @@ require("lspconfig")["rust_analyzer"].setup({
 	capabilities = capabilities,
 	settings = {
 		["rust-analyzer"] = {
+			cmd = {
+				"rustup",
+				"run",
+				"stable",
+				"rust-analyzer",
+			},
 			assist = {
 				importMergeBehavior = "last",
 				importPrefix = "by_self",
