@@ -152,33 +152,6 @@ require("lspconfig")["gopls"].setup({
 	capabilities = capabilities,
 })
 
-local status_ok, schemastore = pcall(require, "schemastore")
-if not status_ok then
-	return
-end
-
-require("lspconfig")["jsonls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		json = {
-			schemas = schemastore.json.schemas(),
-		},
-	},
-	init_options = {
-		provideFormatter = true,
-	},
-	setup = {
-		commands = {
-			Format = {
-				function()
-					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
-				end,
-			},
-		},
-	},
-})
-
 require("lspconfig")["marksman"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -232,4 +205,31 @@ require("lspconfig")["ltex"].setup({
 require("lspconfig")["texlab"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+})
+
+local status_ok, schemastore = pcall(require, "schemastore")
+if not status_ok then
+	return
+end
+
+require("lspconfig")["jsonls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		json = {
+			schemas = schemastore.json.schemas(),
+		},
+	},
+	init_options = {
+		provideFormatter = true,
+	},
+	setup = {
+		commands = {
+			Format = {
+				function()
+					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+				end,
+			},
+		},
+	},
 })

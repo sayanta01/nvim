@@ -5,6 +5,7 @@ require("mason-lspconfig").setup({
 		"angularls",
 		"tsserver",
 		"graphql",
+		"marksman",
 		"rust_analyzer",
 		"cssls",
 		"tailwindcss",
