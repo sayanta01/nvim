@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
     url = "https://github.com/ravenxrz/DAPInstall.nvim"
   },
-  ["FixCursorHold.nvim"] = {
-    loaded = true,
-    path = "/home/bot/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
-    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -323,11 +318,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["vim-bbye"] = {
-    loaded = true,
-    path = "/home/bot/.local/share/nvim/site/pack/packer/start/vim-bbye",
-    url = "https://github.com/moll/vim-bbye"
   },
   ["vim-be-good"] = {
     loaded = true,
