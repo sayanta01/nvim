@@ -75,7 +75,14 @@ return require("packer").startup(function(use)
 
 	-- Extra
 	use("ThePrimeagen/vim-be-good")
-	use("iamcco/markdown-preview.nvim")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
 
 	-- Themes
 	use("morhetz/gruvbox")
