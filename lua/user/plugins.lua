@@ -85,6 +85,10 @@ return require("packer").startup(function(use)
 	})
 
 	-- Themes
+	use({
+		"uloco/bluloco.nvim",
+		requires = { "rktjmp/lush.nvim" },
+	})
 	use("morhetz/gruvbox")
 	use("rose-pine/neovim")
 	use("LunarVim/darkplus.nvim")
