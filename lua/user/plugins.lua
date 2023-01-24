@@ -43,7 +43,6 @@ return require("packer").startup(function(use)
 	--[[ use("moll/vim-bbye") ]]
 
 	use("lewis6991/gitsigns.nvim")
-	use("akinsho/toggleterm.nvim")
 	use("norcalli/nvim-colorizer.lua")
 	use("uga-rosa/ccc.nvim")
 	use("folke/zen-mode.nvim")
@@ -89,6 +88,8 @@ return require("packer").startup(function(use)
 		"uloco/bluloco.nvim",
 		requires = { "rktjmp/lush.nvim" },
 	})
+    use("B4mbus/oxocarbon-lua.nvim")
+	use("akinsho/toggleterm.nvim")
 	use("morhetz/gruvbox")
 	use("rose-pine/neovim")
 	use("LunarVim/darkplus.nvim")
