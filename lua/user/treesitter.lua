@@ -6,6 +6,7 @@ end
 configs.setup({
 	ensure_installed = {
 		"markdown",
+		"markdown_inline",
 		"c",
 		"cpp",
 		"javascript",
@@ -20,6 +21,7 @@ configs.setup({
 		"python",
 		"bash",
 		"html",
+		"regex",
 	},
 	sync_install = false,
 	ignore_install = { "" },

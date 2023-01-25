@@ -32,3 +32,6 @@ require("user.whichkey")
 require("user.cmp")
 require("user.lsp")
 require("user.dap")
+
+--[[ Comment function for json ]]
+vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")

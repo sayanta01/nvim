@@ -286,6 +286,11 @@ _G.packer_plugins = {
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/onedarker.nvim",
     url = "https://github.com/LunarVim/onedarker.nvim"
   },
+  ["oxocarbon-lua.nvim"] = {
+    loaded = true,
+    path = "/home/bot/.local/share/nvim/site/pack/packer/start/oxocarbon-lua.nvim",
+    url = "https://github.com/B4mbus/oxocarbon-lua.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -305,6 +310,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["schemastore.nvim"] = {
+    loaded = true,
+    path = "/home/bot/.local/share/nvim/site/pack/packer/start/schemastore.nvim",
+    url = "https://github.com/b0o/schemastore.nvim"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
