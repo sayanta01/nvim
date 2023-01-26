@@ -216,6 +216,11 @@ _G.packer_plugins = {
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  nvim = {
+    loaded = true,
+    path = "/home/bot/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -272,6 +277,7 @@ _G.packer_plugins = {
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-ts-rainbow"] = {
+    config = { "\27LJ\2\nš\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\frainbow\1\0\3\venable\2\19max_file_lines\3ç\a\18extended_mode\2\14highlight\1\0\0\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = true,
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
@@ -281,10 +287,10 @@ _G.packer_plugins = {
     path = "/home/bot/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedarker.nvim"] = {
+  ["onedarkpro.nvim"] = {
     loaded = true,
-    path = "/home/bot/.local/share/nvim/site/pack/packer/start/onedarker.nvim",
-    url = "https://github.com/LunarVim/onedarker.nvim"
+    path = "/home/bot/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "https://github.com/olimorris/onedarkpro.nvim"
   },
   ["oxocarbon-lua.nvim"] = {
     loaded = true,
@@ -376,6 +382,10 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
+-- Config for: nvim-ts-rainbow
+time([[Config for nvim-ts-rainbow]], true)
+try_loadstring("\27LJ\2\nš\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\frainbow\1\0\3\venable\2\19max_file_lines\3ç\a\18extended_mode\2\14highlight\1\0\0\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-ts-rainbow")
+time([[Config for nvim-ts-rainbow]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)

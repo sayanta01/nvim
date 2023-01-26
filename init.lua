@@ -17,7 +17,7 @@ require("user.project")
 require("user.alpha")
 
 require("user.treesitter")
-require("user.rainbow-bracket")
+--[[ require("user.rainbow-bracket") ]]
 require("user.comment")
 
 require("user.bufferline")

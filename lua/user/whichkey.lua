@@ -187,13 +187,20 @@ local mappings = {
 	},
 
 	p = {
-		name = "Packer",
-		c = { ":PackerCompile<cr>", "Compile Plugins" },
-		i = { ":PackerInstall<cr>", "Install Plugins" },
-		r = { ":PackerClean<cr>", "Remove Unused Plugins" },
-		s = { ":PackerSync<cr>", "Sync Plugins" },
-		S = { ":PackerStatus<cr>", "Packer Status" },
-		u = { ":PackerUpdate<cr>", "Update Plugins" },
+		name = "Plugin",
+		--[[ c = { ":PackerCompile<cr>", "Compile Plugins" }, ]]
+		--[[ i = { ":PackerInstall<cr>", "Install Plugins" }, ]]
+		--[[ r = { ":PackerClean<cr>", "Remove Unused Plugins" }, ]]
+		--[[ s = { ":PackerSync<cr>", "Sync Plugins" }, ]]
+		--[[ S = { ":PackerStatus<cr>", "Packer Status" }, ]]
+		--[[ u = { ":PackerUpdate<cr>", "Update Plugins" }, ]]
+
+		c = { ":Lazy build<cr>", "Build Plugins" },
+		i = { ":Lazy install<cr>", "Install Plugins" },
+		r = { ":Lazy clean<cr>", "Remove Unused Plugins" },
+		s = { ":Lazy sync<cr>", "Sync Plugins" },
+		S = { ":Lazy check<cr>", "Status" },
+		u = { ":Lazy update<cr>", "Update Plugins" },
 	},
 
 	B = {

@@ -39,5 +39,10 @@ require("mason-lspconfig").setup({
 			cancel_installation = "<C-c>",
 			apply_language_filter = "<C-f>",
 		},
+		icons = {
+			package_installed = "",
+			package_pending = "->",
+			package_uninstalled = "x",
+		},
 	},
 })
