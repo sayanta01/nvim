@@ -70,6 +70,19 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 	border = "rounded",
 })
 
+local typescript_setup, typescript = pcall(require, "typescript")
+if not typescript_setup then
+	return
+end
+
+-- configure typescript server with plugin
+typescript.setup({
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+	},
+})
+
 require("lspconfig")["pyright"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,

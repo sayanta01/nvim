@@ -1,4 +1,5 @@
 require("mason").setup()
+
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"sumneko_lua",
@@ -11,7 +12,6 @@ require("mason-lspconfig").setup({
 		"tailwindcss",
 		"cssmodules_ls",
 		"dockerls",
-		"tsserver",
 		"html",
 		"emmet_ls",
 		"eslint",
@@ -28,6 +28,11 @@ require("mason-lspconfig").setup({
 
 	ui = {
 		--[[ border = "rounded", ]]
+		icons = {
+			package_installed = "",
+			package_pending = "",
+			package_uninstalled = "",
+		},
 		keymaps = {
 			toggle_package_expand = "<CR>",
 			install_package = "i",
@@ -39,10 +44,23 @@ require("mason-lspconfig").setup({
 			cancel_installation = "<C-c>",
 			apply_language_filter = "<C-f>",
 		},
-		icons = {
-			package_installed = "",
-			package_pending = "->",
-			package_uninstalled = "x",
-		},
 	},
+})
+
+require("mason-null-ls").setup({
+	-- list of formatters & linters for mason to install
+	ensure_installed = {
+		"shfmt",
+		"stylua",
+		"gofumpt",
+		"phpcbf",
+		"markdownlint",
+		"prettier",
+		"autopep8",
+		"eslint_d",
+		--[[ "rubocop", ]]
+		--[[ "sqlfluff", ]]
+		--[[ "solhint", ]]
+	},
+	automatic_installation = true,
 })

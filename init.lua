@@ -33,5 +33,8 @@ require("user.cmp")
 require("user.lsp")
 require("user.dap")
 
+--[[ notify config ]]
+vim.notify = require("notify")
+
 --[[ Comment function for json ]]
 vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")

@@ -1,70 +1,51 @@
---[[ local status_ok, packer = pcall(require, "packer") ]]
---[[ if not status_ok then ]]
---[[ 	return ]]
---[[ end ]]
-
--- popup window
---[[ packer.init({ ]]
---[[ 	display = { ]]
---[[ 		open_fn = function() ]]
---[[ 			return require("packer.util").float({ border = "rounded" }) ]]
---[[ 		end, ]]
---[[ 	}, ]]
---[[ }) ]]
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]])
-
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
-end
-
-local packer_bootstrap = ensure_packer()
-
-return require("packer").startup(function(use)
-	-- Dependences
-	use("wbthomason/packer.nvim")
-	use("nvim-lua/plenary.nvim")
-	use("nvim-lua/popup.nvim")
-	use("kyazdani42/nvim-web-devicons")
-	use("b0o/schemastore.nvim")
-	--[[ use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight ]]
-	--[[ use("moll/vim-bbye") ]]
-
-	use("lewis6991/gitsigns.nvim")
-	use("akinsho/toggleterm.nvim")
-	use("norcalli/nvim-colorizer.lua")
-	use("uga-rosa/ccc.nvim")
-	use("folke/zen-mode.nvim")
-	use("lewis6991/impatient.nvim")
-	use("lukas-reineke/indent-blankline.nvim")
-
-	use("nvim-telescope/telescope.nvim")
-	use("nvim-telescope/telescope-media-files.nvim")
-	use("nvim-telescope/telescope-file-browser.nvim")
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
-	use("ahmedkhalf/project.nvim")
-	use("goolord/alpha-nvim")
-
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
 	})
-	use("JoosepAlviste/nvim-ts-context-commentstring")
-	use({
-		"p00f/nvim-ts-rainbow",
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+	-- Dependences
+	"nvim-lua/plenary.nvim",
+	"nvim-lua/popup.nvim",
+	"kyazdani42/nvim-web-devicons",
+	"rcarriga/nvim-notify",
+	{
+		"b0o/schemastore.nvim",
+		lazy = true,
+	},
+	--[[ "antoinemadec/FixCursorHold.nvim", ]]
+	--[[ "moll/vim-bbye", ]]
+
+	"lewis6991/gitsigns.nvim",
+	"akinsho/toggleterm.nvim",
+	"norcalli/nvim-colorizer.lua",
+	"uga-rosa/ccc.nvim",
+	"folke/zen-mode.nvim",
+	"lewis6991/impatient.nvim",
+	"lukas-reineke/indent-blankline.nvim",
+
+	"nvim-telescope/telescope.nvim",
+	"nvim-telescope/telescope-media-files.nvim",
+	"nvim-telescope/telescope-file-browser.nvim",
+	--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, ]]
+	"ahmedkhalf/project.nvim",
+	"goolord/alpha-nvim",
+
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		event = "VeryLazy",
+	},
+	{
+		"mrjones2014/nvim-ts-rainbow",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				highlight = {},
@@ -78,71 +59,91 @@ return require("packer").startup(function(use)
 				},
 			})
 		end,
-	})
-	use("numToStr/Comment.nvim")
-	use("akinsho/bufferline.nvim")
-	use("windwp/nvim-autopairs") -- Autopairs, integrates with cmp & treesitter
-	use("nvim-lualine/lualine.nvim")
-	use("RRethy/vim-illuminate")
+	},
+	"numToStr/Comment.nvim",
+	"akinsho/bufferline.nvim",
+	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
+	"nvim-lualine/lualine.nvim",
+	"RRethy/vim-illuminate",
 
-	use("folke/which-key.nvim")
-	use("kyazdani42/nvim-tree.lua")
+	"folke/which-key.nvim",
+	"kyazdani42/nvim-tree.lua",
 
 	-- Extra
-	use("ThePrimeagen/vim-be-good")
-	use({
+	"ThePrimeagen/vim-be-good",
+	{
 		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
+		build = "cd app && npm install",
+		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
-	})
+	},
 
 	-- Themes
-	use({
+	{
 		"uloco/bluloco.nvim",
-		requires = { "rktjmp/lush.nvim" },
-	})
-	use("B4mbus/oxocarbon-lua.nvim")
-	use("morhetz/gruvbox")
-	use("rose-pine/neovim")
-	use("LunarVim/darkplus.nvim")
-	use("olimorris/onedarkpro.nvim")
-	use("catppuccin/nvim")
-	use("folke/tokyonight.nvim")
+		lazy = false,
+		priority = 1000,
+		dependencies = { "rktjmp/lush.nvim" },
+		config = function()
+			-- your optional config goes here, see below.
+		end,
+	},
+
+	{
+		"kylechui/nvim-surround",
+
+		lazy = false,
+		priority = 1000,
+		dependencies = { "nvim-surround" },
+		config = function()
+			-- your optional config goes here, see below.
+		end,
+	},
+
+	"B4mbus/oxocarbon-lua.nvim",
+	"morhetz/gruvbox",
+	"rose-pine/neovim",
+	"LunarVim/darkplus.nvim",
+	{
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- Ensure it loads first
+	},
+	"catppuccin/nvim",
+	"folke/tokyonight.nvim",
 
 	-- Cmp plugins
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("saadparwaiz1/cmp_luasnip")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-calc")
-	use("f3fora/cmp-spell")
-	use("hrsh7th/cmp-cmdline")
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"saadparwaiz1/cmp_luasnip",
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-calc",
+	"f3fora/cmp-spell",
+	--[[ "hrsh7th/cmp-cmdline", ]]
 
 	-- Snippets
-	use("L3MON4D3/LuaSnip")
-	use("rafamadriz/friendly-snippets")
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets",
 
 	-- LSP
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig")
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("VonHeikemen/lsp-zero.nvim")
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+	"jose-elias-alvarez/null-ls.nvim",
+	"jay-babu/mason-null-ls.nvim",
+	"jose-elias-alvarez/typescript.nvim",
 
 	-- Debugger
-	use("mfussenegger/nvim-dap")
-	use("rcarriga/nvim-dap-ui")
-	use("ravenxrz/DAPInstall.nvim")
-	use("theHamsta/nvim-dap-virtual-text")
-	use("mfussenegger/nvim-dap-python")
-
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+	"mfussenegger/nvim-dap",
+	"rcarriga/nvim-dap-ui",
+	--[[ "ravenxrz/DAPInstall.nvim", ]]
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		config = function()
+			require("nvim-dap-virtual-text").setup()
+		end,
+	},
+	"mfussenegger/nvim-dap-python",
+})

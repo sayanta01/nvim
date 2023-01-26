@@ -171,19 +171,19 @@ local mappings = {
 		name = "Options",
 		s = { "<cmd>set spell!<cr>", "Toggle spell check" },
 		p = { "<cmd>!chmod +x %<cr>", "Chmod +x" },
-		y = { ":%y+ <cr>", "Copy whole file" },
-		z = { "<cmd>ZenMode<cr>", "ZenMode" },
 		t = { "<cmd>VimBeGood<cr>", "Vim Practice" },
 		c = { "<cmd>CccPick<cr>", "Color Pick" },
 		C = { "<cmd>CccConvert<cr>", "Change Color Format" },
 		h = { "<cmd>CccHighlighterToggle<cr>", "Color Enable" },
 		n = { "<cmd>set rnu!<cr>", "Relativenumber" },
 		N = { "<cmd>set cursorcolumn!<cr>", "Cursorcolumn" },
+		z = { "<cmd>ZenMode<cr>", "ZenMode" },
 		w = { "<cmd>set wrap<cr>", "Wrap Text" },
 		W = { "<cmd>set nowrap<cr>", "No Wrap Text" },
 		m = { "<cmd>set showmode!<cr>", "Show-mode in Statusline" },
 		M = { "<cmd>set cursorcolumn!<cr>", "Relative number" },
 		d = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
+		--[[ y = { ":%y+ <cr>", "Copy whole file" }, ]]
 	},
 
 	p = {
@@ -194,6 +194,8 @@ local mappings = {
 		--[[ s = { ":PackerSync<cr>", "Sync Plugins" }, ]]
 		--[[ S = { ":PackerStatus<cr>", "Packer Status" }, ]]
 		--[[ u = { ":PackerUpdate<cr>", "Update Plugins" }, ]]
+
+		m = { ":Mason<cr>", "Mason" },
 
 		c = { ":Lazy build<cr>", "Build Plugins" },
 		i = { ":Lazy install<cr>", "Install Plugins" },

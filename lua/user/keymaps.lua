@@ -40,6 +40,9 @@ keymap("n", "<C-e>", "<End>", opts)
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
+-- Copy whole file
+keymap("n", "<leader>y", ":%y<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -62,8 +65,8 @@ keymap("n", "<S-i>", "<cmd>BufferLineMovePrev<CR>", opts)
 keymap("n", "<S-b>", ":enew <CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("n", "<A-l>", ":m .+1<CR>==", opts)
+keymap("n", "<A-h>", ":m .-2<CR>==", opts)
 
 keymap("n", "<C-v>", "<cmd>vsplit<CR>", opts)
 keymap("n", "<C-s>", "<cmd>split<CR>", opts)
