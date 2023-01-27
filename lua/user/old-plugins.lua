@@ -105,6 +105,7 @@ return require("packer").startup(function(use)
 		"uloco/bluloco.nvim",
 		requires = { "rktjmp/lush.nvim" },
 	})
+	use("tiagovla/tokyodark.nvim")
 	use("B4mbus/oxocarbon-lua.nvim")
 	use("morhetz/gruvbox")
 	use("rose-pine/neovim")

@@ -90,6 +90,7 @@ require("lazy").setup({
 			-- your optional config goes here, see below.
 		end,
 	},
+	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
 	"morhetz/gruvbox",
 	"rose-pine/neovim",
