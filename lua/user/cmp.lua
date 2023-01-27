@@ -17,17 +17,22 @@ local check_backspace = function()
 end
 
 local kind_icons = {
-	Text = "",
-	Method = "m",
+	Text = "",
+	Method = "",
+	--[[ Method = "m", ]]
 	Function = "",
 	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "",
+	Field = "",
+	--[[ Field = "", ]]
+	Variable = "",
+	--[[ Variable = "", ]]
+	Class = "",
+	--[[ Class = "", ]]
 	Interface = "",
-	--[[ Module = "", ]]
 	Module = " ",
-	Property = "",
+	--[[ Module = "", ]]
+	Property = "",
+	--[[ Property = "ﰠ", ]]
 	Unit = "",
 	Value = "",
 	Enum = "練",
@@ -38,8 +43,10 @@ local kind_icons = {
 	Reference = "",
 	Folder = "",
 	EnumMember = "",
-	Constant = " ",
-	Struct = "",
+	Constant = "",
+	--[[ Constant = " ", ]]
+	Struct = "פּ",
+	--[[ Struct = "", ]]
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
@@ -56,6 +63,7 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
+
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -132,12 +140,14 @@ cmp.setup({
 		select = false,
 	},
 	window = {
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-		},
 		completion = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+		},
+		documentation = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
 			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},

@@ -24,6 +24,7 @@ require("lazy").setup({
 	--[[ "antoinemadec/FixCursorHold.nvim", ]]
 	--[[ "moll/vim-bbye", ]]
 
+	-- Feature
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
 	"norcalli/nvim-colorizer.lua",
@@ -87,11 +88,12 @@ require("lazy").setup({
 		priority = 1000,
 		dependencies = { "rktjmp/lush.nvim" },
 		config = function()
-			-- your optional config goes here, see below.
+			-- your optional config goes here
 		end,
 	},
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
+	--[[ "sainnhe/gruvbox-material", ]]
 	"morhetz/gruvbox",
 	"rose-pine/neovim",
 	"LunarVim/darkplus.nvim",
@@ -128,11 +130,12 @@ require("lazy").setup({
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
 	"ravenxrz/DAPInstall.nvim",
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		config = function()
-			require("nvim-dap-virtual-text").setup()
-		end,
-	},
+	"theHamsta/nvim-dap-virtual-text",
+	--[[ { ]]
+	--[[ 	"theHamsta/nvim-dap-virtual-text", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("nvim-dap-virtual-text").setup() ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 	"mfussenegger/nvim-dap-python",
 })

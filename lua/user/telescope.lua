@@ -10,6 +10,8 @@ telescope.setup({
 	defaults = {
 		prompt_prefix = " ",
 		selection_caret = "❯ ",
+		--[[ prompt_prefix = "   ", ]]
+		--[[ selection_caret = "|> ", ]]
 		path_display = { "smart" },
 		entry_prefix = "  ",
 		initial_mode = "insert",
@@ -122,7 +124,7 @@ telescope.setup({
 	file_ignore_patterns = {},
 
 	pickers = {
-		-- Default configuration for builtin pickers goes here:
+		-- Default configuration for builtin pickers goes here
 		find_files = {
 			hidden = true,
 		},
@@ -146,10 +148,10 @@ telescope.setup({
 		},
 	},
 	extensions = {
-		-- Your extension configuration goes here:
+		-- Extension configuration goes here:
 		media_files = {
 			filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
-			find_cmd = "rg", -- find command (defaults to `fd`)
+			find_cmd = "rg", -- find command ( defaults to "fd" )
 		},
 		file_browser = {
 			--[[ theme = "ivy", ]]

@@ -2,27 +2,33 @@ require("mason").setup()
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"sumneko_lua",
-		"angularls",
-		"tsserver",
-		"graphql",
-		"marksman",
-		"rust_analyzer",
+		"clangd", -- c, cpp, c#
 		"cssls",
-		"tailwindcss",
+		"omnisharp",
+		"gopls",
+		"jdtls", -- java
+		"tailwindcss", -- javascript
+		"tsserver",
 		"cssmodules_ls",
-		"dockerls",
-		"html",
-		"emmet_ls",
 		"eslint",
-		"jedi_language_server",
-		"pyright",
-		"pylsp",
 		"jsonls",
 		"sumneko_lua",
+		"jedi_language_server", -- python
+		"pyright",
+		"pylsp",
+		"ruby_ls",
+		"rust_analyzer",
+		"angularls", -- typescript
+		"marksman",
+		"graphql",
+		"html",
+		"emmet_ls",
+		"sqlls",
+		"dockerls",
 		"bashls",
-		"clangd",
+		"ltex",
 		"yamlls",
+		"vimls",
 	},
 	automatic_installation = true,
 
@@ -50,14 +56,17 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
-		"shfmt",
-		"stylua",
+		"yamllint",
+		"clang_format",
 		"gofumpt",
-		"phpcbf",
-		"markdownlint",
-		"prettier",
-		"autopep8",
 		"eslint_d",
+		"prettier",
+		"stylua",
+		"autopep8",
+		"rustfmt",
+		"markdownlint",
+		"phpcbf",
+		"shfmt",
 		--[[ "rubocop", ]]
 		--[[ "sqlfluff", ]]
 		--[[ "solhint", ]]

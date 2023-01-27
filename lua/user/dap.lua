@@ -27,19 +27,19 @@ dap_install.config("python", {
 	}),
 })
 
-dapui.setup({
-	layouts = {
-		elements = {
-			{
-				id = "scopes",
-				size = 0.25, -- Can be float or integer > 1
-			},
-			{ id = "breakpoints", size = 0.25 },
-		},
-		size = 40,
-		position = "right", -- Can be "left", "right", "top", "bottom"
-	},
-})
+--[[ dapui.setup({ ]]
+--[[ 	layouts = { ]]
+--[[ 		elements = { ]]
+--[[ 			{ ]]
+--[[ 				id = "scopes", ]]
+--[[ 				size = 0.25, -- Can be float or integer > 1 ]]
+--[[ 			}, ]]
+--[[ 			{ id = "breakpoints", size = 0.25 }, ]]
+--[[ 		}, ]]
+--[[ 		size = 40, ]]
+--[[ 		position = "right", -- Can be "left", "right", "top", "bottom" ]]
+--[[ 	}, ]]
+--[[ }) ]]
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
@@ -64,7 +64,7 @@ dap.configurations.javascript = {
 		console = "integratedTerminal",
 	},
 	{
-		-- For this to work you need to make sure the node process is started with the `--inspect` flag.
+		-- For this to work you need to make sure the node process is started with the `--inspect` flag
 		name = "Attach to process",
 		type = "node2",
 		request = "attach",

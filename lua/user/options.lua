@@ -1,14 +1,14 @@
 local options = {
+	-- Settings
 	showcmd = false,
 	showmode = false,
 	timeoutlen = 400,
 	fileencoding = "utf-8",
 	writebackup = false,
 	swapfile = false,
-	conceallevel = 0,
 	hidden = true,
 	undofile = true,
-	updatetime = 250,
+	updatetime = 260,
 	backup = false,
 	cursorline = true,
 	expandtab = true,
@@ -29,6 +29,7 @@ local options = {
 	scrolloff = 6,
 	sidescrolloff = 8,
 	termguicolors = true,
+	conceallevel = 0,
 	--showtabline = 2,
 	--pumheight = 9,
 	--cmdheight = 2,
@@ -47,7 +48,7 @@ vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completi
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.shortmess:append("sI") -- disable nvim intro
 vim.opt.iskeyword:append("-")
-vim.opt.fillchars.eob = " "
+--[[ vim.opt.fillchars.eob = " " ]]
 
 -- Disable builtin plugins
 vim.g.loaded_zip = 1

@@ -29,16 +29,16 @@ vim.g.maplocalleader = " "
 --[[ keymap("v", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
 
 -- Line number
---[[ keymap("n", "<leader>n", "<cmd> set nu! <CR>", opts) ]]
---[[ keymap("n", "<leader>nn", "<cmd> set rnu! <CR>", opts) ]]
---[[ keymap("n", "<leader>m", "<cmd> set cursorcolumn! <CR>", opts) ]]
+--[[ keymap("n", "<leader>n", ":set nu! <CR>", opts) ]]
+--[[ keymap("n", "<leader>nn", ":set rnu! <CR>", opts) ]]
+--[[ keymap("n", "<leader>m", ":set cursorcolumn! <CR>", opts) ]]
 
 -- Beginning & End
 keymap("n", "<C-b>", "<ESC>^i", opts)
 keymap("n", "<C-e>", "<End>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
 
 -- Copy whole file
 keymap("n", "<leader>y", ":%y<CR>", opts)
@@ -58,8 +58,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-o>", "<cmd>BufferLineMoveNext<CR>", opts)
-keymap("n", "<S-i>", "<cmd>BufferLineMovePrev<CR>", opts)
+keymap("n", "<S-o>", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts)
 
 -- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
@@ -68,8 +68,8 @@ keymap("n", "<S-b>", ":enew <CR>", opts)
 keymap("n", "<A-l>", ":m .+1<CR>==", opts)
 keymap("n", "<A-h>", ":m .-2<CR>==", opts)
 
-keymap("n", "<C-v>", "<cmd>vsplit<CR>", opts)
-keymap("n", "<C-s>", "<cmd>split<CR>", opts)
+keymap("n", "<C-v>", ":vsplit<CR>", opts)
+keymap("n", "<C-s>", ":split<CR>", opts)
 
 -- Edit same word all together
 keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
