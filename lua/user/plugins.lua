@@ -90,18 +90,6 @@ require("lazy").setup({
 			-- your optional config goes here, see below.
 		end,
 	},
-
-	{
-		"kylechui/nvim-surround",
-
-		lazy = false,
-		priority = 1000,
-		dependencies = { "nvim-surround" },
-		config = function()
-			-- your optional config goes here, see below.
-		end,
-	},
-
 	"B4mbus/oxocarbon-lua.nvim",
 	"morhetz/gruvbox",
 	"rose-pine/neovim",
