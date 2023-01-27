@@ -127,7 +127,7 @@ require("lazy").setup({
 	-- Debugger
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
-	--[[ "ravenxrz/DAPInstall.nvim", ]]
+	"ravenxrz/DAPInstall.nvim",
 	{
 		"theHamsta/nvim-dap-virtual-text",
 		config = function()
