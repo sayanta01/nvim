@@ -13,10 +13,13 @@
 # sudo xbps-install -Sy nodejs ccls ruby shfmt shellcheck ueberzug lazygit && cargo install stylua ttyper
 
 # Arch
-sudo pacman -S --noconfirm nodejs npm ccls ruby shfmt shellcheck ueberzug stylua lazygit
+sudo pacman -S --noconfirm nodejs npm ruby ueberzug lazygit ccls
+# shfmt shellcheck stylua
 
 # npm dependences
-sudo npm i -g prettier astyle luacheck emmet eslint eslint_d html tailwindcss live-server
+sudo npm i -g google-java-format live-server emmet
+# luacheck eslint eslint_d html tailwindcss prettier astyle
 
 # pip dependences
-pip install pynvim black flake8 sourcery debugpy
+pip install pynvim
+# debugpy sourcery black flake8
