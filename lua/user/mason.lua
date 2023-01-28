@@ -67,6 +67,7 @@ require("mason-null-ls").setup({
 		"markdownlint",
 		"phpcbf",
 		"shfmt",
+		"yamlfmt",
 		--[[ "rubocop", ]]
 		--[[ "sqlfluff", ]]
 		--[[ "solhint", ]]

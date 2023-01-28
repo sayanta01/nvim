@@ -103,7 +103,9 @@ require("lspconfig")["pyright"].setup({
 		python = {
 			analysis = {
 				typeCheckingMode = "off",
+				autoSearchPaths = true,
 				diagnosticMode = "workspace",
+				useLibraryCodeForTypes = true,
 				inlayHints = {
 					variableTypes = true,
 					functionReturnTypes = true,
@@ -255,11 +257,6 @@ require("lspconfig")["rust_analyzer"].setup({
 	},
 })
 
---[[ require("lspconfig")["jdtls"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
-
 require("lspconfig")["ltex"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -270,10 +267,15 @@ require("lspconfig")["ltex"].setup({
 	},
 })
 
-require("lspconfig")["texlab"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+--[[ require("lspconfig")["texlab"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
+
+--[[ require("lspconfig")["jdtls"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
 
 --[[ local status_ok, schemastore = pcall(require, "schemastore") ]]
 --[[ if not status_ok then ]]
@@ -283,22 +285,22 @@ require("lspconfig")["texlab"].setup({
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	settings = {
-		json = {
-			--[[ schemas = schemastore.json.schemas(), ]]
-			schemas = require("schemastore").json.schemas(),
-		},
-	},
-	init_options = {
-		provideFormatter = true,
-	},
-	setup = {
-		commands = {
-			Format = {
-				function()
-					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
-				end,
-			},
-		},
-	},
+	--[[ settings = { ]]
+	--[[ 	json = { ]]
+	--[[ schemas = schemastore.json.schemas(), ]]
+	--[[ 		schemas = require("schemastore").json.schemas(), ]]
+	--[[ 	}, ]]
+	--[[ }, ]]
+	--[[ init_options = { ]]
+	--[[ 	provideFormatter = true, ]]
+	--[[ }, ]]
+	--[[ setup = { ]]
+	--[[ 	commands = { ]]
+	--[[ 		Format = { ]]
+	--[[ 			function() ]]
+	--[[ 				vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 }) ]]
+	--[[ 			end, ]]
+	--[[ 		}, ]]
+	--[[ 	}, ]]
+	--[[ }, ]]
 })

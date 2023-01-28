@@ -12,6 +12,7 @@ local sources = {
 	formatting.markdownlint,
 	formatting.phpcbf,
 	formatting.shfmt,
+	formatting.yamlfmt,
 	formatting.prettier.with({
 		extra_filetypes = { "toml" },
 		extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
