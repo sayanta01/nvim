@@ -42,7 +42,7 @@ local config = {
 		},
 	},
 	sections = {
-		-- these are to remove the defaults
+		-- These are to remove the defaults
 		lualine_a = {},
 		lualine_b = {},
 		lualine_y = {},
@@ -52,7 +52,7 @@ local config = {
 		lualine_x = {},
 	},
 	inactive_sections = {
-		-- these are to remove the defaults
+		-- These are to remove the defaults
 		lualine_a = {},
 		lualine_b = {},
 		lualine_y = {},
@@ -174,7 +174,7 @@ ins_right({
 ins_right({
 	"fileformat",
 	fmt = string.upper,
-	icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
+	icons_enabled = true,
 	symbols = {
 		unix = "",
 		dos = "",

@@ -6,6 +6,7 @@ local code_actions = null_ls.builtins.code_actions
 local sources = {
 	--[[ formatting ]]
 	formatting.gofumpt,
+	--[[ formatting.google_java_format, ]]
 	formatting.stylua,
 	formatting.autopep8,
 	formatting.markdownlint,

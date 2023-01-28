@@ -91,9 +91,11 @@ require("lazy").setup({
 			-- your optional config goes here
 		end,
 	},
+    "Everblush/nvim",
+	--[[ "catppuccin/nvim", ]]
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
-	--[[ "sainnhe/gruvbox-material", ]]
+	"sainnhe/gruvbox-material",
 	"morhetz/gruvbox",
 	"rose-pine/neovim",
 	"LunarVim/darkplus.nvim",
@@ -101,7 +103,6 @@ require("lazy").setup({
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 	},
-	"catppuccin/nvim",
 	"folke/tokyonight.nvim",
 
 	-- Cmp plugins

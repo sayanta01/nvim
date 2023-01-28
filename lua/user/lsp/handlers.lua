@@ -130,7 +130,7 @@ require("lspconfig")["sumneko_lua"].setup({
 				library = {
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
-					vim.fn.stdpath("data") .. "/lazy/emmylua-nvim",
+					--[[ vim.fn.stdpath("data") .. "/lazy/emmylua-nvim", ]]
 				},
 			},
 			telemetry = {
@@ -255,14 +255,19 @@ require("lspconfig")["rust_analyzer"].setup({
 	},
 })
 
-require("lspconfig")["jdtls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+--[[ require("lspconfig")["jdtls"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
 
 require("lspconfig")["ltex"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		ltex = {
+			language = "en-GB",
+		},
+	},
 })
 
 require("lspconfig")["texlab"].setup({
