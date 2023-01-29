@@ -17,17 +17,20 @@ require("nvim-dap-virtual-text").setup()
 dap_install.setup({})
 
 dapui.setup({
-	--[[ layouts = { ]]
-	--[[ 	elements = { ]]
-	--[[ 		{ ]]
-	--[[ 			id = "scopes", ]]
-	--[[ 			size = 0.25, -- Can be float or integer > 1 ]]
-	--[[ 		}, ]]
-	--[[ 		{ id = "breakpoints", size = 0.25 }, ]]
-	--[[ 	}, ]]
-	--[[ 	size = 40, ]]
-	--[[ 	position = "right", -- Can be "left", "right", "top", "bottom" ]]
-	--[[ }, ]]
+	sidebar = {
+		elements = {
+			{
+				id = "scopes",
+				size = 0.25, -- Can be float or integer > 1
+			},
+			{ id = "breakpoints", size = 0.25 },
+		},
+		size = 40,
+		position = "right", -- Can be "left", "right", "top", "bottom"
+	},
+	tray = {
+		elements = {},
+	},
 })
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
@@ -36,9 +39,7 @@ vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignErro
 require("dap-python").test_runner = "pytest"
 --[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
 dap_install.config("python", {
-	--[[ require("dap-python").setup("~/.virtualenvs/debugpy/bin/python"), ]]
-	require("dap-python").setup("/path/to/python"),
-
+	require("dap-python").setup("~/.virtualenvs/debugpy/bin/python"),
 	table.insert(require("dap").configurations.python, {
 		type = "python",
 		request = "launch",

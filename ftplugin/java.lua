@@ -60,13 +60,17 @@ local config = {
 		"-Xmx1G",
 		--[[ "-jar", ]]
 		--[[ "~/Library/java/jdt-language-server-1.9.0-202203031534/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar", ]]
-		"-jar",
-		vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
-
+		--[[ "-jar", ]]
+		--[[ vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"), ]]
 		--[[ "-configuration", ]]
 		--[[ "~/Library/java/jdt-language-server-1.9.0-202203031534/config_linux", ]]
+		--[[ "-configuration", ]]
+		--[[ home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG, ]]
+
+		"-jar",
+		"~/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
 		"-configuration",
-		home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG,
+		"~/.local/share/nvim/mason/packages/jdtls/config_linux",
 
 		--[[ "-data", ]]
 		--[[ vim.fn.expand("~/.cache/jdtls/workspace") .. workspace_dir, ]]
