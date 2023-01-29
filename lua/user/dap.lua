@@ -16,8 +16,29 @@ end
 require("nvim-dap-virtual-text").setup()
 dap_install.setup({})
 
+dapui.setup({
+	--[[ layouts = { ]]
+	--[[ 	elements = { ]]
+	--[[ 		{ ]]
+	--[[ 			id = "scopes", ]]
+	--[[ 			size = 0.25, -- Can be float or integer > 1 ]]
+	--[[ 		}, ]]
+	--[[ 		{ id = "breakpoints", size = 0.25 }, ]]
+	--[[ 	}, ]]
+	--[[ 	size = 40, ]]
+	--[[ 	position = "right", -- Can be "left", "right", "top", "bottom" ]]
+	--[[ }, ]]
+})
+
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+
+--[[ python ]]
+require("dap-python").test_runner = "pytest"
+--[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
 dap_install.config("python", {
+	--[[ require("dap-python").setup("~/.virtualenvs/debugpy/bin/python"), ]]
 	require("dap-python").setup("/path/to/python"),
+
 	table.insert(require("dap").configurations.python, {
 		type = "python",
 		request = "launch",
@@ -27,31 +48,14 @@ dap_install.config("python", {
 	}),
 })
 
---[[ dapui.setup({ ]]
---[[ 	layouts = { ]]
---[[ 		elements = { ]]
---[[ 			{ ]]
---[[ 				id = "scopes", ]]
---[[ 				size = 0.25, -- Can be float or integer > 1 ]]
---[[ 			}, ]]
---[[ 			{ id = "breakpoints", size = 0.25 }, ]]
---[[ 		}, ]]
---[[ 		size = 40, ]]
---[[ 		position = "right", -- Can be "left", "right", "top", "bottom" ]]
---[[ 	}, ]]
---[[ }) ]]
-
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-
--- ADAPTERS
+--[[ javascript ]]
 dap.adapters.node2 = {
 	type = "executable",
 	command = "node-debug2-adapter",
-	--[[ args = {os.getenv('HOME') .. '/.zinit/plugins/microsoft---vscode-node-debug2.git/out/src/nodeDebug.js'}, ]]
+	args = { os.getenv("HOME") .. "/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js" },
 	--[[ args =  { vim.fn.stdpath('data') .. '/mason/packages/node-debug2-adapter/out/src/nodeDebug.js' }, ]]
-	args = {},
+	--[[ args = {os.getenv('HOME') .. '/.zinit/plugins/microsoft---vscode-node-debug2.git/out/src/nodeDebug.js'}, ]]
 }
-
 dap.configurations.javascript = {
 	{
 		name = "Launch",
@@ -69,25 +73,86 @@ dap.configurations.javascript = {
 		type = "node2",
 		request = "attach",
 		restart = true,
-		-- port = 9229
+		--[[ port = 9229, ]]
 		processId = require("dap.utils").pick_process,
 	},
 }
 
-dap.adapters.ruby = {
+--[[ bash ]]
+dap.adapters.bashdb = {
 	type = "executable",
-	command = "bundle",
-	args = { "exec", "readapt", "stdio" },
+	command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
+	name = "bashdb",
 }
+dap.configurations.sh = {
+	{
+		type = "bashdb",
+		request = "launch",
+		name = "Launch file",
+		showDebugOutput = true,
+		pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
+		pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
+		trace = true,
+		file = "${file}",
+		program = "${file}",
+		cwd = "${workspaceFolder}",
+		pathCat = "cat",
+		pathBash = "/bin/bash",
+		pathMkfifo = "mkfifo",
+		pathPkill = "pkill",
+		args = {},
+		env = {},
+		terminalKind = "integrated",
+	},
+}
+
+--[[ go ]]
+
+--[[ c/c++/rust ]]
+
+--[[ ruby ]]
+require("dap-ruby").setup()
+dap.adapters.ruby = function(callback, config)
+	callback({
+		type = "server",
+		host = "127.0.0.1",
+		port = "${port}",
+		executable = {
+			command = "bundle",
+			args = {
+				"exec",
+				"rdbg",
+				"-n",
+				"--open",
+				"--port",
+				"${port}",
+				"-c",
+				"--",
+				"bundle",
+				"exec",
+				config.command,
+				config.script,
+			},
+		},
+	})
+end
 
 dap.configurations.ruby = {
 	{
 		type = "ruby",
-		request = "launch",
-		name = "Rails",
-		program = "bundle",
-		programArgs = { "exec", "rails", "s" },
-		useBundler = true,
+		name = "debug current file",
+		request = "attach",
+		localfs = true,
+		command = "ruby",
+		script = "${file}",
+	},
+	{
+		type = "ruby",
+		name = "run current spec file",
+		request = "attach",
+		localfs = true,
+		command = "rspec",
+		script = "${file}",
 	},
 }
 

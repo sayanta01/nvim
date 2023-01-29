@@ -84,37 +84,6 @@ typescript.setup({
 	},
 })
 
-require("lspconfig").solargraph.setup({
-	filetypes = { "ruby", "eruby" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-	--[[ capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()), ]]
-	settings = {
-		solargraph = {
-			diagnostics = true,
-		},
-	},
-})
-
-require("lspconfig")["pyright"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		python = {
-			analysis = {
-				typeCheckingMode = "off",
-				autoSearchPaths = true,
-				diagnosticMode = "workspace",
-				useLibraryCodeForTypes = true,
-				inlayHints = {
-					variableTypes = true,
-					functionReturnTypes = true,
-				},
-			},
-		},
-	},
-})
-
 require("lspconfig")["clangd"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -132,7 +101,6 @@ require("lspconfig")["sumneko_lua"].setup({
 				library = {
 					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 					[vim.fn.stdpath("config") .. "/lua"] = true,
-					--[[ vim.fn.stdpath("data") .. "/lazy/emmylua-nvim", ]]
 				},
 			},
 			telemetry = {
@@ -147,35 +115,19 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
 
+require("lspconfig")["emmet_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
+
 require("lspconfig")["html"].setup({
+	filetypes = { "html", "php" },
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 require("lspconfig")["cssls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["tsserver"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		typescript = {
-			inlayHints = {
-				includeInlayEnumMemberValueHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayVariableTypeHints = true,
-			},
-		},
-	},
-})
-
-require("lspconfig")["gopls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -195,31 +147,64 @@ require("lspconfig")["vimls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["yamlls"].setup({
+require("lspconfig")["texlab"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		gopls = {
+			gofumpt = true,
+		},
+	},
+	flags = {
+		debounce_text_changes = 140,
+	},
+})
+
+require("lspconfig")["jdtls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
-		yaml = {
-			hover = true,
-			completion = true,
-			validate = true,
-			schemaStore = {
-				enable = true,
-				url = "https://www.schemastore.org/api/json/catalog.json",
+		json = {
+			schemas = require("schemastore").json.schemas(),
+		},
+	},
+	init_options = {
+		provideFormatter = true,
+	},
+	setup = {
+		commands = {
+			Format = {
+				function()
+					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+				end,
 			},
-			schemas = {
-				kubernetes = {
-					"daemon.{yml,yaml}",
-					"manager.{yml,yaml}",
-					"restapi.{yml,yaml}",
-					"role.{yml,yaml}",
-					"role_binding.{yml,yaml}",
-					"*onfigma*.{yml,yaml}",
-					"*ngres*.{yml,yaml}",
-					"*ecre*.{yml,yaml}",
-					"*eployment*.{yml,yaml}",
-					"*ervic*.{yml,yaml}",
-					"kubectl-edit*.yaml",
+		},
+	},
+})
+
+require("lspconfig")["pyright"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "basic", -- off
+				diagnosticMode = "workspace",
+				autoSearchPaths = true,
+				useLibraryCodeForTypes = true,
+				inlayHints = {
+					variableTypes = true,
+					functionReturnTypes = true,
 				},
 			},
 		},
@@ -257,50 +242,71 @@ require("lspconfig")["rust_analyzer"].setup({
 	},
 })
 
-require("lspconfig")["ltex"].setup({
+require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
-		ltex = {
-			language = "en-GB",
+		typescript = {
+			inlayHints = {
+				includeInlayEnumMemberValueHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayVariableTypeHints = true,
+			},
 		},
 	},
 })
 
---[[ require("lspconfig")["texlab"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
-
---[[ require("lspconfig")["jdtls"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
-
---[[ local status_ok, schemastore = pcall(require, "schemastore") ]]
---[[ if not status_ok then ]]
---[[ 	return ]]
---[[ end ]]
-
-require("lspconfig")["jsonls"].setup({
+require("lspconfig")["ruby_ls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-	--[[ settings = { ]]
-	--[[ 	json = { ]]
-	--[[ schemas = schemastore.json.schemas(), ]]
-	--[[ 		schemas = require("schemastore").json.schemas(), ]]
-	--[[ 	}, ]]
-	--[[ }, ]]
-	--[[ init_options = { ]]
-	--[[ 	provideFormatter = true, ]]
-	--[[ }, ]]
-	--[[ setup = { ]]
-	--[[ 	commands = { ]]
-	--[[ 		Format = { ]]
-	--[[ 			function() ]]
-	--[[ 				vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 }) ]]
-	--[[ 			end, ]]
-	--[[ 		}, ]]
-	--[[ 	}, ]]
-	--[[ }, ]]
+})
+
+require("lspconfig").solargraph.setup({
+	filetypes = { "ruby", "eruby" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	--[[ capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()), ]]
+	settings = {
+		solargraph = {
+			diagnostics = true,
+		},
+		flags = {
+			debounce_text_changes = 140,
+		},
+	},
+})
+
+require("lspconfig")["yamlls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		yaml = {
+			hover = true,
+			completion = true,
+			validate = true,
+			schemaStore = {
+				enable = true,
+				url = "https://www.schemastore.org/api/json/catalog.json",
+			},
+			schemas = {
+				kubernetes = {
+					"daemon.{yml,yaml}",
+					"manager.{yml,yaml}",
+					"restapi.{yml,yaml}",
+					"role.{yml,yaml}",
+					"role_binding.{yml,yaml}",
+					"*onfigma*.{yml,yaml}",
+					"*ngres*.{yml,yaml}",
+					"*ecre*.{yml,yaml}",
+					"*eployment*.{yml,yaml}",
+					"*ervic*.{yml,yaml}",
+					"kubectl-edit*.yaml",
+				},
+			},
+		},
+	},
 })

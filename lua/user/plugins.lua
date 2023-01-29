@@ -91,12 +91,12 @@ require("lazy").setup({
 			-- your optional config goes here
 		end,
 	},
-    "Everblush/nvim",
+	"Everblush/nvim",
 	--[[ "catppuccin/nvim", ]]
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
-	"morhetz/gruvbox",
+	--[[ "morhetz/gruvbox", ]]
 	"rose-pine/neovim",
 	"LunarVim/darkplus.nvim",
 	{
@@ -125,6 +125,7 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
 	"jose-elias-alvarez/null-ls.nvim",
 	"jay-babu/mason-null-ls.nvim",
+	"jayp0521/mason-nvim-dap.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 
 	-- Debugger
@@ -139,4 +140,14 @@ require("lazy").setup({
 	--[[ 	end, ]]
 	--[[ }, ]]
 	"mfussenegger/nvim-dap-python",
+	"mfussenegger/nvim-jdtls",
+	"leoluz/nvim-dap-go",
+	"suketa/nvim-dap-ruby",
+	"simrat39/rust-tools.nvim",
+	{
+		"ray-x/go.nvim",
+		config = function()
+			require("go").setup()
+		end,
+	},
 })

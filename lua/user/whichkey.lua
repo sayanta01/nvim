@@ -183,20 +183,11 @@ local mappings = {
 		m = { ":set showmode!<cr>", "Show-mode in Statusline" },
 		M = { ":set cursorcolumn!<cr>", "Relative number" },
 		d = { ":MarkdownPreview<cr>", "Markdown Preview" },
-		--[[ y = { ":%y+ <cr>", "Copy whole file" }, ]]
 	},
 
 	p = {
 		name = "Plugin",
-		--[[ c = { ":PackerCompile<cr>", "Compile Plugins" }, ]]
-		--[[ i = { ":PackerInstall<cr>", "Install Plugins" }, ]]
-		--[[ r = { ":PackerClean<cr>", "Remove Unused Plugins" }, ]]
-		--[[ s = { ":PackerSync<cr>", "Sync Plugins" }, ]]
-		--[[ S = { ":PackerStatus<cr>", "Packer Status" }, ]]
-		--[[ u = { ":PackerUpdate<cr>", "Update Plugins" }, ]]
-
 		m = { ":Mason<cr>", "Mason" },
-
 		l = { ":Lazy<cr>", "Lazy" },
 		c = { ":Lazy build<cr>", "Build Plugins" },
 		i = { ":Lazy install<cr>", "Install Plugins" },
@@ -216,21 +207,30 @@ local mappings = {
 
 	d = {
 		name = "Debug",
-		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-		b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-		c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-		C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-		d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-		g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-		i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-		o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-		O = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-		p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-		r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-		q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-		u = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
-		l = { "<cmd>lua require'dap'.run_last()<cr>", "Last Run" },
-		x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
+		t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+		b = { ":lua require'dap'.step_back()<cr>", "Step Back" },
+		c = { ":lua require'dap'.continue()<cr>", "Continue" },
+		C = { ":lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+		d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+		g = { ":lua require'dap'.session()<cr>", "Get Session" },
+		i = { ":lua require'dap'.step_into()<cr>", "Step Into" },
+		o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
+		O = { ":lua require'dap'.step_out()<cr>", "Step Out" },
+		p = { ":lua require'dap'.pause()<cr>", "Pause" },
+		r = { ":lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
+		q = { ":lua require'dap'.close()<cr>", "Quit" },
+		u = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
+		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
+
+		--[[ dap-python ]]
+		m = { ":lua require('dap-python').test_method()<cr>", "Py Test Method" },
+		f = { ":lua require('dap-python').test_class()<cr>", "Py Test Class" },
+		s = { ":<ESC>:lua require('dap-python').debug_selection()<cr>", "Py Debug Selection" },
+
+		--[[ dap-go ]]
+		e = { ":lua require('dap-go').debug_test()<cr>", "Go Debug Test" },
+		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go Last Test" },
 	},
 
 	t = {

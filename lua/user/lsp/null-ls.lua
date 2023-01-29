@@ -4,22 +4,23 @@ local formatting = null_ls.builtins.formatting
 local code_actions = null_ls.builtins.code_actions
 
 local sources = {
-	--[[ formatting ]]
-	formatting.gofumpt,
-	--[[ formatting.google_java_format, ]]
-	formatting.stylua,
-	formatting.autopep8,
-	formatting.markdownlint,
-	formatting.phpcbf,
-	formatting.shfmt,
-	formatting.yamlfmt,
-	formatting.prettier.with({
-		extra_filetypes = { "toml" },
-		extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-	}),
+    --[[ formatting ]]
+    formatting.gofumpt,
+    --[[ formatting.google_java_format, ]]
+    formatting.stylua,
+    formatting.autopep8,
+    formatting.markdownlint,
+    formatting.phpcbf,
+    formatting.shfmt,
+    formatting.yamlfmt,
+    formatting.rubocop,
+    formatting.prettier.with({
+        extra_filetypes = { "toml" },
+        extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+    }),
 
-	--[[ code actions ]]
-	code_actions.eslint_d,
+    --[[ code actions ]]
+    code_actions.eslint_d,
 }
 
 --[[ local lsp_formatting = function(bufnr) ]]
@@ -49,6 +50,6 @@ local sources = {
 --[[ end ]]
 
 null_ls.setup({
-	sources = sources,
-	--[[ on_attach = on_attach, ]]
+    sources = sources,
+    --[[ on_attach = on_attach, ]]
 })

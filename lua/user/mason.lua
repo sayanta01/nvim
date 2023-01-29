@@ -33,7 +33,7 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 
 	ui = {
-		--[[ border = "rounded", ]]
+		border = "rounded",
 		icons = {
 			package_installed = "",
 			package_pending = "",
@@ -68,9 +68,24 @@ require("mason-null-ls").setup({
 		"phpcbf",
 		"shfmt",
 		"yamlfmt",
-		--[[ "rubocop", ]]
+		"rubocop",
 		--[[ "sqlfluff", ]]
 		--[[ "solhint", ]]
+	},
+	automatic_installation = true,
+})
+
+require("mason-nvim-dap").setup({
+	--[[ debugger ]]
+	ensure_installed = {
+		"delve",
+		"python",
+		"bash",
+		"javadbg",
+		"node2",
+		"chrome",
+		"firefox",
+		"php",
 	},
 	automatic_installation = true,
 })

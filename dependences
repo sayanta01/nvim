@@ -24,4 +24,25 @@ sudo npm i -g google-java-format live-server emmet
 
 # pip dependences
 pip install pynvim
-# debugpy sourcery black flake8
+# sourcery black flake8
+
+# go-dap
+go install github.com/go-delve/delve/cmd/dlv@latest
+
+# setup rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add rust-analyzer
+# cargo new project  # get started with rust
+
+# creating python venv for dap
+# mkdir ~/.virtualenvs
+# cd ~/.virtualenvs || exit
+# python -m venv debugpy
+# debugpy/bin/python -m pip install debugpy
+
+# javascript dap (-i node-debug2)
+# mkdir -p ~/dev/microsoft
+# git clone https://github.com/microsoft/vscode-node-debug2.git ~/dev/microsoft/vscode-node-debug2
+# cd ~/dev/microsoft/vscode-node-debug2 || exit
+# npm install
+# NODE_OPTIONS=--no-experimental-fetch npm run build
