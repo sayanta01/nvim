@@ -84,13 +84,13 @@ local mappings = {
 	Q = { ":wq<cr>", "Save & Quit" },
 	x = { ":bdelete<cr>", "Close Buffer" },
 	X = { ":bdelete!<cr>", "Force Close Buffer" },
-	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
+	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle" },
 	b = {
 		":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Buffers",
 	},
-	e = { ":NvimTreeToggle<cr>", "NvimTree" },
 	c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" },
+	e = { ":NvimTreeToggle<cr>", "NvimTree" },
 	f = {
 		":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find Files",
@@ -102,9 +102,9 @@ local mappings = {
 	g = {
 		name = "Git",
 		g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
-		o = { ":Telescope git_status<cr>", "Open changed file" },
-		b = { ":Telescope git_branches<cr>", "Checkout branch" },
-		c = { ":Telescope git_commits<cr>", "Checkout commit" },
+		o = { ":Telescope git_status<cr>", "Open Changed File" },
+		b = { ":Telescope git_branches<cr>", "Checkout Branch" },
+		c = { ":Telescope git_commits<cr>", "Checkout Commit" },
 		C = {
 			":Telescope git_bcommits<cr>",
 			"Checkout commit(for current file)",
@@ -123,33 +123,63 @@ local mappings = {
 	l = {
 		name = "LSP",
 		f = { ":lua vim.lsp.buf.format()<CR>", "Format File" },
-		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code actions" },
-		n = { ":lua vim.diagnostic.goto_next()<cr>", "Go to next diagnostic" },
-		p = { ":lua vim.diagnostic.goto_prev()<cr>", "Go to previous diagnostic" },
+		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
+		n = { ":lua vim.diagnostic.goto_next()<cr>", "Go to Next Diagnostic" },
+		p = { ":lua vim.diagnostic.goto_prev()<cr>", "Go to Previous Diagnostic" },
 		r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
 		i = { ":LspInfo<cr>", "Connected Language Servers" },
-		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add workspace folder" },
-		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove workspace folder" },
+		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
+		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		q = { ":lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
 		l = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		L = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List workspace folder" },
+		L = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
 
-		D = { ":lua vim.lsp.buf.declaration()<cr>", "Go to declaration" },
-		d = { ":lua vim.lsp.buf.definition()<cr>", "Go to definition" },
+		d = { ":lua vim.lsp.buf.declaration()<cr>", "Go to Declaration" },
+		D = { ":lua vim.lsp.buf.definition()<cr>", "Go to Definition" },
 		h = { ":lua vim.lsp.buf.hover()<cr>", "Hover" },
 		R = { ":lua vim.lsp.buf.references()<cr>", "References" },
-		k = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature help" },
-		t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type definition" },
+		k = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+		t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
+
+		I = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
+		O = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 	},
 
 	s = {
+		name = "Lsp Saga",
+		f = { ":Lspsaga lsp_finder<CR>", "Finder" },
+		a = { ":Lspsaga code_action<CR>", "Code Action" },
+		r = { ":Lspsaga rename<CR>", "Rename" },
+		s = { ":Lspsaga peek_definition<CR>", "Peek Definition" },
+		d = { ":Lspsaga goto_definition<CR>", "Goto Definition" },
+		--[[ l = { ":Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" }, ]]
+		c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics" },
+		b = { ":Lspsaga show_buf_diagnostics<CR>", "Buffer Diagnostics" },
+		n = { ":Lspsaga diagnostic_jump_next<CR>", "Diagnostics Next" },
+		p = { ":Lspsaga diagnostic_jump_prev<CR>", "Diagnostics Prev" },
+		--[[ keymap("n", "[E", function() ]]
+		--[[ require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) ]]
+		--[[ end), ]]
+		--[[ keymap("n", "]E", function() ]]
+		--[[ require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) ]]
+		--[[ end), ]]
+
+		-- Toggle outline
+		o = { ":Lspsaga outline<CR>", "Outline" },
+		h = { ":Lspsaga hover_doc<CR>", "Hover" },
+		i = { ":Lspsaga incoming_calls<CR>", "Incoming Calls" },
+		g = { ":Lspsaga outgoing_calls<CR>", "Outgoing Calls" },
+		--[[ t = { ":Lspsaga term_toggle<CR>", "Terminal" }, ]]
+	},
+
+	t = {
 		name = "Find with Telescope",
 		c = { ":Telescope colorscheme<cr>", "Colorscheme" },
 		C = { ":Telescope commands<cr>", "Commands" },
-		b = { ":Telescope builtin<cr>", "Telescope builtin" },
+		b = { ":Telescope builtin<cr>", "Telescope Builtin" },
 		d = { ":Telescope diagnostics<cr>", "Document Diagnostics" },
 		D = { ":lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" },
 		h = { ":Telescope help_tags<cr>", "Find Help" },
@@ -169,7 +199,7 @@ local mappings = {
 
 	o = {
 		name = "Options",
-		s = { ":set spell!<cr>", "Toggle spell check" },
+		s = { ":set spell!<cr>", "Toggle Spell Check" },
 		p = { ":!chmod +x %<cr>", "Chmod +x" },
 		t = { ":VimBeGood<cr>", "Vim Practice" },
 		c = { ":CccPick<cr>", "Color Pick" },
@@ -181,27 +211,28 @@ local mappings = {
 		w = { ":set wrap<cr>", "Wrap Text" },
 		W = { ":set nowrap<cr>", "No Wrap Text" },
 		m = { ":set showmode!<cr>", "Show-mode in Statusline" },
-		M = { ":set cursorcolumn!<cr>", "Relative number" },
+		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		d = { ":MarkdownPreview<cr>", "Markdown Preview" },
 	},
 
 	p = {
 		name = "Plugin",
 		m = { ":Mason<cr>", "Mason" },
+		n = { ":NullLsInfo<cr>", "NullLs" },
 		l = { ":Lazy<cr>", "Lazy" },
 		c = { ":Lazy build<cr>", "Build Plugins" },
 		i = { ":Lazy install<cr>", "Install Plugins" },
-		r = { ":Lazy clean<cr>", "Remove Unused Plugins" },
 		s = { ":Lazy sync<cr>", "Sync Plugins" },
+		r = { ":Lazy clean<cr>", "Remove Unused Plugins" },
 		S = { ":Lazy check<cr>", "Status" },
 		u = { ":Lazy update<cr>", "Update Plugins" },
 	},
 
 	B = {
 		name = "Buffer",
-		h = { ":BufferLineCloseLeft<cr>", "Close all to left" },
-		l = { ":BufferLineCloseRight<cr>", "Close all to right" },
-		p = { ":BufferLineTogglePin<cr>", "Toggle pin" },
+		h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
+		l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
+		p = { ":BufferLineTogglePin<cr>", "Toggle Pin" },
 		--[[ j = { ":BufferLinePick<cr>", "Jump" }, ]]
 	},
 
@@ -233,17 +264,12 @@ local mappings = {
 		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go Last Test" },
 	},
 
-	t = {
+	T = {
 		name = "Terminal",
 		h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },
 		v = { ":ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		n = { ":lua _NODE_TOGGLE()<cr>", "Node" },
 		p = { ":lua _PYTHON_TOGGLE()<cr>", "Python" },
-	},
-
-	T = {
-		name = "Treesitter",
-		i = { ":TSConfigInfo<cr>", "Info" },
 	},
 }
 

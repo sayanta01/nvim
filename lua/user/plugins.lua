@@ -11,18 +11,59 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--[[ notify config ]]
+local BUILTIN_STAGES = {
+	fade_IN_SLIDE_OUT = "fade_in_slide_out", -- fade, slide, static
+}
+local BUILTIN_RENDERERS = {
+	DEFAULT = "compact", -- minimal, compact, simple
+}
+
 require("lazy").setup({
 	-- Dependences
 	"nvim-lua/plenary.nvim",
 	"nvim-lua/popup.nvim",
 	"kyazdani42/nvim-web-devicons",
-	"rcarriga/nvim-notify",
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			require("notify").setup({
+				timeout = 2900,
+				level = vim.log.levels.INFO,
+				fps = 60,
+				icons = {
+					ERROR = "",
+					WARN = "",
+					INFO = "",
+					DEBUG = "",
+					TRACE = "✎",
+				},
+				stages = BUILTIN_STAGES.FADE_IN_SLIDE_OUT,
+				render = BUILTIN_RENDERERS.DEFAULT,
+				max_width = nil,
+				max_height = nil,
+				--[[ max_height = function() ]]
+				--[[ 	return math.floor(vim.o.lines * 0.75) ]]
+				--[[ end, ]]
+				--[[ max_width = function() ]]
+				--[[ 	return math.floor(vim.o.columns * 0.75) ]]
+				--[[ end, ]]
+			})
+		end,
+	},
 	{
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
 	--[[ "antoinemadec/FixCursorHold.nvim", ]]
 	--[[ "moll/vim-bbye", ]]
+	{
+		"glepnir/lspsaga.nvim",
+		event = "BufRead",
+		--[[ config = function() ]]
+		--[[ require("lspsaga").setup() ]]
+		--[[ end, ]]
+	},
 
 	-- Feature
 	"lewis6991/gitsigns.nvim",
@@ -92,6 +133,7 @@ require("lazy").setup({
 		end,
 	},
 	"Everblush/nvim",
+	"Shatur/neovim-ayu",
 	--[[ "catppuccin/nvim", ]]
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
@@ -105,7 +147,7 @@ require("lazy").setup({
 	},
 	"folke/tokyonight.nvim",
 
-	-- Cmp plugins
+	-- Cmp
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",

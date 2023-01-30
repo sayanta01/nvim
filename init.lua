@@ -17,7 +17,6 @@ require("user.project")
 require("user.alpha")
 
 require("user.treesitter")
---[[ require("user.rainbow-bracket") ]]
 require("user.comment")
 
 require("user.bufferline")
@@ -30,6 +29,7 @@ require("user.autocommands")
 require("user.nvim-tree")
 require("user.whichkey")
 require("user.cmp")
+require("user.saga")
 require("user.lsp")
 require("user.dap")
 

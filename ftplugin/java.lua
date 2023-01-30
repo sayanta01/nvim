@@ -72,10 +72,10 @@ local config = {
 		"-configuration",
 		"~/.local/share/nvim/mason/packages/jdtls/config_linux",
 
-		--[[ "-data", ]]
-		--[[ vim.fn.expand("~/.cache/jdtls/workspace") .. workspace_dir, ]]
 		"-data",
-		workspace_dir,
+		vim.fn.expand("~/.cache/jdtls/workspace") .. workspace_dir,
+		--[[ "-data", ]]
+		--[[ workspace_dir, ]]
 	},
 
 	capabilities = capabilities,
