@@ -10,7 +10,11 @@ saga.setup({
 	definition = {
 		edit = "<CR>",
 	},
-
+	lightbulb = {
+		enable_in_insert = false,
+		sign = true,
+		virtual_text = false,
+	},
 	outline = {
 		win_position = "right",
 		win_with = "",

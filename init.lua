@@ -5,7 +5,7 @@ require("user.plugins")
 -- Unbreakable
 require("user.gitsigns")
 require("user.toggleterm")
---[[ require("user.colorizer") ]]
+require("user.colorizer")
 require("user.colorscheme")
 require("user.zen-mode")
 require("user.impatient")
@@ -33,11 +33,14 @@ require("user.saga")
 require("user.lsp")
 require("user.dap")
 
---[[ notify config ]]
+--[[ Notify config ]]
 vim.notify = require("notify")
 
 --[[ Comment function for json ]]
 vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")
+
+--[[ Color highlighter ]]
+--[[ vim.cmd("CccHighlighterToggle") ]]
 
 --[[ require("go").setup() ]]
 --[[ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {}) ]]

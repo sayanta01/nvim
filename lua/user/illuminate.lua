@@ -36,7 +36,7 @@ require("illuminate").configure({
 		"NvimTree",
 		"TelescopePrompt",
 		"toggleterm",
-		--[[ "lazy", ]]
+		"lazy",
 		--[[ "Trouble", ]]
 	},
 	-- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist

@@ -19,7 +19,7 @@ end
 local kind_icons = {
 	Text = "",
 	Method = "",
-	--[[ Method = "m", ]]
+	--[[ Method = "", ]]
 	Function = "",
 	Constructor = "",
 	Field = "",
@@ -41,6 +41,7 @@ local kind_icons = {
 	Color = "",
 	File = "",
 	Reference = "",
+	--[[ Reference = "", ]]
 	Folder = "",
 	EnumMember = "",
 	Constant = "",
@@ -50,6 +51,16 @@ local kind_icons = {
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
+	Namespace = "",
+	Package = "",
+	String = "",
+	--[[ String = "", ]]
+	Number = "",
+	Boolean = "◩",
+	Array = "",
+	Object = "",
+	Key = "",
+	Null = "ﳠ",
 }
 
 cmp.setup({
