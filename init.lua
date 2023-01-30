@@ -5,7 +5,7 @@ require("user.plugins")
 -- Unbreakable
 require("user.gitsigns")
 require("user.toggleterm")
-require("user.colorizer")
+--[[ require("user.colorizer") ]]
 require("user.colorscheme")
 require("user.zen-mode")
 require("user.impatient")
