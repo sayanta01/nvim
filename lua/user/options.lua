@@ -1,5 +1,4 @@
 local options = {
-	-- Settings
 	showcmd = false,
 	showmode = false,
 	timeoutlen = 400,
