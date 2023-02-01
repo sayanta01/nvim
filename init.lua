@@ -24,12 +24,13 @@ require("user.autopairs")
 require("user.lualine")
 require("user.illuminate")
 
--- Dynamic
 require("user.autocommands")
 require("user.nvim-tree")
-require("user.whichkey")
-require("user.cmp")
 require("user.saga")
+require("user.cmp")
+
+-- Dynamic
+require("user.whichkey")
 require("user.lsp")
 require("user.dap")
 

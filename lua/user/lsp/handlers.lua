@@ -58,7 +58,6 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
 
 	--[[ buf_set_keymap("n", "<leader>lr", ":lua vim.lsp.util.rename()<CR>", opts) --> renaname old_fname to new_fname ]]
-
 	buf_set_keymap("n", "<leader>lq", ":lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
@@ -126,7 +125,7 @@ require("lspconfig")["emmet_ls"].setup({
 })
 
 require("lspconfig")["html"].setup({
-	filetypes = { "html", "php" },
+	filetypes = { "html", "php", "xml" },
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -169,11 +168,6 @@ require("lspconfig")["gopls"].setup({
 	},
 })
 
-require("lspconfig")["jdtls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -194,6 +188,26 @@ require("lspconfig")["jsonls"].setup({
 			},
 		},
 	},
+})
+
+require("lspconfig").solargraph.setup({
+	filetypes = { "ruby", "eruby" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	--[[ capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()), ]]
+	settings = {
+		solargraph = {
+			diagnostics = true,
+		},
+		flags = {
+			debounce_text_changes = 140,
+		},
+	},
+})
+
+require("lspconfig")["jdtls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["pyright"].setup({
@@ -269,21 +283,6 @@ require("lspconfig")["ruby_ls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig").solargraph.setup({
-	filetypes = { "ruby", "eruby" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-	--[[ capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities()), ]]
-	settings = {
-		solargraph = {
-			diagnostics = true,
-		},
-		flags = {
-			debounce_text_changes = 140,
-		},
-	},
-})
-
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -296,21 +295,21 @@ require("lspconfig")["yamlls"].setup({
 				enable = true,
 				url = "https://www.schemastore.org/api/json/catalog.json",
 			},
-			schemas = {
-				kubernetes = {
-					"daemon.{yml,yaml}",
-					"manager.{yml,yaml}",
-					"restapi.{yml,yaml}",
-					"role.{yml,yaml}",
-					"role_binding.{yml,yaml}",
-					"*onfigma*.{yml,yaml}",
-					"*ngres*.{yml,yaml}",
-					"*ecre*.{yml,yaml}",
-					"*eployment*.{yml,yaml}",
-					"*ervic*.{yml,yaml}",
-					"kubectl-edit*.yaml",
-				},
-			},
+			--[[ schemas = { ]]
+			--[[ 	kubernetes = { ]]
+			--[[ 		"daemon.{yml,yaml}", ]]
+			--[[ 		"manager.{yml,yaml}", ]]
+			--[[ 		"restapi.{yml,yaml}", ]]
+			--[[ 		"role.{yml,yaml}", ]]
+			--[[ 		"role_binding.{yml,yaml}", ]]
+			--[[ 		"*onfigma*.{yml,yaml}", ]]
+			--[[ 		"*ngres*.{yml,yaml}", ]]
+			--[[ 		"*ecre*.{yml,yaml}", ]]
+			--[[ 		"*eployment*.{yml,yaml}", ]]
+			--[[ 		"*ervic*.{yml,yaml}", ]]
+			--[[ 		"kubectl-edit*.yaml", ]]
+			--[[ 	}, ]]
+			--[[ }, ]]
 		},
 	},
 })

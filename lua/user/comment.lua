@@ -17,7 +17,7 @@ comment.setup({
 		return require("ts_context_commentstring.internal").calculate_commentstring({
 			key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
 			location = location,
-			vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc"),
+
 			--[[ extra = { ]]
 			--[[ 	---Add comment on the line above ]]
 			--[[ 	above = "gcO", ]]

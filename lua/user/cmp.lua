@@ -17,7 +17,8 @@ local check_backspace = function()
 end
 
 local kind_icons = {
-	Text = "",
+	Text = "",
+	--[[ Text = "", ]]
 	Method = "",
 	--[[ Method = "", ]]
 	Function = "",
@@ -61,6 +62,27 @@ local kind_icons = {
 	Object = "",
 	Key = "",
 	Null = "ﳠ",
+
+	--  Extra icons
+	--[[ Array = "", ]]
+	--[[ NoteBook = " ", ]]
+	--[[ Dashboard = " ", ]]
+	--[[ NewFile = " ", ]]
+	--[[ Diff = " ", ]]
+	--[[ Diff = "", ]]
+	--[[ Rename = " ", ]]
+	--[[ String = " ", ]]
+	--[[ Misc = " ", ]]
+	--[[ Operator = " ", ]]
+	--[[ Reference = " ", ]]
+	--[[ Struct = " ", ]]
+	--[[ Unit = " ", ]]
+	--[[ Interface = " ", ]]
+	--[[ CircuitBoard = "", ]]
+	--[[ Robot = "ﮧ", ]]
+	--[[ CloudDownload = "", ]]
+	--[[ Boolean = " ", ]]
+	--[[ Boolean = "蘒", ]]
 }
 
 cmp.setup({

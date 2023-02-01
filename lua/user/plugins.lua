@@ -68,7 +68,7 @@ require("lazy").setup({
 	-- Feature
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
-	"norcalli/nvim-colorizer.lua",
+	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
 	"folke/zen-mode.nvim",
 	"lewis6991/impatient.nvim",
@@ -175,12 +175,7 @@ require("lazy").setup({
 	"rcarriga/nvim-dap-ui",
 	"ravenxrz/DAPInstall.nvim",
 	"theHamsta/nvim-dap-virtual-text",
-	--[[ { ]]
-	--[[ 	"theHamsta/nvim-dap-virtual-text", ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("nvim-dap-virtual-text").setup() ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
+	"mxsdev/nvim-dap-vscode-js",
 	"mfussenegger/nvim-dap-python",
 	"mfussenegger/nvim-jdtls",
 	"leoluz/nvim-dap-go",
