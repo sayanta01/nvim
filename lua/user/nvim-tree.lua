@@ -8,9 +8,9 @@ local options = {
 		dotfiles = false,
 		exclude = { "custom" },
 	},
-	disable_netrw = true,
+	disable_netrw = false,
 	hijack_cursor = true,
-	hijack_netrw = true,
+	hijack_netrw = false,
 	hijack_unnamed_buffer_when_opening = false,
 	--[[ ignore_ft_on_setup = { "alpha" }, ]]
 	--[[ open_on_setup = false, ]]
