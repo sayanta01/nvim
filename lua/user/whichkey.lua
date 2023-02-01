@@ -79,11 +79,11 @@ local opts = {
 local mappings = {
 	[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
 	w = { ":w!<cr>", "Save" },
-	W = { ":noautocmd w<cr>", "Save without formatting (noautocmd)" },
+	--[[ W = { ":noautocmd w<cr>", "Save without formatting (noautocmd)" }, ]]
 	q = { ":q!<cr>", "Quit" },
-	Q = { ":wq<cr>", "Save & Quit" },
+	--[[ Q = { ":wq<cr>", "Save & Quit" }, ]]
 	x = { ":bdelete<cr>", "Close Buffer" },
-	X = { ":bdelete!<cr>", "Force Close Buffer" },
+	--[[ X = { ":bdelete!<cr>", "Force Close Buffer" }, ]]
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle" },
 	b = {
 		":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -96,8 +96,8 @@ local mappings = {
 		"Find Files",
 	},
 	--[[ f = {":Telescope find_files<cr>", "Find Files"}, ]]
-	r = { ":Telescope live_grep<cr>", "Live Grep" },
 	i = { ":Telescope media_files<cr>", "Media files" },
+	r = { ":Telescope live_grep<cr>", "Live Grep" },
 
 	g = {
 		name = "Git",
