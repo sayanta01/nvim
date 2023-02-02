@@ -11,6 +11,7 @@ require("user.zen-mode")
 require("user.impatient")
 require("user.indentline")
 require("user.mason")
+require("user.icons")
 
 require("user.telescope")
 require("user.project")
@@ -25,8 +26,9 @@ require("user.lualine")
 require("user.illuminate")
 
 require("user.autocommands")
-require("user.nvim-tree")
 require("user.saga")
+require("user.nvim-tree")
+require("user.surround")
 require("user.cmp")
 
 -- Dynamic
@@ -43,12 +45,25 @@ vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")
 --[[ Color highlighter ]]
 --[[ vim.cmd("CccHighlighterToggle") ]]
 
---[[ require("go").setup() ]]
---[[ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {}) ]]
---[[ vim.api.nvim_create_autocmd("BufWritePre", { ]]
---[[ 	pattern = "*.go", ]]
---[[ 	callback = function() ]]
---[[ 		require("go.format").goimport() ]]
---[[ 	end, ]]
---[[ 	group = format_sync_grp, ]]
---[[ }) ]]
+--[[ ufo ]]
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+
+--[[ local capabilities = vim.lsp.protocol.make_client_capabilities() ]]
+--[[ capabilities.textDocument.foldingRange = { ]]
+--[[ 	dynamicRegistration = false, ]]
+--[[ 	lineFoldingOnly = true, ]]
+--[[ } ]]
+--[[ local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'} ]]
+--[[ for _, ls in ipairs(language_servers) do ]]
+--[[ 	require("lspconfig")[ls].setup({ ]]
+--[[ 		capabilities = capabilities, ]]
+--[[ 		-- you can add other fields for setting up lsp server in this table ]]
+--[[ 	}) ]]
+--[[ end ]]
+require("ufo").setup()

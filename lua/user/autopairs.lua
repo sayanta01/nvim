@@ -10,7 +10,7 @@ npairs.setup({
 		javascript = { "string", "template_string" },
 		java = false, -- don't check treesitter on java
 	},
-	disable_filetype = { "TelescopePrompt", "vim" },
+	disable_filetype = { "TelescopePrompt", "spectre_panel", "vim" },
 	fast_wrap = {
 		map = "<M-e>",
 		chars = { "{", "[", "(", '"', "'" },
@@ -19,8 +19,8 @@ npairs.setup({
 		end_key = "$",
 		keys = "qwertyuiopzxcvbnmasdfghjkl",
 		check_comma = true,
-		--[[ highlight = "PmenuSel", -- Search ]]
-		--[[ highlight_grey = "LineNr", -- Comment ]]
+		highlight = "PmenuSel", -- Search
+		highlight_grey = "LineNr", -- Comment
 	},
 	enable_moveright = true,
 	---@usage disable when recording or executing a macro

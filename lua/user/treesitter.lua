@@ -21,6 +21,7 @@ configs.setup({
 		"vue",
 		"markdown",
 		"markdown_inline",
+		"graphql",
 		"html",
 		"css",
 		"scss",

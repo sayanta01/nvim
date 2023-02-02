@@ -38,9 +38,22 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	end,
 })
 
--- Highlight Yanked Text
+-- Highlight Yanked text
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
+	end,
+})
+
+-- Restore last cursor position
+local fn = vim.fn
+vim.api.nvim_create_autocmd("BufReadPost", {
+	pattern = "*",
+	callback = function()
+		if fn.line("'\"") > 0 and fn.line("'\"") <= fn.line("$") then
+			fn.setpos(".", fn.getpos("'\""))
+			-- vim.cmd('normal zz') -- how do I center the buffer in a sane way??
+			vim.cmd("silent! foldopen")
+		end
 	end,
 })

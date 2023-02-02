@@ -23,7 +23,8 @@ require("lazy").setup({
 	-- Dependences
 	"nvim-lua/plenary.nvim",
 	"nvim-lua/popup.nvim",
-	"kyazdani42/nvim-web-devicons",
+	--[[ "kyazdani42/nvim-web-devicons", ]]
+	"nvim-tree/nvim-web-devicons",
 	{
 		"rcarriga/nvim-notify",
 		config = function()
@@ -51,18 +52,11 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
-		"b0o/schemastore.nvim",
-		lazy = true,
-	},
 	--[[ "antoinemadec/FixCursorHold.nvim", ]]
 	--[[ "moll/vim-bbye", ]]
 	{
 		"glepnir/lspsaga.nvim",
 		event = "BufRead",
-		--[[ config = function() ]]
-		--[[ require("lspsaga").setup() ]]
-		--[[ end, ]]
 	},
 
 	-- Feature
@@ -105,11 +99,12 @@ require("lazy").setup({
 	"numToStr/Comment.nvim",
 	"akinsho/bufferline.nvim",
 	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
+	"kylechui/nvim-surround",
 	"nvim-lualine/lualine.nvim",
 	"RRethy/vim-illuminate",
-
 	"folke/which-key.nvim",
 	"kyazdani42/nvim-tree.lua",
+	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 
 	-- Extra
 	"ThePrimeagen/vim-be-good",
@@ -165,10 +160,14 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-	"jose-elias-alvarez/null-ls.nvim",
 	"jay-babu/mason-null-ls.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
 	"jayp0521/mason-nvim-dap.nvim",
 	"jose-elias-alvarez/typescript.nvim",
+	{
+		"b0o/schemastore.nvim",
+		lazy = true,
+	},
 
 	-- Debugger
 	"mfussenegger/nvim-dap",
