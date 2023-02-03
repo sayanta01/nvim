@@ -211,5 +211,4 @@ ins_right({
 	--cond = conditions.hide_in_width,
 })
 
--- Now don't forget to initialize lualine
 lualine.setup(config)

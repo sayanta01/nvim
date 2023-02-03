@@ -14,21 +14,20 @@ require("user.mason")
 require("user.lualine")
 require("user.icons")
 require("user.surround")
+require("user.bufferline")
+require("user.nvim-tree")
+
+require("user.treesitter")
+require("user.comment")
+require("user.autopairs")
+require("user.illuminate")
 
 require("user.telescope")
 require("user.project")
 require("user.alpha")
 
-require("user.treesitter")
-require("user.comment")
-
-require("user.bufferline")
-require("user.autopairs")
-require("user.illuminate")
-
 require("user.autocommands")
 require("user.saga")
-require("user.nvim-tree")
 require("user.cmp")
 
 -- Dynamic
