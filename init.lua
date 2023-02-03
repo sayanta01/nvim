@@ -11,7 +11,9 @@ require("user.zen-mode")
 require("user.impatient")
 require("user.indentline")
 require("user.mason")
+require("user.lualine")
 require("user.icons")
+require("user.surround")
 
 require("user.telescope")
 require("user.project")
@@ -22,13 +24,11 @@ require("user.comment")
 
 require("user.bufferline")
 require("user.autopairs")
-require("user.lualine")
 require("user.illuminate")
 
 require("user.autocommands")
 require("user.saga")
 require("user.nvim-tree")
-require("user.surround")
 require("user.cmp")
 
 -- Dynamic
@@ -45,11 +45,10 @@ vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")
 --[[ Color highlighter ]]
 --[[ vim.cmd("CccHighlighterToggle") ]]
 
---[[ ufo ]]
+--[[ ufo - fix this ]]
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Feel free to decrease the value
 vim.o.foldlevelstart = 99
-vim.o.foldenable = true
 
 vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 vim.keymap.set("n", "zM", require("ufo").closeAllFolds)

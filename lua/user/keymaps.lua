@@ -64,6 +64,9 @@ keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts)
 -- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
 
+--[[ Delete (not cut) ]]
+keymap("n", "dd", '"_dd', opts)
+
 -- Move text up and down
 keymap("n", "<A-l>", ":m .+1<CR>==", opts)
 keymap("n", "<A-h>", ":m .-2<CR>==", opts)
