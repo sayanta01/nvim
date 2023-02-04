@@ -89,14 +89,14 @@ local mappings = {
 		":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Buffers",
 	},
-	c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" },
+	--[[ c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" }, ]]
 	e = { ":NvimTreeToggle<cr>", "NvimTree" },
 	f = {
 		":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find Files",
 	},
 	--[[ f = {":Telescope find_files<cr>", "Find Files"}, ]]
-	i = { ":Telescope media_files<cr>", "Media files" },
+	--[[ i = { ":Telescope media_files<cr>", "Media files" }, ]]
 	r = { ":Telescope live_grep<cr>", "Live Grep" },
 
 	g = {
@@ -181,7 +181,7 @@ local mappings = {
 		C = { ":Telescope commands<cr>", "Commands" },
 		b = { ":Telescope builtin<cr>", "Telescope Builtin" },
 		d = { ":Telescope diagnostics<cr>", "Document Diagnostics" },
-		D = { ":lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" },
+		--[[ D = { ":lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" }, ]]
 		h = { ":Telescope help_tags<cr>", "Find Help" },
 		H = { ":Telescope highlights<cr>", "Find highlight groups" },
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },

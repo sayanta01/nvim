@@ -22,14 +22,6 @@ local BUILTIN_RENDERERS = {
 require("lazy").setup({
 	-- Dependences
 	"nvim-lua/plenary.nvim",
-	{
-		"glepnir/dashboard-nvim",
-		event = "VimEnter",
-		opts = {
-			-- config
-		},
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
-	},
 	"nvim-lua/popup.nvim",
 	--[[ "kyazdani42/nvim-web-devicons", ]]
 	"nvim-tree/nvim-web-devicons",
@@ -62,10 +54,6 @@ require("lazy").setup({
 	},
 	--[[ "antoinemadec/FixCursorHold.nvim", ]]
 	--[[ "moll/vim-bbye", ]]
-	{
-		"glepnir/lspsaga.nvim",
-		event = "BufRead",
-	},
 
 	-- Feature
 	"lewis6991/gitsigns.nvim",
@@ -75,6 +63,10 @@ require("lazy").setup({
 	"folke/zen-mode.nvim",
 	"lewis6991/impatient.nvim",
 	"lukas-reineke/indent-blankline.nvim",
+	"nvim-lualine/lualine.nvim",
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	"akinsho/bufferline.nvim",
+	"kylechui/nvim-surround",
 
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
@@ -83,7 +75,6 @@ require("lazy").setup({
 	"ahmedkhalf/project.nvim",
 	"goolord/alpha-nvim",
 
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "VeryLazy",
@@ -105,10 +96,7 @@ require("lazy").setup({
 		end,
 	},
 	"numToStr/Comment.nvim",
-	"akinsho/bufferline.nvim",
 	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
-	"kylechui/nvim-surround",
-	"nvim-lualine/lualine.nvim",
 	"RRethy/vim-illuminate",
 	"folke/which-key.nvim",
 	"kyazdani42/nvim-tree.lua",
@@ -170,6 +158,10 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
+	{
+		"glepnir/lspsaga.nvim",
+		event = "BufRead",
+	},
 	"jayp0521/mason-nvim-dap.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	{
