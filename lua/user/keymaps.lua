@@ -68,8 +68,8 @@ keymap("n", "<S-b>", ":enew <CR>", opts)
 keymap("n", "dd", '"_dd', opts)
 
 -- Move text up and down
-keymap("n", "<A-l>", ":m .+1<CR>==", opts)
-keymap("n", "<A-h>", ":m .-2<CR>==", opts)
+keymap("n", "<A-h>", ":m .+1<CR>==", opts)
+keymap("n", "<A-l>", ":m .-2<CR>==", opts)
 
 keymap("n", "<C-v>", ":vsplit<CR>", opts)
 keymap("n", "<C-s>", ":split<CR>", opts)

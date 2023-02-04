@@ -11,8 +11,8 @@ local options = {
 	backup = false,
 	cursorline = true,
 	expandtab = true,
-	shiftwidth = 4,
-	tabstop = 4,
+	shiftwidth = 2,
+	tabstop = 2,
 	completeopt = { "menuone", "noselect" },
 	clipboard = "unnamedplus",
 	mouse = "a",
@@ -46,8 +46,7 @@ vim.opt.spelllang:append("cjk") -- disable spellchecking for asian characters (V
 vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.shortmess:append("sI") -- disable nvim intro
-vim.opt.iskeyword:append("-")
---[[ vim.opt.fillchars.eob = " " ]]
+--[[ vim.opt.iskeyword:append("-") ]]
 
 -- Disable builtin plugins
 --[[ vim.g.loaded_netrw = 1 ]]

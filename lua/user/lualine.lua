@@ -184,13 +184,13 @@ ins_right({
 })
 
 -- Add components to right sections
-ins_right({
-	"o:encoding", -- option component same as &encoding in viml
-	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-	cond = nil,
-	--cond = conditions.hide_in_width,
-	color = { fg = colors.fg, gui = "italic" },
-})
+--[[ ins_right({ ]]
+--[[ 	"o:encoding", -- option component same as &encoding in viml ]]
+--[[ 	fmt = string.upper, -- I'm not sure why it's upper case either ;) ]]
+--[[ 	cond = nil, ]]
+--[[ 	--cond = conditions.hide_in_width, ]]
+--[[ 	color = { fg = colors.fg, gui = "italic" }, ]]
+--[[ }) ]]
 
 ins_right({
 	"branch",

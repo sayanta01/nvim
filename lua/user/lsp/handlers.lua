@@ -21,12 +21,12 @@ local on_attach = function(client, bufnr)
 
 	local config = {
 		virtual_text = true, -- disable virtual text
+		update_in_insert = false,
+		underline = true,
+		severity_sort = true,
 		signs = {
 			active = signs, -- show signs
 		},
-		update_in_insert = true,
-		underline = true,
-		severity_sort = true,
 		float = {
 			focusable = true,
 			style = "minimal",

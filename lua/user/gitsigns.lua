@@ -22,7 +22,7 @@ gitsigns.setup({
 		interval = 1000,
 	},
 	sign_priority = 6,
-	update_debounce = 200,
+	update_debounce = 100,
 	status_formatter = nil,
 	max_file_length = 40000,
 })

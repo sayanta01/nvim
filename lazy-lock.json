@@ -13,6 +13,7 @@
   "cmp-spell": { "branch": "master", "commit": "60584cb75e5e8bba5a0c9e4c3ab0791e0698bffa" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "darkplus.nvim": { "branch": "master", "commit": "1826879d9cb14e5d93cd142d19f02b23840408a6" },
+  "dashboard-nvim": { "branch": "master", "commit": "f4eedba90f0a55111351fd45444db5a82081727f" },
   "friendly-snippets": { "branch": "main", "commit": "a6f7a1609addb4e57daa6bedc300f77f8d225ab7" },
   "gitsigns.nvim": { "branch": "main", "commit": "0d4fe37ba5285171f3729da955955205f3fa945b" },
   "go.nvim": { "branch": "master", "commit": "b9e381678e3b08249d1b12477ebcb48bf95f259e" },

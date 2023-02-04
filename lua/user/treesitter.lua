@@ -36,9 +36,6 @@ configs.setup({
 	},
 	sync_install = false,
 	ignore_install = { "" },
-	autopairs = {
-		enable = true,
-	},
 	highlight = {
 		enable = true,
 		disable = { "latex" },

@@ -22,6 +22,14 @@ local BUILTIN_RENDERERS = {
 require("lazy").setup({
 	-- Dependences
 	"nvim-lua/plenary.nvim",
+	{
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		opts = {
+			-- config
+		},
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
 	"nvim-lua/popup.nvim",
 	--[[ "kyazdani42/nvim-web-devicons", ]]
 	"nvim-tree/nvim-web-devicons",

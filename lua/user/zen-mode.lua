@@ -3,7 +3,7 @@ require("zen-mode").setup({
 		backdrop = 0.95,
 		width = 140,
 		height = 0.9,
-		options = { signcolumn = "no", number = false, cursorline = true },
+		options = { signcolumn = "no", number = false, cursorline = true, foldcolumn = "0" },
 	},
 	plugins = {
 		options = { enabled = true, ruler = false, showcmd = false },
