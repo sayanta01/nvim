@@ -46,14 +46,23 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 })
 
 -- Restore last cursor position
-local fn = vim.fn
 vim.api.nvim_create_autocmd("BufReadPost", {
-	pattern = "*",
 	callback = function()
-		if fn.line("'\"") > 0 and fn.line("'\"") <= fn.line("$") then
-			fn.setpos(".", fn.getpos("'\""))
-			-- vim.cmd('normal zz') -- how do I center the buffer in a sane way??
-			vim.cmd("silent! foldopen")
+		local mark = vim.api.nvim_buf_get_mark(0, '"')
+		local lcount = vim.api.nvim_buf_line_count(0)
+		if mark[1] > 0 and mark[1] <= lcount then
+			pcall(vim.api.nvim_win_set_cursor, 0, mark)
 		end
 	end,
 })
+
+--[[ json support ]]
+local json_group = vim.api.nvim_create_augroup("Json", { clear = true })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	command = [[syntax match Comment +\/\/.\+$+]],
+	group = json_group,
+	pattern = "*.json",
+})
+
+--[[ Comment function for json ]]
+vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")

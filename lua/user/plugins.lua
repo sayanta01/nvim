@@ -52,8 +52,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	--[[ "antoinemadec/FixCursorHold.nvim", ]]
-	--[[ "moll/vim-bbye", ]]
 
 	-- Feature
 	"lewis6991/gitsigns.nvim",
@@ -123,20 +121,28 @@ require("lazy").setup({
 			-- your optional config goes here
 		end,
 	},
-	"Everblush/nvim",
+	{ "Everblush/nvim", name = "everblush" },
 	"Shatur/neovim-ayu",
-	--[[ "catppuccin/nvim", ]]
+	{ "catppuccin/nvim", name = "catppuccin" },
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
-	--[[ "morhetz/gruvbox", ]]
-	"rose-pine/neovim",
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("rose-pine").setup()
+		end,
+	},
 	"LunarVim/darkplus.nvim",
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 	},
 	"folke/tokyonight.nvim",
+	"lunarvim/synthwave84.nvim",
 
 	-- Cmp
 	"hrsh7th/nvim-cmp",

@@ -81,7 +81,6 @@ local mappings = {
 	w = { ":w!<cr>", "Save" },
 	--[[ W = { ":noautocmd w<cr>", "Save without formatting (noautocmd)" }, ]]
 	q = { ":q!<cr>", "Quit" },
-	--[[ Q = { ":wq<cr>", "Save & Quit" }, ]]
 	x = { ":bdelete<cr>", "Close Buffer" },
 	--[[ X = { ":bdelete!<cr>", "Force Close Buffer" }, ]]
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle" },
@@ -91,11 +90,11 @@ local mappings = {
 	},
 	--[[ c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" }, ]]
 	e = { ":NvimTreeToggle<cr>", "NvimTree" },
-	f = {
-		":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		"Find Files",
-	},
-	--[[ f = {":Telescope find_files<cr>", "Find Files"}, ]]
+	--[[ f = { ]]
+	--[[ 	":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
+	--[[ 	"Find Files", ]]
+	--[[ }, ]]
+	f = { ":Telescope find_files<cr>", "Find Files" },
 	--[[ i = { ":Telescope media_files<cr>", "Media files" }, ]]
 	r = { ":Telescope live_grep<cr>", "Live Grep" },
 

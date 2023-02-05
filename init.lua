@@ -38,9 +38,6 @@ require("user.dap")
 --[[ Notify config ]]
 vim.notify = require("notify")
 
---[[ Comment function for json ]]
-vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")
-
 --[[ Color highlighter ]]
 --[[ vim.cmd("CccHighlighterToggle") ]]
 
