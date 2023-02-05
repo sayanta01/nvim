@@ -118,12 +118,6 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["emmet_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-})
-
 require("lspconfig")["html"].setup({
 	filetypes = { "html", "php", "xml" },
 	on_attach = on_attach,
@@ -135,12 +129,18 @@ require("lspconfig")["cssls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["marksman"].setup({
-	on_attach = on_attach,
+require("lspconfig")["tailwindcss"].setup({
 	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
-require("lspconfig")["dockerls"].setup({
+require("lspconfig")["emmet_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
+
+require("lspconfig")["marksman"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -151,6 +151,11 @@ require("lspconfig")["vimls"].setup({
 })
 
 require("lspconfig")["texlab"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["dockerls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
