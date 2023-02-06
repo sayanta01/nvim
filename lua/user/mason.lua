@@ -35,7 +35,7 @@ require("mason-lspconfig").setup({
 		"sumneko_lua",
 		"jedi_language_server", -- python
 		"pyright",
-		"pylsp",
+		--[[ "pylsp", -- python-lsp-server ]]
 		"ruby_ls",
 		"rust_analyzer",
 		"angularls", -- typescript
@@ -56,6 +56,7 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
+		"google-java-format",
 		"yamllint",
 		"clang_format",
 		"gofumpt",
@@ -82,6 +83,7 @@ require("mason-nvim-dap").setup({
 		"python",
 		"bash",
 		"javadbg",
+		"debugpy",
 		"node2",
 		"chrome",
 		"firefox",

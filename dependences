@@ -6,30 +6,23 @@
 #make -j4 && sudo make install
 
 # Debian
-# sudo apt install -y nodejs npm ruby ueberzug ccls && cargo install ttyper bat procs
-# shfmt shellcheck stylua
+# sudo apt install -y nodejs npm golang ruby ueberzug cargo && cargo install ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 
 # Void
-# sudo xbps-install -Sy nodejs ruby ueberzug lazygit ccls && cargo install ttyper
-# shfmt shellcheck stylua
+# sudo xbps-install -Sy nodejs go ruby ueberzug lazygit cargo && cargo install ttyper
 
 # Arch
-sudo pacman -S --noconfirm nodejs npm ruby ueberzug lazygit ccls
-# shfmt shellcheck stylua
+sudo pacman -S --noconfirm nodejs npm go ruby ueberzug lazygit cargo
 
 # npm dependences
-sudo npm i -g google-java-format live-server emmet
-# luacheck eslint eslint_d html tailwindcss prettier astyle
+sudo npm i -g tree-sitter-cli live-server emmet
 
-# pip dependences
+# python dependences
 pip install pynvim
 # sourcery
 
-# go-dap
-go install github.com/go-delve/delve/cmd/dlv@latest
-
-# setup rust
+# rust setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup component add rust-analyzer
 # cargo new project  # get started with rust
