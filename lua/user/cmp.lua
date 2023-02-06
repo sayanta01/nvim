@@ -65,8 +65,12 @@ local kind_icons = {
 	Null = "ﳠ",
 
 	--  Extra icons
+	--[[ Tag = "", ]]
 	--[[ Array = "", ]]
+	--[[ List = "", ]]
+	--[[ Note = "", ]]
 	--[[ NoteBook = " ", ]]
+	--[[ DebugConsole = "", ]]
 	--[[ Dashboard = " ", ]]
 	--[[ NewFile = " ", ]]
 	--[[ Diff = " ", ]]

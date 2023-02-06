@@ -5,6 +5,7 @@ end
 configs.setup({
 	--[[ ensure_installed = "all", ]]
 	ensure_installed = {
+		"yaml",
 		"c",
 		"cpp",
 		"c_sharp",
@@ -16,6 +17,7 @@ configs.setup({
 		"python",
 		"ruby",
 		"rust",
+		"scala",
 		"typescript",
 		"tsx",
 		"vue",
@@ -25,12 +27,11 @@ configs.setup({
 		"css",
 		"scss",
 		"php",
+		"svelte",
 		"sql",
 		"dockerfile",
 		"bash",
 		"latex",
-		"svelte",
-		"yaml",
 		"vim",
 		"regex",
 	},

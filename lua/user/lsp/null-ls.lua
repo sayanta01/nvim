@@ -5,15 +5,16 @@ local code_actions = null_ls.builtins.code_actions
 
 local sources = {
 	--[[ formatting ]]
+	formatting.yamlfmt,
 	formatting.gofumpt,
 	formatting.google_java_format,
 	formatting.stylua,
+	formatting.rubocop,
 	formatting.autopep8,
+	formatting.rustfmt,
 	formatting.markdownlint,
 	formatting.phpcbf,
 	formatting.shfmt,
-	formatting.yamlfmt,
-	formatting.rubocop,
 	formatting.prettier.with({
 		extra_filetypes = { "toml" },
 		extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },

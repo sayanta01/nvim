@@ -12,9 +12,9 @@ local dap_install_status_ok, dap_install = pcall(require, "dap-install")
 if not dap_install_status_ok then
 	return
 end
+dap_install.setup()
 
 require("nvim-dap-virtual-text").setup()
-dap_install.setup({})
 
 dapui.setup({
 	sidebar = {
@@ -108,6 +108,21 @@ dap.configurations.sh = {
 }
 
 --[[ go ]]
+require("dap-go").setup({
+	dap_configurations = {
+		{
+			type = "go",
+			name = "Attach remote",
+			mode = "remote",
+			request = "attach",
+		},
+	},
+	delve = {
+		initialize_timeout_sec = 20,
+		port = "${port}",
+	},
+})
+
 --[[ require("go").setup() ]]
 --[[ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {}) ]]
 --[[ vim.api.nvim_create_autocmd("BufWritePre", { ]]
@@ -119,50 +134,50 @@ dap.configurations.sh = {
 --[[ }) ]]
 
 --[[ ruby ]]
-require("dap-ruby").setup()
-dap.adapters.ruby = function(callback, config)
-	callback({
-		type = "server",
-		host = "127.0.0.1",
-		port = "${port}",
-		executable = {
-			command = "bundle",
-			args = {
-				"exec",
-				"rdbg",
-				"-n",
-				"--open",
-				"--port",
-				"${port}",
-				"-c",
-				"--",
-				"bundle",
-				"exec",
-				config.command,
-				config.script,
-			},
-		},
-	})
-end
-
-dap.configurations.ruby = {
-	{
-		type = "ruby",
-		name = "debug current file",
-		request = "attach",
-		localfs = true,
-		command = "ruby",
-		script = "${file}",
-	},
-	{
-		type = "ruby",
-		name = "run current spec file",
-		request = "attach",
-		localfs = true,
-		command = "rspec",
-		script = "${file}",
-	},
-}
+--[[ require("dap-ruby").setup() ]]
+--[[ dap.adapters.ruby = function(callback, config) ]]
+--[[ 	callback({ ]]
+--[[ 		type = "server", ]]
+--[[ 		host = "127.0.0.1", ]]
+--[[ 		port = "${port}", ]]
+--[[ 		executable = { ]]
+--[[ 			command = "bundle", ]]
+--[[ 			args = { ]]
+--[[ 				"exec", ]]
+--[[ 				"rdbg", ]]
+--[[ 				"-n", ]]
+--[[ 				"--open", ]]
+--[[ 				"--port", ]]
+--[[ 				"${port}", ]]
+--[[ 				"-c", ]]
+--[[ 				"--", ]]
+--[[ 				"bundle", ]]
+--[[ 				"exec", ]]
+--[[ 				config.command, ]]
+--[[ 				config.script, ]]
+--[[ 			}, ]]
+--[[ 		}, ]]
+--[[ 	}) ]]
+--[[ end ]]
+--[[]]
+--[[ dap.configurations.ruby = { ]]
+--[[ 	{ ]]
+--[[ 		type = "ruby", ]]
+--[[ 		name = "debug current file", ]]
+--[[ 		request = "attach", ]]
+--[[ 		localfs = true, ]]
+--[[ 		command = "ruby", ]]
+--[[ 		script = "${file}", ]]
+--[[ 	}, ]]
+--[[ 	{ ]]
+--[[ 		type = "ruby", ]]
+--[[ 		name = "run current spec file", ]]
+--[[ 		request = "attach", ]]
+--[[ 		localfs = true, ]]
+--[[ 		command = "rspec", ]]
+--[[ 		script = "${file}", ]]
+--[[ 	}, ]]
+--[[ } ]]
 
 --[[ c/c++/rust ]]
 --[[ dap.adapters.lldb = { ]]

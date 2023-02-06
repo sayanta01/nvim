@@ -99,8 +99,6 @@ require("lazy").setup({
 	"folke/which-key.nvim",
 	"kyazdani42/nvim-tree.lua",
 	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
-
-	-- Extra
 	"ThePrimeagen/vim-be-good",
 	{
 		"iamcco/markdown-preview.nvim",
@@ -181,16 +179,10 @@ require("lazy").setup({
 	"rcarriga/nvim-dap-ui",
 	"ravenxrz/DAPInstall.nvim",
 	"theHamsta/nvim-dap-virtual-text",
-	"mxsdev/nvim-dap-vscode-js",
 	"mfussenegger/nvim-dap-python",
 	"mfussenegger/nvim-jdtls",
-	"leoluz/nvim-dap-go",
-	"suketa/nvim-dap-ruby",
 	"simrat39/rust-tools.nvim",
-	{
-		"ray-x/go.nvim",
-		config = function()
-			require("go").setup()
-		end,
-	},
+	"leoluz/nvim-dap-go",
+	--[[ "mxsdev/nvim-dap-vscode-js", ]]
+	--[[ "suketa/nvim-dap-ruby", ]]
 })
