@@ -35,7 +35,7 @@ require("mason-lspconfig").setup({
 		"sumneko_lua",
 		"jedi_language_server", -- python
 		"pyright",
-		--[[ "pylsp", -- python-lsp-server ]]
+		"pylsp",
 		"ruby_ls",
 		"rust_analyzer",
 		"angularls", -- typescript

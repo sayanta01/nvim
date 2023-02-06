@@ -16,7 +16,7 @@
 sudo pacman -S --noconfirm nodejs npm go ruby ueberzug lazygit cargo
 
 # npm dependences
-sudo npm i -g tree-sitter-cli live-server emmet
+sudo npm i -g tree-sitter-cli live-server
 
 # python dependences
 pip install pynvim
