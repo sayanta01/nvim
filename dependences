@@ -5,14 +5,14 @@
 #git clone https://github.com/neovim/neovim.git ~/.config/neovim && cd ~/.config/neovim
 #make -j4 && sudo make install
 
-# Debian
+# debian
 # sudo apt install -y nodejs npm golang ruby ueberzug cargo && cargo install ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 
-# Void
+# void
 # sudo xbps-install -Sy nodejs go ruby ueberzug lazygit cargo && cargo install ttyper
 
-# Arch
+# arch
 sudo pacman -S --noconfirm nodejs npm go ruby ueberzug lazygit cargo
 
 # npm dependences
@@ -20,20 +20,19 @@ sudo npm i -g tree-sitter-cli live-server
 
 # python dependences
 pip install pynvim
-# sourcery
 
 # rust setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup component add rust-analyzer
 # cargo new project  # get started with rust
 
-# creating python venv for dap
+# `creating python venv for dap`
 # mkdir ~/.virtualenvs
 # cd ~/.virtualenvs || exit
 # python -m venv debugpy
 # debugpy/bin/python -m pip install debugpy
 
-# javascript-dap
+# `javascript-dap`
 # mkdir -p ~/dev/microsoft
 # git clone https://github.com/microsoft/vscode-node-debug2.git ~/dev/microsoft/vscode-node-debug2
 # cd ~/dev/microsoft/vscode-node-debug2 || exit
