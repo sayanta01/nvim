@@ -127,6 +127,7 @@ require("lazy").setup({
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
+	"Mofiqul/vscode.nvim",
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
