@@ -104,16 +104,6 @@ require("lspconfig")["cssls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["tailwindcss"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
-require("lspconfig")["marksman"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["vimls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -124,21 +114,12 @@ require("lspconfig")["texlab"].setup({
 	capabilities = capabilities,
 })
 
-local lspconfig = require("lspconfig")
-lspconfig.gopls.setup({
-	capabilities = capabilities,
+require("lspconfig")["dockerls"].setup({
 	on_attach = on_attach,
-	settings = {
-		gopls = {
-			gofumpt = true,
-		},
-	},
-	flags = {
-		debounce_text_changes = 150,
-	},
+	capabilities = capabilities,
 })
 
-require("lspconfig")["dockerls"].setup({
+require("lspconfig")["marksman"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -297,6 +278,11 @@ require("lspconfig")["tsserver"].setup({
 		},
 	},
 })
+
+--[[ require("lspconfig")["tailwindcss"].setup({ ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ }) ]]
 
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,

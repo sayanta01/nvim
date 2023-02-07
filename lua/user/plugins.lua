@@ -65,14 +65,12 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"akinsho/bufferline.nvim",
 	"kylechui/nvim-surround",
-
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
-	"nvim-telescope/telescope-file-browser.nvim",
+	--[[ "nvim-telescope/telescope-file-browser.nvim", ]]
 	--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, ]]
 	"ahmedkhalf/project.nvim",
 	"goolord/alpha-nvim",
-
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "VeryLazy",
@@ -119,9 +117,12 @@ require("lazy").setup({
 			-- your optional config goes here
 		end,
 	},
+	"sainnhe/edge",
+	"rebelot/kanagawa.nvim",
 	{ "Everblush/nvim", name = "everblush" },
 	"Shatur/neovim-ayu",
 	{ "catppuccin/nvim", name = "catppuccin" },
+	"arcticicestudio/nord-vim",
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
@@ -151,6 +152,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-calc",
 	"f3fora/cmp-spell",
+	"hrsh7th/cmp-nvim-lsp-signature-help",
 	--[[ "hrsh7th/cmp-cmdline", ]]
 
 	-- Snippets
@@ -177,7 +179,7 @@ require("lazy").setup({
 	-- Debugger
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
-	"ravenxrz/DAPInstall.nvim",
+	--[[ "ravenxrz/DAPInstall.nvim", ]]
 	"theHamsta/nvim-dap-virtual-text",
 	"mfussenegger/nvim-dap-python",
 	"mfussenegger/nvim-jdtls",

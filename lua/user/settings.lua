@@ -32,7 +32,11 @@ local options = {
 	--showtabline = 2,
 	--pumheight = 9,
 	--cmdheight = 2,
-	spell = true,
+	spell = false,
+	foldcolumn = "1",
+	foldlevel = 99,
+	foldlevelstart = 99,
+	foldenable = true,
 	--[[ smartindent = true, ]]
 	--[[ copyindent = true,  -- Copy the previous indentation on autoindenting ]]
 	--[[ fillchars = { eob = " " },  -- Disable `~` on nonexistent lines ]]

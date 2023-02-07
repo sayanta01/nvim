@@ -152,12 +152,13 @@ cmp.setup({
 			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				nvim_lua = "[LSP_LUA]",
+				luasnip = "[Snip]",
+				buffer = "[Buf]",
+				nvim_lua = "[LSP_Lua]",
 				path = "[Path]",
 				spell = "[Spell]",
 				calc = "[Calc]",
+				sign = "[Sign]",
 				--[[ cmdline = "[Cmd]", ]]
 			})[entry.source.name]
 			return vim_item
@@ -172,6 +173,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "spell" },
 		{ name = "calc" },
+		{ name = "nvim_lsp_signature_help" },
 		--[[ { name = "cmdline" }, ]]
 	},
 	confirm_opts = {

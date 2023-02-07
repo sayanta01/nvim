@@ -1,8 +1,6 @@
 require("user.settings")
 require("user.keymaps")
 require("user.plugins")
-
--- Unbreakable
 require("user.gitsigns")
 require("user.toggleterm")
 require("user.colorizer")
@@ -16,16 +14,14 @@ require("user.icons")
 require("user.nvim-tree")
 require("user.bufferline")
 require("user.surround")
-
+vim.notify = require("notify")
+require("user.telescope")
+require("user.project")
+require("user.alpha")
 require("user.treesitter")
 require("user.comment")
 require("user.autopairs")
 require("user.illuminate")
-
-require("user.telescope")
-require("user.project")
-require("user.alpha")
-
 require("user.autocmd")
 require("user.saga")
 require("user.cmp")
@@ -34,31 +30,4 @@ require("user.cmp")
 require("user.whichkey")
 require("user.lsp")
 require("user.dap")
-
---[[ Notify config ]]
-vim.notify = require("notify")
-
---[[ Color highlighter ]]
---[[ vim.cmd("CccHighlighterToggle") ]]
-
---[[ ufo - fix this ]]
-vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99 -- Feel free to decrease the value
-vim.o.foldlevelstart = 99
-
-vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
-
---[[ local capabilities = vim.lsp.protocol.make_client_capabilities() ]]
---[[ capabilities.textDocument.foldingRange = { ]]
---[[ 	dynamicRegistration = false, ]]
---[[ 	lineFoldingOnly = true, ]]
---[[ } ]]
---[[ local language_servers = require("lspconfig").util.available_servers() -- or list servers manually like {'gopls', 'clangd'} ]]
---[[ for _, ls in ipairs(language_servers) do ]]
---[[ 	require("lspconfig")[ls].setup({ ]]
---[[ 		capabilities = capabilities, ]]
---[[ 		-- you can add other fields for setting up lsp server in this table ]]
---[[ 	}) ]]
---[[ end ]]
-require("ufo").setup()
+require("user.ufo")
