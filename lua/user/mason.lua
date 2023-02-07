@@ -55,8 +55,8 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
-		-- "yamlfmt",
-		"yamllint",
+		-- "yamllint",
+		"yamlfmt",
 		"clang_format",
 		"gofumpt",
 		"google-java-format",
