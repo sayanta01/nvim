@@ -34,7 +34,7 @@ local setup = {
 	icons = {
 		breadcrumb = "",
 		separator = " ",
-		group = "+",
+		group = "",
 	},
 	popup_mappings = {
 		scroll_down = "<c-d>",
