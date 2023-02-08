@@ -63,7 +63,6 @@ local kind_icons = {
 	Object = "",
 	Key = "",
 	Null = "ﳠ",
-
 	--  Extra icons
 	--[[ Tag = "", ]]
 	--[[ Array = "", ]]
@@ -97,7 +96,6 @@ cmp.setup({
 			luasnip.lsp_expand(args.body) -- For Luasnip
 		end,
 	},
-
 	-- Key mapping
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -143,7 +141,6 @@ cmp.setup({
 			"s",
 		}),
 	}),
-
 	-- Formatting
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
@@ -164,7 +161,6 @@ cmp.setup({
 			return vim_item
 		end,
 	},
-
 	sources = {
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
