@@ -194,7 +194,7 @@ local mappings = {
 	o = {
 		name = "Options",
 		s = { ":set spell!<cr>", "Toggle Spell Check" },
-		p = { ":!chmod +x %<cr>", "Chmod +x" },
+		x = { ":!chmod +x %<cr>", "Chmod +x" },
 		t = { ":VimBeGood<cr>", "Vim Practice" },
 		c = { ":CccPick<cr>", "Color Pick" },
 		C = { ":CccConvert<cr>", "Change Color Format" },
@@ -206,7 +206,7 @@ local mappings = {
 		W = { ":set nowrap<cr>", "No Wrap Text" },
 		m = { ":set showmode!<cr>", "Show-mode in Statusline" },
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
-		d = { ":MarkdownPreview<cr>", "Markdown Preview" },
+		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 	},
 	p = {
 		name = "Plugin",

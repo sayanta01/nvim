@@ -31,7 +31,7 @@ require("lazy").setup({
 			require("notify").setup({
 				timeout = 2900,
 				level = vim.log.levels.INFO,
-				fps = 60,
+				fps = 40,
 				icons = {
 					ERROR = "",
 					WARN = "",
@@ -52,7 +52,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-
 	-- Feature
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
@@ -67,8 +66,6 @@ require("lazy").setup({
 	"kylechui/nvim-surround",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
-	--[[ "nvim-telescope/telescope-file-browser.nvim", ]]
-	--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, ]]
 	"ahmedkhalf/project.nvim",
 	"goolord/alpha-nvim",
 	{
@@ -106,7 +103,6 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
-
 	-- Themes
 	{
 		"uloco/bluloco.nvim",
@@ -119,10 +115,10 @@ require("lazy").setup({
 	},
 	"sainnhe/edge",
 	"rebelot/kanagawa.nvim",
-	{ "Everblush/nvim", name = "everblush" },
 	"Shatur/neovim-ayu",
-	{ "catppuccin/nvim", name = "catppuccin" },
 	"arcticicestudio/nord-vim",
+	{ "Everblush/nvim", name = "everblush" },
+	{ "catppuccin/nvim", name = "catppuccin" },
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
@@ -168,7 +164,7 @@ require("lazy").setup({
 		"glepnir/lspsaga.nvim",
 		event = "BufRead",
 	},
-	"jayp0521/mason-nvim-dap.nvim",
+	"jay-babu/mason-nvim-dap.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	{
 		"b0o/schemastore.nvim",
@@ -178,12 +174,10 @@ require("lazy").setup({
 	-- Debugger
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
-	"ravenxrz/DAPInstall.nvim",
 	"theHamsta/nvim-dap-virtual-text",
 	"mfussenegger/nvim-dap-python",
 	"mfussenegger/nvim-jdtls",
 	"simrat39/rust-tools.nvim",
-	"leoluz/nvim-dap-go",
+	--[[ "leoluz/nvim-dap-go", ]]
 	--[[ "mxsdev/nvim-dap-vscode-js", ]]
-	--[[ "suketa/nvim-dap-ruby", ]]
 })

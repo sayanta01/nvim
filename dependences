@@ -6,14 +6,14 @@
 #make -j4 && sudo make install
 
 # debian
-# sudo apt install -y nodejs npm golang ruby ueberzug cargo && cargo install ttyper bat procs
+# sudo apt install -y npm golang ruby ueberzug cargo && cargo install ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 
 # void
 # sudo xbps-install -Sy nodejs go ruby ueberzug lazygit cargo && cargo install ttyper
 
 # arch
-sudo pacman -S --noconfirm nodejs npm go ruby ueberzug lazygit cargo
+sudo pacman -S --noconfirm npm go ruby ueberzug lazygit cargo
 
 # npm dependences
 sudo npm i -g tree-sitter-cli live-server
@@ -35,7 +35,7 @@ rustup component add rust-analyzer
 # `delve for go-dap`
 # go install github.com/go-delve/delve/cmd/dlv@latest
 
-# `javascript-dap`
+# `javascript-dap` >> `https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome`
 # mkdir -p ~/dev/microsoft
 # git clone https://github.com/microsoft/vscode-node-debug2.git ~/dev/microsoft/vscode-node-debug2
 # cd ~/dev/microsoft/vscode-node-debug2 || exit

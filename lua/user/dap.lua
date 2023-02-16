@@ -7,15 +7,6 @@ local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
 	return
 end
-
-local dap_install_status_ok, dap_install = pcall(require, "dap-install")
-if not dap_install_status_ok then
-	return
-end
-dap_install.setup()
-
-require("nvim-dap-virtual-text").setup()
-
 require("dapui").setup({
 	sidebar = {
 		elements = {
@@ -33,20 +24,20 @@ require("dapui").setup({
 	},
 })
 
+require("nvim-dap-virtual-text").setup()
+
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
 --[[ python ]]
-require("dap-python").test_runner = "pytest"
 --[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
-dap_install.config("python", {
-	require("dap-python").setup("~/.virtualenvs/debugpy/bin/python"),
-	table.insert(require("dap").configurations.python, {
-		type = "python",
-		request = "launch",
-		name = "My custom launch configuration",
-		program = "${file}",
-		-- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
-	}),
+require("dap-python").test_runner = "pytest"
+require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+table.insert(require("dap").configurations.python, {
+	type = "python",
+	request = "launch",
+	name = "My custom launch configuration",
+	program = "${file}",
+	-- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
 })
 
 --[[ javascript ]]
@@ -155,67 +146,13 @@ dap.configurations.go = {
 --[[ 		port = "${port}", ]]
 --[[ 	}, ]]
 --[[ }) ]]
---[[ require("go").setup() ]]
---[[ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {}) ]]
---[[ vim.api.nvim_create_autocmd("BufWritePre", { ]]
---[[ 	pattern = "*.go", ]]
---[[ 	callback = function() ]]
---[[ 		require("go.format").goimport() ]]
---[[ 	end, ]]
---[[ 	group = format_sync_grp, ]]
---[[ }) ]]
---[[ ruby ]]
---[[ require("dap-ruby").setup() ]]
---[[ dap.adapters.ruby = function(callback, config) ]]
---[[ 	callback({ ]]
---[[ 		type = "server", ]]
---[[ 		host = "127.0.0.1", ]]
---[[ 		port = "${port}", ]]
---[[ 		executable = { ]]
---[[ 			command = "bundle", ]]
---[[ 			args = { ]]
---[[ 				"exec", ]]
---[[ 				"rdbg", ]]
---[[ 				"-n", ]]
---[[ 				"--open", ]]
---[[ 				"--port", ]]
---[[ 				"${port}", ]]
---[[ 				"-c", ]]
---[[ 				"--", ]]
---[[ 				"bundle", ]]
---[[ 				"exec", ]]
---[[ 				config.command, ]]
---[[ 				config.script, ]]
---[[ 			}, ]]
---[[ 		}, ]]
---[[ 	}) ]]
---[[ end ]]
---[[]]
---[[ dap.configurations.ruby = { ]]
---[[ 	{ ]]
---[[ 		type = "ruby", ]]
---[[ 		name = "debug current file", ]]
---[[ 		request = "attach", ]]
---[[ 		localfs = true, ]]
---[[ 		command = "ruby", ]]
---[[ 		script = "${file}", ]]
---[[ 	}, ]]
---[[ 	{ ]]
---[[ 		type = "ruby", ]]
---[[ 		name = "run current spec file", ]]
---[[ 		request = "attach", ]]
---[[ 		localfs = true, ]]
---[[ 		command = "rspec", ]]
---[[ 		script = "${file}", ]]
---[[ 	}, ]]
---[[ } ]]
+
 --[[ c/c++/rust ]]
 --[[ dap.adapters.lldb = { ]]
 --[[ 	type = "executable", ]]
 --[[ 	command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path ]]
 --[[ 	name = "lldb", ]]
 --[[ } ]]
---[[]]
 --[[ dap.configurations.cpp = { ]]
 --[[ 	{ ]]
 --[[ 		name = "Launch", ]]
@@ -231,6 +168,7 @@ dap.configurations.go = {
 --[[ } ]]
 --[[ dap.configurations.c = dap.configurations.cpp ]]
 --[[ dap.configurations.rust = dap.configurations.cpp ]]
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end
