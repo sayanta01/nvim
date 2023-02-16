@@ -63,10 +63,19 @@ local options = {
 	renderer = {
 		highlight_git = false,
 		highlight_opened_files = "none",
-
+		indent_width = 2,
 		indent_markers = {
 			enable = false,
+			inline_arrows = true,
+			icons = {
+				corner = "└",
+				edge = "|",
+				item = "|",
+				bottom = "─",
+				none = " ",
+			},
 		},
+
 		icons = {
 			padding = " ",
 			symlink_arrow = " -> ",

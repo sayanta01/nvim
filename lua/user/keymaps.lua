@@ -38,7 +38,6 @@ keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
 
 -- Copy whole file
 keymap("n", "<leader>y", "gg<S-v>G", opts)
---[[ keymap("n", "<leader>y", ":%y<CR>", opts)  -- direct yank ]]
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

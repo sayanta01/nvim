@@ -29,5 +29,5 @@ require("user.cmp")
 -- Dynamic
 require("user.whichkey")
 require("user.lsp")
-require("user.dap")
 require("user.ufo")
+require("user.dap")

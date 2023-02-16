@@ -97,7 +97,6 @@ local mappings = {
 	f = { ":Telescope find_files<cr>", "Find Files" },
 	--[[ i = { ":Telescope media_files<cr>", "Media files" }, ]]
 	r = { ":Telescope live_grep<cr>", "Live Grep" },
-
 	g = {
 		name = "Git",
 		g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
@@ -118,7 +117,6 @@ local mappings = {
 		u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 		d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
-
 	l = {
 		name = "LSP",
 		f = { ":lua vim.lsp.buf.format()<CR>", "Format File" },
@@ -146,7 +144,6 @@ local mappings = {
 		I = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
 		O = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 	},
-
 	s = {
 		name = "Lsp Saga",
 		f = { ":Lspsaga lsp_finder<CR>", "Finder" },
@@ -173,7 +170,6 @@ local mappings = {
 		g = { ":Lspsaga outgoing_calls<CR>", "Outgoing Calls" },
 		--[[ t = { ":Lspsaga term_toggle<CR>", "Terminal" }, ]]
 	},
-
 	t = {
 		name = "Find with Telescope",
 		c = { ":Telescope colorscheme<cr>", "Colorscheme" },
@@ -195,7 +191,6 @@ local mappings = {
 		f = { ":Telescope lsp_references<cr>", "Find References" },
 		t = { ":Telescope file_browser<cr>", "File Browser" },
 	},
-
 	o = {
 		name = "Options",
 		s = { ":set spell!<cr>", "Toggle Spell Check" },
@@ -213,7 +208,6 @@ local mappings = {
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		d = { ":MarkdownPreview<cr>", "Markdown Preview" },
 	},
-
 	p = {
 		name = "Plugin",
 		m = { ":Mason<cr>", "Mason" },
@@ -226,7 +220,6 @@ local mappings = {
 		S = { ":Lazy check<cr>", "Status" },
 		u = { ":Lazy update<cr>", "Update Plugins" },
 	},
-
 	B = {
 		name = "Buffer",
 		h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
@@ -234,7 +227,6 @@ local mappings = {
 		p = { ":BufferLineTogglePin<cr>", "Toggle Pin" },
 		--[[ j = { ":BufferLinePick<cr>", "Jump" }, ]]
 	},
-
 	d = {
 		name = "Debug",
 		t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
@@ -262,7 +254,6 @@ local mappings = {
 		e = { ":lua require('dap-go').debug_test()<cr>", "Go Debug Test" },
 		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go Last Test" },
 	},
-
 	T = {
 		name = "Terminal",
 		h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },

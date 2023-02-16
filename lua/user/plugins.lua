@@ -153,7 +153,6 @@ require("lazy").setup({
 	"hrsh7th/cmp-calc",
 	"f3fora/cmp-spell",
 	"hrsh7th/cmp-nvim-lsp-signature-help",
-	--[[ "hrsh7th/cmp-cmdline", ]]
 
 	-- Snippets
 	"L3MON4D3/LuaSnip",

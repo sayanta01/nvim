@@ -26,7 +26,6 @@ local colors = {
 --[[     return gitdir and #gitdir > 0 and #gitdir < #filepath ]]
 --[[   end, ]]
 --[[ } ]]
-
 -- Config
 local config = {
 	options = {
@@ -163,7 +162,6 @@ ins_left({
 --[[ icons_enabled = true, ]]
 --[[ cond = nil, ]]
 --[[ } ]]
-
 ins_right({
 	"filesize",
 	cond = nil,
@@ -191,7 +189,6 @@ ins_right({
 --[[ 	--cond = conditions.hide_in_width, ]]
 --[[ 	color = { fg = colors.fg, gui = "italic" }, ]]
 --[[ }) ]]
-
 ins_right({
 	"branch",
 	icon = "",

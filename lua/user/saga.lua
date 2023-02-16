@@ -29,7 +29,6 @@ saga.setup({
 			quit = "q",
 		},
 	},
-
 	symbol_in_winbar = {
 		enable = true,
 		separator = "  ",
@@ -39,7 +38,6 @@ saga.setup({
 		respect_root = false,
 		color_mode = true,
 	},
-
 	ui = {
 		-- Currently, only the round theme exists
 		theme = "round",

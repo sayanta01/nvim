@@ -30,7 +30,7 @@ require("mason-lspconfig").setup({
 		"tailwindcss", -- javascript
 		"tsserver",
 		"jsonls",
-		"sumneko_lua",
+		"lua_ls",
 		"pyright", -- python
 		"ruby_ls",
 		"rust_analyzer",
@@ -70,8 +70,8 @@ require("mason-null-ls").setup({
 		"markdownlint",
 		"phpcbf",
 		"shfmt",
-		--[[ "sqlfluff", ]]
-		--[[ "solhint", ]]
+		"sqlfluff",
+		"solhint",
 	},
 	automatic_installation = true,
 })
@@ -80,6 +80,7 @@ require("mason-nvim-dap").setup({
 	--[[ debugger ]]
 	ensure_installed = {
 		"delve",
+		"codelldb",
 		"python",
 		"bash",
 		"javadbg",

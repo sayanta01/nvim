@@ -1,9 +1,9 @@
 --[[ local M = { ]]
 --[[ 	"kevinhwang91/nvim-ufo", ]]
-	--[[ event = { "VeryLazy", "LspAttach" }, ]]
-	--[[ dependencies = { ]]
-	--[[ 	"kevinhwang91/promise-async", ]]
-	--[[ }, ]]
+--[[ event = { "VeryLazy", "LspAttach" }, ]]
+--[[ dependencies = { ]]
+--[[ 	"kevinhwang91/promise-async", ]]
+--[[ }, ]]
 --[[ } ]]
 --[[]]
 --[[ M.config = function() ]]
@@ -100,10 +100,14 @@
 --[[ end ]]
 --[[]]
 --[[ return M ]]
-
 --[[ ufo - fix this ]]
 vim.keymap.set("n", "zR", require("ufo").openAllFolds)
 vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 --[[ local capabilities = vim.lsp.protocol.make_client_capabilities() ]]
 --[[ capabilities.textDocument.foldingRange = { ]]

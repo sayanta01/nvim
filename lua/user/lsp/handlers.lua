@@ -130,7 +130,7 @@ require("lspconfig")["emmet_ls"].setup({
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
-require("lspconfig")["sumneko_lua"].setup({
+require("lspconfig")["lua_ls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 	settings = {
@@ -224,11 +224,6 @@ require("lspconfig")["jdtls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["ruby_ls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -283,7 +278,6 @@ require("lspconfig")["tsserver"].setup({
 --[[ 	capabilities = capabilities, ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ }) ]]
-
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,

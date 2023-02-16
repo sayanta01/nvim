@@ -16,7 +16,7 @@ dap_install.setup()
 
 require("nvim-dap-virtual-text").setup()
 
-dapui.setup({
+require("dapui").setup({
 	sidebar = {
 		elements = {
 			{
@@ -73,7 +73,7 @@ dap.configurations.javascript = {
 		name = "Attach to process",
 		type = "node2",
 		request = "attach",
-		restart = true,
+		--[[ restart = true, ]]
 		--[[ port = 9229, ]]
 		processId = require("dap.utils").pick_process,
 	},
@@ -108,21 +108,53 @@ dap.configurations.sh = {
 }
 
 --[[ go ]]
-require("dap-go").setup({
-	dap_configurations = {
-		{
-			type = "go",
-			name = "Attach remote",
-			mode = "remote",
-			request = "attach",
-		},
+dap.adapters.delve = {
+	type = "server",
+	port = "${port}",
+	executable = {
+		command = "dlv",
+		args = { "dap", "-l", "127.0.0.1:${port}" },
 	},
-	delve = {
-		initialize_timeout_sec = 20,
-		port = "${port}",
+}
+-- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+dap.configurations.go = {
+	{
+		type = "delve",
+		name = "Debug",
+		request = "launch",
+		program = "${file}",
 	},
-})
+	{
+		type = "delve",
+		name = "Debug test", -- configuration for debugging test files
+		request = "launch",
+		mode = "test",
+		program = "${file}",
+	},
+	-- works with go.mod packages and sub packages
+	{
+		type = "delve",
+		name = "Debug test (go.mod)",
+		request = "launch",
+		mode = "test",
+		program = "${file}",
+	},
+}
 
+--[[ require("dap-go").setup({ ]]
+--[[ 	dap_configurations = { ]]
+--[[ 		{ ]]
+--[[ 			type = "go", ]]
+--[[ 			name = "Attach remote", ]]
+--[[ 			mode = "remote", ]]
+--[[ 			request = "attach", ]]
+--[[ 		}, ]]
+--[[ 	}, ]]
+--[[ 	delve = { ]]
+--[[ 		initialize_timeout_sec = 20, ]]
+--[[ 		port = "${port}", ]]
+--[[ 	}, ]]
+--[[ }) ]]
 --[[ require("go").setup() ]]
 --[[ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {}) ]]
 --[[ vim.api.nvim_create_autocmd("BufWritePre", { ]]
@@ -132,7 +164,6 @@ require("dap-go").setup({
 --[[ 	end, ]]
 --[[ 	group = format_sync_grp, ]]
 --[[ }) ]]
-
 --[[ ruby ]]
 --[[ require("dap-ruby").setup() ]]
 --[[ dap.adapters.ruby = function(callback, config) ]]
@@ -178,7 +209,6 @@ require("dap-go").setup({
 --[[ 		script = "${file}", ]]
 --[[ 	}, ]]
 --[[ } ]]
-
 --[[ c/c++/rust ]]
 --[[ dap.adapters.lldb = { ]]
 --[[ 	type = "executable", ]]
@@ -201,7 +231,6 @@ require("dap-go").setup({
 --[[ } ]]
 --[[ dap.configurations.c = dap.configurations.cpp ]]
 --[[ dap.configurations.rust = dap.configurations.cpp ]]
-
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end
