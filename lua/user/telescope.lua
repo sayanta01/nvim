@@ -122,7 +122,6 @@ telescope.setup({
 		},
 	},
 	file_ignore_patterns = {},
-
 	pickers = {
 		-- Default configuration for builtin pickers goes here
 		find_files = {
@@ -153,19 +152,5 @@ telescope.setup({
 			filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
 			find_cmd = "rg", -- find command ( defaults to "fd" )
 		},
-		file_browser = {
-			--[[ theme = "ivy", ]]
-			-- disables netrw and use telescope-file-browser in its place
-			hijack_netrw = true,
-			mappings = {
-				["i"] = {
-					-- your custom insert mode mappings
-				},
-				["n"] = {
-					-- your custom normal mode mappings
-				},
-			},
-		},
 	},
-	--[[ require("telescope").load_extension("file_browser"), ]]
 })

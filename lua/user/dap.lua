@@ -146,7 +146,6 @@ dap.configurations.go = {
 --[[ 		port = "${port}", ]]
 --[[ 	}, ]]
 --[[ }) ]]
-
 --[[ c/c++/rust ]]
 --[[ dap.adapters.lldb = { ]]
 --[[ 	type = "executable", ]]
@@ -168,7 +167,6 @@ dap.configurations.go = {
 --[[ } ]]
 --[[ dap.configurations.c = dap.configurations.cpp ]]
 --[[ dap.configurations.rust = dap.configurations.cpp ]]
-
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end

@@ -44,9 +44,10 @@ for k, v in pairs(options) do
 end
 vim.opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
 vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
-vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.shortmess:append("sI") -- disable nvim intro
+vim.opt.whichwrap:append("<,>,[,],h,l")
 --[[ vim.opt.iskeyword:append("-") ]]
+
 -- Disable builtin plugins
 --[[ vim.g.loaded_netrw = 1 ]]
 --[[ vim.g.loaded_netrwPlugin = 1 ]]

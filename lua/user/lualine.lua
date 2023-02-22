@@ -41,17 +41,14 @@ local config = {
 		},
 	},
 	sections = {
-		-- These are to remove the defaults
 		lualine_a = {},
 		lualine_b = {},
 		lualine_y = {},
 		lualine_z = {},
-		-- These will be filled later
 		lualine_c = {},
 		lualine_x = {},
 	},
 	inactive_sections = {
-		-- These are to remove the defaults
 		lualine_a = {},
 		lualine_b = {},
 		lualine_y = {},
@@ -166,7 +163,7 @@ ins_right({
 	"filesize",
 	cond = nil,
 	color = { fg = colors.violet, gui = "italic" },
-	--cond = conditions.hide_in_width,
+	-- cond = conditions.hide_in_width,
 })
 
 ins_right({
@@ -204,7 +201,7 @@ ins_right({
 		removed = { fg = colors.red },
 	},
 	cond = nil,
-	--cond = conditions.hide_in_width,
+	-- cond = conditions.hide_in_width,
 })
 
 lualine.setup(config)

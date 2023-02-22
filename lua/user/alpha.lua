@@ -19,14 +19,14 @@ dashboard.section.header.val = {
 }
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("e", "   New file", ":ene | startinsert <CR>"),
+	dashboard.button("e", "  New file", ":ene | startinsert <CR>"),
 	dashboard.button("b", "  Bookmarks", ":Telescope marks<CR>"),
-	dashboard.button("p", "  Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+	dashboard.button("p", "  Projects", ":lua require('telescope').extensions.projects.projects()<CR>"),
 	dashboard.button("r", "󱑓  Recent files", ":Telescope oldfiles <CR>"),
 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("s", "  Config", ":e $MYVIMRC | :cd %:p:h <CR>"),
-	dashboard.button("h", "  Neovim Check health", ":checkhealth<CR>"),
-	dashboard.button("q", "  Quit", ":qa<CR>"),
+	dashboard.button("h", "  Neovim check health", ":checkhealth<CR>"),
+	dashboard.button("q", "  quit", ":qa<CR>"),
 }
 local function footer()
 	return "N0oBoT"

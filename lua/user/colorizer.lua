@@ -13,7 +13,7 @@ require("colorizer").setup({
 		html = { names = true }, -- Disable parsing "names" like Blue or Gray
 		"!popup",
 		"!prompt",
-		"!lazy", -- Exclude vim from highlighting.
+		"!lazy", -- Exclude from highlighting
 	},
 	user_default_options = {
 		RGB = true,
@@ -26,7 +26,7 @@ require("colorizer").setup({
 		css = false,
 		css_fn = false,
 		-- Available modes for `mode`: foreground, background,  virtualtext
-		mode = "background", -- Set the display mode.
+		mode = "background", -- Set the display mode
 		-- Available methods are false / true / "normal" / "lsp" / "both"
 		-- True is same as normal
 		tailwind = false, -- `both`

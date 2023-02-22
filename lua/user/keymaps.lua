@@ -39,6 +39,9 @@ keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
 -- Copy whole file
 keymap("n", "<leader>y", "gg<S-v>G", opts)
 
+-- Edit same word all together
+keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -69,9 +72,6 @@ keymap("n", "<A-l>", ":m .-2<CR>==", opts)
 
 keymap("n", "<C-v>", ":vsplit<CR>", opts)
 keymap("n", "<C-s>", ":split<CR>", opts)
-
--- Edit same word all together
-keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- Insert --
 -- Press jk fast to enter

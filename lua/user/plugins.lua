@@ -52,7 +52,7 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- Feature
+	-- Features
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
 	"NvChad/nvim-colorizer.lua",
@@ -110,7 +110,7 @@ require("lazy").setup({
 		priority = 1000,
 		dependencies = { "rktjmp/lush.nvim" },
 		config = function()
-			-- your optional config goes here
+			-- config goes here
 		end,
 	},
 	"sainnhe/edge",
