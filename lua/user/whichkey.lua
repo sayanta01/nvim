@@ -178,10 +178,10 @@ local mappings = {
 		d = { ":Telescope diagnostics<cr>", "Document Diagnostics  " },
 		--[[ D = { ":lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" }, ]]
 		h = { ":Telescope help_tags<cr>", "Find Help" },
-		H = { ":Telescope highlights<cr>", "Find Highlight" },
+		H = { ":Telescope highlights<cr>", "Find Highlights" },
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 		k = { ":Telescope keymaps<cr>", "Keymaps" },
-		r = { ":Telescope oldfiles<cr>", "Recent File" },
+		r = { ":Telescope oldfiles<cr>", "Recent Files" },
 		R = { ":Telescope registers<cr>", "Registers" },
 		p = { ":Telescope projects<cr>", "Projects" },
 		f = { ":Telescope lsp_references<cr>", "References" },
