@@ -172,8 +172,8 @@ local mappings = {
 	},
 	t = {
 		name = "Telescope",
-		c = { ":Telescope colorscheme<cr>", "Colorscheme" },
-		C = { ":Telescope commands<cr>", "Commands" },
+		t = { ":Telescope colorscheme<cr>", "Themes" },
+		c = { ":Telescope commands<cr>", "Commands" },
 		b = { ":Telescope builtin<cr>", "Telescope Builtin" },
 		d = { ":Telescope diagnostics<cr>", "Document Diagnostics  " },
 		--[[ D = { ":lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" }, ]]
