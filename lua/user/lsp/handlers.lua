@@ -85,6 +85,7 @@ typescript.setup({
 })
 
 require("lspconfig")["clangd"].setup({
+	filetypes = { "cs" },
 	on_attach = on_attach,
 	capabilities = capabilities,
 })

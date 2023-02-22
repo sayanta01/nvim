@@ -34,6 +34,7 @@ configs.setup({
 		"latex",
 		"vim",
 		"regex",
+		"gitignore",
 	},
 	sync_install = false,
 	ignore_install = {},

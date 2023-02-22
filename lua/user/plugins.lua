@@ -160,16 +160,16 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
-	{
-		"glepnir/lspsaga.nvim",
-		event = "BufRead",
-	},
 	"jay-babu/mason-nvim-dap.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	{
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
+	--[[ { ]]
+	--[[ 	"glepnir/lspsaga.nvim", ]]
+	--[[ 	event = "BufRead", ]]
+	--[[ }, ]]
 
 	-- Debugger
 	"mfussenegger/nvim-dap",

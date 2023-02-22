@@ -144,33 +144,34 @@ local mappings = {
 		I = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
 		O = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 	},
-	s = {
-		name = "Saga",
-		f = { ":Lspsaga lsp_finder<CR>", "Finder" },
-		a = { ":Lspsaga code_action<CR>", "Code Action" },
-		r = { ":Lspsaga rename<CR>", "Rename" },
-		s = { ":Lspsaga peek_definition<CR>", "Peek Definition" },
-		d = { ":Lspsaga goto_definition<CR>", "Goto Definition" },
-		c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics  " },
-		n = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostics" },
-		p = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostics" },
-		--[[ l = { ":Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" }, ]]
-		--[[ b = { ":Lspsaga show_buf_diagnostics<CR>", "Buffer Diagnostics " }, ]]
-		--[[ keymap("n", "[E", function() ]]
-		--[[ require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) ]]
-		--[[ end), ]]
-		--[[ keymap("n", "]E", function() ]]
-		--[[ require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) ]]
-		--[[ end), ]]
+	--[[ s = { ]]
+	--[[ name = "Saga", ]]
+	--[[ f = { ":Lspsaga lsp_finder<CR>", "Finder" }, ]]
+	--[[ a = { ":Lspsaga code_action<CR>", "Code Action" }, ]]
+	--[[ r = { ":Lspsaga rename<CR>", "Rename" }, ]]
+	--[[ s = { ":Lspsaga peek_definition<CR>", "Peek Definition" }, ]]
+	--[[ d = { ":Lspsaga goto_definition<CR>", "Goto Definition" }, ]]
+	--[[ c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics  " }, ]]
+	--[[ n = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostics" }, ]]
+	--[[ p = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostics" }, ]]
 
-		-- Toggle outline
-		o = { ":Lspsaga outline<CR>", "Outline" },
-		h = { ":Lspsaga hover_doc<CR>", "Hover" },
-		i = { ":Lspsaga incoming_calls<CR>", "Incoming Calls" },
-		g = { ":Lspsaga outgoing_calls<CR>", "Outgoing Calls" },
-		--[[ t = { ":Lspsaga term_toggle<CR>", "Terminal" }, ]]
-	},
-	t = {
+	--[[ l = { ":Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" }, ]]
+	--[[ b = { ":Lspsaga show_buf_diagnostics<CR>", "Buffer Diagnostics " }, ]]
+	--[[ keymap("n", "[E", function() ]]
+	--[[ require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) ]]
+	--[[ end), ]]
+	--[[ keymap("n", "]E", function() ]]
+	--[[ require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) ]]
+	--[[ end), ]]
+
+	-- Toggle outline
+	--[[ o = { ":Lspsaga outline<CR>", "Outline" }, ]]
+	--[[ h = { ":Lspsaga hover_doc<CR>", "Hover" }, ]]
+	--[[ i = { ":Lspsaga incoming_calls<CR>", "Incoming Calls" }, ]]
+	--[[ g = { ":Lspsaga outgoing_calls<CR>", "Outgoing Calls" }, ]]
+	-- t = { ":Lspsaga term_toggle<CR>", "Terminal" },
+	--[[ }, ]]
+	s = {
 		name = "Telescope",
 		t = { ":Telescope colorscheme<cr>", "Themes" },
 		c = { ":Telescope commands<cr>", "Commands" },
@@ -194,10 +195,11 @@ local mappings = {
 		name = "Options",
 		s = { ":set spell!<cr>", "Toggle Spell Check" },
 		x = { ":!chmod +x %<cr>", "Chmod +x" },
-		t = { ":VimBeGood<cr>", "Vim Practice" },
+		v = { ":VimBeGood<cr>", "Vim Practice" },
 		c = { ":CccPick<cr>", "Color Picker" },
-		C = { ":CccConvert<cr>", "Change Color Format" },
+		f = { ":CccConvert<cr>", "Change Color Format" },
 		h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
+		t = { ":ColorizerToggle<cr>", "Colorizer Toggle" },
 		n = { ":set rnu!<cr>", "Relative Nm" },
 		N = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		z = { ":ZenMode<cr>", "Zen-Mode" },

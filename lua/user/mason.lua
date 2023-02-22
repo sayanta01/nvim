@@ -77,7 +77,7 @@ require("mason-null-ls").setup({
 })
 
 require("mason-nvim-dap").setup({
-	--[[ debugger ]]
+	-- debugger
 	ensure_installed = {
 		"delve",
 		"codelldb",

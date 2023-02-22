@@ -3,7 +3,6 @@ require("user.keymaps")
 require("user.plugins")
 require("user.gitsigns")
 require("user.toggleterm")
-require("user.colorizer")
 require("user.scheme")
 require("user.zen-mode")
 require("user.impatient")
@@ -23,11 +22,12 @@ require("user.comment")
 require("user.autopairs")
 require("user.illuminate")
 require("user.autocmd")
-require("user.saga")
 require("user.cmp")
+--[[ require("user.colorizer") ]]
 
 -- Dynamic
 require("user.whichkey")
 require("user.lsp")
-require("user.ufo")
 require("user.dap")
+--[[ require("user.ufo") ]]
+--[[ require("user.saga") ]]

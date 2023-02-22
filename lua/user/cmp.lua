@@ -109,8 +109,8 @@ cmp.setup({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
-		-- Accept currently selected item. If none selected, `select` first item.
-		-- Set `select` to `false` to only confirm explicitly selected items.
+		-- Accept currently selected item. If none selected, 'select' first item.
+		-- Set 'select' to 'false' to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
@@ -178,12 +178,12 @@ cmp.setup({
 		completion = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+			--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 		},
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+			--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 		},
 	},
 	experimental = {
