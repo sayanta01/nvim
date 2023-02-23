@@ -93,7 +93,6 @@ require("lazy").setup({
 	"RRethy/vim-illuminate",
 	"folke/which-key.nvim",
 	"kyazdani42/nvim-tree.lua",
-	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 	"ThePrimeagen/vim-be-good",
 	{
 		"iamcco/markdown-preview.nvim",
@@ -103,6 +102,8 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
+	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
+
 	-- Themes
 	{
 		"uloco/bluloco.nvim",

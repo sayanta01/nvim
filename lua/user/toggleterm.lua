@@ -18,6 +18,7 @@ toggleterm.setup({
 	shell = vim.o.shell,
 	float_opts = {
 		border = "curved",
+		--[[ border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" }, ]]
 		winblend = 20,
 		highlights = {
 			border = "Normal",
