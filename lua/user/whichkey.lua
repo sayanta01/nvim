@@ -32,7 +32,7 @@ local setup = {
 		-- ["<tab>"] = "TAB",
 	},
 	icons = {
-		breadcrumb = "",
+		breadcrumb = " ",
 		separator = " ",
 		group = "",
 	},
@@ -184,6 +184,7 @@ local mappings = {
 		f = { ":Telescope lsp_references<cr>", "References" },
 		s = { ":Telescope grep_string<cr>", "Find String" },
 		l = { ":Telescope resume<cr>", "Last Search" },
+		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
 		m = { ":Telescope marks<cr>", "Marks" },
 		--[[ M = { ":Telescope man_pages<cr>", "ManPages" }, ]]
 	},
