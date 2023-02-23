@@ -21,8 +21,8 @@ require("user.autopairs")
 require("user.autocmd")
 require("user.cmp")
 require("user.impatient")
---[[ require("user.illuminate") ]]
 --[[ require("user.colorizer") ]]
+--[[ require("user.illuminate") ]]
 -- require("user.zen-mode")
 
 -- Dynamic
