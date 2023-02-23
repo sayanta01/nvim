@@ -3,11 +3,14 @@ if not dap_status_ok then
 	return
 end
 
+require("nvim-dap-virtual-text").setup()
+
 local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
 	return
 end
-require("dapui").setup({
+--[[ require("dapui").setup({ ]]
+dapui.setup({
 	sidebar = {
 		elements = {
 			{
@@ -17,20 +20,18 @@ require("dapui").setup({
 			{ id = "breakpoints", size = 0.25 },
 		},
 		size = 40,
-		position = "right", -- Can be "left", "right", "top", "bottom"
+		position = "left", -- Can be "left", "right", "top", "bottom"
 	},
 	tray = {
 		elements = {},
 	},
 })
 
-require("nvim-dap-virtual-text").setup()
-
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
 --[[ python ]]
 --[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
-require("dap-python").test_runner = "pytest"
+--[[ require("dap-python").test_runner = "pytest" ]]
 require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 table.insert(require("dap").configurations.python, {
 	type = "python",
