@@ -114,6 +114,7 @@ require("lazy").setup({
 			-- config goes here
 		end,
 	},
+	"projekt0n/github-nvim-theme",
 	"sainnhe/edge",
 	"rebelot/kanagawa.nvim",
 	"Shatur/neovim-ayu",
