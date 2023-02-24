@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---[[ notify config ]]
+-- notify config
 local BUILTIN_STAGES = {
 	fade_IN_SLIDE_OUT = "fade_in_slide_out", -- fade, slide, static
 }
@@ -102,7 +102,7 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
-	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
+	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" }, -- Fix this
 
 	-- Themes
 	{
