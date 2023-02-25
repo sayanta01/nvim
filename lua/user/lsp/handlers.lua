@@ -4,11 +4,11 @@ local on_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
 
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
-	illuminate.on_attach(client)
+	--[[ local status_ok, illuminate = pcall(require, "illuminate") ]]
+	--[[ if not status_ok then ]]
+	--[[ 	return ]]
+	--[[ end ]]
+	--[[ illuminate.on_attach(client) ]]
 
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
@@ -255,7 +255,7 @@ require("lspconfig")["rust_analyzer"].setup({
 			},
 		},
 	},
-	require("rust-tools").setup(),
+	--[[ require("rust-tools").setup(), ]]
 })
 
 require("lspconfig")["tsserver"].setup({

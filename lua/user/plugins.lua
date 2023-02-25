@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- notify config
+-- Notify config
 local BUILTIN_STAGES = {
 	fade_IN_SLIDE_OUT = "fade_in_slide_out", -- fade, slide, static
 }
@@ -53,25 +53,24 @@ require("lazy").setup({
 		end,
 	},
 	-- Features
+	"goolord/alpha-nvim",
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
-	"NvChad/nvim-colorizer.lua",
-	"uga-rosa/ccc.nvim",
 	"folke/zen-mode.nvim",
-	"lewis6991/impatient.nvim",
 	"lukas-reineke/indent-blankline.nvim",
 	"nvim-lualine/lualine.nvim",
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	"akinsho/bufferline.nvim",
-	"kylechui/nvim-surround",
+	"folke/which-key.nvim",
+	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
+	"kyazdani42/nvim-tree.lua",
+	"RRethy/vim-illuminate",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
-	"ahmedkhalf/project.nvim",
-	"goolord/alpha-nvim",
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "VeryLazy",
 	},
+	"numToStr/Comment.nvim",
 	{
 		"mrjones2014/nvim-ts-rainbow",
 		config = function()
@@ -88,11 +87,14 @@ require("lazy").setup({
 			})
 		end,
 	},
-	"numToStr/Comment.nvim",
-	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
-	"RRethy/vim-illuminate",
-	"folke/which-key.nvim",
-	"kyazdani42/nvim-tree.lua",
+	"NvChad/nvim-colorizer.lua",
+	"uga-rosa/ccc.nvim",
+	"akinsho/bufferline.nvim",
+	"kylechui/nvim-surround",
+	"lewis6991/impatient.nvim",
+	"ahmedkhalf/project.nvim",
+
+	-- Misc
 	"ThePrimeagen/vim-be-good",
 	{
 		"iamcco/markdown-preview.nvim",
@@ -125,6 +127,7 @@ require("lazy").setup({
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
 	"Mofiqul/vscode.nvim",
+	"LunarVim/darkplus.nvim",
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -134,7 +137,6 @@ require("lazy").setup({
 			require("rose-pine").setup()
 		end,
 	},
-	"LunarVim/darkplus.nvim",
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
@@ -148,8 +150,8 @@ require("lazy").setup({
 	"hrsh7th/cmp-path",
 	"saadparwaiz1/cmp_luasnip",
 	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-calc",
 	"f3fora/cmp-spell",
+	"hrsh7th/cmp-calc",
 	"hrsh7th/cmp-nvim-lsp-signature-help",
 
 	-- Snippets
@@ -179,7 +181,7 @@ require("lazy").setup({
 	"theHamsta/nvim-dap-virtual-text",
 	"mfussenegger/nvim-dap-python",
 	"mfussenegger/nvim-jdtls",
-	"simrat39/rust-tools.nvim",
+	--[[ "simrat39/rust-tools.nvim", ]]
 	--[[ "leoluz/nvim-dap-go", ]]
 	--[[ "mxsdev/nvim-dap-vscode-js", ]]
 })
