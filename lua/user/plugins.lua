@@ -91,8 +91,8 @@ require("lazy").setup({
 	"uga-rosa/ccc.nvim",
 	"akinsho/bufferline.nvim",
 	"kylechui/nvim-surround",
-	"lewis6991/impatient.nvim",
 	"ahmedkhalf/project.nvim",
+	"lewis6991/impatient.nvim",
 
 	-- Misc
 	"ThePrimeagen/vim-be-good",
