@@ -26,7 +26,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo new project  # get started with rust
 # rustup component add rust-analyzer  # check this
 
-# creating python venv for dap
+# creating venv for python-dap
 # mkdir ~/.virtualenvs
 # cd ~/.virtualenvs || exit
 # python -m venv debugpy
