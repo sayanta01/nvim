@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # build from source
-#sudo apt install -y ninja-build gettext libtool libtool-bin cmake pkg-config doxygen
-#git clone https://github.com/neovim/neovim.git ~/.config/neovim && cd ~/.config/neovim
-#make -j4 && sudo make install
+# sudo apt install -y ninja-build gettext libtool libtool-bin cmake pkg-config doxygen
+# git clone https://github.com/neovim/neovim.git ~/.config/neovim && cd ~/.config/neovim
+# make -j4 && sudo make install
 
 # debian
 # sudo apt install -y npm golang ruby ueberzug cargo && cargo install ttyper bat procs
@@ -23,19 +23,19 @@ pip install pynvim
 
 # rust setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup component add rust-analyzer
 # cargo new project  # get started with rust
+# rustup component add rust-analyzer  # check this
 
-# `creating python venv for dap`
+# creating python venv for dap
 # mkdir ~/.virtualenvs
 # cd ~/.virtualenvs || exit
 # python -m venv debugpy
 # debugpy/bin/python -m pip install debugpy
 
-# `delve for go-dap`
+# delve for go-dap
 # go install github.com/go-delve/delve/cmd/dlv@latest
 
-# `javascript-dap` >> `https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome`
+# javascript-dap >> https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome
 # mkdir -p ~/dev/microsoft
 # git clone https://github.com/microsoft/vscode-node-debug2.git ~/dev/microsoft/vscode-node-debug2
 # cd ~/dev/microsoft/vscode-node-debug2 || exit

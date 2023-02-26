@@ -117,29 +117,28 @@ local mappings = {
 		name = "LSP",
 		f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
 		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
-		n = { ":lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-		p = { ":lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
 		r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
 		I = { ":LspInfo<cr>", "Info" },
 		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-		q = { ":lua vim.lsp.diagnostic.set_loclist()<cr>", "quickfix" },
+		q = { ":lua vim.diagnostic.setloclist()<cr>", "quickfix" },
 		e = { ":Telescope quickfix<cr>", "Telescope quickfix" },
 		l = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		L = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
-
 		d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" },
 		D = { ":lua vim.lsp.buf.definition()<cr>", "Goto Definition" },
-		h = { ":lua vim.lsp.buf.hover()<cr>", "Hover" },
-		R = { ":lua vim.lsp.buf.references()<cr>", "References" },
-		k = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 		t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
-
+		n = { ":lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+		p = { ":lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
+		R = { ":lua vim.lsp.buf.references()<cr>", "References" },
+		--[[ h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" }, ]]
+		--[[ k = { ":lua vim.lsp.buf.hover()<cr>", "Hover" }, ]]
 		i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
 		o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 	},
+
 	--[[ s = { ]]
 	--[[ name = "Saga", ]]
 	--[[ f = { ":Lspsaga lsp_finder<CR>", "Finder" }, ]]
@@ -167,6 +166,7 @@ local mappings = {
 	--[[ g = { ":Lspsaga outgoing_calls<CR>", "Outgoing Calls" }, ]]
 	-- t = { ":Lspsaga term_toggle<CR>", "Terminal" },
 	--[[ }, ]]
+
 	s = {
 		name = "Telescope",
 		t = { ":Telescope colorscheme<cr>", "Themes" },
@@ -179,12 +179,12 @@ local mappings = {
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 		k = { ":Telescope keymaps<cr>", "Keymaps" },
 		r = { ":Telescope oldfiles<cr>", "Recent Files" },
-		R = { ":Telescope registers<cr>", "Registers" },
-		p = { ":Telescope projects<cr>", "Projects" },
-		f = { ":Telescope lsp_references<cr>", "References" },
 		s = { ":Telescope grep_string<cr>", "Find String" },
-		l = { ":Telescope resume<cr>", "Last Search" },
+		p = { ":Telescope projects<cr>", "Projects" },
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
+		f = { ":Telescope lsp_references<cr>", "References" },
+		R = { ":Telescope registers<cr>", "Registers" },
+		l = { ":Telescope resume<cr>", "Last Search" },
 		m = { ":Telescope marks<cr>", "Marks" },
 		--[[ M = { ":Telescope man_pages<cr>", "ManPages" }, ]]
 	},
@@ -198,12 +198,11 @@ local mappings = {
 		h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
 		t = { ":ColorizerToggle<cr>", "Colorizer Toggle" },
 		n = { ":set rnu!<cr>", "Relative Nm" },
-		N = { ":set cursorcolumn!<cr>", "Cursor Column" },
+		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		z = { ":ZenMode<cr>", "Zen-Mode" },
 		w = { ":set wrap<cr>", "Wrap Text" },
 		W = { ":set nowrap<cr>", "No Wrap" },
 		m = { ":set showmode!<cr>", "Show Mode (statusline)  " },
-		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 	},
 	p = {
@@ -211,12 +210,12 @@ local mappings = {
 		m = { ":Mason<cr>", "Mason" },
 		n = { ":NullLsInfo<cr>", "NullLs" },
 		l = { ":Lazy<cr>", "Lazy" },
-		c = { ":Lazy build<cr>", "Build Plugins" },
 		i = { ":Lazy install<cr>", "Install Plugins" },
-		s = { ":Lazy sync<cr>", "Sync Plugins" },
-		S = { ":Lazy check<cr>", "Status" },
 		r = { ":Lazy clean<cr>", "Remove Unused Plugins" },
 		u = { ":Lazy update<cr>", "Update Plugins" },
+		c = { ":Lazy build<cr>", "Build Plugins" },
+		s = { ":Lazy sync<cr>", "Sync Plugins" },
+		S = { ":Lazy check<cr>", "Status" },
 	},
 	b = {
 		name = "Buffer",

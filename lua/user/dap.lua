@@ -9,22 +9,21 @@ local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
 	return
 end
---[[ require("dapui").setup({ ]]
 dapui.setup({
-	sidebar = {
-		elements = {
-			{
-				id = "scopes",
-				size = 0.25, -- Can be float or integer > 1
-			},
-			{ id = "breakpoints", size = 0.25 },
-		},
-		size = 40,
-		position = "left", -- Can be "left", "right", "top", "bottom"
-	},
-	tray = {
-		elements = {},
-	},
+	--[[ sidebar = { ]]
+	--[[ 	elements = { ]]
+	--[[ 		{ ]]
+	--[[ 			id = "scopes", ]]
+	--[[ 			size = 0.25, -- Can be float or integer > 1 ]]
+	--[[ 		}, ]]
+	--[[ 		{ id = "breakpoints", size = 0.25 }, ]]
+	--[[ 	}, ]]
+	--[[ 	size = 40, ]]
+	--[[ 	position = "left", -- Can be "left", "right", "top", "bottom" ]]
+	--[[ }, ]]
+	--[[ tray = { ]]
+	--[[ 	elements = {}, ]]
+	--[[ }, ]]
 })
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
@@ -168,6 +167,7 @@ dap.configurations.go = {
 --[[ } ]]
 --[[ dap.configurations.c = dap.configurations.cpp ]]
 --[[ dap.configurations.rust = dap.configurations.cpp ]]
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end

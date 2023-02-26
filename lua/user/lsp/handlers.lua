@@ -50,13 +50,13 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap("n", "gs", ":lua vim.lsp.buf.signature_help()<CR>", opts)
 	buf_set_keymap("n", "gl", ":lua vim.diagnostic.open_float()<CR>", opts)
-	buf_set_keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
-	buf_set_keymap("n", "<leader>lr", ":lua vim.lsp.buf.rename()<CR>", opts)
-	buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts)
-	buf_set_keymap("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", opts)
 	buf_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
 	buf_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
-	buf_set_keymap("n", "<leader>lq", ":lua vim.diagnostic.setloclist()<CR>", opts)
+	buf_set_keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
+	--[[ buf_set_keymap("n", "<leader>lr", ":lua vim.lsp.buf.rename()<CR>", opts) ]]
+	--[[ buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts) ]]
+	--[[ buf_set_keymap("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", opts) ]]
+	--[[ buf_set_keymap("n", "<leader>lq", ":lua vim.diagnostic.setloclist()<CR>", opts) ]]
 end
 
 -- diagnostic disable-next-line: undefined-global
@@ -95,23 +95,7 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["html"].setup({
-	filetypes = { "html", "php", "xml" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["cssls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["vimls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["texlab"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -130,6 +114,22 @@ require("lspconfig")["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
+
+require("lspconfig")["html"].setup({
+	filetypes = { "html", "php", "xml" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["cssls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["texlab"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["lua_ls"].setup({
@@ -159,10 +159,10 @@ require("lspconfig")["pyright"].setup({
 	settings = {
 		python = {
 			analysis = {
-				typeCheckingMode = "basic", -- off
-				diagnosticMode = "workspace",
 				autoSearchPaths = true,
+				diagnosticMode = "workspace",
 				useLibraryCodeForTypes = true,
+				typeCheckingMode = "basic", -- off
 				inlayHints = {
 					variableTypes = true,
 					functionReturnTypes = true,
@@ -181,50 +181,40 @@ require("lspconfig").solargraph.setup({
 			diagnostics = true,
 		},
 		flags = {
-			debounce_text_changes = 140,
+			debounce_text_changes = 150,
 		},
 	},
 })
 
 require("lspconfig")["gopls"].setup({
+	cmd = { "gopls" },
+	filetypes = { "go", "gomod" },
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		gopls = {
-			gofumpt = true,
-		},
-	},
-	flags = {
-		debounce_text_changes = 140,
-	},
-})
-
-require("lspconfig")["jsonls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		json = {
-			schemas = require("schemastore").json.schemas(),
-		},
-	},
-	init_options = {
-		provideFormatter = true,
-	},
-	setup = {
-		commands = {
-			Format = {
-				function()
-					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
-				end,
+			analyses = {
+				unusedparams = true,
+				shadow = true,
 			},
+			experimentalPostfixCompletions = true,
+			gofumpt = true,
+			staticcheck = true,
 		},
 	},
 })
-
-require("lspconfig")["jdtls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+--[[ require("lspconfig")["gopls"].setup({ ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	settings = { ]]
+--[[ 		gopls = { ]]
+--[[ 			gofumpt = true, ]]
+--[[ 		}, ]]
+--[[ 	}, ]]
+--[[ 	flags = { ]]
+--[[ 		debounce_text_changes = 140, ]]
+--[[ 	}, ]]
+--[[ }) ]]
 
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
@@ -258,6 +248,28 @@ require("lspconfig")["rust_analyzer"].setup({
 	--[[ require("rust-tools").setup(), ]]
 })
 
+require("lspconfig")["jsonls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+		},
+	},
+	init_options = {
+		provideFormatter = true,
+	},
+	setup = {
+		commands = {
+			Format = {
+				function()
+					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+				end,
+			},
+		},
+	},
+})
+
 require("lspconfig")["tsserver"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -280,6 +292,11 @@ require("lspconfig")["tsserver"].setup({
 --[[ 	capabilities = capabilities, ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ }) ]]
+require("lspconfig")["jdtls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
