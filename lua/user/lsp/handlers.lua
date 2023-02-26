@@ -9,7 +9,6 @@ local on_attach = function(client, bufnr)
 	--[[ 	return ]]
 	--[[ end ]]
 	--[[ illuminate.on_attach(client) ]]
-
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
@@ -172,20 +171,6 @@ require("lspconfig")["pyright"].setup({
 	},
 })
 
-require("lspconfig").solargraph.setup({
-	filetypes = { "ruby", "eruby" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		solargraph = {
-			diagnostics = true,
-		},
-		flags = {
-			debounce_text_changes = 150,
-		},
-	},
-})
-
 require("lspconfig")["gopls"].setup({
 	cmd = { "gopls" },
 	filetypes = { "go", "gomod" },
@@ -212,7 +197,7 @@ require("lspconfig")["gopls"].setup({
 --[[ 		}, ]]
 --[[ 	}, ]]
 --[[ 	flags = { ]]
---[[ 		debounce_text_changes = 140, ]]
+--[[ 		debounce_text_changes = 150, ]]
 --[[ 	}, ]]
 --[[ }) ]]
 
@@ -288,13 +273,28 @@ require("lspconfig")["tsserver"].setup({
 	},
 })
 
+require("lspconfig")["jdtls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 --[[ require("lspconfig")["tailwindcss"].setup({ ]]
 --[[ 	capabilities = capabilities, ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ }) ]]
-require("lspconfig")["jdtls"].setup({
+
+require("lspconfig").solargraph.setup({
+	filetypes = { "ruby", "eruby" },
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+		solargraph = {
+			diagnostics = true,
+		},
+		flags = {
+			debounce_text_changes = 150,
+		},
+	},
 })
 
 require("lspconfig")["yamlls"].setup({
