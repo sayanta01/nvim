@@ -3,16 +3,22 @@ if not present then
 	return
 end
 
+local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
+if not config_status_ok then
+	return
+end
+
+local tree_cb = nvim_tree_config.nvim_tree_callback
+
 local options = {
 	filters = {
 		dotfiles = false,
 		exclude = { "custom" },
 	},
 	disable_netrw = false,
-	hijack_cursor = true,
+	hijack_cursor = false,
 	hijack_netrw = false,
 	hijack_unnamed_buffer_when_opening = false,
-	update_cwd = true,
 	update_focused_file = {
 		enable = true,
 		update_cwd = false,
@@ -37,6 +43,13 @@ local options = {
 		hide_root_folder = false,
 		side = "left",
 		number = false,
+		mappings = {
+			list = {
+				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+				{ key = "h", cb = tree_cb("close_node") },
+				{ key = "v", cb = tree_cb("vsplit") },
+			},
+		},
 	},
 	git = {
 		enable = false,
@@ -53,7 +66,7 @@ local options = {
 	},
 	actions = {
 		open_file = {
-			quit_on_open = true,
+			quit_on_open = false,
 			resize_window = true,
 			window_picker = {
 				enable = false,
