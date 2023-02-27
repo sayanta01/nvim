@@ -20,6 +20,10 @@ else
 	print("Unsupported system")
 end
 
+--[[ local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t") ]]
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+local workspace_dir = WORKSPACE_PATH .. project_name
+
 -- Find root of project
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
@@ -30,20 +34,12 @@ end
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
---[[ local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t") ]]
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-
-local workspace_dir = WORKSPACE_PATH .. project_name
-
-JAVA_DAP_ACTIVE = true
-
-local bundles = {
-	vim.fn.glob(
-		home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-	),
-}
-
-vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n"))
+--[[ local bundles = { ]]
+--[[ 	vim.fn.glob( ]]
+--[[ 		home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar" ]]
+--[[ 	), ]]
+--[[ } ]]
+--[[ vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n")) ]]
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -56,32 +52,23 @@ local config = {
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
-		"-noverify",
 		"-Xmx1G",
-		--[[ "-jar", ]]
-		--[[ "~/Library/java/jdt-language-server-1.9.0-202203031534/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar", ]]
-		--[[ "-jar", ]]
-		--[[ vim.fn.glob(home .. "/.local/share/nvim/lsp_servers/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"), ]]
-		--[[ "-configuration", ]]
-		--[[ "~/Library/java/jdt-language-server-1.9.0-202203031534/config_linux", ]]
-		--[[ "-configuration", ]]
-		--[[ home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG, ]]
-
+		"--add-modules=ALL-SYSTEM",
+		"--add-opens",
+		"java.base/java.util=ALL-UNNAMED",
+		"--add-opens",
+		"java.base/java.lang=ALL-UNNAMED",
 		"-jar",
-		"~/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+		vim.fn.glob(home .. "/.local/share/nvim/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 		"-configuration",
-		"~/.local/share/nvim/mason/packages/jdtls/config_linux",
-
+		home .. "/.local/share/nvim/mason/jdtls/config_" .. CONFIG,
+		--[[ home .. "/.local/share/nvim/mason/packages/jdtls/config_linux", ]]
 		"-data",
-		vim.fn.expand("~/.cache/jdtls/workspace") .. workspace_dir,
-		--[[ "-data", ]]
-		--[[ workspace_dir, ]]
+		workspace_dir,
 	},
 
 	capabilities = capabilities,
-
 	root_dir = root_dir,
-	--[[ root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }), ]]
 
 	settings = {
 		java = {
@@ -138,17 +125,27 @@ local config = {
 	flags = {
 		allow_incremental_sync = true,
 	},
+	--[[  init_options = { ]]
+	-- bundles = {},
+	--[[     bundles = bundles, ]]
+	--[[   }, ]]
 }
-require("jdtls").start_or_attach(config)
 
-vim.cmd(
-	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
-)
-vim.cmd(
-	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
-)
-vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
-vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
+--[[ vim.api.nvim_create_autocmd({ "BufWritePost" }, { ]]
+--[[   pattern = { "*.java" }, ]]
+--[[   callback = function() ]]
+--[[     vim.lsp.codelens.refresh() ]]
+--[[   end, ]]
+--[[ }) ]]
+--[[ require("jdtls").start_or_attach(config) ]]
+--[[ vim.cmd( ]]
+--[[ 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)" ]]
+--[[ ) ]]
+--[[ vim.cmd( ]]
+--[[ 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)" ]]
+--[[ ) ]]
+--[[ vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()") ]]
+--[[ vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()") ]]
 
 -- Shorten function name
 local keymap = vim.keymap.set
@@ -160,7 +157,7 @@ keymap("n", "<leader>jt", ":lua require'jdtls'.test_class()<CR>", opts)
 keymap("n", "<leader>jn", ":lua require'jdtls'.test_nearest_method()<CR>", opts)
 keymap("n", "<leader>jv", ":lua require('jdtls').extract_variable()<CR>", opts)
 keymap("n", "<leader>jc", ":lua require('jdtls').extract_constant()<CR>", opts)
-keymap("n", "<leader>ju", ":JdtUpdateConfig<CR>", opts)
+--[[ keymap("n", "<leader>ju", ":JdtUpdateConfig<CR>", opts) ]]
 
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
 keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)

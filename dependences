@@ -21,6 +21,9 @@ sudo npm i -g tree-sitter-cli live-server
 # python dependences
 pip install pynvim
 
+# setup java
+# sudo pacman -S jdk-openjdk
+
 # rust setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo new project  # get started with rust
