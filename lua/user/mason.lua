@@ -2,9 +2,9 @@ require("mason").setup({
 	ui = {
 		border = "rounded",
 		icons = {
-			package_installed = "◍",
-			package_pending = "◍",
-			package_uninstalled = "",
+			package_installed = "",
+			package_pending = "",
+			package_uninstalled = "",
 			keymaps = {
 				toggle_package_expand = "<CR>",
 				install_package = "i",
@@ -47,6 +47,8 @@ require("mason-lspconfig").setup({
 		"dockerls",
 		"bashls",
 		"ltex",
+    "awk_ls",
+		"astro",
 		"vimls",
 	},
 	automatic_installation = true,

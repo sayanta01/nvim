@@ -23,7 +23,6 @@ require("lazy").setup({
 	-- Dependences
 	"nvim-lua/plenary.nvim",
 	"nvim-lua/popup.nvim",
-	--[[ "kyazdani42/nvim-web-devicons", ]]
 	"nvim-tree/nvim-web-devicons",
 	{
 		"rcarriga/nvim-notify",
@@ -52,6 +51,7 @@ require("lazy").setup({
 			})
 		end,
 	},
+
 	-- Features
 	"goolord/alpha-nvim",
 	"lewis6991/gitsigns.nvim",
@@ -127,6 +127,7 @@ require("lazy").setup({
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
 	"Mofiqul/vscode.nvim",
+	"lunarvim/lunar.nvim",
 	"LunarVim/darkplus.nvim",
 	{
 		"rose-pine/neovim",

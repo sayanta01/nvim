@@ -34,6 +34,8 @@ configs.setup({
 		"latex",
 		"vim",
 		"regex",
+		"awk",
+		"astro",
 		"gitignore",
 	},
 	sync_install = false,

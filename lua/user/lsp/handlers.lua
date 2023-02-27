@@ -94,6 +94,11 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
 
+require("lspconfig")["awk_ls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 require("lspconfig")["vimls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -122,6 +127,11 @@ require("lspconfig")["html"].setup({
 })
 
 require("lspconfig")["cssls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["astro"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -200,7 +210,6 @@ require("lspconfig")["gopls"].setup({
 --[[ 		debounce_text_changes = 150, ]]
 --[[ 	}, ]]
 --[[ }) ]]
-
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -282,7 +291,6 @@ require("lspconfig")["jdtls"].setup({
 --[[ 	capabilities = capabilities, ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ }) ]]
-
 require("lspconfig").solargraph.setup({
 	filetypes = { "ruby", "eruby" },
 	on_attach = on_attach,

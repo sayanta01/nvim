@@ -11,4 +11,10 @@ require("nvim-web-devicons").set_icon({
 		cterm_color = "167",
 		name = "Ppt",
 	},
+	astro = {
+		icon = "",
+		color = "#ff6400",
+		cterm_color = "202",
+		name = "Astro",
+	},
 })
