@@ -20,10 +20,6 @@ else
 	print("Unsupported system")
 end
 
---[[ local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t") ]]
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = WORKSPACE_PATH .. project_name
-
 -- Find root of project
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
@@ -34,12 +30,23 @@ end
 local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+local workspace_dir = WORKSPACE_PATH .. project_name
+
+-- Debugging
+--[[ JAVA_DAP_ACTIVE = true ]]
+
+--[[ local HOME = os.getenv "HOME" ]]
+--[[ local DEBUGGER_LOCATION = HOME .. "/.local/share/nvim" ]]
+
 --[[ local bundles = { ]]
 --[[ 	vim.fn.glob( ]]
---[[ 		home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar" ]]
---[[ 	), ]]
+--[[       DEBUGGER_LOCATION .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar" ]]
+	   	-- home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+	--[[ ), ]]
 --[[ } ]]
---[[ vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n")) ]]
+--[[ vim.list_extend(bundles, vim.split(vim.fn.glob(DEBUGGER_LOCATION .. "/vscode-java-test/server/*.jar"), "\n")) ]]
+-- vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n"))
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -54,15 +61,10 @@ local config = {
 		"-Dlog.level=ALL",
 		"-Xmx1G",
 		"--add-modules=ALL-SYSTEM",
-		"--add-opens",
-		"java.base/java.util=ALL-UNNAMED",
-		"--add-opens",
-		"java.base/java.lang=ALL-UNNAMED",
-		"-jar",
-		vim.fn.glob(home .. "/.local/share/nvim/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
-		"-configuration",
-		home .. "/.local/share/nvim/mason/jdtls/config_" .. CONFIG,
-		--[[ home .. "/.local/share/nvim/mason/packages/jdtls/config_linux", ]]
+		"--add-opens", "java.base/java.util=ALL-UNNAMED",
+		"--add-opens", "java.base/java.lang=ALL-UNNAMED",
+		"-jar", vim.fn.glob(home .. "/.local/share/nvim/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+		"-configuration", home .. "/.local/share/nvim/mason/jdtls/config_" .. CONFIG,
 		"-data",
 		workspace_dir,
 	},
@@ -125,10 +127,12 @@ local config = {
 	flags = {
 		allow_incremental_sync = true,
 	},
-	--[[  init_options = { ]]
-	-- bundles = {},
-	--[[     bundles = bundles, ]]
-	--[[   }, ]]
+   -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
+   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
+	 --[[ init_options = { ]]
+	 -- bundles = {},
+	    --[[ bundles = bundles, ]]
+	  --[[ }, ]]
 }
 
 --[[ vim.api.nvim_create_autocmd({ "BufWritePost" }, { ]]
@@ -138,14 +142,15 @@ local config = {
 --[[   end, ]]
 --[[ }) ]]
 --[[ require("jdtls").start_or_attach(config) ]]
---[[ vim.cmd( ]]
---[[ 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)" ]]
---[[ ) ]]
---[[ vim.cmd( ]]
---[[ 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)" ]]
---[[ ) ]]
---[[ vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()") ]]
---[[ vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()") ]]
+
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
+)
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
+)
+vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
+vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
 
 -- Shorten function name
 local keymap = vim.keymap.set
@@ -157,7 +162,7 @@ keymap("n", "<leader>jt", ":lua require'jdtls'.test_class()<CR>", opts)
 keymap("n", "<leader>jn", ":lua require'jdtls'.test_nearest_method()<CR>", opts)
 keymap("n", "<leader>jv", ":lua require('jdtls').extract_variable()<CR>", opts)
 keymap("n", "<leader>jc", ":lua require('jdtls').extract_constant()<CR>", opts)
---[[ keymap("n", "<leader>ju", ":JdtUpdateConfig<CR>", opts) ]]
+keymap("n", "<leader>ju", ":JdtUpdateConfig<CR>", opts)
 
 keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
 keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)

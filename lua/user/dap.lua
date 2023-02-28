@@ -65,7 +65,7 @@ dap.configurations.javascript = {
 		type = "node2",
 		request = "attach",
 		--[[ restart = true, ]]
-		--[[ port = 9229, ]]
+		port = 9229,
 		processId = require("dap.utils").pick_process,
 	},
 }
