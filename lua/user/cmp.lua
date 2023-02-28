@@ -155,7 +155,7 @@ cmp.setup({
 				path = "[Path]",
 				spell = "[Spell]",
 				calc = "[Calc]",
-				sign = "[Sign]",
+				nvim_lsp_signature_help = "[Sign]",
 			})[entry.source.name]
 			return vim_item
 		end,
