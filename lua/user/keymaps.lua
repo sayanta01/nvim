@@ -1,5 +1,6 @@
 local opts = { noremap = true, silent = true }
 --[[ local term_opts = { silent = true } ]]
+
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -21,14 +22,12 @@ vim.g.maplocalleader = " "
 --[[ keymap("n", "<C-w>", "<ESC>:set wrap <CR>", opts) ]]
 -- keymap("i", "<C-w-w>", "<ECS>:set wrap <CR>", opts)
 --[[ keymap("v", "<C-w>", "<ESC>:set wrap <CR>", opts) ]]
+
 -- No Wrap Text
 --[[ keymap("n", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
 --[[ keymap("i", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
 --[[ keymap("v", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
--- Line number
---[[ keymap("n", "<leader>n", ":set nu! <CR>", opts) ]]
---[[ keymap("n", "<leader>nn", ":set rnu! <CR>", opts) ]]
---[[ keymap("n", "<leader>m", ":set cursorcolumn! <CR>", opts) ]]
+
 -- Beginning & End
 keymap("n", "<C-b>", "<ESC>^i", opts)
 keymap("n", "<C-e>", "<End>", opts)

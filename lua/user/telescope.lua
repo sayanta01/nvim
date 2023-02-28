@@ -121,6 +121,7 @@ telescope.setup({
 			},
 		},
 	},
+
 	file_ignore_patterns = {},
 	pickers = {
 		-- Default configuration for builtin pickers goes here

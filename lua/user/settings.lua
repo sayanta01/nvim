@@ -47,6 +47,7 @@ vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completi
 vim.opt.shortmess:append("sI") -- disable nvim intro
 vim.opt.whichwrap:append("<,>,[,],h,l")
 -- vim.opt.iskeyword:append("-")
+
 -- Disable builtin plugins
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1

@@ -37,7 +37,6 @@ require("indent_blankline").setup({
 		"operation_type",
 	},
 	--[[ char = "▏", ]]
-	--[[ char = "│", ]]
 	--[[ char = "┆", ]]
 	--[[ char = ":", ]]
 	--[[ char = "∘", ]]

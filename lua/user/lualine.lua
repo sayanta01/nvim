@@ -26,7 +26,7 @@ local colors = {
 --[[     return gitdir and #gitdir > 0 and #gitdir < #filepath ]]
 --[[   end, ]]
 --[[ } ]]
--- Config
+
 local config = {
 	options = {
 		-- Disable sections and component separators

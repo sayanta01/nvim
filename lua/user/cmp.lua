@@ -141,6 +141,7 @@ cmp.setup({
 			"s",
 		}),
 	}),
+
 	-- Formatting
 	formatting = {
 		fields = { "kind", "abbr", "menu" },

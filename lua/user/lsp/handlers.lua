@@ -9,6 +9,7 @@ local on_attach = function(client, bufnr)
 	--[[ 	return ]]
 	--[[ end ]]
 	--[[ illuminate.on_attach(client) ]]
+
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
@@ -210,6 +211,7 @@ require("lspconfig")["gopls"].setup({
 --[[ 		debounce_text_changes = 150, ]]
 --[[ 	}, ]]
 --[[ }) ]]
+
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -287,14 +289,12 @@ require("lspconfig")["jdtls"].setup({
 	capabilities = capabilities,
 })
 
---[[ require("lspconfig")["tailwindcss"].setup({ ]]
---[[ 	capabilities = capabilities, ]]
---[[ 	on_attach = on_attach, ]]
---[[ }) ]]
 require("lspconfig").solargraph.setup({
 	filetypes = { "ruby", "eruby" },
 	on_attach = on_attach,
 	capabilities = capabilities,
+	--[[ root_dir = require("lspconfig").util.root_pattern("Gemfile"), ]]
+	single_file_support = true,
 	settings = {
 		solargraph = {
 			diagnostics = true,
@@ -304,6 +304,11 @@ require("lspconfig").solargraph.setup({
 		},
 	},
 })
+
+--[[ require("lspconfig")["tailwindcss"].setup({ ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ }) ]]
 
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,

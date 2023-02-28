@@ -15,9 +15,9 @@ local options = {
 		dotfiles = false,
 		exclude = { "custom" },
 	},
-	disable_netrw = false,
-	hijack_cursor = false,
-	hijack_netrw = false,
+	--[[ disable_netrw = false, ]]
+	--[[ hijack_netrw = false, ]]
+	--[[ hijack_cursor = false, ]]
 	hijack_unnamed_buffer_when_opening = false,
 	update_focused_file = {
 		enable = true,
@@ -39,7 +39,6 @@ local options = {
 	},
 	view = {
 		width = 28,
-		--height = 28,
 		hide_root_folder = false,
 		side = "left",
 		number = false,
@@ -108,7 +107,7 @@ local options = {
 					empty_open = "",
 					symlink = "",
 					symlink_open = "",
-					arrow_open = "",
+					arrow_open = "",
 					arrow_closed = "",
 				},
 				git = {

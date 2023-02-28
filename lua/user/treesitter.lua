@@ -37,6 +37,7 @@ configs.setup({
 		"awk",
 		"astro",
 		"gitignore",
+		"solidity",
 	},
 	sync_install = false,
 	ignore_install = {},

@@ -33,6 +33,6 @@ require("colorizer").setup({
 		sass = { enable = false, parsers = { "css" } }, -- Enable sass colors
 		virtualtext = "■",
 	},
-	-- all the sub-options of filetypes apply to buftypes
+	-- All the sub-options of filetypes apply to buftypes
 	buftypes = {},
 })

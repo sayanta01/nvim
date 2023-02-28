@@ -35,15 +35,12 @@ local workspace_dir = WORKSPACE_PATH .. project_name
 
 -- Debugging
 --[[ JAVA_DAP_ACTIVE = true ]]
-
---[[ local HOME = os.getenv "HOME" ]]
 --[[ local DEBUGGER_LOCATION = HOME .. "/.local/share/nvim" ]]
-
 --[[ local bundles = { ]]
 --[[ 	vim.fn.glob( ]]
 --[[       DEBUGGER_LOCATION .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar" ]]
-	   	-- home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
-	--[[ ), ]]
+-- home .. "/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+--[[ ), ]]
 --[[ } ]]
 --[[ vim.list_extend(bundles, vim.split(vim.fn.glob(DEBUGGER_LOCATION .. "/vscode-java-test/server/*.jar"), "\n")) ]]
 -- vim.list_extend(bundles, vim.split(vim.fn.glob(home .. "/.config/nvim/vscode-java-test/server/*.jar"), "\n"))
@@ -61,10 +58,14 @@ local config = {
 		"-Dlog.level=ALL",
 		"-Xmx1G",
 		"--add-modules=ALL-SYSTEM",
-		"--add-opens", "java.base/java.util=ALL-UNNAMED",
-		"--add-opens", "java.base/java.lang=ALL-UNNAMED",
-		"-jar", vim.fn.glob(home .. "/.local/share/nvim/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
-		"-configuration", home .. "/.local/share/nvim/mason/jdtls/config_" .. CONFIG,
+		"--add-opens",
+		"java.base/java.util=ALL-UNNAMED",
+		"--add-opens",
+		"java.base/java.lang=ALL-UNNAMED",
+		"-jar",
+		vim.fn.glob(home .. "/.local/share/nvim/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+		"-configuration",
+		home .. "/.local/share/nvim/mason/jdtls/config_" .. CONFIG,
 		"-data",
 		workspace_dir,
 	},
@@ -127,12 +128,12 @@ local config = {
 	flags = {
 		allow_incremental_sync = true,
 	},
-   -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
-   -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
-	 --[[ init_options = { ]]
-	 -- bundles = {},
-	    --[[ bundles = bundles, ]]
-	  --[[ }, ]]
+	-- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
+	-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
+	--[[ init_options = { ]]
+	-- bundles = {},
+	--[[ bundles = bundles, ]]
+	--[[ }, ]]
 }
 
 --[[ vim.api.nvim_create_autocmd({ "BufWritePost" }, { ]]
