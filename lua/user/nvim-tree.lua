@@ -16,8 +16,8 @@ local options = {
 		exclude = { "custom" },
 	},
 	--[[ disable_netrw = false, ]]
-	--[[ hijack_netrw = false, ]]
 	--[[ hijack_cursor = false, ]]
+	hijack_netrw = false,
 	hijack_unnamed_buffer_when_opening = false,
 	update_focused_file = {
 		enable = true,
