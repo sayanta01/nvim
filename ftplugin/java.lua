@@ -1,7 +1,7 @@
 --[[ https://github.com/mfussenegger/nvim-jdtls ]]
-vim.opt_local.shiftwidth = 2
-vim.opt_local.tabstop = 2
 vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
+--[[ vim.opt_local.shiftwidth = 2 ]]
+--[[ vim.opt_local.tabstop = 2 ]]
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
