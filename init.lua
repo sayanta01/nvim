@@ -21,7 +21,7 @@ vim.notify = require("notify")
 require("user.surround")
 require("user.project")
 require("user.impatient")
---[[ require("user.colorizer") ]]
+require("user.colorizer")
 
 -- Dynamic
 require("user.whichkey")

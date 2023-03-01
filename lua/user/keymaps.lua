@@ -7,7 +7,7 @@ local keymap = vim.api.nvim_set_keymap
 -- Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = " "  -- meant for a specific buffer, you generally use it based on a filetype
 
 -- Modes
 --   term_mode = "t",
@@ -33,10 +33,10 @@ keymap("n", "<C-b>", "<ESC>^i", opts)
 keymap("n", "<C-e>", "<End>", opts)
 
 -- Clear highlights
-keymap("n", "<leader>h", ":nohlsearch<CR>", opts)
+--[[ keymap("n", "<leader>h", ":nohlsearch<CR>", opts) ]]
 
 -- Copy whole file
-keymap("n", "<leader>y", "gg<S-v>G", opts)
+--[[ keymap("n", "<leader>y", "gg<S-v>G", opts) ]]
 
 -- Edit same word all together
 keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
@@ -66,8 +66,8 @@ keymap("n", "<S-b>", ":enew <CR>", opts)
 keymap("n", "dd", '"_dd', opts)
 
 -- Move text up and down
-keymap("n", "<A-h>", ":m .+1<CR>==", opts)
-keymap("n", "<A-l>", ":m .-2<CR>==", opts)
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 keymap("n", "<C-v>", ":vsplit<CR>", opts)
 keymap("n", "<C-s>", ":split<CR>", opts)
@@ -75,6 +75,10 @@ keymap("n", "<C-s>", ":split<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+
+-- Move current line / block with Alt-j/k vscode.
+keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- go to  beginning and end
 keymap("i", "<C-b>", "<ESC>^i", opts)
@@ -100,7 +104,7 @@ keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+--[[ keymap("x", "J", ":move '>+1<CR>gv-gv", opts) ]]
+--[[ keymap("x", "K", ":move '<-2<CR>gv-gv", opts) ]]

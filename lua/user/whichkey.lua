@@ -5,8 +5,8 @@ end
 
 local setup = {
 	plugins = {
-		marks = true,
-		registers = true,
+		marks = false,
+		registers = false,
 		spelling = {
 			enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 			suggestions = 20,
@@ -14,13 +14,13 @@ local setup = {
 		-- the presets plugin, adds help for a bunch of default keybindings in Neovim
 		-- No actual key bindings are created
 		presets = {
-			operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-			motions = true, -- adds help for motions
-			text_objects = true, -- help for text objects triggered after entering an operator
-			windows = true, -- default bindings on <c-w>
-			nav = true, -- misc bindings to work with windows
-			z = true, -- bindings for folds, spelling and others prefixed with z
-			g = true, -- bindings for prefixed with g
+			operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+			motions = false, -- adds help for motions
+			text_objects = false, -- help for text objects triggered after entering an operator
+			windows = false, -- default bindings on <c-w>
+			nav = false, -- misc bindings to work with windows
+			z = false, -- bindings for folds, spelling and others prefixed with z
+			g = false, -- bindings for prefixed with g
 		},
 	},
 	operators = { gc = "Comments" },
@@ -65,6 +65,10 @@ local setup = {
 		i = { "j", "k" },
 		v = { "j", "k" },
 	},
+	disable = {
+		buftypes = {},
+		filetypes = { "TelescopePrompt" },
+	},
 }
 
 local opts = {
@@ -78,20 +82,19 @@ local opts = {
 
 local mappings = {
 	[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
+	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle  " },
 	w = { ":w!<cr>", "Save" },
-	--[[ W = { ":noautocmd w<cr>", "Save without formatting (noautocmd)" }, ]]
 	q = { ":q!<cr>", "quit" },
 	x = { ":bdelete<cr>", "Close Buffer" },
-	--[[ X = { ":bdelete!<cr>", "Force Close Buffer" }, ]]
-	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle  " },
-	--[[ c = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" }, ]]
+	h = { ":nohlsearch<cr>", "No Highlight" },
+	y = { "gg<S-v>G", "Copy" },
 	e = { ":NvimTreeToggle<cr>", "NvimTree" },
+	E = { ":e ~/.config/nvim/init.lua<cr>", "Edit Config" },
+	f = { ":Telescope find_files<cr>", "Find Files" },
 	--[[ f = { ]]
 	--[[ 	":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
 	--[[ 	"Find Files", ]]
 	--[[ }, ]]
-	f = { ":Telescope find_files<cr>", "Find Files" },
-	--[[ i = { ":Telescope media_files<cr>", "Media files" }, ]]
 	r = { ":Telescope live_grep<cr>", "Find Text" },
 	g = {
 		name = "Git",
@@ -138,7 +141,6 @@ local mappings = {
 		i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
 		o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 	},
-
 	--[[ s = { ]]
 	--[[ name = "Saga", ]]
 	--[[ f = { ":Lspsaga lsp_finder<CR>", "Finder" }, ]]

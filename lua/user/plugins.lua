@@ -22,8 +22,8 @@ local BUILTIN_RENDERERS = {
 require("lazy").setup({
 	-- Dependences
 	"nvim-lua/plenary.nvim",
-	"nvim-lua/popup.nvim",
-	"nvim-tree/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
+  "nvim-lua/popup.nvim",
 	{
 		"rcarriga/nvim-notify",
 		config = function()
@@ -57,15 +57,21 @@ require("lazy").setup({
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
 	"folke/zen-mode.nvim",
-	"lukas-reineke/indent-blankline.nvim",
-	"nvim-lualine/lualine.nvim",
-	"folke/which-key.nvim",
-	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
-	"kyazdani42/nvim-tree.lua",
-	"RRethy/vim-illuminate",
+  "nvim-lualine/lualine.nvim",
+  {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 400
+    end,
+  },
+  "kyazdani42/nvim-tree.lua",
+  "RRethy/vim-illuminate",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
+  "lukas-reineke/indent-blankline.nvim",
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "VeryLazy",
@@ -116,19 +122,19 @@ require("lazy").setup({
 			-- config goes here
 		end,
 	},
+	{ "Everblush/nvim", name = "everblush" },
 	"projekt0n/github-nvim-theme",
 	"sainnhe/edge",
 	"rebelot/kanagawa.nvim",
 	"Shatur/neovim-ayu",
 	"arcticicestudio/nord-vim",
-	{ "Everblush/nvim", name = "everblush" },
-	{ "catppuccin/nvim", name = "catppuccin" },
 	"tiagovla/tokyodark.nvim",
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
 	"Mofiqul/vscode.nvim",
 	"lunarvim/lunar.nvim",
 	"LunarVim/darkplus.nvim",
+  { "catppuccin/nvim", name = "catppuccin" },
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -162,10 +168,9 @@ require("lazy").setup({
 	-- LSP
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+  "neovim/nvim-lspconfig",
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
-	"jay-babu/mason-nvim-dap.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	{
 		"b0o/schemastore.nvim",
@@ -178,6 +183,7 @@ require("lazy").setup({
 
 	-- Debugger
 	"mfussenegger/nvim-dap",
+  "jay-babu/mason-nvim-dap.nvim",
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
 	"mfussenegger/nvim-dap-python",

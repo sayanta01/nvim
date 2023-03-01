@@ -100,10 +100,9 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
-
-		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+		["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- in Insert --
 		["<C-y>"] = cmp.config.disable,
 		["<C-e>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
@@ -177,14 +176,15 @@ cmp.setup({
 	},
 	window = {
 		completion = {
+      scrollbar = true,
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-			--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-			--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
+			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},
 	experimental = {

@@ -159,6 +159,7 @@ ins_left({
 --[[ icons_enabled = true, ]]
 --[[ cond = nil, ]]
 --[[ } ]]
+
 ins_right({
 	"filesize",
 	cond = nil,
