@@ -22,8 +22,8 @@ local BUILTIN_RENDERERS = {
 require("lazy").setup({
 	-- Dependences
 	"nvim-lua/plenary.nvim",
-  "nvim-tree/nvim-web-devicons",
-  "nvim-lua/popup.nvim",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-lua/popup.nvim",
 	{
 		"rcarriga/nvim-notify",
 		config = function()
@@ -57,21 +57,21 @@ require("lazy").setup({
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
 	"folke/zen-mode.nvim",
-  "nvim-lualine/lualine.nvim",
-  {
-    "folke/which-key.nvim",
-    config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 400
-    end,
-  },
-  "kyazdani42/nvim-tree.lua",
-  "RRethy/vim-illuminate",
+	"nvim-lualine/lualine.nvim",
+	{
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 400
+		end,
+	},
+	"kyazdani42/nvim-tree.lua",
+	"RRethy/vim-illuminate",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
-  "lukas-reineke/indent-blankline.nvim",
+	"lukas-reineke/indent-blankline.nvim",
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "VeryLazy",
@@ -93,6 +93,12 @@ require("lazy").setup({
 			})
 		end,
 	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
 	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
 	"akinsho/bufferline.nvim",
@@ -110,7 +116,7 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
-	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" }, -- Fix this
+	--[[ { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" }, -- Fix this ]]
 
 	-- Themes
 	{
@@ -134,7 +140,7 @@ require("lazy").setup({
 	"Mofiqul/vscode.nvim",
 	"lunarvim/lunar.nvim",
 	"LunarVim/darkplus.nvim",
-  { "catppuccin/nvim", name = "catppuccin" },
+	{ "catppuccin/nvim", name = "catppuccin" },
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -168,7 +174,7 @@ require("lazy").setup({
 	-- LSP
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig",
+	"neovim/nvim-lspconfig",
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"jose-elias-alvarez/typescript.nvim",
@@ -183,7 +189,7 @@ require("lazy").setup({
 
 	-- Debugger
 	"mfussenegger/nvim-dap",
-  "jay-babu/mason-nvim-dap.nvim",
+	"jay-babu/mason-nvim-dap.nvim",
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
 	"mfussenegger/nvim-dap-python",
