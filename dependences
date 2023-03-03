@@ -6,17 +6,21 @@
 # make -j4 && sudo make install
 
 # debian
-# sudo apt install -y npm golang ruby ueberzug cargo && cargo install ttyper bat procs
+# sudo apt install -y npm golang ruby ueberzug cargo default-jdk dotnet-sdk-6.0 && cargo install ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 
 # void
 # sudo xbps-install -Sy nodejs go ruby ueberzug lazygit cargo && cargo install ttyper
 
 # arch
-sudo pacman -S --noconfirm npm go ruby ueberzug lazygit cargo jdk-openjdk
+sudo pacman -S --noconfirm npm go ruby ueberzug lazygit cargo jdk-openjdk dotnet-sdk
 
 # npm dependences
-sudo npm i -g tree-sitter-cli live-server
+sudo npm i -g tree-sitter-cli
+
+# live-server
+git clone https://github.com/tapio/live-server ~/.local/share/live-server
+cd ~/.local/share/live-server && npm install
 
 # python dependences
 pip install pynvim
