@@ -50,6 +50,7 @@ require("mason-lspconfig").setup({
 		"ltex",
 		"awk_ls",
 		"astro",
+    "kotlin_language_server",
 		"vimls",
 	},
 	automatic_installation = true,

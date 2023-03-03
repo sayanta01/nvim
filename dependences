@@ -26,6 +26,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo new project  # get started with rust
 # rustup component add rust-analyzer  # check this
 
+# kotlin setup
+# curl -s "https://get.sdkman.io" | bash
+# sdk install kotlin
+
 # java-dap setup
 INSTALL_FOLDER="$HOME/.local/share/nvim"
 # 'install java-debug'

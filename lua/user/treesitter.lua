@@ -38,6 +38,7 @@ configs.setup({
 		"awk",
 		"astro",
 		"gitignore",
+    "kotlin",
 		"solidity",
 	},
 	sync_install = false,
