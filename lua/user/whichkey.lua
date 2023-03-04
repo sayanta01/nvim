@@ -252,7 +252,7 @@ local mappings = {
 		--[[ dap-python ]]
 		m = { ":lua require('dap-python').test_method()<cr>", "Py Test Method" },
 		f = { ":lua require('dap-python').test_class()<cr>", "Py Test Class" },
-		s = { ":<ESC>:lua require('dap-python').debug_selection()<cr>", "Py Debug Selection" },
+    s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "Py Debug Selection" },
 
 		--[[ dap-go ]]
 		e = { ":lua require('dap-go').debug_test()<cr>", "Go Debug Test" },
