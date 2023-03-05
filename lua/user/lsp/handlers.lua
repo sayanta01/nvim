@@ -84,8 +84,12 @@ typescript.setup({
 	},
 })
 
+require("lspconfig")["omnisharp"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 require("lspconfig")["clangd"].setup({
-	filetypes = { "c", "cs" },
 	on_attach = on_attach,
 	capabilities = capabilities,
 })

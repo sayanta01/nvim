@@ -24,7 +24,8 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"yamlls",
 		"ansiblels",
-		"clangd", -- c, cpp, c#
+		"clangd", -- c, cpp
+    "omnisharp", -- c#
 		"gopls", -- go
 		"jdtls", -- java
 		"tailwindcss", -- javascript
@@ -37,7 +38,6 @@ require("mason-lspconfig").setup({
 		"cssmodules_ls",
 		"angularls", -- typescript
 		"marksman",
-		"omnisharp",
 		"eslint",
 		"graphql",
 		"html",
@@ -86,14 +86,9 @@ require("mason-nvim-dap").setup({
 	ensure_installed = {
 		"delve",
 		"codelldb",
-		"python",
+    "debugpy",
 		"bash",
-		"javadbg",
-		"debugpy",
-		"node2",
-		"chrome",
-		"firefox",
-		"php",
+    "node2",
 	},
 	automatic_installation = true,
 })
