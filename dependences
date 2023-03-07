@@ -31,19 +31,19 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # rustup component add rust-analyzer  # check this
 
 # kotlin setup
-# curl -s "https://get.sdkman.io" | bash
-# sdk install kotlin
+curl -s "https://get.sdkman.io" | bash
+sdk install kotlin
 
-# java-dap setup
-INSTALL_FOLDER="$HOME/.local/share/nvim"
+# `java-dap setup`
+# INSTALL_FOLDER="$HOME/.local/share/nvim"
 # 'install java-debug'
-rm -rf "$INSTALL_FOLDER/java-debug"
-git clone https://github.com/microsoft/java-debug.git "$INSTALL_FOLDER/java-debug"
-cd "$INSTALL_FOLDER/java-debug" && ./mvnw clean install
+# rm -rf "$INSTALL_FOLDER/java-debug"
+# git clone https://github.com/microsoft/java-debug.git "$INSTALL_FOLDER/java-debug"
+# cd "$INSTALL_FOLDER/java-debug" && ./mvnw clean install
 # 'install vscode-java-test'
-rm -rf "$INSTALL_FOLDER/vscode-java-test"
-git clone https://github.com/microsoft/vscode-java-test.git "$INSTALL_FOLDER/vscode-java-test"
-cd "$INSTALL_FOLDER/vscode-java-test" && npm install && npm run build-plugin
+# rm -rf "$INSTALL_FOLDER/vscode-java-test"
+# git clone https://github.com/microsoft/vscode-java-test.git "$INSTALL_FOLDER/vscode-java-test"
+# cd "$INSTALL_FOLDER/vscode-java-test" && npm install && npm run build-plugin
 
 # creating venv for python-dap
 # mkdir ~/.virtualenvs

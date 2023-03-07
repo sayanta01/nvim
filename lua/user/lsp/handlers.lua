@@ -141,6 +141,12 @@ require("lspconfig")["astro"].setup({
 	capabilities = capabilities,
 })
 
+require("lspconfig")["sqls"].setup({
+  filetype = { "sql", "mysql" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
 require("lspconfig")["kotlin_language_server"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -296,6 +302,12 @@ require("lspconfig")["tsserver"].setup({
 require("lspconfig")["jdtls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+})
+
+require("lspconfig").solidity.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	single_file_support = true,
 })
 
 require("lspconfig").solargraph.setup({

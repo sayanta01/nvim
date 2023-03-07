@@ -25,7 +25,7 @@ require("mason-lspconfig").setup({
 		"yamlls",
 		"ansiblels",
 		"clangd", -- c, cpp
-    "omnisharp", -- c#
+		"omnisharp", -- c#
 		"gopls", -- go
 		"jdtls", -- java
 		"tailwindcss", -- javascript
@@ -33,7 +33,6 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"lua_ls",
 		"pyright", -- python
-		"ruby_ls",
 		"rust_analyzer",
 		"cssmodules_ls",
 		"angularls", -- typescript
@@ -42,9 +41,9 @@ require("mason-lspconfig").setup({
 		"graphql",
 		"html",
 		"cssls",
-		"solargraph",
+		"solargraph", -- "ruby_ls",
 		"emmet_ls",
-		"sqlls",
+		"sqls",
 		"dockerls",
 		"bashls",
 		"ltex",
@@ -60,9 +59,7 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- formatters & linters
 	ensure_installed = {
-		-- "yamllint",
-		"yamlfmt",
-		"clang_format",
+		"yamlfmt", 		-- "yamllint",
 		"gofumpt",
 		"google-java-format",
 		"eslint_d",
@@ -71,12 +68,11 @@ require("mason-null-ls").setup({
 		"autopep8",
 		"rubocop",
 		"rustfmt",
-		"scalafmt",
 		"markdownlint",
 		"phpcbf",
 		"shfmt",
+		"clang_format",
 		"sqlfluff",
-		"solhint",
 	},
 	automatic_installation = true,
 })
@@ -84,11 +80,11 @@ require("mason-null-ls").setup({
 require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
+    "codelldb",
 		"delve",
-		"codelldb",
-    "debugpy",
+		"debugpy",
 		"bash",
-    "node2",
+		"node2",
 	},
 	automatic_installation = true,
 })
