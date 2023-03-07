@@ -50,8 +50,8 @@ require("mason-lspconfig").setup({
 		"kotlin_language_server",
 		"solidity",
 		"vimls",
-    -- "eslint",
-		-- "graphql",
+    "eslint",  -- configure this
+		"graphql",  -- and this
 	},
 	automatic_installation = true,
 })
