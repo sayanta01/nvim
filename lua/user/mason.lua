@@ -22,26 +22,24 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
+    "ansiblels",
 		"yamlls",
-		"ansiblels",
 		"clangd", -- c, cpp
 		"omnisharp", -- c#
 		"gopls", -- go
 		"jdtls", -- java
-		"tailwindcss", -- javascript
+		"tailwindcss", -- javascript  -- configure this
+    "angularls", -- typescript -- configure this
 		"tsserver",
 		"jsonls",
 		"lua_ls",
 		"pyright", -- python
 		"rust_analyzer",
-		"cssmodules_ls",
-		"angularls", -- typescript
 		"marksman",
-		"eslint",
-		"graphql",
 		"html",
 		"cssls",
-		"solargraph", -- "ruby_ls",
+    "cssmodules_ls", -- configure this
+		"solargraph",
 		"emmet_ls",
 		"sqls",
 		"dockerls",
@@ -52,6 +50,8 @@ require("mason-lspconfig").setup({
 		"kotlin_language_server",
 		"solidity",
 		"vimls",
+    -- "eslint",
+		-- "graphql",
 	},
 	automatic_installation = true,
 })

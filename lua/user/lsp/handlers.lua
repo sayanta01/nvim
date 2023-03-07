@@ -142,7 +142,7 @@ require("lspconfig")["astro"].setup({
 })
 
 require("lspconfig")["sqls"].setup({
-  filetype = { "sql", "mysql" },
+	filetype = { "sql", "mysql" },
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -226,7 +226,6 @@ require("lspconfig")["gopls"].setup({
 --[[ 		debounce_text_changes = 150, ]]
 --[[ 	}, ]]
 --[[ }) ]]
-
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -330,7 +329,6 @@ require("lspconfig").solargraph.setup({
 --[[ 	capabilities = capabilities, ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ }) ]]
-
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
