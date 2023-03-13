@@ -104,17 +104,17 @@ require("lspconfig")["awk_ls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["vimls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["dockerls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
 require("lspconfig")["marksman"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["vimls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -226,7 +226,6 @@ require("lspconfig")["gopls"].setup({
 --[[ 		debounce_text_changes = 150, ]]
 --[[ 	}, ]]
 --[[ }) ]]
-
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -299,18 +298,7 @@ require("lspconfig")["tsserver"].setup({
 	},
 })
 
-require("lspconfig")["jdtls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig").solidity.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	single_file_support = true,
-})
-
-require("lspconfig").solargraph.setup({
+require("lspconfig")["solargraph"].setup({
 	filetypes = { "ruby", "eruby" },
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -326,11 +314,20 @@ require("lspconfig").solargraph.setup({
 	},
 })
 
+require("lspconfig")["solidity"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	single_file_support = true,
+})
+
 --[[ require("lspconfig")["tailwindcss"].setup({ ]]
 --[[ 	capabilities = capabilities, ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ }) ]]
-
+--[[ require("lspconfig")["jdtls"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,

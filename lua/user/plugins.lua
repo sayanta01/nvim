@@ -196,5 +196,4 @@ require("lazy").setup({
 	"mfussenegger/nvim-jdtls",
 	--[[ "simrat39/rust-tools.nvim", ]]
 	--[[ "leoluz/nvim-dap-go", ]]
-	--[[ "mxsdev/nvim-dap-vscode-js", ]]
 })

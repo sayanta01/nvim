@@ -184,10 +184,10 @@ local mappings = {
 		s = { ":Telescope grep_string<cr>", "Find String" },
 		p = { ":Telescope projects<cr>", "Projects" },
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
-		f = { ":Telescope lsp_references<cr>", "References" },
 		R = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
 		m = { ":Telescope marks<cr>", "Marks" },
+    --[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 		--[[ M = { ":Telescope man_pages<cr>", "ManPages" }, ]]
 	},
 	o = {

@@ -69,10 +69,8 @@ local config = {
 		"-data",
 		workspace_dir,
 	},
-
 	capabilities = capabilities,
 	root_dir = root_dir,
-
 	settings = {
 		java = {
 			eclipse = {

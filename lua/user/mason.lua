@@ -27,8 +27,10 @@ require("mason-lspconfig").setup({
 		"clangd", -- c, cpp
 		"omnisharp", -- c#
 		"gopls", -- go
-		"jdtls", -- java
-		"tailwindcss", -- javascript  -- configure this
+    --[[ "solidity", ]]
+		--[[ "jdtls", -- java ]]
+		--[[ "tailwindcss", -- javascript  -- configure this ]]
+    "cssmodules_ls", -- configure this
     "angularls", -- typescript -- configure this
 		"tsserver",
 		"jsonls",
@@ -38,7 +40,6 @@ require("mason-lspconfig").setup({
 		"marksman",
 		"html",
 		"cssls",
-    "cssmodules_ls", -- configure this
 		"solargraph",
 		"emmet_ls",
 		"sqls",
@@ -48,7 +49,6 @@ require("mason-lspconfig").setup({
 		"awk_ls",
 		"astro",
 		"kotlin_language_server",
-		"solidity",
 		"vimls",
     "eslint",  -- configure this
 		"graphql",  -- and this
