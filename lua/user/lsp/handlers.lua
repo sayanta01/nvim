@@ -52,7 +52,7 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gl", ":lua vim.diagnostic.open_float()<CR>", opts)
 	buf_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
 	buf_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
-	buf_set_keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
+	-- buf_set_keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
 	--[[ buf_set_keymap("n", "<leader>lr", ":lua vim.lsp.buf.rename()<CR>", opts) ]]
 	--[[ buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts) ]]
 	--[[ buf_set_keymap("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", opts) ]]
