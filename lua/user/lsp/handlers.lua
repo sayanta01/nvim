@@ -320,14 +320,16 @@ require("lspconfig")["solidity"].setup({
 	single_file_support = true,
 })
 
---[[ require("lspconfig")["tailwindcss"].setup({ ]]
---[[ 	capabilities = capabilities, ]]
---[[ 	on_attach = on_attach, ]]
---[[ }) ]]
 --[[ require("lspconfig")["jdtls"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ 	capabilities = capabilities, ]]
 --[[ }) ]]
+
+--[[ require("lspconfig")["tailwindcss"].setup({ ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ }) ]]
+
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
