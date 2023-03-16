@@ -135,6 +135,7 @@ require("lazy").setup({
 	"Shatur/neovim-ayu",
 	"arcticicestudio/nord-vim",
 	"tiagovla/tokyodark.nvim",
+  "RRethy/nvim-base16",
 	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
 	"Mofiqul/vscode.nvim",
