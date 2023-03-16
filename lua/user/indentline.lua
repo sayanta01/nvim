@@ -9,6 +9,9 @@ require("indent_blankline").setup({
 		"lazy",
 		"NvimTree",
 		"text",
+    --[[ "lspinfo", ]]
+    --[[ "TelescopePrompt", ]]
+    --[[ "TelescopeResults", ]]
 		--[[ "dashboard", ]]
 		--[[ "aerial", ]]
 		--[[ "Trouble", ]]
