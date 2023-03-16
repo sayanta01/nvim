@@ -66,7 +66,7 @@ local kind_icons = {
 	--  Extra icons
 	--[[ Tag = "", ]]
 	--[[ Array = "", ]]
-  --[[ Value = "", ]]
+	--[[ Value = "", ]]
 	--[[ List = "", ]]
 	--[[ Note = "", ]]
 	--[[ NoteBook = " ", ]]
@@ -140,7 +140,6 @@ cmp.setup({
 			"s",
 		}),
 	}),
-
 	-- Formatting
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
@@ -176,7 +175,7 @@ cmp.setup({
 	},
 	window = {
 		completion = {
-      scrollbar = true,
+			scrollbar = true,
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
 			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",

@@ -50,7 +50,7 @@ require("mason-lspconfig").setup({
 		"astro",
 		"kotlin_language_server",
 		"vimls",
-    "eslint",  -- configure this
+    "eslint", -- configure this
 	},
 	automatic_installation = true,
 })
@@ -58,7 +58,7 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- formatters & linters
 	ensure_installed = {
-		"yamlfmt", 		-- "yamllint",
+		"yamlfmt", -- "yamllint",
 		"gofumpt",
 		"google-java-format",
 		"eslint_d",

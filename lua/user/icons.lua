@@ -1,6 +1,5 @@
 --[[ https://github.com/nvim-tree/nvim-web-devicons/blob/master/lua/nvim-web-devicons.lua ]]
 --[[ https://www.nerdfonts.com/cheat-sheet ]]
-
 require("nvim-web-devicons").set_icon({
 	pdf = {
 		icon = "",

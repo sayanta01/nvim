@@ -87,7 +87,6 @@ local options = {
 				none = " ",
 			},
 		},
-
 		icons = {
 			padding = " ",
 			symlink_arrow = " -> ",

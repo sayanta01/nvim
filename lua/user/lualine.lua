@@ -105,7 +105,7 @@ ins_left({
 
 ins_left({
 	"filename",
-	path = 3,
+	path = 1,
 	cond = nil,
 	color = { fg = colors.magenta, gui = "italic" },
 })
@@ -187,6 +187,7 @@ ins_right({
 --[[ 	--cond = conditions.hide_in_width, ]]
 --[[ 	color = { fg = colors.fg, gui = "italic" }, ]]
 --[[ }) ]]
+
 ins_right({
 	"branch",
 	icon = "",

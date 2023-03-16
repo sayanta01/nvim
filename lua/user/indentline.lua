@@ -6,7 +6,6 @@ require("indent_blankline").setup({
 	filetype_exclude = {
 		"help",
 		"alpha",
-		"packer",
 		"lazy",
 		"NvimTree",
 		"text",

@@ -120,20 +120,20 @@ local mappings = {
 		name = "LSP",
 		d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" },
 		D = { ":lua vim.lsp.buf.definition()<cr>", "Goto Definition" },
-    -- k = { ":lua vim.lsp.buf.hover()<cr>", "Hover" },
-    --[[ R = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]
-    -- h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+		-- k = { ":lua vim.lsp.buf.hover()<cr>", "Hover" },
+		--[[ R = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]
+		-- h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 		-- n = { ":lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
 		-- p = { ":lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-    t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
+		t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
 		r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
-    f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
-    a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
-    q = { ":lua vim.diagnostic.setloclist()<cr>", "quickfix" },
+		f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
+		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
+		q = { ":lua vim.diagnostic.setloclist()<cr>", "quickfix" },
 		I = { ":LspInfo<cr>", "Info" },
 		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
-    L = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
+		L = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		l = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
@@ -143,14 +143,14 @@ local mappings = {
 	--[[ s = { ]]
 	--[[ name = "Saga", ]]
 	--[[ f = { ":Lspsaga lsp_finder<CR>", "Finder" }, ]]
-	--[[ a = { ":Lspsaga code_action<CR>", "Code Action" }, ]]
-	--[[ r = { ":Lspsaga rename<CR>", "Rename" }, ]]
-	--[[ s = { ":Lspsaga peek_definition<CR>", "Peek Definition" }, ]]
 	--[[ d = { ":Lspsaga goto_definition<CR>", "Goto Definition" }, ]]
+	--[[ s = { ":Lspsaga peek_definition<CR>", "Peek Definition" }, ]]
+	--[[ r = { ":Lspsaga rename<CR>", "Rename" }, ]]
+	--[[ a = { ":Lspsaga code_action<CR>", "Code Action" }, ]]
 	--[[ c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics  " }, ]]
+
 	--[[ n = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostics" }, ]]
 	--[[ p = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostics" }, ]]
-
 	--[[ l = { ":Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" }, ]]
 	--[[ b = { ":Lspsaga show_buf_diagnostics<CR>", "Buffer Diagnostics " }, ]]
 	--[[ keymap("n", "[E", function() ]]
@@ -185,8 +185,7 @@ local mappings = {
 		R = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
 		m = { ":Telescope marks<cr>", "Marks" },
-    --[[ M = { ":Telescope man_pages<cr>", "ManPages" }, ]]
-    --[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
+		--[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 	},
 	o = {
 		name = "Options",
@@ -211,11 +210,11 @@ local mappings = {
 		n = { ":NullLsInfo<cr>", "NullLs" },
 		l = { ":Lazy<cr>", "Lazy" },
 		i = { ":Lazy install<cr>", "Install Plugins" },
-		r = { ":Lazy clean<cr>", "Remove Unused Plugins" },
+		x = { ":Lazy clean<cr>", "Remove Unused Plugins" },
 		u = { ":Lazy update<cr>", "Update Plugins" },
-		c = { ":Lazy build<cr>", "Build Plugins" },
+		b = { ":Lazy build<cr>", "Build Plugins" },
 		s = { ":Lazy sync<cr>", "Sync Plugins" },
-		S = { ":Lazy check<cr>", "Status" },
+		c = { ":Lazy check<cr>", "Status" },
 	},
 	b = {
 		name = "Buffer",
@@ -246,12 +245,10 @@ local mappings = {
 		u = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
 		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
-
 		--[[ dap-python ]]
 		m = { ":lua require('dap-python').test_method()<cr>", "Py Test Method" },
 		f = { ":lua require('dap-python').test_class()<cr>", "Py Test Class" },
-    s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "Py Debug Selection" },
-
+		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "Py Debug Selection" },
 		--[[ dap-go ]]
 		e = { ":lua require('dap-go').debug_test()<cr>", "Go Debug Test" },
 		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go Last Test" },
