@@ -104,7 +104,7 @@ require("lazy").setup({
 	"akinsho/bufferline.nvim",
 	"kylechui/nvim-surround",
 	"ahmedkhalf/project.nvim",
-	"lewis6991/impatient.nvim",
+	--[[ "lewis6991/impatient.nvim", ]]
 
 	-- Misc
 	"ThePrimeagen/vim-be-good",

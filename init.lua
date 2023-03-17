@@ -20,12 +20,12 @@ require("user.bufferline")
 vim.notify = require("notify")
 require("user.surround")
 require("user.project")
-require("user.impatient")
 require("user.colorizer")
 
 -- Dynamic
 require("user.whichkey")
 require("user.lsp")
 require("user.dap")
+--[[ require("user.impatient") ]]
 --[[ require("user.ufo") ]]
 --[[ require("user.saga") ]]
