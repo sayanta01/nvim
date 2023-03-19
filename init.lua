@@ -26,6 +26,5 @@ require("user.colorizer")
 require("user.whichkey")
 require("user.lsp")
 require("user.dap")
---[[ require("user.impatient") ]]
+require("user.saga")
 --[[ require("user.ufo") ]]
---[[ require("user.saga") ]]

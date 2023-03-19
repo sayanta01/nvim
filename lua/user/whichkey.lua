@@ -140,34 +140,16 @@ local mappings = {
 		i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
 		o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 	},
-	--[[ s = { ]]
-	--[[ name = "Saga", ]]
-	--[[ f = { ":Lspsaga lsp_finder<CR>", "Finder" }, ]]
-	--[[ d = { ":Lspsaga goto_definition<CR>", "Goto Definition" }, ]]
-	--[[ s = { ":Lspsaga peek_definition<CR>", "Peek Definition" }, ]]
-	--[[ r = { ":Lspsaga rename<CR>", "Rename" }, ]]
-	--[[ a = { ":Lspsaga code_action<CR>", "Code Action" }, ]]
-	--[[ c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics  " }, ]]
-
-	--[[ n = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostics" }, ]]
-	--[[ p = { ":Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostics" }, ]]
-	--[[ l = { ":Lspsaga show_line_diagnostics<CR>", "Line Diagnostics" }, ]]
-	--[[ b = { ":Lspsaga show_buf_diagnostics<CR>", "Buffer Diagnostics " }, ]]
-	--[[ keymap("n", "[E", function() ]]
-	--[[ require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR }) ]]
-	--[[ end), ]]
-	--[[ keymap("n", "]E", function() ]]
-	--[[ require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR }) ]]
-	--[[ end), ]]
-
-	-- Toggle outline
-	--[[ o = { ":Lspsaga outline<CR>", "Outline" }, ]]
-	--[[ h = { ":Lspsaga hover_doc<CR>", "Hover" }, ]]
-	--[[ i = { ":Lspsaga incoming_calls<CR>", "Incoming Calls" }, ]]
-	--[[ g = { ":Lspsaga outgoing_calls<CR>", "Outgoing Calls" }, ]]
-	-- t = { ":Lspsaga term_toggle<CR>", "Terminal" },
-	--[[ }, ]]
 	s = {
+		name = "Saga",
+		f = { ":Lspsaga lsp_finder<CR>", "Finder" },
+		p = { ":Lspsaga peek_definition<CR>", "Peek Definition" },
+		c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics  " },
+		-- Toggle outline
+		o = { ":Lspsaga outline<CR>", "Outline" },
+		--[[ t = { ":Lspsaga term_toggle<CR>", "Terminal" }, ]]
+	},
+	t = {
 		name = "Telescope",
 		t = { ":Telescope colorscheme<cr>", "Themes" },
 		c = { ":Telescope commands<cr>", "Commands" },
@@ -193,6 +175,7 @@ local mappings = {
 		v = { ":VimBeGood<cr>", "Vim Practice" },
 		c = { ":CccPick<cr>", "Color Picker" },
 		f = { ":CccConvert<cr>", "Change Color Format" },
+		i = { ":Notifications<cr>", "Show Notifications" },
 		h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
 		t = { ":ColorizerToggle<cr>", "Colorizer Toggle" },
 		n = { ":set rnu!<cr>", "Relative Nm" },
@@ -251,7 +234,7 @@ local mappings = {
 		e = { ":lua require('dap-go').debug_test()<cr>", "Go Debug Test" },
 		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go Last Test" },
 	},
-	t = {
+	T = {
 		name = "Terminal",
 		h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },
 		v = { ":ToggleTerm size=80 direction=vertical<cr>", "Vertical" },

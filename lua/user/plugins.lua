@@ -104,7 +104,6 @@ require("lazy").setup({
 	"akinsho/bufferline.nvim",
 	"kylechui/nvim-surround",
 	"ahmedkhalf/project.nvim",
-	--[[ "lewis6991/impatient.nvim", ]]
 
 	-- Misc
 	"ThePrimeagen/vim-be-good",
@@ -183,10 +182,10 @@ require("lazy").setup({
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
-	--[[ { ]]
-	--[[ 	"glepnir/lspsaga.nvim", ]]
-	--[[ 	event = "BufRead", ]]
-	--[[ }, ]]
+	{
+		"glepnir/lspsaga.nvim",
+		event = "BufRead",
+	},
 
 	-- Debugger
 	"mfussenegger/nvim-dap",
