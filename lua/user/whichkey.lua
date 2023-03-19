@@ -167,7 +167,6 @@ local mappings = {
 	--[[ g = { ":Lspsaga outgoing_calls<CR>", "Outgoing Calls" }, ]]
 	-- t = { ":Lspsaga term_toggle<CR>", "Terminal" },
 	--[[ }, ]]
-
 	s = {
 		name = "Telescope",
 		t = { ":Telescope colorscheme<cr>", "Themes" },
@@ -226,7 +225,6 @@ local mappings = {
 		h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
 		l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
 		p = { ":BufferLineTogglePin<cr>", "Toggle Pin" },
-		--[[ j = { ":BufferLinePick<cr>", "Jump" }, ]]
 	},
 	d = {
 		name = "Debug",
