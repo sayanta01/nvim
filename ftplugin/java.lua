@@ -1,7 +1,10 @@
 --[[ https://github.com/mfussenegger/nvim-jdtls ]]
-vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
---[[ vim.opt_local.shiftwidth = 2 ]]
---[[ vim.opt_local.tabstop = 2 ]]
+-- vim.opt_local.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt_local.shiftwidth = 2
+vim.opt_local.tabstop = 2
+vim.opt_local.softtabstop = 2
+vim.opt_local.ts = 2
+vim.opt_local.expandtab = true
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
@@ -56,6 +59,7 @@ local config = {
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true",
 		"-Dlog.level=ALL",
+		"-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
 		"-Xmx1G",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
@@ -69,8 +73,10 @@ local config = {
 		"-data",
 		workspace_dir,
 	},
+
 	capabilities = capabilities,
 	root_dir = root_dir,
+
 	settings = {
 		java = {
 			eclipse = {
