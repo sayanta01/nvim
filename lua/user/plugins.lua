@@ -115,7 +115,6 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
-	--[[ { "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" }, -- Fix this ]]
 
 	-- Themes
 	{
