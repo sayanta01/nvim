@@ -31,7 +31,7 @@ saga.setup({
 	},
 	symbol_in_winbar = {
 		enable = true,
-		separator = "  ",
+		separator = "  ",
 		hide_keyword = true,
 		show_file = false,
 		folder_level = 1,
@@ -46,7 +46,7 @@ saga.setup({
 		-- Border type can be single, double, rounded, solid, shadow.
 		border = "rounded",
 		winblend = 0,
-		expand = "",
+		expand = "",
 		collapse = "",
 		preview = " ",
 		code_action = "💡",
