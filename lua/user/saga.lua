@@ -11,7 +11,7 @@ saga.setup({
 	},
 	lightbulb = {
 		enable_in_insert = false,
-		sign = true,
+		sign = false,
 		virtual_text = false,
 	},
 	outline = {
