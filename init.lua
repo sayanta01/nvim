@@ -25,5 +25,5 @@ require("user.colorizer")
 -- Dynamic
 require("user.whichkey")
 require("user.lsp")
-require("user.dap")
 require("user.saga")
+require("user.dap")

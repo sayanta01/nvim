@@ -82,9 +82,9 @@ local opts = {
 
 local mappings = {
 	[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
-	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle  " },
+  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle  " },
 	w = { ":w!<cr>", "Save" },
-	q = { ":q!<cr>", "quit" },
+  q = { ":q!<cr>", "quit" },
 	x = { ":bdelete<cr>", "Close Buffer" },
 	h = { ":nohlsearch<cr>", "No Highlight" },
 	y = { "gg<S-v>G", "Copy" },

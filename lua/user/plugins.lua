@@ -197,6 +197,8 @@ require("lazy").setup({
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"jose-elias-alvarez/typescript.nvim",
+  --[[ "simrat39/rust-tools.nvim", ]]
+  -- "mfussenegger/nvim-jdtls", ]]
 	{
 		"b0o/schemastore.nvim",
 		lazy = true,
@@ -212,7 +214,5 @@ require("lazy").setup({
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
 	"mfussenegger/nvim-dap-python",
-	"mfussenegger/nvim-jdtls",
-	--[[ "simrat39/rust-tools.nvim", ]]
-	--[[ "leoluz/nvim-dap-go", ]]
+	-- "leoluz/nvim-dap-go", ]]
 })
