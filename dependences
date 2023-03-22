@@ -11,7 +11,7 @@
 # wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
 
 # void
-# sudo xbps-install -Sy nodejs go ruby ueberzug shellcheck cargo lazygit cloudflared && cargo install ttyper
+# sudo xbps-install -Sy nodejs go ruby ueberzug shellcheck cargo openjdk lazygit cloudflared && cargo install ttyper
 
 # arch
 sudo pacman -S --noconfirm npm go ruby ueberzug shellcheck cargo jdk-openjdk dotnet-sdk lazygit cloudflared
