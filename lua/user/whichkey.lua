@@ -82,20 +82,18 @@ local opts = {
 
 local mappings = {
 	[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
-  ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle  " },
+	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle  " },
 	w = { ":w!<cr>", "Save" },
-  q = { ":q!<cr>", "quit" },
+	q = { ":q!<cr>", "quit" },
 	x = { ":bdelete<cr>", "Close Buffer" },
 	h = { ":nohlsearch<cr>", "No Highlight" },
 	y = { "gg<S-v>G", "Copy" },
 	e = { ":NvimTreeToggle<cr>", "NvimTree" },
-	--[[ E = { ":e ~/.config/nvim/init.lua<cr>", "init" }, ]]
 	f = { ":Telescope find_files<cr>", "Find Files" },
 	--[[ f = { ]]
 	--[[ 	":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
 	--[[ 	"Find Files", ]]
 	--[[ }, ]]
-	r = { ":Telescope live_grep<cr>", "Find Text" },
 	g = {
 		name = "Git",
 		g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
@@ -115,6 +113,20 @@ local mappings = {
 		s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 		u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 		d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
+	},
+	r = {
+		name = "Run",
+		s = {
+			':autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>',
+			"Auto Compile Sass",
+		},
+		r = { ":RunCode<CR>", "Run Code" },
+		f = { ":RunFile<CR>", "Run File" },
+		p = { ":RunProject<CR>", "Run Project" },
+		m = {
+			":ToggleTerm size=80 direction=float<CR>mvn exec:java -Dexec.mainClass=com.pojokcode.App<CR>",
+			"Run MVN",
+		},
 	},
 	l = {
 		name = "LSP",
@@ -147,7 +159,7 @@ local mappings = {
 		c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics  " },
 		-- Toggle outline
 		o = { ":Lspsaga outline<CR>", "Outline" },
-		--[[ t = { ":Lspsaga term_toggle<CR>", "Terminal" }, ]]
+		-- t = { ":Lspsaga term_toggle<CR>", "Terminal" },
 	},
 	t = {
 		name = "Telescope",
@@ -159,8 +171,9 @@ local mappings = {
 		H = { ":Telescope highlights<cr>", "Find Highlights" },
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 		k = { ":Telescope keymaps<cr>", "Keymaps" },
-		r = { ":Telescope oldfiles<cr>", "Recent Files" },
-		s = { ":Telescope grep_string<cr>", "Find String" },
+		o = { ":Telescope oldfiles<cr>", "Recent Files" },
+		g = { ":Telescope grep_string<cr>", "Find String" },
+		r = { ":Telescope live_grep<cr>", "Find Text" },
 		p = { ":Telescope projects<cr>", "Projects" },
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
 		R = { ":Telescope registers<cr>", "Registers" },

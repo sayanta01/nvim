@@ -119,6 +119,19 @@ require("lazy").setup({
 			require("nvim-ts-autotag").setup()
 		end,
 	},
+	{
+		"CRAG666/code_runner.nvim",
+		config = function()
+			require("code_runner").setup({
+				filetype = {
+					java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
+					python = "python3 -u",
+					typescript = "deno run",
+					rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+				},
+			})
+		end,
+	},
 	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
 	"akinsho/bufferline.nvim",
@@ -197,8 +210,8 @@ require("lazy").setup({
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"jose-elias-alvarez/typescript.nvim",
-  --[[ "simrat39/rust-tools.nvim", ]]
-  -- "mfussenegger/nvim-jdtls", ]]
+	--[[ "simrat39/rust-tools.nvim", ]]
+	-- "mfussenegger/nvim-jdtls", ]]
 	{
 		"b0o/schemastore.nvim",
 		lazy = true,
