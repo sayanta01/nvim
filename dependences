@@ -8,12 +8,13 @@
 # debian
 # sudo apt install -y npm golang ruby ueberzug shellcheck cargo default-jdk dotnet-sdk-6.0 && cargo install ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+# wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
 
 # void
-# sudo xbps-install -Sy nodejs go ruby ueberzug shellcheck lazygit cargo && cargo install ttyper
+# sudo xbps-install -Sy nodejs go ruby ueberzug shellcheck cargo lazygit cloudflared && cargo install ttyper
 
 # arch
-sudo pacman -S --noconfirm npm go ruby ueberzug shellcheck lazygit cargo jdk-openjdk dotnet-sdk
+sudo pacman -S --noconfirm npm go ruby ueberzug shellcheck cargo jdk-openjdk dotnet-sdk lazygit cloudflared
 
 # npm dependences
 sudo npm i -g tree-sitter-cli
