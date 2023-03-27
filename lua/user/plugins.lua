@@ -159,19 +159,14 @@ require("lazy").setup({
 			-- config goes here
 		end,
 	},
-	{ "Everblush/nvim", name = "everblush" },
 	"projekt0n/github-nvim-theme",
 	"sainnhe/edge",
 	"rebelot/kanagawa.nvim",
+	{ "Everblush/nvim", name = "everblush" },
 	"Shatur/neovim-ayu",
 	"arcticicestudio/nord-vim",
 	"tiagovla/tokyodark.nvim",
-	"RRethy/nvim-base16",
-	"B4mbus/oxocarbon-lua.nvim",
 	"sainnhe/gruvbox-material",
-	"Mofiqul/vscode.nvim",
-	"lunarvim/lunar.nvim",
-	"LunarVim/darkplus.nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{
 		"rose-pine/neovim",
@@ -182,12 +177,17 @@ require("lazy").setup({
 			require("rose-pine").setup()
 		end,
 	},
+	"RRethy/nvim-base16",
+	"folke/tokyonight.nvim",
+	"B4mbus/oxocarbon-lua.nvim",
+	"Mofiqul/vscode.nvim",
+	"lunarvim/lunar.nvim",
+	"LunarVim/darkplus.nvim",
+	"lunarvim/synthwave84.nvim",
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 	},
-	"folke/tokyonight.nvim",
-	"lunarvim/synthwave84.nvim",
 
 	-- Cmp
 	"hrsh7th/nvim-cmp",
@@ -205,10 +205,10 @@ require("lazy").setup({
 
 	-- LSP
 	"williamboman/mason.nvim",
+  "neovim/nvim-lspconfig",
 	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+  "jose-elias-alvarez/null-ls.nvim",
 	"jay-babu/mason-null-ls.nvim",
-	"jose-elias-alvarez/null-ls.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	--[[ "simrat39/rust-tools.nvim", ]]
 	-- "mfussenegger/nvim-jdtls", ]]

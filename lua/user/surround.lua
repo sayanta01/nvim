@@ -3,6 +3,9 @@ if not status_ok then
 	return
 end
 
+--[[ use {['"( left side surround to add space ]]
+--[[ cst - <change surround tag> to another tag ]]
+
 surround.setup({
 	keymaps = {
 		insert = "<C-g>s",
@@ -14,7 +17,7 @@ surround.setup({
 		visual = "s",
 		visual_line = "gS",
 		delete = "ds",
-		change = "cs", -- cst - change tags
+		change = "cs", -- cst 'change tags'
 	},
 })
 

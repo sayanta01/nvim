@@ -22,16 +22,16 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
-    "ansiblels",
+		"ansiblels",
 		"yamlls",
 		"clangd", -- c, cpp
 		"omnisharp", -- c#
 		"gopls", -- go
-    --[[ "solidity", ]]
+		--[[ "solidity", ]]
 		--[[ "jdtls", -- java ]]
 		--[[ "tailwindcss", -- javascript  -- configure this ]]
-    "cssmodules_ls", -- configure this
-    "angularls", -- typescript -- configure this
+		"cssmodules_ls", -- configure this
+		"angularls", -- typescript -- configure this
 		"tsserver",
 		"jsonls",
 		"lua_ls",
@@ -50,7 +50,7 @@ require("mason-lspconfig").setup({
 		"astro",
 		"kotlin_language_server",
 		"vimls",
-    "eslint", -- configure this
+		"eslint", -- configure this
 	},
 	automatic_installation = true,
 })
@@ -79,7 +79,7 @@ require("mason-null-ls").setup({
 require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
-    "codelldb",
+		"codelldb",
 		"delve",
 		"debugpy",
 		"bash",

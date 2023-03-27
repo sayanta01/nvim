@@ -105,7 +105,7 @@ ins_left({
 
 ins_left({
 	"filename",
-	path = 1,
+	path = 3,
 	cond = nil,
 	color = { fg = colors.magenta, gui = "italic" },
 })

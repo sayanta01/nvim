@@ -29,9 +29,9 @@ local options = {
 	termguicolors = true,
 	conceallevel = 0,
 	spell = false, -- need to start manually
-	-- showtabline = 2,
 	-- pumheight = 9,
 	-- cmdheight = 2,
+  -- showtabline = 2,
 	-- smartindent = true,
 	-- copyindent = true,  -- Copy the previous indentation on autoindenting
 	-- fillchars = { eob = " " },  -- Disable `~` on nonexistent lines
