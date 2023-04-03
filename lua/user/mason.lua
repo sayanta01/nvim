@@ -79,11 +79,11 @@ require("mason-null-ls").setup({
 require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
+    "debugpy",
 		"codelldb",
+    "node2",
 		"delve",
-		"debugpy",
-		"bash",
-		"node2",
+    "bash",
 	},
 	automatic_installation = true,
 })

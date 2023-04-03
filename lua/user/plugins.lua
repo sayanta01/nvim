@@ -205,9 +205,9 @@ require("lazy").setup({
 
 	-- LSP
 	"williamboman/mason.nvim",
-  "neovim/nvim-lspconfig",
+	"neovim/nvim-lspconfig",
 	"williamboman/mason-lspconfig.nvim",
-  "jose-elias-alvarez/null-ls.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	--[[ "simrat39/rust-tools.nvim", ]]

@@ -53,7 +53,7 @@ saga.setup({
 		diagnostic = "🐞",
 		incoming = " ",
 		outgoing = " ",
-		hover = "",
+		hover = " ",
 		kind = {},
 	},
 })

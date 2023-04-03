@@ -154,12 +154,12 @@ local mappings = {
 	},
 	s = {
 		name = "Saga",
-		f = { ":Lspsaga lsp_finder<CR>", "Finder" },
-		p = { ":Lspsaga peek_definition<CR>", "Peek Definition" },
-		c = { ":Lspsaga show_cursor_diagnostics<CR>", "Cursor Diagnostics  " },
+		f = { ":Lspsaga lsp_finder<cr>", "Finder" },
+		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
+		c = { ":Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostics  " },
 		-- Toggle outline
-		o = { ":Lspsaga outline<CR>", "Outline" },
-		-- t = { ":Lspsaga term_toggle<CR>", "Terminal" },
+		o = { ":Lspsaga outline<cr>", "Outline" },
+		-- t = { ":Lspsaga term_toggle<cr>", "Terminal" },
 	},
 	t = {
 		name = "Telescope",
@@ -240,12 +240,12 @@ local mappings = {
 		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
 		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
 		--[[ dap-python ]]
-		m = { ":lua require('dap-python').test_method()<cr>", "Py Test Method" },
-		f = { ":lua require('dap-python').test_class()<cr>", "Py Test Class" },
-		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "Py Debug Selection" },
+		m = { ":lua require('dap-python').test_method()<cr>", "Py-Test Method" },
+		f = { ":lua require('dap-python').test_class()<cr>", "Py-Test Class" },
+		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "Py-Debug Selection" },
 		--[[ dap-go ]]
-		e = { ":lua require('dap-go').debug_test()<cr>", "Go Debug Test" },
-		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go Last Test" },
+		e = { ":lua require('dap-go').debug_test()<cr>", "Go-Debug Test" },
+		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go-Last Test" },
 	},
 	T = {
 		name = "Terminal",

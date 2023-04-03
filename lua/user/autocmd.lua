@@ -56,7 +56,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
---[[ Json support ]]
+-- Json support
 local json_group = vim.api.nvim_create_augroup("Json", { clear = true })
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	command = [[syntax match Comment +\/\/.\+$+]],
@@ -64,7 +64,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "*.json",
 })
 
---[[ Comment function for json ]]
+-- Comment function for json
 vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")
 
 --[[ Color highlighter ]]
