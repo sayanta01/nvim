@@ -217,7 +217,7 @@ local mappings = {
 		--[[ 	":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
 		--[[ 	"Buf Prev", ]]
 		--[[ }, ]]
-		b = { ":Telescope buffers<cr>", "Buf Prev" },
+		--[[ b = { ":Telescope buffers<cr>", "Buf Prev" }, ]]
 		h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
 		l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
 		p = { ":BufferLineTogglePin<cr>", "Toggle Pin" },

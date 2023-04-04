@@ -22,6 +22,7 @@ configs.setup({
 		"tsx",
 		"vue",
 		"markdown",
+		"markdown_inline",
 		"html",
 		"css",
 		"scss",
@@ -35,8 +36,8 @@ configs.setup({
 		"astro",
 		"gitignore",
 		"solidity",
-    "kotlin",
-    --[[ "vim", ]]
+		"kotlin",
+		"vim",
 	},
 	sync_install = false,
 	ignore_install = {},
