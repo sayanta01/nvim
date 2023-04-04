@@ -74,6 +74,8 @@ require("lazy").setup({
 	--[[ "lukas-reineke/indent-blankline.nvim", ]]
 	{
 		"echasnovski/mini.indentscope",
+		-- goto_top = [i
+		-- goto_bottom = ]i
 		version = false, -- wait till new 0.7.0 release to put it back on semver
 		event = { "BufReadPre", "BufNewFile" },
 		opts = {
