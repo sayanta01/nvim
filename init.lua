@@ -5,7 +5,6 @@ require("user.plugins")
 require("user.gitsigns")
 require("user.toggleterm")
 require("user.scheme")
-require("user.indentline")
 require("user.mason")
 require("user.lualine")
 require("user.icons")
@@ -21,6 +20,7 @@ vim.notify = require("notify")
 require("user.surround")
 require("user.project")
 require("user.colorizer")
+--[[ require("user.indentline") ]]
 
 -- Dynamic
 require("user.whichkey")
