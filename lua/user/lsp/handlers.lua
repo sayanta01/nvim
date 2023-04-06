@@ -141,7 +141,7 @@ require("lspconfig")["astro"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["sqls"].setup({
+require("lspconfig")["sqlls"].setup({
 	filetype = { "sql", "mysql" },
 	on_attach = on_attach,
 	capabilities = capabilities,

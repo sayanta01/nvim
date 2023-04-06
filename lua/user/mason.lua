@@ -42,7 +42,7 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"solargraph",
 		"emmet_ls",
-		"sqls",
+		"sqlls",
 		"dockerls",
 		"bashls",
 		"ltex",
@@ -79,11 +79,11 @@ require("mason-null-ls").setup({
 require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
-    "debugpy",
-		"codelldb",
-    "node2",
-		"delve",
-    "bash",
+		--[[ "debugpy", ]]
+		--[[ "codelldb", ]]
+		--[[ "node2", ]]
+		--[[ "delve", ]]
+		--[[ "bash", ]]
 	},
 	automatic_installation = true,
 })

@@ -20,10 +20,10 @@ vim.notify = require("notify")
 require("user.surround")
 require("user.project")
 require("user.colorizer")
---[[ require("user.indentline") ]]
+require("user.indentline")
 
 -- Dynamic
 require("user.whichkey")
 require("user.lsp")
 require("user.saga")
-require("user.dap")
+--[[ require("user.dap") -- uncmt when needed ]]

@@ -71,29 +71,29 @@ require("lazy").setup({
 	"nvim-telescope/telescope-media-files.nvim",
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
-	--[[ "lukas-reineke/indent-blankline.nvim", ]]
-	{
-		"echasnovski/mini.indentscope",
-		-- goto_top = [i
-		-- goto_bottom = ]i
-		version = false, -- wait till new 0.7.0 release to put it back on semver
-		event = { "BufReadPre", "BufNewFile" },
-		opts = {
-			symbol = "▏",
-			options = { try_as_border = true },
-		},
-		init = function()
-			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "help", "alpha", "lazy", "NvimTree", "text" },
-				callback = function()
-					vim.b.miniindentscope_disable = true
-				end,
-			})
-		end,
-		config = function(_, opts)
-			require("mini.indentscope").setup(opts)
-		end,
-	},
+	"lukas-reineke/indent-blankline.nvim",
+	--[[ { ]]
+	--[[ 	"echasnovski/mini.indentscope", ]]
+	--[[ 	-- goto_top = [i ]]
+	--[[ 	-- goto_bottom = ]i ]]
+	--[[ 	version = false, -- wait till new 0.7.0 release to put it back on semver ]]
+	--[[ 	event = { "BufReadPre", "BufNewFile" }, ]]
+	--[[ 	opts = { ]]
+	--[[ 		symbol = "▏", ]]
+	--[[ 		options = { try_as_border = true }, ]]
+	--[[ 	}, ]]
+	--[[ 	init = function() ]]
+	--[[ 		vim.api.nvim_create_autocmd("FileType", { ]]
+	--[[ 			pattern = { "help", "alpha", "lazy", "NvimTree", "text" }, ]]
+	--[[ 			callback = function() ]]
+	--[[ 				vim.b.miniindentscope_disable = true ]]
+	--[[ 			end, ]]
+	--[[ 		}) ]]
+	--[[ 	end, ]]
+	--[[ 	config = function(_, opts) ]]
+	--[[ 		require("mini.indentscope").setup(opts) ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "VeryLazy",
@@ -121,6 +121,11 @@ require("lazy").setup({
 			require("nvim-ts-autotag").setup()
 		end,
 	},
+	"NvChad/nvim-colorizer.lua",
+	"uga-rosa/ccc.nvim",
+	"akinsho/bufferline.nvim",
+	"kylechui/nvim-surround",
+	"ahmedkhalf/project.nvim",
 	{
 		"CRAG666/code_runner.nvim",
 		config = function()
@@ -134,11 +139,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	"NvChad/nvim-colorizer.lua",
-	"uga-rosa/ccc.nvim",
-	"akinsho/bufferline.nvim",
-	"kylechui/nvim-surround",
-	"ahmedkhalf/project.nvim",
 
 	-- Misc
 	"ThePrimeagen/vim-be-good",
@@ -152,6 +152,8 @@ require("lazy").setup({
 	},
 
 	-- Themes
+	--[[ { "catppuccin/nvim", name = "catppuccin" }, ]]
+	--[[ "B4mbus/oxocarbon-lua.nvim", ]]
 	{
 		"uloco/bluloco.nvim",
 		lazy = false,
@@ -161,15 +163,10 @@ require("lazy").setup({
 			-- config goes here
 		end,
 	},
-	"projekt0n/github-nvim-theme",
-	"sainnhe/edge",
-	"rebelot/kanagawa.nvim",
-	{ "Everblush/nvim", name = "everblush" },
-	"Shatur/neovim-ayu",
-	"arcticicestudio/nord-vim",
-	"tiagovla/tokyodark.nvim",
 	"sainnhe/gruvbox-material",
-	{ "catppuccin/nvim", name = "catppuccin" },
+	"tiagovla/tokyodark.nvim",
+	"Mofiqul/vscode.nvim",
+	"projekt0n/github-nvim-theme",
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -181,10 +178,7 @@ require("lazy").setup({
 	},
 	"RRethy/nvim-base16",
 	"folke/tokyonight.nvim",
-	"B4mbus/oxocarbon-lua.nvim",
-	"Mofiqul/vscode.nvim",
 	"lunarvim/lunar.nvim",
-	"LunarVim/darkplus.nvim",
 	"lunarvim/synthwave84.nvim",
 	{
 		"olimorris/onedarkpro.nvim",
@@ -213,7 +207,6 @@ require("lazy").setup({
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/typescript.nvim",
 	--[[ "simrat39/rust-tools.nvim", ]]
-	-- "mfussenegger/nvim-jdtls", ]]
 	{
 		"b0o/schemastore.nvim",
 		lazy = true,
@@ -226,8 +219,8 @@ require("lazy").setup({
 	-- Debugger
 	"mfussenegger/nvim-dap",
 	"jay-babu/mason-nvim-dap.nvim",
-	"rcarriga/nvim-dap-ui",
-	"theHamsta/nvim-dap-virtual-text",
-	"mfussenegger/nvim-dap-python",
+	--[[ "rcarriga/nvim-dap-ui", ]]
+	--[[ "theHamsta/nvim-dap-virtual-text", ]]
+	--[[ "mfussenegger/nvim-dap-python", ]]
 	-- "leoluz/nvim-dap-go", ]]
 })
