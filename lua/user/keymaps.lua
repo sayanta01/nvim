@@ -32,9 +32,6 @@ vim.g.maplocalleader = " "  -- meant for a specific buffer, you generally use it
 keymap("n", "<C-b>", "<ESC>^i", opts)
 keymap("n", "<C-e>", "<End>", opts)
 
--- Cmd mode
-keymap("n", "<;>", "<ESC>;", opts)
-
 -- Edit same word all together
 keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
