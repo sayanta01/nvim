@@ -28,6 +28,11 @@ vim.g.maplocalleader = " "  -- meant for a specific buffer, you generally use it
 --[[ keymap("i", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
 --[[ keymap("v", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
 
+-- Update
+--[[ vim.keymap.set("n", "<leader>u",  function () ]]
+--[[ vim.fn.system("git clone https://github.com/sayanta01/nvim ~/.config/nvim") ]]
+--[[ end, { desc = "Update" }) ]]
+
 -- Beginning & End
 keymap("n", "<C-b>", "<ESC>^i", opts)
 keymap("n", "<C-e>", "<End>", opts)
