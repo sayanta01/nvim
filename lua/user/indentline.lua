@@ -38,15 +38,16 @@ require("indent_blankline").setup({
 		"import_statement",
 		"operation_type",
 	},
-  --[[ char = "▏", ]]
-  --[[ char = "┆", ]]
-  --[[ char = "╎", ]]
+	--[[ char = "▏", ]]
+	--[[ char = "┆", ]]
+	--[[ char = "╎", ]]
 	--[[ char = ":", ]]
 	--[[ char = "∘", ]]
 	char = "",
 	show_trailing_blankline_indent = false,
 	show_first_indent_level = true,
-	context_char = "▏",
+	--[[ context_char = "▏", ]]
+	context_char = "",
 	use_treesitter = true,
 	show_current_context = true,
 	show_current_context_start = false,
