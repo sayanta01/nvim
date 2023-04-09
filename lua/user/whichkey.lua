@@ -80,6 +80,19 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
+local vopts = {
+	mode = "v", -- NORMAL mode
+	prefix = "<leader>",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+
+local vmappings = {
+	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment Toggle (visual)" },
+}
+
 local mappings = {
 	[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle  " },
@@ -185,19 +198,17 @@ local mappings = {
 		name = "Options",
 		s = { ":set spell!<cr>", "Toggle Spell Check" },
 		x = { ":!chmod +x %<cr>", "Chmod +x" },
-		v = { ":VimBeGood<cr>", "Vim Practice" },
 		c = { ":CccPick<cr>", "Color Picker" },
-		f = { ":CccConvert<cr>", "Change Color Format" },
-		h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
+    f = { ":CccConvert<cr>", "Change Color Format  " },
+    h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
 		t = { ":ColorizerToggle<cr>", "Colorizer Toggle" },
 		i = { ":Notifications<cr>", "Show Notifications" },
 		n = { ":set rnu!<cr>", "Relative Nm" },
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
-		z = { ":ZenMode<cr>", "Zen-Mode" },
-		w = { ":set wrap<cr>", "Wrap Text" },
-		W = { ":set nowrap<cr>", "No Wrap" },
-		m = { ":set showmode!<cr>", "Show Mode (statusline)  " },
+		w = { ":set wrap!<cr>", "Toggle Wrap Text" },
+    v = { ":VimBeGood<cr>", "Vim Practice" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
+    --[[ m = { ":set showmode!<cr>", "Show Mode (statusline)  " }, ]]
 	},
 	p = {
 		name = "Plugin",
@@ -258,3 +269,4 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+which_key.register(vmappings, vopts)

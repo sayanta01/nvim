@@ -24,6 +24,7 @@ require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 	"nvim-tree/nvim-web-devicons",
 	"nvim-lua/popup.nvim",
+	"nvim-lualine/lualine.nvim",
 	{
 		"rcarriga/nvim-notify",
 		config = function()
@@ -56,8 +57,6 @@ require("lazy").setup({
 	"goolord/alpha-nvim",
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
-	"folke/zen-mode.nvim",
-	"nvim-lualine/lualine.nvim",
 	{
 		"folke/which-key.nvim",
 		config = function()
@@ -70,7 +69,6 @@ require("lazy").setup({
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
 	"lukas-reineke/indent-blankline.nvim",
 	--[[ { ]]
 	--[[ 	"echasnovski/mini.indentscope", ]]
@@ -115,16 +113,17 @@ require("lazy").setup({
 			})
 		end,
 	},
+	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
 	},
+	"kylechui/nvim-surround",
 	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
 	"akinsho/bufferline.nvim",
-	"kylechui/nvim-surround",
 	"ahmedkhalf/project.nvim",
 	{
 		"CRAG666/code_runner.nvim",

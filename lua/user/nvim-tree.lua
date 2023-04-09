@@ -77,13 +77,14 @@ local options = {
 		highlight_opened_files = "none",
 		indent_width = 2,
 		indent_markers = {
-			enable = false,
+			enable = true,
 			inline_arrows = true,
 			icons = {
-				corner = "└",
-				edge = "|",
-				item = "|",
-				bottom = "─",
+				--[[ corner = "└", ]]
+				corner = "",
+				edge = "",
+				item = "",
+				bottom = "󰍴",
 				none = " ",
 			},
 		},
