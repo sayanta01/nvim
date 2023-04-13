@@ -18,16 +18,6 @@ vim.g.maplocalleader = " "  -- meant for a specific buffer, you generally use it
 --   visual_block_mode = "x",
 
 -- Normal --
--- Wrap Text
---[[ keymap("n", "<C-w>", "<ESC>:set wrap <CR>", opts) ]]
--- keymap("i", "<C-w-w>", "<ECS>:set wrap <CR>", opts)
---[[ keymap("v", "<C-w>", "<ESC>:set wrap <CR>", opts) ]]
-
--- No Wrap Text
---[[ keymap("n", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
---[[ keymap("i", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
---[[ keymap("v", "<C-M-w>", "<ESC>:set nowrap <CR>", opts) ]]
-
 -- Update
 --[[ vim.keymap.set("n", "<leader>u",  function () ]]
 --[[ vim.fn.system("git clone https://github.com/sayanta01/nvim ~/.config/nvim") ]]
