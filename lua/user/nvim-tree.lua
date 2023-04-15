@@ -103,10 +103,10 @@ local options = {
 				folder = {
 					default = "",
 					open = "",
-					empty = "",
-					empty_open = "",
+					empty = "",
+					empty_open = "",
 					symlink = "",
-					symlink_open = "",
+					symlink_open = "",
 					arrow_open = "",
 					arrow_closed = "",
 				},
