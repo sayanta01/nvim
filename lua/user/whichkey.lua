@@ -195,7 +195,7 @@ local mappings = {
 		--[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 	},
 	o = {
-		name = "Options",
+		name = "Option",
 		s = { ":set spell!<cr>", "Toggle Spell Check" },
 		x = { ":!chmod +x %<cr>", "Chmod +x" },
 		c = { ":CccPick<cr>", "Color Picker" },
