@@ -29,7 +29,7 @@ require("lazy").setup({
 		"rcarriga/nvim-notify",
 		config = function()
 			require("notify").setup({
-				timeout = 2900,
+				timeout = 100,
 				level = vim.log.levels.INFO,
 				fps = 40,
 				icons = {
