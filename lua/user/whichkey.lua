@@ -179,7 +179,7 @@ local mappings = {
 		c = { ":Telescope commands<cr>", "Commands" },
 		b = { ":Telescope builtin<cr>", "Telescope Builtin" },
 		d = { ":Telescope diagnostics<cr>", "Document Diagnostics  " },
-    --[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
+		--[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 		h = { ":Telescope help_tags<cr>", "Find Help" },
 		H = { ":Telescope highlights<cr>", "Find Highlights" },
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
@@ -189,7 +189,7 @@ local mappings = {
 		r = { ":Telescope live_grep<cr>", "Find Text" },
 		p = { ":Telescope projects<cr>", "Projects" },
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
-		R = { ":Telescope registers<cr>", "Registers" },
+		s = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
 		m = { ":Telescope marks<cr>", "Marks" },
 	},
@@ -214,12 +214,12 @@ local mappings = {
 		m = { ":Mason<cr>", "Mason" },
 		n = { ":NullLsInfo<cr>", "NullLs" },
 		l = { ":Lazy<cr>", "Lazy" },
-		i = { ":Lazy install<cr>", "Install Plugins" },
-		x = { ":Lazy clean<cr>", "Remove Unused Plugins" },
-		u = { ":Lazy update<cr>", "Update Plugins" },
-		b = { ":Lazy build<cr>", "Build Plugins" },
-		s = { ":Lazy sync<cr>", "Sync Plugins" },
-		c = { ":Lazy check<cr>", "Check" },
+		i = { ":Lazy install<cr>", "!nstall Plugins" },
+		--[[ x = { ":Lazy clean<cr>", "Remove Unused Plugins" }, ]]
+		--[[ u = { ":Lazy update<cr>", "Update Plugins" }, ]]
+		--[[ b = { ":Lazy build<cr>", "Build Plugins" }, ]]
+		--[[ s = { ":Lazy sync<cr>", "Sync Plugins" }, ]]
+		--[[ c = { ":Lazy check<cr>", "Check" }, ]]
 	},
 	b = {
 		name = "Buffer",
@@ -250,12 +250,12 @@ local mappings = {
 		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
 		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
 		--[[ dap-python ]]
-		m = { ":lua require('dap-python').test_method()<cr>", "Py-Test Method" },
-		f = { ":lua require('dap-python').test_class()<cr>", "Py-Test Class" },
-		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "Py-Debug Selection" },
+		m = { ":lua require('dap-python').test_method()<cr>", " Test Method" },
+		f = { ":lua require('dap-python').test_class()<cr>", " Test Class" },
+		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", " Debug Selection" },
 		--[[ dap-go ]]
-		e = { ":lua require('dap-go').debug_test()<cr>", "Go-Debug Test" },
-		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go-Last Test" },
+		e = { ":lua require('dap-go').debug_test()<cr>", " Debug Test" },
+		a = { ":lua require('dap-go').debug_last_test()<cr>", " Last Test" },
 	},
 	t = {
 		name = "Terminal",

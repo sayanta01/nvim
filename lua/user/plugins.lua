@@ -99,7 +99,7 @@ require("lazy").setup({
 		end,
 	},
 	"kylechui/nvim-surround",
-  "akinsho/bufferline.nvim",
+	"akinsho/bufferline.nvim",
 	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
 	--[[ { ]]
@@ -124,7 +124,7 @@ require("lazy").setup({
 	--[[ 		require("mini.indentscope").setup(opts) ]]
 	--[[ 	end, ]]
 	--[[ }, ]]
-  "ahmedkhalf/project.nvim",
+	"ahmedkhalf/project.nvim",
 	--[[ { ]]
 	--[[ 	"CRAG666/code_runner.nvim", ]]
 	--[[ 	config = function() ]]
@@ -153,20 +153,20 @@ require("lazy").setup({
 	-- Themes
 	--[[ { "catppuccin/nvim", name = "catppuccin" }, ]]
 	--[[ "B4mbus/oxocarbon-lua.nvim", ]]
-  --[[ "Mofiqul/vscode.nvim", ]]
-  --[[ "projekt0n/github-nvim-theme", ]]
-  --[[ "tiagovla/tokyodark.nvim", ]]
-	{
-		"uloco/bluloco.nvim",
-		lazy = false,
-		priority = 1000,
-		dependencies = { "rktjmp/lush.nvim" },
-		config = function()
-			-- config goes here
-		end,
-	},
+	--[[ "Mofiqul/vscode.nvim", ]]
+	--[[ "projekt0n/github-nvim-theme", ]]
+	--[[ "tiagovla/tokyodark.nvim", ]]
+	--[[ { ]]
+	--[[ 	"uloco/bluloco.nvim", ]]
+	--[[ 	lazy = false, ]]
+	--[[ 	priority = 1000, ]]
+	--[[ 	dependencies = { "rktjmp/lush.nvim" }, ]]
+	--[[ 	config = function() ]]
+	--[[ 		-- config goes here ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 	"sainnhe/gruvbox-material",
-  "folke/tokyonight.nvim",
+	"folke/tokyonight.nvim",
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
