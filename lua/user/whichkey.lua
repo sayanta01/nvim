@@ -127,20 +127,20 @@ local mappings = {
 		u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 		d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
-	r = {
-		name = "Run",
-		s = {
-			':autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>',
-			"Auto Compile Sass",
-		},
-		r = { ":RunCode<CR>", "Run Code" },
-		f = { ":RunFile<CR>", "Run File" },
-		p = { ":RunProject<CR>", "Run Project" },
-		m = {
-			":ToggleTerm size=80 direction=float<CR>mvn exec:java -Dexec.mainClass=com.pojokcode.App<CR>",
-			"Run MVN",
-		},
-	},
+	--[[ r = { ]]
+	--[[ 	name = "Run", ]]
+	--[[ 	s = { ]]
+	--[[ 		':autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>', ]]
+	--[[ 		"Auto Compile Sass", ]]
+	--[[ 	}, ]]
+	--[[ 	r = { ":RunCode<CR>", "Run Code" }, ]]
+	--[[ 	f = { ":RunFile<CR>", "Run File" }, ]]
+	--[[ 	p = { ":RunProject<CR>", "Run Project" }, ]]
+	--[[ 	m = { ]]
+	--[[ 		":ToggleTerm size=80 direction=float<CR>mvn exec:java -Dexec.mainClass=com.pojokcode.App<CR>", ]]
+	--[[ 		"Run MVN", ]]
+	--[[ 	}, ]]
+	--[[ }, ]]
 	l = {
 		name = "LSP",
 		d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" },
