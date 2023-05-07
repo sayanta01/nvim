@@ -155,7 +155,6 @@ local mappings = {
 		f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
 		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
 		q = { ":lua vim.diagnostic.setloclist()<cr>", "quickfix" },
-		I = { ":LspInfo<cr>", "Info" },
 		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
 		l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
@@ -165,7 +164,7 @@ local mappings = {
 		i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
 		o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 	},
-	s = {
+	L = {
 		name = "Saga",
 		f = { ":Lspsaga lsp_finder<cr>", "Finder" },
 		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
@@ -174,12 +173,13 @@ local mappings = {
 		o = { ":Lspsaga outline<cr>", "Outline" },
 		-- t = { ":Lspsaga term_toggle<cr>", "Terminal" },
 	},
-	t = {
+	s = {
 		name = "Telescope",
 		t = { ":Telescope colorscheme<cr>", "Themes" },
 		c = { ":Telescope commands<cr>", "Commands" },
 		b = { ":Telescope builtin<cr>", "Telescope Builtin" },
 		d = { ":Telescope diagnostics<cr>", "Document Diagnostics  " },
+    --[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 		h = { ":Telescope help_tags<cr>", "Find Help" },
 		H = { ":Telescope highlights<cr>", "Find Highlights" },
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
@@ -192,7 +192,6 @@ local mappings = {
 		R = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
 		m = { ":Telescope marks<cr>", "Marks" },
-		--[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 	},
 	o = {
 		name = "Option",
@@ -258,7 +257,7 @@ local mappings = {
 		e = { ":lua require('dap-go').debug_test()<cr>", "Go-Debug Test" },
 		a = { ":lua require('dap-go').debug_last_test()<cr>", "Go-Last Test" },
 	},
-	T = {
+	t = {
 		name = "Terminal",
 		h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },
 		v = { ":ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
