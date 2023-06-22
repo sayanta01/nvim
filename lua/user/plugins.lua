@@ -65,7 +65,6 @@ require("lazy").setup({
 		end,
 	},
 	"kyazdani42/nvim-tree.lua",
-	"RRethy/vim-illuminate",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
@@ -102,6 +101,7 @@ require("lazy").setup({
 	"akinsho/bufferline.nvim",
 	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
+	"RRethy/vim-illuminate",
 	--[[ { ]]
 	--[[ 	"echasnovski/mini.indentscope", ]]
 	--[[ 	-- goto_top = [i ]]
@@ -156,6 +156,7 @@ require("lazy").setup({
 	--[[ "Mofiqul/vscode.nvim", ]]
 	--[[ "projekt0n/github-nvim-theme", ]]
 	--[[ "tiagovla/tokyodark.nvim", ]]
+	--[[ "lunarvim/synthwave84.nvim", ]]
 	--[[ { ]]
 	--[[ 	"uloco/bluloco.nvim", ]]
 	--[[ 	lazy = false, ]]
@@ -178,7 +179,6 @@ require("lazy").setup({
 	},
 	"RRethy/nvim-base16",
 	"lunarvim/lunar.nvim",
-	"lunarvim/synthwave84.nvim",
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
