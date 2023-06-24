@@ -58,8 +58,6 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- formatters & linters
 	ensure_installed = {
-    "mypy",
-    "ruff",
 		"yamlfmt", -- "yamllint",
 		"gofumpt",
 		"google-java-format",
@@ -81,11 +79,11 @@ require("mason-null-ls").setup({
 require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
-		"debugpy",
-    "delve",
-    "node2",
+		--[[ "debugpy", ]]
+		--[[   "delve", ]]
+		--[[ "node2", ]]
 		--[[ "codelldb", ]]
-    --[[ "bash", ]]
+		--[[ "bash", ]]
 	},
 	automatic_installation = true,
 })
