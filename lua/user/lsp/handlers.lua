@@ -181,6 +181,7 @@ require("lspconfig")["lua_ls"].setup({
 require("lspconfig")["pyright"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	filetype = { "python" },
 	settings = {
 		python = {
 			analysis = {
@@ -199,37 +200,33 @@ require("lspconfig")["pyright"].setup({
 
 require("lspconfig")["gopls"].setup({
 	cmd = { "gopls" },
-	filetypes = { "go", "gomod" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+	root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
 			analyses = {
 				unusedparams = true,
 				shadow = true,
 			},
+			--[[ flags = { ]]
+			--[[ 	debounce_text_changes = 150, ]]
+			--[[ }, ]]
 			experimentalPostfixCompletions = true,
 			gofumpt = true,
 			staticcheck = true,
 		},
 	},
 })
---[[ require("lspconfig")["gopls"].setup({ ]]
---[[ 	capabilities = capabilities, ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	settings = { ]]
---[[ 		gopls = { ]]
---[[ 			gofumpt = true, ]]
---[[ 		}, ]]
---[[ 	}, ]]
---[[ 	flags = { ]]
---[[ 		debounce_text_changes = 150, ]]
---[[ 	}, ]]
---[[ }) ]]
 
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	filetype = { "rust" },
+	root_dir = require("lspconfig").util.root_pattern("Cargo.toml"),
 	settings = {
 		["rust-analyzer"] = {
 			cmd = {

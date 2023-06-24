@@ -205,7 +205,6 @@ require("lazy").setup({
 	"jose-elias-alvarez/null-ls.nvim",
 	"jay-babu/mason-null-ls.nvim",
 	"jose-elias-alvarez/typescript.nvim",
-	--[[ "simrat39/rust-tools.nvim", ]]
 	{
 		"b0o/schemastore.nvim",
 		lazy = true,
@@ -214,6 +213,17 @@ require("lazy").setup({
 		"glepnir/lspsaga.nvim",
 		event = "BufRead",
 	},
+	--[[ { ]]
+	--[[ "simrat39/rust-tools.nvim", ]]
+	--[[ 	ft = "rust", ]]
+	--[[ 	dependencies = "neovim/nvim-lspconfig", ]]
+	--[[ 	opts = function() ]]
+	--[[ 		return require("rust-tools") ]]
+	--[[ 	end, ]]
+	--[[ 	config = function(_, opts) ]]
+	--[[ 		require("rust-tools").setup(opts) ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 
 	-- Debugger
 	"mfussenegger/nvim-dap",
@@ -221,5 +231,12 @@ require("lazy").setup({
 	--[[ "rcarriga/nvim-dap-ui", ]]
 	--[[ "theHamsta/nvim-dap-virtual-text", ]]
 	--[[ "mfussenegger/nvim-dap-python", ]]
-	-- "leoluz/nvim-dap-go", ]]
+	--[[ { ]]
+	--[[ 	"leoluz/nvim-dap-go", ]]
+	--[[ 	ft = "go", ]]
+	--[[ 	dependencies = "mfussenegger/nvim-dap", ]]
+	--[[ 	config = function(_, opts) ]]
+	--[[ 		require("dap-go").setup(opts) ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 })

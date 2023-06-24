@@ -30,7 +30,7 @@ vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignErro
 
 --[[ python ]]
 --[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
---[[ require("dap-python").test_runner = "pytest" ]]
+require("dap-python").test_runner = "pytest"
 require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 table.insert(require("dap").configurations.python, {
 	type = "python",
@@ -71,66 +71,67 @@ dap.configurations.javascript = {
 }
 
 --[[ bash ]]
-dap.adapters.bashdb = {
-	type = "executable",
-	command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
-	name = "bashdb",
-}
-dap.configurations.sh = {
-	{
-		type = "bashdb",
-		request = "launch",
-		name = "Launch file",
-		showDebugOutput = true,
-		pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
-		pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
-		trace = true,
-		file = "${file}",
-		program = "${file}",
-		cwd = "${workspaceFolder}",
-		pathCat = "cat",
-		pathBash = "/bin/bash",
-		pathMkfifo = "mkfifo",
-		pathPkill = "pkill",
-		args = {},
-		env = {},
-		terminalKind = "integrated",
-	},
-}
+--[[ dap.adapters.bashdb = { ]]
+--[[ 	type = "executable", ]]
+--[[ 	command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter", ]]
+--[[ 	name = "bashdb", ]]
+--[[ } ]]
+--[[ dap.configurations.sh = { ]]
+--[[ 	{ ]]
+--[[ 		type = "bashdb", ]]
+--[[ 		request = "launch", ]]
+--[[ 		name = "Launch file", ]]
+--[[ 		showDebugOutput = true, ]]
+--[[ 		pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb", ]]
+--[[ 		pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir", ]]
+--[[ 		trace = true, ]]
+--[[ 		file = "${file}", ]]
+--[[ 		program = "${file}", ]]
+--[[ 		cwd = "${workspaceFolder}", ]]
+--[[ 		pathCat = "cat", ]]
+--[[ 		pathBash = "/bin/bash", ]]
+--[[ 		pathMkfifo = "mkfifo", ]]
+--[[ 		pathPkill = "pkill", ]]
+--[[ 		args = {}, ]]
+--[[ 		env = {}, ]]
+--[[ 		terminalKind = "integrated", ]]
+--[[ 	}, ]]
+--[[ } ]]
 
 --[[ go ]]
-dap.adapters.delve = {
-	type = "server",
-	port = "${port}",
-	executable = {
-		command = "dlv",
-		args = { "dap", "-l", "127.0.0.1:${port}" },
-	},
-}
+--[[ dap.adapters.delve = { ]]
+--[[ 	type = "server", ]]
+--[[ 	port = "${port}", ]]
+--[[ 	executable = { ]]
+--[[ 		command = "dlv", ]]
+--[[ 		args = { "dap", "-l", "127.0.0.1:${port}" }, ]]
+--[[ 	}, ]]
+--[[ } ]]
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
-dap.configurations.go = {
-	{
-		type = "delve",
-		name = "Debug",
-		request = "launch",
-		program = "${file}",
-	},
-	{
-		type = "delve",
-		name = "Debug test", -- configuration for debugging test files
-		request = "launch",
-		mode = "test",
-		program = "${file}",
-	},
-	-- works with go.mod packages and sub packages
-	{
-		type = "delve",
-		name = "Debug test (go.mod)",
-		request = "launch",
-		mode = "test",
-		program = "${file}",
-	},
-}
+
+--[[ dap.configurations.go = { ]]
+--[[ 	{ ]]
+--[[ 		type = "delve", ]]
+--[[ 		name = "Debug", ]]
+--[[ 		request = "launch", ]]
+--[[ 		program = "${file}", ]]
+--[[ 	}, ]]
+--[[ 	{ ]]
+--[[ 		type = "delve", ]]
+--[[ 		name = "Debug test", -- configuration for debugging test files ]]
+--[[ 		request = "launch", ]]
+--[[ 		mode = "test", ]]
+--[[ 		program = "${file}", ]]
+--[[ 	}, ]]
+--[[ 	-- works with go.mod packages and sub packages ]]
+--[[ 	{ ]]
+--[[ 		type = "delve", ]]
+--[[ 		name = "Debug test (go.mod)", ]]
+--[[ 		request = "launch", ]]
+--[[ 		mode = "test", ]]
+--[[ 		program = "${file}", ]]
+--[[ 	}, ]]
+--[[ } ]]
 
 --[[ require("dap-go").setup({ ]]
 --[[ 	dap_configurations = { ]]
@@ -167,6 +168,7 @@ dap.configurations.go = {
 --[[ } ]]
 --[[ dap.configurations.c = dap.configurations.cpp ]]
 --[[ dap.configurations.rust = dap.configurations.cpp ]]
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end

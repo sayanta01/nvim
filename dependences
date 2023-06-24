@@ -31,9 +31,18 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo new project  # get started with rust
 # rustup component add rust-analyzer  # run this in project directory, maybe it's not necessary
 
+# delve for go-dap
+# go install github.com/go-delve/delve/cmd/dlv@latest
+
 # kotlin setup
 curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin # run this
+
+# creating venv for python-dap - its lengthy
+# mkdir ~/.virtualenvs
+# cd ~/.virtualenvs || exit
+# python -m venv debugpy
+# debugpy/bin/python -m pip install debugpy
 
 # `java-dap setup`
 # INSTALL_FOLDER="$HOME/.local/share/nvim"
@@ -45,15 +54,6 @@ curl -s "https://get.sdkman.io" | bash
 # rm -rf "$INSTALL_FOLDER/vscode-java-test"
 # git clone https://github.com/microsoft/vscode-java-test.git "$INSTALL_FOLDER/vscode-java-test"
 # cd "$INSTALL_FOLDER/vscode-java-test" && npm install && npm run build-plugin
-
-# creating venv for python-dap
-# mkdir ~/.virtualenvs
-# cd ~/.virtualenvs || exit
-# python -m venv debugpy
-# debugpy/bin/python -m pip install debugpy
-
-# delve for go-dap
-# go install github.com/go-delve/delve/cmd/dlv@latest
 
 # javascript-dap - https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome
 # mkdir -p ~/dev/microsoft
