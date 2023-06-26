@@ -24,33 +24,33 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"ansiblels",
 		"yamlls",
-		"clangd", -- c, cpp
+		"clangd",
 		"omnisharp", -- c#
-		"gopls", -- go
-		--[[ "solidity", ]]
-		--[[ "jdtls", -- java ]]
+		"gopls",
+		--[[ "jdtls", ]]
 		--[[ "tailwindcss", -- javascript  -- configure this ]]
-		"cssmodules_ls", -- configure this
-		"angularls", -- typescript -- configure this
-		"tsserver",
+		--[[ "eslint", -- configure this ]]
+		--[[ "cssmodules_ls", -- configure this ]]
+		--[[ "angularls", -- typescript -- configure this ]]
+    "tsserver",
 		"jsonls",
 		"lua_ls",
-		"pyright", -- python
+		"pyright",
 		"rust_analyzer",
 		"marksman",
 		"html",
 		"cssls",
-		"solargraph",
 		"emmet_ls",
 		"sqlls",
 		"dockerls",
 		"bashls",
-		"ltex",
 		"awk_ls",
-		"astro",
-		"kotlin_language_server",
-		"vimls",
-		"eslint", -- configure this
+		--[[ "ltex", ]]
+		--[[ "solargraph", ]]
+		--[[ "kotlin_language_server", ]]
+		--[[ "solidity", ]]
+		--[[ "astro", ]]
+		--[[ "vimls", ]]
 	},
 	automatic_installation = true,
 })
@@ -68,9 +68,9 @@ require("mason-null-ls").setup({
 		"rubocop",
 		"rustfmt",
 		"markdownlint",
-		"phpcbf",
 		"shfmt",
 		"clang_format",
+		"phpcbf",
 		"sqlfluff",
 	},
 	automatic_installation = true,
@@ -79,8 +79,8 @@ require("mason-null-ls").setup({
 require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
-		--[[ "debugpy", ]]
 		--[[ "codelldb", ]]
+		--[[ "debugpy", ]]
 		--[[ "delve", ]]
 		--[[ "node2", ]]
 		--[[ "bash", ]]

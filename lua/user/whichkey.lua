@@ -105,7 +105,7 @@ local mappings = {
 	x = { ":bdelete<cr>", "Close Buffer" },
 	h = { ":nohlsearch<cr>", "No Highlight" },
 	y = { "gg<S-v>G", "Copy" },
-	e = { ":NvimTreeToggle<cr>", "NvimTree" },
+	e = { ":NvimTreeToggle<cr>", "Explorer" },
 	f = { ":Telescope find_files<cr>", "Find Files" },
 	--[[ f = { ]]
 	--[[ 	":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
@@ -260,6 +260,7 @@ local mappings = {
 		--[[ dap-go ]]
 		e = { ":lua require('dap-go').debug_test()<cr>", " Debug Test" },
 		a = { ":lua require('dap-go').debug_last_test()<cr>", " Last Test" },
+    --[[ dap-rust ]]
 	},
 	t = {
 		name = "Terminal",

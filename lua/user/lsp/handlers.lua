@@ -84,6 +84,48 @@ typescript.setup({
 	},
 })
 
+--[[ require("lspconfig")["texlab"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
+
+--[[ require("lspconfig")["solargraph"].setup({ ]]
+--[[ 	filetypes = { "ruby", "eruby" }, ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	root_dir = require("lspconfig").util.root_pattern("Gemfile"), ]]
+--[[ 	single_file_support = true, ]]
+--[[ 	settings = { ]]
+--[[ 		solargraph = { ]]
+--[[ 			diagnostics = true, ]]
+--[[ 		}, ]]
+--[[ 		flags = { ]]
+--[[ 			debounce_text_changes = 150, ]]
+--[[ 		}, ]]
+--[[ 	}, ]]
+--[[ }) ]]
+
+--[[ require("lspconfig")["kotlin_language_server"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
+
+--[[ require("lspconfig")["solidity"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	single_file_support = true, ]]
+--[[ }) ]]
+
+--[[ require("lspconfig")["astro"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
+
+--[[ require("lspconfig")["vimls"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
+
 require("lspconfig")["omnisharp"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -99,11 +141,6 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["awk_ls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["dockerls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -114,7 +151,7 @@ require("lspconfig")["marksman"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["vimls"].setup({
+require("lspconfig")["awk_ls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -136,23 +173,8 @@ require("lspconfig")["cssls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["astro"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["sqlls"].setup({
 	filetype = { "sql", "mysql" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["kotlin_language_server"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["texlab"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -294,28 +316,6 @@ require("lspconfig")["tsserver"].setup({
 			},
 		},
 	},
-})
-
-require("lspconfig")["solargraph"].setup({
-	filetypes = { "ruby", "eruby" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-	--[[ root_dir = require("lspconfig").util.root_pattern("Gemfile"), ]]
-	single_file_support = true,
-	settings = {
-		solargraph = {
-			diagnostics = true,
-		},
-		flags = {
-			debounce_text_changes = 150,
-		},
-	},
-})
-
-require("lspconfig")["solidity"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	single_file_support = true,
 })
 
 --[[ require("lspconfig")["jdtls"].setup({ ]]

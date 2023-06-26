@@ -54,14 +54,18 @@ require("lazy").setup({
 	},
 
 	-- Features
-	"goolord/alpha-nvim",
+	{
+		"goolord/alpha-nvim",
+		event = "VimEnter",
+	},
 	"lewis6991/gitsigns.nvim",
 	"akinsho/toggleterm.nvim",
 	{
 		"folke/which-key.nvim",
-		config = function()
+		event = "VeryLazy",
+		init = function()
 			vim.o.timeout = true
-			vim.o.timeoutlen = 400
+			vim.o.timeoutlen = 299
 		end,
 	},
 	"kyazdani42/nvim-tree.lua",
@@ -90,41 +94,75 @@ require("lazy").setup({
 			})
 		end,
 	},
-	"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
+	{
+		"windwp/nvim-autopairs", -- Autopairs, integrates with cmp & treesitter
+		event = "InsertEnter",
+	},
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
 			require("nvim-ts-autotag").setup()
 		end,
 	},
-	"kylechui/nvim-surround",
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+	},
 	"akinsho/bufferline.nvim",
 	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
-	"RRethy/vim-illuminate",
+	{
+		"RRethy/vim-illuminate",
+		event = "VeryLazy",
+	},
+	"ahmedkhalf/project.nvim",
 	--[[ { ]]
-	--[[ 	"echasnovski/mini.indentscope", ]]
-	--[[ 	-- goto_top = [i ]]
-	--[[ 	-- goto_bottom = ]i ]]
-	--[[ 	version = false, -- wait till new 0.7.0 release to put it back on semver ]]
-	--[[ 	event = { "BufReadPre", "BufNewFile" }, ]]
-	--[[ 	opts = { ]]
-	--[[ 		symbol = "▏", ]]
-	--[[ 		options = { try_as_border = true }, ]]
-	--[[ 	}, ]]
-	--[[ 	init = function() ]]
-	--[[ 		vim.api.nvim_create_autocmd("FileType", { ]]
-	--[[ 			pattern = { "help", "alpha", "lazy", "NvimTree", "text" }, ]]
-	--[[ 			callback = function() ]]
-	--[[ 				vim.b.miniindentscope_disable = true ]]
-	--[[ 			end, ]]
+	--[[ 	"VonHeikemen/fine-cmdline.nvim", ]]
+	--[[ 	dependencies = "MunifTanjim/nui.nvim", ]]
+	--[[ 	vim.api.nvim_set_keymap("n", ":", ":FineCmdline<CR>", { noremap = true }), ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("fine-cmdline").setup({ ]]
+	--[[ 			cmdline = { ]]
+	--[[ 				enable_keymaps = true, ]]
+	--[[ 				smart_history = true, ]]
+	--[[ 				prompt = "   ", ]]
+	--[[ 			}, ]]
+	--[[ 			popup = { ]]
+	--[[ 				position = { ]]
+	--[[ 					row = "20%", ]]
+	--[[ 					col = "50%", ]]
+	--[[ 				}, ]]
+	--[[ 				size = { ]]
+	--[[ 					width = "50%", ]]
+	--[[ 				}, ]]
+	--[[ 				border = { ]]
+	--[[ 					style = "rounded", ]]
+	--[[ 				}, ]]
+	--[[ 				win_options = { ]]
+	--[[ 					winhighlight = "Normal:Normal,FloatBorder:FloatBorder", ]]
+	--[[ 				}, ]]
+	--[[ 			}, ]]
+	--[[ 			hooks = { ]]
+	--[[ 				--	before_mount = function(input) ]]
+	--[[ 				--	end, ]]
+	--[[ 				--	after_mount = function(input) ]]
+	--[[ 				--	end, ]]
+	--[[ 				set_keymaps = function(imap, feedkeys) ]]
+	--[[ 					local fn = require("fine-cmdline").fn ]]
+	--[[ 					imap("<M-k>", fn.up_search_history) ]]
+	--[[ 					imap("<M-j>", fn.down_search_history) ]]
+	--[[ 					imap("<Up>", fn.up_history) ]]
+	--[[ 					imap("<Down>", fn.down_history) ]]
+	--[[ 					imap("<M-r>", function() ]]
+	--[[ 						if vim.fn.pumvisible() == 0 then ]]
+	--[[ 							feedkeys("%s///gc<Left><Left><Left><Left>") ]]
+	--[[ 						end ]]
+	--[[ 					end) ]]
+	--[[ 				end, ]]
+	--[[ 			}, ]]
 	--[[ 		}) ]]
 	--[[ 	end, ]]
-	--[[ 	config = function(_, opts) ]]
-	--[[ 		require("mini.indentscope").setup(opts) ]]
-	--[[ 	end, ]]
 	--[[ }, ]]
-	"ahmedkhalf/project.nvim",
 	--[[ { ]]
 	--[[ 	"CRAG666/code_runner.nvim", ]]
 	--[[ 	config = function() ]]
@@ -151,7 +189,7 @@ require("lazy").setup({
 	},
 
 	-- Themes
-	--[[ { "catppuccin/nvim", name = "catppuccin" }, ]]
+	--[[ { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, ]]
 	--[[ "B4mbus/oxocarbon-lua.nvim", ]]
 	--[[ "Mofiqul/vscode.nvim", ]]
 	--[[ "projekt0n/github-nvim-theme", ]]
@@ -167,7 +205,11 @@ require("lazy").setup({
 	--[[ 	end, ]]
 	--[[ }, ]]
 	"sainnhe/gruvbox-material",
-	"folke/tokyonight.nvim",
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -195,8 +237,11 @@ require("lazy").setup({
 	--[[ "hrsh7th/cmp-nvim-lsp-signature-help",  -- uncmt in cmp config ]]
 
 	-- Snippets
-	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets",
+	{
+		"L3MON4D3/LuaSnip",
+		build = "make install_jsregexp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+	},
 
 	-- LSP
 	"williamboman/mason.nvim",
@@ -211,7 +256,7 @@ require("lazy").setup({
 	},
 	{
 		"glepnir/lspsaga.nvim",
-		event = "BufRead",
+		event = "LspAttach",
 	},
 	--[[ { ]]
 	--[[ "simrat39/rust-tools.nvim", ]]
@@ -228,8 +273,8 @@ require("lazy").setup({
 	-- Debugger
 	"mfussenegger/nvim-dap",
 	"jay-babu/mason-nvim-dap.nvim",
-	--[[ "rcarriga/nvim-dap-ui", ]]
-	--[[ "theHamsta/nvim-dap-virtual-text", ]]
+	"rcarriga/nvim-dap-ui",
+	"theHamsta/nvim-dap-virtual-text",
 	--[[ { ]]
 	--[[ 	"mfussenegger/nvim-dap-python", ]]
 	--[[ 	ft = "python", ]]

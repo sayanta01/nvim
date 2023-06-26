@@ -57,19 +57,33 @@ dap.configurations.javascript = {
 }
 
 --[[ c/c++/rust ]]
-dap.adapters.lldb = {
-	type = "executable",
-	command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path
-	name = "lldb",
+dap.adapters.codelldb = {
+	type = "server",
+	host = "127.0.0.1",
+	port = 13000, -- 💀 Use the port printed out or specified with `--port`
 }
 
+dap.adapters.codelldb = {
+	type = "server",
+	port = "${port}",
+	executable = {
+		-- CHANGE THIS to your path!
+		command = "~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb",
+		--[[ command = '/absolute/path/to/codelldb/extension/adapter/codelldb', ]]
+		args = { "--port", "${port}" },
+
+		-- On windows you may have to uncomment this:
+		-- detached = false,
+	},
+}
 dap.configurations.cpp = {
 	{
 		name = "Launch",
-		type = "lldb",
+		type = "codelldb",
 		request = "launch",
 		program = function()
 			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+      --[[ return vim.fn.input("~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb", ]]
 		end,
 		cwd = "${workspaceFolder}",
 		stopOnEntry = false,
