@@ -28,25 +28,11 @@ dapui.setup({
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
---[[ python ]]
---[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
-require("dap-python").test_runner = "pytest"
-require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
-table.insert(require("dap").configurations.python, {
-	type = "python",
-	request = "launch",
-	name = "My custom launch configuration",
-	program = "${file}",
-	-- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings
-})
-
 --[[ javascript ]]
 dap.adapters.node2 = {
 	type = "executable",
 	command = "node-debug2-adapter",
 	args = { os.getenv("HOME") .. "/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js" },
-	--[[ args =  { vim.fn.stdpath('data') .. '/mason/packages/node-debug2-adapter/out/src/nodeDebug.js' }, ]]
-	--[[ args = {os.getenv('HOME') .. '/.zinit/plugins/microsoft---vscode-node-debug2.git/out/src/nodeDebug.js'}, ]]
 }
 dap.configurations.javascript = {
 	{
@@ -69,6 +55,41 @@ dap.configurations.javascript = {
 		processId = require("dap.utils").pick_process,
 	},
 }
+
+--[[ c/c++/rust ]]
+dap.adapters.lldb = {
+	type = "executable",
+	command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path
+	name = "lldb",
+}
+
+dap.configurations.cpp = {
+	{
+		name = "Launch",
+		type = "lldb",
+		request = "launch",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+		end,
+		cwd = "${workspaceFolder}",
+		stopOnEntry = false,
+		args = {},
+	},
+}
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp
+
+--[[ python ]]
+--[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
+--[[ require("dap-python").test_runner = "pytest" ]]
+--[[ require("dap-python").setup("~/.virtualenvs/debugpy/bin/python") ]]
+--[[ table.insert(require("dap").configurations.python, { ]]
+--[[ 	type = "python", ]]
+--[[ 	request = "launch", ]]
+--[[ 	name = "My custom launch configuration", ]]
+--[[ 	program = "${file}", ]]
+--[[ 	-- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings ]]
+--[[ }) ]]
 
 --[[ bash ]]
 --[[ dap.adapters.bashdb = { ]]
@@ -147,27 +168,6 @@ dap.configurations.javascript = {
 --[[ 		port = "${port}", ]]
 --[[ 	}, ]]
 --[[ }) ]]
---[[ c/c++/rust ]]
---[[ dap.adapters.lldb = { ]]
---[[ 	type = "executable", ]]
---[[ 	command = "/usr/bin/lldb-vscode", -- adjust as needed, must be absolute path ]]
---[[ 	name = "lldb", ]]
---[[ } ]]
---[[ dap.configurations.cpp = { ]]
---[[ 	{ ]]
---[[ 		name = "Launch", ]]
---[[ 		type = "lldb", ]]
---[[ 		request = "launch", ]]
---[[ 		program = function() ]]
---[[ 			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") ]]
---[[ 		end, ]]
---[[ 		cwd = "${workspaceFolder}", ]]
---[[ 		stopOnEntry = false, ]]
---[[ 		args = {}, ]]
---[[ 	}, ]]
---[[ } ]]
---[[ dap.configurations.c = dap.configurations.cpp ]]
---[[ dap.configurations.rust = dap.configurations.cpp ]]
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()

@@ -80,9 +80,9 @@ require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
 		--[[ "debugpy", ]]
-		--[[   "delve", ]]
-		--[[ "node2", ]]
 		--[[ "codelldb", ]]
+		--[[ "delve", ]]
+		--[[ "node2", ]]
 		--[[ "bash", ]]
 	},
 	automatic_installation = true,

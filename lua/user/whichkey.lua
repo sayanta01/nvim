@@ -91,6 +91,10 @@ local vopts = {
 
 local vmappings = {
 	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment Toggle (visual)" },
+	l = {
+		name = "LSP",
+		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+	},
 }
 
 local mappings = {
@@ -143,7 +147,7 @@ local mappings = {
 	--[[ }, ]]
 	l = {
 		name = "LSP",
-		d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" },
+		--[[ d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }, ]]
 		D = { ":lua vim.lsp.buf.definition()<cr>", "Goto Definition" },
 		-- k = { ":lua vim.lsp.buf.hover()<cr>", "Hover" },
 		--[[ R = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]
@@ -153,7 +157,7 @@ local mappings = {
 		t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
 		r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
 		f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
-		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
+		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		q = { ":lua vim.diagnostic.setloclist()<cr>", "quickfix" },
 		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
@@ -191,7 +195,7 @@ local mappings = {
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
 		s = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
-		m = { ":Telescope marks<cr>", "Marks" },
+    m = { ":Telescope marks<cr>", "Marks" },
 	},
 	o = {
 		name = "Option",

@@ -29,14 +29,14 @@ pip install pynvim
 # rust setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo new project  # get started with rust
-# rustup component add rust-analyzer  # run this in project directory, maybe it's not necessary
-
-# delve for go-dap
-# go install github.com/go-delve/delve/cmd/dlv@latest
+rustup component add rust-analyzer  # run this in project directory, maybe it's not necessary
 
 # kotlin setup
 curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin # run this
+
+# delve for go-dap
+# go install github.com/go-delve/delve/cmd/dlv@latest
 
 # creating venv for python-dap - its lengthy
 # mkdir ~/.virtualenvs
