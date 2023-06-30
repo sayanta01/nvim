@@ -14,7 +14,7 @@ local on_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
 
-	local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+	local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 	for type, icon in pairs(signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -83,6 +83,24 @@ typescript.setup({
 		on_attach = on_attach,
 	},
 })
+
+--[[ require("lspconfig")["tsserver"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	settings = { ]]
+--[[ 		typescript = { ]]
+--[[ 			inlayHints = { ]]
+--[[ 				includeInlayEnumMemberValueHints = true, ]]
+--[[ 				includeInlayFunctionLikeReturnTypeHints = true, ]]
+--[[ 				includeInlayFunctionParameterTypeHints = true, ]]
+--[[ 				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'; ]]
+--[[ 				includeInlayParameterNameHintsWhenArgumentMatchesName = true, ]]
+--[[ 				includeInlayPropertyDeclarationTypeHints = true, ]]
+--[[ 				includeInlayVariableTypeHints = true, ]]
+--[[ 			}, ]]
+--[[ 		}, ]]
+--[[ 	}, ]]
+--[[ }) ]]
 
 --[[ require("lspconfig")["texlab"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
@@ -295,24 +313,6 @@ require("lspconfig")["jsonls"].setup({
 				function()
 					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
 				end,
-			},
-		},
-	},
-})
-
-require("lspconfig")["tsserver"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		typescript = {
-			inlayHints = {
-				includeInlayEnumMemberValueHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayVariableTypeHints = true,
 			},
 		},
 	},

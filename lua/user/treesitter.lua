@@ -32,10 +32,10 @@ configs.setup({
 		"regex",
 		"awk",
 		"gitignore",
-		"solidity",
 		"kotlin",
     "latex",
     "ruby",
+    --[[ "solidity", ]]
     --[[ "astro", ]]
 		--[[ "vim", ]]
 	},

@@ -32,7 +32,6 @@ require("mason-lspconfig").setup({
 		--[[ "eslint", -- configure this ]]
 		--[[ "cssmodules_ls", -- configure this ]]
 		--[[ "angularls", -- typescript -- configure this ]]
-    "tsserver",
 		"jsonls",
 		"lua_ls",
 		"pyright",
@@ -45,12 +44,6 @@ require("mason-lspconfig").setup({
 		"dockerls",
 		"bashls",
 		"awk_ls",
-		--[[ "ltex", ]]
-		--[[ "solargraph", ]]
-		--[[ "kotlin_language_server", ]]
-		--[[ "solidity", ]]
-		--[[ "astro", ]]
-		--[[ "vimls", ]]
 	},
 	automatic_installation = true,
 })
@@ -83,7 +76,6 @@ require("mason-nvim-dap").setup({
 		--[[ "debugpy", ]]
 		--[[ "delve", ]]
 		--[[ "node2", ]]
-		--[[ "bash", ]]
 	},
 	automatic_installation = true,
 })

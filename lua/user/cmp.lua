@@ -154,7 +154,7 @@ cmp.setup({
 				path = "[Path]",
 				spell = "[Spell]",
 				calc = "[Calc]",
-				nvim_lsp_signature_help = "[Sign]",
+				--[[ nvim_lsp_signature_help = "[Sign]", ]]
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -167,7 +167,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "spell" },
 		{ name = "calc" },
-		{ name = "nvim_lsp_signature_help" },
+		--[[ { name = "nvim_lsp_signature_help" }, ]]
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

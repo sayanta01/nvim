@@ -21,10 +21,13 @@ local BUILTIN_RENDERERS = {
 
 require("lazy").setup({
 	-- Dependences
-	"nvim-lua/plenary.nvim",
-	"nvim-tree/nvim-web-devicons",
 	"nvim-lua/popup.nvim",
-	"nvim-lualine/lualine.nvim",
+	{ "nvim-lua/plenary.nvim", lazy = true },
+	{ "nvim-tree/nvim-web-devicons", lazy = true },
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+	},
 	{
 		"rcarriga/nvim-notify",
 		config = function()
@@ -58,7 +61,10 @@ require("lazy").setup({
 		"goolord/alpha-nvim",
 		event = "VimEnter",
 	},
-	"lewis6991/gitsigns.nvim",
+	{
+		"lewis6991/gitsigns.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+	},
 	"akinsho/toggleterm.nvim",
 	{
 		"folke/which-key.nvim",
@@ -71,7 +77,12 @@ require("lazy").setup({
 	"kyazdani42/nvim-tree.lua",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		version = false, -- last release is way too old and doesn't work on Windows
+		build = ":TSUpdate",
+		event = { "BufReadPost", "BufNewFile" },
+	},
 	"lukas-reineke/indent-blankline.nvim",
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
@@ -115,7 +126,10 @@ require("lazy").setup({
 		"RRethy/vim-illuminate",
 		event = "VeryLazy",
 	},
-	"ahmedkhalf/project.nvim",
+	{
+		"ahmedkhalf/project.nvim",
+		event = "VeryLazy",
+	},
 	--[[ { ]]
 	--[[ 	"VonHeikemen/fine-cmdline.nvim", ]]
 	--[[ 	dependencies = "MunifTanjim/nui.nvim", ]]
@@ -227,11 +241,15 @@ require("lazy").setup({
 	},
 
 	-- Cmp
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"saadparwaiz1/cmp_luasnip",
-	"hrsh7th/cmp-nvim-lsp",
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+		},
+	},
 	"f3fora/cmp-spell",
 	"hrsh7th/cmp-calc",
 	--[[ "hrsh7th/cmp-nvim-lsp-signature-help",  -- uncmt in cmp config ]]
@@ -245,7 +263,10 @@ require("lazy").setup({
 
 	-- LSP
 	"williamboman/mason.nvim",
-	"neovim/nvim-lspconfig",
+	{
+		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+	},
 	"williamboman/mason-lspconfig.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"jay-babu/mason-null-ls.nvim",
