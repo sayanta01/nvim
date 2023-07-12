@@ -9,22 +9,7 @@ local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
 	return
 end
-dapui.setup({
-	--[[ sidebar = { ]]
-	--[[ 	elements = { ]]
-	--[[ 		{ ]]
-	--[[ 			id = "scopes", ]]
-	--[[ 			size = 0.25, -- Can be float or integer > 1 ]]
-	--[[ 		}, ]]
-	--[[ 		{ id = "breakpoints", size = 0.25 }, ]]
-	--[[ 	}, ]]
-	--[[ 	size = 40, ]]
-	--[[ 	position = "left", -- Can be "left", "right", "top", "bottom" ]]
-	--[[ }, ]]
-	--[[ tray = { ]]
-	--[[ 	elements = {}, ]]
-	--[[ }, ]]
-})
+dapui.setup()
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
 
@@ -34,6 +19,7 @@ dap.adapters.node2 = {
 	command = "node-debug2-adapter",
 	args = { os.getenv("HOME") .. "/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js" },
 }
+
 dap.configurations.javascript = {
 	{
 		name = "Launch",
@@ -56,43 +42,6 @@ dap.configurations.javascript = {
 	},
 }
 
---[[ c/c++/rust ]]
-dap.adapters.codelldb = {
-	type = "server",
-	host = "127.0.0.1",
-	port = 13000, -- 💀 Use the port printed out or specified with `--port`
-}
-
-dap.adapters.codelldb = {
-	type = "server",
-	port = "${port}",
-	executable = {
-		-- CHANGE THIS to your path!
-		command = "~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb",
-		--[[ command = '/absolute/path/to/codelldb/extension/adapter/codelldb', ]]
-		args = { "--port", "${port}" },
-
-		-- On windows you may have to uncomment this:
-		-- detached = false,
-	},
-}
-dap.configurations.cpp = {
-	{
-		name = "Launch",
-		type = "codelldb",
-		request = "launch",
-		program = function()
-			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-      --[[ return vim.fn.input("~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb", ]]
-		end,
-		cwd = "${workspaceFolder}",
-		stopOnEntry = false,
-		args = {},
-	},
-}
-dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
-
 --[[ python ]]
 --[[ To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL: ]]
 --[[ require("dap-python").test_runner = "pytest" ]]
@@ -104,6 +53,44 @@ dap.configurations.rust = dap.configurations.cpp
 --[[ 	program = "${file}", ]]
 --[[ 	-- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings ]]
 --[[ }) ]]
+
+--[[ c/c++/rust ]]
+--[[ dap.adapters.codelldb = { ]]
+--[[ 	type = "server", ]]
+--[[ 	host = "127.0.0.1", ]]
+--[[ 	port = 13000, -- 💀 Use the port printed out or specified with `--port` ]]
+--[[ } ]]
+
+--[[ dap.adapters.codelldb = { ]]
+--[[ 	type = "server", ]]
+--[[ 	port = "${port}", ]]
+--[[ 	executable = { ]]
+-- CHANGE THIS to your path!
+--[[ command = "~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb", ]]
+--	command = '/absolute/path/to/codelldb/extension/adapter/codelldb',
+--[[ args = { "--port", "${port}" }, ]]
+
+-- On windows you may have to uncomment this:
+-- detached = false,
+--[[ 	}, ]]
+--[[ } ]]
+
+--[[ dap.configurations.cpp = { ]]
+--[[ 	{ ]]
+--[[ 		name = "Launch", ]]
+--[[ 		type = "codelldb", ]]
+--[[ 		request = "launch", ]]
+--[[ 		program = function() ]]
+--[[ 			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") ]]
+-- return vim.fn.input("~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb",
+--[[ 		end, ]]
+--[[ 		cwd = "${workspaceFolder}", ]]
+--[[ 		stopOnEntry = false, ]]
+--[[ 		args = {}, ]]
+--[[ 	}, ]]
+--[[ } ]]
+--[[ dap.configurations.c = dap.configurations.cpp ]]
+--[[ dap.configurations.rust = dap.configurations.cpp ]]
 
 --[[ go ]]
 --[[ dap.adapters.delve = { ]]

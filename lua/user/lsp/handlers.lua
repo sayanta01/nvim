@@ -1,4 +1,3 @@
---[[ https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md ]]
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -83,6 +82,40 @@ typescript.setup({
 		on_attach = on_attach,
 	},
 })
+
+--[[ require("lspconfig")["rust_analyzer"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	filetype = { "rust" }, ]]
+--[[ 	root_dir = require("lspconfig").util.root_pattern("Cargo.toml"), ]]
+--[[ 	settings = { ]]
+--[[ 		["rust-analyzer"] = { ]]
+--[[ 			cmd = { ]]
+--[[ 				"rustup", ]]
+--[[ 				"run", ]]
+--[[ 				"stable", ]]
+--[[ 				"rust-analyzer", ]]
+--[[ 			}, ]]
+--[[ 			assist = { ]]
+--[[ 				importMergeBehavior = "last", ]]
+--[[ 				importPrefix = "by_self", ]]
+--[[ 			}, ]]
+--[[ 			diagnostics = { ]]
+--[[ 				disabled = { "unresolved-import" }, ]]
+--[[ 			}, ]]
+--[[ 			cargo = { ]]
+--[[ 				loadOutDirsFromCheck = true, ]]
+--[[ 			}, ]]
+--[[ 			procMacro = { ]]
+--[[ 				enable = true, ]]
+--[[ 			}, ]]
+--[[ 			checkOnSave = { ]]
+--[[ 				command = "clippy", ]]
+--[[ 			}, ]]
+--[[ 		}, ]]
+--[[ 	}, ]]
+--	require("rust-tools").setup(),
+--[[ }) ]]
 
 --[[ require("lspconfig")["tsserver"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
@@ -260,40 +293,6 @@ require("lspconfig")["gopls"].setup({
 			staticcheck = true,
 		},
 	},
-})
-
-require("lspconfig")["rust_analyzer"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	filetype = { "rust" },
-	root_dir = require("lspconfig").util.root_pattern("Cargo.toml"),
-	settings = {
-		["rust-analyzer"] = {
-			cmd = {
-				"rustup",
-				"run",
-				"stable",
-				"rust-analyzer",
-			},
-			assist = {
-				importMergeBehavior = "last",
-				importPrefix = "by_self",
-			},
-			diagnostics = {
-				disabled = { "unresolved-import" },
-			},
-			cargo = {
-				loadOutDirsFromCheck = true,
-			},
-			procMacro = {
-				enable = true,
-			},
-			checkOnSave = {
-				command = "clippy",
-			},
-		},
-	},
-	--[[ require("rust-tools").setup(), ]]
 })
 
 require("lspconfig")["jsonls"].setup({

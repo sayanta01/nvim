@@ -195,7 +195,7 @@ local mappings = {
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
 		s = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
-    m = { ":Telescope marks<cr>", "Marks" },
+		m = { ":Telescope marks<cr>", "Marks" },
 	},
 	o = {
 		name = "Option",
@@ -211,19 +211,13 @@ local mappings = {
 		w = { ":set wrap!<cr>", "Toggle Wrap Text" },
 		v = { ":VimBeGood<cr>", "Vim Practice" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
-		--[[ m = { ":set showmode!<cr>", "Show Mode (statusline)  " }, ]]
+		m = { ":set showmode!<cr>", "Show Mode (statusline)  " },
 	},
 	p = {
 		name = "Plugin",
 		m = { ":Mason<cr>", "Mason" },
 		n = { ":NullLsInfo<cr>", "NullLs" },
 		l = { ":Lazy<cr>", "Lazy" },
-		i = { ":Lazy install<cr>", "!nstall Plugins" },
-		--[[ x = { ":Lazy clean<cr>", "Remove Unused Plugins" }, ]]
-		--[[ u = { ":Lazy update<cr>", "Update Plugins" }, ]]
-		--[[ b = { ":Lazy build<cr>", "Build Plugins" }, ]]
-		--[[ s = { ":Lazy sync<cr>", "Sync Plugins" }, ]]
-		--[[ c = { ":Lazy check<cr>", "Check" }, ]]
 	},
 	b = {
 		name = "Buffer",
@@ -253,14 +247,14 @@ local mappings = {
 		u = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
 		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
-		--[[ dap-python ]]
-		m = { ":lua require('dap-python').test_method()<cr>", " Test Method" },
-		f = { ":lua require('dap-python').test_class()<cr>", " Test Class" },
-		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", " Debug Selection" },
-		--[[ dap-go ]]
-		e = { ":lua require('dap-go').debug_test()<cr>", " Debug Test" },
-		a = { ":lua require('dap-go').debug_last_test()<cr>", " Last Test" },
-    --[[ dap-rust ]]
+	},
+	D = {
+		name = "Lang-dbug",
+		m = { ":lua require('dap-python').test_method()<cr>", "󰌠 Test Method" },
+		c = { ":lua require('dap-python').test_class()<cr>", "󰌠 Test Class" },
+		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "󰌠 Debug Selection" },
+		t = { ":lua require('dap-go').debug_test()<cr>", " Debug Test" },
+		l = { ":lua require('dap-go').debug_last_test()<cr>", " Last Test" },
 	},
 	t = {
 		name = "Terminal",

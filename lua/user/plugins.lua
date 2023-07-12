@@ -130,6 +130,7 @@ require("lazy").setup({
 		"ahmedkhalf/project.nvim",
 		event = "VeryLazy",
 	},
+
 	--[[ { ]]
 	--[[ 	"VonHeikemen/fine-cmdline.nvim", ]]
 	--[[ 	dependencies = "MunifTanjim/nui.nvim", ]]
@@ -177,6 +178,7 @@ require("lazy").setup({
 	--[[ 		}) ]]
 	--[[ 	end, ]]
 	--[[ }, ]]
+
 	--[[ { ]]
 	--[[ 	"CRAG666/code_runner.nvim", ]]
 	--[[ 	config = function() ]]
@@ -279,13 +281,11 @@ require("lazy").setup({
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 	},
+
 	--[[ { ]]
-	--[[ "simrat39/rust-tools.nvim", ]]
+	--[[ 	"simrat39/rust-tools.nvim", ]]
 	--[[ 	ft = "rust", ]]
 	--[[ 	dependencies = "neovim/nvim-lspconfig", ]]
-	--[[ 	opts = function() ]]
-	--[[ 		return require("rust-tools") ]]
-	--[[ 	end, ]]
 	--[[ 	config = function(_, opts) ]]
 	--[[ 		require("rust-tools").setup(opts) ]]
 	--[[ 	end, ]]
@@ -293,20 +293,28 @@ require("lazy").setup({
 
 	-- Debugger
 	"mfussenegger/nvim-dap",
-	"jay-babu/mason-nvim-dap.nvim",
-	"rcarriga/nvim-dap-ui",
+	{
+		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
+	},
 	"theHamsta/nvim-dap-virtual-text",
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		event = "VeryLazy",
+		opts = {
+			handlers = {},
+		},
+	},
+
 	--[[ { ]]
 	--[[ 	"mfussenegger/nvim-dap-python", ]]
 	--[[ 	ft = "python", ]]
-	--[[ 	dependencies = { ]]
-	--[[ 		"mfussenegger/nvim-dap", ]]
-	--[[ 	}, ]]
 	--[[ 	config = function(_, opts) ]]
 	--[[ 		local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python" ]]
 	--[[ 		require("dap-python").setup(path) ]]
 	--[[ 	end, ]]
 	--[[ }, ]]
+
 	--[[ { ]]
 	--[[ 	"leoluz/nvim-dap-go", ]]
 	--[[ 	ft = "go", ]]

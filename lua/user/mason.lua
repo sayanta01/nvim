@@ -23,27 +23,21 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"ansiblels",
-		"yamlls",
 		"clangd",
 		"omnisharp", -- c#
-		"gopls",
+		"yamlls",
 		--[[ "jdtls", ]]
 		--[[ "tailwindcss", -- javascript  -- configure this ]]
 		--[[ "eslint", -- configure this ]]
 		--[[ "cssmodules_ls", -- configure this ]]
 		--[[ "angularls", -- typescript -- configure this ]]
 		"jsonls",
-		"lua_ls",
-		"pyright",
-		"rust_analyzer",
 		"marksman",
 		"html",
 		"cssls",
 		"emmet_ls",
 		"sqlls",
 		"dockerls",
-		"bashls",
-		"awk_ls",
 	},
 	automatic_installation = true,
 })
