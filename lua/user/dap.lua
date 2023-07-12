@@ -3,8 +3,6 @@ if not dap_status_ok then
 	return
 end
 
-require("nvim-dap-virtual-text").setup()
-
 local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
 	return
@@ -65,11 +63,8 @@ dap.configurations.javascript = {
 --[[ 	type = "server", ]]
 --[[ 	port = "${port}", ]]
 --[[ 	executable = { ]]
--- CHANGE THIS to your path!
---[[ command = "~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb", ]]
---	command = '/absolute/path/to/codelldb/extension/adapter/codelldb',
---[[ args = { "--port", "${port}" }, ]]
-
+--[[ 		command = "~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb", ]]
+--[[ 		args = { "--port", "${port}" }, ]]
 -- On windows you may have to uncomment this:
 -- detached = false,
 --[[ 	}, ]]
@@ -81,16 +76,19 @@ dap.configurations.javascript = {
 --[[ 		type = "codelldb", ]]
 --[[ 		request = "launch", ]]
 --[[ 		program = function() ]]
---[[ 			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file") ]]
--- return vim.fn.input("~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb",
+--[[ 			return vim.fn.input( ]]
+--[[ 				"~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb", ]]
+--[[ 				vim.fn.getcwd() .. "/", ]]
+--[[ 				"file" ]]
+--[[ 			) ]]
 --[[ 		end, ]]
 --[[ 		cwd = "${workspaceFolder}", ]]
 --[[ 		stopOnEntry = false, ]]
 --[[ 		args = {}, ]]
 --[[ 	}, ]]
 --[[ } ]]
---[[ dap.configurations.c = dap.configurations.cpp ]]
 --[[ dap.configurations.rust = dap.configurations.cpp ]]
+--[[ dap.configurations.c = dap.configurations.cpp ]]
 
 --[[ go ]]
 --[[ dap.adapters.delve = { ]]

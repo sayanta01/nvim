@@ -22,22 +22,12 @@ require("mason").setup({
 
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"ansiblels",
-		"clangd",
-		"omnisharp", -- c#
-		"yamlls",
+		--[[ "ansiblels", -- configure this ]]
 		--[[ "jdtls", ]]
 		--[[ "tailwindcss", -- javascript  -- configure this ]]
 		--[[ "eslint", -- configure this ]]
 		--[[ "cssmodules_ls", -- configure this ]]
 		--[[ "angularls", -- typescript -- configure this ]]
-		"jsonls",
-		"marksman",
-		"html",
-		"cssls",
-		"emmet_ls",
-		"sqlls",
-		"dockerls",
 	},
 	automatic_installation = true,
 })
@@ -45,20 +35,19 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- formatters & linters
 	ensure_installed = {
-		"yamlfmt", -- "yamllint",
-		"gofumpt",
-		"google-java-format",
-		"eslint_d",
-		"prettier",
-		"stylua",
-		"autopep8",
-		"rubocop",
-		"rustfmt",
+		--[[ "yamlfmt", -- "yamllint", ]]
+		--[[ "phpcbf", ]]
+		"sqlfluff",
 		"markdownlint",
 		"shfmt",
-		"clang_format",
-		"phpcbf",
-		"sqlfluff",
+		"eslint_d",
+		--[[ "rubocop", ]]
+		--[[ "google-java-format", ]]
+		"rustfmt",
+		"gofumpt",
+		"stylua",
+		"black",
+		"prettier",
 	},
 	automatic_installation = true,
 })
@@ -66,8 +55,8 @@ require("mason-null-ls").setup({
 require("mason-nvim-dap").setup({
 	-- debugger
 	ensure_installed = {
-		--[[ "codelldb", ]]
-		--[[ "debugpy", ]]
+		"codelldb",
+		"debugp ",
 		--[[ "delve", ]]
 		--[[ "node2", ]]
 	},

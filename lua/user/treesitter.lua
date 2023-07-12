@@ -7,36 +7,36 @@ configs.setup({
 	--[[ ensure_installed = "all", ]]
 	ensure_installed = {
 		"yaml",
+		"json",
 		"c",
 		"cpp",
 		"c_sharp",
-		"go",
 		"java",
-		"javascript",
-		"json",
-		"lua",
-		"python",
+		"kotlin",
+		"go",
 		"rust",
+		"python",
+		"lua",
+		"html",
+		"css",
+		--[[ "scss", ]]
+		"php",
+		"sql",
+		"javascript",
 		"typescript",
 		"tsx",
 		"vue",
+		"latex",
 		"markdown",
 		"markdown_inline",
-		"html",
-		"css",
-		"scss",
-		"php",
-		"sql",
-		"dockerfile",
 		"bash",
 		"regex",
 		"awk",
+		"dockerfile",
 		"gitignore",
-		"kotlin",
-    "latex",
-    "ruby",
-    --[[ "solidity", ]]
-    --[[ "astro", ]]
+		--[[ "ruby", ]]
+		--[[ "solidity", ]]
+		--[[ "astro", ]]
 		--[[ "vim", ]]
 	},
 	sync_install = false,

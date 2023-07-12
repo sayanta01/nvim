@@ -124,7 +124,7 @@ require("lazy").setup({
 	"uga-rosa/ccc.nvim",
 	{
 		"RRethy/vim-illuminate",
-		event = "VeryLazy",
+		event = { "VeryLazy", "LspAttach" },
 	},
 	{
 		"ahmedkhalf/project.nvim",
@@ -272,38 +272,42 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim",
 	"jose-elias-alvarez/null-ls.nvim",
 	"jay-babu/mason-null-ls.nvim",
-	"jose-elias-alvarez/typescript.nvim",
-	{
-		"b0o/schemastore.nvim",
-		lazy = true,
-	},
 	{
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 	},
-
-	--[[ { ]]
-	--[[ 	"simrat39/rust-tools.nvim", ]]
-	--[[ 	ft = "rust", ]]
-	--[[ 	dependencies = "neovim/nvim-lspconfig", ]]
-	--[[ 	config = function(_, opts) ]]
-	--[[ 		require("rust-tools").setup(opts) ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
+	{
+		"b0o/schemastore.nvim",
+		lazy = true,
+	},
+	--[[ "jose-elias-alvarez/typescript.nvim", ]]
+	{
+		"simrat39/rust-tools.nvim",
+		ft = "rust",
+		dependencies = "neovim/nvim-lspconfig",
+		config = function(_, opts)
+			require("rust-tools").setup(opts)
+		end,
+	},
 
 	-- Debugger
 	"mfussenegger/nvim-dap",
-	{
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-	},
-	"theHamsta/nvim-dap-virtual-text",
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		event = "VeryLazy",
 		opts = {
 			handlers = {},
 		},
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		config = function()
+			require("nvim-dap-virtual-text").setup()
+		end,
 	},
 
 	--[[ { ]]

@@ -7,15 +7,15 @@ local diagnostics = null_ls.builtins.diagnostics
 local sources = {
 	--[[ formatting ]]
 	formatting.yamlfmt,
-	formatting.gofumpt,
-	formatting.google_java_format,
-	formatting.stylua,
-	formatting.rubocop,
-	formatting.autopep8,
-	formatting.rustfmt,
-	formatting.markdownlint,
 	formatting.phpcbf,
+	formatting.markdownlint,
 	formatting.shfmt,
+	formatting.rubocop,
+	formatting.google_java_format,
+	formatting.rustfmt,
+	formatting.gofumpt,
+	formatting.stylua,
+	formatting.black,
 	formatting.prettier.with({
 		extra_filetypes = { "toml" },
 		extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },

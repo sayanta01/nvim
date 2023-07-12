@@ -71,15 +71,36 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 	border = "rounded",
 })
 
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
+--[[ local typescript_setup, typescript = pcall(require, "typescript") ]]
+--[[ if not typescript_setup then ]]
+--[[ 	return ]]
+--[[ end ]]
+--[[ typescript.setup({ ]]
+--[[ 	server = { ]]
+--[[ 		capabilities = capabilities, ]]
+--[[ 		on_attach = on_attach, ]]
+--[[ 	}, ]]
+--[[ }) ]]
+
+local rust_setup, rust = pcall(require, "rust-tools")
+if not rust_setup then
 	return
 end
--- configure typescript server with plugin
-typescript.setup({
+rust.setup({
 	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
+		settings = {
+			["rust-analyzer"] = {
+				lens = {
+					enable = true,
+				},
+				checkOnSave = {
+					enable = true,
+					command = "clippy",
+				},
+			},
+		},
 	},
 })
 
@@ -110,29 +131,34 @@ typescript.setup({
 --[[ 				enable = true, ]]
 --[[ 			}, ]]
 --[[ 			checkOnSave = { ]]
+--[[ 				enable = true, ]]
 --[[ 				command = "clippy", ]]
 --[[ 			}, ]]
 --[[ 		}, ]]
 --[[ 	}, ]]
---	require("rust-tools").setup(),
 --[[ }) ]]
 
---[[ require("lspconfig")["tsserver"].setup({ ]]
+require("lspconfig")["tsserver"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		typescript = {
+			inlayHints = {
+				includeInlayEnumMemberValueHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayVariableTypeHints = true,
+			},
+		},
+	},
+})
+
+--[[ require("lspconfig")["kotlin_language_server"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ 	capabilities = capabilities, ]]
---[[ 	settings = { ]]
---[[ 		typescript = { ]]
---[[ 			inlayHints = { ]]
---[[ 				includeInlayEnumMemberValueHints = true, ]]
---[[ 				includeInlayFunctionLikeReturnTypeHints = true, ]]
---[[ 				includeInlayFunctionParameterTypeHints = true, ]]
---[[ 				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'; ]]
---[[ 				includeInlayParameterNameHintsWhenArgumentMatchesName = true, ]]
---[[ 				includeInlayPropertyDeclarationTypeHints = true, ]]
---[[ 				includeInlayVariableTypeHints = true, ]]
---[[ 			}, ]]
---[[ 		}, ]]
---[[ 	}, ]]
 --[[ }) ]]
 
 --[[ require("lspconfig")["texlab"].setup({ ]]
@@ -156,11 +182,6 @@ typescript.setup({
 --[[ 	}, ]]
 --[[ }) ]]
 
---[[ require("lspconfig")["kotlin_language_server"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
-
 --[[ require("lspconfig")["solidity"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ 	capabilities = capabilities, ]]
@@ -177,98 +198,14 @@ typescript.setup({
 --[[ 	capabilities = capabilities, ]]
 --[[ }) ]]
 
-require("lspconfig")["omnisharp"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
 require("lspconfig")["clangd"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
 
-require("lspconfig")["bashls"].setup({
+require("lspconfig")["omnisharp"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
-})
-
-require("lspconfig")["dockerls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["marksman"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["awk_ls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["emmet_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-})
-
-require("lspconfig")["html"].setup({
-	filetypes = { "html", "php", "xml" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["cssls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["sqlls"].setup({
-	filetype = { "sql", "mysql" },
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
-
-require("lspconfig")["lua_ls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
-			},
-			telemetry = {
-				enable = false,
-			},
-		},
-	},
-})
-
-require("lspconfig")["pyright"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	filetype = { "python" },
-	settings = {
-		python = {
-			analysis = {
-				autoSearchPaths = true,
-				diagnosticMode = "workspace",
-				useLibraryCodeForTypes = true,
-				typeCheckingMode = "basic", -- off
-				inlayHints = {
-					variableTypes = true,
-					functionReturnTypes = true,
-				},
-			},
-		},
-	},
 })
 
 require("lspconfig")["gopls"].setup({
@@ -295,6 +232,103 @@ require("lspconfig")["gopls"].setup({
 	},
 })
 
+require("lspconfig")["pyright"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetype = { "python" },
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "workspace",
+				useLibraryCodeForTypes = true,
+				typeCheckingMode = "basic", -- off
+				inlayHints = {
+					variableTypes = true,
+					functionReturnTypes = true,
+				},
+			},
+		},
+	},
+})
+
+require("lspconfig")["lua_ls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})
+
+require("lspconfig")["html"].setup({
+	filetypes = { "html", "php", "xml" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["cssls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["sqlls"].setup({
+	filetype = { "sql", "mysql" },
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["marksman"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["bashls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["awk_ls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["dockerls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["emmet_ls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+})
+
+--[[ require("lspconfig")["jdtls"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
+
+--[[ require("lspconfig")["tailwindcss"].setup({ ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ }) ]]
+
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -316,16 +350,6 @@ require("lspconfig")["jsonls"].setup({
 		},
 	},
 })
-
---[[ require("lspconfig")["jdtls"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
-
---[[ require("lspconfig")["tailwindcss"].setup({ ]]
---[[ 	capabilities = capabilities, ]]
---[[ 	on_attach = on_attach, ]]
---[[ }) ]]
 
 require("lspconfig")["yamlls"].setup({
 	on_attach = on_attach,
