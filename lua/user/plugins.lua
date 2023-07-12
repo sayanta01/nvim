@@ -270,7 +270,10 @@ require("lazy").setup({
 		event = { "BufReadPre", "BufNewFile" },
 	},
 	"williamboman/mason-lspconfig.nvim",
-	"jose-elias-alvarez/null-ls.nvim",
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		event = "VeryLazy",
+	},
 	"jay-babu/mason-null-ls.nvim",
 	{
 		"glepnir/lspsaga.nvim",
