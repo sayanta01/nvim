@@ -28,11 +28,12 @@ dashboard.section.buttons.val = {
 	dashboard.button("c", "  Config", ":e $MYVIMRC | :cd %:p:h <CR>"),
 	dashboard.button("q", "  quit", ":qa<CR>"),
 }
-local function footer()
-	return "N0oBoT"
-end
 
-dashboard.section.footer.val = footer()
+--[[ local function footer() ]]
+--[[ 	return "github.com/sayanta01" ]]
+--[[ end ]]
+
+--[[ dashboard.section.footer.val = footer() ]]
 
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
