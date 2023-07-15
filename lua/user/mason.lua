@@ -43,7 +43,7 @@ require("mason-null-ls").setup({
 		"eslint_d",
 		--[[ "rubocop", ]]
 		--[[ "google-java-format", ]]
-		"rustfmt",
+		--[[ "rustfmt", ]]
 		"gofumpt",
 		"stylua",
 		"black",

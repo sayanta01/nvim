@@ -90,7 +90,7 @@ require("lazy").setup({
 	},
 	"numToStr/Comment.nvim",
 	{
-		"mrjones2014/nvim-ts-rainbow",
+		"HiPhish/nvim-ts-rainbow2",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				highlight = {},
