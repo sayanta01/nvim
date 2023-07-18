@@ -249,7 +249,7 @@ local mappings = {
 		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
 	},
 	D = {
-		name = "Lang-dbug",
+		name = "Lang-Dbug",
 		m = { ":lua require('dap-python').test_method()<cr>", "󰌠 Test Method" },
 		c = { ":lua require('dap-python').test_class()<cr>", "󰌠 Test Class" },
 		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "󰌠 Debug Selection" },
