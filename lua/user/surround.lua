@@ -3,22 +3,19 @@ if not status_ok then
 	return
 end
 
---[[ use {['"( left side surround to add space ]]
---[[ cst - <change surround tag> to another tag ]]
-
+-- use {['"( left side surround to add space
 surround.setup({
 	keymaps = {
 		insert = "<C-g>s",
 		insert_line = "<C-g>S",
-		normal = "s",
+		normal = "ys",
 		normal_cur = "ss",
-		normal_line = "S",
+		normal_line = "yS",
 		normal_cur_line = "SS",
 		visual = "s",
 		visual_line = "gS",
 		delete = "ds",
-		change = "cs", -- cst 'change tags'
+		change = "cs", -- cst <change tags>
+		change_line = "cS",
 	},
 })
-
-vim.cmd([[nmap <leader>' siw']])
