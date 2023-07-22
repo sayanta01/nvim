@@ -35,15 +35,15 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- formatters & linters
 	ensure_installed = {
-		--[[ "yamlfmt", -- "yamllint", ]]
-		--[[ "phpcbf", ]]
+		"yamlfmt", -- "yamllint",
+		"phpcbf",
 		"sqlfluff",
 		"markdownlint",
 		"shfmt",
 		"eslint_d",
-		--[[ "rubocop", ]]
-		--[[ "google-java-format", ]]
-		--[[ "rustfmt", ]]
+		"rubocop",
+		"google-java-format",
+		-- "rustfmt",
 		"gofumpt",
 		"stylua",
 		"black",
