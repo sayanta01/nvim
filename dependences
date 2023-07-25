@@ -17,7 +17,7 @@
 sudo pacman -S --noconfirm npm go ruby ueberzug shellcheck cargo jdk-openjdk dotnet-sdk lazygit cloudflared
 
 # npm dependences
-sudo npm i -g tree-sitter-cli live-server
+sudo npm i -g tree-sitter-cli live-server typescript
 
 # live-server
 # git clone https://github.com/tapio/live-server ~/.local/share/live-server

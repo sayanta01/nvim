@@ -283,7 +283,14 @@ require("lazy").setup({
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
-	--[[ "jose-elias-alvarez/typescript.nvim", ]]
+
+	{
+		"jose-elias-alvarez/typescript.nvim",
+		config = function(_, opts)
+			require("typescript").setup(opts)
+		end,
+	},
+
 	{
 		"simrat39/rust-tools.nvim",
 		ft = "rust",

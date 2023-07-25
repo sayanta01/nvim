@@ -71,47 +71,42 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 	border = "rounded",
 })
 
---[[ local typescript_setup, typescript = pcall(require, "typescript") ]]
---[[ if not typescript_setup then ]]
---[[ 	return ]]
---[[ end ]]
---[[ typescript.setup({ ]]
---[[ 	server = { ]]
---[[ 		capabilities = capabilities, ]]
---[[ 		on_attach = on_attach, ]]
---[[ 	}, ]]
---[[ }) ]]
-
-require("lspconfig")["tsserver"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		javascript = {
-			inlayHints = {
-				includeInlayEnumMemberValueHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayVariableTypeHints = true,
+local typescript_setup, typescript = pcall(require, "typescript")
+if not typescript_setup then
+	return
+end
+typescript.setup({
+	server = {
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			javascript = {
+				inlayHints = {
+					includeInlayEnumMemberValueHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayVariableTypeHints = true,
+				},
 			},
-		},
-		typescript = {
-			inlayHints = {
-				includeInlayEnumMemberValueHints = true,
-				includeInlayFunctionLikeReturnTypeHints = true,
-				includeInlayFunctionParameterTypeHints = true,
-				includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-				includeInlayPropertyDeclarationTypeHints = true,
-				includeInlayVariableTypeHints = true,
+			typescript = {
+				inlayHints = {
+					includeInlayEnumMemberValueHints = true,
+					includeInlayFunctionLikeReturnTypeHints = true,
+					includeInlayFunctionParameterTypeHints = true,
+					includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+					includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+					includeInlayPropertyDeclarationTypeHints = true,
+					includeInlayVariableTypeHints = true,
+				},
 			},
 		},
 	},
 })
 
-require("lspconfig")["eslint"].setup({
+require("lspconfig")["eslint"].setup({ -- configure this
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
@@ -126,12 +121,26 @@ rust.setup({
 		on_attach = on_attach,
 		settings = {
 			["rust-analyzer"] = {
+				cargo = {
+					allFeatures = true,
+					loadOutDirsFromCheck = true,
+					runBuildScripts = true,
+				},
+				procMacro = {
+					enable = true,
+					ignored = {
+						["async-trait"] = { "async_trait" },
+						["napi-derive"] = { "napi" },
+						["async-recursion"] = { "async_recursion" },
+					},
+				},
 				lens = {
 					enable = true,
 				},
 				checkOnSave = {
 					enable = true,
 					command = "clippy",
+					extraArgs = { "--no-deps" },
 				},
 			},
 		},

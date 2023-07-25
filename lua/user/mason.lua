@@ -23,9 +23,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		--[[ "ansiblels", -- configure this ]]
-		--[[ "jdtls", ]]
 		--[[ "tailwindcss", -- javascript  -- configure this ]]
-		--[[ "eslint", -- configure this ]]
 		--[[ "cssmodules_ls", -- configure this ]]
 		--[[ "angularls", -- typescript -- configure this ]]
 	},
