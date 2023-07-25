@@ -19,8 +19,9 @@ vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it 
 
 -- Normal --
 -- Update
---[[ vim.keymap.set("n", "<leader>u",  function () ]]
---[[ vim.fn.system("git clone https://github.com/sayanta01/nvim ~/.config/nvim") ]]
+--[[ vim.keymap.set("n", "<leader>u", function() ]]
+--[[ 	vim.fn.system("git clone https://github.com/sayanta01/nvim ~/.config/nvim") ]]
+--[[ 	vim.api.nvim_echo({ { "Repository cloned successfully!", "Normal" } }, true, {}) ]]
 --[[ end, { desc = "Update" }) ]]
 
 -- Beginning & End
