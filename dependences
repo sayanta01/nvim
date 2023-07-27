@@ -1,50 +1,51 @@
 #!/bin/sh
 
-# build from source
+## build from source
 # sudo apt install -y ninja-build gettext libtool libtool-bin cmake pkg-config doxygen
 # git clone https://github.com/neovim/neovim.git ~/.config/neovim && cd ~/.config/neovim
 # make -j4 && sudo make install
 
-# debian
+## debian
 # sudo apt install -y npm golang ruby ueberzug shellcheck cargo default-jdk dotnet-sdk-6.0 && cargo install ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 # wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
 
-# void
+## void
 # sudo xbps-install -Sy nodejs go ruby ueberzug shellcheck cargo openjdk lazygit cloudflared && cargo install ttyper
 
-# arch
+## arch
 sudo pacman -S --noconfirm npm go ruby ueberzug shellcheck cargo jdk-openjdk dotnet-sdk lazygit cloudflared
 
-# npm dependences
+## npm dependences
 sudo npm i -g tree-sitter-cli live-server typescript
 
-# live-server
+## live-server
 # git clone https://github.com/tapio/live-server ~/.local/share/live-server
 # cd ~/.local/share/live-server && npm install
 
-# python dependences
+## python dependences
 pip install pynvim
 
-# rust setup
+## rust setup
+# paru -S codelldb
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo new project  # get started with rust
 rustup component add rust-analyzer rustfmt # run this in project directory, maybe it's not necessary
 
-# kotlin setup
+## kotlin setup
 curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin # run this
 
-# delve for go-dap
+## delve for go-dap
 # go install github.com/go-delve/delve/cmd/dlv@latest
 
-# creating venv for python-dap - its lengthy
+## creating venv for python-dap - its lengthy
 # mkdir ~/.virtualenvs
 # cd ~/.virtualenvs || exit
 # python -m venv debugpy
 # debugpy/bin/python -m pip install debugpy
 
-# `java-dap setup`
+## `java-dap setup`
 # INSTALL_FOLDER="$HOME/.local/share/nvim"
 # 'install java-debug'
 # rm -rf "$INSTALL_FOLDER/java-debug"
@@ -55,7 +56,7 @@ curl -s "https://get.sdkman.io" | bash
 # git clone https://github.com/microsoft/vscode-java-test.git "$INSTALL_FOLDER/vscode-java-test"
 # cd "$INSTALL_FOLDER/vscode-java-test" && npm install && npm run build-plugin
 
-# javascript-dap - https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome
+## javascript-dap - https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome
 # mkdir -p ~/dev/microsoft
 # git clone https://github.com/microsoft/vscode-node-debug2.git ~/dev/microsoft/vscode-node-debug2
 # cd ~/dev/microsoft/vscode-node-debug2 || exit

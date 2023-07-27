@@ -75,6 +75,7 @@ local typescript_setup, typescript = pcall(require, "typescript")
 if not typescript_setup then
 	return
 end
+
 typescript.setup({
 	server = {
 		capabilities = capabilities,
@@ -111,14 +112,31 @@ require("lspconfig")["eslint"].setup({ -- configure this
 	capabilities = capabilities,
 })
 
-local rust_setup, rust = pcall(require, "rust-tools")
+local rust_setup, rt = pcall(require, "rust-tools")
 if not rust_setup then
 	return
 end
-rust.setup({
+
+rt.setup({
+	dap = {
+		adapter = {
+			type = "executable",
+			command = "lldb-vscode",
+			name = "rt_lldb",
+		},
+	},
 	server = {
 		capabilities = capabilities,
-		on_attach = on_attach,
+		on_attach = function(_, bufnr)
+			vim.keymap.set("n", "<Leader>k", rt.hover_actions.hover_actions, { buffer = bufnr })
+			vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+			on_attach(bufnr)
+		end,
+		tools = {
+			hover_actions = {
+				auto_focus = true,
+			},
+		},
 		settings = {
 			["rust-analyzer"] = {
 				cargo = {
@@ -138,7 +156,7 @@ rust.setup({
 					enable = true,
 				},
 				checkOnSave = {
-					enable = true,
+					allFeatures = true,
 					command = "clippy",
 					extraArgs = { "--no-deps" },
 				},
@@ -166,16 +184,6 @@ rust.setup({
 --[[ 			}, ]]
 --[[ 			diagnostics = { ]]
 --[[ 				disabled = { "unresolved-import" }, ]]
---[[ 			}, ]]
---[[ 			cargo = { ]]
---[[ 				loadOutDirsFromCheck = true, ]]
---[[ 			}, ]]
---[[ 			procMacro = { ]]
---[[ 				enable = true, ]]
---[[ 			}, ]]
---[[ 			checkOnSave = { ]]
---[[ 				enable = true, ]]
---[[ 				command = "clippy", ]]
 --[[ 			}, ]]
 --[[ 		}, ]]
 --[[ 	}, ]]
@@ -224,7 +232,10 @@ rust.setup({
 --[[ }) ]]
 
 require("lspconfig")["clangd"].setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		client.server_capabilities.signatureHelpProvider = false
+		on_attach(client, bufnr)
+	end,
 	capabilities = capabilities,
 })
 
@@ -388,6 +399,7 @@ require("lspconfig")["yamlls"].setup({
 		},
 	},
 })
+
 --[[ require("lspconfig")["yamlls"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ 	capabilities = capabilities, ]]

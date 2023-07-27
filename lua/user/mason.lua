@@ -41,7 +41,6 @@ require("mason-null-ls").setup({
 		"eslint_d",
 		"rubocop",
 		"google-java-format",
-		-- "rustfmt",
 		"gofumpt",
 		"stylua",
 		"black",
@@ -55,7 +54,7 @@ require("mason-nvim-dap").setup({
 	ensure_installed = {
 		"codelldb",
 		"debugp ",
-		--[[ "delve", ]]
+		"delve",
 		--[[ "node2", ]]
 	},
 	automatic_installation = true,

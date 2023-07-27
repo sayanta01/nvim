@@ -283,20 +283,18 @@ require("lazy").setup({
 		"b0o/schemastore.nvim",
 		lazy = true,
 	},
-
-	{
-		"jose-elias-alvarez/typescript.nvim",
-		config = function(_, opts)
-			require("typescript").setup(opts)
-		end,
-	},
-
 	{
 		"simrat39/rust-tools.nvim",
 		ft = "rust",
 		dependencies = "neovim/nvim-lspconfig",
 		config = function(_, opts)
 			require("rust-tools").setup(opts)
+		end,
+	},
+	{
+		"jose-elias-alvarez/typescript.nvim",
+		config = function(_, opts)
+			require("typescript").setup(opts)
 		end,
 	},
 
@@ -320,21 +318,22 @@ require("lazy").setup({
 		end,
 	},
 
-	--[[ { ]]
-	--[[ 	"mfussenegger/nvim-dap-python", ]]
-	--[[ 	ft = "python", ]]
-	--[[ 	config = function(_, opts) ]]
-	--[[ 		local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python" ]]
-	--[[ 		require("dap-python").setup(path) ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
+	{
+		"mfussenegger/nvim-dap-python",
+		ft = "python",
+		-- config = function(_, opts)
+		config = function()
+			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+			require("dap-python").setup(path)
+		end,
+	},
 
-	--[[ { ]]
-	--[[ 	"leoluz/nvim-dap-go", ]]
-	--[[ 	ft = "go", ]]
-	--[[ 	dependencies = "mfussenegger/nvim-dap", ]]
-	--[[ 	config = function(_, opts) ]]
-	--[[ 		require("dap-go").setup(opts) ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
+	{
+		"leoluz/nvim-dap-go",
+		ft = "go",
+		dependencies = "mfussenegger/nvim-dap",
+		config = function(_, opts)
+			require("dap-go").setup(opts)
+		end,
+	},
 })
