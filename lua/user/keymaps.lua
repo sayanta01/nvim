@@ -10,12 +10,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it based on a filetype
 
 -- Modes
---   term_mode = "t",
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   command_mode = "c",
---   visual_block_mode = "x",
+-- term_mode = "t",
+-- command_mode = "c",
 
 -- Normal --
 -- Update
@@ -28,8 +24,19 @@ vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it 
 keymap("n", "<C-b>", "<ESC>^i", opts)
 keymap("n", "<C-e>", "<End>", opts)
 
+-- Half down/up
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+-- Search term in middle
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "NNzzv", opts)
+
+-- Takes below line and append in current line with space
+keymap("n", "J", "mzJ`z", opts)
+
 -- Edit same word all together
-keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -90,11 +97,9 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Better paste
-keymap("v", "p", '"_dP', opts)
+keymap("x", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
---[[ keymap("x", "J", ":move '>+1<CR>gv-gv", opts) ]]
---[[ keymap("x", "K", ":move '<-2<CR>gv-gv", opts) ]]

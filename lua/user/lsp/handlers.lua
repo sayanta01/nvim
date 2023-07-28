@@ -127,10 +127,23 @@ rt.setup({
 	},
 	server = {
 		capabilities = capabilities,
-		on_attach = function(_, bufnr)
-			vim.keymap.set("n", "<Leader>k", rt.hover_actions.hover_actions, { buffer = bufnr })
-			vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-			on_attach(bufnr)
+		on_attach = function(client, bufnr)
+			on_attach(client, bufnr)
+			local opts = { noremap = true, silent = true }
+			vim.api.nvim_buf_set_keymap(
+				bufnr,
+				"n",
+				"<Leader>k",
+				":lua require('rust-tools.hover_actions').hover_actions()<CR>",
+				opts
+			)
+			vim.api.nvim_buf_set_keymap(
+				bufnr,
+				"n",
+				"<Leader>a",
+				":lua require('rust-tools.code_action_group').code_action_group()<CR>",
+				opts
+			)
 		end,
 		tools = {
 			hover_actions = {

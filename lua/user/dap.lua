@@ -40,18 +40,6 @@ dap.configurations.javascript = {
 	},
 }
 
---[[ python ]]
--- To configure a different runner, change the test_runner variable. For example to configure pytest set the test runner like this in vimL:
---[[ require("dap-python").test_runner = "pytest" ]]
---[[ require("dap-python").setup("~/.virtualenvs/debugpy/bin/python") ]]
---[[ table.insert(require("dap").configurations.python, { ]]
---[[ 	type = "python", ]]
---[[ 	request = "launch", ]]
---[[ 	name = "My custom launch configuration", ]]
---[[ 	program = "${file}", ]]
---[[ 	-- ... more options, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings ]]
---[[ }) ]]
-
 --[[ require("dap-go").setup({ ]]
 --[[ 	dap_configurations = { ]]
 --[[ 		{ ]]

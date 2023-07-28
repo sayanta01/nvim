@@ -39,12 +39,6 @@ curl -s "https://get.sdkman.io" | bash
 ## delve for go-dap
 go install github.com/go-delve/delve/cmd/dlv@latest
 
-## creating venv for python-dap - its lengthy
-# mkdir ~/.virtualenvs
-# cd ~/.virtualenvs || exit
-# python -m venv debugpy
-# debgpy/bin/python -m pip install debugpy
-
 ## java-dap setup
 # INSTALL_FOLDER="$HOME/.local/share/nvim"
 ## -i java-debug

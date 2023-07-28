@@ -170,8 +170,8 @@ local mappings = {
 	},
 	L = {
 		name = "Saga",
+    c = { ":Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostics  " },
 		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
-		c = { ":Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostics  " },
 		-- Toggle outline
 		o = { ":Lspsaga outline<cr>", "Outline" },
 		-- t = { ":Lspsaga term_toggle<cr>", "Terminal" },
@@ -208,9 +208,8 @@ local mappings = {
 		n = { ":set rnu!<cr>", "Relative Nm" },
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		w = { ":set wrap!<cr>", "Toggle Wrap Text" },
-		v = { ":VimBeGood<cr>", "Vim Practice" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
-		m = { ":set showmode!<cr>", "Show Mode (statusline)  " },
+    v = { ":VimBeGood<cr>", "Vim Practice" },
 	},
 	p = {
 		name = "Plugin",
