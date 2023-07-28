@@ -280,7 +280,8 @@ require("lazy").setup({
 		event = "LspAttach",
 	},
 	{
-		"b0o/schemastore.nvim",
+		"b0o/SchemaStore.nvim",
+		version = false, -- last release is way too old
 		lazy = true,
 	},
 	{
@@ -317,17 +318,28 @@ require("lazy").setup({
 			require("nvim-dap-virtual-text").setup()
 		end,
 	},
-
 	{
 		"mfussenegger/nvim-dap-python",
 		ft = "python",
-		-- config = function(_, opts)
 		config = function()
-			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
-			require("dap-python").setup(path)
+			local path = require("mason-registry").get_package("debugpy"):get_install_path()
+			require("dap-python").setup(path .. "/venv/bin/python")
 		end,
 	},
-
+	{
+		"linux-cultist/venv-selector.nvim",
+		ft = "python",
+		cmd = "VenvSelect",
+		opts = {},
+		keys = {
+			{
+				"<leader>vs",
+				"<cmd>:VenvSelect<cr>",
+				"<leader>vc",
+				"<cmd>:VenvSelectCached<cr>",
+			},
+		},
+	},
 	{
 		"leoluz/nvim-dap-go",
 		ft = "go",

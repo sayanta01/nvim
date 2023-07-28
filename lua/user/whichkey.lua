@@ -170,7 +170,6 @@ local mappings = {
 	},
 	L = {
 		name = "Saga",
-		f = { ":Lspsaga lsp_finder<cr>", "Finder" },
 		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
 		c = { ":Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostics  " },
 		-- Toggle outline
@@ -221,11 +220,11 @@ local mappings = {
 	},
 	b = {
 		name = "Buffer",
-		--[[ b = { ]]
-		--[[ 	":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
-		--[[ 	"Buf Prev", ]]
-		--[[ }, ]]
-		--[[ b = { ":Telescope buffers<cr>", "Buf Prev" }, ]]
+		-- b = {
+		--	":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		--	"Buf Prev",
+		-- },
+		b = { ":Telescope buffers<cr>", "Buf Prev" },
 		h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
 		l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
 		p = { ":BufferLineTogglePin<cr>", "Toggle Pin" },
@@ -252,7 +251,7 @@ local mappings = {
 		name = "Lang-Dbug",
 		m = { ":lua require('dap-python').test_method()<cr>", "󰌠 Test Method" },
 		c = { ":lua require('dap-python').test_class()<cr>", "󰌠 Test Class" },
-		s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "󰌠 Debug Selection" },
+		--[[ s = { "<ESC>:lua require('dap-python').debug_selection()<CR>", "󰌠 Debug Selection" }, ]]
 		t = { ":lua require('dap-go').debug_test()<cr>", " Debug Test" },
 		l = { ":lua require('dap-go').debug_last_test()<cr>", " Last Test" },
 	},

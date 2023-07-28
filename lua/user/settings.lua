@@ -33,9 +33,9 @@ local options = {
 	-- cmdheight = 2,
 	-- showtabline = 2,
 	-- smartindent = true,
-	-- copyindent = true,  -- Copy the previous indentation on autoindenting
-	-- fillchars = { eob = " " },  -- Disable `~` on nonexistent lines
-	-- preserveindent = true,  -- Preserve indent structure as much as possible
+	-- copyindent = true,  -- copy the previous indentation on autoindenting
+	-- fillchars = { eob = " " },  -- disable `~` on nonexistent lines
+	-- preserveindent = true,  -- preserve indent structure as much as possible
 }
 
 for k, v in pairs(options) do

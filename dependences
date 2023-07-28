@@ -37,28 +37,21 @@ curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin # run this
 
 ## delve for go-dap
-# go install github.com/go-delve/delve/cmd/dlv@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
 
 ## creating venv for python-dap - its lengthy
 # mkdir ~/.virtualenvs
 # cd ~/.virtualenvs || exit
 # python -m venv debugpy
-# debugpy/bin/python -m pip install debugpy
+# debgpy/bin/python -m pip install debugpy
 
-## `java-dap setup`
+## java-dap setup
 # INSTALL_FOLDER="$HOME/.local/share/nvim"
-# 'install java-debug'
+## -i java-debug
 # rm -rf "$INSTALL_FOLDER/java-debug"
 # git clone https://github.com/microsoft/java-debug.git "$INSTALL_FOLDER/java-debug"
 # cd "$INSTALL_FOLDER/java-debug" && ./mvnw clean install
-# 'install vscode-java-test'
+## -i vscode-java-test
 # rm -rf "$INSTALL_FOLDER/vscode-java-test"
 # git clone https://github.com/microsoft/vscode-java-test.git "$INSTALL_FOLDER/vscode-java-test"
 # cd "$INSTALL_FOLDER/vscode-java-test" && npm install && npm run build-plugin
-
-## javascript-dap - https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#Javascript-chrome
-# mkdir -p ~/dev/microsoft
-# git clone https://github.com/microsoft/vscode-node-debug2.git ~/dev/microsoft/vscode-node-debug2
-# cd ~/dev/microsoft/vscode-node-debug2 || exit
-# npm install
-# NODE_OPTIONS=--no-experimental-fetch npm run build

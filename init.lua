@@ -27,4 +27,4 @@ require("user.indentline")
 require("user.whichkey")
 require("user.lsp")
 require("user.saga")
---[[ require("user.dap") -- uncmt when needed ]]
+require("user.dap")
