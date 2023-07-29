@@ -32,9 +32,6 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "NNzzv", opts)
 
--- Takes below line and append in current line with space
-keymap("n", "J", "mzJ`z", opts)
-
 -- Edit same word all together
 keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
