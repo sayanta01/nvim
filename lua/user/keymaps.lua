@@ -50,8 +50,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-o>", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<S-o>", ":BufferLineMoveNext<CR>", opts) -- fix this
+keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts) -- fix this
 
 -- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
