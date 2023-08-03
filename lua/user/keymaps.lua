@@ -63,8 +63,8 @@ keymap("n", "dd", '"_dd', opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
-keymap("n", "<C-v>", ":vsplit<CR>", opts)
-keymap("n", "<C-s>", ":split<CR>", opts)
+--[[ keymap("n", "<C-v>", ":vsplit<CR>", opts) ]]
+--[[ keymap("n", "<C-s>", ":split<CR>", opts) ]]
 
 -- Insert --
 -- Press jk fast to enter
