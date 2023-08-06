@@ -131,20 +131,6 @@ local mappings = {
 		u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 		d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
-	--[[ r = { ]]
-	--[[ 	name = "Run", ]]
-	--[[ 	s = { ]]
-	--[[ 		':autocmd bufwritepost [^_]*.sass,[^_]*.scss  silent exec "!sass %:p %:r.css"<CR>', ]]
-	--[[ 		"Auto Compile Sass", ]]
-	--[[ 	}, ]]
-	--[[ 	r = { ":RunCode<CR>", "Run Code" }, ]]
-	--[[ 	f = { ":RunFile<CR>", "Run File" }, ]]
-	--[[ 	p = { ":RunProject<CR>", "Run Project" }, ]]
-	--[[ 	m = { ]]
-	--[[ 		":ToggleTerm size=80 direction=float<CR>mvn exec:java -Dexec.mainClass=com.pojokcode.App<CR>", ]]
-	--[[ 		"Run MVN", ]]
-	--[[ 	}, ]]
-	--[[ }, ]]
 	l = {
 		name = "LSP",
 		--[[ d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }, ]]
@@ -166,21 +152,14 @@ local mappings = {
 		S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		c = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
-		o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
-	},
-	L = {
-		name = "Saga",
-    c = { ":Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostics  " },
-		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
-		-- Toggle outline
+		u = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
 		o = { ":Lspsaga outline<cr>", "Outline" },
-		-- t = { ":Lspsaga term_toggle<cr>", "Terminal" },
+		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
 	},
 	s = {
 		name = "Telescope",
 		t = { ":Telescope colorscheme<cr>", "Themes" },
 		c = { ":Telescope commands<cr>", "Commands" },
-		b = { ":Telescope builtin<cr>", "Telescope Builtin" },
 		d = { ":Telescope diagnostics<cr>", "Document Diagnostics  " },
 		--[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 		h = { ":Telescope help_tags<cr>", "Find Help" },
@@ -194,7 +173,8 @@ local mappings = {
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
 		s = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
-		m = { ":Telescope marks<cr>", "Marks" },
+		--[[ b = { ":Telescope builtin<cr>", "Telescope Builtin" }, ]]
+		--[[ m = { ":Telescope marks<cr>", "Marks" }, ]]
 	},
 	o = {
 		name = "Option",
@@ -207,9 +187,9 @@ local mappings = {
 		i = { ":Notifications<cr>", "Show Notifications" },
 		n = { ":set rnu!<cr>", "Relative Nm" },
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
-		w = { ":set wrap!<cr>", "Toggle Wrap Text" },
+		--[[ w = { ":set wrap!<cr>", "Toggle Wrap Text" }, ]]
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
-    v = { ":VimBeGood<cr>", "Vim Practice" },
+		v = { ":VimBeGood<cr>", "Vim Practice" },
 	},
 	p = {
 		name = "Plugin",

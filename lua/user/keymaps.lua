@@ -68,7 +68,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 -- Insert --
 -- Press jk fast to enter
---[[ keymap("i", "jk", "<ESC>", opts) ]]
+keymap("i", "jk", "<ESC>", opts)
 
 -- Move current line / block with Alt-j/k vscode.
 keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
