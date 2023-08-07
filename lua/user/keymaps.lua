@@ -21,8 +21,10 @@ vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it 
 --[[ end, { desc = "Update" }) ]]
 
 -- Beginning & End
-keymap("n", "<C-b>", "<ESC>^i", opts)
-keymap("n", "<C-e>", "<End>", opts)
+--[[ keymap("n", "<C-b>", "<ESC>^i", opts) ]]
+--[[ keymap("n", "<C-e>", "<End>", opts) ]]
+--[[ keymap("i", "<C-b>", "<ESC>^i", opts) ]]
+--[[ keymap("i", "<C-e>", "<End>", opts) ]]
 
 -- Half down/up
 keymap("n", "<C-d>", "<C-d>zz", opts)
@@ -50,8 +52,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-o>", ":BufferLineMoveNext<CR>", opts) -- fix this
-keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts) -- fix this
+--[[ keymap("n", "<S-o>", ":BufferLineMoveNext<CR>", opts) -- fix this ]]
+--[[ keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts) -- fix this ]]
 
 -- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
@@ -63,20 +65,15 @@ keymap("n", "dd", '"_dd', opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
---[[ keymap("n", "<C-v>", ":vsplit<CR>", opts) ]]
---[[ keymap("n", "<C-s>", ":split<CR>", opts) ]]
+-- keymap("n", "<C-v>", ":vsplit<CR>", opts)
+-- keymap("n", "<C-s>", ":split<CR>", opts)
 
 -- Insert --
--- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
 -- Move current line / block with Alt-j/k vscode.
 keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-
--- go to  beginning and end
-keymap("i", "<C-b>", "<ESC>^i", opts)
-keymap("i", "<C-e>", "<End>", opts)
 
 -- navigate within insert mode
 keymap("i", "<C-h>", "<Left>", opts)
@@ -97,6 +94,5 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("x", "p", '"_dP', opts)
 
 -- Visual Block --
--- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
