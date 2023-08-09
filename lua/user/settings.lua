@@ -1,5 +1,4 @@
 local options = {
-	showcmd = false,
 	showmode = false,
 	fileencoding = "utf-8",
 	writebackup = false,
@@ -14,6 +13,7 @@ local options = {
 	tabstop = 2,
 	completeopt = { "menuone", "noselect" },
 	clipboard = "unnamedplus",
+  --[[ showcmd = false, ]]
 	-- mouse = "a",
 	confirm = true,
 	splitbelow = true,
