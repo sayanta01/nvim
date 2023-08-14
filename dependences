@@ -7,6 +7,8 @@
 
 ## debian
 # sudo apt install -y npm golang ruby shellcheck cargo default-jdk python3-pip dotnet-sdk-6.0
+# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
 # cargo install ttyper bat procs
 # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 # wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
