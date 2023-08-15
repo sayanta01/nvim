@@ -6,7 +6,7 @@
 # make -j4 && sudo make install
 
 ## debian
-# sudo apt install -y npm golang ruby shellcheck cargo default-jdk python3-pip dotnet-sdk-6.0
+# sudo apt install -y npm golang ruby shellcheck cargo default-jdk python3-pip python3.11-venv dotnet-sdk-6.0
 # wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 # chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
 # cargo install ttyper bat procs
