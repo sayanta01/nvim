@@ -2,29 +2,52 @@
 
 distro=$(grep ID= /etc/os-release | sed -n 2p | cut -d= -f2)
 
-if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ]; then
+if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" ]; then
 	## build from source
 	sudo apt install -y ninja-build gettext
-	git clone https://github.com/neovim/neovim.git ~/.cache/neovim && cd ~/.cache/neovim
+	git clone https://github.com/neovim/neovim.git ~/.cache/neovim
+	cd ~/.cache/neovim || exit 1
 	make -j4 && sudo make install
+
 	## pkgs
 	sudo apt install -y npm cargo luarocks \
 		golang php ruby \
-		shellcheck python3-pip python3-venv \
+		shellcheck ripgrep \
+		python3-pip python3-venv \
 		default-jdk dotnet-sdk-6.0
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
-	cargo install ttyper bat procs
+
+	# cargo install ttyper bat procs
+
 	# curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 	# wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
-elif [ "$distro" = "arch" ]; then
-	sudo pacman -S --noconfirm npm go ruby shellcheck luarocks cargo jdk-openjdk dotnet-sdk lazygit cloudflared
+
+	# julia
+	## curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check version
+	# wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
+	# tar -xvzf julia-1.8.5-linux-x86_64.tar.gz
+	# sudo mv julai-1.8.5 /opt/
+	# sudo ln -s /opt/julia-1.8.5/bin/julia /usr/local/bin/julia
+else
+	:
+fi
+
+distro=$(lsb_release -a | grep 'Distributor ID' | cut -f 2)
+if [ "$distro" = "Artix" ]; then
+	sudo pacman -S --noconfirm npm cargo luarocks \
+		go php ruby julia \
+		shellcheck ripgrep \
+		jdk-openjdk dotnet-sdk \
+		lazygit cloudflared
+
+	paru -S codelldb
 else
 	:
 fi
 
 ## node dependences
-sudo npm i -g tree-sitter-cli live-server typescript
+sudo npm i -g tree-sitter-cli live-server
 # git clone https://github.com/tapio/live-server ~/.local/share/live-server
 # cd ~/.local/share/live-server && npm install
 
@@ -32,7 +55,6 @@ sudo npm i -g tree-sitter-cli live-server typescript
 pip install pynvim
 
 ## rust setup
-# paru -S codelldb
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # cargo new project  # get started with rust
 rustup component add rust-analyzer rustfmt # run this in project directory, maybe it's not necessary
@@ -42,7 +64,7 @@ curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin # run this
 
 ## delve for go-dap
-go install github.com/go-delve/delve/cmd/dlv@latest
+# go install github.com/go-delve/delve/cmd/dlv@latest
 
 ## java-dap setup
 # INSTALL_FOLDER="$HOME/.local/share/nvim"
@@ -54,10 +76,3 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 # rm -rf "$INSTALL_FOLDER/vscode-java-test"
 # git clone https://github.com/microsoft/vscode-java-test.git "$INSTALL_FOLDER/vscode-java-test"
 # cd "$INSTALL_FOLDER/vscode-java-test" && npm install && npm run build-plugin
-
-# julia  
-## curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")'
-wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
-tar -xvzf julia-1.8.5-linux-x86_64.tar.gz
-sudo mv julai-1.8.5 /opt/
-sudo ln -s /opt/julia-1.8.5/bin/julia /usr/local/bin/julia
