@@ -72,7 +72,7 @@ sudo npm i -g tree-sitter-cli live-server
 pip install pynvim
 
 ## rust setup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # cargo new project  # get started with rust
 rustup component add rust-analyzer rustfmt # run this in project directory, maybe it's not necessary
 
