@@ -3,11 +3,16 @@
 distro=$(grep ID= /etc/os-release | sed -n 2p | cut -d= -f2)
 
 if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" ]; then
-	## build from source
-	sudo apt install -y ninja-build gettext
-	git clone https://github.com/neovim/neovim.git ~/.cache/neovim
-	cd ~/.cache/neovim || exit 1
-	make -j4 && sudo make install
+	printf "Build neovim? (yes/no): "
+	read -r choice
+	if [ "$choice" = "yes" ]; then
+		sudo apt install -y ninja-build gettext
+		git clone https://github.com/neovim/neovim.git ~/.cache/neovim
+		cd ~/.cache/neovim || exit 1
+		make -j4 && sudo make install
+	else
+		:
+	fi
 
 	## pkgs
 	sudo apt install -y npm cargo luarocks \
@@ -18,7 +23,13 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
 
-	# cargo install ttyper bat procs
+	printf "Install cargo pkgs? (yes/no): "
+	read -r choice
+	if [ "$choice" = "yes" ]; then
+		cargo install ttyper procs bat
+	else
+		:
+	fi
 
 	# curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 	# wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
@@ -26,10 +37,8 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 	# julia
 	## curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check version
 	printf "Want to install julia? (yes/no): "
-  read -r choice
-
+	read -r choice
 	if [ "$choice" = "yes" ]; then
-
 		wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
 		tar -xvzf julia-1.8.5-linux-x86_64.tar.gz
 		sudo mv julai-1.8.5 /opt/
