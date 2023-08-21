@@ -65,8 +65,8 @@ keymap("n", "dd", '"_dd', opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
-keymap("n", "<C-v>", ":vsplit<CR>", opts)
-keymap("n", "<C-s>", ":split<CR>", opts)
+--[[ keymap("n", "<C-v>", ":vsplit<CR>", opts) ]]
+--[[ keymap("n", "<C-s>", ":split<CR>", opts) ]]
 
 -- Insert --
 keymap("i", "jk", "<ESC>", opts)
@@ -76,10 +76,10 @@ keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- navigate within insert mode
-keymap("i", "<C-h>", "<Left>", opts)
-keymap("i", "<C-l>", "<Right>", opts)
-keymap("i", "<C-j>", "<Down>", opts)
-keymap("i", "<C-k>", "<Up>", opts)
+--[[ keymap("i", "<C-h>", "<Left>", opts) ]]
+--[[ keymap("i", "<C-l>", "<Right>", opts) ]]
+--[[ keymap("i", "<C-j>", "<Down>", opts) ]]
+--[[ keymap("i", "<C-k>", "<Up>", opts) ]]
 
 -- Visual --
 -- Stay in indent mode
