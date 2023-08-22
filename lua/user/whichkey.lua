@@ -185,11 +185,10 @@ local mappings = {
 		h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
 		t = { ":ColorizerToggle<cr>", "Colorizer Toggle" },
 		i = { ":Notifications<cr>", "Show Notifications" },
-		n = { ":set rnu!<cr>", "Relative Nm" },
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
-		--[[ w = { ":set wrap!<cr>", "Toggle Wrap Text" }, ]]
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 		v = { ":VimBeGood<cr>", "Vim Practice" },
+		--[[ w = { ":set wrap!<cr>", "Toggle Wrap Text" }, ]]
 	},
 	p = {
 		name = "Plugin",

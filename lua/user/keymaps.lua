@@ -9,22 +9,12 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it based on a filetype
 
--- Modes
--- term_mode = "t",
--- command_mode = "c",
-
 -- Normal --
 -- Update
 --[[ vim.keymap.set("n", "<leader>u", function() ]]
 --[[ 	vim.fn.system("git clone https://github.com/sayanta01/nvim ~/.config/nvim") ]]
 --[[ 	vim.api.nvim_echo({ { "Repository cloned successfully!", "Normal" } }, true, {}) ]]
 --[[ end, { desc = "Update" }) ]]
-
--- Beginning & End
---[[ keymap("n", "<C-b>", "<ESC>^i", opts) ]]
---[[ keymap("n", "<C-e>", "<End>", opts) ]]
---[[ keymap("i", "<C-b>", "<ESC>^i", opts) ]]
---[[ keymap("i", "<C-e>", "<End>", opts) ]]
 
 -- Half down/up
 keymap("n", "<C-d>", "<C-d>zz", opts)

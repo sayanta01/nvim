@@ -5,12 +5,12 @@ local code_actions = null_ls.builtins.code_actions
 local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
-	--[[ formatting ]]
+	-- formatting
+  --[[ formatting.rubocop, ]]
 	formatting.yamlfmt,
 	formatting.phpcbf,
 	formatting.markdownlint,
 	formatting.shfmt,
-	formatting.rubocop,
 	formatting.google_java_format,
 	formatting.rustfmt,
 	formatting.gofumpt,
@@ -21,10 +21,10 @@ local sources = {
 		extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
 	}),
 
-	--[[ code actions ]]
+	-- code actions
 	code_actions.eslint_d,
 
-	--[[ diagnostics ]]
+	-- diagnostics
 	diagnostics.eslint_d,
 }
 
