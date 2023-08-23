@@ -173,8 +173,8 @@ local mappings = {
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
 		s = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
+    m = { ":Telescope marks<cr>", "Marks" },
 		--[[ b = { ":Telescope builtin<cr>", "Telescope Builtin" }, ]]
-		--[[ m = { ":Telescope marks<cr>", "Marks" }, ]]
 	},
 	o = {
 		name = "Option",
