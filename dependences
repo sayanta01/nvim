@@ -26,7 +26,7 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 	printf "Install cargo pkgs? (yes/no): "
 	read -r choice
 	if [ "$choice" = "yes" ]; then
-		cargo install ttyper procs bat
+		cargo install procs bat
 	else
 		:
 	fi
