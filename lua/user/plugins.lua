@@ -22,7 +22,7 @@ local BUILTIN_RENDERERS = {
 require("lazy").setup({
 	-- Dependences
 	"nvim-lua/popup.nvim",
-	{ "nvim-lua/plenary.nvim", lazy = true },
+	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
 	{
 		"nvim-lualine/lualine.nvim",
@@ -83,28 +83,32 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
 	},
-	"lukas-reineke/indent-blankline.nvim",
+	{
+		"lukas-reineke/indent-blankline.nvim",
+	},
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "VeryLazy",
 	},
-	"numToStr/Comment.nvim",
 	{
-		"HiPhish/nvim-ts-rainbow2",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				highlight = {},
-				rainbow = {
-					enable = true,
-					--[[ disable = { "jsx", "cpp" }, ]]
-					extended_mode = true,
-					max_file_lines = 999,
-					-- colors = {}, -- table of hex strings
-					-- termcolors = {} -- table of colour name strings
-				},
-			})
-		end,
+		"numToStr/Comment.nvim",
 	},
+	--[[ { ]]
+	--[[ 	"HiPhish/nvim-ts-rainbow2", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("nvim-treesitter.configs").setup({ ]]
+	--[[ 			highlight = {}, ]]
+	--[[ 			rainbow = { ]]
+	--[[ 				enable = true, ]]
+	--[[ 				-- disable = { "jsx", "cpp" }, ]]
+	--[[ 				extended_mode = true, ]]
+	--[[ 				max_file_lines = 999, ]]
+	--[[ 				-- colors = {}, -- table of hex strings ]]
+	--[[ 				-- termcolors = {} -- table of colour name strings ]]
+	--[[ 			}, ]]
+	--[[ 		}) ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 	{
 		"windwp/nvim-autopairs", -- autopairs, integrates with cmp & treesitter
 		event = "InsertEnter",
@@ -119,7 +123,10 @@ require("lazy").setup({
 		"kylechui/nvim-surround",
 		event = "VeryLazy",
 	},
-	"akinsho/bufferline.nvim",
+	{
+		"akinsho/bufferline.nvim",
+		branch = "main",
+	},
 	"NvChad/nvim-colorizer.lua",
 	"uga-rosa/ccc.nvim",
 	{
@@ -183,6 +190,7 @@ require("lazy").setup({
 	-- Cmp
 	{
 		"hrsh7th/nvim-cmp",
+		event = { "InsertEnter" },
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
@@ -192,7 +200,6 @@ require("lazy").setup({
 	},
 	"f3fora/cmp-spell",
 	"hrsh7th/cmp-calc",
-	--[[ "hrsh7th/cmp-nvim-lsp-signature-help",  -- uncmt in cmp config ]]
 
 	-- Snippets
 	{
@@ -207,7 +214,10 @@ require("lazy").setup({
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 	},
-	"williamboman/mason-lspconfig.nvim",
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = true,
+	},
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "VeryLazy",
@@ -218,7 +228,7 @@ require("lazy").setup({
 		event = "LspAttach",
 	},
 	{
-		"b0o/SchemaStore.nvim",
+		"b0o/schemastore.nvim",
 		version = false, -- last release is way too old
 		lazy = true,
 	},
