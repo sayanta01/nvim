@@ -25,7 +25,7 @@ keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "NNzzv", opts)
 
 -- Edit same word all together
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+keymap("n", "<leader>k", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
