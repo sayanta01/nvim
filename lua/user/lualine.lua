@@ -160,24 +160,24 @@ ins_left({
 --[[ cond = nil, ]]
 --[[ } ]]
 
-ins_right({
-	"filesize",
-	cond = nil,
-	color = { fg = colors.violet, gui = "italic" },
-	-- cond = conditions.hide_in_width,
-})
+--[[ ins_right({ ]]
+--[[ 	"filesize", ]]
+--[[ 	cond = nil, ]]
+--[[ 	color = { fg = colors.violet, gui = "italic" }, ]]
+--[[ 	-- cond = conditions.hide_in_width, ]]
+--[[ }) ]]
 
-ins_right({
-	"fileformat",
-	fmt = string.upper,
-	icons_enabled = true,
-	symbols = {
-		unix = "",
-		dos = "",
-		mac = "",
-	},
-	color = { fg = colors.fg },
-})
+--[[ ins_right({ ]]
+--[[ 	"fileformat", ]]
+--[[ 	fmt = string.upper, ]]
+--[[ 	icons_enabled = true, ]]
+--[[ 	symbols = { ]]
+--[[ 		unix = "", ]]
+--[[ 		dos = "", ]]
+--[[ 		mac = "", ]]
+--[[ 	}, ]]
+--[[ 	color = { fg = colors.fg }, ]]
+--[[ }) ]]
 
 -- Add components to right sections
 --[[ ins_right({ ]]
