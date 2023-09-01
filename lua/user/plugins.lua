@@ -127,7 +127,7 @@ require("lazy").setup({
 		"akinsho/bufferline.nvim",
 		branch = "main",
 	},
-	"NvChad/nvim-colorizer.lua",
+	--[[ "NvChad/nvim-colorizer.lua", ]]
 	"uga-rosa/ccc.nvim",
 	{
 		"RRethy/vim-illuminate",

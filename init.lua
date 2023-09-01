@@ -18,10 +18,10 @@ require("user.cmp")
 require("user.autopairs")
 require("user.bufferline")
 require("user.surround")
-require("user.illuminate")
 require("user.project")
-require("user.colorizer")
 require("user.indentline")
+require("user.illuminate")
+--[[ require("user.colorizer") ]]
 
 -- Dynamic
 require("user.whichkey")
