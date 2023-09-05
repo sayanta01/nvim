@@ -58,7 +58,7 @@ if [ "$distro" = "Artix" ]; then
 		jdk-openjdk dotnet-sdk \
 		lazygit cloudflared
 
-	paru -S codelldb
+	# paru -S codelldb
 else
 	:
 fi
