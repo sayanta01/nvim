@@ -7,6 +7,7 @@ local dap_ui_status_ok, dapui = pcall(require, "dapui")
 if not dap_ui_status_ok then
 	return
 end
+
 dapui.setup()
 
 vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
@@ -80,7 +81,7 @@ dap.configurations.javascript = {
 --[[ 		mode = "test", ]]
 --[[ 		program = "${file}", ]]
 --[[ 	}, ]]
-	-- works with go.mod packages and sub packages
+-- works with go.mod packages and sub packages
 --[[ 	{ ]]
 --[[ 		type = "delve", ]]
 --[[ 		name = "Debug test (go.mod)", ]]

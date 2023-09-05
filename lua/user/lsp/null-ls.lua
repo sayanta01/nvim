@@ -1,17 +1,17 @@
 local null_ls = require("null-ls")
 
 local formatting = null_ls.builtins.formatting
-local code_actions = null_ls.builtins.code_actions
+-- local code_actions = null_ls.builtins.code_actions
 local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
 	-- formatting
-  --[[ formatting.rubocop, ]]
+	--[[ formatting.rubocop, ]]
+  formatting.google_java_format,
 	formatting.yamlfmt,
 	formatting.phpcbf,
 	formatting.markdownlint,
 	formatting.shfmt,
-	formatting.google_java_format,
 	formatting.rustfmt,
 	formatting.gofumpt,
 	formatting.stylua,
@@ -22,10 +22,14 @@ local sources = {
 	}),
 
 	-- code actions
-	code_actions.eslint_d,
+	-- code_actions.eslint_d,
 
 	-- diagnostics
-	diagnostics.eslint_d,
+	diagnostics.eslint_d.with({
+		condition = function(utils)
+			return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
+		end,
+	}),
 }
 
 --[[ local lsp_formatting = function(bufnr) ]]

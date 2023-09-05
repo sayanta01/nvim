@@ -124,152 +124,159 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-media-files.nvim",
 			-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
-		config = function()
-			local telescope = require("telescope")
-			local actions = require("telescope.actions")
-
-			telescope.setup({
-				defaults = {
-					prompt_prefix = " ",
-					selection_caret = "❯ ",
-					--[[ prompt_prefix = "   ", ]]
-					--[[ selection_caret = "|> ", ]]
-					path_display = { "smart" },
-					entry_prefix = "  ",
-					initial_mode = "insert",
-					selection_strategy = "reset",
-					sorting_strategy = "descending",
-					layout_strategy = "horizontal",
-					layout_config = {
-						width = 0.80,
-						preview_cutoff = 120,
-						horizontal = {
-							preview_width = function(_, cols, _)
-								if cols < 120 then
-									return math.floor(cols * 0.5)
-								end
-								return math.floor(cols * 0.6)
-							end,
-							mirror = false,
-						},
-						vertical = { mirror = false },
-					},
-					vimgrep_arguments = {
-						"rg",
-						"--color=never",
-						"--no-heading",
-						"--with-filename",
-						"--line-number",
-						"--column",
-						"--smart-case",
-						"--hidden",
-						"--glob=!.git/",
-					},
-					file_sorter = require("telescope.sorters").get_fuzzy_file,
-					file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
-					generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-					winblend = 0,
-					border = {},
-					borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-					color_devicons = true,
-					use_less = true,
-					set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-					file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-					grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-					qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-					buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-					mappings = {
-						i = {
-							["<C-n>"] = actions.cycle_history_next,
-							["<C-p>"] = actions.cycle_history_prev,
-							["<C-c>"] = actions.close, -- ESC
-							["<C-j>"] = actions.move_selection_next,
-							["<C-k>"] = actions.move_selection_previous,
-							["<Down>"] = actions.move_selection_next,
-							["<Up>"] = actions.move_selection_previous,
-							["<CR>"] = actions.select_default,
-							["<C-h>"] = actions.select_horizontal,
-							["<C-v>"] = actions.select_vertical,
-							["<C-t>"] = actions.select_tab,
-							["<C-u>"] = actions.preview_scrolling_up,
-							["<C-d>"] = actions.preview_scrolling_down,
-							["<PageUp>"] = actions.results_scrolling_up,
-							["<PageDown>"] = actions.results_scrolling_down,
-							["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-							["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-							["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-							["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-							["<C-l>"] = actions.complete_tag,
-						},
-						n = {
-							["<esc>"] = actions.close,
-							["<CR>"] = actions.select_default,
-							["<C-h>"] = actions.select_horizontal,
-							["<C-v>"] = actions.select_vertical,
-							["<C-t>"] = actions.select_tab,
-							["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-							["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-							["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-							["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-							["j"] = actions.move_selection_next,
-							["k"] = actions.move_selection_previous,
-							["H"] = actions.move_to_top,
-							["M"] = actions.move_to_middle,
-							["L"] = actions.move_to_bottom,
-							["<Down>"] = actions.move_selection_next,
-							["<Up>"] = actions.move_selection_previous,
-							["gg"] = actions.move_to_top,
-							["G"] = actions.move_to_bottom,
-							["<C-u>"] = actions.preview_scrolling_up,
-							["<C-d>"] = actions.preview_scrolling_down,
-							["<PageUp>"] = actions.results_scrolling_up,
-							["<PageDown>"] = actions.results_scrolling_down,
-							["?"] = actions.which_key,
-						},
-					},
-				},
-				file_ignore_patterns = {},
-				pickers = {
-					-- Default configuration for builtin pickers goes here
-					find_files = {
-						hidden = true,
-					},
-					live_grep = {
-						--[[ @usage don't include the filename in the search results ]]
-						only_sort_text = true,
-					},
-					grep_string = {
-						only_sort_text = true,
-					},
-					planets = {
-						show_pluto = true,
-						show_moon = false,
-					},
-					git_files = {
-						hidden = true,
-						show_untracked = true,
-					},
-					colorscheme = {
-						enable_preview = true,
-					},
-				},
-				extensions = {
-					-- Extension configuration goes here:
-					media_files = {
-						filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
-						find_cmd = "rg", -- find command ( defaults to "fd" )
-					},
-				},
-			})
-
-			telescope.load_extension("media_files")
-			-- telescope.load_extension("fzf")
-		end,
 	},
+
+	-- {
+	-- 	"nvim-telescope/telescope.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope-media-files.nvim",
+	-- 		-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	-- 	},
+	-- 	config = function()
+	-- 		local telescope = require("telescope")
+	-- 		local actions = require("telescope.actions")
+	--
+	-- 		telescope.setup({
+	-- 			defaults = {
+	-- 				prompt_prefix = " ",
+	-- 				selection_caret = "❯ ",
+	-- 				--[[ prompt_prefix = "   ", ]]
+	-- 				--[[ selection_caret = "|> ", ]]
+	-- 				path_display = { "smart" },
+	-- 				entry_prefix = "  ",
+	-- 				initial_mode = "insert",
+	-- 				selection_strategy = "reset",
+	-- 				sorting_strategy = "descending",
+	-- 				layout_strategy = "horizontal",
+	-- 				layout_config = {
+	-- 					width = 0.80,
+	-- 					preview_cutoff = 120,
+	-- 					horizontal = {
+	-- 						preview_width = function(_, cols, _)
+	-- 							if cols < 120 then
+	-- 								return math.floor(cols * 0.5)
+	-- 							end
+	-- 							return math.floor(cols * 0.6)
+	-- 						end,
+	-- 						mirror = false,
+	-- 					},
+	-- 					vertical = { mirror = false },
+	-- 				},
+	-- 				vimgrep_arguments = {
+	-- 					"rg",
+	-- 					"--color=never",
+	-- 					"--no-heading",
+	-- 					"--with-filename",
+	-- 					"--line-number",
+	-- 					"--column",
+	-- 					"--smart-case",
+	-- 					"--hidden",
+	-- 					"--glob=!.git/",
+	-- 				},
+	-- 				file_sorter = require("telescope.sorters").get_fuzzy_file,
+	-- 				file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
+	-- 				generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+	-- 				winblend = 0,
+	-- 				border = {},
+	-- 				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+	-- 				color_devicons = true,
+	-- 				use_less = true,
+	-- 				set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+	-- 				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+	-- 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+	-- 				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+	-- 				buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+	-- 				mappings = {
+	-- 					i = {
+	-- 						["<C-n>"] = actions.cycle_history_next,
+	-- 						["<C-p>"] = actions.cycle_history_prev,
+	-- 						["<C-c>"] = actions.close, -- ESC
+	-- 						["<C-j>"] = actions.move_selection_next,
+	-- 						["<C-k>"] = actions.move_selection_previous,
+	-- 						["<Down>"] = actions.move_selection_next,
+	-- 						["<Up>"] = actions.move_selection_previous,
+	-- 						["<CR>"] = actions.select_default,
+	-- 						["<C-h>"] = actions.select_horizontal,
+	-- 						["<C-v>"] = actions.select_vertical,
+	-- 						["<C-t>"] = actions.select_tab,
+	-- 						["<C-u>"] = actions.preview_scrolling_up,
+	-- 						["<C-d>"] = actions.preview_scrolling_down,
+	-- 						["<PageUp>"] = actions.results_scrolling_up,
+	-- 						["<PageDown>"] = actions.results_scrolling_down,
+	-- 						["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+	-- 						["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+	-- 						["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+	-- 						["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+	-- 						["<C-l>"] = actions.complete_tag,
+	-- 					},
+	-- 					n = {
+	-- 						["<esc>"] = actions.close,
+	-- 						["<CR>"] = actions.select_default,
+	-- 						["<C-h>"] = actions.select_horizontal,
+	-- 						["<C-v>"] = actions.select_vertical,
+	-- 						["<C-t>"] = actions.select_tab,
+	-- 						["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+	-- 						["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+	-- 						["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+	-- 						["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+	-- 						["j"] = actions.move_selection_next,
+	-- 						["k"] = actions.move_selection_previous,
+	-- 						["H"] = actions.move_to_top,
+	-- 						["M"] = actions.move_to_middle,
+	-- 						["L"] = actions.move_to_bottom,
+	-- 						["<Down>"] = actions.move_selection_next,
+	-- 						["<Up>"] = actions.move_selection_previous,
+	-- 						["gg"] = actions.move_to_top,
+	-- 						["G"] = actions.move_to_bottom,
+	-- 						["<C-u>"] = actions.preview_scrolling_up,
+	-- 						["<C-d>"] = actions.preview_scrolling_down,
+	-- 						["<PageUp>"] = actions.results_scrolling_up,
+	-- 						["<PageDown>"] = actions.results_scrolling_down,
+	-- 						["?"] = actions.which_key,
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 			file_ignore_patterns = {},
+	-- 			pickers = {
+	-- 				-- Default configuration for builtin pickers goes here
+	-- 				find_files = {
+	-- 					hidden = true,
+	-- 				},
+	-- 				live_grep = {
+	-- 					--[[ @usage don't include the filename in the search results ]]
+	-- 					only_sort_text = true,
+	-- 				},
+	-- 				grep_string = {
+	-- 					only_sort_text = true,
+	-- 				},
+	-- 				planets = {
+	-- 					show_pluto = true,
+	-- 					show_moon = false,
+	-- 				},
+	-- 				git_files = {
+	-- 					hidden = true,
+	-- 					show_untracked = true,
+	-- 				},
+	-- 				colorscheme = {
+	-- 					enable_preview = true,
+	-- 				},
+	-- 			},
+	-- 			extensions = {
+	-- 				-- Extension configuration goes here:
+	-- 				media_files = {
+	-- 					filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
+	-- 					find_cmd = "rg", -- find command ( defaults to "fd" )
+	-- 				},
+	-- 			},
+	-- 		})
+	--
+	-- 		telescope.load_extension("media_files")
+	-- 		-- telescope.load_extension("fzf")
+	-- 	end,
+	-- },
 
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -367,22 +374,6 @@ require("lazy").setup({
 		end,
 	},
 
-	--[[ { ]]
-	--[[ 	"HiPhish/nvim-ts-rainbow2", ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("nvim-treesitter.configs").setup({ ]]
-	--[[ 			highlight = {}, ]]
-	--[[ 			rainbow = { ]]
-	--[[ 				enable = true, ]]
-	--[[ 				-- disable = { "jsx", "cpp" }, ]]
-	--[[ 				extended_mode = true, ]]
-	--[[ 				max_file_lines = 999, ]]
-	--[[ 				-- colors = {}, -- table of hex strings ]]
-	--[[ 				-- termcolors = {} -- table of colour name strings ]]
-	--[[ 			}, ]]
-	--[[ 		}) ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
 	{
 		"windwp/nvim-autopairs", -- autopairs, integrates with cmp & treesitter
 		event = "InsertEnter",
@@ -438,13 +429,6 @@ require("lazy").setup({
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	},
-
-	-- {
-	--   "windwp/nvim-ts-autotag",
-	--   config = function()
-	--     require("nvim-ts-autotag").setup()
-	--   end,
-	-- },
 
 	{
 		"kylechui/nvim-surround",
@@ -517,7 +501,7 @@ require("lazy").setup({
 		priority = 1000, -- ensure it loads first
 	},
 
-	-- Cmp
+	-- Cmp --
 	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
@@ -729,30 +713,90 @@ require("lazy").setup({
 		end,
 	},
 
-	-- LSP
-	"williamboman/mason.nvim",
+	-- LSP --
+	{
+		"williamboman/mason.nvim",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"jayp0521/mason-null-ls.nvim",
+		},
+		config = function()
+			local mason = require("mason")
+			mason.setup({
+				ui = {
+					border = "rounded",
+					icons = {
+						package_installed = "",
+						package_pending = "",
+						package_uninstalled = "",
+						keymaps = {
+							toggle_package_expand = "<CR>",
+							install_package = "i",
+							update_package = "u",
+							check_package_version = "c",
+							update_all_packages = "U",
+							check_outdated_packages = "C",
+							uninstall_package = "X",
+							cancel_installation = "<C-c>",
+							apply_language_filter = "<C-f>",
+						},
+					},
+				},
+			})
+
+			local mason_lspconfig = require("mason-lspconfig")
+			mason_lspconfig.setup({
+				ensure_installed = {
+					-- "ansiblels",
+					-- "prismals",
+				},
+				automatic_installation = true,
+			})
+
+			local mason_null_ls = require("mason-null-ls")
+			mason_null_ls.setup({
+				-- formatters & linters
+				ensure_installed = {
+					-- "rubocop",
+					"google-java-format",
+					"yamlfmt", -- "yamllint",
+					"phpcbf",
+					"sqlfluff",
+					"markdownlint",
+					"shfmt",
+					"gofumpt",
+					"stylua",
+					"black",
+					"prettier", -- ts/js formatter
+					"eslint_d", -- ts/js linter
+					"js-debug-adapter",
+				},
+				automatic_installation = true,
+			})
+		end,
+	},
+
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		lazy = true,
-	},
+
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "VeryLazy",
 	},
-	"jay-babu/mason-null-ls.nvim",
+
 	{
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 	},
+
 	{
 		"b0o/schemastore.nvim",
 		version = false, -- last release is way too old
 		lazy = true,
 	},
+
 	{
 		"simrat39/rust-tools.nvim",
 		ft = "rust",
@@ -761,22 +805,28 @@ require("lazy").setup({
 			require("rust-tools").setup(opts)
 		end,
 	},
+
+	-- Debugger --
 	{
-		"jose-elias-alvarez/typescript.nvim",
-		config = function(_, opts)
-			require("typescript").setup(opts)
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"jay-babu/mason-nvim-dap.nvim",
+		},
+		config = function()
+			local mason_nvim_dap = require("mason-nvim-dap")
+
+			mason_nvim_dap.setup({
+				ensure_installed = {
+					"python",
+					"codelldb",
+					"delve",
+					"node2",
+				},
+				automatic_installation = true,
+			})
 		end,
 	},
 
-	-- Debugger
-	"mfussenegger/nvim-dap",
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		event = "VeryLazy",
-		opts = {
-			handlers = {},
-		},
-	},
 	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
@@ -787,6 +837,7 @@ require("lazy").setup({
 			require("nvim-dap-virtual-text").setup()
 		end,
 	},
+
 	{
 		"mfussenegger/nvim-dap-python",
 		ft = "python",
@@ -807,12 +858,13 @@ require("lazy").setup({
 			},
 		},
 	},
-	{
-		"leoluz/nvim-dap-go",
-		ft = "go",
-		dependencies = "mfussenegger/nvim-dap",
-		config = function(_, opts)
-			require("dap-go").setup(opts)
-		end,
-	},
+
+	-- {
+	-- 	"leoluz/nvim-dap-go",
+	-- 	ft = "go",
+	-- 	dependencies = "mfussenegger/nvim-dap",
+	-- 	config = function(_, opts)
+	-- 		require("dap-go").setup(opts)
+	-- 	end,
+	-- },
 })
