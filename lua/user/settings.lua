@@ -1,80 +1,99 @@
-local options = {
-	showmode = false,
-	fileencoding = "utf-8",
-	writebackup = false,
-	swapfile = false,
-	hidden = true,
-	undofile = true,
-	updatetime = 260,
-	backup = false,
-	cursorline = true,
-	expandtab = true,
-	shiftwidth = 2,
-	tabstop = 2,
-	completeopt = { "menuone", "noselect" },
-	clipboard = "unnamedplus",
-	confirm = true,
-	splitbelow = true,
-	splitright = true,
-	signcolumn = "yes",
-	smartcase = true,
-	smartindent = true,
-	ignorecase = true,
-	wrap = false,
-	number = true,
-  relativenumber = true,
-	scrolloff = 6,
-	sidescrolloff = 8,
-	termguicolors = true,
-	conceallevel = 0,
-	-- fillchars = { eob = " " },  -- disable `~` on nonexistent lines
-  -- copyindent = true,  -- copy the previous indentation on autoindenting
-	-- preserveindent = true,  -- preserve indent structure as much as possible
-}
+local g = vim.g
+local opt = vim.opt
 
-for k, v in pairs(options) do
-	vim.opt[k] = v
-end
-vim.opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
-vim.opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
-vim.opt.shortmess:append("sI") -- disable nvim intro
-vim.opt.whichwrap:append("<,>,[,],h,l")
--- vim.opt.iskeyword:append("-")
+-- line numbers
+opt.number= true
+opt.relativenumber= true
+
+-- tabs & indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+-- autoindent = true
+
+-- line wrapping
+opt.wrap = false
+
+-- search settings
+opt.ignorecase = true
+opt.smartcase = true
+-- smartindent = true -- know this
+
+-- split windows
+opt.splitright = true
+opt.splitbelow = true
+
+-- info
+opt.showmode = false
+opt.showcmd = false
+
+-- clipboard
+opt.clipboard = "unnamedplus"
+
+-- turn off swapfile
+opt.swapfile = false
+
+opt.confirm = true
+opt.cursorline = true
+opt.scrolloff = 6
+opt.sidescrolloff = 8
+opt.termguicolors = true
+opt.conceallevel = 0
+
+-- know this
+opt.fileencoding = "utf-8"
+opt.signcolumn = "yes"
+opt.writebackup = false
+opt.backup = false
+opt.hidden = true
+opt.undofile = true
+opt.updatetime = 260
+opt.completeopt = { "menuone", "noselect" }
+
+-- Disable nvim intro
+opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
+opt.shortmess:append("c") -- don't show redundant messages from ins-completion-menu
+opt.shortmess:append "sI"
+opt.whichwrap:append("<,>,[,],h,l")
 
 -- Disable builtin plugins
---[[ vim.g.loaded_netrw = 1 ]]
---[[ vim.g.loaded_netrwPlugin = 1 ]]
-vim.g.loaded_netrwSettings = 1
-vim.g.loaded_netrwFileHandlers = 1
-vim.g.loaded_2html_plugin = 1
-vim.g.loaded_getscript = 1
-vim.g.loaded_getscriptPlugin = 1
-vim.g.loaded_gzip = 1
-vim.g.loaded_logiPat = 1
-vim.g.loaded_matchit = 1
-vim.g.loaded_tar = 1
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_rrhelper = 1
-vim.g.loaded_spellfile_plugin = 1
-vim.g.loaded_vimball = 1
-vim.g.loaded_vimballPlugin = 1
-vim.g.loaded_zip = 1
-vim.g.loaded_zipPlugin = 1
-vim.g.loaded_tutor = 1
-vim.g.loaded_tutor_mode_plugin = 1
-vim.g.loaded_rplugin = 1
-vim.g.loaded_syntax = 1
-vim.g.loaded_synmenu = 1
-vim.g.loaded_optwin = 1
-vim.g.loaded_compiler = 1
-vim.g.loaded_bugreport = 1
-vim.g.loaded_ftplugin = 1
-vim.g.loaded_remote_plugins = 1
-vim.g.loaded_matchparen = 1
-vim.g.loaded_shada_plugin = 1
-vim.g.loaded_node_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_python3_provider = 0
-vim.g.lazyredraw = 1
-vim.g.editorconfig = false
+local disabled_built_ins = {
+   -- "netrw",
+   -- "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "tar",
+  "tarPlugin",
+
+  "matchit",
+  "matchparen",
+  "rrhelper",
+  "spellfile_plugin",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+  "tutor",
+  -- "tutor_mode_plugin",
+  -- "rplugin",
+  -- "synmenu",
+  -- "syntax",
+
+  "optwin",
+  "compiler",
+  "bugreport",
+  "ftplugin",
+
+  "remote_plugins",
+  "logipat",
+  "shada_plugin",
+  "lazyredraw",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+   g["loaded_" .. plugin] = 1
+ end
