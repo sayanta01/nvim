@@ -42,8 +42,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
---[[ keymap("n", "<S-o>", ":BufferLineMoveNext<CR>", opts) -- fix this ]]
---[[ keymap("n", "<S-i>", ":BufferLineMovePrev<CR>", opts) -- fix this ]]
+keymap("n", "<S-Left>", ":BufferLineMoveNext<CR>", opts) -- fix this
+keymap("n", "<S-Right>", ":BufferLineMovePrev<CR>", opts) -- fix this
 
 -- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
@@ -61,7 +61,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 -- Insert --
 keymap("i", "jk", "<ESC>", opts)
 
--- Move current line / block with Alt-j/k vscode.
+-- Move current line / block with Alt-j/k vscode
 keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 

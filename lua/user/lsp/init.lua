@@ -4,4 +4,5 @@ if not status_ok then
 end
 
 require("user.lsp.handlers")
+-- require("user.lsp.mason")
 require("user.lsp.null-ls")

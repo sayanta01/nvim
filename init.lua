@@ -10,12 +10,12 @@ require("user.mason")
 require("user.lualine")
 require("user.icons")
 require("user.nvim-tree")
-require("user.alpha")
-require("user.treesitter")
-require("user.comment")
-require("user.telescope")
-require("user.cmp")
-require("user.autopairs")
+--[[ require("user.alpha") ]]
+--[[ require("user.treesitter") ]]
+--[[ require("user.comment") ]]
+--[[ require("user.telescope") ]]
+--[[ require("user.cmp") ]]
+--[[ require("user.autopairs") ]]
 require("user.bufferline")
 require("user.surround")
 require("user.project")
