@@ -12,12 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Notify config --
-local BUILTIN_STAGES = {
-	fade_IN_SLIDE_OUT = "fade_in_slide_out", -- fade, slide, static
-}
-local BUILTIN_RENDERERS = {
-	DEFAULT = "compact", -- minimal, compact, simple
-}
+--[[ local BUILTIN_STAGES = { ]]
+--[[ 	fade_IN_SLIDE_OUT = "fade_in_slide_out", -- fade, slide, static ]]
+--[[ } ]]
+--[[ local BUILTIN_RENDERERS = { ]]
+--[[ 	DEFAULT = "compact", -- minimal, compact, simple ]]
+--[[ } ]]
 
 require("lazy").setup({
 	-- Dependences --
@@ -28,33 +28,27 @@ require("lazy").setup({
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
 	},
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("notify").setup({
-				timeout = 2000,
-				level = vim.log.levels.INFO,
-				fps = 40,
-				icons = {
-					ERROR = "",
-					WARN = "",
-					INFO = "",
-					DEBUG = "",
-					TRACE = "✎",
-				},
-				stages = BUILTIN_STAGES.FADE_IN_SLIDE_OUT,
-				render = BUILTIN_RENDERERS.DEFAULT,
-				max_width = nil,
-				max_height = nil,
-				--[[ max_height = function() ]]
-				--[[ 	return math.floor(vim.o.lines * 0.75) ]]
-				--[[ end, ]]
-				--[[ max_width = function() ]]
-				--[[ 	return math.floor(vim.o.columns * 0.75) ]]
-				--[[ end, ]]
-			})
-		end,
-	},
+	--[[ { ]]
+	--[[ 	"rcarriga/nvim-notify", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("notify").setup({ ]]
+	--[[ 			timeout = 2000, ]]
+	--[[ 			level = vim.log.levels.INFO, ]]
+	--[[ 			fps = 40, ]]
+	--[[ 			icons = { ]]
+	--[[ 				ERROR = "", ]]
+	--[[ 				WARN = "", ]]
+	--[[ 				INFO = "", ]]
+	--[[ 				DEBUG = "", ]]
+	--[[ 				TRACE = "✎", ]]
+	--[[ 			}, ]]
+	--[[ 			stages = BUILTIN_STAGES.FADE_IN_SLIDE_OUT, ]]
+	--[[ 			render = BUILTIN_RENDERERS.DEFAULT, ]]
+	--[[ 			max_width = nil, ]]
+	--[[ 			max_height = nil, ]]
+	--[[ 		}) ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 
 	-- Features --
 	--[[ { ]]
@@ -123,6 +117,7 @@ require("lazy").setup({
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = { "BufReadPost", "BufNewFile" },
 	},
 
 	{
@@ -197,7 +192,7 @@ require("lazy").setup({
 
 	{
 		"akinsho/bufferline.nvim",
-		branch = "main",
+		event = "VeryLazy",
 	},
 
 	--[[ { ]]

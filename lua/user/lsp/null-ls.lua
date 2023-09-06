@@ -7,7 +7,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local sources = {
 	-- formatting
 	--[[ formatting.rubocop, ]]
-  formatting.google_java_format,
+	formatting.google_java_format,
 	formatting.yamlfmt,
 	formatting.phpcbf,
 	formatting.markdownlint,

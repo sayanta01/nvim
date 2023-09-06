@@ -23,13 +23,7 @@ require("nvim-web-devicons").set_icon({
 	rb = {
 		icon = "",
 		color = "#a51401",
-		cterm_color = "52",
-		name = "Ruby",
-	},
-	bash = {
-		icon = "",
-		color = "#89e051",
-		cterm_color = "113",
+		cterm_color = "204",
 		name = "Ruby",
 	},
 })

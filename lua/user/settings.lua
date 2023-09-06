@@ -9,7 +9,6 @@ opt.relativenumber = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
-opt.autoindent = true -- fix this
 
 -- line wrapping
 opt.wrap = false
@@ -17,7 +16,7 @@ opt.wrap = false
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true
-opt.smartindent = true -- Autoindent new lines -- fix this
+opt.smartindent = true -- Autoindent new lines
 
 -- split windows
 opt.splitright = true
@@ -38,7 +37,7 @@ opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
 opt.termguicolors = true
-opt.conceallevel = 0
+opt.conceallevel = 3 -- hide * markup for bold and italic
 
 -- know this
 opt.fileencoding = "utf-8"
@@ -75,20 +74,15 @@ local disabled_built_ins = {
 	"spellfile_plugin",
 	"rplugin",
 	"matchit",
-	"logipat",
 	"rrhelper",
+	"syntax",
+	"synmenu",
 	"optwin",
 	"compiler",
 	"bugreport",
 	"ftplugin",
-
-  "tutor",
-  --[[ "tutor_mode_plugin", ]]
-	--[[ "syntax", ]]
-	--[[ "synmenu", ]]
-
-	--[[ "remote_plugins", ]]
-	--[[ "matchparen", ]]
+	"tutor",
+	--[[ "logipat", ]]
 }
 
 for _, plugin in pairs(disabled_built_ins) do

@@ -35,9 +35,9 @@ dashboard.section.buttons.val = {
 
 --[[ dashboard.section.footer.val = footer() ]]
 
-dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
+--[[ dashboard.section.footer.opts.hl = "Type" ]]
 dashboard.section.buttons.opts.hl = "Keyword"
+dashboard.section.header.opts.hl = "Include"
 
 dashboard.opts.opts.noautocmd = true
 alpha.setup(dashboard.opts)

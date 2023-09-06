@@ -3,7 +3,7 @@ require("user.keymaps")
 require("user.autocmd")
 require("user.plugins")
 vim.cmd([[ colorscheme lunar ]])
-vim.notify = require("notify")
+--[[ vim.notify = require("notify") ]]
 require("user.gitsigns")
 require("user.toggleterm")
 require("user.mason")

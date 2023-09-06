@@ -28,8 +28,8 @@ configs.setup({
 		"java",
 		"dockerfile",
 		"gitignore",
-		"regex",
-		"yaml",
+		--[[ "regex", ]]
+		--[[ "yaml", ]]
 
 		-- "kotlin",
 		-- "ruby",

@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
--- Fixes Autocomment
+-- Don't auto commenting new lines
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()
 		vim.cmd("set formatoptions-=cro")
