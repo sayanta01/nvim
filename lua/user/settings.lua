@@ -57,8 +57,8 @@ opt.whichwrap:append("<,>,[,],h,l")
 
 -- Disable builtin plugins
 local disabled_built_ins = {
-	"netrw",
-	"netrwPlugin",
+	--[[ "netrw", ]]
+	--[[ "netrwPlugin", ]]
 	"netrwSettings",
 	"netrwFileHandlers",
 	"gzip",
