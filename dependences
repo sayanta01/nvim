@@ -57,8 +57,6 @@ if [ "$distro" = "Artix" ]; then
 		shellcheck ripgrep \
 		jdk-openjdk dotnet-sdk \
 		lazygit cloudflared
-
-	# paru -S codelldb
 else
 	:
 fi

@@ -1,61 +1,61 @@
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...)
-    vim.api.nvim_buf_set_keymap(bufnr, ...)
-  end
+	local function buf_set_keymap(...)
+		vim.api.nvim_buf_set_keymap(bufnr, ...)
+	end
 
-  --[[ local status_ok, illuminate = pcall(require, "illuminate") ]]
-  --[[ if not status_ok then ]]
-  --[[ 	return ]]
-  --[[ end ]]
-  --[[ illuminate.on_attach(client) ]]
+	--[[ local status_ok, illuminate = pcall(require, "illuminate") ]]
+	--[[ if not status_ok then ]]
+	--[[ 	return ]]
+	--[[ end ]]
+	--[[ illuminate.on_attach(client) ]]
 
-  local function buf_set_option(...)
-    vim.api.nvim_buf_set_option(bufnr, ...)
-  end
+	local function buf_set_option(...)
+		vim.api.nvim_buf_set_option(bufnr, ...)
+	end
 
-  local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-  for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-  end
+	local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+	for type, icon in pairs(signs) do
+		local hl = "DiagnosticSign" .. type
+		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+	end
 
-  local config = {
-    virtual_text = true, -- disable virtual text
-    update_in_insert = false,
-    underline = true,
-    severity_sort = true,
-    signs = {
-      active = signs, -- show signs
-    },
-    float = {
-      focusable = true,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
-    },
-  }
-  vim.diagnostic.config(config)
+	local config = {
+		virtual_text = true, -- disable virtual text
+		update_in_insert = false,
+		underline = true,
+		severity_sort = true,
+		signs = {
+			active = signs, -- show signs
+		},
+		float = {
+			focusable = true,
+			style = "minimal",
+			border = "rounded",
+			source = "always",
+			header = "",
+			prefix = "",
+		},
+	}
+	vim.diagnostic.config(config)
 
-  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  local opts = { noremap = true, silent = true }
-  buf_set_keymap("n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
-  buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
-  buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
-  buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
-  buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
-  buf_set_keymap("n", "gs", ":lua vim.lsp.buf.signature_help()<CR>", opts)
-  buf_set_keymap("n", "gl", ":lua vim.diagnostic.open_float()<CR>", opts)
-  buf_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
-  buf_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
-  -- buf_set_keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
-  --[[ buf_set_keymap("n", "<leader>lr", ":lua vim.lsp.buf.rename()<CR>", opts) ]]
-  --[[ buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts) ]]
-  --[[ buf_set_keymap("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", opts) ]]
-  --[[ buf_set_keymap("n", "<leader>lq", ":lua vim.diagnostic.setloclist()<CR>", opts) ]]
+	local opts = { noremap = true, silent = true }
+	buf_set_keymap("n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
+	buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+	buf_set_keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
+	buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
+	buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
+	buf_set_keymap("n", "gs", ":lua vim.lsp.buf.signature_help()<CR>", opts)
+	buf_set_keymap("n", "gl", ":lua vim.diagnostic.open_float()<CR>", opts)
+	buf_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
+	buf_set_keymap("n", "]d", ":lua vim.diagnostic.goto_next()<CR>", opts)
+	-- buf_set_keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
+	--[[ buf_set_keymap("n", "<leader>lr", ":lua vim.lsp.buf.rename()<CR>", opts) ]]
+	--[[ buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts) ]]
+	--[[ buf_set_keymap("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", opts) ]]
+	--[[ buf_set_keymap("n", "<leader>lq", ":lua vim.diagnostic.setloclist()<CR>", opts) ]]
 end
 
 -- diagnostic disable-next-line: undefined-global
@@ -64,32 +64,32 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-  border = "rounded",
+	border = "rounded",
 })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-  border = "rounded",
+	border = "rounded",
 })
 
 require("lspconfig")["tsserver"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  init_options = {
-    preferences = {
-      disableSuggestions = true,
-    },
-  },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	init_options = {
+		preferences = {
+			disableSuggestions = true,
+		},
+	},
 })
 
 require("lspconfig")["html"].setup({
-  filetypes = { "html", "php", "xml" },
-  on_attach = on_attach,
-  capabilities = capabilities,
+	filetypes = { "html", "php", "xml" },
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["cssls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 --[[ require("lspconfig")["tailwindcss"].setup({ ]]
@@ -103,15 +103,15 @@ require("lspconfig")["cssls"].setup({
 -- })
 
 require("lspconfig")["emmet_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
 require("lspconfig")["sqlls"].setup({
-  filetype = { "sql", "mysql" },
-  on_attach = on_attach,
-  capabilities = capabilities,
+	filetype = { "sql", "mysql" },
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 -- require("lspconfig")["eslint"].setup({ -- configure this
@@ -121,102 +121,95 @@ require("lspconfig")["sqlls"].setup({
 
 local rust_setup, rt = pcall(require, "rust-tools")
 if not rust_setup then
-  return
+	return
 end
 
---[[ local mason_registry = require("mason-registry") ]]
---[[ local codelldb = mason_registry.get_package("codelldb") ]]
---[[ local extension_path = codelldb:get_install_path() .. "/extension/" ]]
---[[ local codelldb_path = extension_path .. "adapter/codelldb" ]]
---[[ local liblldb_path = extension_path .. "lldb/lib/liblldb.dylib" ]]
+local mason_registry = require("mason-registry")
+local codelldb = mason_registry.get_package("codelldb")
+codelldb:get_install_path()
+local extension_path = codelldb:get_install_path() .. "/extension/"
+local codelldb_path = extension_path .. "adapter/codelldb"
+local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
 rt.setup({
-
-  --[[ dap = { ]]
-  --[[   adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path), ]]
-  --[[ }, ]]
-  dap = {
-    adapter = {
-      type = "executable",
-      command = "lldb-vscode",
-      name = "rt_lldb",
-    },
-  },
-  server = {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-      on_attach(client, bufnr)
-      local opts = { noremap = true, silent = true }
-      vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<Leader>k",
-        ":lua require('rust-tools.hover_actions').hover_actions()<CR>",
-        opts
-      )
-      vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<Leader>a",
-        ":lua require('rust-tools.code_action_group').code_action_group()<CR>",
-        opts
-      )
-    end,
-    tools = {
-      hover_actions = {
-        auto_focus = true,
-      },
-    },
-    settings = {
-      ["rust-analyzer"] = {
-        cargo = {
-          allFeatures = true,
-          loadOutDirsFromCheck = true,
-          runBuildScripts = true,
-        },
-        procMacro = {
-          enable = true,
-          ignored = {
-            ["async-trait"] = { "async_trait" },
-            ["napi-derive"] = { "napi" },
-            ["async-recursion"] = { "async_recursion" },
-          },
-        },
-        lens = {
-          enable = true,
-        },
-        checkOnSave = {
-          allFeatures = true,
-          command = "clippy",
-          extraArgs = { "--no-deps" },
-        },
-      },
-    },
-  },
+	dap = {
+		adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
+	},
+	server = {
+		capabilities = capabilities,
+		on_attach = function(client, bufnr)
+			on_attach(client, bufnr)
+			local opts = { noremap = true, silent = true }
+			vim.api.nvim_buf_set_keymap(
+				bufnr,
+				"n",
+				"<Leader>k",
+				":lua require('rust-tools.hover_actions').hover_actions()<CR>",
+				opts
+			)
+			vim.api.nvim_buf_set_keymap(
+				bufnr,
+				"n",
+				"<Leader>a",
+				":lua require('rust-tools.code_action_group').code_action_group()<CR>",
+				opts
+			)
+		end,
+		tools = {
+			hover_actions = {
+				auto_focus = true,
+			},
+		},
+		settings = {
+			["rust-analyzer"] = {
+				cargo = {
+					allFeatures = true,
+					loadOutDirsFromCheck = true,
+					runBuildScripts = true,
+				},
+				procMacro = {
+					enable = true,
+					ignored = {
+						["async-trait"] = { "async_trait" },
+						["napi-derive"] = { "napi" },
+						["async-recursion"] = { "async_recursion" },
+					},
+				},
+				lens = {
+					enable = true,
+				},
+				checkOnSave = {
+					allFeatures = true,
+					command = "clippy",
+					extraArgs = { "--no-deps" },
+				},
+			},
+		},
+	},
 })
 
 require("lspconfig")["gopls"].setup({
-  cmd = { "gopls" },
-  filetypes = { "go", "gomod", "gowork", "gotmpl" },
-  root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = {
-    gopls = {
-      completeUnimported = true,
-      usePlaceholders = true,
-      analyses = {
-        unusedparams = true,
-        shadow = true,
-      },
-      --[[ flags = { ]]
-      --[[ 	debounce_text_changes = 150, ]]
-      --[[ }, ]]
-      experimentalPostfixCompletions = true,
-      gofumpt = true,
-      staticcheck = true,
-    },
-  },
+	cmd = { "gopls" },
+	filetypes = { "go", "gomod", "gowork", "gotmpl" },
+	root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+				shadow = true,
+			},
+			--[[ flags = { ]]
+			--[[ 	debounce_text_changes = 150, ]]
+			--[[ }, ]]
+			experimentalPostfixCompletions = true,
+			gofumpt = true,
+			staticcheck = true,
+		},
+	},
 })
 
 --[[ require("lspconfig")["jdtls"].setup({ ]]
@@ -262,121 +255,121 @@ require("lspconfig")["gopls"].setup({
 --[[ }) ]]
 
 require("lspconfig")["clangd"].setup({
-  on_attach = function(client, bufnr)
-    client.server_capabilities.signatureHelpProvider = false
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		client.server_capabilities.signatureHelpProvider = false
+		on_attach(client, bufnr)
+	end,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["omnisharp"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["pyright"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetype = { "python" },
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true,
-        typeCheckingMode = "basic", -- off
-        inlayHints = {
-          variableTypes = true,
-          functionReturnTypes = true,
-        },
-      },
-    },
-  },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	filetype = { "python" },
+	settings = {
+		python = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "workspace",
+				useLibraryCodeForTypes = true,
+				typeCheckingMode = "basic", -- off
+				inlayHints = {
+					variableTypes = true,
+					functionReturnTypes = true,
+				},
+			},
+		},
+	},
 })
 
 require("lspconfig")["lua_ls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        version = "LuaJIT",
-      },
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
 })
 
 require("lspconfig")["bashls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["awk_ls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["marksman"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["dockerls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
+	on_attach = on_attach,
+	capabilities = capabilities,
 })
 
 require("lspconfig")["graphql"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 })
 
 require("lspconfig")["jsonls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    json = {
-      schemas = require("schemastore").json.schemas(),
-    },
-  },
-  init_options = {
-    provideFormatter = true,
-  },
-  setup = {
-    commands = {
-      Format = {
-        function()
-          vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
-        end,
-      },
-    },
-  },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		json = {
+			schemas = require("schemastore").json.schemas(),
+		},
+	},
+	init_options = {
+		provideFormatter = true,
+	},
+	setup = {
+		commands = {
+			Format = {
+				function()
+					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+				end,
+			},
+		},
+	},
 })
 
 require("lspconfig")["yamlls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    yaml = {
-      schemas = {
-        ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-      },
-    },
-  },
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		yaml = {
+			schemas = {
+				["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
+				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+			},
+		},
+	},
 })
 
 --[[ require("lspconfig")["yamlls"].setup({ ]]
