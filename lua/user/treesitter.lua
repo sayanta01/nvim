@@ -30,6 +30,7 @@ configs.setup({
 		"gitignore",
 		"regex",
 		"yaml",
+
 		-- "kotlin",
 		-- "ruby",
 		-- "graphql",
@@ -55,5 +56,4 @@ configs.setup({
 		enable = true,
 		enable_autocmd = false,
 	},
-	auto_install = true,
 })

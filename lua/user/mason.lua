@@ -23,9 +23,8 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		--[[ "ansiblels", -- configure this ]]
-		--[[ "tailwindcss", -- javascript  -- configure this ]]
-		--[[ "cssmodules_ls", -- configure this ]]
-		--[[ "angularls", -- typescript -- configure this ]]
+		--[[ "ansiblels", ]]
+		--[[ "prismals", ]]
 	},
 	automatic_installation = true,
 })
@@ -33,28 +32,29 @@ require("mason-lspconfig").setup({
 require("mason-null-ls").setup({
 	-- formatters & linters
 	ensure_installed = {
-		"yamlfmt", -- "yamllint",
+		-- "rubocop",
+		--[[ "google-java-format", ]]
+		"yamlfmt",
 		"phpcbf",
 		"sqlfluff",
 		"markdownlint",
 		"shfmt",
-		"eslint_d",
-		"rubocop",
-		"google-java-format",
 		"gofumpt",
 		"stylua",
 		"black",
-		"prettier",
+		"prettier", -- ts/js formatter
+		"eslint_d", -- ts/js linter
+		"js-debug-adapter",
 	},
 	automatic_installation = true,
 })
 
-require("mason-nvim-dap").setup({
-	ensure_installed = {
-    "python",
-		"codelldb",
-		"delve",
-		"node2",
-	},
-	automatic_installation = true,
-})
+--[[ require("mason-nvim-dap").setup({ ]]
+--[[ 	ensure_installed = { ]]
+--[[ 		"python", ]]
+--[[ 		"codelldb", ]]
+--[[ 		"delve", ]]
+--[[ 		"node2", ]]
+--[[ 	}, ]]
+--[[ 	automatic_installation = true, ]]
+--[[ }) ]]

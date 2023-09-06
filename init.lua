@@ -6,6 +6,7 @@ vim.cmd([[ colorscheme lunar ]])
 vim.notify = require("notify")
 require("user.gitsigns")
 require("user.toggleterm")
+require("user.mason")
 require("user.lualine")
 require("user.icons")
 require("user.nvim-tree")
@@ -18,7 +19,7 @@ require("user.surround")
 require("user.project")
 require("user.indentline")
 require("user.illuminate")
--- require("user.colorizer")
+--[[ require("user.colorizer") ]]
 
 -- Dynamic
 require("user.whichkey")

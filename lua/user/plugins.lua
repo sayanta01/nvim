@@ -99,6 +99,7 @@ require("lazy").setup({
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"nvim-telescope/telescope-media-files.nvim",
+			"ahmedkhalf/project.nvim",
 			-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 	},
@@ -203,36 +204,39 @@ require("lazy").setup({
 		event = { "VeryLazy", "LspAttach" },
 	},
 
-	{
-		"ahmedkhalf/project.nvim",
-		event = "VeryLazy",
-	},
+	--[[ { ]]
+	--[[ 	"ahmedkhalf/project.nvim", ]]
+	--[[ 	event = "VeryLazy", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("project_nvim").setup() ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 
 	-- Themes --
-	{
-		"catppuccin/nvim",
-		lazy = true,
-		name = "catppuccin",
-	},
-	{
-		"uloco/bluloco.nvim",
-		lazy = true,
-		dependencies = { "rktjmp/lush.nvim" },
-		config = function()
-			require("bluloco").setup()
-		end,
-	},
+	--[[ { ]]
+	--[[   "catppuccin/nvim", ]]
+	--[[   lazy = true, ]]
+	--[[   name = "catppuccin", ]]
+	--[[ }, ]]
+	--[[ { ]]
+	--[[   "uloco/bluloco.nvim", ]]
+	--[[   lazy = true, ]]
+	--[[   dependencies = { "rktjmp/lush.nvim" }, ]]
+	--[[   config = function() ]]
+	--[[     require("bluloco").setup() ]]
+	--[[   end, ]]
+	--[[ }, ]]
 	"RRethy/nvim-base16",
 	{
 		"folke/tokyonight.nvim",
 		dependencies = {
+			"lunarvim/lunar.nvim",
 			"sainnhe/gruvbox-material",
+			"tiagovla/tokyodark.nvim",
+			"projekt0n/github-nvim-theme",
+			"lunarvim/synthwave84.nvim",
 			"B4mbus/oxocarbon-lua.nvim",
 			"Mofiqul/vscode.nvim",
-			"projekt0n/github-nvim-theme",
-			"tiagovla/tokyodark.nvim",
-			"lunarvim/synthwave84.nvim",
-			"lunarvim/lunar.nvim",
 			"olimorris/onedarkpro.nvim",
 		},
 		lazy = true,
@@ -465,61 +469,62 @@ require("lazy").setup({
 			"williamboman/mason-lspconfig.nvim",
 			"jayp0521/mason-null-ls.nvim",
 		},
-		config = function()
-			local mason = require("mason")
-			mason.setup({
-				ui = {
-					border = "rounded",
-					icons = {
-						package_installed = "",
-						package_pending = "",
-						package_uninstalled = "",
-						keymaps = {
-							toggle_package_expand = "<CR>",
-							install_package = "i",
-							update_package = "u",
-							check_package_version = "c",
-							update_all_packages = "U",
-							check_outdated_packages = "C",
-							uninstall_package = "X",
-							cancel_installation = "<C-c>",
-							apply_language_filter = "<C-f>",
-						},
-					},
-				},
-			})
-
-			local mason_lspconfig = require("mason-lspconfig")
-			mason_lspconfig.setup({
-				ensure_installed = {
-					-- "ansiblels",
-					-- "prismals",
-				},
-				automatic_installation = true,
-			})
-
-			local mason_null_ls = require("mason-null-ls")
-			mason_null_ls.setup({
-				-- formatters & linters
-				ensure_installed = {
-					-- "rubocop",
-					--[[ "google-java-format", ]]
-					"yamlfmt",
-					"phpcbf",
-					"sqlfluff",
-					"markdownlint",
-					"shfmt",
-					"gofumpt",
-					"stylua",
-					"black",
-					"prettier", -- ts/js formatter
-					"eslint_d", -- ts/js linter
-					"js-debug-adapter",
-				},
-				automatic_installation = true,
-			})
-		end,
 	},
+	--[[ 	config = function() ]]
+	--[[ 		local mason = require("mason") ]]
+	--[[ 		mason.setup({ ]]
+	--[[ 			ui = { ]]
+	--[[ 				border = "rounded", ]]
+	--[[ 				icons = { ]]
+	--[[ 					package_installed = "", ]]
+	--[[ 					package_pending = "", ]]
+	--[[ 					package_uninstalled = "", ]]
+	--[[ 					keymaps = { ]]
+	--[[ 						toggle_package_expand = "<CR>", ]]
+	--[[ 						install_package = "i", ]]
+	--[[ 						update_package = "u", ]]
+	--[[ 						check_package_version = "c", ]]
+	--[[ 						update_all_packages = "U", ]]
+	--[[ 						check_outdated_packages = "C", ]]
+	--[[ 						uninstall_package = "X", ]]
+	--[[ 						cancel_installation = "<C-c>", ]]
+	--[[ 						apply_language_filter = "<C-f>", ]]
+	--[[ 					}, ]]
+	--[[ 				}, ]]
+	--[[ 			}, ]]
+	--[[ 		}) ]]
+	--[[]]
+	--[[ 		local mason_lspconfig = require("mason-lspconfig") ]]
+	--[[ 		mason_lspconfig.setup({ ]]
+	--[[ 			ensure_installed = { ]]
+	--[[ 				-- "ansiblels", ]]
+	--[[ 				-- "prismals", ]]
+	--[[ 			}, ]]
+	--[[ 			automatic_installation = true, ]]
+	--[[ 		}) ]]
+	--[[]]
+	--[[ 		local mason_null_ls = require("mason-null-ls") ]]
+	--[[ 		mason_null_ls.setup({ ]]
+	--[[ 			-- formatters & linters ]]
+	--[[ 			ensure_installed = { ]]
+	--[[ 				-- "rubocop", ]]
+	--[[ "google-java-format", ]]
+	--[[ 				"yamlfmt", ]]
+	--[[ 				"phpcbf", ]]
+	--[[ 				"sqlfluff", ]]
+	--[[ 				"markdownlint", ]]
+	--[[ 				"shfmt", ]]
+	--[[ 				"gofumpt", ]]
+	--[[ 				"stylua", ]]
+	--[[ 				"black", ]]
+	--[[ 				"prettier", -- ts/js formatter ]]
+	--[[ 				"eslint_d", -- ts/js linter ]]
+	--[[ 				"js-debug-adapter", ]]
+	--[[ 			}, ]]
+	--[[ 			automatic_installation = true, ]]
+	--[[ 		}) ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 
 	{
 		"neovim/nvim-lspconfig",
@@ -573,7 +578,7 @@ require("lazy").setup({
 	},
 
 	{
-		"rcarriga/nvim-dap-ui",
+    "rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
 	},
 	{
