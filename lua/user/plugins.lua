@@ -100,9 +100,9 @@ require("lazy").setup({
 	{
 		"ahmedkhalf/project.nvim",
 		event = "VeryLazy",
-		config = function()
-			require("project_nvim").setup()
-		end,
+		--[[ config = function() ]]
+		--[[ 	require("project_nvim").setup() ]]
+		--[[ end, ]]
 	},
 
 	{
@@ -489,10 +489,10 @@ require("lazy").setup({
 	{
 		"simrat39/rust-tools.nvim",
 		ft = "rust",
-		dependencies = "neovim/nvim-lspconfig",
-		config = function(_, opts)
-			require("rust-tools").setup(opts)
-		end,
+		--[[ dependencies = "neovim/nvim-lspconfig", ]]
+		--[[ config = function(_, opts) ]]
+		--[[ 	require("rust-tools").setup(opts) ]]
+		--[[ end, ]]
 	},
 
 	-- Debugger --

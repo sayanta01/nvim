@@ -10,7 +10,7 @@ project.setup({
 	patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
 	-- show hidden files in telescope when searching for files in a project
 	show_hidden = false,
-	-- when set to false, you will get a message when project.nvim changes your directory.
+	-- when set to false, you will get a message when project.nvim changes your directory
 	silent_chdir = true,
 })
 
