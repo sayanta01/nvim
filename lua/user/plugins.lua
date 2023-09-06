@@ -5,13 +5,13 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable",
+		"--branch=stable", -- latest stable release
 		lazypath,
 	})
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Notify config
+-- Notify config --
 local BUILTIN_STAGES = {
 	fade_IN_SLIDE_OUT = "fade_in_slide_out", -- fade, slide, static
 }
@@ -20,7 +20,7 @@ local BUILTIN_RENDERERS = {
 }
 
 require("lazy").setup({
-	-- Dependences
+	-- Dependences --
 	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
@@ -56,46 +56,10 @@ require("lazy").setup({
 		end,
 	},
 
-	-- Features
+	-- Features --
 	{
 		"goolord/alpha-nvim",
 		event = "VimEnter",
-		config = function()
-			local alpha = require("alpha")
-			local dashboard = require("alpha.themes.dashboard")
-
-			-- Header
-			dashboard.section.header.val = {
-				[[   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ]],
-				[[    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ]],
-				[[          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ]],
-				[[           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ]],
-				[[          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ]],
-				[[   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ]],
-				[[  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ]],
-				[[ ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ]],
-				[[ ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ]],
-				[[      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ]],
-				[[       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ]],
-			}
-			-- Menu
-			dashboard.section.buttons.val = {
-				dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-				dashboard.button("n", "  New file", ":ene | startinsert <CR>"),
-				dashboard.button("b", "  Bookmarks", ":Telescope marks<CR>"),
-				dashboard.button("p", "  Projects", ":lua require('telescope').extensions.projects.projects()<CR>"),
-				dashboard.button("r", "󱑓  Recent files", ":Telescope oldfiles <CR>"),
-				dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-				dashboard.button("h", "  Check health", ":checkhealth<CR>"),
-				dashboard.button("c", "  Config", ":e $MYVIMRC | :cd %:p:h <CR>"),
-				dashboard.button("q", "  quit", ":qa<CR>"),
-			}
-			-- Send config to alpha
-			alpha.setup(dashboard.opts)
-
-			-- Disable folding on alpha buffer
-			vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
-		end,
 	},
 
 	{
@@ -107,7 +71,17 @@ require("lazy").setup({
 
 	{
 		"stevearc/dressing.nvim",
-		event = "VeryLazy",
+		lazy = true,
+		init = function()
+			vim.ui.select = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.select(...)
+			end
+			vim.ui.input = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.input(...)
+			end
+		end,
 	},
 
 	{
@@ -129,224 +103,14 @@ require("lazy").setup({
 		},
 	},
 
-	-- {
-	-- 	"nvim-telescope/telescope.nvim",
-	-- 	dependencies = {
-	-- 		"nvim-telescope/telescope-media-files.nvim",
-	-- 		-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	-- 	},
-	-- 	config = function()
-	-- 		local telescope = require("telescope")
-	-- 		local actions = require("telescope.actions")
-	--
-	-- 		telescope.setup({
-	-- 			defaults = {
-	-- 				prompt_prefix = " ",
-	-- 				selection_caret = "❯ ",
-	-- 				--[[ prompt_prefix = "   ", ]]
-	-- 				--[[ selection_caret = "|> ", ]]
-	-- 				path_display = { "smart" },
-	-- 				entry_prefix = "  ",
-	-- 				initial_mode = "insert",
-	-- 				selection_strategy = "reset",
-	-- 				sorting_strategy = "descending",
-	-- 				layout_strategy = "horizontal",
-	-- 				layout_config = {
-	-- 					width = 0.80,
-	-- 					preview_cutoff = 120,
-	-- 					horizontal = {
-	-- 						preview_width = function(_, cols, _)
-	-- 							if cols < 120 then
-	-- 								return math.floor(cols * 0.5)
-	-- 							end
-	-- 							return math.floor(cols * 0.6)
-	-- 						end,
-	-- 						mirror = false,
-	-- 					},
-	-- 					vertical = { mirror = false },
-	-- 				},
-	-- 				vimgrep_arguments = {
-	-- 					"rg",
-	-- 					"--color=never",
-	-- 					"--no-heading",
-	-- 					"--with-filename",
-	-- 					"--line-number",
-	-- 					"--column",
-	-- 					"--smart-case",
-	-- 					"--hidden",
-	-- 					"--glob=!.git/",
-	-- 				},
-	-- 				file_sorter = require("telescope.sorters").get_fuzzy_file,
-	-- 				file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
-	-- 				generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-	-- 				winblend = 0,
-	-- 				border = {},
-	-- 				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-	-- 				color_devicons = true,
-	-- 				use_less = true,
-	-- 				set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-	-- 				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-	-- 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-	-- 				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-	-- 				buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-	-- 				mappings = {
-	-- 					i = {
-	-- 						["<C-n>"] = actions.cycle_history_next,
-	-- 						["<C-p>"] = actions.cycle_history_prev,
-	-- 						["<C-c>"] = actions.close, -- ESC
-	-- 						["<C-j>"] = actions.move_selection_next,
-	-- 						["<C-k>"] = actions.move_selection_previous,
-	-- 						["<Down>"] = actions.move_selection_next,
-	-- 						["<Up>"] = actions.move_selection_previous,
-	-- 						["<CR>"] = actions.select_default,
-	-- 						["<C-h>"] = actions.select_horizontal,
-	-- 						["<C-v>"] = actions.select_vertical,
-	-- 						["<C-t>"] = actions.select_tab,
-	-- 						["<C-u>"] = actions.preview_scrolling_up,
-	-- 						["<C-d>"] = actions.preview_scrolling_down,
-	-- 						["<PageUp>"] = actions.results_scrolling_up,
-	-- 						["<PageDown>"] = actions.results_scrolling_down,
-	-- 						["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-	-- 						["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-	-- 						["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-	-- 						["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-	-- 						["<C-l>"] = actions.complete_tag,
-	-- 					},
-	-- 					n = {
-	-- 						["<esc>"] = actions.close,
-	-- 						["<CR>"] = actions.select_default,
-	-- 						["<C-h>"] = actions.select_horizontal,
-	-- 						["<C-v>"] = actions.select_vertical,
-	-- 						["<C-t>"] = actions.select_tab,
-	-- 						["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
-	-- 						["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-	-- 						["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-	-- 						["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-	-- 						["j"] = actions.move_selection_next,
-	-- 						["k"] = actions.move_selection_previous,
-	-- 						["H"] = actions.move_to_top,
-	-- 						["M"] = actions.move_to_middle,
-	-- 						["L"] = actions.move_to_bottom,
-	-- 						["<Down>"] = actions.move_selection_next,
-	-- 						["<Up>"] = actions.move_selection_previous,
-	-- 						["gg"] = actions.move_to_top,
-	-- 						["G"] = actions.move_to_bottom,
-	-- 						["<C-u>"] = actions.preview_scrolling_up,
-	-- 						["<C-d>"] = actions.preview_scrolling_down,
-	-- 						["<PageUp>"] = actions.results_scrolling_up,
-	-- 						["<PageDown>"] = actions.results_scrolling_down,
-	-- 						["?"] = actions.which_key,
-	-- 					},
-	-- 				},
-	-- 			},
-	-- 			file_ignore_patterns = {},
-	-- 			pickers = {
-	-- 				-- Default configuration for builtin pickers goes here
-	-- 				find_files = {
-	-- 					hidden = true,
-	-- 				},
-	-- 				live_grep = {
-	-- 					--[[ @usage don't include the filename in the search results ]]
-	-- 					only_sort_text = true,
-	-- 				},
-	-- 				grep_string = {
-	-- 					only_sort_text = true,
-	-- 				},
-	-- 				planets = {
-	-- 					show_pluto = true,
-	-- 					show_moon = false,
-	-- 				},
-	-- 				git_files = {
-	-- 					hidden = true,
-	-- 					show_untracked = true,
-	-- 				},
-	-- 				colorscheme = {
-	-- 					enable_preview = true,
-	-- 				},
-	-- 			},
-	-- 			extensions = {
-	-- 				-- Extension configuration goes here:
-	-- 				media_files = {
-	-- 					filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
-	-- 					find_cmd = "rg", -- find command ( defaults to "fd" )
-	-- 				},
-	-- 			},
-	-- 		})
-	--
-	-- 		telescope.load_extension("media_files")
-	-- 		-- telescope.load_extension("fzf")
-	-- 	end,
-	-- },
-
 	{
 		"nvim-treesitter/nvim-treesitter",
-		version = false, -- last release is way too old and doesn't work on Windows
+		version = false,
 		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		dependencies = {
 			"windwp/nvim-ts-autotag",
 		},
-		config = function()
-			-- import nvim-treesitter plugin
-			local treesitter = require("nvim-treesitter.configs")
-
-			-- configure treesitter
-			treesitter.setup({ -- enable syntax highlighting
-				highlight = {
-					enable = true,
-					disable = { "latex" },
-					additional_vim_regex_highlighting = true,
-				},
-				-- enable indentation
-				indent = { enable = true, disable = { "yaml" } },
-				autotag = { enable = true },
-				ensure_installed = {
-					"c",
-					"cpp",
-					"c_sharp",
-					"python",
-					"bash",
-					"awk",
-					"json",
-					"lua",
-					"html",
-					"css",
-					"javascript",
-					"typescript",
-					"tsx",
-					"php",
-					"sql",
-					"go",
-					"rust",
-					"markdown",
-					"markdown_inline",
-					"java",
-					"dockerfile",
-					"gitignore",
-					"regex",
-
-					"yaml",
-					"kotlin",
-					"ruby",
-					"graphql",
-					"solidity",
-
-					"astro",
-					"vue",
-					"scss",
-					"latex",
-					"prisma",
-					"svelte",
-				},
-				sync_install = false,
-				-- ignore_install = {},
-				context_commentstring = {
-					enable = true,
-					enable_autocmd = false,
-				},
-				auto_install = true,
-			})
-		end,
 	},
 
 	{
@@ -360,18 +124,6 @@ require("lazy").setup({
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			event = "VeryLazy",
 		},
-		config = function()
-			-- import comment plugin safely
-			local comment = require("Comment")
-
-			local ts_context_commentstring = require("ts_context_commentstring.integrations.comment_nvim")
-
-			-- enable comment
-			comment.setup({
-				-- for commenting tsx and jsx files
-				pre_hook = ts_context_commentstring.create_pre_hook(),
-			})
-		end,
 	},
 
 	{
@@ -434,71 +186,64 @@ require("lazy").setup({
 		"kylechui/nvim-surround",
 		event = { "BufReadPre", "BufNewFile" },
 	},
+
 	{
 		"akinsho/bufferline.nvim",
 		branch = "main",
 	},
+
 	--[[ { ]]
 	--[[ 	"NvChad/nvim-colorizer.lua", ]]
 	--[[ 	event = { "BufReadPre", "BufNewFile" }, ]]
 	--[[ }, ]]
 	"uga-rosa/ccc.nvim",
+
 	{
 		"RRethy/vim-illuminate",
 		event = { "VeryLazy", "LspAttach" },
 	},
+
 	{
 		"ahmedkhalf/project.nvim",
 		event = "VeryLazy",
 	},
 
-	-- Misc
-	"ThePrimeagen/vim-be-good",
+	-- Themes --
 	{
-		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
+		"catppuccin/nvim",
+		lazy = true,
+		name = "catppuccin",
 	},
-
-	-- Themes
-	--[[ { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, ]]
-	--[[ "B4mbus/oxocarbon-lua.nvim", ]]
-	--[[ "Mofiqul/vscode.nvim", ]]
-	--[[ "projekt0n/github-nvim-theme", ]]
-	--[[ "tiagovla/tokyodark.nvim", ]]
-	--[[ "lunarvim/synthwave84.nvim", ]]
-	--[[ { ]]
-	--[[ 	"uloco/bluloco.nvim", ]]
-	--[[ 	lazy = false, ]]
-	--[[ 	priority = 1000, ]]
-	--[[ 	dependencies = { "rktjmp/lush.nvim" }, ]]
-	--[[ 	config = function() ]]
-	--[[ 		-- config goes here ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
-	"sainnhe/gruvbox-material",
+	{
+		"uloco/bluloco.nvim",
+		lazy = true,
+		dependencies = { "rktjmp/lush.nvim" },
+		config = function()
+			require("bluloco").setup()
+		end,
+	},
+	"RRethy/nvim-base16",
 	{
 		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		dependencies = {
+			"sainnhe/gruvbox-material",
+			"B4mbus/oxocarbon-lua.nvim",
+			"Mofiqul/vscode.nvim",
+			"projekt0n/github-nvim-theme",
+			"tiagovla/tokyodark.nvim",
+			"lunarvim/synthwave84.nvim",
+			"lunarvim/lunar.nvim",
+			"olimorris/onedarkpro.nvim",
+		},
+		lazy = true,
 	},
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-		lazy = false,
-		priority = 1000,
+		lazy = true,
 		config = function()
 			require("rose-pine").setup()
 		end,
-	},
-	"RRethy/nvim-base16",
-	"lunarvim/lunar.nvim",
-	{
-		"olimorris/onedarkpro.nvim",
-		priority = 1000, -- ensure it loads first
 	},
 
 	-- Cmp --
@@ -758,8 +503,8 @@ require("lazy").setup({
 				-- formatters & linters
 				ensure_installed = {
 					-- "rubocop",
-					"google-java-format",
-					"yamlfmt", -- "yamllint",
+					--[[ "google-java-format", ]]
+					"yamlfmt",
 					"phpcbf",
 					"sqlfluff",
 					"markdownlint",
@@ -859,12 +604,23 @@ require("lazy").setup({
 		},
 	},
 
-	-- {
-	-- 	"leoluz/nvim-dap-go",
-	-- 	ft = "go",
-	-- 	dependencies = "mfussenegger/nvim-dap",
-	-- 	config = function(_, opts)
-	-- 		require("dap-go").setup(opts)
-	-- 	end,
-	-- },
+	{
+		"leoluz/nvim-dap-go",
+		ft = "go",
+		dependencies = "mfussenegger/nvim-dap",
+		config = function(_, opts)
+			require("dap-go").setup(opts)
+		end,
+	},
+
+	-- Misc --
+	"ThePrimeagen/vim-be-good",
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && npm install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
 })
