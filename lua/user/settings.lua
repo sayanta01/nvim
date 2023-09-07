@@ -82,6 +82,7 @@ local disabled_built_ins = {
 	"bugreport",
 	"ftplugin",
 	"tutor",
+  "tohtml",
 	--[[ "logipat", ]]
 }
 

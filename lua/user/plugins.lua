@@ -18,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 --[[ local BUILTIN_RENDERERS = { ]]
 --[[ 	DEFAULT = "compact", -- minimal, compact, simple ]]
 --[[ } ]]
-
 require("lazy").setup({
 	-- Dependences --
 	"nvim-lua/popup.nvim",
@@ -352,12 +351,12 @@ require("lazy").setup({
 			}
 
 			cmp.setup({
-				snippet = { -- configure how nvim-cmp interacts with snippet engine
+				snippet = {
+					-- configure how nvim-cmp interacts with snippet engine
 					expand = function(args)
 						luasnip.lsp_expand(args.body) -- For Luasnip
 					end,
 				},
-
 				-- Key mapping
 				mapping = cmp.mapping.preset.insert({
 					["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -402,7 +401,6 @@ require("lazy").setup({
 						"s",
 					}),
 				}),
-
 				-- sources for autocompletion
 				sources = {
 					{ name = "nvim_lsp" },
@@ -413,7 +411,6 @@ require("lazy").setup({
 					{ name = "spell" },
 					{ name = "calc" },
 				},
-
 				-- Formatting
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
@@ -432,7 +429,6 @@ require("lazy").setup({
 						return vim_item
 					end,
 				},
-
 				confirm_opts = {
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = false,
@@ -489,7 +485,7 @@ require("lazy").setup({
 
 	{
 		"simrat39/rust-tools.nvim",
-		ft = "rust",
+		ft = { "rust" },
 		--[[ dependencies = "neovim/nvim-lspconfig", ]]
 		--[[ config = function(_, opts) ]]
 		--[[ 	require("rust-tools").setup(opts) ]]

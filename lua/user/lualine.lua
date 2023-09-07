@@ -72,7 +72,7 @@ ins_left({
 	-- mode component
 	function()
 		--[[ return ' ' ]]
-		return "  "
+		return " "
 	end,
 	color = function()
 		-- auto change color according to neovims mode
@@ -104,26 +104,21 @@ ins_left({
 })
 
 ins_left({
-	"filename",
-	path = 3,
-	cond = nil,
-	color = { fg = colors.magenta, gui = "italic" },
+	"branch",
+	icon = "",
+	color = { fg = colors.violet, gui = "bold" },
 })
 
 ins_left({
-	"location",
-	color = { fg = colors.fg },
-})
-
-ins_left({
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
-	diagnostics_color = {
-		color_error = { fg = colors.red },
-		color_warn = { fg = colors.yellow },
-		color_info = { fg = colors.cyan },
+	"diff",
+	symbols = { added = " ", modified = " ", removed = " " },
+	diff_color = {
+		added = { fg = colors.green },
+		modified = { fg = colors.orange },
+		removed = { fg = colors.red },
 	},
+	cond = nil,
+	-- cond = conditions.hide_in_width,
 })
 
 -- Insert mid section. You can make any number of sections in neovim :)
@@ -154,6 +149,17 @@ ins_left({
 	color = { fg = "#44466a" },
 })
 
+ins_right({
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = { error = " ", warn = " ", info = " " },
+	diagnostics_color = {
+		color_error = { fg = colors.red },
+		color_warn = { fg = colors.yellow },
+		color_info = { fg = colors.cyan },
+	},
+})
+
 --[[ ins_right { ]]
 --[[ 'filetype', ]]
 --[[ icons_enabled = true, ]]
@@ -165,6 +171,18 @@ ins_left({
 --[[ 	cond = nil, ]]
 --[[ 	color = { fg = colors.violet, gui = "italic" }, ]]
 --[[ 	-- cond = conditions.hide_in_width, ]]
+--[[ }) ]]
+
+ins_right({
+	"location",
+	color = { fg = colors.fg },
+})
+
+--[[ ins_right({ ]]
+--[[ 	"filename", ]]
+--[[ 	path = 1, ]]
+--[[ 	cond = nil, ]]
+--[[ 	color = { fg = colors.magenta, gui = "italic" }, ]]
 --[[ }) ]]
 
 --[[ ins_right({ ]]
@@ -187,23 +205,5 @@ ins_left({
 --[[ 	--cond = conditions.hide_in_width, ]]
 --[[ 	color = { fg = colors.fg, gui = "italic" }, ]]
 --[[ }) ]]
-
-ins_right({
-	"branch",
-	icon = "",
-	color = { fg = colors.violet, gui = "bold" },
-})
-
-ins_right({
-	"diff",
-	symbols = { added = " ", modified = " ", removed = " " },
-	diff_color = {
-		added = { fg = colors.green },
-		modified = { fg = colors.orange },
-		removed = { fg = colors.red },
-	},
-	cond = nil,
-	-- cond = conditions.hide_in_width,
-})
 
 lualine.setup(config)
