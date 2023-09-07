@@ -327,38 +327,39 @@ require("lspconfig")["graphql"].setup({
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	on_new_config = function(new_config)
+		new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+		vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+	end,
 	settings = {
 		json = {
-			schemas = require("schemastore").json.schemas(),
-		},
-	},
-	init_options = {
-		provideFormatter = true,
-	},
-	setup = {
-		commands = {
-			Format = {
-				function()
-					vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
-				end,
+			format = {
+				enable = true,
 			},
+			validate = { enable = true },
 		},
 	},
 })
 
-require("lspconfig")["yamlls"].setup({
+require("lspconfig").yamlls.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	on_new_config = function(new_config)
+		new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+		vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+	end,
 	settings = {
 		yaml = {
 			hover = true,
-			completion = true,
+			--[[ completion = true, ]]
+			format = {
+				enable = true,
+			},
 			validate = true,
 			schemaStore = {
 				enable = true,
 				url = "https://www.schemastore.org/api/json/catalog.json",
 			},
-			schemas = require("schemastore").yaml.schemas(),
 		},
 	},
 })
