@@ -95,11 +95,6 @@ require("lspconfig")["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
-require("lspconfig")["svelte"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
 require("lspconfig")["emmet_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
@@ -241,12 +236,6 @@ require("lspconfig")["gopls"].setup({
 --[[ 	}, ]]
 --[[ }) ]]
 
---[[ require("lspconfig")["solidity"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ 	single_file_support = true, ]]
---[[ }) ]]
-
 --[[ require("lspconfig")["astro"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ 	capabilities = capabilities, ]]
@@ -314,10 +303,10 @@ require("lspconfig")["bashls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["awk_ls"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+--[[ require("lspconfig")["awk_ls"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
 
 require("lspconfig")["marksman"].setup({
 	on_attach = on_attach,

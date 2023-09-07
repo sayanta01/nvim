@@ -11,7 +11,7 @@ configs.setup({
 		"c_sharp",
 		"python",
 		"bash",
-		"awk",
+		--[[ "awk", ]]
 		"json",
 		"lua",
 		"html",
@@ -29,18 +29,16 @@ configs.setup({
 		"dockerfile",
 		"gitignore",
 		--[[ "regex", ]]
-		--[[ "yaml", ]]
 
-		-- "kotlin",
-		-- "ruby",
-		-- "graphql",
-		-- "svelte",
-		-- "solidity",
-		-- "astro",
-		-- "vue",
-		-- "scss",
-		-- "latex",
-		-- "prisma",
+		--[[ "kotlin", ]]
+		--[[ "ruby", ]]
+		--[[ "astro", ]]
+		--[[ "vue", ]]
+    --[[ "svelte", ]]
+
+		--[[ "yaml", ]]
+		--[[ "graphql", ]]
+		--[[ "prisma", ]]
 		--[[ "vim", ]]
 	},
 	sync_install = false,
