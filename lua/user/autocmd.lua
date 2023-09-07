@@ -67,5 +67,5 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 -- Comment function for json
 vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")
 
---[[ Color highlighter ]]
+-- Color highlighter
 --[[ vim.cmd("CccHighlighterToggle") ]]

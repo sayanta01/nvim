@@ -21,19 +21,17 @@ local on_attach = function(client, bufnr)
 
 	local config = {
 		virtual_text = true, -- disable virtual text
-		update_in_insert = false,
+		signs = true,
 		underline = true,
+		update_in_insert = false,
 		severity_sort = true,
-		signs = {
-			active = signs, -- show signs
-		},
 		float = {
 			focusable = true,
 			style = "minimal",
 			border = "rounded",
 			source = "always",
-			header = "",
 			prefix = "",
+			--[[ scope = "cursor", ]]
 		},
 	}
 	vim.diagnostic.config(config)
@@ -92,15 +90,15 @@ require("lspconfig")["cssls"].setup({
 	capabilities = capabilities,
 })
 
---[[ require("lspconfig")["tailwindcss"].setup({ ]]
---[[ 	capabilities = capabilities, ]]
---[[ 	on_attach = on_attach, ]]
---[[ }) ]]
+require("lspconfig")["tailwindcss"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
--- require("lspconfig")["svelte"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
--- })
+require("lspconfig")["svelte"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
 require("lspconfig")["emmet_ls"].setup({
 	capabilities = capabilities,
@@ -364,41 +362,14 @@ require("lspconfig")["yamlls"].setup({
 	capabilities = capabilities,
 	settings = {
 		yaml = {
-			schemas = {
-				["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
-				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+			hover = true,
+			completion = true,
+			validate = true,
+			schemaStore = {
+				enable = true,
+				url = "https://www.schemastore.org/api/json/catalog.json",
 			},
+			schemas = require("schemastore").yaml.schemas(),
 		},
 	},
 })
-
---[[ require("lspconfig")["yamlls"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ 	settings = { ]]
---[[ 		yaml = { ]]
---[[ 			hover = true, ]]
---[[ 			completion = true, ]]
---[[ 			validate = true, ]]
---[[ 			schemaStore = { ]]
---[[ 				enable = true, ]]
---[[ 				url = "https://www.schemastore.org/api/json/catalog.json", ]]
---[[ 			}, ]]
---[[ 			schemas = { ]]
---[[ 				kubernetes = { ]]
---[[ 					"daemon.{yml,yaml}", ]]
---[[ 					"manager.{yml,yaml}", ]]
---[[ 					"restapi.{yml,yaml}", ]]
---[[ 					"role.{yml,yaml}", ]]
---[[ 					"role_binding.{yml,yaml}", ]]
---[[ 					"*onfigma*.{yml,yaml}", ]]
---[[ 					"*ngres*.{yml,yaml}", ]]
---[[ 					"*ecre*.{yml,yaml}", ]]
---[[ 					"*eployment*.{yml,yaml}", ]]
---[[ 					"*ervic*.{yml,yaml}", ]]
---[[ 					"kubectl-edit*.yaml", ]]
---[[ 				}, ]]
---[[ 			}, ]]
---[[ 		}, ]]
---[[ 	}, ]]
---[[ }) ]]

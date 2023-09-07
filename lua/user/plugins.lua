@@ -403,6 +403,17 @@ require("lazy").setup({
 					}),
 				}),
 
+				-- sources for autocompletion
+				sources = {
+					{ name = "nvim_lsp" },
+					{ name = "buffer" },
+					{ name = "path" },
+					{ name = "nvim_lua" },
+					{ name = "luasnip" },
+					{ name = "spell" },
+					{ name = "calc" },
+				},
+
 				-- Formatting
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
@@ -421,16 +432,6 @@ require("lazy").setup({
 						return vim_item
 					end,
 				},
-				-- sources for autocompletion
-				sources = {
-					{ name = "nvim_lsp" },
-					{ name = "buffer" },
-					{ name = "path" },
-					{ name = "nvim_lua" },
-					{ name = "luasnip" },
-					{ name = "spell" },
-					{ name = "calc" },
-				},
 
 				confirm_opts = {
 					behavior = cmp.ConfirmBehavior.Replace,
@@ -441,12 +442,12 @@ require("lazy").setup({
 						scrollbar = true,
 						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 						--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-						winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+						--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 					},
 					documentation = {
 						border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 						--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-						winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+						--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 					},
 				},
 				experimental = {
@@ -481,7 +482,7 @@ require("lazy").setup({
 	},
 
 	{
-		"b0o/schemastore.nvim",
+		"b0o/SchemaStore.nvim",
 		version = false, -- last release is way too old
 		lazy = true,
 	},
@@ -499,6 +500,7 @@ require("lazy").setup({
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = {
+			"rcarriga/nvim-dap-ui",
 			"jay-babu/mason-nvim-dap.nvim",
 		},
 		config = function()
@@ -516,10 +518,6 @@ require("lazy").setup({
 		end,
 	},
 
-	{
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
 		config = function()
