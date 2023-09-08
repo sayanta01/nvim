@@ -34,7 +34,7 @@ configs.setup({
 		--[[ "ruby", ]]
 		--[[ "astro", ]]
 		--[[ "vue", ]]
-    --[[ "svelte", ]]
+		"svelte",
 
 		--[[ "yaml", ]]
 		--[[ "graphql", ]]

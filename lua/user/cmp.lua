@@ -92,6 +92,7 @@ local kind_icons = {
 
 cmp.setup({
 	snippet = {
+		-- configure how nvim-cmp interacts with snippet engine
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For Luasnip
 		end,
@@ -140,6 +141,17 @@ cmp.setup({
 			"s",
 		}),
 	}),
+	-- sources for autocompletion
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "buffer" },
+		{ name = "path" },
+		{ name = "nvim_lua" },
+		{ name = "luasnip" },
+		{ name = "spell" },
+		{ name = "calc" },
+	},
+
 	-- Formatting
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
@@ -158,25 +170,18 @@ cmp.setup({
 			return vim_item
 		end,
 	},
-	sources = {
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "nvim_lsp" },
-		{ name = "path" },
-		{ name = "spell" },
-		{ name = "calc" },
-	},
+
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
+
 	window = {
 		completion = {
 			scrollbar = true,
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+			--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 		},
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
