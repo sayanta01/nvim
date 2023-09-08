@@ -75,7 +75,12 @@ require("lazy").setup({
 		event = { "BufReadPre", "BufNewFile" },
 	},
 
-	"akinsho/toggleterm.nvim",
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("user.toggleterm")
+		end,
+	},
 
 	{
 		"folke/which-key.nvim",
@@ -198,7 +203,11 @@ require("lazy").setup({
 	--[[ 	"NvChad/nvim-colorizer.lua", ]]
 	--[[ 	event = { "BufReadPre", "BufNewFile" }, ]]
 	--[[ }, ]]
-	"uga-rosa/ccc.nvim",
+	{
+		"uga-rosa/ccc.nvim",
+		cmd = { "CccPick", "CccConvert", "CccHighlighterToggle" },
+		config = true,
+	},
 
 	{
 		"RRethy/vim-illuminate",

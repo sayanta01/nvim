@@ -5,7 +5,6 @@ require("user.plugins")
 vim.cmd([[ colorscheme lunar ]])
 --[[ vim.notify = require("notify") ]]
 require("user.gitsigns")
-require("user.toggleterm")
 require("user.mason")
 require("user.lualine")
 require("user.icons")
