@@ -11,7 +11,7 @@ require("nvim-web-devicons").set_icon({
 	ppt = {
 		icon = "",
 		color = "#cb4a32",
-		cterm_color = "167",
+		cterm_color = "214",
 		name = "Ppt",
 	},
 	astro = {
@@ -23,7 +23,7 @@ require("nvim-web-devicons").set_icon({
 	rb = {
 		icon = "",
 		color = "#a51401",
-		cterm_color = "204",
+		cterm_color = "52",
 		name = "Ruby",
 	},
 })

@@ -117,7 +117,7 @@ ins_left({
 		modified = { fg = colors.orange },
 		removed = { fg = colors.red },
 	},
-	cond = nil,
+	--[[ cond = nil, ]]
 	-- cond = conditions.hide_in_width,
 })
 
@@ -175,7 +175,7 @@ ins_right({
 
 ins_right({
 	"location",
-	color = { fg = colors.fg },
+	--[[ color = { fg = colors.fg }, ]]
 })
 
 --[[ ins_right({ ]]

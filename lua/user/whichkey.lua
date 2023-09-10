@@ -153,8 +153,8 @@ local mappings = {
 		c = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
 		o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
-		u = { ":Lspsaga outline<cr>", "Outline" },
-		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
+		--[[ u = { ":Lspsaga outline<cr>", "Outline" }, ]]
+		--[[ p = { ":Lspsaga peek_definition<cr>", "Peek Definition" }, ]]
 	},
 	s = {
 		name = "Telescope",
@@ -187,7 +187,7 @@ local mappings = {
 		--[[ i = { ":Notifications<cr>", "Show Notifications" }, ]]
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
-		v = { ":VimBeGood<cr>", "Vim Practice" },
+		--[[ v = { ":VimBeGood<cr>", "Vim Practice" }, ]]
 		--[[ w = { ":set wrap!<cr>", "Toggle Wrap Text" }, ]]
 	},
 	p = {

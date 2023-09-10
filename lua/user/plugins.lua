@@ -251,29 +251,16 @@ require("lazy").setup({
 
 	-- Themes --
 	{
-		"catppuccin/nvim",
-		lazy = true,
-		name = "catppuccin",
-	},
-	--[[ { ]]
-	--[[ 	"uloco/bluloco.nvim", ]]
-	--[[ 	lazy = true, ]]
-	--[[ 	dependencies = { "rktjmp/lush.nvim" }, ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("bluloco").setup() ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
-	{
 		"folke/tokyonight.nvim",
 		dependencies = {
+			"rose-pine/neovim",
+			"catppuccin/nvim",
 			"RRethy/nvim-base16",
 			"lunarvim/lunar.nvim",
 			"sainnhe/gruvbox-material",
 			"tiagovla/tokyodark.nvim",
-			"projekt0n/github-nvim-theme",
 			"lunarvim/synthwave84.nvim",
 			"B4mbus/oxocarbon-lua.nvim",
-			"Mofiqul/vscode.nvim",
 			"olimorris/onedarkpro.nvim",
 		},
 		lazy = true,
@@ -320,14 +307,22 @@ require("lazy").setup({
 		event = { "BufReadPre", "BufNewFile" },
 	},
 
+	--[[ { ]]
+	--[[ 	"glepnir/lspsaga.nvim", ]]
+	--[[ 	event = "LspAttach", ]]
+	--[[ }, ]]
+
+	--[[ { ]]
+	--[[ 	"SmiteshP/nvim-navic", ]]
+	--[[ 	event = "User FileOpened", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("user.navic") ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
+
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "VeryLazy",
-	},
-
-	{
-		"glepnir/lspsaga.nvim",
-		event = "LspAttach",
 	},
 
 	{
@@ -366,7 +361,7 @@ require("lazy").setup({
 
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		--[[ lazy = true, ]]
+		lazy = true,
 		config = function()
 			require("nvim-dap-virtual-text").setup()
 		end,
@@ -416,7 +411,7 @@ require("lazy").setup({
 	},
 
 	-- Misc --
-	"ThePrimeagen/vim-be-good",
+	--[[ "ThePrimeagen/vim-be-good", ]]
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && npm install",
