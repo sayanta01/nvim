@@ -67,7 +67,7 @@ require("lazy").setup({
 
 	{
 		"goolord/alpha-nvim",
-		event = "VimEnter",
+		cmd = "Alpha",
 		config = function()
 			require("user.alpha")
 		end,
