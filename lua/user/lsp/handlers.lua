@@ -205,11 +205,6 @@ require("lspconfig")["gopls"].setup({
 	},
 })
 
---[[ require("lspconfig")["jdtls"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
-
 --[[ require("lspconfig")["kotlin_language_server"].setup({ ]]
 --[[ 	on_attach = on_attach, ]]
 --[[ 	capabilities = capabilities, ]]
