@@ -33,13 +33,11 @@ configs.setup({
 		--[[ "kotlin", ]]
 		--[[ "ruby", ]]
 		--[[ "astro", ]]
-		--[[ "vue", ]]
 		"svelte",
 
 		--[[ "yaml", ]]
 		--[[ "graphql", ]]
 		--[[ "prisma", ]]
-		--[[ "vim", ]]
 	},
 	sync_install = false,
 	ignore_install = {},

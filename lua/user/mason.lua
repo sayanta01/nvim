@@ -33,7 +33,7 @@ require("mason-null-ls").setup({
 	-- formatters & linters
 	ensure_installed = {
 		-- "rubocop",
-		--[[ "google-java-format", ]]
+		"google-java-format",
 		"yamlfmt",
 		"phpcbf",
 		"sqlfluff",
@@ -48,13 +48,3 @@ require("mason-null-ls").setup({
 	},
 	automatic_installation = true,
 })
-
---[[ require("mason-nvim-dap").setup({ ]]
---[[ 	ensure_installed = { ]]
---[[ 		"python", ]]
---[[ 		"codelldb", ]]
---[[ 		"delve", ]]
---[[ 		"node2", ]]
---[[ 	}, ]]
---[[ 	automatic_installation = true, ]]
---[[ }) ]]

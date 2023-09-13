@@ -107,11 +107,6 @@ require("lspconfig")["sqlls"].setup({
 	capabilities = capabilities,
 })
 
--- require("lspconfig")["eslint"].setup({ -- configure this
--- 	on_attach = on_attach,
--- 	capabilities = capabilities,
--- })
-
 local rust_setup, rt = pcall(require, "rust-tools")
 if not rust_setup then
 	return
@@ -210,11 +205,6 @@ require("lspconfig")["gopls"].setup({
 --[[ 	capabilities = capabilities, ]]
 --[[ }) ]]
 
---[[ require("lspconfig")["texlab"].setup({ ]]
---[[ 	on_attach = on_attach, ]]
---[[ 	capabilities = capabilities, ]]
---[[ }) ]]
-
 --[[ require("lspconfig")["solargraph"].setup({ ]]
 --[[ 	filetypes = { "ruby", "eruby" }, ]]
 --[[ 	on_attach = on_attach, ]]
@@ -244,10 +234,10 @@ require("lspconfig")["clangd"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["omnisharp"].setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-})
+--[[ require("lspconfig")["omnisharp"].setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ }) ]]
 
 require("lspconfig")["pyright"].setup({
 	on_attach = on_attach,
@@ -313,11 +303,11 @@ require("lspconfig")["dockerls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["graphql"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-})
+--[[ require("lspconfig")["graphql"].setup({ ]]
+--[[ 	capabilities = capabilities, ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" }, ]]
+--[[ }) ]]
 
 require("lspconfig")["jsonls"].setup({
 	on_attach = on_attach,
