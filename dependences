@@ -77,14 +77,3 @@ rustup component add rust-analyzer rustfmt # run this in project directory, mayb
 ## kotlin setup
 curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin # run this
-
-## java-dap setup
-# INSTALL_FOLDER="$HOME/.local/share/nvim"
-## -i java-debug
-# rm -rf "$INSTALL_FOLDER/java-debug"
-# git clone https://github.com/microsoft/java-debug.git "$INSTALL_FOLDER/java-debug"
-# cd "$INSTALL_FOLDER/java-debug" && ./mvnw clean install
-## -i vscode-java-test
-# rm -rf "$INSTALL_FOLDER/vscode-java-test"
-# git clone https://github.com/microsoft/vscode-java-test.git "$INSTALL_FOLDER/vscode-java-test"
-# cd "$INSTALL_FOLDER/vscode-java-test" && npm install && npm run build-plugin
