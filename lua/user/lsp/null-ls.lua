@@ -8,13 +8,13 @@ local sources = {
 	-- formatting
 	--[[ formatting.rubocop, ]]
 	formatting.google_java_format,
+	formatting.markdownlint,
 	formatting.yamlfmt,
 	formatting.phpcbf,
-	formatting.markdownlint,
 	formatting.shfmt,
+	formatting.stylua,
 	formatting.rustfmt,
 	formatting.gofumpt,
-	formatting.stylua,
 	formatting.black,
 	formatting.prettier.with({
 		extra_filetypes = { "toml" },

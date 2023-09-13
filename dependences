@@ -17,7 +17,7 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 	## pkgs
 	sudo apt install -y npm cargo luarocks \
 		golang php ruby \
-		shellcheck ripgrep \
+		ripgrep \
 		python3-pip python3-venv \
 		default-jdk dotnet-sdk-6.0
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
@@ -53,10 +53,10 @@ fi
 distro=$(lsb_release -a | grep 'Distributor ID' | cut -f 2)
 if [ "$distro" = "Artix" ]; then
 	sudo pacman -S --noconfirm npm cargo luarocks \
-		go php ruby julia \
-		shellcheck ripgrep \
+		go php ruby \
+		ripgrep \
 		jdk-openjdk dotnet-sdk \
-		lazygit cloudflared
+		lazygit cloudflared julia
 else
 	:
 fi
@@ -70,7 +70,7 @@ sudo npm i -g tree-sitter-cli live-server
 pip install pynvim
 
 ## rust setup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # cargo new project # get started with rust
 rustup component add rust-analyzer rustfmt # run this in project directory, maybe it's not necessary
 

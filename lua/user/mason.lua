@@ -23,7 +23,6 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		--[[ "ansiblels", -- configure this ]]
-		--[[ "ansiblels", ]]
 		--[[ "prismals", ]]
 	},
 	automatic_installation = true,
@@ -34,16 +33,17 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		-- "rubocop",
 		"google-java-format",
+		"markdownlint",
 		"yamlfmt",
 		"phpcbf",
 		"sqlfluff",
-		"markdownlint",
+		"shellcheck",
 		"shfmt",
-		"gofumpt",
 		"stylua",
+		"gofumpt",
 		"black",
-		"prettier", -- ts/js formatter
-		"eslint_d", -- ts/js linter
+		"prettier",
+		"eslint_d",
 		"js-debug-adapter",
 	},
 	automatic_installation = true,

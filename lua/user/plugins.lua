@@ -390,7 +390,7 @@ require("lazy").setup({
 					"python",
 					"codelldb",
 					"delve",
-					"node2",
+					"js-debug-adapter",
 				},
 				automatic_installation = true,
 			})

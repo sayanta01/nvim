@@ -16,8 +16,7 @@ vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignErro
 dap.adapters["pwa-node"] = {
 	type = "server",
 	host = "localhost",
-	--[[ port = "${port}", ]]
-	port = 8124,
+	port = 8123,
 	executable = {
 		command = "js-debug-adapter",
 	},
@@ -31,7 +30,7 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			name = "Launch file",
 			program = "${file}",
 			cwd = "${workspaceFolder}",
-			--[[ runtimeExecutable = "node", ]]
+			runtimeExecutable = "node",
 		},
 	}
 end
