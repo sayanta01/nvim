@@ -20,13 +20,14 @@ vim.opt.rtp:prepend(lazypath)
 --[[ } ]]
 require("lazy").setup({
 	-- Dependences --
-	"nvim-lua/popup.nvim",
 	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
 	},
+
+	--[[ "nvim-lua/popup.nvim", ]]
 	--[[ { ]]
 	--[[ 	"rcarriga/nvim-notify", ]]
 	--[[ 	config = function() ]]
@@ -52,6 +53,7 @@ require("lazy").setup({
 	-- Features --
 	--[[ { ]]
 	--[[ 	"stevearc/dressing.nvim", ]]
+	--[[ 	event = "VeryLazy", ]]
 	--[[ 	lazy = true, ]]
 	--[[ 	init = function() ]]
 	--[[ 		vim.ui.select = function(...) ]]
@@ -67,10 +69,10 @@ require("lazy").setup({
 
 	{
 		"goolord/alpha-nvim",
-		cmd = "Alpha",
 		config = function()
 			require("user.alpha")
 		end,
+		--[[ cmd = "Alpha", ]]
 	},
 
 	{
@@ -80,7 +82,6 @@ require("lazy").setup({
 		end,
 		cmd = "Gitsigns",
 		event = "User FileOpened",
-		--[[ event = { "BufReadPre", "BufNewFile" }, ]]
 	},
 
 	{
@@ -91,7 +92,10 @@ require("lazy").setup({
 	},
 
 	{
-		"folke/which-key.nvim",
+		"folke/which-key.nvim", -- do lazy_load
+		config = function()
+			require("user.whichkey")
+		end,
 		event = "VeryLazy",
 		init = function()
 			vim.o.timeout = true
@@ -110,15 +114,14 @@ require("lazy").setup({
 
 	{
 		"nvim-telescope/telescope.nvim",
-		lazy = true,
-		cmd = "Telescope",
 		config = function()
 			require("user.telescope")
 		end,
+		cmd = "Telescope",
+		lazy = true,
 		dependencies = {
 			"nvim-telescope/telescope-media-files.nvim",
-			"ahmedkhalf/project.nvim",
-			-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }, ]]
 		},
 	},
 	{
@@ -153,24 +156,19 @@ require("lazy").setup({
 
 	{
 		"numToStr/Comment.nvim",
-		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
-		event = "User FileOpened",
 		config = function()
 			require("user.comment")
 		end,
+		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+		event = "User FileOpened",
 		dependencies = {
-			"JoosepAlviste/nvim-ts-context-commentstring",
-			event = "User FileOpened",
-			--[[ event = "VeryLazy", ]]
+			{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
 		},
 	},
 
 	{
 		"windwp/nvim-autopairs", -- autopairs, integrates with cmp & treesitter
 		event = "InsertEnter",
-		--[[ dependencies = { ]]
-		--[[ 	"hrsh7th/nvim-cmp", ]]
-		--[[ }, ]]
 		config = function()
 			local autopairs = require("nvim-autopairs")
 			autopairs.setup({
@@ -228,13 +226,12 @@ require("lazy").setup({
 
 	{
 		"akinsho/bufferline.nvim",
+		config = function()
+			require("user.bufferline")
+		end,
 		event = "VeryLazy",
 	},
 
-	--[[ { ]]
-	--[[ 	"NvChad/nvim-colorizer.lua", ]]
-	--[[ 	event = { "BufReadPre", "BufNewFile" }, ]]
-	--[[ }, ]]
 	{
 		"uga-rosa/ccc.nvim",
 		cmd = { "CccPick", "CccConvert", "CccHighlighterToggle" },
@@ -255,23 +252,16 @@ require("lazy").setup({
 		dependencies = {
 			"rose-pine/neovim",
 			"catppuccin/nvim",
-			"RRethy/nvim-base16",
+			--[[ "RRethy/nvim-base16", ]]
 			"lunarvim/lunar.nvim",
 			"sainnhe/gruvbox-material",
 			"tiagovla/tokyodark.nvim",
 			"lunarvim/synthwave84.nvim",
 			"B4mbus/oxocarbon-lua.nvim",
+			"rose-pine/neovim",
 			"olimorris/onedarkpro.nvim",
 		},
 		lazy = true,
-	},
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		lazy = true,
-		config = function()
-			require("rose-pine").setup()
-		end,
 	},
 
 	-- Cmp --
@@ -279,31 +269,48 @@ require("lazy").setup({
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"saadparwaiz1/cmp_luasnip",
-			"L3MON4D3/LuaSnip",
-			"rafamadriz/friendly-snippets",
-			"f3fora/cmp-spell",
-			"hrsh7th/cmp-calc",
+			{ "hrsh7th/cmp-nvim-lsp", lazy = true },
+			{ "saadparwaiz1/cmp_luasnip", lazy = true },
+			{ "hrsh7th/cmp-buffer", lazy = true },
+			{ "hrsh7th/cmp-path", lazy = true },
+			{ "f3fora/cmp-spell", lazy = true },
+			{ "hrsh7th/cmp-calc", lazy = true },
 		},
 		config = function()
 			require("user.cmp")
 		end,
 	},
+	{
+		"L3MON4D3/LuaSnip",
+		event = "InsertEnter",
+		dependencies = {
+			{ "rafamadriz/friendly-snippets", lazy = true },
+		},
+	},
 
 	-- LSP --
 	{
 		"williamboman/mason.nvim",
+		config = function()
+			require("user.mason")
+		end,
+		cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+		build = function()
+			pcall(function()
+				require("mason-registry").refresh()
+			end)
+		end,
+		event = "User FileOpened",
+		lazy = true,
 		dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-			"jayp0521/mason-null-ls.nvim",
+			{ "williamboman/mason-lspconfig.nvim", lazy = true },
+			{ "jayp0521/mason-null-ls.nvim", lazy = true },
 		},
 	},
 
 	{
 		"neovim/nvim-lspconfig",
+		lazy = true,
 		event = { "BufReadPre", "BufNewFile" },
 	},
 
@@ -312,17 +319,48 @@ require("lazy").setup({
 	--[[ 	event = "LspAttach", ]]
 	--[[ }, ]]
 
-	--[[ { ]]
-	--[[ 	"SmiteshP/nvim-navic", ]]
-	--[[ 	event = "User FileOpened", ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("user.navic") ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
+	{
+		"utilyre/barbecue.nvim",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+		},
+		opts = {
+			show_basename = false,
+			kinds = {
+				File = "",
+				Module = "",
+				Namespace = "",
+				Package = "",
+				Class = "",
+				Method = "",
+				Property = "",
+				Field = "",
+				Constructor = "",
+				Enum = "",
+				Interface = "",
+				Function = "󰊕",
+				Variable = "",
+				Constant = "",
+				String = "",
+				Number = "",
+				Boolean = "",
+				Array = "",
+				Object = "",
+				Key = "",
+				Null = "",
+				EnumMember = "",
+				Struct = "",
+				Event = "",
+				Operator = "󱖦",
+				TypeParameter = "",
+			},
+		},
+	},
 
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "VeryLazy",
+		lazy = true,
 	},
 
 	{
@@ -332,7 +370,7 @@ require("lazy").setup({
 	},
 
 	{
-		"simrat39/rust-tools.nvim",
+		"simrat39/rust-tools.nvim", -- do lazy_load
 		ft = { "rust" },
 	},
 
@@ -359,13 +397,13 @@ require("lazy").setup({
 		end,
 	},
 
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		lazy = true,
-		config = function()
-			require("nvim-dap-virtual-text").setup()
-		end,
-	},
+	--[[ { ]]
+	--[[ 	"theHamsta/nvim-dap-virtual-text", ]]
+	--[[ 	lazy = true, ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("nvim-dap-virtual-text").setup() ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
 
 	{
 		"mfussenegger/nvim-dap-python",
@@ -411,7 +449,11 @@ require("lazy").setup({
 	},
 
 	-- Misc --
-	--[[ "ThePrimeagen/vim-be-good", ]]
+	{
+		"ThePrimeagen/vim-be-good",
+		cmd = "VimBeGood",
+		lazy = true,
+	},
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && npm install",

@@ -64,7 +64,7 @@ local kind_icons = {
 	Array = "",
 	Object = "",
 	Key = "",
-	Null = "ﳠ",
+	Null = "",
 	--  Extra icons
 	--[[ Tag = "", ]]
 	--[[ Array = "", ]]

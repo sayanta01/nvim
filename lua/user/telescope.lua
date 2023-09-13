@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 telescope.load_extension("media_files")
-telescope.load_extension("projects")
+--[[ telescope.load_extension("projects") ]]
 -- telescope.load_extension("fzf")
 
 local actions = require("telescope.actions")

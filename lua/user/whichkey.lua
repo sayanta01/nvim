@@ -163,7 +163,7 @@ local mappings = {
 		--[[ d = { ":Telescope diagnostics<cr>", "Document Diagnostics  " }, ]]
 		-- f = { ":Telescope lsp_references<cr>", "References" },
 		--[[ h = { ":Telescope help_tags<cr>", "Find Help" }, ]]
-		H = { ":Telescope highlights<cr>", "Find Highlights" },
+		--[[ H = { ":Telescope highlights<cr>", "Find Highlights" }, ]]
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 		--[[ k = { ":Telescope keymaps<cr>", "Keymaps" }, ]]
 		o = { ":Telescope oldfiles<cr>", "Recent Files" },
@@ -196,17 +196,19 @@ local mappings = {
 		n = { ":NullLsInfo<cr>", "NullLs" },
 		l = { ":Lazy<cr>", "Lazy" },
 	},
+
 	b = {
-		name = "Buffer",
-		-- b = {
-		--	":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-		--	"Buf Prev",
-		-- },
-		b = { ":Telescope buffers<cr>", "Buf Prev" },
-		--[[ h = { ":BufferLineCloseLeft<cr>", "Close all to Left" }, ]]
-		--[[ l = { ":BufferLineCloseRight<cr>", "Close all to Right" }, ]]
-		--[[ p = { ":BufferLineTogglePin<cr>", "Toggle Pin" }, ]]
+	--[[ 	name = "Buffer", ]]
+	-- b = {
+	--	":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+	--	"Buf Prev",
+	-- },
+	b = { ":Telescope buffers<cr>", "Buf Prev" },
+	--[[ h = { ":BufferLineCloseLeft<cr>", "Close all to Left" }, ]]
+	--[[ l = { ":BufferLineCloseRight<cr>", "Close all to Right" }, ]]
+	--[[ p = { ":BufferLineTogglePin<cr>", "Toggle Pin" }, ]]
 	},
+
 	d = {
 		name = "Debug",
 		t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
