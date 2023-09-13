@@ -107,74 +107,74 @@ require("lspconfig")["sqlls"].setup({
 	capabilities = capabilities,
 })
 
-local rust_setup, rt = pcall(require, "rust-tools")
-if not rust_setup then
-	return
-end
-
-local mason_registry = require("mason-registry")
-local codelldb = mason_registry.get_package("codelldb")
-codelldb:get_install_path()
-local extension_path = codelldb:get_install_path() .. "/extension/"
-local codelldb_path = extension_path .. "adapter/codelldb"
-local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
-
-rt.setup({
-	dap = {
-		adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-	},
-	server = {
-		capabilities = capabilities,
-		on_attach = function(client, bufnr)
-			on_attach(client, bufnr)
-			local opts = { noremap = true, silent = true }
-			vim.api.nvim_buf_set_keymap(
-				bufnr,
-				"n",
-				"<Leader>k",
-				":lua require('rust-tools.hover_actions').hover_actions()<CR>",
-				opts
-			)
-			vim.api.nvim_buf_set_keymap(
-				bufnr,
-				"n",
-				"<Leader>a",
-				":lua require('rust-tools.code_action_group').code_action_group()<CR>",
-				opts
-			)
-		end,
-		tools = {
-			hover_actions = {
-				auto_focus = true,
-			},
-		},
-		settings = {
-			["rust-analyzer"] = {
-				cargo = {
-					allFeatures = true,
-					loadOutDirsFromCheck = true,
-					runBuildScripts = true,
-				},
-				procMacro = {
-					enable = true,
-					ignored = {
-						["async-trait"] = { "async_trait" },
-						["napi-derive"] = { "napi" },
-						["async-recursion"] = { "async_recursion" },
-					},
-				},
-				lens = {
-					enable = true,
-				},
-				checkOnSave = {
-					allFeatures = true,
-					command = "clippy",
-					extraArgs = { "--no-deps" },
-				},
-			},
-		},
-	},
-})
+--[[ local rust_setup, rt = pcall(require, "rust-tools") ]]
+--[[ if not rust_setup then ]]
+--[[ 	return ]]
+--[[ end ]]
+--[[]]
+--[[ local mason_registry = require("mason-registry") ]]
+--[[ local codelldb = mason_registry.get_package("codelldb") ]]
+--[[ codelldb:get_install_path() ]]
+--[[ local extension_path = codelldb:get_install_path() .. "/extension/" ]]
+--[[ local codelldb_path = extension_path .. "adapter/codelldb" ]]
+--[[ local liblldb_path = extension_path .. "lldb/lib/liblldb.so" ]]
+--[[]]
+--[[ rt.setup({ ]]
+--[[ 	dap = { ]]
+--[[ 		adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path), ]]
+--[[ 	}, ]]
+--[[ 	server = { ]]
+--[[ 		capabilities = capabilities, ]]
+--[[ 		on_attach = function(client, bufnr) ]]
+--[[ 			on_attach(client, bufnr) ]]
+--[[ 			local opts = { noremap = true, silent = true } ]]
+--[[ 			vim.api.nvim_buf_set_keymap( ]]
+--[[ 				bufnr, ]]
+--[[ 				"n", ]]
+--[[ 				"<Leader>k", ]]
+--[[ 				":lua require('rust-tools.hover_actions').hover_actions()<CR>", ]]
+--[[ 				opts ]]
+--[[ 			) ]]
+--[[ 			vim.api.nvim_buf_set_keymap( ]]
+--[[ 				bufnr, ]]
+--[[ 				"n", ]]
+--[[ 				"<Leader>a", ]]
+--[[ 				":lua require('rust-tools.code_action_group').code_action_group()<CR>", ]]
+--[[ 				opts ]]
+--[[ 			) ]]
+--[[ 		end, ]]
+--[[ 		tools = { ]]
+--[[ 			hover_actions = { ]]
+--[[ 				auto_focus = true, ]]
+--[[ 			}, ]]
+--[[ 		}, ]]
+--[[ 		settings = { ]]
+--[[ 			["rust-analyzer"] = { ]]
+--[[ 				cargo = { ]]
+--[[ 					allFeatures = true, ]]
+--[[ 					loadOutDirsFromCheck = true, ]]
+--[[ 					runBuildScripts = true, ]]
+--[[ 				}, ]]
+--[[ 				procMacro = { ]]
+--[[ 					enable = true, ]]
+--[[ 					ignored = { ]]
+--[[ 						["async-trait"] = { "async_trait" }, ]]
+--[[ 						["napi-derive"] = { "napi" }, ]]
+--[[ 						["async-recursion"] = { "async_recursion" }, ]]
+--[[ 					}, ]]
+--[[ 				}, ]]
+--[[ 				lens = { ]]
+--[[ 					enable = true, ]]
+--[[ 				}, ]]
+--[[ 				checkOnSave = { ]]
+--[[ 					allFeatures = true, ]]
+--[[ 					command = "clippy", ]]
+--[[ 					extraArgs = { "--no-deps" }, ]]
+--[[ 				}, ]]
+--[[ 			}, ]]
+--[[ 		}, ]]
+--[[ 	}, ]]
+--[[ }) ]]
 
 require("lspconfig")["gopls"].setup({
 	cmd = { "gopls" },

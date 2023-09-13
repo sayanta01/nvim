@@ -24,6 +24,9 @@ require("lazy").setup({
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
 	{
 		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("user.lualine")
+		end,
 		event = "VeryLazy",
 	},
 
@@ -248,18 +251,16 @@ require("lazy").setup({
 
 	-- Themes --
 	{
-		"folke/tokyonight.nvim",
+		"lunarvim/lunar.nvim",
 		dependencies = {
-			"rose-pine/neovim",
-			"catppuccin/nvim",
+			--[[ "B4mbus/oxocarbon-lua.nvim", ]]
+			--[[ "olimorris/onedarkpro.nvim", ]]
 			--[[ "RRethy/nvim-base16", ]]
-			"lunarvim/lunar.nvim",
+			--[[ "lunarvim/synthwave84.nvim", ]]
+			"catppuccin/nvim",
 			"sainnhe/gruvbox-material",
 			"tiagovla/tokyodark.nvim",
-			"lunarvim/synthwave84.nvim",
-			"B4mbus/oxocarbon-lua.nvim",
 			"rose-pine/neovim",
-			"olimorris/onedarkpro.nvim",
 		},
 		lazy = true,
 	},
@@ -377,14 +378,19 @@ require("lazy").setup({
 	-- Debugger --
 	{
 		"mfussenegger/nvim-dap",
+		config = function()
+			require("user.dap")
+		end,
 		lazy = true,
 		dependencies = {
-			"rcarriga/nvim-dap-ui",
-			"jay-babu/mason-nvim-dap.nvim",
+			{ "rcarriga/nvim-dap-ui", lazy = true },
 		},
+	},
+
+	{
+		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
 			local mason_nvim_dap = require("mason-nvim-dap")
-
 			mason_nvim_dap.setup({
 				ensure_installed = {
 					"python",

@@ -135,24 +135,25 @@ local mappings = {
 		name = "LSP",
 		--[[ d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }, ]]
 		--[[ D = { ":lua vim.lsp.buf.definition()<cr>", "Goto Definition" }, ]]
-		-- k = { ":lua vim.lsp.buf.hover()<cr>", "Hover" },
 		--[[ R = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]
 		-- h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-		-- n = { ":lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-		-- p = { ":lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
 		t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
 		r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
 		f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
 		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		q = { ":lua vim.diagnostic.setloclist()<cr>", "quickfix" },
+		q = { ":lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
-		l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
+
+		--[[ l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" }, ]]
+
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 		c = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-		i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "Incoming Calls" },
-		o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" },
+
+		--[[ i = { ":lua vim.lsp.buf.incoming_calls()<CR>", "!ncoming Calls" }, ]]
+		--[[ o = { ":lua vim.lsp.buf.outgoing_calls()<CR>", "Outgoing Calls" }, ]]
+
 		--[[ u = { ":Lspsaga outline<cr>", "Outline" }, ]]
 		--[[ p = { ":Lspsaga peek_definition<cr>", "Peek Definition" }, ]]
 	},
@@ -187,8 +188,8 @@ local mappings = {
 		--[[ i = { ":Notifications<cr>", "Show Notifications" }, ]]
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
-		--[[ v = { ":VimBeGood<cr>", "Vim Practice" }, ]]
-		--[[ w = { ":set wrap!<cr>", "Toggle Wrap Text" }, ]]
+		v = { ":VimBeGood<cr>", "Vim Practice" },
+		w = { ":set wrap!<cr>", "Toggle Wrap Text" },
 	},
 	p = {
 		name = "Plugin",
@@ -198,15 +199,15 @@ local mappings = {
 	},
 
 	b = {
-	--[[ 	name = "Buffer", ]]
-	-- b = {
-	--	":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-	--	"Buf Prev",
-	-- },
-	b = { ":Telescope buffers<cr>", "Buf Prev" },
-	--[[ h = { ":BufferLineCloseLeft<cr>", "Close all to Left" }, ]]
-	--[[ l = { ":BufferLineCloseRight<cr>", "Close all to Right" }, ]]
-	--[[ p = { ":BufferLineTogglePin<cr>", "Toggle Pin" }, ]]
+		--[[ 	name = "Buffer", ]]
+		-- b = {
+		--	":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		--	"Buf Prev",
+		-- },
+		b = { ":Telescope buffers<cr>", "Buf Prev" },
+		--[[ h = { ":BufferLineCloseLeft<cr>", "Close all to Left" }, ]]
+		--[[ l = { ":BufferLineCloseRight<cr>", "Close all to Right" }, ]]
+		--[[ p = { ":BufferLineTogglePin<cr>", "Toggle Pin" }, ]]
 	},
 
 	d = {
