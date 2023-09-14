@@ -3,9 +3,9 @@
 distro=$(grep ID= /etc/os-release | sed -n 2p | cut -d= -f2)
 
 if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" ]; then
-	printf "Build neovim? (yes/no): "
+	printf "Build neovim? (y/n): "
 	read -r choice
-	if [ "$choice" = "yes" ]; then
+	if [ "$choice" = "y" ]; then
 		sudo apt install -y ninja-build gettext
 		git clone https://github.com/neovim/neovim.git ~/.cache/neovim
 		cd ~/.cache/neovim || exit 1
@@ -23,9 +23,9 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
 
-	printf "Install cargo pkgs? (yes/no): "
+	printf "Install cargo pkgs? (y/n): "
 	read -r choice
-	if [ "$choice" = "yes" ]; then
+	if [ "$choice" = "y" ]; then
 		cargo install procs bat
 	else
 		:
