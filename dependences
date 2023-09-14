@@ -36,9 +36,9 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 
 	# julia
 	## curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check version
-	printf "Want to install julia? (yes/no): "
+	printf "Want to install julia? (y/n): "
 	read -r choice
-	if [ "$choice" = "yes" ]; then
+	if [ "$choice" = "y" ]; then
 		wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
 		tar -xvzf julia-1.8.5-linux-x86_64.tar.gz
 		sudo mv julai-1.8.5 /opt/
