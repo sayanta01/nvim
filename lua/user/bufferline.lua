@@ -18,10 +18,10 @@ bufferline.setup({
 		show_close_icon = false,
 		--[[ close_icon = " ", ]]
 		modified_icon = "",
-		left_trunc_marker = "",
-		right_trunc_marker = "",
-		max_name_length = 28,
-		max_prefix_length = 28,
+		left_trunc_marker = "",
+		right_trunc_marker = "",
+		max_name_length = 20,
+		max_prefix_length = 20,
 		tab_size = 20,
 		diagnostics = false, -- "nvim_lsp",
 		diagnostics_update_in_insert = false,
@@ -29,6 +29,6 @@ bufferline.setup({
 		persist_buffer_sort = true,
 		separator_style = "thin",
 		enforce_regular_tabs = false,
-		always_show_bufferline = true,
+		always_show_bufferline = false,
 	},
 })

@@ -26,7 +26,6 @@ local kind_icons = {
 	Field = "",
 	--[[ Field = "", ]]
 	Variable = "",
-	--[[ Variable = "", ]]
 	Class = "",
 	--[[ Class = "", ]]
 	Interface = "",
@@ -186,7 +185,7 @@ cmp.setup({
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
-			winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+			--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 		},
 	},
 	experimental = {

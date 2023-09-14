@@ -43,8 +43,8 @@ local setup = {
 	window = {
 		border = "rounded", -- none, shadow
 		position = "bottom", -- top
-		margin = { 0, 0, 0, 0 },
-		padding = { 2, 2, 2, 2 },
+		margin = { 1, 0, 1, 0 },
+		padding = { 1, 2, 1, 2 },
 		winblend = 0,
 	},
 	layout = {
@@ -56,6 +56,7 @@ local setup = {
 	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	show_help = false, -- show help message on the command line when the popup is visible
+	show_keys = true,
 	triggers = "auto", -- automatically setup triggers
 	-- triggers = {"<leader>"} -- or specify a list manually
 	triggers_blacklist = {
@@ -111,6 +112,7 @@ local mappings = {
 	--[[ 	":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", ]]
 	--[[ 	"Find Files", ]]
 	--[[ }, ]]
+
 	g = {
 		name = "Git",
 		g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
@@ -131,11 +133,11 @@ local mappings = {
 		u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 		d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
+
 	l = {
 		name = "LSP",
 		--[[ d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" }, ]]
 		--[[ D = { ":lua vim.lsp.buf.definition()<cr>", "Goto Definition" }, ]]
-		--[[ R = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]
 		-- h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 		t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
 		r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
@@ -154,23 +156,20 @@ local mappings = {
 	s = {
 		name = "Telescope",
 		t = { ":Telescope colorscheme<cr>", "Themes" },
-		--[[ c = { ":Telescope commands<cr>", "Commands" }, ]]
-		--[[ d = { ":Telescope diagnostics<cr>", "Document Diagnostics  " }, ]]
-		-- f = { ":Telescope lsp_references<cr>", "References" },
-		--[[ h = { ":Telescope help_tags<cr>", "Find Help" }, ]]
-		--[[ H = { ":Telescope highlights<cr>", "Find Highlights" }, ]]
 		i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
-		--[[ k = { ":Telescope keymaps<cr>", "Keymaps" }, ]]
 		o = { ":Telescope oldfiles<cr>", "Recent Files" },
 		g = { ":Telescope grep_string<cr>", "Find String" },
-		r = { ":Telescope live_grep<cr>", "Find Text" },
+		s = { ":Telescope live_grep<cr>", "Find Text" },
 		p = { ":Telescope projects<cr>", "Projects" },
 		z = { ":Telescope command_history<cr>", "Cmd Histroy" },
-		s = { ":Telescope registers<cr>", "Registers" },
+		r = { ":Telescope registers<cr>", "Registers" },
 		l = { ":Telescope resume<cr>", "Last Search" },
 		m = { ":Telescope marks<cr>", "Marks" },
-		-- b = { ":Telescope builtin<cr>", "Telescope Builtin" },
+		--[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
+		--[[ h = { ":Telescope help_tags<cr>", "Find Help" }, ]]
+		--[[ H = { ":Telescope highlights<cr>", "Find Highlights" }, ]]
 	},
+
 	o = {
 		name = "Option",
 		s = { ":set spell!<cr>", "Toggle Spell Check" },
@@ -178,13 +177,13 @@ local mappings = {
 		c = { ":CccPick<cr>", "Color Picker" },
 		f = { ":CccConvert<cr>", "Change Color Format  " },
 		h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
-		-- t = { ":ColorizerToggle<cr>", "Colorizer Toggle" },
-		--[[ i = { ":Notifications<cr>", "Show Notifications" }, ]]
+		n = { ":Notifications<cr>", "Show Notifications" },
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 		v = { ":VimBeGood<cr>", "Vim Practice" },
 		w = { ":set wrap!<cr>", "Toggle Wrap Text" },
 	},
+
 	p = {
 		name = "Plugin",
 		m = { ":Mason<cr>", "Mason" },
@@ -199,8 +198,8 @@ local mappings = {
 		--	"Buf Prev",
 		-- },
 		b = { ":Telescope buffers<cr>", "Buf Prev" },
-		--[[ h = { ":BufferLineCloseLeft<cr>", "Close all to Left" }, ]]
-		--[[ l = { ":BufferLineCloseRight<cr>", "Close all to Right" }, ]]
+		h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
+		l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
 		--[[ p = { ":BufferLineTogglePin<cr>", "Toggle Pin" }, ]]
 	},
 
@@ -230,6 +229,7 @@ local mappings = {
 		t = { ":lua require('dap-go').debug_test()<cr>", " Debug Test" },
 		l = { ":lua require('dap-go').debug_last_test()<cr>", " Last Test" },
 	},
+
 	t = {
 		name = "Terminal",
 		h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },

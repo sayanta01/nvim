@@ -75,8 +75,8 @@ require("lazy").setup({
 		config = function()
 			require("user.gitsigns")
 		end,
-		cmd = "Gitsigns",
-		event = "User FileOpened",
+		--[[ cmd = "Gitsigns", ]]
+		--[[ event = "User FileOpened", ]]
 	},
 
 	{
@@ -217,7 +217,8 @@ require("lazy").setup({
 		config = function()
 			require("user.surround")
 		end,
-		event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
+		--[[ event = { "BufReadPre", "BufNewFile" }, ]]
 	},
 
 	{
@@ -426,9 +427,14 @@ require("lazy").setup({
 		end,
 		lazy = true,
 		dependencies = {
-			{ "rcarriga/nvim-dap-ui", lazy = true },
+			{
+				"rcarriga/nvim-dap-ui",
+				event = "VeryLazy",
+				lazy = true,
+			},
 		},
 	},
+
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
@@ -502,6 +508,7 @@ require("lazy").setup({
 		cmd = "VimBeGood",
 		lazy = true,
 	},
+
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && npm install",

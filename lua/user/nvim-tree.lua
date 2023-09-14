@@ -13,7 +13,6 @@ end
 local options = {
 	filters = {
 		dotfiles = false,
-		exclude = { "custom" },
 	},
 	--[[ disable_netrw = false, ]]
 	--[[ hijack_cursor = false, ]]
@@ -38,7 +37,7 @@ local options = {
 		},
 	},
 	view = {
-		width = 28,
+		width = 29,
 		hide_root_folder = false,
 		side = "left",
 		number = false,
@@ -101,14 +100,14 @@ local options = {
 				default = "",
 				symlink = "",
 				folder = {
+					arrow_closed = "",
+					arrow_open = "",
 					default = "",
 					open = "",
 					empty = "",
 					empty_open = "",
 					symlink = "",
 					symlink_open = "",
-					arrow_open = "",
-					arrow_closed = "",
 				},
 				git = {
 					unstaged = "",

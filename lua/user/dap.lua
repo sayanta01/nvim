@@ -35,34 +35,6 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 	}
 end
 
---[[ dap.adapters.node2 = { ]]
---[[ 	type = "executable", ]]
---[[ 	command = "node-debug2-adapter", ]]
---[[ 	args = { os.getenv("HOME") .. "/dev/microsoft/vscode-node-debug2/out/src/nodeDebug.js" }, ]]
---[[ } ]]
-
---[[ dap.configurations.javascript = { ]]
---[[ 	{ ]]
---[[ 		name = "Launch", ]]
---[[ 		type = "node2", ]]
---[[ 		request = "launch", ]]
---[[ 		program = "${file}", ]]
---[[ 		cwd = vim.fn.getcwd(), ]]
---[[ 		sourceMaps = true, ]]
---[[ 		protocol = "inspector", ]]
---[[ 		console = "integratedTerminal", ]]
---[[ 	}, ]]
---[[ 	{ ]]
---[[ 		-- For this to work you need to make sure the node process is started with the `--inspect` flag ]]
---[[ 		name = "Attach to process", ]]
---[[ 		type = "node2", ]]
---[[ 		request = "attach", ]]
---[[     --	restart = true, ]]
---[[ 		port = 9229, ]]
---[[ 		processId = require("dap.utils").pick_process, ]]
---[[ 	}, ]]
---[[ } ]]
-
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
 end

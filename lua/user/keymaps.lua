@@ -42,8 +42,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-Left>", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<S-Right>", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<S-Left>", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<S-Right>", ":BufferLineMoveNext<CR>", opts)
 
 -- New buffer
 keymap("n", "<S-b>", ":enew <CR>", opts)
@@ -55,8 +55,8 @@ keymap("n", "dd", '"_dd', opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
---[[ keymap("n", "<C-v>", ":vsplit<CR>", opts) ]]
---[[ keymap("n", "<C-s>", ":split<CR>", opts) ]]
+keymap("n", "<C-v>", ":vsplit<CR>", opts)
+keymap("n", "<C-s>", ":split<CR>", opts)
 
 -- Insert --
 keymap("i", "jk", "<ESC>", opts)

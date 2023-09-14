@@ -8,7 +8,8 @@ require("indent_blankline").setup({
 		"alpha",
 		"lazy",
 		"NvimTree",
-		"text", --[[ "lspinfo", ]]
+		"text",
+		--[[ "lspinfo", ]]
 		--[[ "TelescopePrompt", ]]
 		--[[ "TelescopeResults", ]]
 		--[[ "dashboard", ]]
