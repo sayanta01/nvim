@@ -46,21 +46,21 @@ require("lazy").setup({
 		end,
 	},
 
-	--[[ { ]]
-	--[[ 	"stevearc/dressing.nvim", ]]
-	--[[ 	event = "VeryLazy", ]]
-	--[[ 	lazy = true, ]]
-	--[[ 	init = function() ]]
-	--[[ 		vim.ui.select = function(...) ]]
-	--[[ 			require("lazy").load({ plugins = { "dressing.nvim" } }) ]]
-	--[[ 			return vim.ui.select(...) ]]
-	--[[ 		end ]]
-	--[[ 		vim.ui.input = function(...) ]]
-	--[[ 			require("lazy").load({ plugins = { "dressing.nvim" } }) ]]
-	--[[ 			return vim.ui.input(...) ]]
-	--[[ 		end ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
+	{
+		"stevearc/dressing.nvim",
+		--[[ event = "VeryLazy", ]]
+		lazy = true,
+		init = function()
+			vim.ui.select = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.select(...)
+			end
+			vim.ui.input = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.input(...)
+			end
+		end,
+	},
 
 	{
 		"goolord/alpha-nvim",
@@ -217,7 +217,7 @@ require("lazy").setup({
 		config = function()
 			require("user.surround")
 		end,
-    event = "VeryLazy",
+		event = "VeryLazy",
 		--[[ event = { "BufReadPre", "BufNewFile" }, ]]
 	},
 
