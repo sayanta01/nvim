@@ -11,17 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Notify config --
---[[ local BUILTIN_STAGES = { ]]
---[[ 	fade_IN_SLIDE_OUT = "fade_in_slide_out", -- fade, slide, static ]]
---[[ } ]]
---[[ local BUILTIN_RENDERERS = { ]]
---[[ 	DEFAULT = "compact", -- minimal, compact, simple ]]
---[[ } ]]
 require("lazy").setup({
 	-- Dependences --
 	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
+
+	-- Features --
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
@@ -30,30 +25,27 @@ require("lazy").setup({
 		event = "VeryLazy",
 	},
 
-	--[[ "nvim-lua/popup.nvim", ]]
-	--[[ { ]]
-	--[[ 	"rcarriga/nvim-notify", ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("notify").setup({ ]]
-	--[[ 			timeout = 2000, ]]
-	--[[ 			level = vim.log.levels.INFO, ]]
-	--[[ 			fps = 40, ]]
-	--[[ 			icons = { ]]
-	--[[ 				ERROR = "", ]]
-	--[[ 				WARN = "", ]]
-	--[[ 				INFO = "", ]]
-	--[[ 				DEBUG = "", ]]
-	--[[ 				TRACE = "✎", ]]
-	--[[ 			}, ]]
-	--[[ 			stages = BUILTIN_STAGES.FADE_IN_SLIDE_OUT, ]]
-	--[[ 			render = BUILTIN_RENDERERS.DEFAULT, ]]
-	--[[ 			max_width = nil, ]]
-	--[[ 			max_height = nil, ]]
-	--[[ 		}) ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			vim.notify = require("notify")
+			require("notify").setup({
+				timeout = 2000,
+				--[[ level = vim.log.levels.INFO, ]]
+				fps = 40,
+				icons = {
+					ERROR = "",
+					WARN = "",
+					INFO = "",
+					DEBUG = "",
+					TRACE = "✎",
+				},
+				stages = "fade", -- slide, static
+				render = "compact", -- minimal
+			})
+		end,
+	},
 
-	-- Features --
 	--[[ { ]]
 	--[[ 	"stevearc/dressing.nvim", ]]
 	--[[ 	event = "VeryLazy", ]]
@@ -95,7 +87,7 @@ require("lazy").setup({
 	},
 
 	{
-		"folke/which-key.nvim", -- do lazy_load
+		"folke/which-key.nvim",
 		config = function()
 			require("user.whichkey")
 		end,
@@ -149,6 +141,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		dependencies = {
 			"windwp/nvim-ts-autotag",
+			"hiphish/rainbow-delimiters.nvim",
 		},
 	},
 
@@ -289,13 +282,38 @@ require("lazy").setup({
 		},
 	},
 
+	--[[ { ]]
+	--[[ 	"ThePrimeagen/harpoon", ]]
+	--[[ 	config = function() ]]
+	--[[ 		local keymap = vim.keymap ]]
+	--[[ 		keymap.set( ]]
+	--[[ 			"n", ]]
+	--[[ 			"<leader>hm", ]]
+	--[[ 			"<cmd>lua require('harpoon.mark').add_file()<cr>", ]]
+	--[[ 			{ desc = "Mark file with harpoon" } ]]
+	--[[ 		) ]]
+	--[[ 		keymap.set( ]]
+	--[[ 			"n", ]]
+	--[[ 			"<leader>hn", ]]
+	--[[ 			"<cmd>lua require('harpoon.ui').nav_next()<cr>", ]]
+	--[[ 			{ desc = "Go to next harpoon mark" } ]]
+	--[[ 		) ]]
+	--[[ 		keymap.set( ]]
+	--[[ 			"n", ]]
+	--[[ 			"<leader>hp", ]]
+	--[[ 			"<cmd>lua require('harpoon.ui').nav_prev()<cr>", ]]
+	--[[ 			{ desc = "Go to previous harpoon mark" } ]]
+	--[[ 		) ]]
+	--[[ 	end, ]]
+	--[[ }, ]]
+
 	-- LSP --
 	{
 		"williamboman/mason.nvim",
 		config = function()
 			require("user.mason")
 		end,
-		cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
+		--[[ cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" }, ]]
 		build = function()
 			pcall(function()
 				require("mason-registry").refresh()
@@ -305,7 +323,32 @@ require("lazy").setup({
 		lazy = true,
 		dependencies = {
 			{ "williamboman/mason-lspconfig.nvim", lazy = true },
-			{ "jayp0521/mason-null-ls.nvim", lazy = true },
+			{
+				"jayp0521/mason-null-ls.nvim",
+				config = function()
+					local mason_nvim_dap = require("mason-null-ls")
+					mason_nvim_dap.setup({
+						-- formatters & linters
+						ensure_installed = {
+							-- "rubocop",
+							"google-java-format",
+							"markdownlint",
+							"yamlfmt",
+							"phpcbf",
+							"sqlfluff",
+							"shellcheck",
+							"shfmt",
+							"stylua",
+							"gofumpt",
+							"black",
+							"prettier",
+							"eslint_d",
+						},
+						automatic_installation = true,
+					})
+				end,
+				lazy = true,
+			},
 		},
 	},
 
@@ -319,6 +362,12 @@ require("lazy").setup({
 	--[[ 	"glepnir/lspsaga.nvim", ]]
 	--[[ 	event = "LspAttach", ]]
 	--[[ }, ]]
+
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		event = { "VeryLazy", "lspattach" },
+		lazy = true,
+	},
 
 	{
 		"utilyre/barbecue.nvim",
@@ -359,12 +408,6 @@ require("lazy").setup({
 	},
 
 	{
-		"jose-elias-alvarez/null-ls.nvim",
-		event = "VeryLazy",
-		lazy = true,
-	},
-
-	{
 		"b0o/SchemaStore.nvim",
 		version = false, -- last release is way too old
 		lazy = true,
@@ -386,7 +429,6 @@ require("lazy").setup({
 			{ "rcarriga/nvim-dap-ui", lazy = true },
 		},
 	},
-
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
@@ -396,7 +438,7 @@ require("lazy").setup({
 					"python",
 					"codelldb",
 					"delve",
-					"js-debug-adapter",
+					"js",
 				},
 				automatic_installation = true,
 			})

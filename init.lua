@@ -3,7 +3,6 @@ require("user.keymaps")
 require("user.autocmd")
 require("user.plugins")
 vim.cmd([[ colorscheme rose-pine ]])
---[[ vim.notify = require("notify") ]]
 require("user.icons")
 require("user.treesitter")
 require("user.indentline")

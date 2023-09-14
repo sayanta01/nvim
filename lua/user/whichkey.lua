@@ -144,10 +144,10 @@ local mappings = {
 		q = { ":lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 		W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
-		--[[ l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" }, ]]
+		l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-		l = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		c = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		--[[ u = { ":Lspsaga outline<cr>", "Outline" }, ]]
 		--[[ p = { ":Lspsaga peek_definition<cr>", "Peek Definition" }, ]]
 	},

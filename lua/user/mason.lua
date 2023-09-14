@@ -27,24 +27,3 @@ require("mason-lspconfig").setup({
 	},
 	automatic_installation = true,
 })
-
-require("mason-null-ls").setup({
-	-- formatters & linters
-	ensure_installed = {
-		-- "rubocop",
-		"google-java-format",
-		"markdownlint",
-		"yamlfmt",
-		"phpcbf",
-		"sqlfluff",
-		"shellcheck",
-		"shfmt",
-		"stylua",
-		"gofumpt",
-		"black",
-		"prettier",
-		"eslint_d",
-		"js-debug-adapter",
-	},
-	automatic_installation = true,
-})
