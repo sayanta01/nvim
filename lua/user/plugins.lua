@@ -59,12 +59,23 @@ require("lazy").setup({
 	},
 
 	-- Features --
+	--[[ { ]]
+	--[[ 	"kevinhwang91/nvim-ufo", -- configure this ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("ufo").setup() ]]
+	--[[ 	end, ]]
+	--[[ 	event = { "VeryLazy", "LspAttach" }, ]]
+	--[[ 	dependencies = { ]]
+	--[[ 		"kevinhwang91/promise-async", ]]
+	--[[ 	}, ]]
+	--[[ }, ]]
 
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("user.gitsigns")
 		end,
+		event = "VeryLazy",
 	},
 
 	{
@@ -137,6 +148,7 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "BufReadPost", "BufNewFile" },
+		--[[ event = "BufReadPre", ]]
 	},
 
 	{
