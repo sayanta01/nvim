@@ -19,7 +19,6 @@ require("lazy").setup({
 	-- Preety --
 	{
 		"stevearc/dressing.nvim",
-		--[[ event = "VeryLazy", ]]
 		lazy = true,
 		init = function()
 			vim.ui.select = function(...)
@@ -35,7 +34,6 @@ require("lazy").setup({
 
 	{
 		"folke/noice.nvim",
-		lazy = true,
 		config = function()
 			require("user.noice")
 		end,
@@ -109,6 +107,7 @@ require("lazy").setup({
 			--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }, ]]
 		},
 	},
+
 	{
 		"ahmedkhalf/project.nvim",
 		event = "VeryLazy",
