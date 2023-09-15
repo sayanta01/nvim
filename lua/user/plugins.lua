@@ -35,6 +35,7 @@ require("lazy").setup({
 
 	{
 		"folke/noice.nvim",
+		lazy = true,
 		config = function()
 			require("user.noice")
 		end,
