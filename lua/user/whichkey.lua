@@ -128,8 +128,8 @@ local mappings = {
 		l = { ":lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 		p = { ":lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 		r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-		R = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 		s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+		R = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 		u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 		d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
 	},
@@ -213,13 +213,13 @@ local mappings = {
 		g = { ":lua require'dap'.session()<cr>", "Get Session" },
 		i = { ":lua require'dap'.step_into()<cr>", "Step Into" },
 		o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
-		O = { ":lua require'dap'.step_out()<cr>", "Step Out" },
+		u = { ":lua require'dap'.step_out()<cr>", "Step Out" },
 		p = { ":lua require'dap'.pause()<cr>", "Pause" },
 		r = { ":lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-		q = { ":lua require'dap'.close()<cr>", "Close" },
-		u = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
-		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
-		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
+		q = { ":lua require'dap'.close()<cr>", "Quit" },
+		U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
+		--[[ l = { ":lua require'dap'.run_last()<cr>", "Last Run" }, ]]
+		--[[ x = { ":lua require'dap'.terminate()<cr>", "Terminate" }, ]]
 	},
 	D = {
 		name = "Lang-Debug",
