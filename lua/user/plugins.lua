@@ -16,36 +16,7 @@ require("lazy").setup({
 	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
 	{ "nvim-tree/nvim-web-devicons", lazy = true },
 
-	-- Features --
-	{
-		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("user.lualine")
-		end,
-		event = "VeryLazy",
-	},
-
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			vim.notify = require("notify")
-			require("notify").setup({
-				timeout = 2000,
-				--[[ level = vim.log.levels.INFO, ]]
-				fps = 40,
-				icons = {
-					ERROR = "",
-					WARN = "",
-					INFO = "",
-					DEBUG = "",
-					TRACE = "✎",
-				},
-				stages = "fade", -- slide, static
-				render = "compact", -- minimal
-			})
-		end,
-	},
-
+	-- Preety --
 	{
 		"stevearc/dressing.nvim",
 		--[[ event = "VeryLazy", ]]
@@ -63,12 +34,33 @@ require("lazy").setup({
 	},
 
 	{
+		"folke/noice.nvim",
+		config = function()
+			require("user.noice")
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+
+	{
 		"goolord/alpha-nvim",
 		config = function()
 			require("user.alpha")
 		end,
 		--[[ cmd = "Alpha", ]]
 	},
+
+	{
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("user.lualine")
+		end,
+		event = "VeryLazy",
+	},
+
+	-- Features --
 
 	{
 		"lewis6991/gitsigns.nvim",
@@ -218,7 +210,6 @@ require("lazy").setup({
 			require("user.surround")
 		end,
 		event = "VeryLazy",
-		--[[ event = { "BufReadPre", "BufNewFile" }, ]]
 	},
 
 	{
@@ -314,7 +305,6 @@ require("lazy").setup({
 		config = function()
 			require("user.mason")
 		end,
-		--[[ cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" }, ]]
 		build = function()
 			pcall(function()
 				require("mason-registry").refresh()
