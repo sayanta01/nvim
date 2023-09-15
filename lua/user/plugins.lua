@@ -249,7 +249,7 @@ require("lazy").setup({
 
 	-- Cmp --
 	{
-		"hrsh7th/nvim-cmp",
+		"hrsh7th/nvim-cmp", -- check keymaps
 		event = "InsertEnter",
 		dependencies = {
 			{ "hrsh7th/cmp-nvim-lsp", lazy = true },
@@ -403,7 +403,7 @@ require("lazy").setup({
 
 	-- Debugger --
 	{
-		"mfussenegger/nvim-dap",
+		"mfussenegger/nvim-dap", -- do lazy_load
 		config = function()
 			require("user.dap")
 		end,
