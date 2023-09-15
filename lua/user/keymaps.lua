@@ -43,8 +43,9 @@ keymap("n", "<S-Left>", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<S-Right>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<S-b>", ":enew <CR>", opts)
 
--- Delete (not cut)
+-- Delete not cut
 keymap("n", "dd", '"_dd', opts)
+keymap("n", "x", '"_x', opts)
 
 -- Edit same word all together
 keymap("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
