@@ -477,6 +477,7 @@ require("lazy").setup({
 					},
 				},
 				delve = {
+					path = "dlv",
 					initialize_timeout_sec = 20,
 					port = "${port}",
 				},
