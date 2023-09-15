@@ -218,8 +218,8 @@ local mappings = {
 		r = { ":lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
 		q = { ":lua require'dap'.close()<cr>", "Quit" },
 		U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
-		--[[ l = { ":lua require'dap'.run_last()<cr>", "Last Run" }, ]]
-		--[[ x = { ":lua require'dap'.terminate()<cr>", "Terminate" }, ]]
+		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
+		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
 	},
 	D = {
 		name = "Lang-Debug",
