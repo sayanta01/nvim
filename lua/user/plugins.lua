@@ -49,7 +49,6 @@ require("lazy").setup({
 		config = function()
 			require("user.alpha")
 		end,
-		--[[ cmd = "Alpha", ]]
 	},
 
 	{
@@ -67,8 +66,6 @@ require("lazy").setup({
 		config = function()
 			require("user.gitsigns")
 		end,
-		--[[ cmd = "Gitsigns", ]]
-		--[[ event = "User FileOpened", ]]
 	},
 
 	{
@@ -223,7 +220,7 @@ require("lazy").setup({
 	{
 		"uga-rosa/ccc.nvim",
 		cmd = { "CccPick", "CccConvert", "CccHighlighterToggle" },
-		config = true,
+		--[[ config = true, ]]
 	},
 
 	{
@@ -345,14 +342,9 @@ require("lazy").setup({
 
 	{
 		"neovim/nvim-lspconfig",
-		lazy = true,
 		event = { "BufReadPre", "BufNewFile" },
+		lazy = true,
 	},
-
-	--[[ { ]]
-	--[[ 	"glepnir/lspsaga.nvim", ]]
-	--[[ 	event = "LspAttach", ]]
-	--[[ }, ]]
 
 	{
 		"jose-elias-alvarez/null-ls.nvim",
@@ -443,10 +435,10 @@ require("lazy").setup({
 
 	--[[ { ]]
 	--[[ 	"theHamsta/nvim-dap-virtual-text", ]]
-	--[[ 	lazy = true, ]]
 	--[[ 	config = function() ]]
 	--[[ 		require("nvim-dap-virtual-text").setup() ]]
 	--[[ 	end, ]]
+	--[[ 	lazy = true, ]]
 	--[[ }, ]]
 
 	{
