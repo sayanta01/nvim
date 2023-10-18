@@ -416,17 +416,15 @@ require("lazy").setup({
 	-- Debugger --
 	{
 		"mfussenegger/nvim-dap", -- do lazy_load
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			event = "VeryLazy",
+		},
 		config = function()
 			require("user.dap")
 		end,
+		cmd = { "DapUIToggle", "DapToggleRepl", "DapToggleBreakpoint" },
 		lazy = true,
-		dependencies = {
-			{
-				"rcarriga/nvim-dap-ui",
-				event = "VeryLazy",
-				lazy = true,
-			},
-		},
 	},
 
 	{
