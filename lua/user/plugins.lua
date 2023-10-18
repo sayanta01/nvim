@@ -116,6 +116,12 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-telescope/telescope-media-files.nvim",
 			--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }, ]]
+			{
+				"ThePrimeagen/refactoring.nvim",
+				config = function()
+					require("user.refactoring")
+				end,
+			},
 		},
 	},
 
@@ -147,8 +153,10 @@ require("lazy").setup({
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = { "BufReadPost", "BufNewFile" },
-		--[[ event = "BufReadPre", ]]
+		--[[ 	event = { "BufReadPost", "BufNewFile" }, ]]
+		config = function()
+			require("user.indentline")
+		end,
 	},
 
 	{
@@ -218,8 +226,16 @@ require("lazy").setup({
 		config = function()
 			require("user.surround")
 		end,
-		event = "VeryLazy",
+		keys = { "cs", "ds", "ys" },
 	},
+
+	--[[ { ]]
+	--[[ 	"kylechui/nvim-surround", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("user.surround") ]]
+	--[[ 	end, ]]
+	--[[ 	event = "VeryLazy", ]]
+	--[[ }, ]]
 
 	{
 		"akinsho/bufferline.nvim",
@@ -356,6 +372,9 @@ require("lazy").setup({
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 		lazy = true,
+		config = function()
+			require("user.lsp")
+		end,
 	},
 
 	{

@@ -7,11 +7,10 @@ configs.setup({
 	--[[ ensure_installed = "all", ]]
 	ensure_installed = {
 		"c",
-		"cpp",
-		"c_sharp",
+		--[[ "cpp", ]]
+		--[[ "c_sharp", ]]
 		"python",
 		"bash",
-		--[[ "awk", ]]
 		"json",
 		"lua",
 		"html",
@@ -30,10 +29,10 @@ configs.setup({
 		"gitignore",
 		--[[ "regex", ]]
 
+		"svelte",
+		--[[ "astro", ]]
 		--[[ "kotlin", ]]
 		--[[ "ruby", ]]
-		--[[ "astro", ]]
-		"svelte",
 
 		--[[ "yaml", ]]
 		--[[ "graphql", ]]

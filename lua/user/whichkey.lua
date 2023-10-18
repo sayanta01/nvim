@@ -167,12 +167,12 @@ local mappings = {
 		m = { ":Telescope marks<cr>", "Marks" },
 		--[[ f = { ":Telescope lsp_references<cr>", "References" }, ]]
 		--[[ h = { ":Telescope help_tags<cr>", "Find Help" }, ]]
-		--[[ H = { ":Telescope highlights<cr>", "Find Highlights" }, ]]
+		--[[ H = { ":Telescope highlights<Sr>", "Find Highlights" }, ]]
 	},
 
 	o = {
 		name = "Option",
-		s = { ":set spell!<cr>", "Toggle Spell Check" },
+		s = { ":set spell!<Sr>", "Toggle Spell Check" },
 		x = { ":!chmod +x %<cr>", "Chmod 󰐕X" },
 		c = { ":CccPick<cr>", "Color Picker" },
 		f = { ":CccConvert<cr>", "Change Color Format  " },
