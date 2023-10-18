@@ -38,7 +38,6 @@ local options = {
 	},
 	view = {
 		width = 29,
-		hide_root_folder = false,
 		side = "left",
 		number = false,
 		--[[ mappings = { ]]
