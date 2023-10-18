@@ -116,12 +116,12 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-telescope/telescope-media-files.nvim",
 			--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }, ]]
-			{
-				"ThePrimeagen/refactoring.nvim",
-				config = function()
-					require("user.refactoring")
-				end,
-			},
+			--[[ { ]]
+			--[[ 	"ThePrimeagen/refactoring.nvim", ]]
+			--[[ 	config = function() ]]
+			--[[ 		require("user.refactoring") ]]
+			--[[ 	end, ]]
+			--[[ }, ]]
 		},
 	},
 
@@ -157,6 +157,7 @@ require("lazy").setup({
 		config = function()
 			require("user.indentline")
 		end,
+		main = "ibl",
 	},
 
 	{
