@@ -4,4 +4,4 @@ if not status_ok then
 end
 
 require("user.lsp.handlers")
-require("user.lsp.null-ls")
+--[[ require("user.lsp.null-ls") ]]
