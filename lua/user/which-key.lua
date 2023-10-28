@@ -177,11 +177,11 @@ local mappings = {
 		c = { ":CccPick<cr>", "Color Picker" },
 		f = { ":CccConvert<cr>", "Change Color Format  " },
 		h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
-		n = { ":Notifications<cr>", "Show Notifications" },
 		l = { ":set cursorcolumn!<cr>", "Cursor Column" },
 		p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 		v = { ":VimBeGood<cr>", "Vim Practice" },
 		w = { ":set wrap!<cr>", "Toggle Wrap Text" },
+		--[[ n = { ":Notifications<cr>", "Show Notifications" }, ]]
 	},
 
 	p = {
@@ -206,20 +206,21 @@ local mappings = {
 	d = {
 		name = "Debug",
 		t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-		b = { ":lua require'dap'.step_back()<cr>", "Step Back" },
 		c = { ":lua require'dap'.continue()<cr>", "Continue" },
 		C = { ":lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-		d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
 		g = { ":lua require'dap'.session()<cr>", "Get Session" },
-		i = { ":lua require'dap'.step_into()<cr>", "Step Into" },
 		o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
+		i = { ":lua require'dap'.step_into()<cr>", "Step Into" },
 		u = { ":lua require'dap'.step_out()<cr>", "Step Out" },
 		p = { ":lua require'dap'.pause()<cr>", "Pause" },
 		r = { ":lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
 		q = { ":lua require'dap'.close()<cr>", "Quit" },
-		U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 		l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
 		x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
+
+		b = { ":lua require'dap'.step_back()<cr>", "Step Back" },
+		d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+		U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 	},
 	D = {
 		name = "Lang-Debug",
