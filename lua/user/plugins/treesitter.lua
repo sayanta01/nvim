@@ -37,7 +37,8 @@ return {
 					"java",
 					"dockerfile",
 					"gitignore",
-					--[[ "regex", ]]
+					"vim",
+					"regex",
 
 					"svelte",
 					--[[ "astro", ]]
