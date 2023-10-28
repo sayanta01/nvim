@@ -6,7 +6,7 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			--[[ "nvim-treesitter/nvim-treesitter-textobjects", ]]
-			{ "windwp/nvim-ts-autotag", event = "InsertEnter" },
+			"windwp/nvim-ts-autotag",
 			"hiphish/rainbow-delimiters.nvim",
 		},
 		config = function()
