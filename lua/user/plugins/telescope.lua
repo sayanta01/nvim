@@ -8,6 +8,21 @@ return {
 		--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }, ]]
 		"ThePrimeagen/harpoon",
 		{
+			"ahmedkhalf/project.nvim",
+			--[[ 	event = "VeryLazy", ]]
+			cmd = "Telescope",
+			config = function()
+				require("project_nvim").setup({
+					-- detection_methods = { "lsp", "pattern" }, NOTE: lsp detection will get annoying with multiple langs in one project
+					detection_methods = { "pattern" },
+					-- patterns used to detect root dir, when **"pattern"** is in detection_methods
+					patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
+					show_hidden = false,
+					-- when set to false, you will get a message when project.nvim changes your directory
+				})
+			end,
+		},
+		{
 			"ThePrimeagen/refactoring.nvim",
 			config = function()
 				require("refactoring").setup({
