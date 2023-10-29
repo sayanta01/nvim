@@ -58,6 +58,7 @@ keymap("n", "<C-v>", ":vsplit<CR>", opts)
 keymap("n", "<C-s>", ":split<CR>", opts)
 
 keymap("i", "jk", "<ESC>", opts)
+keymap("n", "<A-\\>", ":ToggleTerm<CR>", opts)
 
 -- Navigate in insert mode
 --[[ keymap("i", "<C-h>", "<Left>", opts) ]]
