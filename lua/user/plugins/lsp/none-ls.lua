@@ -14,11 +14,11 @@ return {
 
 		mason_null_ls.setup({
 			ensure_installed = {
-				"prettier",
-				"stylua",
-				"black",
-				"pylint",
-				"eslint_d",
+				--[[ "prettier", ]]
+				--[[ "stylua", ]]
+				--[[ "black", ]]
+				--[[ "pylint", ]]
+				--[[ "eslint_d", ]]
 			},
 		})
 

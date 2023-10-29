@@ -170,6 +170,15 @@ local mappings = {
 		--[[ H = { ":Telescope highlights<Sr>", "Find Highlights" }, ]]
 	},
 
+	h = {
+		name = "Harpoon",
+		h = { ":Telescope harpoon marks<cr>", "Telescope harpoon" },
+		--[[ t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "View all harpoon marks" }, ]]
+		m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark file with harpoon" },
+		n = { ":lua require('harpoon.ui').nav_next()<cr>", "Go to next harpoon mark" },
+		p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Go to previous harpoon mark" },
+	},
+
 	o = {
 		name = "Option",
 		s = { ":set spell!<Sr>", "Toggle Spell Check" },

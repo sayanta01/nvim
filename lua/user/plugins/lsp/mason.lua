@@ -58,13 +58,13 @@ return {
 
 				"svelte",
 			},
-			--[[ automatic_installation = true, ]]
+			automatic_installation = true,
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"stylua",
-				"luacheck", -- linting
+				--[[ "luacheck", -- linting ]]
 
 				"gofumpt",
 				"google-java-format",
@@ -73,7 +73,7 @@ return {
 				"phpcbf",
 
 				"markdownlint",
-				--[[ "sqlfluff", ]]
+				--[[ "sqlfluff", -- linting ]]
 
 				"prettier",
 				"eslint_d",

@@ -6,6 +6,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-media-files.nvim",
 		--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }, ]]
+		"ThePrimeagen/harpoon",
 		{
 			"ThePrimeagen/refactoring.nvim",
 			config = function()
@@ -42,9 +43,9 @@ return {
 
 		telescope.setup({
 			defaults = {
-				prompt_prefix = " ",
+				prompt_prefix = " ",
 				selection_caret = "❯ ",
-				--[[ prompt_prefix = "   ", ]]
+				--[[ prompt_prefix = "   ", ]]
 				--[[ selection_caret = "|> ", ]]
 				entry_prefix = "  ",
 				initial_mode = "insert",
@@ -180,7 +181,7 @@ return {
 			},
 		})
 
-		telescope.load_extension("media_files")
+		--[[ telescope.load_extension("media_files") ]]
 		telescope.load_extension("projects")
 		-- telescope.load_extension("fzf")
 	end,
