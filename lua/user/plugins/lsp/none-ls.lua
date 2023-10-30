@@ -14,6 +14,7 @@ return {
 
 		mason_null_ls.setup({
 			ensure_installed = {
+				"google_java_format",
 				"prettier",
 				"stylua",
 				"gofumpt",
@@ -44,7 +45,7 @@ return {
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
-				-- formatting.google_java_format,
+				formatting.google_java_format,
 				formatting.stylua,
 				formatting.gofumpt,
 				formatting.rustfmt,
