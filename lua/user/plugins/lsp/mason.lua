@@ -3,10 +3,10 @@ return {
 	cmd = "Mason",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
-		{
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
-		},
+		--[[ { ]]
+		--[[ 	"WhoIsSethDaniel/mason-tool-installer.nvim", ]]
+		--[[ 	cmd = { "MasonToolsInstall", "MasonToolsUpdate" }, ]]
+		--[[ }, ]]
 		--[[ "jay-babu/mason-nvim-dap.nvim", ]]
 	},
 	config = function()
@@ -15,7 +15,7 @@ return {
 
 		local mason_lspconfig = require("mason-lspconfig")
 
-		local mason_tool_installer = require("mason-tool-installer")
+		--[[ local mason_tool_installer = require("mason-tool-installer") ]]
 
 		mason.setup({
 			ui = {
@@ -64,31 +64,31 @@ return {
 			automatic_installation = true,
 		})
 
-		mason_tool_installer.setup({
-			ensure_installed = {
-				"stylua",
-				--[[ "luacheck", -- linting ]]
-
-				"gofumpt",
-				"google-java-format",
-
-				"yamlfmt",
-				"phpcbf",
-
-				"markdownlint",
-				--[[ "sqlfluff", -- linting ]]
-
-				"prettier",
-				"eslint_d",
-
-				"shfmt",
-				"shellcheck",
-
-				"isort",
-				"black",
-				"pylint",
-			},
-			--[[ run_on_start = true, ]]
-		})
+		--[[ mason_tool_installer.setup({ ]]
+		--[[ 	ensure_installed = { ]]
+		--[[ 		"stylua", ]]
+		--[[ 		-- "luacheck", -- linting ]]
+		--[[]]
+		--[[ 		"gofumpt", ]]
+		--[[ 		"google-java-format", ]]
+		--[[]]
+		--[[ 		"yamlfmt", ]]
+		--[[ 		"phpcbf", ]]
+		--[[]]
+		--[[ 		"markdownlint", ]]
+		--[[ 		-- "sqlfluff", -- linting ]]
+		--[[]]
+		--[[ 		"prettier", ]]
+		--[[ 		"eslint_d", ]]
+		--[[]]
+		--[[ 		"shfmt", ]]
+		--[[ 		"shellcheck", ]]
+		--[[]]
+		--[[ 		"isort", ]]
+		--[[ 		"black", ]]
+		--[[ 		"pylint", ]]
+		--[[ 	}, ]]
+		--[[ 	-- run_on_start = true, ]]
+		--[[ }) ]]
 	end,
 }
