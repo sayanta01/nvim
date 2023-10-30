@@ -41,8 +41,8 @@ return {
 			--[[ 	count = true, ]]
 			--[[ }, ]]
 			icons = {
-				breadcrumb = " ",
-				separator = " ",
+				breadcrumb = "»",
+				separator = "",
 				group = "󰐕",
 			},
 			popup_mappings = {
