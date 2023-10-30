@@ -23,7 +23,7 @@ return {
 				"shfmt",
 				"shellcheck",
 				"pylint",
-        "luacheck", -- linting
+				"luacheck", -- linting
 				"eslint_d",
 			},
 		})
@@ -53,7 +53,7 @@ return {
 				formatting.shfmt,
 				diagnostics.pylint,
 				diagnostics.shellcheck,
-        --[[ diagnostics.luacheck, ]]
+				--[[ diagnostics.luacheck, ]]
 				diagnostics.eslint_d,
 				--[[ diagnostics.eslint_d.with({ -- js/ts linter ]]
 				--[[ 	condition = function(utils) ]]

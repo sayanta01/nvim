@@ -47,7 +47,7 @@ return {
 				"tailwindcss",
 				"emmet_ls",
 				"sqlls",
-
+        "jdtls",
 				"gopls",
 				"clangd",
 				"pyright",

@@ -1,5 +1,5 @@
 return {
-	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
+	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" } },
 
 	--[[ { ]]
 	--[[ 	"kevinhwang91/nvim-ufo", -- configure this ]]
@@ -65,6 +65,7 @@ return {
 				"codelldb",
 				"delve",
 				"js",
+				"javadbg",
 			},
 			automatic_installation = true,
 			handlers = {},
