@@ -72,18 +72,6 @@ return {
 	},
 
 	{
-		"folke/which-key.nvim",
-		config = function()
-			require("user.which-key")
-		end,
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 299
-		end,
-	},
-
-	{
 		"b0o/SchemaStore.nvim",
 		version = false, -- last release is way too old
 		lazy = true,
