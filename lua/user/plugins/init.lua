@@ -1,17 +1,6 @@
 return {
 	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" } },
 
-	--[[ { ]]
-	--[[ 	"kevinhwang91/nvim-ufo", -- configure this ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("ufo").setup() ]]
-	--[[ 	end, ]]
-	--[[ 	event = { "VeryLazy", "LspAttach" }, ]]
-	--[[ 	dependencies = { ]]
-	--[[ 		"kevinhwang91/promise-async", ]]
-	--[[ 	}, ]]
-	--[[ }, ]]
-
 	{
 		"windwp/nvim-ts-autotag",
 		ft = {
@@ -93,7 +82,7 @@ return {
 				"javadbg",
 			},
 			automatic_installation = true,
-			handlers = {},
+			--[[ handlers = {}, ]]
 		},
 	},
 
