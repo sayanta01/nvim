@@ -1,6 +1,6 @@
 return {
 	"williamboman/mason.nvim",
-	cmd = "Mason",
+	cmd = { "Mason", "MasonInstall", "MasonUninstall" },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		--[[ { ]]
@@ -47,7 +47,7 @@ return {
 				"tailwindcss",
 				"emmet_ls",
 				"sqlls",
-        "jdtls",
+				"jdtls",
 				"gopls",
 				"clangd",
 				"pyright",

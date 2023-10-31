@@ -6,7 +6,7 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			--[[ "nvim-treesitter/nvim-treesitter-textobjects", ]]
-			"windwp/nvim-ts-autotag",
+			--[[ "windwp/nvim-ts-autotag", ]]
 			"hiphish/rainbow-delimiters.nvim",
 		},
 		config = function()
@@ -57,7 +57,7 @@ return {
 					additional_vim_regex_highlighting = true,
 				},
 				indent = { enable = true, disable = { "yaml" } },
-				autotag = { enable = true },
+				--[[ autotag = { enable = true }, -- for autotag plugin ]]
 
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				context_commentstring = {

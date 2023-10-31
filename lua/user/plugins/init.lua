@@ -13,6 +13,29 @@ return {
 	--[[ }, ]]
 
 	{
+		"windwp/nvim-ts-autotag",
+		ft = {
+			"html",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+			"svelte",
+			"tsx",
+			"jsx",
+			"xml",
+			"php",
+			"markdown",
+			"astro",
+		},
+		config = function()
+			require("nvim-ts-autotag").setup({
+				skip_tags = "",
+			})
+		end,
+	},
+
+	{
 		"mfussenegger/nvim-dap-python",
 		ft = "python",
 		config = function()
