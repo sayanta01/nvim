@@ -5,7 +5,7 @@ return {
 
 	config = function()
 		local highlight = {
-			--[[ "CursorColumn", ]]
+			--	"CursorColumn",
 			"Whitespace",
 		}
 		require("ibl").setup({
