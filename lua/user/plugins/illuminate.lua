@@ -1,6 +1,7 @@
 return {
 	"RRethy/vim-illuminate",
-	event = { "VeryLazy", "LspAttach" },
+	--[[ event = { "VeryLazy", "LspAttach" }, ]]
+	event = { "BufNewFile", "BufReadPost" },
 	config = function()
 		require("illuminate").configure({
 			-- providers: provider used to get references in the buffer, ordered by priority
