@@ -35,6 +35,10 @@ return {
 
 		local config = {
 			options = {
+				disabled_filetypes = {
+					statusline = { "toggleterm", "alpha" },
+					winbar = {},
+				},
 				-- Disable sections and component separators
 				component_separators = "",
 				--[[ component_separators = { left = " ", right = " " }, ]]
