@@ -24,9 +24,9 @@ return {
 				highlight = "Search",
 				highlight_grey = "Comment",
 			},
-			enable_moveright = true,
 			-- disable when recording or executing a macro
 			disable_in_macro = false,
+			enable_moveright = true,
 			-- add bracket pairs after a quote
 			enable_afterquote = true,
 			-- map the <BS> key
@@ -47,7 +47,7 @@ return {
 		end
 
 		-- make autopairs and completion work together
-		--[[ 	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done()) ]]
+		--[[ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done()) ]]
 		cmp.setup({
 			event = {
 				on_confirm_done = cmp_autopairs.on_confirm_done(),

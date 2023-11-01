@@ -2,7 +2,7 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
 	event = "User DirOpened",
-	cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFileToggle" },
+	cmd = { "NvimTreeToggle" },
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local nvimtree = require("nvim-tree")

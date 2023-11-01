@@ -10,7 +10,7 @@ return {
 
 		local null_ls = require("null-ls")
 
-		local null_ls_utils = require("null-ls.utils")
+		--[[ local null_ls_utils = require("null-ls.utils") ]]
 
 		mason_null_ls.setup({
 			ensure_installed = {
@@ -37,7 +37,7 @@ return {
 
 		null_ls.setup({
 			-- add package.json as identifier for root (for typescript monorepos)
-			root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
+			--[[ root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"), ]]
 			-- setup formatters & linters
 			sources = {
 				--  to disable file types use

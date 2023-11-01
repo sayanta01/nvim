@@ -97,7 +97,7 @@ return {
 				generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 				path_display = { "smart" },
 				winblend = 0,
-				--[[ border = {}, ]]
+				border = {},
 				--[[ borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, ]]
 				color_devicons = true,
 				use_less = true,

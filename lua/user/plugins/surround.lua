@@ -1,6 +1,7 @@
 return {
 	"kylechui/nvim-surround",
 	version = "*", -- Use for stability; omit to use `main` branch for the latest features
+	event = "VeryLazy",
 	keys = { "cs", "ds", "ys" },
 	config = function()
 		require("nvim-surround").setup({
@@ -16,6 +17,7 @@ return {
 				--[[ visual_line = "gS", ]]
 				delete = "ds",
 				change = "cs", -- cst <change tags>
+				change_line = "cS",
 			},
 		})
 	end,
