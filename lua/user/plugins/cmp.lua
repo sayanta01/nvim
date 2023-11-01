@@ -41,11 +41,11 @@ return {
 			--[[ Text = "", ]]
 			Method = "",
 			--[[ Method = "", ]]
-			Function = "",
+			Function = "ƒ",
 			Constructor = "",
 			Field = "",
 			--[[ Field = "", ]]
-			Variable = "",
+			Variable = "",
 			Class = "",
 			--[[ Class = "", ]]
 			Interface = "",
@@ -70,7 +70,7 @@ return {
 			--[[ Constant = "", ]]
 			Struct = "פּ",
 			--[[ Struct = "", ]]
-			Event = "",
+			Event = "🗲",
 			Operator = "󱖦",
 			TypeParameter = "𝙏",
 			--[[ TypeParameter = "", ]]
@@ -80,7 +80,7 @@ return {
 			--[[ String = "", ]]
 			Number = "",
 			Boolean = "◩",
-			Array = "",
+			Array = "",
 			Object = "",
 			Key = "",
 			Null = "",
