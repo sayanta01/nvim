@@ -17,7 +17,7 @@ return {
 				--[[ visual_line = "gS", ]]
 				delete = "ds",
 				change = "cs", -- cst <change tags>
-				change_line = "cS",
+				--[[ change_line = "cS", ]]
 			},
 		})
 	end,
