@@ -15,7 +15,7 @@ return {
 				highlight = highlight,
 				remove_blankline_trail = false,
 			},
-			scope = { enabled = true },
+			scope = { enabled = true, show_start = false },
 			exclude = { filetypes = { "dashboard", "toggleterm" } },
 		})
 	end,
