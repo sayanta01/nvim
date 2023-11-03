@@ -107,7 +107,7 @@ return {
 		end,
 	},
 
-	{ "christoomey/vim-tmux-navigator", event = "VeryLazy" }, -- tmux & split window navigation
+	--[[ { "christoomey/vim-tmux-navigator", event = "VeryLazy" }, -- tmux & split window navigation ]]
 
 	--[[ "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion) ]]
 }
