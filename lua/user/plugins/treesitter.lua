@@ -2,7 +2,6 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		version = false,
-		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		dependencies = {
 			--[[ "nvim-treesitter/nvim-treesitter-textobjects", ]]
