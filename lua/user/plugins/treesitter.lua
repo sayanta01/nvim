@@ -3,6 +3,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		version = false,
 		build = ":TSUpdate",
+		event = "User FileOpened",
 		dependencies = {
 			--[[ "nvim-treesitter/nvim-treesitter-textobjects", ]]
 			--[[ "windwp/nvim-ts-autotag", ]]
