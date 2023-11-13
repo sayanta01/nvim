@@ -25,10 +25,11 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 	ui = {
 		border = "rounded",
 		icons = {
-			config = "",
-			event = "",
+			config = " ",
+			event = "🗲",
 			init = " ",
 			import = " ",
+			plugin = " ",
 			start = "|>",
 			task = " ",
 			list = {
