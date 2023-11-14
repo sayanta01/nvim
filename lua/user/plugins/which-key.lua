@@ -59,7 +59,7 @@ return {
 			layout = {
 				height = { min = 4, max = 24 },
 				width = { min = 20, max = 50 },
-				spacing = 2,
+				spacing = 4,
 				align = "left",
 			},
 			ignore_missing = true,
