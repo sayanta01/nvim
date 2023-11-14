@@ -37,7 +37,7 @@ return {
 			EnumMember = "",
 			Struct = "פּ",
 			Event = "🗲",
-			Operator = "+",
+			Operator = "󰆕",
 			TypeParameter = "",
 		},
 	},

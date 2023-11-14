@@ -43,7 +43,7 @@ return {
 				EnumMember = { icon = "", hl = "@field" },
 				Struct = { icon = "פּ", hl = "@type" },
 				Event = { icon = "🗲", hl = "@type" },
-				Operator = { icon = "+", hl = "@operator" },
+				Operator = { icon = "󰆕", hl = "@operator" },
 				TypeParameter = { icon = "", hl = "@parameter" },
 				Component = { icon = "", hl = "@function" },
 				Fragment = { icon = "", hl = "@constant" },

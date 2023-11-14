@@ -66,7 +66,7 @@ return {
 			Struct = "פּ",
 			--[[ Struct = "", ]]
 			Event = "🗲",
-			Operator = "+",
+			Operator = "󰆕",
 			TypeParameter = "",
 			Namespace = "",
 			Package = "",
