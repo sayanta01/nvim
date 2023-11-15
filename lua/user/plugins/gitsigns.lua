@@ -1,41 +1,17 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	event = { "BufReadPre", "BufNewFile" },
-	--[[ config = true, ]]
 	config = function()
 		local gitsigns = require("gitsigns")
 		gitsigns.setup({
 			signs = {
-				add = { text = "樂" },
+				add = { text = "󰐕" },
 				change = { text = "▏" },
 				delete = { text = "_" },
 				topdelete = { text = "‾" },
 				changedelete = { text = "~" },
 				untracked = { text = "" },
 			},
-
-			--[[ signs = { ]]
-			--[[ add = { hl = "GitSignsAdd", text = "樂", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" }, ]]
-			--[[ change = { ]]
-			--[[ 	hl = "GitSignsChange", ]]
-			--[[ 	text = "▏", ]]
-			--[[ 	numhl = "GitSignsChangeNr", ]]
-			--[[ 	linehl = "GitSignsChangeLn", ]]
-			--[[ }, ]]
-			--[[ delete = { hl = "GitSignsDelete", text = "_", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" }, ]]
-			--[[ topdelete = { ]]
-			--[[ 	hl = "GitSignsDelete", ]]
-			--[[ 	text = "‾", ]]
-			--[[ 	numhl = "GitSignsDeleteNr", ]]
-			--[[ 	linehl = "GitSignsDeleteLn", ]]
-			--[[ }, ]]
-			--[[ changedelete = { ]]
-			--[[ 	hl = "GitSignsChange", ]]
-			--[[ 	text = "~", ]]
-			--[[ 	numhl = "GitSignsChangeNr", ]]
-			--[[ 	linehl = "GitSignsChangeLn", ]]
-			--[[ }, ]]
-			--[[ }, ]]
 
 			signcolumn = true,
 			numhl = false,
