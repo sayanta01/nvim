@@ -22,8 +22,8 @@ return {
 			Field = "",
 			Constructor = "",
 			Enum = "ℰ",
-			Interface = "",
-			--[[ Interface = "", ]]
+			--[[ Interface = "", ]]
+			Interface = "",
 			Function = "ƒ",
 			Variable = "",
 			Constant = "",

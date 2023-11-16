@@ -29,7 +29,7 @@ return {
 				Field = { icon = "", hl = "@field" },
 				Constructor = { icon = "", hl = "@constructor" },
 				Enum = { icon = "ℰ", hl = "@type" },
-				Interface = { icon = "", hl = "@type" },
+				Interface = { icon = "", hl = "@type" },
 				Function = { icon = "ƒ", hl = "@function" },
 				Variable = { icon = "", hl = "@constant" },
 				Constant = { icon = "", hl = "@constant" },

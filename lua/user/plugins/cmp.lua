@@ -45,8 +45,7 @@ return {
 			Field = "",
 			Variable = "",
 			Class = "",
-			Interface = "",
-			--[[ Interface = "", ]]
+			Interface = "",
 			Module = "󱒌",
 			Property = "",
 			--[[ Property = "ﰠ", ]]
