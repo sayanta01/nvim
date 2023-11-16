@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- Set wrap and spell in markdown and gitcommit
+-- Set wrap & spell in markdown and gitcommit
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
@@ -18,7 +18,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
+-- Quit nvimTree when not any file opened
+--[[ vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif") ]]
 
 -- Don't auto commenting new lines
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
