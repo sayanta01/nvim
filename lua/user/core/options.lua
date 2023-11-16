@@ -37,7 +37,6 @@ opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
 opt.termguicolors = true
-opt.conceallevel = 3 -- hide * markup for bold and italic
 
 -- know this
 opt.fileencoding = "utf-8"

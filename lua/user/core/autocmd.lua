@@ -9,17 +9,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- Remove statusline and tabline when in Alpha
---[[ vim.api.nvim_create_autocmd({ "User" }, { ]]
---[[ 	pattern = { "AlphaReady" }, ]]
---[[ 	callback = function() ]]
---[[ 		vim.cmd([[ ]]
---[[       set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2 ]]
---[[ set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3 ]]
---   ]])
---[[ 	end, ]]
---[[ }) ]]
-
 -- Set wrap and spell in markdown and gitcommit
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
@@ -66,3 +55,11 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 -- Comment function for json
 vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")
+
+-- Disable the concealing in some file formats
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "json", "jsonc", "markdown" },
+	callback = function()
+		vim.opt.conceallevel = 0
+	end,
+})
