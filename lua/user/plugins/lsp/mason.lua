@@ -58,7 +58,6 @@ return {
 				"graphql",
 				"jsonls",
 				"yamlls",
-
 				"svelte",
 			},
 			automatic_installation = true,

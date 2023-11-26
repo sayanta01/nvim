@@ -1,6 +1,5 @@
 return {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
-	--[[ lazy = true, ]]
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
@@ -24,7 +23,6 @@ return {
 				"shfmt",
 				"shellcheck",
 				"pylint",
-				"luacheck", -- linting
 				"eslint_d",
 			},
 		})
@@ -52,9 +50,8 @@ return {
 				formatting.isort,
 				formatting.black,
 				formatting.shfmt,
+        diagnostics.shellcheck,
 				diagnostics.pylint,
-				diagnostics.shellcheck,
-				--[[ diagnostics.luacheck, ]]
 				diagnostics.eslint_d,
 				--[[ diagnostics.eslint_d.with({ -- js/ts linter ]]
 				--[[ 	condition = function(utils) ]]
