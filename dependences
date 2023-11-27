@@ -74,5 +74,5 @@ pip install pynvim
 # rustup component add rust-analyzer rustfmt # run this in project directory, maybe it's not necessary
 
 ## kotlin setup
-curl -s "https://get.sdkman.io" | bash
+# curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin # run this
