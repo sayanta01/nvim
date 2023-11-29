@@ -37,8 +37,7 @@ return {
 		end
 
 		local kind_icons = {
-			Text = "",
-			--[[ Text = "", ]]
+			Text = "", -- 
 			Method = "",
 			Function = "ƒ",
 			Constructor = "",
@@ -47,23 +46,19 @@ return {
 			Class = "",
 			Interface = "",
 			Module = "󱒌",
-			Property = "",
-			--[[ Property = "ﰠ", ]]
+			Property = "", -- ﰠ
 			Unit = " ",
 			Value = "",
-			Enum = "ℰ",
-			--[[ Enum = "練", ]]
+			Enum = "ℰ", -- 練
 			Keyword = "",
-			Snippet = "",
+			Snippet = "", -- 
 			Color = "",
 			File = "",
-			Reference = "",
-			--[[ Reference = "", ]]
+			Reference = "", -- 
 			Folder = "",
 			EnumMember = "",
 			Constant = "",
-			Struct = "פּ",
-			--[[ Struct = "", ]]
+			Struct = "פּ", -- 
 			Event = "🗲",
 			Operator = "󰆕",
 			TypeParameter = "",
