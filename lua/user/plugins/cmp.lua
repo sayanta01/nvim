@@ -51,14 +51,14 @@ return {
 			Value = "",
 			Enum = "ℰ", -- 練
 			Keyword = "",
-			Snippet = "", -- 
+			Snippet = "",
 			Color = "",
 			File = "",
 			Reference = "", -- 
 			Folder = "",
 			EnumMember = "",
 			Constant = "",
-			Struct = "פּ", -- 
+			Struct = "פּ",
 			Event = "🗲",
 			Operator = "󰆕",
 			TypeParameter = "",
@@ -76,11 +76,9 @@ return {
 			--[[ Value = "", ]]
 			--[[ List = "", ]]
 			--[[ Dashboard = " ", ]]
-			--[[ NewFile = " ", ]]
 			--[[ Diff = " ", ]]
 			--[[ Misc = " ", ]]
 			--[[ Reference = " ", ]]
-			--[[ Robot = "ﮧ", ]]
 			--[[ CloudDownload = "", ]]
 		}
 

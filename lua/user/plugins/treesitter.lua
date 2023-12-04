@@ -38,16 +38,12 @@ return {
 					"dockerfile",
 					"gitignore",
 					"vim",
-					"regex",
 
 					"svelte",
 					--[[ "astro", ]]
-					--[[ "kotlin", ]]
 					--[[ "ruby", ]]
-
 					"yaml",
 					"graphql",
-					--[[ "prisma", ]]
 				},
 				sync_install = false,
 				-- List of parsers to ignore installing (or "all")

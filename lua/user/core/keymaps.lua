@@ -60,12 +60,6 @@ keymap("n", "<C-s>", ":split<CR>", opts)
 keymap("i", "jk", "<ESC>", opts)
 keymap("n", "<A-\\>", ":ToggleTerm<CR>", opts)
 
--- Navigate in insert mode
---[[ keymap("i", "<C-h>", "<Left>", opts) ]]
---[[ keymap("i", "<C-l>", "<Right>", opts) ]]
---[[ keymap("i", "<C-j>", "<Down>", opts) ]]
---[[ keymap("i", "<C-k>", "<Up>", opts) ]]
-
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -73,7 +67,7 @@ keymap("v", ">", ">gv", opts)
 -- Better paste
 keymap("x", "p", '"_dP', opts)
 
--- Move text up and down
+-- Move text up & down
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
