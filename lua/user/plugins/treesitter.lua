@@ -38,6 +38,7 @@ return {
 					"dockerfile",
 					"gitignore",
 					"vim",
+					"regex",
 
 					"svelte",
 					--[[ "astro", ]]
