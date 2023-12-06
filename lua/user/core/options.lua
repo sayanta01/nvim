@@ -36,16 +36,16 @@ opt.confirm = true
 opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
+opt.signcolumn = "yes"
 opt.termguicolors = true
 
--- know this
+-- misc
 opt.fileencoding = "utf-8"
-opt.signcolumn = "yes"
 opt.writebackup = false
 opt.backup = false
 opt.hidden = true
 opt.undofile = true
-opt.updatetime = 260
+opt.updatetime = 120
 opt.completeopt = { "menuone", "noselect" }
 
 -- Disable nvim intro
