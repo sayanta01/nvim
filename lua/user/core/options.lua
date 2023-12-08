@@ -36,8 +36,11 @@ opt.confirm = true
 opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
-opt.signcolumn = "yes"
 opt.termguicolors = true
+opt.signcolumn = "yes"
+
+-- disable mouse
+opt.mouse = ""
 
 -- misc
 opt.fileencoding = "utf-8"
@@ -48,12 +51,17 @@ opt.undofile = true
 opt.updatetime = 120
 opt.completeopt = { "menuone", "noselect" }
 
--- Disable nvim intro
+-- folding using treesitter
+--[[ opt.foldlevel = 20 ]]
+--[[ opt.foldmethod = "expr" ]]
+--[[ opt.foldexpr = "nvim_treesitter#foldexpr()" ]]
+
+-- disable nvim intro
 opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
 opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,],h,l")
 
--- Disable builtin plugins
+-- disable builtin plugins
 local disabled_built_ins = {
 	--[[ "netrw", ]]
 	--[[ "netrwPlugin", ]]

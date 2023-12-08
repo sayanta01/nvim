@@ -39,7 +39,6 @@ return {
 			dashboard.button("r", "󱑓  Recent files", ":Telescope oldfiles <CR>"),
 			dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
 			dashboard.button("h", "  Check health", ":checkhealth<CR>"),
-			--[[ dashboard.button("c", "  Config", ":e $MYVIMRC | :cd %:p:h <CR>"), ]]
 			dashboard.button("q", "  quit", ":qa<CR>"),
 		}
 
