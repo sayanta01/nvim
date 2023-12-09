@@ -57,7 +57,7 @@ return {
 			Reference = "", -- 
 			Folder = "",
 			EnumMember = "",
-			Constant = "",
+			Constant = "󰏿",
 			Struct = "פּ",
 			Event = "🗲",
 			Operator = "󰆕",

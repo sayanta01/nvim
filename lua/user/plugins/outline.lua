@@ -48,7 +48,7 @@ return {
 				Interface = { icon = "", hl = "@type" },
 				Function = { icon = "ƒ", hl = "@function" },
 				Variable = { icon = "", hl = "@constant" },
-				Constant = { icon = "", hl = "@constant" },
+				Constant = { icon = "󰏿", hl = "@constant" },
 				String = { icon = "", hl = "@string" },
 				Number = { icon = "", hl = "@number" },
 				Boolean = { icon = "◩", hl = "@boolean" },

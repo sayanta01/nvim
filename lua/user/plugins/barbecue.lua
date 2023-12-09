@@ -25,7 +25,7 @@ return {
 			Interface = "",
 			Function = "ƒ",
 			Variable = "",
-			Constant = "",
+			Constant = "󰏿",
 			String = "",
 			Number = "",
 			Boolean = "◩",
