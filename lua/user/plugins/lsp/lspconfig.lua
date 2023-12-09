@@ -69,11 +69,10 @@ return {
 			severity_sort = true,
 			float = {
 				focusable = true,
-				style = "minimal",
 				border = "rounded",
 				source = "always",
-				prefix = "",
-				--[[ scope = "cursor", ]]
+				prefix = " ",
+				-- scope = "cursor",
 			},
 		}
 		vim.diagnostic.config(config)

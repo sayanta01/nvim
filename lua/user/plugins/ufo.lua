@@ -1,6 +1,5 @@
 return {
-	"kevinhwang91/nvim-ufo",
-	-- event = "BufRead",
+	"kevinhwang91/nvim-ufo", -- fix: highlight while unfold
 	cmd = "UfoAttach",
 	dependencies = {
 		"kevinhwang91/promise-async",
@@ -25,12 +24,6 @@ return {
 		vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 		vim.o.foldlevelstart = 99
 		vim.o.foldenable = true
-
-		-- local capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- capabilities.textDocument.foldingRange = {
-		-- 	dynamicRegistration = false,
-		-- 	lineFoldingOnly = true,
-		-- }
 
 		require("ufo").setup({
 			close_fold_kinds = { "imports", "comment" },

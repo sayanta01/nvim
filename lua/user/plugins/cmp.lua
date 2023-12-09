@@ -46,7 +46,7 @@ return {
 			Class = "",
 			Interface = "",
 			Module = "󱒌",
-			Property = "", -- ﰠ
+			Property = "",
 			Unit = " ",
 			Value = "",
 			Enum = "ℰ", -- 練
@@ -54,7 +54,7 @@ return {
 			Snippet = "",
 			Color = "",
 			File = "",
-			Reference = "", -- 
+			Reference = "", -- 
 			Folder = "",
 			EnumMember = "",
 			Constant = "",
@@ -71,15 +71,9 @@ return {
 			Object = "⦿",
 			Key = "",
 			Null = "",
-			--  Extra icons
-			--[[ Tag = "", ]]
-			--[[ Value = "", ]]
-			--[[ List = "", ]]
-			--[[ Dashboard = " ", ]]
+			-- [[ Extra icons ]]
 			--[[ Diff = " ", ]]
 			--[[ Misc = " ", ]]
-			--[[ Reference = " ", ]]
-			--[[ CloudDownload = "", ]]
 		}
 
 		cmp.setup({
@@ -136,10 +130,10 @@ return {
 			-- sources for autocompletion
 			sources = {
 				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "nvim_lua" },
-				{ name = "luasnip" },
 				{ name = "spell" },
 				{ name = "calc" },
 			},
@@ -154,8 +148,8 @@ return {
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snip]",
 						buffer = "[Buf]",
-						nvim_lua = "[LSP_Lua]",
 						path = "[Path]",
+						nvim_lua = "[LSP_Lua]",
 						spell = "[Spell]",
 						calc = "[Calc]",
 					})[entry.source.name]

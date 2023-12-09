@@ -4,21 +4,19 @@ return {
 	cmd = "Telescope",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-telescope/telescope-media-files.nvim",
-		--[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }, ]]
 		"ThePrimeagen/harpoon",
+		-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"nvim-telescope/telescope-media-files.nvim",
 		{
 			"ahmedkhalf/project.nvim",
-			--[[ 	event = "VeryLazy", ]]
-			cmd = "Telescope",
 			config = function()
 				require("project_nvim").setup({
 					-- detection_methods = { "lsp", "pattern" }, NOTE: lsp detection will get annoying with multiple langs in one project
 					detection_methods = { "pattern" },
 					-- patterns used to detect root dir, when **"pattern"** is in detection_methods
 					patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
-					show_hidden = false,
-					-- when set to false, you will get a message when project.nvim changes your directory
+					show_hidden = false, -- Show hidden files in telescope
+					silent_chdir = true, -- When set to false, you will get a message when project.nvim changes your directory
 				})
 			end,
 		},
@@ -73,7 +71,7 @@ return {
 					horizontal = {
 						preview_width = function(_, cols, _)
 							if cols < 120 then
-								return math.floor(cols * 0.5)
+								return math.floor(cols * 0.4)
 							end
 							return math.floor(cols * 0.6)
 						end,
@@ -98,9 +96,8 @@ return {
 				path_display = { "smart" },
 				winblend = 0,
 				border = {},
-				--[[ borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, ]]
+				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 				color_devicons = true,
-				use_less = true,
 				set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
 				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
@@ -196,8 +193,8 @@ return {
 			},
 		})
 
-		--[[ telescope.load_extension("media_files") ]]
 		telescope.load_extension("projects")
+		telescope.load_extension("media_files")
 		-- telescope.load_extension("fzf")
 	end,
 }

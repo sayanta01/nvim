@@ -28,6 +28,7 @@ return {
 				},
 			},
 			messages = {
+				-- NOTE: If you enable messages, then the cmdline is enabled automatically
 				enabled = false,
 				view = "notify",
 				view_error = "notify",
@@ -48,6 +49,7 @@ return {
 			-- You can add any custom commands below that will be available with `:Noice command`
 			commands = {
 				history = {
+					-- options for the message history that you get with `:Noice`
 					view = "split",
 					opts = { enter = true, format = "details" },
 					filter = {
@@ -60,6 +62,7 @@ return {
 						},
 					},
 				},
+				-- :Noice last
 				last = {
 					view = "popup",
 					opts = { enter = true, format = "details" },
@@ -74,6 +77,7 @@ return {
 					},
 					filter_opts = { count = 1 },
 				},
+				-- :Noice errors
 				errors = {
 					view = "popup",
 					opts = { enter = true, format = "details" },
@@ -82,6 +86,7 @@ return {
 				},
 			},
 			notify = {
+				-- Noice can be used as `vim.notify` so you can route any notification like other messages
 				enabled = true,
 				view = "notify",
 			},

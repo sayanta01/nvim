@@ -9,8 +9,6 @@ return {
 
 		local null_ls = require("null-ls")
 
-		--[[ local null_ls_utils = require("null-ls.utils") ]]
-
 		mason_null_ls.setup({
 			ensure_installed = {
 				"google_java_format",
@@ -50,7 +48,7 @@ return {
 				formatting.isort,
 				formatting.black,
 				formatting.shfmt,
-        diagnostics.shellcheck,
+				diagnostics.shellcheck,
 				diagnostics.pylint,
 				diagnostics.eslint_d,
 				--[[ diagnostics.eslint_d.with({ -- js/ts linter ]]

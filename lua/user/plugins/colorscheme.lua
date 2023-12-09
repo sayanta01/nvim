@@ -1,7 +1,7 @@
 return {
-	"lunarvim/lunar.nvim",
+	"rose-pine/neovim",
 	dependencies = {
-		"rose-pine/neovim",
+		"lunarvim/lunar.nvim",
 		--[[ "B4mbus/oxocarbon-lua.nvim", ]]
 		--[[ "olimorris/onedarkpro.nvim", ]]
 		--[[ "RRethy/nvim-base16", ]]

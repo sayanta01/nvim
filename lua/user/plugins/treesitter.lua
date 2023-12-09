@@ -6,15 +6,36 @@ return {
 		event = "User FileOpened",
 		dependencies = {
 			--[[ "nvim-treesitter/nvim-treesitter-textobjects", ]]
-			--[[ "windwp/nvim-ts-autotag", ]]
 			"hiphish/rainbow-delimiters.nvim",
 		},
+		{
+			"windwp/nvim-ts-autotag",
+			ft = {
+				"html",
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+        "tsx",
+        "jsx",
+				"svelte",
+				"xml",
+				"php",
+				"markdown",
+				"astro",
+			},
+			config = function()
+				require("nvim-ts-autotag").setup({
+					skip_tags = "",
+				})
+			end,
+		},
+
 		config = function()
 			-- import treesitter
 			local treesitter = require("nvim-treesitter.configs")
 
 			treesitter.setup({ -- enable syntax highlighting
-				--[[ ensure_installed = "all", ]]
 				ensure_installed = {
 					"c",
 					--[[ "cpp", ]]
@@ -22,6 +43,7 @@ return {
 					"python",
 					"bash",
 					"json",
+          "yaml",
 					"lua",
 					"html",
 					"css",
@@ -30,25 +52,20 @@ return {
 					"tsx",
 					"php",
 					"sql",
-					"go",
-					"rust",
 					"markdown",
 					"markdown_inline",
+					"go",
+					"rust",
 					"java",
 					"dockerfile",
 					"gitignore",
 					"vim",
 					"regex",
-
 					"svelte",
-					--[[ "astro", ]]
-					--[[ "ruby", ]]
-					"yaml",
 					"graphql",
 				},
 				sync_install = false,
-				-- List of parsers to ignore installing (or "all")
-				ignore_install = {},
+				ignore_install = {}, -- List of parsers to ignore installing (or "all")
 				highlight = {
 					enable = true,
 					disable = { "latex" },
@@ -63,12 +80,12 @@ return {
 					additional_vim_regex_highlighting = true,
 				},
 				indent = { enable = true, disable = { "yaml" } },
-				--[[ autotag = { enable = true }, -- for autotag plugin ]]
+				autotag = { enable = false }, -- for autotag plugin
 
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-				context_commentstring = {
+				ts_context_commentstring = {
 					enable = true,
-					--[[ enable_autocmd = false, ]]
+					enable_autocmd = false,
 				},
 			})
 		end,

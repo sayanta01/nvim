@@ -13,7 +13,8 @@ return {
 				javascript = { "template_string" }, -- don't add pairs in javascript template_string treesitter nodes
 				java = false, -- don't check treesitter on java
 			},
-			disable_filetype = { "TelescopePrompt", "spectre_panel", "vim" },
+			disable_filetype = { "TelescopePrompt", "spectre_panel" },
+			-- change default fast_wrap
 			fast_wrap = {
 				map = "<M-e>",
 				chars = { "{", "[", "(", '"', "'" },
@@ -24,18 +25,12 @@ return {
 				highlight = "Search",
 				highlight_grey = "Comment",
 			},
-			-- disable when recording or executing a macro
-			disable_in_macro = false,
+			disable_in_macro = false, -- disable when recording or executing a macro
 			enable_moveright = true,
-			-- add bracket pairs after a quote
-			enable_afterquote = true,
-			-- map the <BS> key
-			map_bs = true,
-			-- map <c-w> to delete a pair if possible
-			map_c_w = false,
-			-- disable when inserting after visual block mode
-			disable_in_visualblock = false,
-			-- change default fast_wrap
+			enable_afterquote = true, -- add bracket pairs after a quote
+			map_bs = false, -- Map the <C-h> key to delete a pair
+			map_c_w = false, -- map <c-w> to delete a pair if possible
+			disable_in_visualblock = false, -- disable when inserting after visual block mode
 		})
 
 		-- import nvim-autopairs completion functionality
@@ -46,8 +41,8 @@ return {
 			return
 		end
 
-		-- make autopairs and completion work together
-		--[[ cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done()) ]]
+		-- [[ make autopairs and completion work together ]]
+		-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		cmp.setup({
 			event = {
 				on_confirm_done = cmp_autopairs.on_confirm_done(),

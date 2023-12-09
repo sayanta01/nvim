@@ -1,28 +1,28 @@
 return {
 	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" } },
 
-	{
-		"windwp/nvim-ts-autotag",
-		ft = {
-			"html",
-			"javascript",
-			"typescript",
-			"javascriptreact",
-			"typescriptreact",
-			"svelte",
-			"tsx",
-			"jsx",
-			"xml",
-			"php",
-			"markdown",
-			"astro",
-		},
-		config = function()
-			require("nvim-ts-autotag").setup({
-				skip_tags = "",
-			})
-		end,
-	},
+	-- {
+	-- 	"windwp/nvim-ts-autotag",
+	-- 	ft = {
+	-- 		"html",
+	-- 		"javascript",
+	-- 		"typescript",
+	-- 		"javascriptreact",
+	-- 		"typescriptreact",
+	-- 		"svelte",
+	-- 		"tsx",
+	-- 		"jsx",
+	-- 		"xml",
+	-- 		"php",
+	-- 		"markdown",
+	-- 		"astro",
+	-- 	},
+	-- 	config = function()
+	-- 		require("nvim-ts-autotag").setup({
+	-- 			skip_tags = "",
+	-- 		})
+	-- 	end,
+	-- },
 
 	{ "tpope/vim-fugitive", cmd = { "G", "Git" } },
 

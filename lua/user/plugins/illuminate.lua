@@ -1,6 +1,6 @@
 return {
 	"RRethy/vim-illuminate",
-	--[[ event = { "VeryLazy", "LspAttach" }, ]]
+	-- event = { "VeryLazy", "LspAttach" },
 	event = { "BufNewFile", "BufReadPost" },
 	config = function()
 		require("illuminate").configure({
@@ -11,9 +11,6 @@ return {
 				"regex",
 			},
 			delay = 110, -- delay: in milliseconds
-			-- filetype_overrides: filetype specific overrides.
-			-- The keys are strings to represent the filetype while the values are tables that
-			-- supports the same keys passed to .configure except for filetypes_denylist and filetypes_allowlist
 			keys = {
 				{
 					"a-n",
@@ -30,6 +27,9 @@ return {
 					desc = "Prev Reference",
 				},
 			},
+			-- filetype_overrides: filetype specific overrides
+			-- The keys are strings to represent the filetype while the values are tables that
+			-- supports the same keys passed to .configure except for filetypes_denylist and filetypes_allowlist
 			filetype_overrides = {},
 			-- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
 			filetypes_denylist = {
@@ -44,6 +44,7 @@ return {
 				--[[ "Trouble", ]]
 			},
 			-- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
+			-- You must set filetypes_denylist = {} to override the defaults to allow filetypes_allowlist to take effect
 			filetypes_allowlist = {},
 			-- modes_denylist: modes to not illuminate, this overrides modes_allowlist
 			-- See :help mode() for possible values

@@ -1,35 +1,35 @@
 local g = vim.g
 local opt = vim.opt
 
--- line numbers
+-- Line numbers
 opt.number = true
 opt.relativenumber = true
 
--- tabs & indentation
+-- Tabs & Indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 
--- line wrapping
+-- Line wrapping
 opt.wrap = false
 
--- search settings
+-- Search settings
 opt.ignorecase = true
 opt.smartcase = true
 opt.smartindent = true -- Autoindent new lines
 
--- split windows
+-- Split windows
 opt.splitright = true
 opt.splitbelow = true
 
--- info
+-- Info
 opt.showmode = false
 opt.showcmd = false
 
--- clipboard
+-- Clipboard
 opt.clipboard = "unnamedplus"
 
--- turn off swapfile
+-- Turn off swapfile
 opt.swapfile = false
 
 opt.confirm = true
@@ -39,32 +39,30 @@ opt.sidescrolloff = 8
 opt.termguicolors = true
 opt.signcolumn = "yes"
 
--- disable mouse
+-- Disable mouse
 opt.mouse = ""
 
--- misc
+-- Misc
 opt.fileencoding = "utf-8"
-opt.writebackup = false
+opt.writebackup = false -- ?
 opt.backup = false
 opt.hidden = true
 opt.undofile = true
 opt.updatetime = 120
-opt.completeopt = { "menuone", "noselect" }
+opt.completeopt = "menu,menuone,noselect"
 
--- folding using treesitter
---[[ opt.foldlevel = 20 ]]
---[[ opt.foldmethod = "expr" ]]
---[[ opt.foldexpr = "nvim_treesitter#foldexpr()" ]]
+-- Folding using treesitter
+-- opt.foldlevel = 20
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
--- disable nvim intro
+-- Disable nvim intro
 opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
 opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,],h,l")
 
--- disable builtin plugins
+-- Disable builtin plugins
 local disabled_built_ins = {
-	--[[ "netrw", ]]
-	--[[ "netrwPlugin", ]]
 	"netrwSettings",
 	"netrwFileHandlers",
 	"gzip",
@@ -89,8 +87,8 @@ local disabled_built_ins = {
 	"ftplugin",
 	"tutor",
 	"tohtml",
+	"logipat",
 	"lazyredraw",
-	--[[ "logipat", ]]
 }
 
 for _, plugin in pairs(disabled_built_ins) do
