@@ -1,6 +1,11 @@
 return {
 	"goolord/alpha-nvim",
-	event = "VimEnter",
+	event = function()
+		if vim.fn.argc() == 0 then
+			return "VimEnter"
+		end
+	end,
+  cmd = "Alpha",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local alpha = require("alpha")
