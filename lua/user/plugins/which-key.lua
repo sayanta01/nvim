@@ -207,8 +207,8 @@ return {
         s = { ":lua require'dap'.session()<cr>", "Get Session" },
         x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
         p = { ":lua require'dap'.pause()<cr>", "Pause" },
-        q = { ":lua require'dap'.close()<cr>", "Quit" },
-				d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+        d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+        -- q = { ":lua require'dap'.close()<cr>", "Quit" },
 				U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 			},
 			D = {

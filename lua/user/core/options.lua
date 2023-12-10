@@ -40,7 +40,7 @@ opt.termguicolors = true
 opt.signcolumn = "yes"
 
 -- Disable mouse
-opt.mouse = ""
+-- opt.mouse = ""
 
 -- Misc
 opt.fileencoding = "utf-8"
@@ -57,7 +57,7 @@ opt.completeopt = "menu,menuone,noselect"
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Disable nvim intro
-opt.spelllang:append("cjk") -- disable spellchecking for asian characters (VIM algorithm does not support it)
+opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)
 opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,],h,l")
 
@@ -88,7 +88,7 @@ local disabled_built_ins = {
 	"tutor",
 	"tohtml",
 	"logipat",
-	"lazyredraw",
+	-- "lazyredraw",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
