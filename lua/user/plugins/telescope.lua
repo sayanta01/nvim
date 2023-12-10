@@ -63,21 +63,19 @@ return {
 				entry_prefix = "  ",
 				initial_mode = "insert",
 				selection_strategy = "reset",
-				--[[ sorting_strategy = "descending", ]]
-				--[[ layout_strategy = "horizontal", ]]
+				sorting_strategy = "descending",
+				layout_strategy = "horizontal",
 				layout_config = {
 					width = 0.80,
+					height = 0.90,
 					preview_cutoff = 120,
 					horizontal = {
-						preview_width = function(_, cols, _)
-							if cols < 120 then
-								return math.floor(cols * 0.4)
-							end
-							return math.floor(cols * 0.6)
-						end,
+						prompt_position = "bottom",
+						preview_width = 0.60,
+					},
+					vertical = {
 						mirror = false,
 					},
-					vertical = { mirror = false },
 				},
 				vimgrep_arguments = {
 					"rg",

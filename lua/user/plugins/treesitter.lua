@@ -3,7 +3,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		version = false,
 		build = ":TSUpdate",
-		event = "User FileOpened",
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			--[[ "nvim-treesitter/nvim-treesitter-textobjects", ]]
 			"hiphish/rainbow-delimiters.nvim",
@@ -16,8 +16,8 @@ return {
 				"typescript",
 				"javascriptreact",
 				"typescriptreact",
-        "tsx",
-        "jsx",
+				"tsx",
+				"jsx",
 				"svelte",
 				"xml",
 				"php",
@@ -43,7 +43,7 @@ return {
 					"python",
 					"bash",
 					"json",
-          "yaml",
+					"yaml",
 					"lua",
 					"html",
 					"css",

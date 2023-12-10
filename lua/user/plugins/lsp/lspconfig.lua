@@ -13,11 +13,11 @@ return {
 				vim.api.nvim_buf_set_keymap(bufnr, ...)
 			end
 
-			--[[ local status_ok, illuminate = pcall(require, "illuminate") ]]
-			--[[ if not status_ok then ]]
-			--[[ 	return ]]
-			--[[ end ]]
-			--[[ illuminate.on_attach(client) ]]
+			-- local status_ok, illuminate = pcall(require, "illuminate")
+			-- if not status_ok then
+			-- 	return
+			-- end
+			-- illuminate.on_attach(client)
 
 			local function buf_set_option(...)
 				vim.api.nvim_buf_set_option(bufnr, ...)
@@ -77,21 +77,21 @@ return {
 		}
 		vim.diagnostic.config(config)
 
-		--[[ lspconfig["svelte"].setup({ ]]
-		--[[ 	capabilities = capabilities, ]]
-		--[[ 	on_attach = function(client, bufnr) ]]
-		--[[ 		on_attach(client, bufnr) ]]
-		--[[]]
-		--[[ 		vim.api.nvim_create_autocmd("BufWritePost", { ]]
-		--[[ 			pattern = { "*.js", "*.ts" }, ]]
-		--[[ 			callback = function(ctx) ]]
-		--[[ 				if client.name == "svelte" then ]]
-		--[[ 					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file }) ]]
-		--[[ 				end ]]
-		--[[ 			end, ]]
-		--[[ 		}) ]]
-		--[[ 	end, ]]
-		--[[ }) ]]
+		-- lspconfig["svelte"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = function(client, bufnr)
+		-- 		on_attach(client, bufnr)
+		--
+		-- 		vim.api.nvim_create_autocmd("BufWritePost", {
+		-- 			pattern = { "*.js", "*.ts" },
+		-- 			callback = function(ctx)
+		-- 				if client.name == "svelte" then
+		-- 					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+		-- 				end
+		-- 			end,
+		-- 		})
+		-- 	end,
+		-- })
 
 		lspconfig["tsserver"].setup({
 			on_attach = on_attach,
@@ -172,10 +172,6 @@ return {
 		--[[ }) ]]
 
 		lspconfig["clangd"].setup({
-			--[[ on_attach = function(client, bufnr) ]]
-			--[[ 	client.server_capabilities.signatureHelpProvider = false ]]
-			--[[ 	on_attach(client, bufnr) ]]
-			--[[ end, ]]
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
@@ -244,11 +240,11 @@ return {
 			capabilities = capabilities,
 		})
 
-		--[[ lspconfig["graphql"].setup({ ]]
-		--[[ 	capabilities = capabilities, ]]
-		--[[ 	on_attach = on_attach, ]]
-		--[[ 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" }, ]]
-		--[[ }) ]]
+		-- lspconfig["graphql"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+		-- })
 
 		lspconfig["jsonls"].setup({
 			on_attach = on_attach,
@@ -277,7 +273,7 @@ return {
 			settings = {
 				yaml = {
 					hover = true,
-					--[[ completion = true, ]]
+					-- completion = true,
 					format = {
 						enable = true,
 					},

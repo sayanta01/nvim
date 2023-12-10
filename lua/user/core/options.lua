@@ -52,9 +52,9 @@ opt.updatetime = 120
 opt.completeopt = "menu,menuone,noselect"
 
 -- Folding using treesitter
--- opt.foldlevel = 20
--- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 20
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Disable nvim intro
 opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)

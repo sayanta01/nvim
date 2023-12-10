@@ -48,10 +48,10 @@ return {
 				"bashls",
 				"marksman",
 				"dockerls",
-				"graphql",
 				"jsonls",
 				"yamlls",
-				"svelte",
+				"graphql",
+        "svelte",
 			},
 			automatic_installation = true,
 		})
