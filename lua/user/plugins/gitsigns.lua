@@ -20,7 +20,7 @@ return {
 			watch_gitdir = {
 				follow_files = true,
 			},
-			current_line_blame = false, -- not that bad
+			current_line_blame = false, -- useful but slow
 			sign_priority = 6,
 			update_debounce = 100,
 			status_formatter = nil,

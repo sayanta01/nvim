@@ -1,6 +1,19 @@
 return {
 	"simrat39/rust-tools.nvim",
 	ft = { "rust" },
+	dependencies = {
+		"saecki/crates.nvim",
+		event = { "BufRead Cargo.toml" },
+		config = function()
+			require("crates").setup({
+				src = {
+					cmp = {
+						enabled = true,
+					},
+				},
+			})
+		end,
+	},
 	config = function()
 		local rust_setup, rt = pcall(require, "rust-tools")
 		if not rust_setup then
@@ -29,46 +42,14 @@ return {
 						auto_focus = true,
 					},
 				},
-				--[[ settings = { ]]
-				--[[ 	["rust-analyzer"] = { ]]
-				--[[ 		cargo = { ]]
-				--[[ 			allFeatures = true, ]]
-				--[[ 			loadOutDirsFromCheck = true, ]]
-				--[[ 			runBuildScripts = true, ]]
-				--[[ 		}, ]]
-				--[[ 		procMacro = { ]]
-				--[[ 			enable = true, ]]
-				--[[ 			ignored = { ]]
-				--[[ 				["async-trait"] = { "async_trait" }, ]]
-				--[[ 				["napi-derive"] = { "napi" }, ]]
-				--[[ 				["async-recursion"] = { "async_recursion" }, ]]
-				--[[ 			}, ]]
-				--[[ 		}, ]]
-				--[[ 		lens = { ]]
-				--[[ 			enable = true, ]]
-				--[[ 		}, ]]
-				--[[ 		checkOnSave = { ]]
-				--[[ 			allFeatures = true, ]]
-				--[[ 			command = "clippy", ]]
-				--[[ 			extraArgs = { "--no-deps" }, ]]
-				--[[ 		}, ]]
-				--[[ 	}, ]]
-				--[[ }, ]]
+				settings = {
+					["rust-analyzer"] = {
+						cargo = {
+							allFeatures = true,
+						},
+					},
+				},
 			},
 		})
 	end,
-
-	--[[ { ]]
-	--[[ 	"saecki/crates.nvim", ]]
-	--[[ 	event = { "BufRead Cargo.toml" }, ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("crates").setup({ ]]
-	--[[ 			src = { ]]
-	--[[ 				cmp = { ]]
-	--[[ 					enabled = true, ]]
-	--[[ 				}, ]]
-	--[[ 			}, ]]
-	--[[ 		}) ]]
-	--[[ 	end, ]]
-	--[[ }, ]]
 }

@@ -1,13 +1,14 @@
 return {
 	"mfussenegger/nvim-dap",
-	lazy = true,
+	cmd = { "DapUIToggle", "DapToggleRepl", "DapToggleBreakpoint" },
 	dependencies = {
 		{
 			"rcarriga/nvim-dap-ui",
-			cmd = { "DapUIToggle", "DapToggleRepl", "DapToggleBreakpoint" },
 			config = function()
 				local dap = require("dap")
+
 				local dapui = require("dapui")
+
 				dapui.setup()
 
 				vim.fn.sign_define(

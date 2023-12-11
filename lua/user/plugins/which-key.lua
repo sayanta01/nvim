@@ -108,7 +108,7 @@ return {
 			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle" },
 			w = { ":w!<cr>", "Save" },
 			q = { ":q!<cr>", "quit" },
-			x = { ":bdelete<cr>", "Close Buffer" },
+			c = { ":bdelete<cr>", "Close Buffer" },
 			n = { ":nohlsearch<cr>", "No Highlight" },
 			y = { "gg<S-v>G", "Copy" },
 			e = { ":NvimTreeToggle<cr>", "Explorer" },
@@ -208,7 +208,7 @@ return {
         x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
         p = { ":lua require'dap'.pause()<cr>", "Pause" },
         d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
-        -- q = { ":lua require'dap'.close()<cr>", "Quit" },
+        q = { ":lua require'dap'.close()<cr>", "Quit" },
 				U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 			},
 			D = {

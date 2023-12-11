@@ -1,6 +1,5 @@
 return {
 	"numToStr/Comment.nvim",
-	-- event = "User FileOpened",
 	keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
 	dependencies = {
 		"JoosepAlviste/nvim-ts-context-commentstring",
