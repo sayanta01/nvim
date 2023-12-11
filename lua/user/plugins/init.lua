@@ -11,6 +11,7 @@ return {
 			require("dap-python").setup(path .. "/venv/bin/python")
 		end,
 	},
+
 	{
 		"linux-cultist/venv-selector.nvim",
 		ft = "python",
@@ -92,5 +93,5 @@ return {
 		end,
 	},
 
-	--[[ "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion) ]]
+	-- "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 }

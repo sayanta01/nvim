@@ -14,7 +14,7 @@ return {
 				java = false, -- don't check treesitter on java
 			},
 			disable_filetype = { "TelescopePrompt", "spectre_panel" },
-			-- change default fast_wrap
+      -- change default fast_wrap
 			fast_wrap = {
 				map = "<M-e>",
 				chars = { "{", "[", "(", '"', "'" },

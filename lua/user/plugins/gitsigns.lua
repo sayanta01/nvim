@@ -12,7 +12,6 @@ return {
 				changedelete = { text = "~" },
 				untracked = { text = "" },
 			},
-
 			signcolumn = true,
 			numhl = false,
 			linehl = false,

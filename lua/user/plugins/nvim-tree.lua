@@ -1,7 +1,7 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
-	cmd = { "NvimTreeToggle" },
+	cmd = "NvimTreeToggle",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local nvimtree = require("nvim-tree")
@@ -45,7 +45,6 @@ return {
 				timeout = 200,
 			},
 			system_open = {
-				--[[ cmd = nil, ]]
 				cmd = "",
 				args = {},
 			},

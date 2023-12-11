@@ -1,6 +1,6 @@
 return {
 	"mfussenegger/nvim-jdtls",
-	ft = { "java" },
+	ft = "java",
 	config = function()
 		local status, jdtls = pcall(require, "jdtls")
 		if not status then
