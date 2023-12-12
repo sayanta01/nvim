@@ -39,7 +39,7 @@ return {
 		end
 
 		local kind_icons = {
-			Text = "", -- 
+			Text = "",
 			Method = "",
 			Function = "ƒ",
 			Constructor = "",
@@ -58,24 +58,12 @@ return {
 			File = "",
 			Reference = "", -- 
 			Folder = "",
-			EnumMember = "",
+			EnumMember = "", -- 
 			Constant = "󰏿",
 			Struct = "פּ",
 			Event = "🗲",
 			Operator = "󰆕",
 			TypeParameter = "",
-			Namespace = "",
-			Package = "",
-			String = "",
-			Number = "",
-			Boolean = "◩",
-			Array = "",
-			Object = "⦿",
-			Key = "",
-			Null = "",
-			-- [[ Extra icons ]]
-			--[[ Diff = " ", ]]
-			--[[ Misc = " ", ]]
 		}
 
 		cmp.setup({
@@ -155,6 +143,16 @@ return {
 						spell = "[Spell]",
 						calc = "[Calc]",
 					})[entry.source.name]
+
+					-- -- [[ custom menu icon snippet ]]
+					-- local custom_menu_icon = {
+					-- 	calc = "󰆕",
+					-- 	-- [[ you could include other sources here as well ]]
+					-- }
+					-- if entry.source.name == "calc" then
+					-- 	vim_item.menu = custom_menu_icon.calc
+					-- end
+
 					return vim_item
 				end,
 			},

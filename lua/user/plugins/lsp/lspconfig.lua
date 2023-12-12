@@ -62,7 +62,7 @@ return {
 		end
 
 		local config = {
-			virtual_text = true, -- disable virtual text
+			virtual_text = true,
 			signs = true,
 			underline = true,
 			update_in_insert = false,
@@ -71,8 +71,9 @@ return {
 				focusable = true,
 				border = "rounded",
 				source = "always",
-				prefix = " ",
-				-- scope = "cursor",
+				header = "",
+				prefix = "",
+				-- scope = "cursor", -- only when cursor is on up
 			},
 		}
 		vim.diagnostic.config(config)
