@@ -15,7 +15,6 @@ return {
 				"prettier",
 				"stylua",
 				"gofumpt",
-				"rustfmt",
 				"isort",
 				"black",
 				"shfmt",

@@ -3,7 +3,7 @@
 distro=$(grep ID= /etc/os-release | sed -n 2p | cut -d= -f2)
 
 if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" ]; then
-	printf "Build neovim? (y/n): "
+	printf "Build neovim? (y/N): "
 	read -r choice
 	if [ "$choice" = "y" ]; then
 		sudo apt install -y ninja-build gettext
@@ -14,7 +14,7 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 		:
 	fi
 
-	## pkgs
+	## dependences
 	sudo apt install -y npm cargo luarocks \
 		golang php ruby \
 		ripgrep \
@@ -23,7 +23,7 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
 
-	printf "Install cargo pkgs? (y/n): "
+	printf "Install cargo pkgs? (y/N): "
 	read -r choice
 	if [ "$choice" = "y" ]; then
 		cargo install procs bat
@@ -31,12 +31,12 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 		:
 	fi
 
-	# curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 	# wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
+	# curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 
 	# julia
 	## curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check version
-	printf "Want to install julia? (y/n): "
+	printf "Want to install julia? (y/N): "
 	read -r choice
 	if [ "$choice" = "y" ]; then
 		wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
@@ -56,23 +56,26 @@ if [ "$distro" = "Artix" ]; then
 		go php ruby \
 		ripgrep \
 		jdk-openjdk dotnet-sdk \
-		lazygit cloudflared julia
+		cloudflared lazygit julia
 else
 	:
 fi
 
 ## node dependences
 sudo npm i -g tree-sitter-cli live-server
-# git clone https://github.com/tapio/live-server ~/.local/share/live-server
-# cd ~/.local/share/live-server && npm install
 
 ## python dependences
 pip install pynvim
 
 ## rust setup
-# cargo new project # get started with rust
-# rustup component add rust-analyzer rustfmt # run this in project directory, maybe it's not necessary
+printf "Install rustfmt ? (y/n): "
+read -r choice
+if [ "$choice" = "y" ]; then
+	rustup component add rustfmt
+else
+	:
+fi
 
 ## kotlin setup
 # curl -s "https://get.sdkman.io" | bash
-# sdk install kotlin # run this
+# sdk install kotlin

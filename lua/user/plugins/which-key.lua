@@ -108,7 +108,7 @@ return {
 			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle" },
 			w = { ":w!<cr>", "Save" },
 			q = { ":q!<cr>", "quit" },
-			c = { ":bdelete<cr>", "Close Buffer" },
+			x = { ":bdelete<cr>", "Close Buffer" },
 			n = { ":nohlsearch<cr>", "No Highlight" },
 			y = { "gg<S-v>G", "Copy" },
 			e = { ":NvimTreeToggle<cr>", "Explorer" },
