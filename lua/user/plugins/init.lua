@@ -1,6 +1,12 @@
 return {
 	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" } },
 
+	{
+		"ThePrimeagen/harpoon",
+		lazy = true,
+		config = true,
+	},
+
 	{ "tpope/vim-fugitive", cmd = { "G", "Git" } },
 
 	{
