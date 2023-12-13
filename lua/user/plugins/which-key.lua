@@ -189,6 +189,7 @@ return {
 
 			b = {
 				b = { ":Telescope buffers<cr>", "Buf Prev" },
+        n = { ":enew<cr>", "New Buffer" },
 				h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
 				l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
 			},
@@ -204,11 +205,11 @@ return {
 				r = { ":lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
 				l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
 				b = { ":lua require'dap'.step_back()<cr>", "Step Back" },
-        s = { ":lua require'dap'.session()<cr>", "Get Session" },
-        x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
-        p = { ":lua require'dap'.pause()<cr>", "Pause" },
-        d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
-        q = { ":lua require'dap'.close()<cr>", "Quit" },
+				s = { ":lua require'dap'.session()<cr>", "Get Session" },
+				x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
+				p = { ":lua require'dap'.pause()<cr>", "Pause" },
+				d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+				q = { ":lua require'dap'.close()<cr>", "Quit" },
 				U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 			},
 			D = {

@@ -68,7 +68,7 @@ sudo npm i -g tree-sitter-cli live-server
 pip install pynvim
 
 ## rust setup
-printf "Install rustfmt ? (y/n): "
+printf "Install rustfmt ? (y/N): "
 read -r choice
 if [ "$choice" = "y" ]; then
 	rustup component add rustfmt

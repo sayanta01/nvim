@@ -30,7 +30,7 @@ return {
 			return
 		end
 
-		-- load vs-code like snippets from plugins (e.g. friendly-snippets)
+		-- load snippets from plugins
 		require("luasnip/loaders/from_vscode").lazy_load()
 
 		local check_backspace = function()
@@ -144,7 +144,6 @@ return {
 						calc = "[Calc]",
 					})[entry.source.name]
 
-					-- -- [[ custom menu icon snippet ]]
 					-- local custom_menu_icon = {
 					-- 	calc = "󰆕",
 					-- 	-- [[ you could include other sources here as well ]]

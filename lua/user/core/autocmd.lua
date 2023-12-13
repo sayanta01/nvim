@@ -10,13 +10,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Set wrap & spell in markdown and gitcommit
---[[ vim.api.nvim_create_autocmd({ "FileType" }, { ]]
---[[ 	pattern = { "gitcommit", "markdown" }, ]]
---[[ 	callback = function() ]]
---[[ 		vim.opt_local.wrap = true ]]
---[[ 		vim.opt_local.spell = true ]]
---[[ 	end, ]]
---[[ }) ]]
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = { "gitcommit", "markdown" },
+	callback = function()
+		vim.opt_local.wrap = true
+    vim.opt_local.spell = true
+	end,
+})
 
 -- Disable the concealing in some files
 vim.api.nvim_create_autocmd("FileType", {
@@ -53,14 +53,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		end
 	end,
 })
-
--- Json support
--- local json_group = vim.api.nvim_create_augroup("Json", { clear = true })
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
--- 	command = [[syntax match Comment +\/\/.\+$+]],
--- 	group = json_group,
--- 	pattern = "*.json",
--- })
 
 -- Comment function for json
 vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")

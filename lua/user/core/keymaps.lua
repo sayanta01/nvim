@@ -41,7 +41,6 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-Left>", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<S-Right>", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<S-b>", ":enew <CR>", opts)
 
 -- Delete not cut
 keymap("n", "dd", '"_dd', opts)
