@@ -5,30 +5,30 @@ return {
 		build = ":TSUpdate",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			--[[ "nvim-treesitter/nvim-treesitter-textobjects", ]]
-			"hiphish/rainbow-delimiters.nvim",
-		},
-		{
-			"windwp/nvim-ts-autotag",
-			ft = {
-				"html",
-				"javascript",
-				"typescript",
-				"javascriptreact",
-				"typescriptreact",
-				"tsx",
-				"jsx",
-				"svelte",
-				"xml",
-				"php",
-				"markdown",
-				"astro",
+			-- "nvim-treesitter/nvim-treesitter-textobjects",
+			-- "hiphish/rainbow-delimiters.nvim",
+			{
+				"windwp/nvim-ts-autotag",
+				ft = {
+					"html",
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+					"tsx",
+					"jsx",
+					"svelte",
+					"xml",
+					"php",
+					"markdown",
+					"astro",
+				},
+				config = function()
+					require("nvim-ts-autotag").setup({
+						skip_tags = "",
+					})
+				end,
 			},
-			config = function()
-				require("nvim-ts-autotag").setup({
-					skip_tags = "",
-				})
-			end,
 		},
 
 		config = function()
