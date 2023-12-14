@@ -179,7 +179,7 @@ return {
 
 		vim.notify = require("notify")
 		require("notify").setup({
-			fps = 40,
+			fps = 30,
 			icons = {
 				DEBUG = "",
 				ERROR = "",

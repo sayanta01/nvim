@@ -6,7 +6,6 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			-- "nvim-treesitter/nvim-treesitter-textobjects",
-			-- "hiphish/rainbow-delimiters.nvim",
 			{
 				"windwp/nvim-ts-autotag",
 				ft = {
