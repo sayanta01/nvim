@@ -37,34 +37,28 @@ return {
 			treesitter.setup({ -- enable syntax highlighting
 				ensure_installed = {
 					"c",
-					--[[ "cpp", ]]
-					--[[ "c_sharp", ]]
 					"python",
 					"bash",
 					"json",
-					"yaml",
 					"lua",
 					"html",
 					"css",
 					"javascript",
 					"typescript",
 					"tsx",
-					"php",
-					"sql",
 					"markdown",
 					"markdown_inline",
-					"go",
-					"rust",
-					"java",
 					"dockerfile",
 					"gitignore",
 					"vim",
 					"regex",
+					"query",
 					"svelte",
 					"graphql",
 				},
+				auto_install = true,
+				ignore_install = {}, -- List of parsers to ignore installing (or `all`)
 				sync_install = false,
-				ignore_install = {}, -- List of parsers to ignore installing (or "all")
 				highlight = {
 					enable = true,
 					disable = { "latex" },
