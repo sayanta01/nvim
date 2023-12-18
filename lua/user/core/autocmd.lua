@@ -26,9 +26,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Quit nvimTree when not any file opened
---[[ vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif") ]]
-
 -- Don't auto commenting new lines
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()

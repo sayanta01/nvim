@@ -16,7 +16,7 @@ opt.wrap = false
 -- Search settings
 opt.ignorecase = true
 opt.smartcase = true
-opt.smartindent = true -- Autoindent new lines
+-- opt.smartindent = true -- Autoindent new lines
 
 -- Split windows
 opt.splitright = true
@@ -39,16 +39,13 @@ opt.sidescrolloff = 8
 opt.termguicolors = true
 opt.signcolumn = "yes"
 
--- Disable mouse
--- opt.mouse = ""
-
 -- Misc
 opt.fileencoding = "utf-8"
-opt.writebackup = false -- ?
-opt.backup = false
-opt.hidden = true
+opt.writebackup = false -- Disable making a backup before overwriting a file
+opt.backup = false -- Creates a backup file
+-- opt.hidden = true -- Required to keep multiple buffers and open multiple buffers
 opt.undofile = true
-opt.updatetime = 120
+opt.updatetime = 180 -- interval for writing swap file to disk, also used by gitsigns
 opt.completeopt = "menu,menuone,noselect"
 
 -- Folding using treesitter
@@ -88,20 +85,13 @@ local disabled_built_ins = {
 	"tutor",
 	"tohtml",
 	"logipat",
-	-- "lazyredraw",
 }
 
 for _, plugin in pairs(disabled_built_ins) do
 	g["loaded_" .. plugin] = 1
 end
 
-local default_providers = {
-	"node",
-	"perl",
-	"python3",
-	"ruby",
-}
-
-for _, provider in ipairs(default_providers) do
+-- Disable some default providers
+for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
 	vim.g["loaded_" .. provider .. "_provider"] = 0
 end
