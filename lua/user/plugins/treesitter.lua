@@ -40,14 +40,20 @@ return {
 					"python",
 					"bash",
 					"json",
+					"yaml",
 					"lua",
 					"html",
 					"css",
 					"javascript",
 					"typescript",
 					"tsx",
+					"php",
+					"sql",
 					"markdown",
 					"markdown_inline",
+					"go",
+					"rust",
+					"java",
 					"dockerfile",
 					"gitignore",
 					"vim",
@@ -56,7 +62,7 @@ return {
 					"svelte",
 					"graphql",
 				},
-				auto_install = true,
+				-- auto_install = true,
 				ignore_install = {}, -- List of parsers to ignore installing (or `all`)
 				sync_install = false,
 				highlight = {
@@ -70,7 +76,7 @@ return {
 					--[[ 		return true ]]
 					--[[ 	end ]]
 					--[[ end, ]]
-					additional_vim_regex_highlighting = true,
+					additional_vim_regex_highlighting = false,
 				},
 				indent = { enable = true, disable = { "yaml" } },
 				autotag = { enable = false }, -- for autotag plugin
