@@ -1,4 +1,4 @@
-local g = vim.g
+-- local g = vim.g
 local opt = vim.opt
 
 -- Line numbers
@@ -57,39 +57,6 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)
 opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,],h,l")
-
--- Disable builtin plugins
-local disabled_built_ins = {
-	"netrwSettings",
-	"netrwFileHandlers",
-	"gzip",
-	"tar",
-	"tarPlugin",
-	"zip",
-	"zipPlugin",
-	"getscript",
-	"getscriptPlugin",
-	"vimball",
-	"vimballPlugin",
-	"2html_plugin",
-	"spellfile_plugin",
-	"rplugin",
-	"matchit",
-	"rrhelper",
-	"syntax",
-	"synmenu",
-	"optwin",
-	"compiler",
-	"bugreport",
-	"ftplugin",
-	"tutor",
-	"tohtml",
-	"logipat",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-	g["loaded_" .. plugin] = 1
-end
 
 -- Disable some default providers
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
