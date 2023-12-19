@@ -1,5 +1,5 @@
--- local g = vim.g
 local opt = vim.opt
+-- local g = vim.g
 
 -- Line numbers
 opt.number = true

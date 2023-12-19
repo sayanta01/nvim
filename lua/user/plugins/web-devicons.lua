@@ -3,35 +3,168 @@ return {
 	lazy = true,
 	config = function()
 		require("nvim-web-devicons").set_icon({
-			pdf = {
-				icon = "",
+			["ini"] = {
+				icon = "",
+				color = "#6d8086",
+				cterm_color = "66",
+				name = "Ini",
+			},
+			[".bashrc"] = {
+				icon = "",
+				color = "#89e051",
+				cterm_color = "113",
+				name = "BashProfile",
+			},
+			["scm"] = {
+				icon = "",
+				color = "#000000",
+				cterm_color = "16",
+				name = "Scheme",
+			},
+
+			["pdf"] = {
+				icon = "",
 				color = "#b30b00",
 				cterm_color = "124",
 				name = "Pdf",
 			},
-			ppt = {
+			["ppt"] = {
 				icon = "",
 				color = "#cb4a32",
 				cterm_color = "214",
 				name = "Ppt",
 			},
-			astro = {
+			["astro"] = {
 				icon = "",
 				color = "#ff6400",
 				cterm_color = "202",
 				name = "Astro",
 			},
-			rb = {
-				icon = "",
-				color = "#a51401",
-				cterm_color = "52",
-				name = "Ruby",
+			["ico"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Ico",
 			},
-			gql = {
-				icon = "",
-				color = "#e535ab",
-				cterm_color = "199",
-				name = "GraphQL",
+			["jpeg"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Jpeg",
+			},
+			["jpg"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Jpg",
+			},
+			["js"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Js",
+			},
+			["jxl"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "JpegXl",
+			},
+			["opus"] = {
+				icon = "",
+				color = "#F88A02",
+				cterm_color = "208",
+				name = "OPUS",
+			},
+			["php"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Php",
+			},
+			["tex"] = {
+				icon = "",
+				color = "#3D6117",
+				cterm_color = "22",
+				name = "Tex",
+			},
+			["webp"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Webp",
+			},
+			["txt"] = {
+				icon = "",
+				color = "#89e051",
+				cterm_color = "113",
+				name = "Txt",
+			},
+			["markdown"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Markdown",
+			},
+			["md"] = {
+				icon = "",
+				color = "#ffffff",
+				cterm_color = "231",
+				name = "Md",
+			},
+			["mdx"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Mdx",
+			},
+			["png"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Png",
+			},
+			["css"] = {
+				icon = "",
+				color = "#42a5f5",
+				cterm_color = "75",
+				name = "Css",
+			},
+			["csv"] = {
+				icon = "",
+				color = "#89e051",
+				cterm_color = "113",
+				name = "Csv",
+			},
+			["gif"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Gif",
+			},
+			["h"] = {
+				icon = "󰰀",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "H",
+			},
+			["hh"] = {
+				icon = "󰰀",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Hh",
+			},
+			["hpp"] = {
+				icon = "󰰀",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Hpp",
+			},
+			["hxx"] = {
+				icon = "󰰀",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Hxx",
 			},
 		})
 	end,

@@ -5,7 +5,7 @@ return {
 			return "VimEnter"
 		end
 	end,
-  cmd = "Alpha",
+	cmd = "Alpha",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local alpha = require("alpha")
@@ -48,8 +48,5 @@ return {
 		}
 
 		alpha.setup(dashboard.config)
-
-		--[[ Disable folding on alpha buffer ]]
-		-- vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
 	end,
 }
