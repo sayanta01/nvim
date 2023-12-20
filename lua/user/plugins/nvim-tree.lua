@@ -86,13 +86,13 @@ return {
 						git = false,
 					},
 					glyphs = {
-						default = "",
+						default = "",
 						symlink = "",
 						folder = {
 							arrow_closed = "",
 							arrow_open = "",
-							default = "",
-							open = "",
+							default = "",
+							open = "",
 							empty = "",
 							empty_open = "",
 							symlink = "",
