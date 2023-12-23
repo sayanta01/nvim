@@ -11,57 +11,26 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		nvimtree.setup({
-			filters = {
-				dotfiles = false,
-			},
-			hijack_netrw = false,
+			on_attach = "default",
+			hijack_cursor = false,
+			auto_reload_on_write = false,
+			disable_netrw = false,
+			hijack_netrw = true,
 			hijack_unnamed_buffer_when_opening = false,
-			update_focused_file = {
-				enable = true,
-				update_cwd = false,
-				ignore_list = {},
-			},
-			hijack_directories = {
-				enable = false,
-				auto_open = true,
-			},
-			diagnostics = {
-				enable = false,
-				icons = {
-					hint = "",
-					info = "",
-					warning = "",
-					error = "",
-				},
-			},
+			root_dirs = {},
+			prefer_startup_root = false,
+			sync_root_with_cwd = true,
+			reload_on_bufenter = false,
+			respect_buf_cwd = false,
+			select_prompts = false,
+			sort_by = "name",
 			view = {
 				width = 29,
 				side = "left",
-				number = false,
-			},
-			git = {
-				enable = false,
-				ignore = true,
-				timeout = 200,
-			},
-			system_open = {
-				cmd = "",
-				args = {},
-			},
-			trash = {
-				cmd = "gio trash",
-				require_confirm = true,
-			},
-			actions = {
-				open_file = {
-					quit_on_open = false,
-					resize_window = true,
-					window_picker = {
-						enable = false,
-					},
-				},
 			},
 			renderer = {
+				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+				symlink_destination = true,
 				highlight_git = false,
 				highlight_opened_files = "none",
 				indent_width = 2,
@@ -69,7 +38,7 @@ return {
 					enable = true,
 					inline_arrows = true,
 					icons = {
-						corner = "|",
+						corner = "└",
 						edge = "|",
 						item = "|",
 						bottom = "󰍴",
@@ -77,7 +46,6 @@ return {
 					},
 				},
 				icons = {
-					padding = " ",
 					symlink_arrow = "  ",
 					show = {
 						file = true,
@@ -96,7 +64,7 @@ return {
 							empty = "",
 							empty_open = "",
 							symlink = "",
-							symlink_open = "",
+							symlink_open = "",
 						},
 						git = {
 							unstaged = "",
@@ -109,6 +77,48 @@ return {
 						},
 					},
 				},
+			},
+			hijack_directories = {
+				enable = false,
+				auto_open = true,
+			},
+			update_focused_file = {
+				enable = true,
+				update_root = true,
+				ignore_list = {},
+			},
+			system_open = {
+				cmd = "",
+				args = {},
+			},
+			git = {
+				enable = false,
+			},
+			diagnostics = {
+				enable = false,
+			},
+			filters = {
+				dotfiles = false,
+				custom = { "node_modules", "\\.cache" },
+			},
+			filesystem_watchers = {
+				enable = true,
+				debounce_delay = 50,
+				ignore_dirs = {},
+			},
+			actions = {
+				use_system_clipboard = true,
+				open_file = {
+					quit_on_open = false,
+					resize_window = false,
+					window_picker = {
+						enable = false,
+					},
+				},
+			},
+			trash = {
+				cmd = "gio trash",
+				require_confirm = true,
 			},
 		})
 	end,
