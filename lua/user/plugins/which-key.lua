@@ -120,16 +120,21 @@ return {
 				o = { ":Telescope git_status<cr>", "Open Changed File" },
 				b = { ":Telescope git_branches<cr>", "Checkout Branch" },
 				c = { ":Telescope git_commits<cr>", "Checkout Commit" },
-				C = { ":Telescope git_bcommits<cr>", "Checkout commit (current file)" },
+				C = { ":Telescope git_bcommits<cr>", "Checkout Commit (current file)" },
 				j = { ":lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 				k = { ":lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 				l = { ":lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 				p = { ":lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+				S = { ":lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
+				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 				R = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 				u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
-				d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
+				d = { ":lua require 'gitsigns'.toggle_deleted()<cr>", "Toggle Deleted" },
+				D = {
+					":Gitsigns diffthis HEAD<cr>",
+					"Git Diff",
+				},
 			},
 
 			l = {
@@ -189,7 +194,7 @@ return {
 
 			b = {
 				b = { ":Telescope buffers<cr>", "Buf Prev" },
-        n = { ":enew<cr>", "New Buffer" },
+				n = { ":enew<cr>", "New Buffer" },
 				h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
 				l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
 			},

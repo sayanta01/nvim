@@ -27,12 +27,6 @@ return {
 				cterm_color = "239",
 				name = "DsStore",
 			},
-			[".env"] = {
-				icon = "",
-				color = "#faf743",
-				cterm_color = "227",
-				name = "Env",
-			},
 			[".gitconfig"] = {
 				icon = "",
 				color = "#41535b",
@@ -63,17 +57,61 @@ return {
 				cterm_color = "113",
 				name = "Zshrc",
 			},
-			["avif"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Avif",
+			["cmake"] = {
+				icon = "",
+				color = "#6d8086",
+				cterm_color = "66",
+				name = "CMake",
+			},
+			["gd"] = {
+				icon = "",
+				color = "#6d8086",
+				cterm_color = "66",
+				name = "GDScript",
+			},
+			["conf"] = {
+				icon = "",
+				color = "#6d8086",
+				cterm_color = "66",
+				name = "Conf",
+			},
+			["bat"] = {
+				icon = "",
+				color = "#C1F12E",
+				cterm_color = "191",
+				name = "Bat",
+			},
+			["yaml"] = {
+				icon = "",
+				color = "#6d8086",
+				cterm_color = "66",
+				name = "Yaml",
+			},
+			["yml"] = {
+				icon = "",
+				color = "#6d8086",
+				cterm_color = "66",
+				name = "Yml",
 			},
 			["cmakelists.txt"] = {
 				icon = "",
 				color = "#6d8086",
 				cterm_color = "66",
 				name = "CMakeLists",
+			},
+
+			[".env"] = {
+				icon = "",
+				color = "#faf743",
+				cterm_color = "227",
+				name = "Env",
+			},
+
+			["avif"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Avif",
 			},
 			["scm"] = {
 				icon = "",
@@ -105,12 +143,6 @@ return {
 				cterm_color = "214",
 				name = "Ppt",
 			},
-			["astro"] = {
-				icon = "",
-				color = "#ff6400",
-				cterm_color = "202",
-				name = "Astro",
-			},
 			["ico"] = {
 				icon = "",
 				color = "#cbcb41",
@@ -129,17 +161,67 @@ return {
 				cterm_color = "140",
 				name = "Jpg",
 			},
-			["js"] = {
-				icon = "",
-				color = "#cbcb41",
-				cterm_color = "185",
-				name = "Js",
-			},
 			["jxl"] = {
 				icon = "",
 				color = "#a074c4",
 				cterm_color = "140",
 				name = "JpegXl",
+			},
+			["webp"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Webp",
+			},
+			["bmp"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Bmp",
+			},
+			["png"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Png",
+			},
+
+			["csh"] = {
+				icon = "",
+				color = "#4d5a5e",
+				cterm_color = "240",
+				name = "Csh",
+			},
+			["terminal"] = {
+				icon = "",
+				color = "#31B53E",
+				cterm_color = "34",
+				name = "Terminal",
+			},
+			["sh"] = {
+				icon = "",
+				color = "#4d5a5e",
+				cterm_color = "240",
+				name = "Sh",
+			},
+			["gif"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Gif",
+			},
+
+			["astro"] = {
+				icon = "",
+				color = "#ff6400",
+				cterm_color = "202",
+				name = "Astro",
+			},
+			["js"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Js",
 			},
 			["opus"] = {
 				icon = "",
@@ -158,12 +240,6 @@ return {
 				color = "#3D6117",
 				cterm_color = "22",
 				name = "Tex",
-			},
-			["webp"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Webp",
 			},
 			["txt"] = {
 				icon = "",
@@ -195,12 +271,7 @@ return {
 				cterm_color = "74",
 				name = "Rmd",
 			},
-			["cmake"] = {
-				icon = "",
-				color = "#6d8086",
-				cterm_color = "66",
-				name = "CMake",
-			},
+
 			["doc"] = {
 				icon = "󱀾",
 				color = "#185abd",
@@ -213,59 +284,17 @@ return {
 				cterm_color = "26",
 				name = "Docx",
 			},
-			["gd"] = {
-				icon = "",
-				color = "#6d8086",
-				cterm_color = "66",
-				name = "GDScript",
-			},
 			["coffee"] = {
 				icon = "󰛊",
 				color = "#cbcb41",
 				cterm_color = "185",
 				name = "Coffee",
 			},
-			["conf"] = {
-				icon = "",
-				color = "#6d8086",
-				cterm_color = "66",
-				name = "Conf",
-			},
-			["bat"] = {
-				icon = "",
-				color = "#C1F12E",
-				cterm_color = "191",
-				name = "Bat",
-			},
-			["bmp"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Bmp",
-			},
-			["png"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Png",
-			},
 			["css"] = {
 				icon = "",
 				color = "#42a5f5",
 				cterm_color = "75",
 				name = "Css",
-			},
-			["yaml"] = {
-				icon = "",
-				color = "#6d8086",
-				cterm_color = "66",
-				name = "Yaml",
-			},
-			["yml"] = {
-				icon = "",
-				color = "#6d8086",
-				cterm_color = "66",
-				name = "Yml",
 			},
 			["zsh"] = {
 				icon = "",
@@ -291,36 +320,33 @@ return {
 				cterm_color = "240",
 				name = "Ksh",
 			},
-			["tfvars"] = {
-				icon = "",
-				color = "#5F43E9",
-				cterm_color = "93",
-				name = "TFVars",
-			},
 			["bash"] = {
 				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "Bash",
 			},
-			["csh"] = {
-				icon = "",
-				color = "#4d5a5e",
-				cterm_color = "240",
-				name = "Csh",
+
+			["tfvars"] = {
+				icon = "",
+				color = "#5F43E9",
+				cterm_color = "93",
+				name = "TFVars",
 			},
-			["terminal"] = {
-				icon = "",
-				color = "#31B53E",
-				cterm_color = "34",
-				name = "Terminal",
+			["csv"] = {
+				icon = "",
+				color = "#89e051",
+				cterm_color = "113",
+				name = "Csv",
 			},
-			["sh"] = {
-				icon = "",
-				color = "#4d5a5e",
-				cterm_color = "240",
-				name = "Sh",
+
+			["mint"] = {
+				icon = "",
+				color = "#87c095",
+				cterm_color = "108",
+				name = "Mint",
 			},
+
 			["pl"] = {
 				icon = "",
 				color = "#519aba",
@@ -339,24 +365,7 @@ return {
 				cterm_color = "74",
 				name = "Tor",
 			},
-			["csv"] = {
-				icon = "",
-				color = "#89e051",
-				cterm_color = "113",
-				name = "Csv",
-			},
-			["gif"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Gif",
-			},
-			["mint"] = {
-				icon = "",
-				color = "#87c095",
-				cterm_color = "108",
-				name = "Mint",
-			},
+
 			["mix.lock"] = {
 				icon = "",
 				color = "#a074c4",
@@ -393,6 +402,7 @@ return {
 				cterm_color = "140",
 				name = "Leex",
 			},
+
 			["kt"] = {
 				icon = "󰰉",
 				color = "#7F52FF",
@@ -471,30 +481,31 @@ return {
 				cterm_color = "140",
 				name = "Procfile",
 			},
-			["h"] = {
-				icon = "󰰀",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "H",
-			},
-			["hh"] = {
-				icon = "󰰀",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Hh",
-			},
-			["hpp"] = {
-				icon = "󰰀",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Hpp",
-			},
-			["hxx"] = {
-				icon = "󰰀",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Hxx",
-			},
+
+			-- ["h"] = {
+			-- 	icon = "󰰀",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "H",
+			-- },
+			-- ["hh"] = {
+			-- 	icon = "󰰀",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Hh",
+			-- },
+			-- ["hpp"] = {
+			-- 	icon = "󰰀",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Hpp",
+			-- },
+			-- ["hxx"] = {
+			-- 	icon = "󰰀",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Hxx",
+			-- },
 		})
 	end,
 }

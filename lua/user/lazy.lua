@@ -76,6 +76,8 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 				"compiler",
 				"bugreport",
 				"ftplugin",
+				"health",
+				"man",
 			},
 		},
 	},
