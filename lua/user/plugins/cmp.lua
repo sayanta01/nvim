@@ -39,7 +39,7 @@ return {
 		end
 
 		local kind_icons = {
-			Text = "",
+			Text = "󰭸",
 			Method = "",
 			Function = "ƒ",
 			Constructor = "",
@@ -50,20 +50,20 @@ return {
 			Module = "󱒌",
 			Property = "",
 			Unit = "",
-			Value = "",
-			Enum = "ℰ", -- 練
+			Value = "󰎠",
+			Enum = "ℰ",
 			Keyword = "",
 			Snippet = "",
 			Color = "",
 			File = "",
-			Reference = "", -- 
+			Reference = "",
 			Folder = "",
-			EnumMember = "", -- 
+			EnumMember = "",
 			Constant = "󰏿",
-			Struct = "פּ",
+			Struct = "",
 			Event = "🗲",
 			Operator = "󰆕",
-			TypeParameter = "",
+			TypeParameter = "",
 		}
 
 		cmp.setup({
@@ -165,12 +165,10 @@ return {
 				completion = {
 					scrollbar = true,
 					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-					--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
 					--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 				},
 				documentation = {
 					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-					--[[ border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" }, ]]
 					--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
 				},
 			},
