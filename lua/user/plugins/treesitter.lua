@@ -49,6 +49,7 @@ return {
 					"python",
 					"json",
 					"jsonc",
+					"toml",
 					"yaml",
 					"html",
 					"css",

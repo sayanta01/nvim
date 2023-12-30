@@ -3,7 +3,6 @@ return {
 		-- Library used by other plugins like `Telescope, Nonels`
 		"nvim-lua/plenary.nvim",
 		lazy = true,
-		-- cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" },
 	},
 
 	{
