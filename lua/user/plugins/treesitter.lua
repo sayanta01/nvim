@@ -4,6 +4,7 @@ return {
 		version = false,
 		build = ":TSUpdate",
 		event = { "BufReadPre", "BufNewFile" },
+		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		dependencies = {
 			-- "nvim-treesitter/nvim-treesitter-textobjects",
 			{
@@ -39,12 +40,15 @@ return {
 					"c",
 					"lua",
 					"vim",
+					"vimdoc",
+					"diff",
 					"query",
 					"regex",
 					"gitignore",
 					"bash",
 					"python",
 					"json",
+					"jsonc",
 					"yaml",
 					"html",
 					"css",

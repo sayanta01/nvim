@@ -1,5 +1,10 @@
 return {
-	{ "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" } },
+	{
+		-- Library used by other plugins like `Telescope, Nonels`
+		"nvim-lua/plenary.nvim",
+		lazy = true,
+		-- cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" },
+	},
 
 	{
 		"ThePrimeagen/harpoon",
@@ -8,6 +13,22 @@ return {
 	},
 
 	{ "tpope/vim-fugitive", cmd = { "G", "Git" } },
+
+	-- Dap
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		cmd = { "DapInstall", "DapUninstall" },
+		opts = {
+			ensure_installed = {
+				"python",
+				"codelldb",
+				"delve",
+				"js",
+				"javadbg",
+			},
+			automatic_installation = true,
+		},
+	},
 
 	{
 		"mfussenegger/nvim-dap-python",
@@ -54,28 +75,13 @@ return {
 		end,
 	},
 
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		cmd = { "DapInstall", "DapUninstall" },
-		opts = {
-			ensure_installed = {
-				"python",
-				"codelldb",
-				"delve",
-				"js",
-				"javadbg",
-			},
-			automatic_installation = true,
-		},
-	},
-
+	-- Misc --
 	{
 		"b0o/SchemaStore.nvim",
 		version = false, -- last release is way too old
 		lazy = true,
 	},
 
-	-- Misc --
 	{
 		"ThePrimeagen/vim-be-good",
 		cmd = "VimBeGood",

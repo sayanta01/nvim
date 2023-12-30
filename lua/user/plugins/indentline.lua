@@ -16,7 +16,15 @@ return {
 				remove_blankline_trail = false,
 			},
 			scope = { enabled = true, show_start = false },
-			exclude = { filetypes = { "dashboard", "toggleterm" } },
+			exclude = {
+				filetypes = {
+					"help",
+					"alpha",
+					"lazy",
+					"mason",
+					"toggleterm",
+				},
+			},
 		})
 	end,
 }

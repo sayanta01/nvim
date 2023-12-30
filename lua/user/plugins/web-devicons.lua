@@ -1,4 +1,5 @@
 return {
+	-- Dependencie of `Alpha, Bufferline, Lualine, NvimTree`
 	"nvim-tree/nvim-web-devicons",
 	lazy = true,
 	config = function()
@@ -187,22 +188,52 @@ return {
 			},
 
 			["csh"] = {
-				icon = "",
+				icon = "",
 				color = "#4d5a5e",
 				cterm_color = "240",
 				name = "Csh",
 			},
 			["terminal"] = {
-				icon = "",
+				icon = "",
 				color = "#31B53E",
 				cterm_color = "34",
 				name = "Terminal",
 			},
 			["sh"] = {
-				icon = "",
+				icon = "",
 				color = "#4d5a5e",
 				cterm_color = "240",
 				name = "Sh",
+			},
+			["zsh"] = {
+				icon = "",
+				color = "#89e051",
+				cterm_color = "113",
+				name = "Zsh",
+			},
+			["fish"] = {
+				icon = "",
+				color = "#4d5a5e",
+				cterm_color = "240",
+				name = "Fish",
+			},
+			["awk"] = {
+				icon = "",
+				color = "#4d5a5e",
+				cterm_color = "240",
+				name = "Awk",
+			},
+			["ksh"] = {
+				icon = "",
+				color = "#4d5a5e",
+				cterm_color = "240",
+				name = "Ksh",
+			},
+			["bash"] = {
+				icon = "",
+				color = "#89e051",
+				cterm_color = "113",
+				name = "Bash",
 			},
 			["gif"] = {
 				icon = "",
@@ -210,7 +241,6 @@ return {
 				cterm_color = "140",
 				name = "Gif",
 			},
-
 			["astro"] = {
 				icon = "",
 				color = "#ff6400",
@@ -273,7 +303,7 @@ return {
 			},
 
 			["doc"] = {
-				icon = "󱀾",
+				icon = "",
 				color = "#185abd",
 				cterm_color = "26",
 				name = "Doc",
@@ -296,39 +326,8 @@ return {
 				cterm_color = "75",
 				name = "Css",
 			},
-			["zsh"] = {
-				icon = "",
-				color = "#89e051",
-				cterm_color = "113",
-				name = "Zsh",
-			},
-			["fish"] = {
-				icon = "",
-				color = "#4d5a5e",
-				cterm_color = "240",
-				name = "Fish",
-			},
-			["awk"] = {
-				icon = "",
-				color = "#4d5a5e",
-				cterm_color = "240",
-				name = "Awk",
-			},
-			["ksh"] = {
-				icon = "",
-				color = "#4d5a5e",
-				cterm_color = "240",
-				name = "Ksh",
-			},
-			["bash"] = {
-				icon = "",
-				color = "#89e051",
-				cterm_color = "113",
-				name = "Bash",
-			},
-
 			["tfvars"] = {
-				icon = "",
+				icon = "",
 				color = "#5F43E9",
 				cterm_color = "93",
 				name = "TFVars",
@@ -481,31 +480,6 @@ return {
 				cterm_color = "140",
 				name = "Procfile",
 			},
-
-			-- ["h"] = {
-			-- 	icon = "󰰀",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "H",
-			-- },
-			-- ["hh"] = {
-			-- 	icon = "󰰀",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Hh",
-			-- },
-			-- ["hpp"] = {
-			-- 	icon = "󰰀",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Hpp",
-			-- },
-			-- ["hxx"] = {
-			-- 	icon = "󰰀",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Hxx",
-			-- },
 		})
 	end,
 }
