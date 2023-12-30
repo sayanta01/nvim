@@ -23,7 +23,7 @@ return {
 			sign_priority = 6,
 			update_debounce = 100,
 			status_formatter = nil,
-			max_file_length = 40000,
+			max_file_length = 40000, -- disable if file is longer than this (in lines)
 		})
 	end,
 }

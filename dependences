@@ -1,7 +1,6 @@
 #!/bin/sh
 
 distro=$(grep ID= /etc/os-release | sed -n 2p | cut -d= -f2)
-
 if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" ]; then
 	printf "Build neovim? (y/N): "
 	read -r choice
@@ -51,7 +50,7 @@ else
 fi
 
 distro=$(lsb_release -a | grep 'Distributor ID' | cut -f 2)
-if [ "$distro" = "Artix" ]; then
+if [ "$distro" = "Artix" ] || [ "$distro" = "Arch" ]; then
 	sudo pacman -S --noconfirm npm cargo luarocks \
 		go php ruby \
 		ripgrep \
@@ -64,17 +63,11 @@ fi
 ## node dependences
 sudo npm i -g tree-sitter-cli live-server
 
-## python dependences
+## python dependence
 pip install pynvim
 
-## rust setup
-printf "Install rustfmt ? (y/N): "
-read -r choice
-if [ "$choice" = "y" ]; then
-	rustup component add rustfmt
-else
-	:
-fi
+## rust dependence
+rustup component add rustfmt
 
 ## kotlin setup
 # curl -s "https://get.sdkman.io" | bash

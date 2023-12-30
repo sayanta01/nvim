@@ -146,9 +146,6 @@ return {
 						unusedparams = true,
 						shadow = true,
 					},
-					--[[ flags = { ]]
-					--[[ 	debounce_text_changes = 150, ]]
-					--[[ }, ]]
 					experimentalPostfixCompletions = true,
 					gofumpt = true,
 					staticcheck = true,

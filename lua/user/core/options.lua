@@ -8,7 +8,7 @@ opt.relativenumber = true
 -- Tabs & Indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true
+opt.expandtab = true -- convert tabs to spaces
 
 -- Line wrapping
 opt.wrap = false
@@ -16,7 +16,7 @@ opt.wrap = false
 -- Search settings
 opt.ignorecase = true
 opt.smartcase = true
--- opt.smartindent = true -- Autoindent new lines
+-- opt.smartindent = true -- autoindent new lines
 
 -- Split windows
 opt.splitright = true
@@ -37,26 +37,26 @@ opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
 opt.termguicolors = true
-opt.signcolumn = "yes"
+opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
 -- Misc
 opt.fileencoding = "utf-8"
-opt.writebackup = false -- Disable making a backup before overwriting a file
-opt.backup = false -- Creates a backup file
--- opt.hidden = true -- Required to keep multiple buffers and open multiple buffers
-opt.undofile = true
+opt.writebackup = false -- disable making a backup before overwriting a file
+opt.backup = false -- creates a backup file
+-- opt.hidden = true -- required to keep multiple buffers and open multiple buffers
+opt.undofile = true -- enable persistent undo
 opt.updatetime = 180 -- interval for writing swap file to disk, also used by gitsigns
-opt.completeopt = "menu,menuone,noselect"
+opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Folding using treesitter
 opt.foldlevel = 20
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 
--- Disable nvim intro
-opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)
-opt.shortmess:append("c")
-opt.whichwrap:append("<,>,[,],h,l")
+--- Settings
+vim.opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)
+vim.opt.shortmess:append("c") -- Don't show redundant messages from ins-completion-menu
+vim.opt.whichwrap:append("<,>,[,],h,l")
 
 -- Disable some default providers
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do

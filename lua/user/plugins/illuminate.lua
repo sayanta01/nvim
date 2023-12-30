@@ -32,7 +32,6 @@ return {
 			filetype_overrides = {},
 			-- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
 			filetypes_denylist = {
-				"dirbuf",
 				"dirvish",
 				"fugitive",
 				"alpha",
@@ -40,6 +39,7 @@ return {
 				"TelescopePrompt",
 				"toggleterm",
 				"lazy",
+				"Outline",
 				--[[ "Trouble", ]]
 			},
 			-- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist

@@ -8,6 +8,7 @@ return {
 	opts = {
 		exclude_filetypes = { "netrw", "toggleterm" },
 		show_basename = false,
+
 		kinds = {
 			File = "",
 			Module = "󱒌",

@@ -50,11 +50,11 @@ return {
 				diagnostics.shellcheck,
 				diagnostics.pylint,
 				diagnostics.eslint_d,
-				--[[ diagnostics.eslint_d.with({ -- js/ts linter ]]
-				--[[ 	condition = function(utils) ]]
-				--[[ 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- if root has .eslintrc.js .eslintrc.cjs ]]
-				--[[ 	end, ]]
-				--[[ }), ]]
+				-- diagnostics.eslint_d.with({ -- js/ts linter
+				-- 	condition = function(utils)
+				-- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- if root has .eslintrc.js .eslintrc.cjs
+				-- 	end,
+				-- }),
 			},
 			-- configure format on save
 			--[[ on_attach = function(current_client, bufnr) ]]

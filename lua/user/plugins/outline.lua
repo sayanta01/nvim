@@ -18,6 +18,7 @@ return {
 			auto_unfold_hover = true,
 			fold_markers = { "", "" },
 			wrap = false,
+
 			keymaps = {
 				close = { "<Esc>", "q" },
 				goto_location = "<Cr>",
@@ -32,6 +33,7 @@ return {
 				unfold_all = "E",
 				fold_reset = "R",
 			},
+
 			-- lsp_blacklist = {},
 			-- symbol_blacklist = {},
 			symbols = {

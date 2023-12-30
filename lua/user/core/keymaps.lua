@@ -53,10 +53,14 @@ keymap("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
 
+-- Splits
 keymap("n", "<C-v>", ":vsplit<CR>", opts)
 keymap("n", "<C-s>", ":split<CR>", opts)
 
+-- Exit insert mode with jk
 keymap("i", "jk", "<ESC>", opts)
+
+-- Toggle terminal
 keymap("n", "<A-\\>", ":ToggleTerm<CR>", opts)
 
 -- Stay in indent mode

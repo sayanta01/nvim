@@ -38,6 +38,7 @@ return {
 		keymap("n", "<leader>jc", ":lua require('jdtls').extract_constant()<CR>", opts)
 		keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
 		keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
+
 		-- For nvim-dap
 		keymap("n", "<leader>jt", ":lua require'jdtls'.test_class()<CR>", opts)
 		keymap("n", "<leader>jn", ":lua require'jdtls'.test_nearest_method()<CR>", opts)

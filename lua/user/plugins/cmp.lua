@@ -8,15 +8,8 @@ return {
 		"hrsh7th/cmp-path",
 		"f3fora/cmp-spell",
 		"hrsh7th/cmp-calc",
-		{
-			"L3MON4D3/LuaSnip",
-			version = "v2.*",
-			build = "make install_jsregexp",
-			event = "InsertEnter",
-			dependencies = {
-				"rafamadriz/friendly-snippets",
-			},
-		},
+		"L3MON4D3/LuaSnip",
+		"rafamadriz/friendly-snippets",
 	},
 
 	config = function()
@@ -33,10 +26,16 @@ return {
 		-- load snippets from plugins
 		require("luasnip/loaders/from_vscode").lazy_load()
 
-		local check_backspace = function()
-			local col = vim.fn.col(".") - 1
-			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+		local has_words_before = function()
+			unpack = unpack or table.unpack
+			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 		end
+
+		-- local check_backspace = function()
+		-- 	local col = vim.fn.col(".") - 1
+		-- 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+		-- end
 
 		local kind_icons = {
 			Text = "󰭸",
@@ -73,37 +72,59 @@ return {
 					luasnip.lsp_expand(args.body) -- For Luasnip
 				end,
 			},
+
+      -- UI
+			window = {
+				completion = {
+					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+				},
+				documentation = {
+					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+				},
+			},
+
 			-- Key mapping
 			mapping = cmp.mapping.preset.insert({
-				["<C-k>"] = cmp.mapping.select_prev_item(),
-				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-				["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- in Insert --
-				["<C-y>"] = cmp.config.disable,
-				["<C-e>"] = cmp.mapping({
+				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
+				["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
+				["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
+				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- show completion suggestions in insert mode
+				["<C-y>"] = cmp.config.disable, -- specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping
+				["<C-e>"] = cmp.mapping({ -- close completion window
 					i = cmp.mapping.abort(),
 					c = cmp.mapping.close(),
 				}),
-				-- Accept currently selected item. If none selected, 'select' first item.
-				-- Set 'select' to 'false' to only confirm explicitly selected items.
+				-- Accept currently selected item, If none selected, 'select' first item
+				-- Set 'select' to 'false' to only confirm explicitly selected items
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<Tab>"] = cmp.mapping(function(fallback)
+					-- 	if cmp.visible() then
+					-- 		cmp.select_next_item()
+					-- 	elseif luasnip.expandable() then
+					-- 		luasnip.expand()
+					-- 	elseif luasnip.expand_or_jumpable() then
+					-- 		luasnip.expand_or_jump()
+					-- 	elseif check_backspace() then
+					-- 		fallback()
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end, { "i", "s" }),
+
 					if cmp.visible() then
 						cmp.select_next_item()
-					elseif luasnip.expandable() then
-						luasnip.expand()
-					elseif luasnip.expand_or_jumpable() then
+					elseif luasnip.expand_or_locally_jumpable() then
 						luasnip.expand_or_jump()
-					elseif check_backspace() then
-						fallback()
+					elseif has_words_before() then
+						cmp.complete()
 					else
 						fallback()
 					end
-				end, {
-					"i",
-					"s",
-				}),
+				end, { "i", "s" }),
+
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
@@ -112,12 +133,10 @@ return {
 					else
 						fallback()
 					end
-				end, {
-					"i",
-					"s",
-				}),
+				end, { "i", "s" }),
 			}),
-			-- sources for autocompletion
+
+			-- Sources for autocompletion
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
@@ -144,6 +163,7 @@ return {
 						calc = "[Calc]",
 					})[entry.source.name]
 
+					-- Add custom Icons for source
 					-- local custom_menu_icon = {
 					-- 	calc = "󰆕",
 					-- 	-- [[ you could include other sources here as well ]]
@@ -161,17 +181,6 @@ return {
 				select = false,
 			},
 
-			window = {
-				completion = {
-					scrollbar = true,
-					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-					--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
-				},
-				documentation = {
-					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-					--[[ winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None", ]]
-				},
-			},
 			experimental = {
 				ghost_text = false,
 			},
