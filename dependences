@@ -1,7 +1,7 @@
 #!/bin/sh
 
-distro=$(grep ID= /etc/os-release | sed -n 2p | cut -d= -f2)
-if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" ]; then
+# Debian based
+if [ -f /etc/debian_version ]; then
 	printf "Build neovim? (y/N): "
 	read -r choice
 	if [ "$choice" = "y" ]; then
@@ -13,7 +13,7 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 		:
 	fi
 
-	## dependences
+	## Pkgs
 	sudo apt install -y npm cargo luarocks \
 		golang php ruby \
 		ripgrep \
@@ -33,7 +33,7 @@ if [ "$distro" = "debian" ] || [ "$distro" = "ubuntu" ] || [ "$distro" = "kali" 
 	# wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
 	# curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 
-	# julia
+	# Julia
 	## curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check version
 	printf "Want to install julia? (y/N): "
 	read -r choice
@@ -49,8 +49,8 @@ else
 	:
 fi
 
-distro=$(lsb_release -a | grep 'Distributor ID' | cut -f 2)
-if [ "$distro" = "Artix" ] || [ "$distro" = "Arch" ]; then
+# Arch based
+if [ -f /etc/arch-release ]; then
 	sudo pacman -S --noconfirm npm cargo luarocks \
 		go php ruby \
 		ripgrep \
@@ -60,15 +60,15 @@ else
 	:
 fi
 
-## node dependences
+## Node dependences
 sudo npm i -g tree-sitter-cli live-server
 
-## python dependence
+## Python dependence
 pip install pynvim
 
-## rust dependence
+## Rust dependence
 rustup component add rustfmt
 
-## kotlin setup
+## Kotlin setup
 # curl -s "https://get.sdkman.io" | bash
 # sdk install kotlin
