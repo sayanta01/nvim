@@ -1,4 +1,9 @@
 return {
+	-- g? `help menu`
+	-- (o)pen
+	-- (a)dd
+	-- (r)ename
+	-- (d)elete
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
 	cmd = "NvimTreeToggle",

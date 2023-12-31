@@ -18,7 +18,7 @@ return {
 			disable_filetype = { "TelescopePrompt", "spectre_panel", "vim" },
 			-- change default fast_wrap
 			fast_wrap = {
-				map = "<M-e>",
+				map = "<M-e>", -- Useful
 				chars = { "{", "[", "(", '"', "'" },
 				pattern = [=[[%'%"%>%]%)%}%,]]=],
 				end_key = "$",

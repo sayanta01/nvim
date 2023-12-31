@@ -73,15 +73,15 @@ return {
 				end,
 			},
 
-      -- UI
+			-- UI
 			window = {
 				completion = {
 					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 				},
 				documentation = {
 					border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-					winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+					winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
 				},
 			},
 
@@ -171,7 +171,6 @@ return {
 					-- if entry.source.name == "calc" then
 					-- 	vim_item.menu = custom_menu_icon.calc
 					-- end
-
 					return vim_item
 				end,
 			},
