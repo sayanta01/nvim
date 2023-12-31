@@ -54,8 +54,8 @@ keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
 
 -- Splits
-keymap("n", "<C-v>", ":vsplit<CR>", opts)
-keymap("n", "<C-s>", ":split<CR>", opts)
+keymap("n", "<leader>\\", ":vsplit<CR>", opts)
+keymap("n", "<leader>-", ":split<CR>", opts)
 
 -- Exit insert mode with jk
 keymap("i", "jk", "<ESC>", opts)
@@ -75,7 +75,5 @@ keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", opts)
+keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", opts)

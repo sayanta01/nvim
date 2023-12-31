@@ -50,11 +50,10 @@ return {
 			end,
 		},
 
+		-- virtual text for the debugger
 		{
 			"theHamsta/nvim-dap-virtual-text",
-			config = function()
-				require("nvim-dap-virtual-text").setup()
-			end,
+			opts = {},
 		},
 	},
 }
