@@ -47,6 +47,10 @@ return {
 						cargo = {
 							allFeatures = true,
 						},
+						checkOnSave = {
+							enable = true,
+							command = "clippy",
+						},
 					},
 				},
 			},

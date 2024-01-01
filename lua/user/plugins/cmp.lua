@@ -99,7 +99,7 @@ return {
 				}),
 				-- Accept currently selected item, If none selected, 'select' first item
 				-- Set 'select' to 'false' to only confirm explicitly selected items
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ select = true }), -- jump to next jumpable in a snippet
 				["<Tab>"] = cmp.mapping(function(fallback)
 					-- 	if cmp.visible() then
 					-- 		cmp.select_next_item()
@@ -125,7 +125,7 @@ return {
 					end
 				end, { "i", "s" }),
 
-				["<S-Tab>"] = cmp.mapping(function(fallback)
+				["<S-Tab>"] = cmp.mapping(function(fallback) -- jump to previous jumpable in a snippet
 					if cmp.visible() then
 						cmp.select_prev_item()
 					elseif luasnip.jumpable(-1) then
