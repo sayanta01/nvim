@@ -11,16 +11,17 @@ return {
 				"regex",
 			},
 			delay = 120, -- delay: in milliseconds
+			-- move between references using `Alt n/p`
 			keys = {
 				{
-					"]]",
+					"a-n",
 					function()
 						require("illuminate").goto_next_reference()
 					end,
 					desc = "Next Reference",
 				},
 				{
-					"[[",
+					"a-p",
 					function()
 						require("illuminate").goto_prev_reference()
 					end,
