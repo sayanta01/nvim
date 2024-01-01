@@ -32,6 +32,24 @@ return {
 	{
 		"mfussenegger/nvim-dap-python",
 		ft = "python",
+		keys = {
+			{
+				"<leader>dPt",
+				function()
+					require("dap-python").test_method()
+				end,
+				desc = "Test Method",
+				ft = "python",
+			},
+			{
+				"<leader>dPc",
+				function()
+					require("dap-python").test_class()
+				end,
+				desc = "Test Class",
+				ft = "python",
+			},
+		},
 		config = function()
 			local path = require("mason-registry").get_package("debugpy"):get_install_path()
 			require("dap-python").setup(path .. "/venv/bin/python")
@@ -40,7 +58,7 @@ return {
 
 	{
 		"linux-cultist/venv-selector.nvim",
-		ft = "python",
+		ft = "py",
 		cmd = "VenvSelect",
 		opts = {},
 		keys = {
@@ -54,6 +72,24 @@ return {
 	{
 		"leoluz/nvim-dap-go",
 		ft = "go",
+		keys = {
+			{
+				"<leader>dPt",
+				function()
+					require("dap-go").debug_test()
+				end,
+				desc = "Debug Test",
+				ft = "go",
+			},
+			{
+				"<leader>dPl",
+				function()
+					require("dap-go").debug_last_test()
+				end,
+				desc = "Last Test",
+				ft = "go",
+			},
+		},
 		dependencies = "mfussenegger/nvim-dap",
 		config = function()
 			require("dap-go").setup({

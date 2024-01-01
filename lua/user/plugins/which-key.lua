@@ -217,13 +217,6 @@ return {
 				q = { ":lua require'dap'.close()<cr>", "Quit" },
 				U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 			},
-			D = {
-				name = "Lang-Debug",
-				m = { ":lua require('dap-python').test_method()<cr>", "󰌠 Test Method" },
-				c = { ":lua require('dap-python').test_class()<cr>", "󰌠 Test Class" },
-				t = { ":lua require('dap-go').debug_test()<cr>", " Debug Test" },
-				l = { ":lua require('dap-go').debug_last_test()<cr>", " Last Test" },
-			},
 
 			t = {
 				name = "Terminal",
