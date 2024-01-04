@@ -154,7 +154,7 @@ return {
 
 			s = {
 				name = "Telescope",
-				c = { ":Telescope colorscheme<cr>", "Themes" },
+				c = { ":Telescope colorscheme<cr>", "Colorscheme" },
 				i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 				t = { ":Telescope live_grep<cr>", "Find Text" },
 				p = { ":Telescope projects<cr>", "Projects" },
@@ -175,14 +175,16 @@ return {
 
 			o = {
 				name = "Option",
-				s = { ":set spell!<cr>", "Toggle Spell Check" },
 				x = { ":!chmod +x %<cr>", "Chmod 󰐕X" },
 				c = { ":CccPick<cr>", "Color Picker" },
 				f = { ":CccConvert<cr>", "Change Color Format" },
 				h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
-				l = { ":set cursorcolumn!<cr>", "Cursor Column" },
-				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
+				s = { ":set spell!<cr>", "Toggle Spell Check" },
 				w = { ":set wrap!<cr>", "Toggle Wrap Text" },
+				l = { ":set cursorcolumn!<cr>", "Cursor Column" },
+				v = { ":VimBeGood<cr>", "Vim Practice" },
+				o = { ":SymbolsOutline<cr>", "Symbols Outline" },
+				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 			},
 
 			p = {
@@ -193,7 +195,7 @@ return {
 			},
 
 			b = {
-				b = { ":Telescope buffers<cr>", "Buf Prev" },
+				b = { ":Telescope buffers<cr>", "Buf Preview" },
 				n = { ":enew<cr>", "New Buffer" },
 				h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
 				l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
