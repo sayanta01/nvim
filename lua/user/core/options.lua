@@ -40,6 +40,7 @@ opt.termguicolors = true
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
 -- Misc
+opt.guifont = "JetBrainsMono NF Thin:h15"
 opt.fileencoding = "utf-8"
 opt.writebackup = false -- disable making a backup before overwriting a file
 opt.backup = false -- creates a backup file
