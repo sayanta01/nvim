@@ -9,5 +9,5 @@ return {
 		-- "sainnhe/gruvbox-material",
 		"bluz71/vim-nightfly-guicolors",
 	},
-	-- lazy = true,
+	lazy = true,
 }
