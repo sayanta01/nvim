@@ -139,14 +139,16 @@ return {
 
 			l = {
 				name = "LSP",
+				d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" },
+				h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 				t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
 				r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
-				f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
 				a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-				q = { ":lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 				w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
 				W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
 				l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
+				f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
+				q = { ":lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 				s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 				S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 				c = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },

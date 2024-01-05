@@ -4,7 +4,13 @@ return {
 	cmd = "Telescope",
 	dependencies = {
 		-- "nvim-lua/plenary.nvim",
-		-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+			cond = function()
+				return vim.fn.executable("make") == 1
+			end,
+		},
 		"nvim-telescope/telescope-media-files.nvim",
 		{
 			"ahmedkhalf/project.nvim",
@@ -169,21 +175,21 @@ return {
 			},
 			extensions = {
 				-- Extension configuration goes here
+				fzf = {
+					fuzzy = true, -- false will only do exact matching
+					override_generic_sorter = true, -- override the generic sorter
+					override_file_sorter = true, -- override the file sorter
+					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+				},
 				media_files = {
 					filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
 					find_cmd = "rg", -- find command ( defaults to "fd" )
 				},
-				--[[ fzf = { ]]
-				--[[ 	fuzzy = true, -- false will only do exact matching ]]
-				--[[ 	override_generic_sorter = true, -- override the generic sorter ]]
-				--[[ 	override_file_sorter = true, -- override the file sorter ]]
-				--[[ 	case_mode = "smart_case", -- or "ignore_case" or "respect_case" ]]
-				--[[ }, ]]
 			},
 		})
 
 		telescope.load_extension("projects")
 		telescope.load_extension("media_files")
-		-- telescope.load_extension("fzf")
+		telescope.load_extension("fzf")
 	end,
 }
