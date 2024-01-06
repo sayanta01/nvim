@@ -1,5 +1,8 @@
 return {
-	"lunarvim/lunar.nvim",
+	"folke/tokyonight.nvim",
+	opts = {
+		style = "moon",
+	},
 	dependencies = {
 		-- { "rose-pine/neovim", name = "rose-pine" },
 		-- "B4mbus/oxocarbon-lua.nvim",

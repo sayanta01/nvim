@@ -171,6 +171,10 @@ return {
 		lspconfig["clangd"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			cmd = {
+				"clangd",
+				"--offset-encoding=utf-16",
+			},
 		})
 
 		-- lspconfig["omnisharp"].setup({
