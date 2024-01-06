@@ -1,10 +1,11 @@
+local function keymap(mode, lhs, rhs, opts)
+	opts = opts or {}
+	opts.silent = opts.silent ~= false
+	vim.keymap.set(mode, lhs, rhs, opts)
+end
 local opts = { noremap = true, silent = true }
--- local term_opts = { silent = true }
 
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
--- Remap space as leader key
+-- Space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it based on a filetype
@@ -24,13 +25,13 @@ keymap("n", "}", "}zzzv", opts)
 keymap("n", "{", "{zzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
 
--- Better window navigation
+-- Move to window using the <ctrl> hjkl keys
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Resize with arrows
+-- Resize window using <ctrl> arrow keys
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
@@ -46,8 +47,14 @@ keymap("n", "<S-Right>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "dd", '"_dd', opts)
 keymap("n", "x", '"_x', opts)
 
--- Edit same word all together
+-- Paste without overwriting register
+keymap({ "v", "x" }, "p", '"_dP', opts)
+
+-- Replace word under cursor across entire buffer
 keymap("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+
+-- Clear search with <ESC>
+keymap({ "i", "n" }, "<ESC>", "<cmd>noh<CR><ESC>", { desc = "Escape for clear hlsearch" })
 
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)
@@ -67,10 +74,21 @@ keymap("n", "<A-\\>", ":ToggleTerm<CR>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Better paste
-keymap("x", "p", '"_dP', opts)
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+keymap("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
+keymap("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
+keymap("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
+keymap("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+keymap("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
--- Move text up & down
+-- Better up/down
+keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- Move text up/down
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)

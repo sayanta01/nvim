@@ -186,7 +186,7 @@ return {
 				l = { ":set cursorcolumn!<cr>", "Cursor Line" },
 				u = { ":UfoAttach<cr>", "Ufo" },
 				v = { ":VimBeGood<cr>", "Vim Practice" },
-				o = { ":SymbolsOutline<cr>", "Symbols Outline" },
+				o = { ":Outline<cr>", "Outline" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 			},
 

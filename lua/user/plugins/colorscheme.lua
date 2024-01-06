@@ -1,17 +1,13 @@
 return {
-	"rose-pine/neovim",
-	name = "rose-pine",
+	"lunarvim/lunar.nvim",
 	dependencies = {
-		-- "lunarvim/lunar.nvim",
+		-- { "rose-pine/neovim", name = "rose-pine" },
 		-- "B4mbus/oxocarbon-lua.nvim",
-		-- {
-		-- 	"olimorris/onedarkpro.nvim",
-		-- 	priority = 1000, -- Ensure it loads first
-		-- },
+		-- { "olimorris/onedarkpro.nvim", priority = 1000 }, -- Ensure it loads first
 		-- "RRethy/nvim-base16",
 		-- "lunarvim/synthwave84.nvim",
 		-- "sainnhe/gruvbox-material",
-		{ "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+		-- { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
 	},
 	lazy = true,
 }

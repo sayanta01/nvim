@@ -34,13 +34,13 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
+				"jdtls",
 				"tsserver",
 				"html",
 				"cssls",
 				"tailwindcss",
 				"emmet_ls",
 				"sqlls",
-				"jdtls",
 				"gopls",
 				"clangd",
 				"pyright",

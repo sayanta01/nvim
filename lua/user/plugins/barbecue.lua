@@ -30,7 +30,7 @@ return {
 			Array = "",
 			Object = "⦿",
 			Key = "🔐",
-			Null = "",
+			Null = "NULL",
 			EnumMember = "",
 			Struct = "",
 			Event = "🗲",

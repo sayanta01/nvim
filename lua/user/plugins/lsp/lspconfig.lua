@@ -82,7 +82,6 @@ return {
 		-- 	capabilities = capabilities,
 		-- 	on_attach = function(client, bufnr)
 		-- 		on_attach(client, bufnr)
-		--
 		-- 		vim.api.nvim_create_autocmd("BufWritePost", {
 		-- 			pattern = { "*.js", "*.ts" },
 		-- 			callback = function(ctx)
@@ -115,10 +114,10 @@ return {
 			capabilities = capabilities,
 		})
 
-		--[[ lspconfig["tailwindcss"].setup({ ]]
-		--[[ 	capabilities = capabilities, ]]
-		--[[ 	on_attach = on_attach, ]]
-		--[[ }) ]]
+		-- lspconfig["tailwindcss"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
@@ -131,6 +130,22 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
+
+		-- lspconfig["solargraph"].setup({
+		-- 	filetypes = { "ruby", "eruby" },
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- 	root_dir = require("lspconfig").util.root_pattern("Gemfile"),
+		-- 	single_file_support = true,
+		-- 	settings = {
+		-- 		solargraph = {
+		-- 			diagnostics = true,
+		-- 		},
+		-- 		flags = {
+		-- 			debounce_text_changes = 150,
+		-- 		},
+		-- 	},
+		-- })
 
 		lspconfig["gopls"].setup({
 			cmd = { "gopls" },
@@ -153,31 +168,15 @@ return {
 			},
 		})
 
-		--[[ lspconfig["solargraph"].setup({ ]]
-		--[[ 	filetypes = { "ruby", "eruby" }, ]]
-		--[[ 	on_attach = on_attach, ]]
-		--[[ 	capabilities = capabilities, ]]
-		--[[ 	root_dir = require("lspconfig").util.root_pattern("Gemfile"), ]]
-		--[[ 	single_file_support = true, ]]
-		--[[ 	settings = { ]]
-		--[[ 		solargraph = { ]]
-		--[[ 			diagnostics = true, ]]
-		--[[ 		}, ]]
-		--[[ 		flags = { ]]
-		--[[ 			debounce_text_changes = 150, ]]
-		--[[ 		}, ]]
-		--[[ 	}, ]]
-		--[[ }) ]]
-
 		lspconfig["clangd"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
-		--[[ lspconfig["omnisharp"].setup({ ]]
-		--[[ 	on_attach = on_attach, ]]
-		--[[ 	capabilities = capabilities, ]]
-		--[[ }) ]]
+		-- lspconfig["omnisharp"].setup({
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- })
 
 		lspconfig["pyright"].setup({
 			on_attach = on_attach,

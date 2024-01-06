@@ -340,7 +340,7 @@ return {
 			},
 
 			["mint"] = {
-				icon = "",
+				icon = "󰌪",
 				color = "#87c095",
 				cterm_color = "108",
 				name = "Mint",
