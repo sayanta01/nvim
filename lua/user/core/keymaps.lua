@@ -53,8 +53,8 @@ keymap({ "v", "x" }, "p", '"_dP', opts)
 -- Replace word under cursor across entire buffer
 keymap("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
--- Clear search with <ESC>
-keymap({ "i", "n" }, "<ESC>", "<cmd>noh<CR><ESC>", { desc = "Escape for clear hlsearch" })
+-- Clear search with <Esc>
+keymap({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hlsearch" })
 
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)
@@ -65,7 +65,7 @@ keymap("n", "<leader>\\", ":vsplit<CR>", opts)
 keymap("n", "<leader>-", ":split<CR>", opts)
 
 -- Exit insert mode with jk
-keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jk", "<Esc>", opts)
 
 -- Toggle terminal
 keymap("n", "<A-\\>", ":ToggleTerm<CR>", opts)
