@@ -39,7 +39,7 @@ return {
 		-- end
 
 		local kind_icons = {
-			Text = "󰭸",
+			Text = "",
 			Method = "",
 			Function = "ƒ",
 			Constructor = "",

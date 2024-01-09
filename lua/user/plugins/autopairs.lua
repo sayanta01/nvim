@@ -16,6 +16,14 @@ return {
 			},
 
 			disable_filetype = { "TelescopePrompt", "spectre_panel", "vim" },
+			disable_in_macro = false, -- disable when recording or executing a macro
+			disable_in_visualblock = false, -- disable when inserting after visual block mode
+			enable_moveright = true,
+			enable_afterquote = true, -- add bracket pairs after a quote
+			map_bs = true, -- map the <BS> key
+			map_c_h = false, -- Map the <C-h> key to delete a pair
+			map_c_w = false, -- map <c-w> to delete a pair if possible
+
 			-- change default fast_wrap
 			fast_wrap = {
 				map = "<M-e>", -- Useful
@@ -27,14 +35,6 @@ return {
 				highlight = "Search",
 				highlight_grey = "Comment",
 			},
-
-			disable_in_macro = false, -- disable when recording or executing a macro
-			enable_moveright = true,
-			enable_afterquote = true, -- add bracket pairs after a quote
-			map_bs = true, -- map the <BS> key
-			map_c_h = false, -- Map the <C-h> key to delete a pair
-			map_c_w = false, -- map <c-w> to delete a pair if possible
-			disable_in_visualblock = false, -- disable when inserting after visual block mode
 		})
 
 		-- import nvim-autopairs completion functionality

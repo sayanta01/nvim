@@ -32,7 +32,9 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 			event = "🗲 ",
 			init = " ",
 			import = " ",
+      keys = "󰥻 ",
 			plugin = " ",
+      source = " ",
 			start = "|>",
 			task = " ",
 			list = {

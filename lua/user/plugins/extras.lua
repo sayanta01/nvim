@@ -40,6 +40,9 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
 		cmd = { "DapInstall", "DapUninstall" },
 		opts = {
+			-- Makes a best effort to setup the various debuggers with
+			-- reasonable debug configurations
+			automatic_installation = true,
 			ensure_installed = {
 				"python",
 				"codelldb",
@@ -47,7 +50,9 @@ return {
 				"js",
 				"javadbg",
 			},
-			automatic_installation = true,
+			-- You can provide additional configuration to the handlers,
+			-- see mason-nvim-dap README for more information
+			handlers = {},
 		},
 	},
 
@@ -80,14 +85,18 @@ return {
 
 	{
 		"linux-cultist/venv-selector.nvim",
-		ft = "py",
-		cmd = "VenvSelect",
-		opts = {},
-		keys = {
-			{
-				"<leader>vs",
-				"<cmd>:VenvSelect<cr>",
+		ft = "python",
+		opts = {
+			name = {
+				"venv",
+				".venv",
+				"env",
+				".env",
 			},
+		},
+		keys = {
+			{ "<leader>vs", "<cmd>VenvSelect<cr>" },
+			{ "<leader>vc", "<cmd>VenvSelectCached<cr>" },
 		},
 	},
 
@@ -127,6 +136,15 @@ return {
 					path = "dlv",
 					initialize_timeout_sec = 20,
 					port = "${port}",
+					-- additional args to pass to dlv
+					args = {},
+					-- the build flags that are passed to delve
+					-- defaults to empty string, but can be used to provide flags
+					-- such as "-tags=unit" to make sure the test suite is
+					-- compiled during debugging, for example
+					-- passing build flags using args is ineffective, as those are
+					-- ignored by delve in dap mode
+					build_flags = "",
 				},
 			})
 		end,
