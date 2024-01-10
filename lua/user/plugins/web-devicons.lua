@@ -144,6 +144,12 @@ return {
 				cterm_color = "214",
 				name = "Ppt",
 			},
+			["java"] = {
+				icon = "",
+				color = "#cc3e44",
+				cterm_color = "167",
+				name = "Java",
+			},
 			["ico"] = {
 				icon = "",
 				color = "#cbcb41",
