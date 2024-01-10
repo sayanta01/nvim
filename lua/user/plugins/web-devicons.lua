@@ -365,42 +365,42 @@ return {
 				name = "Tor",
 			},
 
-			["mix.lock"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "MixLock",
-			},
-			["eex"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Eex",
-			},
-			["ex"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Ex",
-			},
-			["exs"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Exs",
-			},
-			["heex"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Heex",
-			},
-			["leex"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Leex",
-			},
+			-- ["mix.lock"] = {
+			-- 	icon = "",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "MixLock",
+			-- },
+			-- ["eex"] = {
+			-- 	icon = "",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Eex",
+			-- },
+			-- ["ex"] = {
+			-- 	icon = "",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Ex",
+			-- },
+			-- ["exs"] = {
+			-- 	icon = "",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Exs",
+			-- },
+			-- ["heex"] = {
+			-- 	icon = "",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Heex",
+			-- },
+			-- ["leex"] = {
+			-- 	icon = "",
+			-- 	color = "#a074c4",
+			-- 	cterm_color = "140",
+			-- 	name = "Leex",
+			-- },
 
 			["kt"] = {
 				icon = "󰰉",
