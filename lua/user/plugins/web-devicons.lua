@@ -82,6 +82,30 @@ return {
 				cterm_color = "191",
 				name = "Bat",
 			},
+			["xaml"] = {
+				icon = "󰙳",
+				color = "#512bd4",
+				cterm_color = "56",
+				name = "Xaml",
+			},
+			["xls"] = {
+				icon = "󰰰",
+				color = "#207245",
+				cterm_color = "29",
+				name = "Xls",
+			},
+			["xlsx"] = {
+				icon = "󰰰",
+				color = "#207245",
+				cterm_color = "29",
+				name = "Xlsx",
+			},
+			["xml"] = {
+				icon = "",
+				color = "#e37933",
+				cterm_color = "166",
+				name = "Xml",
+			},
 			["yaml"] = {
 				icon = "",
 				color = "#6d8086",
