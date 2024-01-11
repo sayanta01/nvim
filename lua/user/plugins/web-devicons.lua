@@ -394,44 +394,6 @@ return {
 				cterm_color = "74",
 				name = "Tor",
 			},
-
-			-- ["mix.lock"] = {
-			-- 	icon = "",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "MixLock",
-			-- },
-			-- ["eex"] = {
-			-- 	icon = "",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Eex",
-			-- },
-			-- ["ex"] = {
-			-- 	icon = "",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Ex",
-			-- },
-			-- ["exs"] = {
-			-- 	icon = "",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Exs",
-			-- },
-			-- ["heex"] = {
-			-- 	icon = "",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Heex",
-			-- },
-			-- ["leex"] = {
-			-- 	icon = "",
-			-- 	color = "#a074c4",
-			-- 	cterm_color = "140",
-			-- 	name = "Leex",
-			-- },
-
 			["kt"] = {
 				icon = "󰰉",
 				color = "#7F52FF",
@@ -457,7 +419,7 @@ return {
 				name = "BinaryGLTF",
 			},
 			["twig"] = {
-				icon = "󰁜",
+				icon = "󰥛",
 				color = "#8dc149",
 				cterm_color = "113",
 				name = "Twig",
