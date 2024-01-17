@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Debian based
+## Debian based
 if [ -f /etc/debian_version ]; then
 	printf "Build neovim? (y/N): "
 	read -r choice
@@ -22,13 +22,13 @@ if [ -f /etc/debian_version ]; then
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
 
-  printf "Install cargo pkgs? (y/N): " && read -r choice && [ "$choice" = "y" ] && cargo install bat procs
+	printf "Install cargo pkgs? (y/N): " && read -r choice && [ "$choice" = "y" ] && cargo install bat procs
 
 	# wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared-linux-amd64.deb
 	# curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
 
-	# Julia
-	## curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check version
+	## Julia
+	# curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check version
 	printf "Install julia? (y/N): "
 	read -r choice
 	if [ "$choice" = "y" ]; then
@@ -43,7 +43,7 @@ else
 	:
 fi
 
-# Arch based
+## Arch based
 if [ -f /etc/arch-release ]; then
 	sudo pacman -S --noconfirm npm cargo luarocks \
 		go php ruby \
