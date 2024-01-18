@@ -7,28 +7,6 @@ return {
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		dependencies = {
 			-- "nvim-treesitter/nvim-treesitter-textobjects",
-			{
-				"windwp/nvim-ts-autotag",
-				ft = {
-					"html",
-					"javascript",
-					"typescript",
-					"javascriptreact",
-					"typescriptreact",
-					"tsx",
-					"jsx",
-					"svelte",
-					"xml",
-					"php",
-					"markdown",
-					"astro",
-				},
-				config = function()
-					require("nvim-ts-autotag").setup({
-						skip_tags = "",
-					})
-				end,
-			},
 		},
 
 		config = function()
@@ -85,7 +63,7 @@ return {
 
 					additional_vim_regex_highlighting = false,
 				},
-        indent = { enable = true },
+				indent = { enable = true },
 				autotag = { enable = false }, -- for autotag plugin
 				incremental_selection = {
 					enable = true,

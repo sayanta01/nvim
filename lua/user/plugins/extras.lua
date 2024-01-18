@@ -6,6 +6,29 @@ return {
 	},
 
 	{
+		"windwp/nvim-ts-autotag",
+		ft = {
+			"html",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+			"tsx",
+			"jsx",
+			"svelte",
+			"xml",
+			"php",
+			"markdown",
+			"astro",
+		},
+		config = function()
+			require("nvim-ts-autotag").setup({
+				skip_tags = "",
+			})
+		end,
+	},
+
+	{
 		"monaqa/dial.nvim",
     -- stylua: ignore
     keys = {
