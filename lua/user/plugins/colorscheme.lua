@@ -1,5 +1,7 @@
 return {
 	"folke/tokyonight.nvim",
+	lazy = true,
+	priority = 1000,
 	opts = {
 		style = "moon",
 	},
@@ -12,5 +14,4 @@ return {
 		-- "sainnhe/gruvbox-material",
 		-- { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
 	},
-	lazy = true,
 }
