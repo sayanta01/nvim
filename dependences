@@ -62,7 +62,3 @@ pip install pynvim
 
 ## Rust dependence
 rustup component add rustfmt
-
-## Kotlin setup
-# curl -s "https://get.sdkman.io" | bash
-# sdk install kotlin

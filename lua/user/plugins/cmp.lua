@@ -6,6 +6,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"saadparwaiz1/cmp_luasnip",
 		"hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-path",
 		"f3fora/cmp-spell",
 		"hrsh7th/cmp-calc",
@@ -26,6 +27,27 @@ return {
 
 		-- load snippets from plugins
 		require("luasnip/loaders/from_vscode").lazy_load()
+
+		-- cmdline setup
+		cmp.setup.cmdline("/", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = "buffer" },
+			},
+		})
+		cmp.setup.cmdline(":", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = "path" },
+			}, {
+				{
+					name = "cmdline",
+					option = {
+						ignore_cmds = { "Man", "!" },
+					},
+				},
+			}),
+		})
 
 		local has_words_before = function()
 			unpack = unpack or table.unpack
