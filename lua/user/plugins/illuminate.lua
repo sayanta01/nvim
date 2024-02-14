@@ -34,6 +34,10 @@ return {
 			filetype_overrides = {},
 			-- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
 			filetypes_denylist = {
+        "mason",
+        "harpoon",
+        "DressingInput",
+        "DressingSelect",
 				"dirvish",
 				"fugitive",
 				"alpha",
@@ -42,7 +46,7 @@ return {
 				"toggleterm",
 				"lazy",
 				"Outline",
-				--[[ "Trouble", ]]
+        -- "Trouble",
 			},
 			-- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
 			-- You must set filetypes_denylist = {} to override the defaults to allow filetypes_allowlist to take effect

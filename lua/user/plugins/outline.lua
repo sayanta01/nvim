@@ -143,7 +143,7 @@ return {
 				File = { icon = "", hl = "Identifier" },
 				Module = { icon = "󱒌", hl = "Include" },
 				Namespace = { icon = "", hl = "Include" },
-				Package = { icon = "󰏗", hl = "Include" },
+				Package = { icon = "", hl = "Include" },
 				Class = { icon = "", hl = "Type" },
 				Method = { icon = "", hl = "Function" },
 				Property = { icon = "", hl = "Identifier" },
