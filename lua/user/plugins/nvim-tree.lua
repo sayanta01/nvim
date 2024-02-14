@@ -97,7 +97,7 @@ return {
 				args = {},
 			},
 			git = {
-				enable = true,
+				enable = false,
 			},
 			diagnostics = {
 				enable = false,
