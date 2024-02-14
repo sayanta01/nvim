@@ -56,7 +56,7 @@ return {
 						file = true,
 						folder = true,
 						folder_arrow = true,
-						git = false,
+						git = true,
 					},
 					glyphs = {
 						default = "",
@@ -72,12 +72,12 @@ return {
 							symlink_open = "",
 						},
 						git = {
-							unstaged = "✗",
-							staged = "✓",
+							unstaged = "󱨈",
+							staged = "",
 							unmerged = "",
 							renamed = "",
-							untracked = "󰰧",
-							deleted = "",
+							untracked = "",
+							deleted = "",
 							ignored = "◌",
 						},
 					},
@@ -97,7 +97,7 @@ return {
 				args = {},
 			},
 			git = {
-				enable = false,
+				enable = true,
 			},
 			diagnostics = {
 				enable = false,

@@ -120,7 +120,7 @@ return {
 
 		ins_left({
 			"diff",
-			symbols = { added = " ", modified = " ", removed = " " },
+			symbols = { added = " ", modified = " ", removed = " " },
 			diff_color = {
 				added = { fg = colors.green },
 				modified = { fg = colors.orange },
