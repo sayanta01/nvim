@@ -67,9 +67,6 @@ keymap("n", "<leader>-", ":split<CR>", opts)
 -- Exit insert mode with jk
 keymap("i", "jk", "<Esc>", opts)
 
--- Toggle terminal
-keymap("n", "<A-\\>", ":ToggleTerm<CR>", opts)
-
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
