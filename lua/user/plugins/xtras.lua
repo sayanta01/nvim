@@ -6,11 +6,6 @@ return {
 	},
 
 	{
-		"akinsho/flutter-tools.nvim",
-		config = true,
-	},
-
-	{
 		"windwp/nvim-ts-autotag",
 		ft = {
 			"html",
