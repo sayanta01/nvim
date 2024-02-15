@@ -10,7 +10,7 @@ return {
 			cmdline = {
 				enabled = true,
 				view = "cmdline_popup",
-				opts = {}, -- global options for the cmdline. See section on views
+				opts = {}, -- global options for the cmdline, See section on views
 				format = {
 					-- conceal: (default=true) This will hide the text in the cmdline that matches the pattern
 					-- view: (default is cmdline view)
