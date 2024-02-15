@@ -107,7 +107,7 @@ return {
 			[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
 			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle" },
 			w = { ":w!<cr>", "Save" },
-			q = { ":q!<cr>", "quit" },
+			q = { ":q!<cr>", "Quit" },
 			x = { ":bdelete<cr>", "Close Buffer" },
 			n = { ":nohlsearch<cr>", "No Highlight" },
 			y = { "gg<S-v>G", "Copy" },
