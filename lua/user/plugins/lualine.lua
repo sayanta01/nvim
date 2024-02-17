@@ -11,11 +11,11 @@ return {
 			yellow = "#ecbe7b",
 			cyan = "#008080",
 			darkblue = "#081633",
-			green = "#50fa7b",
+      green = "#009E23",
 			orange = "#ff8800",
 			violet = "#a9a1e1",
 			magenta = "#c678dd",
-			blue = "#51afef",
+			blue = "#55b3f3",
 			red = "#ff5555",
 		}
 
@@ -86,8 +86,8 @@ return {
 			color = function()
 				-- auto change color according to neovims mode
 				local mode_color = {
-					n = colors.red,
-					i = colors.green,
+					n = colors.green,
+					i = colors.red,
 					v = colors.blue,
 					[""] = colors.blue,
 					V = colors.blue,
