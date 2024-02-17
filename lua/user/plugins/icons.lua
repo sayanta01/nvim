@@ -284,7 +284,7 @@ return {
 				name = "Js",
 			},
 			["opus"] = {
-				icon = "",
+				icon = "󰸪",
 				color = "#F88A02",
 				cterm_color = "208",
 				name = "OPUS",
@@ -471,6 +471,44 @@ return {
 				color = "#a074c4",
 				cterm_color = "140",
 				name = "Procfile",
+			},
+
+			["toml"] = {
+				icon = "󰰦",
+				color = "#333333",
+				cterm_color = "236",
+				name = "Toml",
+			},
+
+			["mov"] = {
+				icon = "",
+				color = "#7e4c10",
+				cterm_color = "94",
+				name = "MOV",
+			},
+			["mp4"] = {
+				icon = "",
+				color = "#7e4c10",
+				cterm_color = "94",
+				name = "Mp4",
+			},
+			["webm"] = {
+				icon = "",
+				color = "#7e4c10",
+				cterm_color = "94",
+				name = "Webm",
+			},
+			["mkv"] = {
+				icon = "",
+				color = "#7e4c10",
+				cterm_color = "94",
+				name = "Mkv",
+			},
+			["m4v"] = {
+				icon = "",
+				color = "#7e4c10",
+				cterm_color = "94",
+				name = "M4V",
 			},
 		})
 	end,
