@@ -482,31 +482,31 @@ return {
 
 			["mov"] = {
 				icon = "",
-				color = "#7e4c10",
+				color = "#e9902d",
 				cterm_color = "94",
 				name = "MOV",
 			},
 			["mp4"] = {
 				icon = "",
-				color = "#7e4c10",
+				color = "#e9902d",
 				cterm_color = "94",
 				name = "Mp4",
 			},
 			["webm"] = {
 				icon = "",
-				color = "#7e4c10",
+				color = "#e9902d",
 				cterm_color = "94",
 				name = "Webm",
 			},
 			["mkv"] = {
 				icon = "",
-				color = "#7e4c10",
+				color = "#e9902d",
 				cterm_color = "94",
 				name = "Mkv",
 			},
 			["m4v"] = {
 				icon = "",
-				color = "#7e4c10",
+				color = "#e9902d",
 				cterm_color = "94",
 				name = "M4V",
 			},
