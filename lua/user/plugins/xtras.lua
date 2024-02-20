@@ -6,6 +6,18 @@ return {
 	},
 
 	{
+		"nvim-cmp",
+		dependencies = {
+			{
+				"Exafunction/codeium.nvim",
+				cmd = "Codeium",
+				build = ":Codeium Auth",
+				opts = {},
+			},
+		},
+	},
+
+	{
 		"windwp/nvim-ts-autotag",
 		ft = {
 			"html",
