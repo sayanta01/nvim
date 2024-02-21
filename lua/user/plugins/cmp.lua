@@ -159,7 +159,8 @@ return {
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
-					vim_item.kind = string.format("%s", kind_icons[vim_item.kind]) -- This concatenates the icons with the name of the item kind
+					-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+					vim_item.kind = string.format("%s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
 					vim_item.menu = ({
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snip]",
@@ -174,6 +175,8 @@ return {
 					local custom_menu_icon = {
 						codeium = "󱙺",
 						calc = "󰆕",
+						-- codeium = "󱙺 Codeium",
+						-- calc = "󰆕 Calc",
 					}
 					if entry.source.name == "codeium" then
 						vim_item.kind = custom_menu_icon.codeium

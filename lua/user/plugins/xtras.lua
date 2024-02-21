@@ -18,6 +18,16 @@ return {
 	},
 
 	{
+		"akinsho/flutter-tools.nvim",
+		enabled = false,
+		ft = "dart",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		config = true,
+	},
+
+	{
 		"windwp/nvim-ts-autotag",
 		ft = {
 			"html",
