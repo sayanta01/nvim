@@ -474,8 +474,8 @@ return {
 			},
 
 			["toml"] = {
-				icon = "󰰦",
-				color = "#333333",
+				icon = "T",
+				color = "#FFFFFF",
 				cterm_color = "236",
 				name = "Toml",
 			},
