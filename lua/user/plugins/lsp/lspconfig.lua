@@ -62,7 +62,10 @@ return {
 		end
 
 		local config = {
-			virtual_text = true,
+			virtual_text = {
+				source = "if_many",
+				prefix = "●",
+			},
 			signs = true,
 			underline = true,
 			update_in_insert = false,

@@ -47,7 +47,7 @@ opt.backup = false -- creates a backup file
 -- opt.hidden = true -- required to keep multiple buffers and open multiple buffers
 opt.undofile = true -- enable persistent undo
 opt.updatetime = 180 -- interval for writing swap file to disk, also used by gitsigns
-opt.completeopt = { "menu", "menuone", "noselect" }
+opt.completeopt = "menu,menuone,noselect"
 
 -- Folding using treesitter
 opt.foldlevel = 20
