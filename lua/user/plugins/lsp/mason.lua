@@ -34,7 +34,7 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-        "rust-analyzer",
+        "rust_analyzer",
 				"jdtls",
 				"tsserver",
 				"html",
