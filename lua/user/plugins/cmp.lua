@@ -15,10 +15,7 @@ return {
 	},
 
 	config = function()
-		local cmp_status_ok, cmp = pcall(require, "cmp")
-		if not cmp_status_ok then
-			return
-		end
+		local cmp = require("cmp")
 
 		local snip_status_ok, luasnip = pcall(require, "luasnip")
 		if not snip_status_ok then
@@ -108,14 +105,21 @@ return {
 
 			-- Key mapping
 			mapping = cmp.mapping.preset.insert({
-				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+				["<C-k>"] = cmp.mapping.select_prev_item(), -- prev suggestion
 				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
 				["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
 				["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
 				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- show completion suggestions in insert mode
-				["<C-y>"] = cmp.config.disable, -- specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping
 				["<C-e>"] = cmp.mapping({ i = cmp.mapping.abort(), c = cmp.mapping.close() }), -- close completion window
+				["<C-y"] = cmp.mapping.confirm({
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = true,
+				}),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item, Set `select` to `false` to only confirm explicitly selected items
+				["<C-CR>"] = function(fallback)
+					cmp.abort()
+					fallback()
+				end,
 
 				-- jump to next jumpable in a snippet
 				["<Tab>"] = cmp.mapping(function(fallback)
@@ -149,6 +153,7 @@ return {
 				{ name = "path" },
 				{ name = "spell" },
 				{ name = "calc" },
+				{ name = "crates" },
 				{
 					name = "codeium",
 					priority = 100,
@@ -159,30 +164,36 @@ return {
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
-					-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+					-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
 					vim_item.kind = string.format("%s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
 					vim_item.menu = ({
+						codeium = "[Codeium]",
 						nvim_lsp = "[LSP]",
 						luasnip = "[Snip]",
 						buffer = "[Buf]",
 						path = "[Path]",
 						spell = "[Spell]",
 						calc = "[Calc]",
-						codeium = "[Codeium]",
+						crates = "[Crates]",
 					})[entry.source.name]
 
 					-- Add custom Icons for source
 					local custom_menu_icon = {
 						codeium = "󱙺",
 						calc = "󰆕",
+						crates = "",
 						-- codeium = "󱙺 Codeium",
 						-- calc = "󰆕 Calc",
+						-- crates = " Crates",
 					}
 					if entry.source.name == "codeium" then
 						vim_item.kind = custom_menu_icon.codeium
 					end
 					if entry.source.name == "calc" then
 						vim_item.kind = custom_menu_icon.calc
+					end
+					if entry.source.name == "crates" then
+						vim_item.kind = custom_menu_icon.crates
 					end
 					return vim_item
 				end,

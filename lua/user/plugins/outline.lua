@@ -1,7 +1,7 @@
 return {
 	"hedyhli/outline.nvim",
 	lazy = true,
-	cmd = "Outline",
+	cmd = { "Outline", "OutlineOpen" },
 	opts = {
 		outline_window = {
 			position = "right",

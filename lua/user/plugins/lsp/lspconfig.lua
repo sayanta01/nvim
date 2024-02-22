@@ -12,7 +12,7 @@ return {
 			local function buf_set_keymap(...)
 				vim.api.nvim_buf_set_keymap(bufnr, ...)
 			end
-
+			--
 			-- local status_ok, illuminate = pcall(require, "illuminate")
 			-- if not status_ok then
 			-- 	return
@@ -95,6 +95,29 @@ return {
 		-- 		})
 		-- 	end,
 		-- })
+
+		lspconfig["rust_analyzer"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "rust" },
+			cmd = {
+				"rustup",
+				"run",
+				"stable",
+				"rust-analyzer",
+			},
+			settings = {
+				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+					},
+					checkOnSave = {
+						enable = true,
+						command = "clippy",
+					},
+				},
+			},
+		})
 
 		lspconfig["tsserver"].setup({
 			on_attach = on_attach,

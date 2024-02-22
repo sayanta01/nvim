@@ -18,6 +18,21 @@ return {
 	},
 
 	{
+		-- "saecki/crates.nvim",
+		"sayanta01/crates.nvim",
+		event = { "BufRead Cargo.toml" },
+		config = function()
+			require("crates").setup({
+				src = {
+					cmp = {
+						enabled = true,
+					},
+				},
+			})
+		end,
+	},
+
+	{
 		"akinsho/flutter-tools.nvim",
 		enabled = false,
 		ft = "dart",
@@ -81,26 +96,6 @@ return {
 	{ "tpope/vim-fugitive", cmd = { "G", "Git" } },
 
 	-- Dap
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		cmd = { "DapInstall", "DapUninstall" },
-		opts = {
-			-- Makes a best effort to setup the various debuggers with
-			-- reasonable debug configurations
-			automatic_installation = true,
-			ensure_installed = {
-				"python",
-				"codelldb",
-				"delve",
-				"js",
-				"javadbg",
-			},
-			-- You can provide additional configuration to the handlers,
-			-- see mason-nvim-dap README for more information
-			handlers = {},
-		},
-	},
-
 	{
 		"mfussenegger/nvim-dap-python",
 		ft = "python",

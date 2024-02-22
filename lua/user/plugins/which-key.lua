@@ -171,7 +171,7 @@ return {
 				name = "Harpoon",
 				h = { ":Telescope harpoon marks<cr>", "Telescope harpoon" },
 				m = {
-					":lua require('harpoon.mark').add_file() vim.notify ' Marked file'<cr>",
+					":lua require('harpoon.mark').add_file() vim.notify ' Marked file'<cr>",
 					"Mark file with harpoon",
 				},
 				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Go to next harpoon mark" },
