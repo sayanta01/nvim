@@ -1,5 +1,4 @@
 local opt = vim.opt
--- local g = vim.g
 
 -- Line numbers
 opt.number = true
@@ -49,15 +48,13 @@ opt.undofile = true -- enable persistent undo
 opt.updatetime = 180 -- interval for writing swap file to disk, also used by gitsigns
 opt.completeopt = "menu,menuone,noselect"
 
--- Folding using treesitter
-opt.foldlevel = 20
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- Folding
+opt.foldlevel = 99
+opt.foldmethod = "indent"
 
---- Settings
-vim.opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)
-vim.opt.shortmess:append("c") -- Don't show redundant messages from ins-completion-menu
-vim.opt.whichwrap:append("<,>,[,],h,l")
+opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)
+opt.shortmess:append("c") -- Don't show redundant messages from ins-completion-menu
+opt.whichwrap:append("<,>,[,],h,l")
 
 -- Disable some default providers
 for _, provider in ipairs({ "node", "perl", "python3", "ruby" }) do
