@@ -3,7 +3,7 @@ return {
 	main = "ibl",
 	event = { "InsertEnter" },
 	opts = {
-		-- ▏ ┆ ╎ : ∘
+		-- ∘  ╎
 		indent = {
 			char = "▏",
 			tab_char = "▏",
