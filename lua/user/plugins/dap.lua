@@ -3,25 +3,6 @@ return {
 	cmd = { "DapUIToggle", "DapToggleRepl", "DapToggleBreakpoint" },
 	dependencies = {
 		{
-			"jay-babu/mason-nvim-dap.nvim",
-			cmd = { "DapInstall", "DapUninstall" },
-			opts = {
-				-- Makes a best effort to setup the various debuggers with
-				-- reasonable debug configurations
-				automatic_installation = true,
-				ensure_installed = {
-					"python",
-					"codelldb",
-					"delve",
-					"js",
-					"javadbg",
-				},
-				-- You can provide additional configuration to the handlers,
-				-- see mason-nvim-dap README for more information
-				handlers = {},
-			},
-		},
-		{
 			"rcarriga/nvim-dap-ui",
 			config = function()
 				local dap = require("dap")
@@ -102,10 +83,28 @@ return {
 			end,
 		},
 
-		-- virtual text for the debugger
+		-- virtual text for debugger
 		{
 			"theHamsta/nvim-dap-virtual-text",
 			opts = {},
+		},
+
+		{
+			"jay-babu/mason-nvim-dap.nvim",
+			-- cmd = { "DapInstall", "DapUninstall" },
+			opts = {
+				automatic_installation = true,
+				ensure_installed = {
+					"python",
+					"codelldb",
+					"delve",
+					"js",
+					"javadbg",
+				},
+				-- You can provide additional configuration to the handlers,
+				-- see mason-nvim-dap README for more information
+				handlers = {},
+			},
 		},
 	},
 }

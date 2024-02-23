@@ -10,7 +10,6 @@ return {
 		},
 
 		config = function()
-			-- import treesitter
 			local treesitter = require("nvim-treesitter.configs")
 
 			treesitter.setup({ -- enable syntax highlighting
@@ -50,7 +49,6 @@ return {
 				-- ignore_install = {}, -- List of parsers to ignore installing (or `all`)
 				highlight = {
 					enable = true,
-
 					-- disable = { "latex" },
 					-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
 					disable = function(_, buf)

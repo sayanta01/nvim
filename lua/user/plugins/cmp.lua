@@ -88,22 +88,11 @@ return {
 				end,
 			},
 
-			-- window = {
-			-- 	completion = {
-			-- 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			-- 		winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-			-- 	},
-			-- 	documentation = {
-			-- 		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			-- 		winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-			-- 	},
-			-- },
-
 			completion = {
 				completeopt = "menu,menuone,noinsert",
 			},
 
-			-- Key mapping
+			-- Mapping
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(), -- prev suggestion
 				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
@@ -177,7 +166,7 @@ return {
 						crates = "[Crates]",
 					})[entry.source.name]
 
-					-- Add custom Icons for source
+					-- Custom icons for source
 					local custom_menu_icon = {
 						codeium = "󱙺",
 						calc = "󰆕",
@@ -199,13 +188,13 @@ return {
 				end,
 			},
 
-			confirm_opts = {
-				behavior = cmp.ConfirmBehavior.Replace,
-				select = false,
-			},
+			-- confirm_opts = {
+			-- 	behavior = cmp.ConfirmBehavior.Replace,
+			-- 	select = false,
+			-- },
 
 			experimental = {
-				ghost_text = false,
+				ghost_text = true,
 			},
 		})
 	end,

@@ -32,7 +32,7 @@ return {
 
 		telescope.setup({
 			defaults = {
-				prompt_prefix = "   ", -- 
+				prompt_prefix = "   ",
 				selection_caret = " ",
 				initial_mode = "insert",
 				selection_strategy = "reset",
@@ -125,7 +125,7 @@ return {
 					hidden = true,
 				},
 				live_grep = {
-					--[[ @usage don't include the filename in the search results ]]
+					--[ @usage don't include the filename in the search results ]]
 					only_sort_text = true,
 				},
 				grep_string = {

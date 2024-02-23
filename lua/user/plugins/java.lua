@@ -29,8 +29,8 @@ return {
 
 		require("jdtls").start_or_attach(config)
 
-		local keymap = vim.keymap.set -- Shorten function name
-		local opts = { silent = true } -- Silent keymap option
+		local keymap = vim.keymap.set -- shorten function name
+		local opts = { silent = true } -- silent keymap option
 
 		keymap("n", "<leader>ji", ":lua require'jdtls'.organize_imports()<CR>", opts)
 		keymap("n", "<leader>jv", ":lua require('jdtls').extract_variable()<CR>", opts)
@@ -39,7 +39,7 @@ return {
 		keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
 		keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
 
-		-- For nvim-dap
+		-- for nvim-dap
 		keymap("n", "<leader>jt", ":lua require'jdtls'.test_class()<CR>", opts)
 		keymap("n", "<leader>jn", ":lua require'jdtls'.test_nearest_method()<CR>", opts)
 	end,

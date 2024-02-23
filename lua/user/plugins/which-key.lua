@@ -101,6 +101,11 @@ return {
 				name = "LSP",
 				a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 			},
+			g = {
+				name = "Git",
+				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+			},
 		}
 
 		local mappings = {

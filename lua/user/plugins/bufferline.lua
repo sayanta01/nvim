@@ -27,7 +27,7 @@ return {
 			diagnostics_update_in_insert = false,
 			offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
 			persist_buffer_sort = true,
-			separator_style = "thin", -- "slant"
+			separator_style = "thin",
 			enforce_regular_tabs = false,
 			always_show_bufferline = false, -- show when atleast two files are open
 		},

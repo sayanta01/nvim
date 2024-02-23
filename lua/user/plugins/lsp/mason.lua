@@ -5,7 +5,6 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
-		-- import mason
 		local mason = require("mason")
 
 		local mason_lspconfig = require("mason-lspconfig")
@@ -34,7 +33,7 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-        "rust_analyzer",
+				"rust_analyzer",
 				"jdtls",
 				"tsserver",
 				"html",

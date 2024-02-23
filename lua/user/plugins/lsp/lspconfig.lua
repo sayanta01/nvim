@@ -12,7 +12,7 @@ return {
 			local function buf_set_keymap(...)
 				vim.api.nvim_buf_set_keymap(bufnr, ...)
 			end
-			--
+
 			-- local status_ok, illuminate = pcall(require, "illuminate")
 			-- if not status_ok then
 			-- 	return
@@ -122,6 +122,14 @@ return {
 		lspconfig["tsserver"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			filetype = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			},
 			init_options = {
 				preferences = {
 					disableSuggestions = true,
@@ -130,14 +138,15 @@ return {
 		})
 
 		lspconfig["html"].setup({
-			filetypes = { "html", "php", "xml" },
 			on_attach = on_attach,
 			capabilities = capabilities,
+			filetypes = { "html", "php", "xml" },
 		})
 
 		lspconfig["cssls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			filetypes = { "css", "scss", "less" },
 		})
 
 		-- lspconfig["tailwindcss"].setup({
@@ -148,7 +157,20 @@ return {
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			filetypes = {
+				"astro",
+				"css",
+				"eruby",
+				"html",
+				"htmldjango",
+				"javascriptreact",
+				"less",
+				"pug",
+				"sass",
+				"scss",
+				"svelte",
+				"typescriptreact",
+			},
 		})
 
 		lspconfig["sqlls"].setup({
@@ -197,6 +219,7 @@ return {
 		lspconfig["clangd"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 			cmd = {
 				"clangd",
 				"--offset-encoding=utf-16",
@@ -207,6 +230,7 @@ return {
 		-- lspconfig["omnisharp"].setup({
 		-- 	on_attach = on_attach,
 		-- 	capabilities = capabilities,
+		-- 	filetypes = { "cs", "vb" },
 		-- })
 
 		lspconfig["pyright"].setup({
@@ -277,6 +301,7 @@ return {
 		lspconfig["jsonls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			filetypes = { "json", "jsonc" },
 			on_new_config = function(new_config)
 				new_config.settings.json.schemas = new_config.settings.json.schemas or {}
 				vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
@@ -294,21 +319,30 @@ return {
 		lspconfig["yamlls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			-- lazy-load schemastore when needed
 			on_new_config = function(new_config)
-				new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-				vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+				new_config.settings.yaml.schemas = vim.tbl_deep_extend(
+					"force",
+					new_config.settings.yaml.schemas or {},
+					require("schemastore").yaml.schemas()
+				)
 			end,
 			settings = {
+				redhat = { telemetry = { enabled = false } },
 				yaml = {
-					hover = true,
-					-- completion = true,
+					keyOrdering = false,
 					format = {
 						enable = true,
 					},
 					validate = true,
+					hover = true,
+					completion = true,
 					schemaStore = {
-						enable = true,
-						url = "https://www.schemastore.org/api/json/catalog.json",
+						-- Must disable built-in schemaStore support to use
+						-- schemas from SchemaStore.nvim plugin
+						enable = false,
+						url = "",
+						-- url = "https://www.schemastore.org/api/json/catalog.json",
 					},
 				},
 			},
