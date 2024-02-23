@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
+		"--branch=stable", -- latest stable release
 		lazypath,
 	})
 end
@@ -32,9 +32,9 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 			event = "🗲 ",
 			init = " ",
 			import = " ",
-      keys = "󰥻 ",
+			keys = "󰥻 ",
 			plugin = " ",
-      source = " ",
+			source = " ",
 			start = "|>",
 			task = " ",
 			list = {

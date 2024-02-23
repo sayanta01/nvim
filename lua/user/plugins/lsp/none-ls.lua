@@ -1,6 +1,6 @@
 return {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
-  event = { "BufReadPost", "BufNewFile" },
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
 	},
@@ -17,9 +17,10 @@ return {
 				"gofumpt",
 				"isort",
 				"black",
+				"ruff",
+				-- "pylint",
 				"shfmt",
 				"shellcheck",
-				"pylint",
 				"eslint_d",
 			},
 		})
@@ -35,8 +36,8 @@ return {
 			--[[ root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"), ]]
 			-- setup formatters & linters
 			sources = {
-				--  to disable file types use
-				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
+				-- to disable file types use
+				-- "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
@@ -48,7 +49,7 @@ return {
 				formatting.black,
 				formatting.shfmt,
 				diagnostics.shellcheck,
-				diagnostics.pylint,
+				diagnostics.ruff,
 				diagnostics.eslint_d,
 				-- diagnostics.eslint_d.with({ -- js/ts linter
 				-- 	condition = function(utils)
