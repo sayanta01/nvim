@@ -17,11 +17,10 @@ return {
 				"gofumpt",
 				"isort",
 				"black",
-				"ruff",
-				-- "pylint",
+				"pylint",
 				"shfmt",
-				"shellcheck",
-				"eslint_d",
+				"shellcheck", -- bashls automatically uses
+				"eslint_lsp",
 			},
 		})
 
@@ -43,15 +42,13 @@ return {
 				}), -- js/ts formatter
 				formatting.google_java_format,
 				formatting.stylua,
-				formatting.gofumpt,
-				formatting.rustfmt,
+				formatting.gofmt,
 				formatting.isort,
 				formatting.black,
+				diagnostics.pylint,
 				formatting.shfmt,
-				diagnostics.shellcheck,
-				diagnostics.ruff,
-				diagnostics.eslint_d,
-				-- diagnostics.eslint_d.with({ -- js/ts linter
+				-- diagnostics.eslint_d, -- js/ts linter
+				-- diagnostics.eslint_d.with({
 				-- 	condition = function(utils)
 				-- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- if root has .eslintrc.js .eslintrc.cjs
 				-- 	end,

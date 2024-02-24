@@ -1,0 +1,43 @@
+return {
+	"stevearc/conform.nvim",
+	event = { "BufWritePost" },
+	cmd = { "ConformInfo" },
+	keys = {
+		{
+			"<leader>lf",
+			function()
+				require("conform").format({ async = true, lsp_fallback = true })
+			end,
+			mode = { "n", "v" },
+			desc = "Format buffer",
+		},
+	},
+	opts = {
+		formatters_by_ft = {
+			html = { "prettier" },
+			css = { "prettier" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescriptreact = { "prettier" },
+			svelte = { "prettier" },
+			json = { "prettier" },
+			yaml = { "prettier" },
+			markdown = { "prettier" },
+			graphql = { "prettier" },
+			lua = { "stylua" },
+			go = { "gofmt" },
+			python = { "isort", "black" },
+			sh = { "shfmt" },
+		},
+
+		-- -- Format on save
+		-- format_on_save = { timeout_ms = 500, lsp_fallback = true },
+		-- -- Customize formatters
+		-- formatters = {
+		--   shfmt = {
+		--     prepend_args = { "-i", "2" },
+		--   },
+		-- },
+	},
+}
