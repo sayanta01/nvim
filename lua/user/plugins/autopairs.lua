@@ -46,11 +46,6 @@ return {
 		end
 
 		-- make autopairs and completion work together
-		cmp.setup({
-			event = {
-				on_confirm_done = cmp_autopairs.on_confirm_done(),
-			},
-			-- other cmp configurations
-		})
+		cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 	end,
 }
