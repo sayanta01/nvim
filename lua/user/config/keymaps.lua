@@ -60,12 +60,11 @@ keymap({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hl
 keymap("n", "<leader>\\", ":vsplit<CR>", opts)
 keymap("n", "<leader>-", ":split<CR>", opts)
 
+-- Misc
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
 keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
-
 keymap("i", "jk", "<Esc>", opts)
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
