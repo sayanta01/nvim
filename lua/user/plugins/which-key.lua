@@ -235,8 +235,8 @@ return {
 				name = "Terminal",
 				h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },
 				v = { ":ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-				n = { ":lua _NODE_TOGGLE()<cr>", "Node" },
-				p = { ":lua _PYTHON_TOGGLE()<cr>", "Python" },
+				-- n = { ":lua _NODE_TOGGLE()<cr>", "Node" },
+				-- p = { ":lua _PYTHON_TOGGLE()<cr>", "Python" },
 			},
 		}
 
