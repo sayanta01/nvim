@@ -26,22 +26,5 @@ return {
 				},
 			},
 		})
-
-		local terminal = require("toggleterm.terminal").Terminal
-		local lazygit = terminal:new({ cmd = "lazygit", hidden = true })
-
-		function _LAZYGIT_TOGGLE()
-			lazygit:toggle()
-		end
-
-		local node = terminal:new({ cmd = "node", hidden = true })
-		function _NODE_TOGGLE()
-			node:toggle()
-		end
-
-		local python = terminal:new({ cmd = "python", hidden = true })
-		function _PYTHON_TOGGLE()
-			python:toggle()
-		end
 	end,
 }
