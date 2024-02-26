@@ -2,7 +2,7 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("lazyVim_" .. name, { clear = true })
 end
 
--- Use 'q' to quit from common plugins
+-- Use `q` to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = augroup("close_with_q"),
 	pattern = { "qf", "help", "notify", "spectre_panel" },
@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- Set wrap & spell in markdown and gitcommit
+-- Set wrap & spell
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = augroup("wrap_spell"),
 	pattern = { "gitcommit", "markdown", "conf" },

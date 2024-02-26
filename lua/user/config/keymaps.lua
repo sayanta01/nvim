@@ -16,7 +16,7 @@ vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it 
 -- 	vim.api.nvim_echo({ { "Repository cloned successfully!", "Normal" } }, true, {})
 -- end, { desc = "Update" })
 
--- Keeping it centered
+-- Keep centered
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "n", "nzzzv", opts)
@@ -25,13 +25,13 @@ keymap("n", "}", "}zzzv", opts)
 keymap("n", "{", "{zzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
 
--- Move to window using the <ctrl> hjkl keys
+-- Move window
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Resize window using <ctrl> arrow keys
+-- Resize window
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
@@ -56,20 +56,17 @@ keymap("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 -- Clear search with <Esc>
 keymap({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hlsearch" })
 
--- Increment/decrement
-keymap("n", "+", "<C-a>", opts)
-keymap("n", "-", "<C-x>", opts)
-
 -- Splits
 keymap("n", "<leader>\\", ":vsplit<CR>", opts)
 keymap("n", "<leader>-", ":split<CR>", opts)
 
--- Exit insert mode with jk
-keymap("i", "jk", "<Esc>", opts)
-
--- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+keymap("n", "+", "<C-a>", opts)
+keymap("n", "-", "<C-x>", opts)
+
+keymap("i", "jk", "<Esc>", opts)
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 keymap("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
@@ -79,7 +76,7 @@ keymap("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev searc
 keymap("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 keymap("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
--- Better up/down while word wrap
+-- Better up/down on word wrap
 keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

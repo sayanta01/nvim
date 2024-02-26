@@ -1,35 +1,31 @@
 local opt = vim.opt
 
--- Line numbers
 opt.number = true
 opt.relativenumber = true
 
--- Tabs & Indentation
+-- Tabs
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true -- convert tabs to spaces
 
--- Line wrapping
-opt.wrap = false
-
 -- Search settings
 opt.ignorecase = true
 opt.smartcase = true
--- opt.smartindent = true -- autoindent new lines
+opt.smartindent = true -- autoindent new line
 
 -- Split windows
 opt.splitright = true
 opt.splitbelow = true
 
--- Info
-opt.showmode = false
-opt.showcmd = false
-
--- Clipboard
+-- Sync with system clipboard
 opt.clipboard = "unnamedplus"
 
 -- Turn off swapfile
 opt.swapfile = false
+
+opt.wrap = false
+opt.showmode = false
+opt.showcmd = false
 
 opt.confirm = true
 opt.cursorline = true
@@ -43,7 +39,6 @@ opt.guifont = "JetBrainsMono NF Thin:h15"
 opt.fileencoding = "utf-8"
 opt.writebackup = false -- disable making a backup before overwriting a file
 opt.backup = false -- creates a backup file
--- opt.hidden = true -- required to keep multiple buffers and open multiple buffers
 opt.undofile = true -- enable persistent undo
 opt.updatetime = 180 -- interval for writing swap file to disk, also used by gitsigns
 opt.completeopt = "menu,menuone,noselect"
