@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.lsp" } }, {
+	defaults = { lazy = true }, -- lazy-load all plugins by default
 	install = {
 		colorscheme = { "habamax" },
 	},
