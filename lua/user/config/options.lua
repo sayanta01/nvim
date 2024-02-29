@@ -1,7 +1,7 @@
 local opt = vim.opt
 
-opt.number = true
-opt.relativenumber = true
+-- opt.number = true
+-- opt.relativenumber = true
 
 -- Tabs
 opt.tabstop = 2
