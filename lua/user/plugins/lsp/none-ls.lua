@@ -15,11 +15,11 @@ return {
 				"prettier",
 				"stylua",
 				"gofumpt",
+        "shfmt",
+        "shellcheck", -- bashls automatically uses
 				"isort",
 				"black",
 				"pylint",
-				"shfmt",
-				"shellcheck", -- bashls automatically uses
 				"eslint_lsp",
 			},
 		})
@@ -43,10 +43,10 @@ return {
 				formatting.google_java_format,
 				formatting.stylua,
 				formatting.gofmt,
+        formatting.shfmt,
 				formatting.isort,
 				formatting.black,
-				diagnostics.pylint,
-				formatting.shfmt,
+				-- diagnostics.pylint,
 				-- diagnostics.eslint_d, -- js/ts linter
 				-- diagnostics.eslint_d.with({
 				-- 	condition = function(utils)

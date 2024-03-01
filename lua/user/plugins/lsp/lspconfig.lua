@@ -149,25 +149,25 @@ return {
 			filetypes = { "css", "scss", "less" },
 		})
 
-		lspconfig.eslint.setup({
-			on_attach = function(bufnr)
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					buffer = bufnr,
-					command = "EslintFixAll",
-				})
-			end,
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"javascript.jsx",
-				"typescript",
-				"typescriptreact",
-				"typescript.tsx",
-				"vue",
-				"svelte",
-				"astro",
-			},
-		})
+		-- lspconfig.eslint.setup({
+		-- 	on_attach = function(bufnr)
+		-- 		vim.api.nvim_create_autocmd("BufWritePre", {
+		-- 			buffer = bufnr,
+		-- 			command = "EslintFixAll",
+		-- 		})
+		-- 	end,
+		-- 	filetypes = {
+		-- 		"javascript",
+		-- 		"javascriptreact",
+		-- 		"javascript.jsx",
+		-- 		"typescript",
+		-- 		"typescriptreact",
+		-- 		"typescript.tsx",
+		-- 		"vue",
+		-- 		"svelte",
+		-- 		"astro",
+		-- 	},
+		-- })
 
 		-- lspconfig["tailwindcss"].setup({
 		-- 	capabilities = capabilities,
