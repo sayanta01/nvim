@@ -6,18 +6,6 @@ return {
 	},
 
 	{
-		"nvim-cmp",
-		dependencies = {
-			{
-				"Exafunction/codeium.nvim",
-				cmd = "Codeium",
-				build = ":Codeium Auth",
-				opts = {},
-			},
-		},
-	},
-
-	{
 		-- "saecki/crates.nvim",
 		"sayanta01/crates.nvim",
 		event = { "BufRead Cargo.toml" },
@@ -30,16 +18,6 @@ return {
 				},
 			})
 		end,
-	},
-
-	{
-		"akinsho/flutter-tools.nvim",
-		enabled = false,
-		ft = "dart",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = true,
 	},
 
 	{

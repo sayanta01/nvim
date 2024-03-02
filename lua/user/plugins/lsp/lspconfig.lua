@@ -5,7 +5,6 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
-		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
 		local on_attach = function(client, bufnr)
@@ -47,21 +46,21 @@ return {
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-			border = "rounded",
-		})
+		-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+		-- 	border = "rounded",
+		-- })
 
-		vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-			border = "rounded",
-		})
+		-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+		-- 	border = "rounded",
+		-- })
 
 		local signs = { Error = " ", Warn = " ", Hint = "󰌶 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 		end
 
-		local config = {
+		vim.diagnostic.config({
 			virtual_text = {
 				source = "if_many",
 				prefix = "■",
@@ -78,46 +77,66 @@ return {
 				prefix = "",
 				-- scope = "cursor", -- only when cursor is on up
 			},
-		}
-		vim.diagnostic.config(config)
+		})
 
-		-- lspconfig["svelte"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = function(client, bufnr)
-		-- 		on_attach(client, bufnr)
-		-- 		vim.api.nvim_create_autocmd("BufWritePost", {
-		-- 			pattern = { "*.js", "*.ts" },
-		-- 			callback = function(ctx)
-		-- 				if client.name == "svelte" then
-		-- 					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-		-- 				end
-		-- 			end,
-		-- 		})
-		-- 	end,
-		-- })
-
-		lspconfig["rust_analyzer"].setup({
+		lspconfig["clangd"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "rust" },
+			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 			cmd = {
-				"rustup",
-				"run",
-				"stable",
-				"rust-analyzer",
+				"clangd",
+				"--offset-encoding=utf-16",
+				"-header-insertion=never",
 			},
+		})
+
+		-- lspconfig["omnisharp"].setup({
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- 	filetypes = { "cs", "vb" },
+		-- })
+
+		lspconfig["bashls"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
+		lspconfig["pyright"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetype = { "python" },
 			settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						allFeatures = true,
-					},
-					checkOnSave = {
-						enable = true,
-						command = "clippy",
+				python = {
+					analysis = {
+						autoSearchPaths = true,
+						diagnosticMode = "workspace",
+						useLibraryCodeForTypes = true,
+						typeCheckingMode = "basic", -- off
+						inlayHints = {
+							variableTypes = true,
+							functionReturnTypes = true,
+						},
 					},
 				},
 			},
 		})
+
+		lspconfig["html"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "html", "php", "xml" },
+		})
+
+		lspconfig["cssls"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "css", "scss", "less" },
+		})
+
+		-- lspconfig["tailwindcss"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		lspconfig["tsserver"].setup({
 			on_attach = on_attach,
@@ -135,18 +154,6 @@ return {
 					disableSuggestions = true,
 				},
 			},
-		})
-
-		lspconfig["html"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "html", "php", "xml" },
-		})
-
-		lspconfig["cssls"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "css", "scss", "less" },
 		})
 
 		-- lspconfig.eslint.setup({
@@ -167,11 +174,6 @@ return {
 		-- 		"svelte",
 		-- 		"astro",
 		-- 	},
-		-- })
-
-		-- lspconfig["tailwindcss"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
 		-- })
 
 		lspconfig["emmet_ls"].setup({
@@ -199,21 +201,33 @@ return {
 			capabilities = capabilities,
 		})
 
-		-- lspconfig["solargraph"].setup({
-		-- 	filetypes = { "ruby", "eruby" },
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- 	root_dir = require("lspconfig").util.root_pattern("Gemfile"),
-		-- 	single_file_support = true,
-		-- 	settings = {
-		-- 		solargraph = {
-		-- 			diagnostics = true,
-		-- 		},
-		-- 		flags = {
-		-- 			debounce_text_changes = 150,
-		-- 		},
-		-- 	},
-		-- })
+		lspconfig["marksman"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
+		lspconfig["rust_analyzer"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "rust" },
+			cmd = {
+				"rustup",
+				"run",
+				"stable",
+				"rust-analyzer",
+			},
+			settings = {
+				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+					},
+					checkOnSave = {
+						enable = true,
+						command = "clippy",
+					},
+				},
+			},
+		})
 
 		lspconfig["gopls"].setup({
 			cmd = { "gopls" },
@@ -236,41 +250,30 @@ return {
 			},
 		})
 
-		lspconfig["clangd"].setup({
+		lspconfig["dockerls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-			cmd = {
-				"clangd",
-				"--offset-encoding=utf-16",
-				"-header-insertion=never",
-			},
 		})
 
-		-- lspconfig["omnisharp"].setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- 	filetypes = { "cs", "vb" },
-		-- })
-
-		lspconfig["pyright"].setup({
-			on_attach = on_attach,
+		lspconfig["svelte"].setup({
 			capabilities = capabilities,
-			filetype = { "python" },
-			settings = {
-				python = {
-					analysis = {
-						autoSearchPaths = true,
-						diagnosticMode = "workspace",
-						useLibraryCodeForTypes = true,
-						typeCheckingMode = "basic", -- off
-						inlayHints = {
-							variableTypes = true,
-							functionReturnTypes = true,
-						},
-					},
-				},
-			},
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+				vim.api.nvim_create_autocmd("BufWritePost", {
+					pattern = { "*.js", "*.ts" },
+					callback = function(ctx)
+						if client.name == "svelte" then
+							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+						end
+					end,
+				})
+			end,
+		})
+
+		lspconfig["graphql"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
 		})
 
 		lspconfig["lua_ls"].setup({
@@ -297,25 +300,20 @@ return {
 			},
 		})
 
-		lspconfig["bashls"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-
-		lspconfig["marksman"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-
-		lspconfig["dockerls"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-
-		-- lspconfig["graphql"].setup({
-		-- 	capabilities = capabilities,
+		-- lspconfig["solargraph"].setup({
+		-- 	filetypes = { "ruby", "eruby" },
 		-- 	on_attach = on_attach,
-		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+		-- 	capabilities = capabilities,
+		-- 	root_dir = require("lspconfig").util.root_pattern("Gemfile"),
+		-- 	single_file_support = true,
+		-- 	settings = {
+		-- 		solargraph = {
+		-- 			diagnostics = true,
+		-- 		},
+		-- 		flags = {
+		-- 			debounce_text_changes = 150,
+		-- 		},
+		-- 	},
 		-- })
 
 		lspconfig["jsonls"].setup({
