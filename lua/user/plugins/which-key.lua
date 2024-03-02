@@ -216,7 +216,7 @@ return {
 				name = "Debug",
 				t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 				c = { ":lua require'dap'.continue()<cr>", "Continue" },
-				C = { ":lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
+				C = { ":lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
 				o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
 				i = { ":lua require'dap'.step_into()<cr>", "Step Into" },
 				u = { ":lua require'dap'.step_out()<cr>", "Step Out" },
@@ -226,9 +226,9 @@ return {
 				s = { ":lua require'dap'.session()<cr>", "Get Session" },
 				x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
 				p = { ":lua require'dap'.pause()<cr>", "Pause" },
+				j = { ":lua require'dap'.down()<cr>", "Down" },
+				k = { ":lua require'dap'.up()<cr>", "Up" },
 				d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
-				q = { ":lua require'dap'.close()<cr>", "Quit" },
-				U = { ":lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 			},
 
 			t = {
