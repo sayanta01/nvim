@@ -25,7 +25,7 @@ keymap("n", "}", "}zzzv", opts)
 keymap("n", "{", "{zzzv", opts)
 keymap("n", "J", "mzJ`z", opts)
 
--- Move window
+-- Switch window
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
