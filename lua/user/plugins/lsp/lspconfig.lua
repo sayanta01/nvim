@@ -33,7 +33,7 @@ return {
 			buf_set_keymap("n", "gs", ":lua vim.lsp.buf.signature_help()<CR>", opts)
 			buf_set_keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
 			buf_set_keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
-			buf_set_keymap("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opts)
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 			buf_set_keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
 			buf_set_keymap("n", "gl", ":lua vim.diagnostic.open_float()<CR>", opts)
 			buf_set_keymap("n", "[d", ":lua vim.diagnostic.goto_prev()<CR>", opts)
