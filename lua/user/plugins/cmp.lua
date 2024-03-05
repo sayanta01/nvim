@@ -151,35 +151,29 @@ return {
 
 			-- Formatting
 			formatting = {
-				fields = { "kind", "abbr", "menu" },
+				-- fields = { "kind", "abbr", "menu" },
 				format = function(entry, vim_item)
-					-- vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
-					vim_item.kind = string.format("%s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
-					vim_item.menu = ({
-						codeium = "[Codeium]",
-						nvim_lsp = "[LSP]",
-						luasnip = "[Snip]",
-						buffer = "[Buf]",
-						path = "[Path]",
-						spell = "[Spell]",
-						calc = "[Calc]",
-						crates = "[Crates]",
-					})[entry.source.name]
+					vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+					-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind], vim_item.kind)
+					-- vim_item.menu = ({
+					-- 	codeium = "[Codeium]",
+					-- 	nvim_lsp = "[LSP]",
+					-- 	luasnip = "[Snip]",
+					-- 	buffer = "[Buf]",
+					-- 	path = "[Path]",
+					-- 	spell = "[Spell]",
+					-- 	crates = "[Crates]",
+					-- })[entry.source.name]
 
 					-- Custom icons for source
 					local custom_menu_icon = {
-						codeium = "󱙺",
-						calc = "󰆕",
-						crates = "",
-						-- codeium = "󱙺 Codeium",
-						-- calc = "󰆕 Calc",
-						-- crates = " Crates",
+						codeium = "󱙺 Codeium",
+						crates = " Crates",
+						-- codeium = "󱙺",
+						-- crates = "",
 					}
 					if entry.source.name == "codeium" then
 						vim_item.kind = custom_menu_icon.codeium
-					end
-					if entry.source.name == "calc" then
-						vim_item.kind = custom_menu_icon.calc
 					end
 					if entry.source.name == "crates" then
 						vim_item.kind = custom_menu_icon.crates
