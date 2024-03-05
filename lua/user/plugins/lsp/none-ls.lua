@@ -15,8 +15,8 @@ return {
 				"prettier",
 				"stylua",
 				"gofumpt",
-        "shfmt",
-        "shellcheck", -- bashls automatically uses
+				"shfmt",
+				"shellcheck", -- bashls automatically uses
 				"isort",
 				"black",
 				"pylint",
@@ -43,7 +43,7 @@ return {
 				formatting.google_java_format,
 				formatting.stylua,
 				formatting.gofmt,
-        formatting.shfmt,
+				formatting.shfmt,
 				formatting.isort,
 				formatting.black,
 				-- diagnostics.pylint,

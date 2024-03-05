@@ -1,7 +1,7 @@
 return {
 	-- [[ https://www.lazyvim.org/plugins/editor ]]
 	"RRethy/vim-illuminate",
-	event = { "LspAttach" },
+	event = { "InsertEnter", "BufWritePost" }, -- LspAttach
 	config = function()
 		require("illuminate").configure({
 			-- providers: provider used to get references in the buffer, ordered by priority
