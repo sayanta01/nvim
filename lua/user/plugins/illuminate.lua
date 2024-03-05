@@ -10,7 +10,7 @@ return {
 				"treesitter",
 				"regex",
 			},
-			delay = 120, -- delay: in milliseconds
+			delay = 200, -- delay: in milliseconds
 			-- move between references using `Alt n/p`
 			keys = {
 				{
