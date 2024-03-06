@@ -31,7 +31,6 @@ opt.confirm = true
 opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
-opt.termguicolors = true
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
 -- Misc
