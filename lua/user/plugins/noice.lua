@@ -87,7 +87,7 @@ return {
 			},
 			notify = {
 				-- Noice can be used as `vim.notify` so you can route any notification like other messages
-				enabled = true,
+				enabled = false,
 				view = "notify",
 			},
 			lsp = {
@@ -181,11 +181,11 @@ return {
 		require("notify").setup({
 			fps = 30,
 			icons = {
-				DEBUG = "",
-				ERROR = "",
-				INFO = "󰋽",
-				TRACE = "✎",
-				WARN = "",
+				DEBUG = " ",
+				ERROR = " ",
+				INFO = " 󰋽",
+				TRACE = " ✎",
+				WARN = " ",
 			},
 			level = 2,
 			--[[ minimum_width = 60, ]]

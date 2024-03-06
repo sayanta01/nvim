@@ -11,7 +11,6 @@ return {
 				"regex",
 			},
 			delay = 200, -- delay: in milliseconds
-			-- move between references using `Alt n/p`
 			keys = {
 				{
 					"a-n",

@@ -176,7 +176,7 @@ return {
 				name = "Harpoon",
 				h = { ":Telescope harpoon marks<cr>", "Telescope harpoon" },
 				m = {
-					":lua require('harpoon.mark').add_file() vim.notify ' Marked file'<cr>",
+					":lua require('harpoon.mark').add_file() vim.notify '󰤱 Marked file'<cr>",
 					"Mark file with harpoon",
 				},
 				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Go to next harpoon mark" },
@@ -185,7 +185,6 @@ return {
 
 			o = {
 				name = "Option",
-				x = { ":!chmod +x %<cr>", "Chmod 󰐕X" },
 				c = { ":CccPick<cr>", "Color Picker" },
 				f = { ":CccConvert<cr>", "Change Color Format" },
 				h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
@@ -194,7 +193,6 @@ return {
 				l = { ":set cursorcolumn!<cr>", "Cursor Line" },
 				u = { ":UfoAttach<cr>", "Ufo" },
 				v = { ":VimBeGood<cr>", "Vim Practice" },
-				o = { ":Outline<cr>", "Outline" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 			},
 
