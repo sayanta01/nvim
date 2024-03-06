@@ -63,7 +63,7 @@ return {
 		vim.diagnostic.config({
 			virtual_text = {
 				source = "if_many",
-				prefix = "■",
+				prefix = "",
 			},
 			signs = true,
 			underline = true,
