@@ -156,7 +156,6 @@ return {
 				q = { ":lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 				s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 				S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-				c = { ":lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 			},
 
 			s = {
@@ -178,6 +177,10 @@ return {
 				m = {
 					":lua require('harpoon.mark').add_file() vim.notify '󰤱 Marked file'<cr>",
 					"Mark file with harpoon",
+				},
+				r = {
+					":lua require('harpoon.mark').rm_file() vim.notify '󱫂 Removed file'<cr>",
+					"Remove marked file",
 				},
 				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Go to next harpoon mark" },
 				p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Go to previous harpoon mark" },

@@ -9,6 +9,8 @@ return {
 
 		local null_ls = require("null-ls")
 
+		-- local null_ls_utils = require("null-ls.utils")
+
 		mason_null_ls.setup({
 			ensure_installed = {
 				"google_java_format",
@@ -28,15 +30,12 @@ return {
 		local diagnostics = null_ls.builtins.diagnostics
 
 		-- setup format on save
-		--[[ local augroup = vim.api.nvim_create_augroup("LspFormatting", {}) ]]
+		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 		null_ls.setup({
 			-- add package.json as identifier for root (for typescript monorepos)
-			--[[ root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"), ]]
-			-- setup formatters & linters
-			sources = {
-				-- to disable file types use
-				-- "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
+			-- root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
+			sources = { -- setup formatters & linters
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
@@ -50,7 +49,7 @@ return {
 				-- diagnostics.eslint_d, -- js/ts linter
 				-- diagnostics.eslint_d.with({
 				-- 	condition = function(utils)
-				-- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- if root has .eslintrc.js .eslintrc.cjs
+				-- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" })
 				-- 	end,
 				-- }),
 			},

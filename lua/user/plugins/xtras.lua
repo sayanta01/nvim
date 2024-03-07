@@ -5,6 +5,13 @@ return {
 		lazy = true,
 	},
 
+	-- {
+	-- 	"szw/vim-maximizer",
+	-- 	keys = {
+	-- 		{ "<leader>ms", ":MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
+	-- 	},
+	-- },
+
 	{
 		-- "saecki/crates.nvim",
 		"sayanta01/crates.nvim",
