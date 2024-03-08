@@ -22,7 +22,7 @@ return {
       Constructor = "",
       Enum = "ℰ",
       Interface = "",
-      Function = "ƒ",
+      Function = "F",
       Variable = "",
       Constant = "󰏿",
       String = "",
