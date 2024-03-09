@@ -46,7 +46,7 @@ return {
 					-- "prisma",
 				},
 				sync_install = false,
-				-- auto_install = true,
+				-- auto_install = true, -- must have `tree-sitter` CLI installed locally
 				-- ignore_install = {}, -- List of parsers to ignore installing (or `all`)
 				highlight = {
 					enable = true,

@@ -14,8 +14,8 @@ if [ -f /etc/debian_version ]; then
 	fi
 
 	## Pkgs
-	sudo apt install -y npm cargo luarocks \
-		golang php ruby \
+	sudo apt install -y npm luarocks cargo \
+		php golang ruby \
 		ripgrep \
 		python3-pip python3-venv \
 		default-jdk dotnet-sdk-6.0
@@ -45,8 +45,8 @@ fi
 
 ## Arch based
 if [ -f /etc/arch-release ]; then
-	sudo pacman -S --noconfirm npm cargo luarocks \
-		go php ruby \
+	sudo pacman -S --noconfirm npm luarocks cargo \
+    php go ruby \
 		ripgrep \
 		jdk-openjdk dotnet-sdk \
 		cloudflared lazygit julia
