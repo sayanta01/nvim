@@ -192,7 +192,7 @@ return {
 			--[[ maximum_width = 60, ]]
 			stages = "fade", -- slide, static
 			render = "compact", -- minimal
-			timeout = 2000,
+			timeout = 1000,
 		})
 	end,
 }

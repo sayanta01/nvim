@@ -40,8 +40,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-Left>", ":BufferLineMovePrev<CR>", opts)
-keymap("n", "<S-Right>", ":BufferLineMoveNext<CR>", opts)
 
 -- Delete not cut
 keymap("n", "dd", '"_dd', opts)

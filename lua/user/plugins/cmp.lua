@@ -138,7 +138,7 @@ return {
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
-				{ name = "buffer" },
+        { name = "buffer" },
 				{ name = "path" },
 				{ name = "spell" },
 				{ name = "calc" },
@@ -181,11 +181,6 @@ return {
 					return vim_item
 				end,
 			},
-
-			-- confirm_opts = {
-			-- 	behavior = cmp.ConfirmBehavior.Replace,
-			-- 	select = false,
-			-- },
 
 			experimental = {
 				ghost_text = false,

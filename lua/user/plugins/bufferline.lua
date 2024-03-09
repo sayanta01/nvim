@@ -3,6 +3,10 @@ return {
 	version = "*",
 	event = "VeryLazy",
 	-- dependencies = { "nvim-tree/nvim-web-devicons" },
+	keys = {
+		{ "<S-Left>", "<cmd>BufferLineMovePrev<cr>", desc = "Prev buffer" },
+		{ "<S-Right>", "<cmd>BufferLineMoveNext<cr>", desc = "Next buffer" },
+	},
 	opts = {
 		options = {
 			numbers = "none",

@@ -16,6 +16,7 @@ return {
 			filetypes = {
 				"help",
 				"alpha",
+				"dashboard",
 				"neo-tree",
 				"lazy",
 				"mason",

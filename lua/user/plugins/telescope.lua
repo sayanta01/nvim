@@ -36,7 +36,7 @@ return {
 				selection_caret = " ",
 				initial_mode = "insert",
 				selection_strategy = "reset",
-				sorting_strategy = "descending",
+				sorting_strategy = "descending", -- ascending
 				layout_strategy = "horizontal",
 				layout_config = {
 					width = 0.80,
@@ -77,10 +77,8 @@ return {
 				mappings = {
 					i = {
 						["<C-c>"] = actions.close, -- ESC
-						["<C-n>"] = actions.cycle_history_next,
-						["<C-p>"] = actions.cycle_history_prev,
-						["<C-j>"] = actions.move_selection_next,
-						["<C-k>"] = actions.move_selection_previous,
+						["<C-n>"] = actions.move_selection_next,
+						["<C-p>"] = actions.move_selection_previous,
 						["<CR>"] = actions.select_default,
 						["<C-h>"] = actions.select_horizontal,
 						["<C-v>"] = actions.select_vertical,
@@ -114,7 +112,7 @@ return {
 					},
 				},
 			},
-			file_ignore_patterns = {},
+			file_ignore_patterns = { "node_modules" },
 			pickers = {
 				-- Default configuration for builtin pickers goes here
 				find_files = {

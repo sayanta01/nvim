@@ -96,7 +96,7 @@ return {
 		}
 
 		local vmappings = {
-			["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment Toggle (visual)" },
+			["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Toggle Comment" },
 			l = {
 				name = "LSP",
 				a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -110,11 +110,10 @@ return {
 
 		local mappings = {
 			[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
-			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment Toggle" },
+			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle Comment" },
 			w = { ":w!<cr>", "Save" },
 			q = { ":q!<cr>", "Quit" },
 			x = { ":bdelete<cr>", "Close Buffer" },
-			n = { ":nohlsearch<cr>", "No Highlight" },
 			y = { "gg<S-v>G", "Copy" },
 			e = { ":NvimTreeToggle<cr>", "Explorer" },
 			f = { ":Telescope find_files<cr>", "Find Files" },
@@ -133,7 +132,7 @@ return {
 				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 				S = { ":lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
 				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-				R = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+				R = { ":lua require 'g--[[ itsigns ]]'.reset_buffer()<cr>", "Reset Buffer" },
 				u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 				d = { ":lua require 'gitsigns'.toggle_deleted()<cr>", "Toggle Deleted" },
 				D = {
@@ -164,32 +163,33 @@ return {
 				i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 				t = { ":Telescope live_grep<cr>", "Find Text" },
 				p = { ":Telescope projects<cr>", "Projects" },
+				h = { ":Telescope help_tags<cr>", "Help Pages" },
 				z = { ":Telescope command_history<cr>", "Cmd History" },
 				o = { ":Telescope oldfiles<cr>", "Recent Files" },
 				r = { ":Telescope registers<cr>", "Registers" },
-				g = { ":Telescope grep_string<cr>", "Find String" },
+				g = { ":Telescope grep_string<cr>", "Grep String" },
 				m = { ":Telescope marks<cr>", "Marks" },
 			},
 
 			h = {
 				name = "Harpoon",
-				h = { ":Telescope harpoon marks<cr>", "Telescope harpoon" },
+				h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon marks" },
 				m = {
 					":lua require('harpoon.mark').add_file() vim.notify '󰤱 Marked file'<cr>",
-					"Mark file with harpoon",
+					"Mark to harpoon",
 				},
 				r = {
-					":lua require('harpoon.mark').rm_file() vim.notify '󱫂 Removed file'<cr>",
-					"Remove marked file",
+					":lua require('harpoon.mark').rm_file() vim.notify 'Removed file'<cr>",
+					"Remove mark",
 				},
-				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Go to next harpoon mark" },
-				p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Go to previous harpoon mark" },
+				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next harpoon" },
+				p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Prev harpoon" },
 			},
 
 			o = {
 				name = "Option",
 				c = { ":CccPick<cr>", "Color Picker" },
-				f = { ":CccConvert<cr>", "Change Color Format" },
+				f = { ":CccConvert<cr>", "Color Format" },
 				h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spell Check" },
 				w = { ":set wrap!<cr>", "Toggle Wrap Text" },
@@ -236,8 +236,6 @@ return {
 				name = "Terminal",
 				h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },
 				v = { ":ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-				-- n = { ":lua _NODE_TOGGLE()<cr>", "Node" },
-				-- p = { ":lua _PYTHON_TOGGLE()<cr>", "Python" },
 			},
 		}
 
@@ -247,16 +245,6 @@ return {
 		function _LAZYGIT_TOGGLE()
 			lazygit:toggle()
 		end
-
-		-- local node = terminal:new({ cmd = "node", hidden = true })
-		-- function _NODE_TOGGLE()
-		-- 	node:toggle()
-		-- end
-
-		-- local python = terminal:new({ cmd = "python", hidden = true })
-		-- function _PYTHON_TOGGLE()
-		-- 	python:toggle()
-		-- end
 
 		require("which-key").register(mappings, opts)
 		require("which-key").register(vmappings, vopts)
