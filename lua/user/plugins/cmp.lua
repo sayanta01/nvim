@@ -55,7 +55,7 @@ return {
 		local kind_icons = {
 			Text = "",
 			Method = "",
-			Function = "F",
+			Function = "f",
 			Constructor = "",
 			Field = "",
 			Variable = "",
