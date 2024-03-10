@@ -345,7 +345,6 @@ return {
 						-- schemas from SchemaStore.nvim plugin
 						enable = false,
 						url = "",
-						-- url = "https://www.schemastore.org/api/json/catalog.json",
 					},
 				},
 			},
