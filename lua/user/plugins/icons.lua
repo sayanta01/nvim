@@ -1,5 +1,4 @@
 return {
-	-- Dependencie of `Alpha, Bufferline, Lualine, NvimTree`
 	"nvim-tree/nvim-web-devicons",
 	lazy = true,
 	config = function()
@@ -413,7 +412,7 @@ return {
 				name = "Xul",
 			},
 			["glb"] = {
-				icon = "󰏗",
+				icon = "󰯽",
 				color = "#FFB13B",
 				cterm_color = "214",
 				name = "BinaryGLTF",

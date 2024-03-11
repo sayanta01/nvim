@@ -3,7 +3,7 @@ return {
 	branch = "0.1.x",
 	cmd = "Telescope",
 	dependencies = {
-		-- "nvim-lua/plenary.nvim",
+		"nvim-lua/plenary.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
@@ -146,7 +146,7 @@ return {
 					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
 				},
 				media_files = {
-					filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "pdf" },
+					filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "webm", "pdf" },
 					find_cmd = "rg", -- find command ( defaults to "fd" )
 				},
 			},

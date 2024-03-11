@@ -3,7 +3,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		version = false,
 		build = ":TSUpdate",
-		event = { "BufReadPost", "BufNewFile" },
+		event = { "BufReadPost", "VeryLazy" },
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall", "TSModuleInfo" },
 		dependencies = {
 			-- "nvim-treesitter/nvim-treesitter-textobjects",
@@ -12,10 +12,10 @@ return {
 		config = function()
 			local treesitter = require("nvim-treesitter.configs")
 
-			treesitter.setup({ -- enable syntax highlighting
+			treesitter.setup({
 				ensure_installed = {
 					"c",
-          "cpp",
+					"cpp",
 					"lua",
 					"vim",
 					"vimdoc",
@@ -48,11 +48,10 @@ return {
 				},
 				sync_install = false,
 				-- auto_install = true, -- must have `tree-sitter` CLI installed locally
-				-- ignore_install = {}, -- List of parsers to ignore installing (or `all`)
 				highlight = {
 					enable = true,
 					-- disable = { "latex" },
-					-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+					-- Or use a function for more flexibility, to disable slow treesitter highlight for large files
 					disable = function(_, buf)
 						local max_filesize = 100 * 1024 -- 100 KB
 						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
@@ -64,7 +63,6 @@ return {
 					additional_vim_regex_highlighting = false,
 				},
 				indent = { enable = true },
-				autotag = { enable = false }, -- for autotag plugin
 				incremental_selection = {
 					enable = true,
 					keymaps = {
@@ -73,12 +71,6 @@ return {
 						scope_incremental = false,
 						node_decremental = "<bs>",
 					},
-				},
-
-				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-				ts_context_commentstring = {
-					enable = true,
-					enable_autocmd = false,
 				},
 			})
 		end,

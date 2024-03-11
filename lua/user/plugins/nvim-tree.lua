@@ -1,13 +1,13 @@
 return {
 	-- g? `help menu`
-	-- (o)pen
-	-- (a)dd
-	-- (r)ename
-	-- (d)elete
+	-- o-pen
+	-- a-dd
+	-- r-ename
+	-- d-elete
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
 	cmd = "NvimTreeToggle",
-	-- dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local nvimtree = require("nvim-tree")
 

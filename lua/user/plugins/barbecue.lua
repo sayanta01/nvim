@@ -2,7 +2,7 @@ return {
   "utilyre/barbecue.nvim",
   name = "barbecue",
   version = "*",
-  event = { "BufReadPost", "BufNewFile" },
+  event = { "BufReadPost", "VeryLazy" },
   dependencies = {
     "SmiteshP/nvim-navic",
   },
@@ -22,7 +22,7 @@ return {
       Constructor = "",
       Enum = "ℰ",
       Interface = "",
-      Function = "F",
+      Function = "f",
       Variable = "",
       Constant = "󰏿",
       String = "",

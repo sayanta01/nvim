@@ -2,10 +2,10 @@ return {
 	"akinsho/bufferline.nvim",
 	version = "*",
 	event = "VeryLazy",
-	-- dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
-		{ "<S-Left>", "<cmd>BufferLineMovePrev<cr>", desc = "Prev buffer" },
-		{ "<S-Right>", "<cmd>BufferLineMoveNext<cr>", desc = "Next buffer" },
+		{ "<S-Left>", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer to Left" },
+		{ "<S-Right>", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer to Right" },
 	},
 	opts = {
 		options = {

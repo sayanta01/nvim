@@ -42,7 +42,7 @@ return {
 				"graphql",
 				"svelte",
 			},
-			automatic_installation = false,
+			-- automatic_installation = false,
 		})
 	end,
 }

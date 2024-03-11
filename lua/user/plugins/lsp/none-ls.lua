@@ -1,7 +1,8 @@
 return {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
-	event = { "BufReadPost", "BufNewFile" },
+	event = { "BufReadPost", "VeryLazy" },
 	dependencies = {
+		"nvim-lua/plenary.nvim",
 		"jay-babu/mason-null-ls.nvim",
 	},
 	config = function()

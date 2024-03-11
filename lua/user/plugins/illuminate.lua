@@ -1,5 +1,4 @@
 return {
-	-- [[ https://www.lazyvim.org/plugins/editor ]]
 	"RRethy/vim-illuminate",
 	event = { "InsertEnter", "BufWritePost" }, -- LspAttach
 	config = function()

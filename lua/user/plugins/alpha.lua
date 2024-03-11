@@ -6,7 +6,10 @@ return {
 		end
 	end,
 	cmd = "Alpha",
-	-- dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		"nvim-lua/plenary.nvim",
+	},
 	config = function()
 		local alpha = require("alpha")
 		local dashboard = require("alpha.themes.dashboard")

@@ -3,7 +3,6 @@ return {
 	main = "ibl",
 	event = { "InsertEnter", "BufWritePost" },
 	opts = {
-		-- ∘  ╎
 		indent = {
 			char = "▏",
 			tab_char = "▏",
