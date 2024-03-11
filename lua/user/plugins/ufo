@@ -1,6 +1,6 @@
 return {
 	"kevinhwang91/nvim-ufo", -- fix: highlight when unfold
-	cmd = "UfoAttach",
+  cmd = "UfoAttach",
 	dependencies = {
 		"kevinhwang91/promise-async",
 		-- {

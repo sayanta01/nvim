@@ -194,7 +194,7 @@ return {
 				s = { ":set spell!<cr>", "Toggle Spell Check" },
 				w = { ":set wrap!<cr>", "Toggle Wrap Text" },
 				l = { ":set cursorcolumn!<cr>", "Cursor Line" },
-				u = { ":UfoAttach<cr>", "Ufo" },
+				-- u = { ":UfoAttach<cr>", "Ufo" },
 				v = { ":VimBeGood<cr>", "Vim Practice" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 			},
