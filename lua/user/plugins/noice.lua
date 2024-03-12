@@ -87,7 +87,7 @@ return {
 			},
 			notify = {
 				-- Noice can be used as `vim.notify` so you can route any notification like other messages
-				enabled = false,
+				enabled = true,
 				view = "notify",
 			},
 			lsp = {

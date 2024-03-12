@@ -9,7 +9,7 @@ return {
 				insert = "<C-g>s",
 				insert_line = "<C-g>S",
 				normal = "ys",
-				normal_cur = "yss", -- wrap entire line
+				normal_cur = "yss", -- entire line
 				normal_line = "yS",
 				normal_cur_line = "ySS",
 				visual = "S",
