@@ -10,12 +10,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it based on a filetype
 
--- Update
--- vim.keymap.set("n", "<leader>u", function()
--- 	vim.fn.system("git clone --depth=1 https://github.com/sayanta01/nvim ~/.config/nvim")
--- 	vim.api.nvim_echo({ { "Repository cloned successfully!", "Normal" } }, true, {})
--- end, { desc = "Update" })
-
 -- Keep centered
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
