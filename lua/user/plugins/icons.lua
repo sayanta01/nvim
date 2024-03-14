@@ -362,14 +362,14 @@ return {
 				name = "TFVars",
 			},
 			["csv"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "Csv",
 			},
 
 			["mint"] = {
-				icon = "󰌪",
+				icon = "󰣭",
 				color = "#87c095",
 				cterm_color = "108",
 				name = "Mint",
