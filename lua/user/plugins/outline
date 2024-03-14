@@ -140,7 +140,7 @@ return {
 			-- the custom mapping of icons specified below, The icons table is also
 			-- needed for specifying hl group
 			icons = {
-				File = { icon = "", hl = "Identifier" },
+				File = { icon = "", hl = "Identifier" },
 				Module = { icon = "󱒌", hl = "Include" },
 				Namespace = { icon = "", hl = "Include" },
 				Package = { icon = "", hl = "Include" },
@@ -156,11 +156,11 @@ return {
 				Constant = { icon = "󰏿", hl = "Constant" },
 				String = { icon = "", hl = "String" },
 				Number = { icon = "󰎠", hl = "Number" },
-				Boolean = { icon = "◩", hl = "Boolean" },
+				Boolean = { icon = "", hl = "Boolean" },
 				Array = { icon = "", hl = "Constant" },
 				Object = { icon = "⦿", hl = "Type" },
 				Key = { icon = "🔐", hl = "Type" },
-				Null = { icon = "NULL", hl = "Type" },
+				Null = { icon = "", hl = "Type" },
 				EnumMember = { icon = "", hl = "Identifier" },
 				Struct = { icon = "", hl = "Structure" },
 				Event = { icon = "🗲", hl = "Type" },

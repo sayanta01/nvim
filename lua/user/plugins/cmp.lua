@@ -55,7 +55,7 @@ return {
 		local kind_icons = {
 			Text = "",
 			Method = "",
-			Function = "f",
+			Function = "ƒ",
 			Constructor = "",
 			Field = "",
 			Variable = "",
@@ -69,7 +69,7 @@ return {
 			Keyword = "",
 			Snippet = "",
 			Color = "",
-			File = "",
+			File = "",
 			Reference = "",
 			Folder = "",
 			EnumMember = "",

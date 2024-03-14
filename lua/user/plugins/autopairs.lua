@@ -1,5 +1,4 @@
 return {
-	-- replace with `altermo/ultimate-autopair.nvim`
 	"windwp/nvim-autopairs", -- autopairs, integrates with cmp & treesitter
 	event = "InsertEnter",
 	dependencies = {

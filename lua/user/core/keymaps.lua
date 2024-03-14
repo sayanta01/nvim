@@ -42,7 +42,7 @@ keymap("n", "x", '"_x', opts)
 -- Paste without overwriting register
 keymap({ "v", "x" }, "p", '"_dP', opts)
 
--- Replace word under cursor across entire buffer
+-- Replace word under of cursor, across entire buffer
 keymap("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- Clear search with <Esc>
@@ -52,9 +52,11 @@ keymap({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hl
 keymap("n", "<leader>\\", ":vsplit<CR>", opts)
 keymap("n", "<leader>-", ":split<CR>", opts)
 
--- Misc
+-- Better indenting
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Num up/down
 keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
 
@@ -66,7 +68,7 @@ keymap("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev searc
 keymap("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 keymap("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
--- Better up/down on word wrap
+-- Better up/down on wrap
 keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })

@@ -2,10 +2,19 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("lazyVim_" .. name, { clear = true })
 end
 
--- Use `q` to quit from common plugins
+-- Close some filetypes with `q`
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = augroup("close_with_q"),
-	pattern = { "qf", "help", "notify", "spectre_panel" },
+	pattern = {
+		"PlenaryTestPopup",
+		"help",
+		"notify",
+		"qf",
+		"query",
+		"spectre_panel",
+		"checkhealth",
+		"DressingSelect",
+	},
 	callback = function()
 		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = true })
 		vim.opt_local.buflisted = false
@@ -21,10 +30,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- Disable the concealing in some files
+-- Fix concealing
 vim.api.nvim_create_autocmd("FileType", {
 	group = augroup("concealing_means_hidden"),
-	pattern = { "json", "jsonc", "markdown" },
+	pattern = { "json", "jsonc", "json5", "markdown" },
 	callback = function()
 		vim.opt.conceallevel = 0
 	end,

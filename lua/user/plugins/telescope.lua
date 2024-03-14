@@ -33,7 +33,7 @@ return {
 		telescope.setup({
 			defaults = {
 				prompt_prefix = "   ",
-				selection_caret = " ",
+				selection_caret = "❯ ",
 				initial_mode = "insert",
 				selection_strategy = "reset",
 				sorting_strategy = "descending", -- ascending
@@ -147,7 +147,7 @@ return {
 				},
 				media_files = {
 					filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "webm", "pdf" },
-					find_cmd = "rg", -- find command ( defaults to "fd" )
+					find_cmd = "rg", -- find command (defaults to "fd")
 				},
 			},
 		})
