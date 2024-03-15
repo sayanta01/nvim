@@ -17,10 +17,10 @@ return {
 
 		nvimtree.setup({
 			on_attach = "default",
-			hijack_cursor = false,
 			auto_reload_on_write = false,
-			disable_netrw = false,
+			disable_netrw = true,
 			hijack_netrw = true,
+			hijack_cursor = true,
 			hijack_unnamed_buffer_when_opening = false,
 			root_dirs = {},
 			prefer_startup_root = false,
@@ -36,7 +36,7 @@ return {
 			renderer = {
 				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
 				symlink_destination = true,
-				highlight_git = false,
+				highlight_git = true,
 				highlight_opened_files = "none",
 				indent_width = 2,
 				indent_markers = {
@@ -97,14 +97,14 @@ return {
 				args = {},
 			},
 			git = {
-				enable = false,
+				enable = true,
 			},
 			diagnostics = {
 				enable = false,
 			},
 			filters = {
 				dotfiles = false,
-				custom = { "node_modules", "\\.cache" },
+				custom = { "^.git$", "node_modules", "\\.cache" },
 			},
 			filesystem_watchers = {
 				enable = true,
