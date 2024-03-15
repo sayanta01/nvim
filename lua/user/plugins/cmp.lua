@@ -10,9 +10,18 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"f3fora/cmp-spell",
 		"hrsh7th/cmp-calc",
-		"L3MON4D3/LuaSnip",
+		{
+			"L3MON4D3/LuaSnip",
+			version = "v2.*",
+			build = "make install_jsregexp",
+			dependencies = {
+				"rafamadriz/friendly-snippets",
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+				end,
+			},
+		},
 		"saadparwaiz1/cmp_luasnip",
-		"rafamadriz/friendly-snippets",
 	},
 
 	config = function()
@@ -23,9 +32,6 @@ return {
 			return
 		end
 
-		-- load snippets from plugins
-		require("luasnip/loaders/from_vscode").lazy_load()
-
 		-- cmdline setup
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
@@ -33,6 +39,7 @@ return {
 				{ name = "buffer" },
 			},
 		})
+
 		cmp.setup.cmdline(":", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({

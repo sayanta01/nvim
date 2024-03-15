@@ -96,9 +96,9 @@ return {
 				automatic_installation = true,
 				ensure_installed = {
 					"python",
+          "js",
 					"codelldb",
 					"delve",
-					"js",
 					"javadbg",
 				},
 				-- You can provide additional configuration to the handlers,
