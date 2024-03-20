@@ -17,8 +17,8 @@ if [ -f /etc/debian_version ]; then
 	sudo apt install -y npm luarocks cargo \
 		php golang ruby \
 		ripgrep \
-		python3-pip python3-venv \
-		default-jdk dotnet-sdk-6.0
+		python3-pip python3-venv
+	# default-jdk dotnet-sdk-6.0
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
 
@@ -46,8 +46,8 @@ fi
 if [ -f /etc/arch-release ]; then
 	sudo pacman -S --noconfirm npm luarocks cargo \
 		php go ruby \
-		ripgrep lazygit \
-		jdk-openjdk dotnet-sdk julia
+		ripgrep lazygit
+		# jdk-openjdk dotnet-sdk julia
 else
 	:
 fi
