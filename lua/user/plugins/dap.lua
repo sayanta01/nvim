@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		{
 			"rcarriga/nvim-dap-ui",
+			"nvim-neotest/nvim-nio",
 			config = function()
 				local dap = require("dap")
 
@@ -96,7 +97,7 @@ return {
 				automatic_installation = true,
 				ensure_installed = {
 					"python",
-          "js",
+					"js",
 					"codelldb",
 					"delve",
 					"javadbg",
