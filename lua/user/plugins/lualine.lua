@@ -173,42 +173,9 @@ return {
 		})
 
 		-- ins_right({
-		-- 	"filetype",
-		-- 	icons_enabled = true,
-		-- 	cond = nil,
-		-- })
-
-		-- ins_right({
 		-- 	"filesize",
 		-- 	color = { fg = colors.violet, gui = "italic" },
 		-- 	cond = conditions.buffer_not_empty,
-		-- })
-
-		-- ins_right({
-		-- 	"filename",
-		-- 	path = 1,
-		-- 	cond = conditions.buffer_not_empty,
-		-- 	color = { fg = colors.magenta, gui = "italic" },
-		-- })
-
-		-- ins_right({
-		-- 	"fileformat",
-		-- 	fmt = string.upper,
-		-- 	icons_enabled = true,
-		-- 	symbols = {
-		-- 		unix = "",
-		-- 		dos = "",
-		-- 		mac = "󰀶",
-		-- 	},
-		-- 	color = { fg = colors.fg },
-		-- })
-
-		-- Add components to right sections
-		-- ins_right({
-		-- 	"o:encoding", -- option component same as &encoding in viml
-		-- 	fmt = string.upper, -- I'm not sure why it's upper case either ;)
-		-- 	cond = conditions.hide_in_width,
-		-- 	color = { fg = colors.fg, gui = "italic" },
 		-- })
 
 		lualine.setup(config)

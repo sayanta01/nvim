@@ -4,7 +4,7 @@ return {
 	cmd = "Neotree",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		-- "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
@@ -92,7 +92,7 @@ return {
 					required_width = 110,
 				},
 				symlink_target = {
-					enabled = true,
+					enabled = false,
 				},
 			},
 			-- A list of functions, each representing a global custom command
