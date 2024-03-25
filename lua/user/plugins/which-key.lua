@@ -188,9 +188,7 @@ return {
 
 			o = {
 				name = "Option",
-				c = { ":CccPick<cr>", "Color Picker" },
-				f = { ":CccConvert<cr>", "Color Format" },
-				h = { ":CccHighlighterToggle<cr>", "Toggle Colors" },
+				h = { ":ColorizerToggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spell Check" },
 				w = { ":set wrap!<cr>", "Toggle Wrap Text" },
 				l = { ":set cursorcolumn!<cr>", "Cursor Line" },
