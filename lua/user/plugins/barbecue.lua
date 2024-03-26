@@ -24,7 +24,7 @@ return {
 			Interface = "",
 			Function = "ƒ",
 			Variable = "",
-			Constant = "󰏿",
+			Constant = "П",
 			String = "",
 			Number = "󰎠",
 			Boolean = "",
@@ -32,11 +32,11 @@ return {
 			Object = "⦿", -- 
 			Key = "",
 			Null = "",
-			EnumMember = "",
+      EnumMember = "",
 			Struct = "",
 			Event = "🗲",
-			Operator = "󰆕",
-			TypeParameter = "",
+			Operator = "",
+			TypeParameter = "󰰦",
 		},
 	},
 }

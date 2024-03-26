@@ -1,6 +1,5 @@
 return {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
-  lazy = true,
 	event = { "BufReadPost", "VeryLazy" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -27,7 +26,7 @@ return {
 		})
 
 		local formatting = null_ls.builtins.formatting
-		local diagnostics = null_ls.builtins.diagnostics
+		-- local diagnostics = null_ls.builtins.diagnostics
 
 		-- setup format on save
 		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

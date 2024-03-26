@@ -166,9 +166,27 @@ return {
 			sources = { "nvim_diagnostic" },
 			symbols = { error = " ", warn = " ", info = "󰋽 " },
 			diagnostics_color = {
-				color_error = { fg = colors.red },
-				color_warn = { fg = colors.yellow },
-				color_info = { fg = colors.cyan },
+				error = { fg = colors.red },
+				warn = { fg = colors.yellow },
+				info = { fg = colors.cyan },
+			},
+		})
+
+		ins_right({
+			"buffers",
+			show_filename_only = true,
+			hide_filename_extension = true,
+			show_modified_status = true,
+			mode = 0,
+			max_length = vim.o.columns * 1 / 2,
+			buffers_color = {
+				active = { fg = colors.blue },
+				inactive = { fg = colors.fg },
+			},
+			symbols = {
+				modified = " 󰧞",
+				alternate_file = "",
+				directory = "",
 			},
 		})
 

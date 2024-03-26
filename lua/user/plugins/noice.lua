@@ -118,7 +118,7 @@ return {
 						enabled = true,
 						trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
 						luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-						throttle = 50, -- Debounce lsp signature help request by 50ms
+						throttle = 60, -- Debounce lsp signature help request by 60ms
 					},
 					view = nil, -- when nil, use defaults from documentation
 					opts = {}, -- merged with defaults from documentation
@@ -166,20 +166,28 @@ return {
 			presets = {
 				bottom_search = false,
 				command_palette = false,
-				long_message_to_split = false,
+				long_message_to_split = true, -- long messages will be sent to a split
 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
 				lsp_doc_border = false, -- add a border to hover docs and signature help
 			},
 			throttle = 1000 / 40, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode
 			views = {},
-			routes = {},
+			routes = {
+				{
+					filter = {
+						event = "msg_show",
+						kind = "",
+						find = "written",
+					},
+				},
+			},
 			status = {},
 			format = {},
 		})
 
 		vim.notify = require("notify")
 		require("notify").setup({
-			fps = 30,
+			fps = 20,
 			icons = {
 				DEBUG = " ",
 				ERROR = " ",
@@ -187,7 +195,7 @@ return {
 				TRACE = " ✎",
 				WARN = " ",
 			},
-			level = 2,
+			level = 1,
 			--[[ minimum_width = 60, ]]
 			--[[ maximum_width = 60, ]]
 			stages = "fade", -- slide, static

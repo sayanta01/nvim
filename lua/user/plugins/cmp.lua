@@ -80,12 +80,12 @@ return {
 			File = "",
 			Reference = "",
 			Folder = "",
-			EnumMember = "",
-			Constant = "󰏿",
+      EnumMember = "",
+			Constant = "П",
 			Struct = "",
 			Event = "🗲",
-			Operator = "󰆕",
-			TypeParameter = "",
+			Operator = "",
+      TypeParameter = "󰰦",
 		}
 
 		cmp.setup({
