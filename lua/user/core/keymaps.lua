@@ -56,10 +56,6 @@ keymap("n", "<leader>-", ":split<CR>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Num up/down
-keymap("n", "+", "<C-a>", opts)
-keymap("n", "-", "<C-x>", opts)
-
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 keymap("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
 keymap("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
