@@ -509,6 +509,12 @@ return {
 				cterm_color = "94",
 				name = "M4V",
 			},
+			["svg"] = {
+				icon = "󰕙",
+				color = "#ffb13b",
+				cterm_color = "214",
+				name = "Svg",
+			},
 		})
 	end,
 }
