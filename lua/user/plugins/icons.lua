@@ -515,6 +515,18 @@ return {
 				cterm_color = "214",
 				name = "Svg",
 			},
+			["lua"] = {
+				icon = "󰢱",
+				color = "#51a0cf",
+				cterm_color = "74",
+				name = "Lua",
+			},
+			["luau"] = {
+				icon = "󰢱",
+				color = "#00a2ff",
+				cterm_color = "75",
+				name = "Luau",
+			},
 		})
 	end,
 }

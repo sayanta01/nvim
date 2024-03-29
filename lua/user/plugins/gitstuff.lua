@@ -47,4 +47,6 @@ return {
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Git Select Hunk")
 		end,
 	},
+
+  { "tpope/vim-fugitive", cmd = { "G", "Git" } },
 }

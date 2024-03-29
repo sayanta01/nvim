@@ -42,8 +42,6 @@ return {
 		config = true,
 	},
 
-	{ "tpope/vim-fugitive", cmd = { "G", "Git" } },
-
 	{
 		-- "saecki/crates.nvim",
 		"sayanta01/crates.nvim",

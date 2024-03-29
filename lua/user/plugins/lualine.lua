@@ -119,19 +119,19 @@ return {
 		})
 
 		ins_left({
-			"diff",
-			symbols = { added = " ", modified = " ", removed = " " },
-			diff_color = {
-				added = { fg = colors.green },
-				modified = { fg = colors.orange },
-				removed = { fg = colors.red },
-			},
-			cond = conditions.hide_in_width,
-		})
-
-		ins_left({
 			"location",
 		})
+
+    ins_left({
+      "diagnostics",
+      sources = { "nvim_diagnostic" },
+      symbols = { error = " ", warn = " ", info = "󰋽 " },
+      diagnostics_color = {
+        error = { fg = colors.red },
+        warn = { fg = colors.yellow },
+        info = { fg = colors.cyan },
+      },
+    })
 
 		-- Insert mid section, You can make any number of sections in neovim :)
 		-- for lualine it's any number greater then 2
@@ -161,40 +161,41 @@ return {
 			color = { fg = "#44466a" },
 		})
 
-		ins_right({
-			"diagnostics",
-			sources = { "nvim_diagnostic" },
-			symbols = { error = " ", warn = " ", info = "󰋽 " },
-			diagnostics_color = {
-				error = { fg = colors.red },
-				warn = { fg = colors.yellow },
-				info = { fg = colors.cyan },
-			},
-		})
 
-		ins_right({
-			"buffers",
-			show_filename_only = true,
-			hide_filename_extension = true,
-			show_modified_status = true,
-			mode = 0,
-			max_length = vim.o.columns * 1 / 2,
-			buffers_color = {
-				active = { fg = colors.blue },
-				inactive = { fg = colors.fg },
-			},
-			symbols = {
-				modified = " 󰧞",
-				alternate_file = "",
-				directory = "",
-			},
-		})
+    ins_right({
+      "diff",
+      symbols = { added = "", modified = "", removed = "" },
+      diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+      },
+      cond = conditions.hide_in_width,
+    })
 
 		-- ins_right({
-		-- 	"filesize",
-		-- 	color = { fg = colors.violet, gui = "italic" },
-		-- 	cond = conditions.buffer_not_empty,
+		-- 	"buffers",
+		-- 	show_filename_only = true,
+		-- 	hide_filename_extension = true,
+		-- 	show_modified_status = true,
+		-- 	mode = 0,
+		-- 	max_length = vim.o.columns * 1 / 2,
+		-- 	buffers_color = {
+		-- 		active = { fg = colors.blue },
+		-- 		inactive = { fg = colors.fg },
+		-- 	},
+		-- 	symbols = {
+		-- 		modified = " 󰧞",
+		-- 		alternate_file = "",
+		-- 		directory = "",
+		-- 	},
 		-- })
+
+		ins_right({
+			"filesize",
+			color = { fg = colors.violet, gui = "italic" },
+			cond = conditions.buffer_not_empty,
+		})
 
 		lualine.setup(config)
 	end,
