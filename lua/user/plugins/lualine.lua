@@ -191,12 +191,6 @@ return {
 		-- 	},
 		-- })
 
-		ins_right({
-			"filesize",
-			color = { fg = colors.violet, gui = "italic" },
-			cond = conditions.buffer_not_empty,
-		})
-
 		lualine.setup(config)
 	end,
 }
