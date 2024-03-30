@@ -8,10 +8,8 @@ return {
 		dependencies = {
 			-- "nvim-treesitter/nvim-treesitter-textobjects",
 		},
-
 		config = function()
 			local treesitter = require("nvim-treesitter.configs")
-
 			treesitter.setup({
 				ensure_installed = {
 					"c",

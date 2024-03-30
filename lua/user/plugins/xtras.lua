@@ -80,34 +80,6 @@ return {
 		end,
 	},
 
-	-- Dap
-	{
-		"mfussenegger/nvim-dap-python",
-		ft = "python",
-		keys = {
-			{
-				"<leader>dPt",
-				function()
-					require("dap-python").test_method()
-				end,
-				desc = "Test Method",
-				ft = "python",
-			},
-			{
-				"<leader>dPc",
-				function()
-					require("dap-python").test_class()
-				end,
-				desc = "Test Class",
-				ft = "python",
-			},
-		},
-		config = function()
-			local path = require("mason-registry").get_package("debugpy"):get_install_path()
-			require("dap-python").setup(path .. "/venv/bin/python")
-		end,
-	},
-
 	{
 		"linux-cultist/venv-selector.nvim",
 		cmd = { "VenvSelect", "VenvSelectCached" },
@@ -123,56 +95,6 @@ return {
 			{ "<leader>vs", "<cmd>VenvSelect<cr>", ft = "python" },
 			{ "<leader>vc", "<cmd>VenvSelectCached<cr>", ft = "python" },
 		},
-	},
-
-	{
-		"leoluz/nvim-dap-go",
-		ft = "go",
-		keys = {
-			{
-				"<leader>dPt",
-				function()
-					require("dap-go").debug_test()
-				end,
-				desc = "Debug Test",
-				ft = "go",
-			},
-			{
-				"<leader>dPl",
-				function()
-					require("dap-go").debug_last_test()
-				end,
-				desc = "Last Test",
-				ft = "go",
-			},
-		},
-		dependencies = "mfussenegger/nvim-dap",
-		config = function()
-			require("dap-go").setup({
-				dap_configurations = {
-					{
-						type = "go",
-						name = "Attach remote",
-						mode = "remote",
-						request = "attach",
-					},
-				},
-				delve = {
-					path = "dlv",
-					initialize_timeout_sec = 20,
-					port = "${port}",
-					-- additional args to pass to dlv
-					args = {},
-					-- the build flags that are passed to delve
-					-- defaults to empty string, but can be used to provide flags
-					-- such as "-tags=unit" to make sure the test suite is
-					-- compiled during debugging, for example
-					-- passing build flags using args is ineffective, as those are
-					-- ignored by delve in dap mode
-					build_flags = "",
-				},
-			})
-		end,
 	},
 
 	{

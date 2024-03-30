@@ -171,10 +171,10 @@ return {
 
 					-- Custom icons for source
 					local custom_menu_icon = {
+            crates = " Crates",
 						codeium = "󱙺 Codeium",
-						crates = " Crates",
-						-- codeium = "󱙺",
 						-- crates = "",
+            -- codeium = "󱙺",
 					}
 					if entry.source.name == "codeium" then
 						vim_item.kind = custom_menu_icon.codeium
