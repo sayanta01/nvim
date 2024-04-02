@@ -132,7 +132,7 @@ return {
 				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 				S = { ":lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
 				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-				R = { ":lua require 'g--[[ itsigns ]]'.reset_buffer()<cr>", "Reset Buffer" },
+				R = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 				u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 				d = { ":lua require 'gitsigns'.toggle_deleted()<cr>", "Toggle Deleted" },
 				D = {
