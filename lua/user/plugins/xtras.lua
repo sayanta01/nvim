@@ -80,22 +80,22 @@ return {
 		end,
 	},
 
-	{
-		"linux-cultist/venv-selector.nvim",
-		cmd = { "VenvSelect", "VenvSelectCached" },
-		opts = {
-			name = {
-				"venv",
-				".venv",
-				"env",
-				".env",
-			},
-		},
-		keys = {
-			{ "<leader>vs", "<cmd>VenvSelect<cr>", ft = "python" },
-			{ "<leader>vc", "<cmd>VenvSelectCached<cr>", ft = "python" },
-		},
-	},
+	-- {
+	-- 	"linux-cultist/venv-selector.nvim",
+	-- 	cmd = { "VenvSelect", "VenvSelectCached" },
+	-- 	opts = {
+	-- 		name = {
+	-- 			"venv",
+	-- 			".venv",
+	-- 			"env",
+	-- 			".env",
+	-- 		},
+	-- 	},
+	-- 	keys = {
+	-- 		{ "<leader>vs", "<cmd>VenvSelect<cr>", ft = "python" },
+	-- 		{ "<leader>vc", "<cmd>VenvSelectCached<cr>", ft = "python" },
+	-- 	},
+	-- },
 
 	{
 		"b0o/SchemaStore.nvim",

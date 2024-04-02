@@ -87,4 +87,4 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 
 -- Theme 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme("tokyonight")
+vim.cmd[[colorscheme tokyonight]]

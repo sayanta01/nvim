@@ -1,17 +1,18 @@
 return {
-	"folke/tokyonight.nvim",
-	lazy = true,
-	priority = 1000,
-	opts = {
-		style = "moon",
+	{
+		"folke/tokyonight.nvim",
+		lazy = true,
+		priority = 1000,
+		opts = {
+			style = "moon",
+		},
 	},
-	dependencies = {
-		-- { "rose-pine/neovim", name = "rose-pine" },
-		-- "B4mbus/oxocarbon-lua.nvim",
-		-- { "olimorris/onedarkpro.nvim", priority = 1000 }, -- Ensure it loads first
-		-- "RRethy/nvim-base16",
-		-- "lunarvim/synthwave84.nvim",
-		-- "sainnhe/gruvbox-material",
-		-- { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
-	},
+  -- { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = true, priority = 1000 },
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- },
+	-- "RRethy/nvim-base16",
+  -- { "olimorris/onedarkpro.nvim", priority = 1000 }, -- Ensure it loads first
+	-- "lunarvim/synthwave84.nvim",
 }
