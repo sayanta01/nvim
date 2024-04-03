@@ -6,7 +6,7 @@ if [ -f /etc/debian_version ]; then
 	read -r choice
 	if [ "$choice" = "y" ]; then
 		sudo apt install -y ninja-build gettext
-		git clone https://github.com/neovim/neovim.git ~/.cache/neovim
+		git clone --depth=1 https://github.com/neovim/neovim.git ~/.cache/neovim
 		cd ~/.cache/neovim || exit 1
 		make -j4 && sudo make install
 	else
@@ -18,13 +18,12 @@ if [ -f /etc/debian_version ]; then
 		php golang ruby \
 		ripgrep \
 		python3-pip python3-venv
-	# default-jdk dotnet-sdk-6.0
+    # default-jdk dotnet-sdk-6.0
+
 	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-	# chmod +x ./dotnet-install.sh && ./dotnet-install.sh --version latest
-
-  # curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz" && sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
-
-	# printf "Install cargo pkgs? [y/N]: " && read -r choice && [ "$choice" = "y" ] && cargo install bat
+	# chmod +x dotnet-install.sh && ./dotnet-install.sh --version latest
+	# git clone --depth=1 https://github.com/jesseduffield/lazygit.git && cd lazygit && go install
+	# cargo install bat
 
 	## Julia
 	# curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check versions
@@ -47,16 +46,16 @@ if [ -f /etc/arch-release ]; then
 	sudo pacman -S --noconfirm npm luarocks cargo \
 		php go ruby \
 		ripgrep lazygit
-		# jdk-openjdk dotnet-sdk julia
+    # jdk-openjdk dotnet-sdk julia
 else
 	:
 fi
 
-## Node
-sudo npm i -g tree-sitter-cli live-server
-
 ## Python
 pip install pynvim
+
+## Node
+sudo npm i -g live-server tree-sitter-cli
 
 ## Rust
 rustup component add rustfmt

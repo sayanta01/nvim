@@ -189,8 +189,8 @@ return {
 			o = {
 				name = "Option",
 				h = { ":ColorizerToggle<cr>", "Toggle Colors" },
-				s = { ":set spell!<cr>", "Toggle Spell Check" },
-				w = { ":set wrap!<cr>", "Toggle Wrap Text" },
+				s = { ":set spell!<cr>", "Toggle Spelling " },
+				w = { ":set wrap!<cr>", "Toggle Wrap" },
 				l = { ":set cursorcolumn!<cr>", "Cursor Line" },
 				-- u = { ":UfoAttach<cr>", "Ufo" },
 				v = { ":VimBeGood<cr>", "Vim Practice" },
