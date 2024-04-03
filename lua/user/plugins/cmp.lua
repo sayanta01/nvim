@@ -61,19 +61,19 @@ return {
 		end
 
 		local kind_icons = {
-			Text = "",
+      Text = "󰭸",
 			Method = "",
 			Function = "ƒ",
 			Constructor = "",
 			Field = "",
 			Variable = "",
 			Class = "",
-			Interface = "",
+      Interface = "", -- 
 			Module = "󱒌",
-			Property = "",
+      Property = "", -- 󰜢
 			Unit = "",
 			Value = "󰎠",
-			Enum = "ℰ",
+      Enum = "ℰ", -- 
 			Keyword = "",
 			Snippet = "",
 			Color = "",
@@ -176,11 +176,11 @@ return {
 						-- crates = "",
             -- codeium = "󱙺",
 					}
+          if entry.source.name == "crates" then
+            vim_item.kind = custom_menu_icon.crates
+          end
 					if entry.source.name == "codeium" then
 						vim_item.kind = custom_menu_icon.codeium
-					end
-					if entry.source.name == "crates" then
-						vim_item.kind = custom_menu_icon.crates
 					end
 					return vim_item
 				end,
