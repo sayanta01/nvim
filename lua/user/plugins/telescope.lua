@@ -12,19 +12,19 @@ return {
 			end,
 		},
 		"nvim-telescope/telescope-media-files.nvim",
-		{
-			"ahmedkhalf/project.nvim",
-			config = function()
-				require("project_nvim").setup({
-					-- detection_methods = { "lsp", "pattern" }, NOTE: lsp detection will get annoying with multiple langs in one project
-					detection_methods = { "pattern" },
-					-- patterns used to detect root dir, when **"pattern"** is in detection_methods
-					patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
-					show_hidden = false, -- Show hidden files in telescope
-					silent_chdir = true, -- When set to false, you will get a message when project.nvim changes your directory
-				})
-			end,
-		},
+		-- {
+		-- 	"ahmedkhalf/project.nvim",
+		-- 	config = function()
+		-- 		require("project_nvim").setup({
+		-- 			-- detection_methods = { "lsp", "pattern" }, NOTE: lsp detection will get annoying with multiple langs in one project
+		-- 			detection_methods = { "pattern" },
+		-- 			-- patterns used to detect root dir, when **"pattern"** is in detection_methods
+		-- 			patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
+		-- 			show_hidden = false, -- Show hidden files in telescope
+		-- 			silent_chdir = true, -- When set to false, you will get a message when project.nvim changes your directory
+		-- 		})
+		-- 	end,
+		-- },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -152,8 +152,8 @@ return {
 			},
 		})
 
-		telescope.load_extension("projects")
-		telescope.load_extension("media_files")
-		telescope.load_extension("fzf")
+    telescope.load_extension("fzf")
+    telescope.load_extension("media_files")
+		-- telescope.load_extension("projects")
 	end,
 }

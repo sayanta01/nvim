@@ -32,7 +32,6 @@ return {
 			dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 			dashboard.button("n", "  New file", ":ene | startinsert <CR>"),
 			dashboard.button("b", "  Bookmarks", ":Telescope marks<CR>"),
-			dashboard.button("p", "  Projects", ":lua require('telescope').extensions.projects.projects()<CR>"),
 			dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
 			dashboard.button("h", "  Check health", ":checkhealth<CR>"),
 			dashboard.button("q", "  quit", ":qa<CR>"),

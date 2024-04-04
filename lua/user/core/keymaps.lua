@@ -33,7 +33,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-h>", ":bprev<CR>", opts)
 
 -- Delete not cut
 keymap("n", "dd", '"_dd', opts)
@@ -41,9 +41,6 @@ keymap("n", "x", '"_x', opts)
 
 -- Paste without overwriting register
 keymap({ "v", "x" }, "p", '"_dP', opts)
-
--- Replace word under of cursor, across entire buffer
-keymap("n", "<leader>rp", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- Clear search with <Esc>
 keymap({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hlsearch" })

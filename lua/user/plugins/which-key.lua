@@ -162,7 +162,7 @@ return {
 				c = { ":Telescope colorscheme<cr>", "Colorscheme" },
 				i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 				t = { ":Telescope live_grep<cr>", "Find Text" },
-				p = { ":Telescope projects<cr>", "Projects" },
+				-- p = { ":Telescope projects<cr>", "Projects" },
 				h = { ":Telescope help_tags<cr>", "Help Pages" },
 				z = { ":Telescope command_history<cr>", "Cmd History" },
 				o = { ":Telescope oldfiles<cr>", "Recent Files" },
