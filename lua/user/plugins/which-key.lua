@@ -191,9 +191,9 @@ return {
 				h = { ":ColorizerToggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spelling " },
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
-				l = { ":set cursorcolumn!<cr>", "Cursor Line" },
+				-- l = { ":set cursorcolumn!<cr>", "Cursor Line" },
 				-- u = { ":UfoAttach<cr>", "Ufo" },
-				v = { ":VimBeGood<cr>", "Vim Practice" },
+				-- v = { ":VimBeGood<cr>", "Vim Practice" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 			},
 
