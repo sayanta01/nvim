@@ -113,7 +113,7 @@ return {
 		ins_left({
 			-- mode component
 			function()
-				return " 󰀘 "
+				return " "
 			end,
 			color = function()
 				-- auto change color according to neovims mode
@@ -140,8 +140,8 @@ return {
 					t = colors.green,
 				}
 				return {
-					fg = colors.black,
-					bg = mode_color[vim.fn.mode()],
+					-- fg = colors.black,
+					fg = mode_color[vim.fn.mode()],
 				}
 			end,
 			padding = { right = 0 },
