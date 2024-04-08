@@ -121,7 +121,7 @@ return {
 			g = {
 				name = "Git",
 				g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
-				o = { ":Telescope git_status<cr>", "Open Status" },
+				o = { ":Telescope git_status<cr>", "Git Status" },
 				b = { ":Telescope git_branches<cr>", "Checkout Branch" },
 				c = { ":Telescope git_commits<cr>", "Checkout Commit" },
 				C = { ":Telescope git_bcommits<cr>", "Checkout Commit (current file)" },
