@@ -8,63 +8,95 @@ return {
 		local colors = {
 			bg = "#",
 			fg = "#9399b1",
+			black = "#080808",
+			white = "#c6c6c6",
+			lazy = "#3B4261",
 			yellow = "#ecbe7b",
 			cyan = "#008080",
-			darkblue = "#081633",
-			green = "#009e23",
+			green = "#c3e88d",
+			green1 = "#009e23",
 			orange = "#ff8800",
 			violet = "#a9a1e1",
 			magenta = "#c678dd",
-			blue = "#51afef",
-			red = "#ff5555",
+			blue = "#82aaff",
+			red = "#ff5189",
 		}
 
-		local conditions = {
-			buffer_not_empty = function()
-				return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-			end,
-			hide_in_width = function()
-				return vim.fn.winwidth(0) > 80
-			end,
-			check_git_workspace = function()
-				local filepath = vim.fn.expand("%:p:h")
-				local gitdir = vim.fn.finddir(".git", filepath .. ";")
-				return gitdir and #gitdir > 0 and #gitdir < #filepath
-			end,
-		}
+		-- local conditions = {
+		-- 	buffer_not_empty = function()
+		-- 		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
+		-- 	end,
+		-- 	hide_in_width = function()
+		-- 		return vim.fn.winwidth(0) > 80
+		-- 	end,
+		-- 	check_git_workspace = function()
+		-- 		local filepath = vim.fn.expand("%:p:h")
+		-- 		local gitdir = vim.fn.finddir(".git", filepath .. ";")
+		-- 		return gitdir and #gitdir > 0 and #gitdir < #filepath
+		-- 	end,
+		-- }
 
 		local config = {
 			options = {
-        -- icons_enabled = true,
-        theme = {
-          -- We are going to use lualine_c an lualine_x as left and
-          -- right section, Both are highlighted by c theme, So we
-          -- are just setting default looks o statusline
-          normal = { c = { fg = colors.fg, bg = colors.bg } },
-          inactive = { c = { fg = colors.fg, bg = colors.bg } },
-        },
-        -- Disable sections and component separators
-        component_separators = "",
+				-- icons_enabled = true,
+				theme = {
+					-- We are going to use lualine_c an lualine_x as left and
+					-- right section, Both are highlighted by c theme, So we
+					-- are just setting default looks o statusline
+					normal = {
+						a = { fg = colors.black, bg = colors.blue },
+						b = { fg = colors.blue, bg = colors.bg },
+						c = { fg = colors.fg, bg = colors.bg },
+					},
+					insert = {
+						a = { fg = colors.black, bg = colors.green },
+						b = { fg = colors.green, bg = colors.bg },
+					},
+					visual = {
+						a = { fg = colors.black, bg = colors.magenta },
+						b = { fg = colors.magenta, bg = colors.bg },
+					},
+					replace = {
+						a = { fg = colors.black, bg = colors.red },
+						b = { fg = colors.red, bg = colors.bg },
+					},
+					command = {
+						a = { fg = colors.black, bg = colors.yellow },
+						b = { fg = colors.yellow, bg = colors.bg },
+					},
+					terminal = {
+						a = { fg = colors.black, bg = colors.green },
+						b = { fg = colors.green, bg = colors.bg },
+					},
+					inactive = {
+						a = { fg = colors.white, bg = colors.black },
+						c = { fg = colors.fg, bg = colors.bg },
+					},
+				},
+				-- Disable sections and component separators
+				component_separators = "",
 				disabled_filetypes = {
-					statusline = { "toggleterm", "alpha" },
-					winbar = {},
+					statusline = { "toggleterm", "alpha", "dashboard" },
+					-- winbar = {},
 				},
 			},
 			sections = {
 				lualine_a = {},
+        -- lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
 				lualine_b = {},
-				lualine_y = {},
-				lualine_z = {},
+				-- lualine_b = { { "branch", icon = "󰘬", separator = { left = "" }, right_padding = 2 } },
 				lualine_c = {},
 				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {},
 			},
 			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
-				lualine_y = {},
-				lualine_z = {},
 				lualine_c = {},
 				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {},
 			},
 		}
 
@@ -81,40 +113,43 @@ return {
 		ins_left({
 			-- mode component
 			function()
-				return " "
+				return " 󰀘 "
 			end,
 			color = function()
 				-- auto change color according to neovims mode
 				local mode_color = {
-					n = colors.green,
-					i = colors.red,
-					v = colors.blue,
-					[""] = colors.blue,
-					V = colors.blue,
-					c = colors.magenta,
-					no = colors.red,
+					n = colors.blue,
+					i = colors.green,
+					v = colors.magenta,
+					[""] = colors.magenta,
+					V = colors.magenta,
+					c = colors.yellow,
+					no = colors.green,
 					s = colors.orange,
 					S = colors.orange,
 					[""] = colors.orange,
 					ic = colors.yellow,
-					R = colors.violet,
-					Rv = colors.violet,
-					cv = colors.red,
-					ce = colors.red,
+					R = colors.red,
+					Rv = colors.red,
+					cv = colors.green,
+					ce = colors.green,
 					r = colors.cyan,
 					rm = colors.cyan,
 					["r?"] = colors.cyan,
-					["!"] = colors.red,
-					t = colors.red,
+					["!"] = colors.green,
+					t = colors.green,
 				}
-				return { fg = mode_color[vim.fn.mode()] }
+				return {
+					fg = colors.black,
+					bg = mode_color[vim.fn.mode()],
+				}
 			end,
-			padding = { right = 2 },
+			padding = { right = 0 },
 		})
 
 		ins_left({
 			"branch",
-			icon = "󰘬",
+			icon = " 󰘬",
 			color = { fg = colors.violet, gui = "bold" },
 		})
 
@@ -122,16 +157,16 @@ return {
 			"location",
 		})
 
-    ins_left({
-      "diagnostics",
-      sources = { "nvim_diagnostic" },
-      symbols = { error = " ", warn = " ", info = "󰋽 " },
-      diagnostics_color = {
-        error = { fg = colors.red },
-        warn = { fg = colors.yellow },
-        info = { fg = colors.cyan },
-      },
-    })
+		ins_left({
+			"diagnostics",
+			sources = { "nvim_diagnostic" },
+			symbols = { error = " ", warn = " ", info = "󰋽 " },
+			diagnostics_color = {
+				error = { fg = colors.red },
+				warn = { fg = colors.yellow },
+				info = { fg = colors.cyan },
+			},
+		})
 
 		-- Insert mid section, You can make any number of sections in neovim :)
 		-- for lualine it's any number greater then 2
@@ -157,20 +192,19 @@ return {
 				end
 				return msg
 			end,
-			icon = "Lsp -",
 			color = { fg = "#44466a" },
 		})
 
-    ins_right({
-      "diff",
-      symbols = { added = "", modified = "~", removed = "" },
-      diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-      },
-      cond = conditions.hide_in_width,
-    })
+		ins_right({
+			"diff",
+			symbols = { added = "", modified = "~", removed = "" },
+			diff_color = {
+				added = { fg = colors.green1 },
+				modified = { fg = colors.orange },
+				removed = { fg = colors.red },
+			},
+			-- cond = conditions.hide_in_width,
+		})
 
 		-- ins_right({
 		-- 	"buffers",

@@ -61,31 +61,31 @@ return {
 		end
 
 		local kind_icons = {
-      Text = "󰭸",
+			Text = "󰭸",
 			Method = "",
 			Function = "ƒ",
 			Constructor = "",
 			Field = "",
 			Variable = "",
 			Class = "",
-      Interface = "", -- 
+			Interface = "", -- 
 			Module = "󱒌",
-      Property = "", -- 󰜢
+			Property = "", -- 󰜢
 			Unit = "",
 			Value = "󰎠",
-      Enum = "ℰ", -- 
+			Enum = "ℰ", -- 
 			Keyword = "",
 			Snippet = "",
 			Color = "",
 			File = "",
 			Reference = "",
 			Folder = "",
-      EnumMember = "",
+			EnumMember = "",
 			Constant = "П",
 			Struct = "",
 			Event = "🗲",
 			Operator = "",
-      TypeParameter = "󰰦",
+			TypeParameter = "󰰦",
 		}
 
 		cmp.setup({
@@ -171,14 +171,14 @@ return {
 
 					-- Custom icons for source
 					local custom_menu_icon = {
-            crates = " Crates",
+						crates = " Crates",
 						codeium = "󱙺 Codeium",
 						-- crates = "",
-            -- codeium = "󱙺",
+						-- codeium = "󱙺",
 					}
-          if entry.source.name == "crates" then
-            vim_item.kind = custom_menu_icon.crates
-          end
+					if entry.source.name == "crates" then
+						vim_item.kind = custom_menu_icon.crates
+					end
 					if entry.source.name == "codeium" then
 						vim_item.kind = custom_menu_icon.codeium
 					end
