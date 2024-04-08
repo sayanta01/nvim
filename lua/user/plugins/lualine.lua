@@ -100,12 +100,12 @@ return {
 			},
 		}
 
-		-- Inserts a component in lualine_c at left section
+		-- Add component in lualine_c at left section
 		local function ins_left(component)
 			table.insert(config.sections.lualine_c, component)
 		end
 
-		-- Inserts a component in lualine_x ot right section
+		-- Add component in lualine_x at right section
 		local function ins_right(component)
 			table.insert(config.sections.lualine_x, component)
 		end
@@ -116,7 +116,7 @@ return {
 				return " "
 			end,
 			color = function()
-				-- auto change color according to neovims mode
+				-- auto change color according to mode
 				local mode_color = {
 					n = colors.blue,
 					i = colors.green,
@@ -168,8 +168,6 @@ return {
 			},
 		})
 
-		-- Insert mid section, You can make any number of sections in neovim :)
-		-- for lualine it's any number greater then 2
 		ins_left({
 			function()
 				return "%="

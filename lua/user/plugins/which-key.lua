@@ -121,14 +121,14 @@ return {
 			g = {
 				name = "Git",
 				g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
-				o = { ":Telescope git_status<cr>", "Open Changed File" },
+				o = { ":Telescope git_status<cr>", "Open Status" },
 				b = { ":Telescope git_branches<cr>", "Checkout Branch" },
 				c = { ":Telescope git_commits<cr>", "Checkout Commit" },
 				C = { ":Telescope git_bcommits<cr>", "Checkout Commit (current file)" },
 				j = { ":lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 				k = { ":lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+        p = { ":lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 				l = { ":lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-				p = { ":lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 				S = { ":lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
 				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
@@ -160,15 +160,15 @@ return {
 			s = {
 				name = "Telescope",
 				c = { ":Telescope colorscheme<cr>", "Colorscheme" },
-				i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 				t = { ":Telescope live_grep<cr>", "Find Text" },
-				-- p = { ":Telescope projects<cr>", "Projects" },
+        g = { ":Telescope grep_string<cr>", "Grep String" },
 				h = { ":Telescope help_tags<cr>", "Help Pages" },
-				z = { ":Telescope command_history<cr>", "Cmd History" },
 				o = { ":Telescope oldfiles<cr>", "Recent Files" },
 				r = { ":Telescope registers<cr>", "Registers" },
-				g = { ":Telescope grep_string<cr>", "Grep String" },
-				m = { ":Telescope marks<cr>", "Marks" },
+        m = { ":Telescope marks<cr>", "Marks" },
+        z = { ":Telescope command_history<cr>", "Cmd History" },
+        -- i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+        -- p = { ":Telescope projects<cr>", "Projects" },
 			},
 
 			h = {
@@ -193,7 +193,6 @@ return {
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
 				-- l = { ":set cursorcolumn!<cr>", "Cursor Line" },
 				-- u = { ":UfoAttach<cr>", "Ufo" },
-				-- v = { ":VimBeGood<cr>", "Vim Practice" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 			},
 
@@ -225,9 +224,9 @@ return {
 				s = { ":lua require'dap'.session()<cr>", "Get Session" },
 				x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
 				p = { ":lua require'dap'.pause()<cr>", "Pause" },
-				j = { ":lua require'dap'.down()<cr>", "Down" },
-				k = { ":lua require'dap'.up()<cr>", "Up" },
-				d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+        d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+				-- j = { ":lua require'dap'.down()<cr>", "Down" },
+        -- k = { ":lua require'dap'.up()<cr>", "Up" },
 			},
 
 			t = {
