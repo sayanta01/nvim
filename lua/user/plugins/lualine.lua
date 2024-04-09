@@ -144,7 +144,7 @@ return {
 					fg = mode_color[vim.fn.mode()],
 				}
 			end,
-			padding = { right = 0 },
+			padding = { right = 2 },
 		})
 
 		ins_left({
