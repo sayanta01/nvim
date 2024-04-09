@@ -11,7 +11,7 @@ return {
 				return vim.fn.executable("make") == 1
 			end,
 		},
-		"nvim-telescope/telescope-media-files.nvim",
+		-- "nvim-telescope/telescope-media-files.nvim",
 		-- {
 		-- 	"ahmedkhalf/project.nvim",
 		-- 	config = function()
