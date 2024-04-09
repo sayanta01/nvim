@@ -1,16 +1,36 @@
 return {
 	"stevearc/conform.nvim",
-	event = { "BufWritePost", "VeryLazy" },
+	event = { "BufWritePost" },
 	cmd = { "ConformInfo" },
 	keys = {
 		{
-			"<leader>lf",
+			"<leader>lm",
 			function()
 				require("conform").format({ async = true, lsp_fallback = true })
 			end,
 			mode = { "n", "v" },
 			desc = "Format buffer",
 		},
+	},
+	dependencies = {
+		"jay-babu/mason-null-ls.nvim",
+		config = function()
+			local mason_null_ls = require("mason-null-ls")
+			mason_null_ls.setup({
+				ensure_installed = {
+					"prettier",
+					"google_java_format",
+					"gofumpt",
+					"stylua",
+					"shfmt",
+					"shellcheck", -- bashls automatically uses
+					"isort",
+					"black",
+					"pylint",
+					"eslint",
+				},
+			})
+		end,
 	},
 	opts = {
 		formatters_by_ft = {
@@ -25,19 +45,18 @@ return {
 			yaml = { "prettier" },
 			markdown = { "prettier" },
 			graphql = { "prettier" },
-			lua = { "stylua" },
+			java = { "google-java-format" },
+			c = { "clang_format" },
+			cpp = { "clang_format" },
 			go = { "gofmt" },
+			lua = { "stylua" },
 			python = { "isort", "black" },
 			sh = { "shfmt" },
 		},
-
-		-- -- Format on save
-		-- format_on_save = { timeout_ms = 500, lsp_fallback = true },
-		-- -- Customize formatters
-		-- formatters = {
-		--   shfmt = {
-		--     prepend_args = { "-i", "2" },
-		--   },
-		-- },
+		format_on_save = {
+			timeout_ms = 500,
+			async = false,
+			lsp_fallback = true,
+		},
 	},
 }

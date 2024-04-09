@@ -4,7 +4,7 @@ return {
 		version = false,
 		build = ":TSUpdate",
 		event = { "BufReadPost", "VeryLazy" },
-		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall", "TSModuleInfo" },
+		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		dependencies = {
 			-- "nvim-treesitter/nvim-treesitter-textobjects",
 		},
@@ -27,6 +27,7 @@ return {
 					"jsonc",
 					"toml",
 					"yaml",
+          "xml",
 					"html",
 					"css",
 					"javascript",

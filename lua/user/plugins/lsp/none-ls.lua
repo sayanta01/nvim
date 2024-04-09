@@ -12,10 +12,10 @@ return {
 		local mason_null_ls = require("mason-null-ls")
 		mason_null_ls.setup({
 			ensure_installed = {
+        "prettier",
 				"google_java_format",
-				"prettier",
-				"stylua",
 				"gofumpt",
+				"stylua",
 				"shfmt",
 				"shellcheck", -- bashls automatically uses
 				"isort",
@@ -39,15 +39,16 @@ return {
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
 				formatting.google_java_format,
-				formatting.stylua,
+				formatting.clang_format,
 				formatting.gofmt,
+				formatting.stylua,
 				formatting.shfmt,
 				formatting.isort,
 				formatting.black,
 				-- diagnostics.pylint,
 			},
 
-			-- [[ configure format on save ]]
+			-- Configure format on save
 			-- on_attach = function(current_client, bufnr)
 			-- 	if current_client.supports_method("textDocument/formatting") then
 			-- 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

@@ -6,6 +6,11 @@ return {
 			{
 				"mfussenegger/nvim-dap",
 				dependencies = { "nvim-neotest/nvim-nio" },
+        -- stylua: ignore
+        keys = {
+          { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
+          { "<leader>de", function() require("dapui").eval() end,     desc = "Evaluate", mode = { "n", "v" } },
+        },
 				config = function(_, opts)
 					local dap = require("dap")
 					local dapui = require("dapui")
@@ -109,7 +114,7 @@ return {
 
 	{
 		"mfussenegger/nvim-dap-python",
-    -- dependencies = "mfussenegger/nvim-dap",
+		-- dependencies = "mfussenegger/nvim-dap",
 		ft = "python",
 		keys = {
 			{

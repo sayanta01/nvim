@@ -1,12 +1,11 @@
 return {
 	"williamboman/mason.nvim",
-	cmd = { "Mason", "MasonInstall", "MasonUninstall" },
+	cmd = "Mason",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
 		local mason = require("mason")
-
 		local mason_lspconfig = require("mason-lspconfig")
 
 		mason.setup({
@@ -22,16 +21,16 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
+				"clangd",
 				"rust_analyzer",
 				"jdtls",
-				"tsserver",
 				"html",
 				"cssls",
+				"tsserver",
 				"tailwindcss",
 				"emmet_ls",
 				"sqlls",
 				"gopls",
-				"clangd",
 				"pyright",
 				"lua_ls",
 				"bashls",
@@ -39,10 +38,9 @@ return {
 				"dockerls",
 				"jsonls",
 				"yamlls",
-				"graphql",
 				"svelte",
+				"graphql",
 			},
-			-- automatic_installation = false,
 		})
 	end,
 }

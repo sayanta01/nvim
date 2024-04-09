@@ -77,6 +77,29 @@ return {
 		-- 	filetypes = { "cs", "vb" },
 		-- })
 
+		lspconfig["rust_analyzer"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "rust" },
+			cmd = {
+				"rustup",
+				"run",
+				"stable",
+				"rust-analyzer",
+			},
+			settings = {
+				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+					},
+					checkOnSave = {
+						enable = true,
+						command = "clippy",
+					},
+				},
+			},
+		})
+
 		lspconfig["bashls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -114,11 +137,6 @@ return {
 			filetypes = { "css", "scss", "less" },
 		})
 
-		-- lspconfig["tailwindcss"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
 		lspconfig["tsserver"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -134,6 +152,30 @@ return {
 				preferences = {
 					disableSuggestions = true,
 				},
+			},
+		})
+
+		-- lspconfig["tailwindcss"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
+		lspconfig["emmet_ls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = {
+				"astro",
+				"css",
+				"eruby",
+				"html",
+				"htmldjango",
+				"javascriptreact",
+				"less",
+				"pug",
+				"sass",
+				"scss",
+				"svelte",
+				"typescriptreact",
 			},
 		})
 
@@ -157,57 +199,10 @@ return {
 		-- 	},
 		-- })
 
-		lspconfig["emmet_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = {
-				"astro",
-				"css",
-				"eruby",
-				"html",
-				"htmldjango",
-				"javascriptreact",
-				"less",
-				"pug",
-				"sass",
-				"scss",
-				"svelte",
-				"typescriptreact",
-			},
-		})
-
 		lspconfig["sqlls"].setup({
 			filetype = { "sql", "mysql" },
 			on_attach = on_attach,
 			capabilities = capabilities,
-		})
-
-		lspconfig["marksman"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-
-		lspconfig["rust_analyzer"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "rust" },
-			cmd = {
-				"rustup",
-				"run",
-				"stable",
-				"rust-analyzer",
-			},
-			settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						allFeatures = true,
-					},
-					checkOnSave = {
-						enable = true,
-						command = "clippy",
-					},
-				},
-			},
 		})
 
 		lspconfig["gopls"].setup({
@@ -230,6 +225,11 @@ return {
 				},
 			},
 		})
+
+    lspconfig["marksman"].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
 
 		lspconfig["dockerls"].setup({
 			on_attach = on_attach,
