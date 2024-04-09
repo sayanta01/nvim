@@ -1,14 +1,13 @@
 return {
 	{
-		"mfussenegger/nvim-dap",
+		"rcarriga/nvim-dap-ui",
 		cmd = { "DapUIToggle", "DapToggleRepl", "DapToggleBreakpoint" },
 		dependencies = {
 			{
-				"rcarriga/nvim-dap-ui",
-				"nvim-neotest/nvim-nio",
-				config = function()
+				"mfussenegger/nvim-dap",
+				dependencies = { "nvim-neotest/nvim-nio" },
+				config = function(_, opts)
 					local dap = require("dap")
-
 					local dapui = require("dapui")
 
 					-- CodeLLDB debug adapter location
@@ -19,11 +18,11 @@ return {
 					local codelldb_path = extension_path .. "adapter/codelldb"
 					local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
-					dapui.setup()
+					dapui.setup(opts)
 
 					vim.fn.sign_define(
 						"DapBreakpoint",
-						{ text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" }
+						{ text = "", texthl = "DiagnosticError", linehl = "", numhl = "" }
 					)
 
 					-- configure LLDB adapter
@@ -32,7 +31,6 @@ return {
 						command = codelldb_path .. ", " .. liblldb_path,
 						name = "lldb",
 					}
-
 					-- default debug configuration for C, C++ & rust
 					dap.configurations.c = {
 						{
@@ -46,7 +44,6 @@ return {
 							stopOnEntry = false,
 						},
 					}
-
 					dap.configurations.cpp = dap.configurations.c
 					dap.configurations.rust = dap.configurations.c
 
@@ -59,7 +56,6 @@ return {
 							command = "js-debug-adapter",
 						},
 					}
-
 					for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
 						dap.configurations[language] = {
 							{
@@ -113,6 +109,7 @@ return {
 
 	{
 		"mfussenegger/nvim-dap-python",
+    -- dependencies = "mfussenegger/nvim-dap",
 		ft = "python",
 		keys = {
 			{
@@ -140,6 +137,7 @@ return {
 
 	{
 		"leoluz/nvim-dap-go",
+		-- dependencies = "mfussenegger/nvim-dap",
 		ft = "go",
 		keys = {
 			{
@@ -159,7 +157,6 @@ return {
 				ft = "go",
 			},
 		},
-		dependencies = "mfussenegger/nvim-dap",
 		config = function()
 			require("dap-go").setup({
 				dap_configurations = {
