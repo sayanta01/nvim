@@ -45,10 +45,6 @@ keymap({ "v", "x" }, "p", '"_dP', opts)
 -- Clear search with <Esc>
 keymap({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hlsearch" })
 
--- Splits
-keymap("n", "<leader>\\", ":vsplit<CR>", opts)
-keymap("n", "<leader>-", ":split<CR>", opts)
-
 -- Better indenting
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
