@@ -27,7 +27,7 @@ return {
 					"jsonc",
 					"toml",
 					"yaml",
-          "xml",
+					"xml",
 					"html",
 					"css",
 					"javascript",

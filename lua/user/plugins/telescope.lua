@@ -36,14 +36,14 @@ return {
 				selection_caret = "❯ ",
 				initial_mode = "insert",
 				selection_strategy = "reset",
-				sorting_strategy = "descending", -- ascending
+        sorting_strategy = "ascending", -- descending
 				layout_strategy = "horizontal",
 				layout_config = {
 					width = 0.80,
 					height = 0.90,
 					preview_cutoff = 120,
 					horizontal = {
-						prompt_position = "bottom",
+						prompt_position = "top",
 						preview_width = 0.60,
 					},
 					vertical = {

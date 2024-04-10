@@ -1,23 +1,23 @@
 return {
 	-- {
-	-- 	"nvim-cmp",
-	-- 	dependencies = {
-	-- 		{
-	-- 			"Exafunction/codeium.nvim",
-	-- 			enabled = false,
-	-- 			build = ":Codeium Auth",
-	-- 			opts = {},
-	-- 		},
-	-- 	},
-	-- },
-
-	-- {
 	-- 	"akinsho/flutter-tools.nvim",
-	-- 	enabled = false,
+	-- 	enabled = true,
 	-- 	ft = "dart",
 	-- 	dependencies = {
 	-- 		"nvim-lua/plenary.nvim",
 	-- 	},
 	-- 	config = true,
+	-- },
+
+	-- {
+	-- 	"nvim-cmp",
+	-- 	dependencies = {
+	-- 		{
+	-- 			"Exafunction/codeium.nvim",
+	-- 			enabled = true,
+	-- 			build = ":Codeium Auth",
+	-- 			opts = {},
+	-- 		},
+	-- 	},
 	-- },
 }
