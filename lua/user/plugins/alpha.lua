@@ -33,7 +33,7 @@ return {
 			dashboard.button("n", "  New file", ":ene | startinsert <CR>"),
 			dashboard.button("b", "  Bookmarks", ":Telescope marks<CR>"),
 			dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
-			dashboard.button("h", "  Check health", ":checkhealth<CR>"),
+			dashboard.button("h", "󰋡  Check health", ":checkhealth<CR>"),
 			dashboard.button("q", "  quit", ":qa<CR>"),
 		}
 

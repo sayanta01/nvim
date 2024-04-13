@@ -283,7 +283,7 @@ return {
 				name = "Js",
 			},
 			["opus"] = {
-				icon = "󰸪",
+				icon = "",
 				color = "#F88A02",
 				cterm_color = "208",
 				name = "OPUS",
@@ -460,7 +460,7 @@ return {
 				name = "AppleScript",
 			},
 			["azcli"] = {
-				icon = "",
+				icon = "󰯭",
 				color = "#0078d4",
 				cterm_color = "32",
 				name = "AzureCli",
@@ -479,6 +479,18 @@ return {
 				name = "Toml",
 			},
 
+      ["m4a"] = {
+        icon = "",
+        color = "#66D8EF",
+        cterm_color = "45",
+        name = "M4A",
+      },
+			["mp3"] = {
+				icon = "",
+				color = "#66D8EF",
+				cterm_color = "45",
+				name = "Mp3",
+			},
 			["mov"] = {
 				icon = "",
 				color = "#e9902d",
@@ -526,6 +538,54 @@ return {
 				color = "#00a2ff",
 				cterm_color = "75",
 				name = "Luau",
+			},
+			["eot"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "EmbeddedOpenTypeFont",
+			},
+			["flc"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "FIGletFontControl",
+			},
+			["flf"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "FIGletFontFormat",
+			},
+			["lff"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "LibrecadFontFile",
+			},
+			["otf"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "OpenTypeFont",
+			},
+			["ttf"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "TrueTypeFont",
+			},
+			["woff"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "WebOpenFontFormat",
+			},
+			["woff2"] = {
+				icon = "󰯫",
+				color = "#ECECEC",
+				cterm_color = "255",
+				name = "WebOpenFontFormat",
 			},
 		})
 	end,
