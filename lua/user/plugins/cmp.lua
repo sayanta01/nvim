@@ -84,7 +84,7 @@ return {
 			Constant = "П",
 			Struct = "",
 			Event = "🗲",
-			Operator = "",
+			Operator = "󰃬",
 			TypeParameter = "󰰦",
 		}
 
