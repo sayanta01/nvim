@@ -1046,6 +1046,24 @@ return {
 				cterm_color = "203",
 				name = "xmonad",
 			},
+			["mts"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Mts",
+			},
+			["ts"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Ts",
+			},
+			["cts"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Cts",
+			},
 		})
 	end,
 }
