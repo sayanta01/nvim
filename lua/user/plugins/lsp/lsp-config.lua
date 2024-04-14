@@ -128,7 +128,7 @@ return {
 		lspconfig["html"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html", "php", "xml" },
+			filetypes = { "html", "xml" },
 		})
 
 		lspconfig["cssls"].setup({
@@ -198,6 +198,12 @@ return {
 		-- 		"astro",
 		-- 	},
 		-- })
+
+		lspconfig["intelephense"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { "php" },
+		})
 
 		lspconfig["sqlls"].setup({
 			filetype = { "sql", "mysql" },

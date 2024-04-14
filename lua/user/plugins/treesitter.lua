@@ -14,10 +14,10 @@ return {
 				ensure_installed = {
 					"c",
 					"cpp",
+          "vim",
+          "vimdoc",
+          "query",
 					"lua",
-					"vim",
-					"vimdoc",
-					"query",
 					"diff",
 					"regex",
 					"gitignore",

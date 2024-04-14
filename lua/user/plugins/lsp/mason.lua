@@ -29,6 +29,7 @@ return {
 				"tsserver",
 				"tailwindcss",
 				"emmet_ls",
+        "intelephense",
 				"sqlls",
 				"gopls",
 				"pyright",

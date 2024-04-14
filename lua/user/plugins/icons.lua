@@ -16,7 +16,7 @@ return {
 				name = "BashProfile",
 			},
 			[".bashrc"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "BashProfile",
@@ -168,7 +168,7 @@ return {
 				name = "Ppt",
 			},
 			["java"] = {
-				icon = "",
+				icon = "󰰆",
 				color = "#cc3e44",
 				cterm_color = "167",
 				name = "Java",
@@ -217,49 +217,49 @@ return {
 			},
 
 			["csh"] = {
-				icon = "",
+				icon = "",
 				color = "#4d5a5e",
 				cterm_color = "240",
 				name = "Csh",
 			},
 			["terminal"] = {
-				icon = "",
+				icon = "",
 				color = "#31B53E",
 				cterm_color = "34",
 				name = "Terminal",
 			},
 			["sh"] = {
-				icon = "",
+				icon = "",
 				color = "#4d5a5e",
 				cterm_color = "240",
 				name = "Sh",
 			},
 			["zsh"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "Zsh",
 			},
 			["fish"] = {
-				icon = "",
+				icon = "",
 				color = "#4d5a5e",
 				cterm_color = "240",
 				name = "Fish",
 			},
 			["awk"] = {
-				icon = "",
+				icon = "",
 				color = "#4d5a5e",
 				cterm_color = "240",
 				name = "Awk",
 			},
 			["ksh"] = {
-				icon = "",
+				icon = "",
 				color = "#4d5a5e",
 				cterm_color = "240",
 				name = "Ksh",
 			},
 			["bash"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "Bash",
@@ -466,7 +466,7 @@ return {
 				name = "AzureCli",
 			},
 			["procfile"] = {
-				icon = "",
+				icon = "󰰉",
 				color = "#a074c4",
 				cterm_color = "140",
 				name = "Procfile",
@@ -479,17 +479,23 @@ return {
 				name = "Toml",
 			},
 
-      ["m4a"] = {
-        icon = "",
-        color = "#66D8EF",
-        cterm_color = "45",
-        name = "M4A",
-      },
+			["m4a"] = {
+				icon = "",
+				color = "#66D8EF",
+				cterm_color = "45",
+				name = "M4A",
+			},
 			["mp3"] = {
 				icon = "",
 				color = "#66D8EF",
 				cterm_color = "45",
 				name = "Mp3",
+			},
+			["srt"] = {
+				icon = "󰨗",
+				color = "#ffb713",
+				cterm_color = "214",
+				name = "Srt",
 			},
 			["mov"] = {
 				icon = "",
@@ -586,6 +592,12 @@ return {
 				color = "#ECECEC",
 				cterm_color = "255",
 				name = "WebOpenFontFormat",
+			},
+			["log"] = {
+				icon = "󰯃",
+				color = "#dddddd",
+				cterm_color = "253",
+				name = "Log",
 			},
 		})
 	end,
