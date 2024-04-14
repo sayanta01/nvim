@@ -84,7 +84,7 @@ return {
 				lualine_a = {},
 				-- lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
 				lualine_b = {},
-				-- lualine_b = { { "branch", icon = "󰘬", separator = { left = "" }, right_padding = 2 } },
+				-- lualine_b = { { "branch", icon = "", separator = { left = "" }, right_padding = 2 } },
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
@@ -149,7 +149,7 @@ return {
 
 		ins_left({
 			"branch",
-			icon = "󰘬",
+			icon = "",
 			color = { fg = colors.violet, gui = "bold" },
 		})
 
@@ -165,6 +165,7 @@ return {
 				error = { fg = colors.red },
 				warn = { fg = colors.yellow },
 				info = { fg = colors.cyan },
+				hint = { fg = colors.green },
 			},
 		})
 
