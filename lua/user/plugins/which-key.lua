@@ -175,7 +175,7 @@ return {
 				name = "Harpoon",
 				h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon marks" },
 				m = {
-					":lua require('harpoon.mark').add_file() vim.notify '󰤱 Marked file'<cr>",
+					":lua require('harpoon.mark').add_file() vim.notify 'Marked file'<cr>",
 					"Mark to harpoon",
 				},
 				r = {
