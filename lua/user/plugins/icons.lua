@@ -304,12 +304,6 @@ return {
 				cterm_color = "208",
 				name = "OPUS",
 			},
-			["php"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Php",
-			},
 			["tex"] = {
 				icon = "",
 				color = "#3D6117",
