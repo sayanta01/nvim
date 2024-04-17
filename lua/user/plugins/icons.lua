@@ -275,7 +275,7 @@ return {
 				name = "Astro",
 			},
 			["js"] = {
-				icon = "",
+				icon = "",
 				color = "#cbcb41",
 				cterm_color = "185",
 				name = "Js",
