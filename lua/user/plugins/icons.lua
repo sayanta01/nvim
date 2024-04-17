@@ -450,7 +450,7 @@ return {
 				name = "Zig",
 			},
 			["sol"] = {
-				icon = "",
+				icon = "",
 				color = "#519aba",
 				cterm_color = "74",
 				name = "Solidity",
@@ -1212,6 +1212,24 @@ return {
 				color = "#701516",
 				cterm_color = "52",
 				name = "Rb",
+			},
+			["scala"] = {
+				icon = "󰒋",
+				color = "#cc3e44",
+				cterm_color = "167",
+				name = "Scala",
+			},
+			["sc"] = {
+				icon = "󰒋",
+				color = "#cc3e44",
+				cterm_color = "167",
+				name = "ScalaScript",
+			},
+			["php"] = {
+				icon = "",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Php",
 			},
 		})
 	end,
