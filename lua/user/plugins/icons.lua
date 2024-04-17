@@ -2,6 +2,7 @@ return {
 	"nvim-tree/nvim-web-devicons",
 	lazy = true,
 	config = function()
+		require("nvim-web-devicons").set_default_icon("", "#6d8086", 65)
 		require("nvim-web-devicons").set_icon({
 			["ini"] = {
 				icon = "",
@@ -430,6 +431,12 @@ return {
 				cterm_color = "220",
 				name = "Nim",
 			},
+			["build.zig.zon"] = {
+				icon = "󰵁",
+				color = "#f69a1b",
+				cterm_color = "172",
+				name = "ZigObjectNotation",
+			},
 			["zig"] = {
 				icon = "󰵁",
 				color = "#f69a1b",
@@ -639,12 +646,6 @@ return {
 				color = "#ECECEC",
 				cterm_color = "255",
 				name = "WebOpenFontFormat",
-			},
-			["log"] = {
-				icon = "󰯃",
-				color = "#dddddd",
-				cterm_color = "253",
-				name = "Log",
 			},
 			["bak"] = {
 				icon = "",
@@ -882,12 +883,6 @@ return {
 				cterm_color = "36",
 				name = "Nushell",
 			},
-			["desktop"] = {
-				icon = "",
-				color = "#563d7c",
-				cterm_color = "54",
-				name = "DesktopEntry",
-			},
 			["cbl"] = {
 				icon = "󰠳",
 				color = "#005ca5",
@@ -1038,6 +1033,12 @@ return {
 				cterm_color = "74",
 				name = "Mts",
 			},
+			["cson"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Cson",
+			},
 			["json"] = {
 				icon = "",
 				color = "#cbcb41",
@@ -1079,6 +1080,134 @@ return {
 				color = "#6d8086",
 				cterm_color = "66",
 				name = "Config",
+			},
+			["webmanifest"] = {
+				icon = "",
+				color = "#f1e05a",
+				cterm_color = "185",
+				name = "Webmanifest",
+			},
+			["sha1"] = {
+				icon = "",
+				color = "#8c86af",
+				cterm_color = "103",
+				name = "Sha1",
+			},
+			["sha224"] = {
+				icon = "",
+				color = "#8c86af",
+				cterm_color = "103",
+				name = "Sha224",
+			},
+			["sha256"] = {
+				icon = "",
+				color = "#8c86af",
+				cterm_color = "103",
+				name = "Sha256",
+			},
+			["sha384"] = {
+				icon = "",
+				color = "#8c86af",
+				cterm_color = "103",
+				name = "Sha384",
+			},
+			["sha512"] = {
+				icon = "",
+				color = "#8c86af",
+				cterm_color = "103",
+				name = "Sha512",
+			},
+			["md5"] = {
+				icon = "",
+				color = "#8c86af",
+				cterm_color = "103",
+				name = "Md5",
+			},
+			["nswag"] = {
+				icon = "",
+				color = "#85ea2d",
+				cterm_color = "112",
+				name = "Nswag",
+			},
+
+			["kbx"] = {
+				icon = "󰷖",
+				color = "#737672",
+				cterm_color = "243",
+				name = "Kbx",
+			},
+			["old"] = {
+				icon = "",
+				color = "#2596be",
+				cterm_color = "31",
+				name = "Old",
+			},
+
+			["fcbak"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fcmacro"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fcmat"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fcparam"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fcscript"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fcstd"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fcstd1"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fctb"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["fctl"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCAD",
+			},
+			["FreeCAD.conf"] = {
+				icon = "",
+				color = "#cb0d0d",
+				cterm_color = "160",
+				name = "FreeCADConfig",
+			},
+			[".babelrc"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Babelrc",
 			},
 		})
 	end,

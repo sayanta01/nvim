@@ -82,7 +82,7 @@ return {
 						homepage = "%s",
 						repository_label = " repository     ",
 						repository = "%s",
-						documentation_label = " documentation  ",
+						documentation_label = " documentation  ",
 						documentation = "%s",
 						crates_io_label = " crates.io      ",
 						crates_io = "%s",
@@ -107,7 +107,7 @@ return {
 				src = {
 					text = {
 						prerelease = "  pre-release ",
-						yanked = " 󱘙 yanked ",
+						yanked = "  yanked ",
 					},
 					cmp = {
 						enabled = true,

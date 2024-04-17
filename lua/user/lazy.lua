@@ -30,6 +30,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 		border = "rounded",
 		icons = {
 			config = " ",
+			ft = " ",
 			event = "🗲 ",
 			init = " ",
 			import = " ",
@@ -85,6 +86,6 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 	},
 })
 
--- Theme 
+-- Theme
 vim.opt.termguicolors = true
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd([[colorscheme tokyonight]])
