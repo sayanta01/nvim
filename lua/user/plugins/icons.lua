@@ -1129,20 +1129,12 @@ return {
 				cterm_color = "112",
 				name = "Nswag",
 			},
-
 			["kbx"] = {
 				icon = "󰷖",
 				color = "#737672",
 				cterm_color = "243",
 				name = "Kbx",
 			},
-			["old"] = {
-				icon = "",
-				color = "#2596be",
-				cterm_color = "31",
-				name = "Old",
-			},
-
 			["fcbak"] = {
 				icon = "",
 				color = "#cb0d0d",
