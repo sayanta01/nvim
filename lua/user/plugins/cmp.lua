@@ -68,12 +68,12 @@ return {
 			Field = "",
 			Variable = "",
 			Class = "",
-			Interface = "", -- 
+			Interface = "",
 			Module = "󱒌",
 			Property = "", -- 󰜢
 			Unit = "",
 			Value = "󰎠",
-			Enum = "ℰ", -- 
+			Enum = "ℰ", -- 󰈍
 			Keyword = "",
 			Snippet = "",
 			Color = "",
@@ -84,8 +84,8 @@ return {
 			Constant = "П",
 			Struct = "",
 			Event = "🗲",
-			Operator = "󰃬",
-			TypeParameter = "󰰦",
+			Operator = "󰇼",
+			TypeParameter = "󰰤",
 		}
 
 		cmp.setup({

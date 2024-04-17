@@ -3,7 +3,7 @@ return {
 	keys = { { "<leader>", mode = { "n", "v" } } },
 	init = function()
 		vim.o.timeout = true
-		vim.o.timeoutlen = 299
+		vim.o.timeoutlen = 200
 	end,
 	config = function()
 		require("which-key").setup({
@@ -13,7 +13,7 @@ return {
 				-- the presets plugin, adds help for a bunch of default keybindings in Neovim
 				-- No actual key bindings are created
 				spelling = {
-					enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+					enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 					suggestions = 20, -- how many suggestions should be shown in the list?
 				},
 				presets = {
@@ -36,9 +36,9 @@ return {
 				-- ["<cr>"] = "RET",
 				-- ["<tab>"] = "TAB",
 			},
-			--[[ motions = { ]]
-			--[[ 	count = true, ]]
-			--[[ }, ]]
+			-- motions = {
+			-- 	count = true,
+			-- },
 			icons = {
 				breadcrumb = "»",
 				separator = "",
@@ -62,7 +62,7 @@ return {
 				spacing = 4,
 				align = "left",
 			},
-			ignore_missing = true,
+			ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
 			hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
 			show_help = false,
 			show_keys = false,

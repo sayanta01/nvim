@@ -59,7 +59,7 @@ return {
 						git = false,
 					},
 					glyphs = {
-						default = "",
+						default = "",
 						symlink = "",
 						folder = {
 							arrow_closed = "",
@@ -73,11 +73,11 @@ return {
 						},
 						git = {
 							unstaged = "󱨈",
-							staged = "",
+							staged = "",
 							unmerged = "",
 							renamed = "",
-							untracked = "",
-							deleted = "",
+							untracked = "",
+							deleted = "󰍷",
 							ignored = "◌",
 						},
 					},

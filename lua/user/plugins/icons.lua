@@ -105,7 +105,6 @@ return {
 				cterm_color = "178",
 				name = "Templ",
 			},
-
 			["xml"] = {
 				icon = "",
 				color = "#e37933",
@@ -130,14 +129,12 @@ return {
 				cterm_color = "66",
 				name = "CMakeLists",
 			},
-
 			[".env"] = {
 				icon = "",
 				color = "#faf743",
 				cterm_color = "227",
 				name = "Env",
 			},
-
 			["avif"] = {
 				icon = "",
 				color = "#a074c4",
@@ -169,7 +166,7 @@ return {
 				name = "Ppt",
 			},
 			["java"] = {
-				icon = "󰰆",
+				icon = "",
 				color = "#cc3e44",
 				cterm_color = "167",
 				name = "Java",
@@ -216,7 +213,6 @@ return {
 				cterm_color = "140",
 				name = "Png",
 			},
-
 			["csh"] = {
 				icon = "",
 				color = "#4d5a5e",
@@ -357,7 +353,7 @@ return {
 				name = "Coffee",
 			},
 			["css"] = {
-				icon = "",
+				icon = "",
 				color = "#42a5f5",
 				cterm_color = "75",
 				name = "Css",
@@ -374,14 +370,12 @@ return {
 				cterm_color = "113",
 				name = "Csv",
 			},
-
 			["mint"] = {
 				icon = "󰣭",
 				color = "#87c095",
 				cterm_color = "108",
 				name = "Mint",
 			},
-
 			["pl"] = {
 				icon = "",
 				color = "#519aba",
@@ -413,7 +407,7 @@ return {
 			-- 	name = "KotlinScript",
 			-- },
 			["xul"] = {
-				icon = "󰏚",
+				icon = "",
 				color = "#e37933",
 				cterm_color = "166",
 				name = "Xul",
@@ -437,7 +431,7 @@ return {
 				name = "Nim",
 			},
 			["zig"] = {
-				icon = "󰬡",
+				icon = "󰵁",
 				color = "#f69a1b",
 				cterm_color = "172",
 				name = "Zig",
@@ -478,14 +472,12 @@ return {
 				cterm_color = "140",
 				name = "Procfile",
 			},
-
 			["toml"] = {
-				icon = "T",
+				icon = "󰰤",
 				color = "#FFFFFF",
 				cterm_color = "236",
 				name = "Toml",
 			},
-
 			["m4a"] = {
 				icon = "",
 				color = "#66D8EF",
@@ -498,7 +490,6 @@ return {
 				cterm_color = "45",
 				name = "Flac",
 			},
-
 			["mp3"] = {
 				icon = "",
 				color = "#66D8EF",
@@ -511,7 +502,6 @@ return {
 				cterm_color = "45",
 				name = "Wav",
 			},
-
 			["3gp"] = {
 				icon = "",
 				color = "#FD971F",
@@ -524,7 +514,6 @@ return {
 				cterm_color = "45",
 				name = "Aac",
 			},
-
 			["ssa"] = {
 				icon = "󰨗",
 				color = "#ffb713",
@@ -555,7 +544,6 @@ return {
 				cterm_color = "214",
 				name = "Ass",
 			},
-
 			["mov"] = {
 				icon = "",
 				color = "#e9902d",
@@ -683,20 +671,19 @@ return {
 				name = "Mpv",
 			},
 			["xcstrings"] = {
-				icon = "",
+				icon = "󱊺",
 				color = "#2596be",
 				cterm_color = "31",
 				name = "XcLocalization",
 			},
-
 			["strings"] = {
-				icon = "",
+				icon = "󱊺",
 				color = "#2596be",
 				cterm_color = "31",
 				name = "Localization",
 			},
 			["qm"] = {
-				icon = "",
+				icon = "󱊺",
 				color = "#2596be",
 				cterm_color = "31",
 				name = "Localization",
@@ -732,7 +719,7 @@ return {
 				name = "Hurl",
 			},
 			["f90"] = {
-				icon = "f",
+				icon = "󰯼",
 				color = "#734f96",
 				cterm_color = "97",
 				name = "Fortran",
@@ -776,90 +763,89 @@ return {
 				name = "Sln",
 			},
 			["skp"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "SketchUp",
 			},
 			["sldasm"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "SolidWorksAsm",
 			},
 			["sldprt"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "SolidWorksPrt",
 			},
 			["slvs"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "SolveSpace",
 			},
 			["ste"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Ste",
 			},
 			["step"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Step",
 			},
 			["stp"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Stp",
 			},
 			["dwg"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "AutoCADDwg",
 			},
 			["dxf"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "AutoCADDxf",
 			},
 			["f3d"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Fusion360",
 			},
 			["ifc"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Ifc",
 			},
 			["ige"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Ige",
 			},
 			["iges"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Iges",
 			},
 			["igs"] = {
-				icon = "",
+				icon = "",
 				color = "#839463",
 				cterm_color = "101",
 				name = "Igs",
 			},
-
 			["ps1"] = {
 				icon = "",
 				color = "#4273ca",
@@ -927,7 +913,7 @@ return {
 				name = "Cobol",
 			},
 			["cr"] = {
-				icon = "",
+				icon = "󰍖",
 				color = "#c8c8c8",
 				cterm_color = "251",
 				name = "Crystal",
@@ -1051,6 +1037,30 @@ return {
 				color = "#519aba",
 				cterm_color = "74",
 				name = "Mts",
+			},
+			["json"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Json",
+			},
+			["json5"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Json5",
+			},
+			["jsonc"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Jsonc",
+			},
+			["tsconfig.json"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "TSConfig",
 			},
 			["ts"] = {
 				icon = "",
