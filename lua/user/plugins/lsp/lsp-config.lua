@@ -35,7 +35,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-		local signs = { Error = " ", Warn = " ", Hint = " ", Info = "" }
+		local signs = { Error = " ", Warn = " ", Hint = " ", Info = "" }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -100,6 +100,27 @@ return {
 			},
 		})
 
+		lspconfig["gopls"].setup({
+			cmd = { "gopls" },
+			filetypes = { "go", "gomod", "gowork", "gotmpl" },
+			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = {
+				gopls = {
+					completeUnimported = true,
+					usePlaceholders = true,
+					analyses = {
+						unusedparams = true,
+						shadow = true,
+					},
+					experimentalPostfixCompletions = true,
+					gofumpt = true,
+					staticcheck = true,
+				},
+			},
+		})
+
 		lspconfig["bashls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -125,6 +146,30 @@ return {
 			},
 		})
 
+		lspconfig["lua_ls"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					runtime = {
+						version = "LuaJIT",
+					},
+					diagnostics = {
+						globals = { "vim", "it", "describe", "before_each", "after_each" },
+					},
+					workspace = {
+						library = {
+							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+							[vim.fn.stdpath("config") .. "/lua"] = true,
+						},
+					},
+					telemetry = {
+						enable = false,
+					},
+				},
+			},
+		})
+
 		lspconfig["html"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -136,6 +181,11 @@ return {
 			capabilities = capabilities,
 			filetypes = { "css", "scss", "less" },
 		})
+
+		-- lspconfig["tailwindcss"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
 
 		lspconfig["tsserver"].setup({
 			on_attach = on_attach,
@@ -154,11 +204,6 @@ return {
 				},
 			},
 		})
-
-		-- lspconfig["tailwindcss"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
 
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
@@ -211,27 +256,6 @@ return {
 			capabilities = capabilities,
 		})
 
-		lspconfig["gopls"].setup({
-			cmd = { "gopls" },
-			filetypes = { "go", "gomod", "gowork", "gotmpl" },
-			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = {
-				gopls = {
-					completeUnimported = true,
-					usePlaceholders = true,
-					analyses = {
-						unusedparams = true,
-						shadow = true,
-					},
-					experimentalPostfixCompletions = true,
-					gofumpt = true,
-					staticcheck = true,
-				},
-			},
-		})
-
 		lspconfig["marksman"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -261,30 +285,6 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		})
-
-		lspconfig["lua_ls"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				Lua = {
-					runtime = {
-						version = "LuaJIT",
-					},
-					diagnostics = {
-						globals = { "vim", "it", "describe", "before_each", "after_each" },
-					},
-					workspace = {
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
-					},
-					telemetry = {
-						enable = false,
-					},
-				},
-			},
 		})
 
 		-- lspconfig["solargraph"].setup({

@@ -27,7 +27,7 @@ return {
 
 					vim.fn.sign_define(
 						"DapBreakpoint",
-						{ text = "", texthl = "DiagnosticError", linehl = "", numhl = "" }
+						{ text = "", texthl = "DiagnosticError", linehl = "", numhl = "" }
 					)
 
 					-- configure LLDB adapter

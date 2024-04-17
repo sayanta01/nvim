@@ -12,16 +12,16 @@ return {
 		local mason_null_ls = require("mason-null-ls")
 		mason_null_ls.setup({
 			ensure_installed = {
+        "google_java_format",
         "prettier",
-				"google_java_format",
 				"gofumpt",
+        "shfmt",
+        "shellcheck", -- bashls automatically uses
 				"stylua",
-				"shfmt",
-				"shellcheck", -- bashls automatically uses
 				"isort",
 				"black",
-				"pylint",
-				"eslint",
+				-- "pylint",
+				-- "eslint",
 			},
 		})
 
@@ -35,10 +35,10 @@ return {
 			-- add package.json as identifier for root (for typescript monorepos)
 			root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
 			sources = { -- setup formatters & linters
+        formatting.google_java_format,
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
-				formatting.google_java_format,
 				formatting.clang_format,
 				formatting.gofmt,
 				formatting.stylua,
