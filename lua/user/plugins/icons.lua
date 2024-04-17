@@ -1231,6 +1231,30 @@ return {
 				cterm_color = "140",
 				name = "Php",
 			},
+			["cp"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Cp",
+			},
+			["cpp"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Cpp",
+			},
+			["cppm"] = {
+				icon = "",
+				color = "#519aba",
+				cterm_color = "74",
+				name = "Cppm",
+			},
+			["c"] = {
+				icon = "",
+				color = "#599eff",
+				cterm_color = "74",
+				name = "C",
+			},
 		})
 	end,
 }
