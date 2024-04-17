@@ -304,7 +304,7 @@ return {
 				name = "Tex",
 			},
 			["txt"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "Txt",
@@ -745,19 +745,19 @@ return {
 				name = "Vue",
 			},
 			["vsix"] = {
-				icon = "",
+				icon = "",
 				color = "#854CC7",
 				cterm_color = "98",
 				name = "Vsix",
 			},
 			["suo"] = {
-				icon = "",
+				icon = "",
 				color = "#854CC7",
 				cterm_color = "98",
 				name = "Suo",
 			},
 			["sln"] = {
-				icon = "",
+				icon = "",
 				color = "#854CC7",
 				cterm_color = "98",
 				name = "Sln",
@@ -997,13 +997,13 @@ return {
 				name = "Hyprland",
 			},
 			["ml"] = {
-				icon = "",
+				icon = "",
 				color = "#e37933",
 				cterm_color = "166",
 				name = "Ml",
 			},
 			["mli"] = {
-				icon = "",
+				icon = "",
 				color = "#e37933",
 				cterm_color = "166",
 				name = "Mli",
@@ -1073,6 +1073,12 @@ return {
 				color = "#519aba",
 				cterm_color = "74",
 				name = "Cts",
+			},
+			["config"] = {
+				icon = "",
+				color = "#6d8086",
+				cterm_color = "66",
+				name = "Config",
 			},
 		})
 	end,
