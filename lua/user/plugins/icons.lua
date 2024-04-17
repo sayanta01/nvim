@@ -274,6 +274,18 @@ return {
 				cterm_color = "202",
 				name = "Astro",
 			},
+			["cjs"] = {
+				icon = "",
+				color = "#cbcb41",
+				cterm_color = "185",
+				name = "Cjs",
+			},
+			["mjs"] = {
+				icon = "",
+				color = "#f1e05a",
+				cterm_color = "185",
+				name = "Mjs",
+			},
 			["js"] = {
 				icon = "",
 				color = "#cbcb41",
