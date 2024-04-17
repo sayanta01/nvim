@@ -1213,6 +1213,12 @@ return {
 				cterm_color = "185",
 				name = "Babelrc",
 			},
+			["rb"] = {
+				icon = "",
+				color = "#701516",
+				cterm_color = "52",
+				name = "Rb",
+			},
 		})
 	end,
 }
