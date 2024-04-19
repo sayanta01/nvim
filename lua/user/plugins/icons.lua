@@ -1255,6 +1255,12 @@ return {
 				cterm_color = "74",
 				name = "C",
 			},
+			["dropbox"] = {
+				icon = "",
+				color = "#0061FE",
+				cterm_color = "27",
+				name = "Dropbox",
+			},
 		})
 	end,
 }
