@@ -732,7 +732,7 @@ return {
 				name = "Fortran",
 			},
 			["bib"] = {
-				icon = "",
+				icon = "",
 				color = "#cbcb41",
 				cterm_color = "185",
 				name = "BibTeX",
@@ -1214,13 +1214,13 @@ return {
 				name = "Rb",
 			},
 			["scala"] = {
-				icon = "󰒋",
+				icon = "",
 				color = "#cc3e44",
 				cterm_color = "167",
 				name = "Scala",
 			},
 			["sc"] = {
-				icon = "󰒋",
+				icon = "",
 				color = "#cc3e44",
 				cterm_color = "167",
 				name = "ScalaScript",

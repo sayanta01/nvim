@@ -14,7 +14,6 @@ return {
 			yellow = "#ecbe7b",
 			cyan = "#008080",
 			green = "#c3e88d",
-			green1 = "#009e23",
 			orange = "#ff8800",
 			violet = "#a9a1e1",
 			magenta = "#c678dd",
@@ -198,7 +197,7 @@ return {
 			"diff",
 			symbols = { added = "", modified = "~", removed = "" },
 			diff_color = {
-				added = { fg = colors.green1 },
+				added = { fg = colors.green },
 				modified = { fg = colors.orange },
 				removed = { fg = colors.red },
 			},
