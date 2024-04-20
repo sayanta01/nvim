@@ -114,7 +114,7 @@ return {
 			-- w = { ":w!<cr>", "Save" },
 			q = { ":q!<cr>", "Quit" },
 			x = { ":bdelete<cr>", "Close Buffer" },
-			y = { "gg<S-v>G", "Copy" },
+			-- y = { "gg<S-v>G", "Copy" },
 			e = { ":NvimTreeToggle<cr>", "Explorer" },
 			f = { ":Telescope find_files<cr>", "Find Files" },
 
