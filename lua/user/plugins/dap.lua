@@ -9,7 +9,7 @@ return {
         -- stylua: ignore
         keys = {
           { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
-          { "<leader>de", function() require("dapui").eval() end,     desc = "Evaluate", mode = { "n", "v" } },
+          { "<leader>de", function() require("dapui").eval() end, desc = "Evaluate", mode = { "n", "v" } },
         },
 				config = function(_, opts)
 					local dap = require("dap")

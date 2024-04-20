@@ -191,9 +191,9 @@ return {
 				h = { ":ColorizerToggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spelling " },
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
-				-- l = { ":set cursorcolumn!<cr>", "Cursor Line" },
+        p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 				-- u = { ":UfoAttach<cr>", "Ufo" },
-				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
+        -- l = { ":set cursorcolumn!<cr>", "Cursor Line" },
 			},
 
 			p = {
@@ -222,7 +222,7 @@ return {
 
 				b = { ":lua require'dap'.step_back()<cr>", "Step Back" },
 				s = { ":lua require'dap'.session()<cr>", "Get Session" },
-				q = { "<cmd>lua require'dap'.close()<cr>", "Quit Sessio" },
+				q = { ":lua require'dap'.close()<cr>", "Quit Session" },
 
 				p = { ":lua require'dap'.pause()<cr>", "Pause" },
 				l = { ":lua require'dap'.run_last()<cr>", "Last Run" },

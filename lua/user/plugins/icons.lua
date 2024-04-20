@@ -149,7 +149,7 @@ return {
 				name = "Scheme",
 			},
 			["favicon.ico"] = {
-				icon = "",
+				icon = "",
 				color = "#cbcb41",
 				cterm_color = "185",
 				name = "Favicon",
@@ -311,7 +311,7 @@ return {
 				name = "Tex",
 			},
 			["txt"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "Txt",
@@ -340,7 +340,6 @@ return {
 				cterm_color = "74",
 				name = "Rmd",
 			},
-
 			["doc"] = {
 				icon = "",
 				color = "#185abd",
@@ -402,13 +401,13 @@ return {
 				name = "Tor",
 			},
 			["kt"] = {
-				icon = "󰰉",
+				icon = "",
 				color = "#7F52FF",
 				cterm_color = "99",
 				name = "Kotlin",
 			},
 			["kts"] = {
-				icon = "󰰉",
+				icon = "",
 				color = "#7F52FF",
 				cterm_color = "99",
 				name = "KotlinScript",
@@ -486,7 +485,7 @@ return {
 				name = "Procfile",
 			},
 			["toml"] = {
-				icon = "󰰤",
+				icon = "",
 				color = "#FFFFFF",
 				cterm_color = "236",
 				name = "Toml",
@@ -752,19 +751,19 @@ return {
 				name = "Vue",
 			},
 			["vsix"] = {
-				icon = "",
+				icon = "",
 				color = "#854CC7",
 				cterm_color = "98",
 				name = "Vsix",
 			},
 			["suo"] = {
-				icon = "",
+				icon = "",
 				color = "#854CC7",
 				cterm_color = "98",
 				name = "Suo",
 			},
 			["sln"] = {
-				icon = "",
+				icon = "",
 				color = "#854CC7",
 				cterm_color = "98",
 				name = "Sln",
@@ -986,7 +985,7 @@ return {
 				name = "Kritarc",
 			},
 			[".SRCINFO"] = {
-				icon = "󱂷",
+				icon = "󱂸",
 				color = "#0f94d2",
 				cterm_color = "67",
 				name = "SRCINFO",
@@ -998,13 +997,13 @@ return {
 				name = "Hyprland",
 			},
 			["ml"] = {
-				icon = "",
+				icon = "",
 				color = "#e37933",
 				cterm_color = "166",
 				name = "Ml",
 			},
 			["mli"] = {
-				icon = "",
+				icon = "",
 				color = "#e37933",
 				cterm_color = "166",
 				name = "Mli",
@@ -1014,24 +1013,6 @@ return {
 				color = "#0f94d2",
 				cterm_color = "67",
 				name = "PKGBUILD",
-			},
-			["xmobarrc"] = {
-				icon = "󰬟",
-				color = "#fd4d5d",
-				cterm_color = "203",
-				name = "xmonad",
-			},
-			["xmobarrc.hs"] = {
-				icon = "󰬟",
-				color = "#fd4d5d",
-				cterm_color = "203",
-				name = "xmonad",
-			},
-			["xmonad.hs"] = {
-				icon = "󰬟",
-				color = "#fd4d5d",
-				cterm_color = "203",
-				name = "xmonad",
 			},
 			["mts"] = {
 				icon = "",
