@@ -358,14 +358,20 @@ return {
 				cterm_color = "185",
 				name = "Coffee",
 			},
+			["less"] = {
+				icon = "",
+				color = "#563d7c",
+				cterm_color = "54",
+				name = "Less",
+			},
 			["css"] = {
-				icon = "",
+				icon = "",
 				color = "#42a5f5",
 				cterm_color = "75",
 				name = "Css",
 			},
 			["tfvars"] = {
-				icon = "",
+				icon = "",
 				color = "#5F43E9",
 				cterm_color = "93",
 				name = "TFVars",
