@@ -70,7 +70,7 @@ return {
 			Class = "",
 			Interface = "",
 			Module = "󱒌",
-			Property = "", -- 󰜢
+			Property = "󰜢",
 			Unit = "",
 			Value = "󰎠",
 			Enum = "ℰ", -- 󰈍
@@ -84,7 +84,7 @@ return {
 			Constant = "П",
 			Struct = "",
 			Event = "🗲",
-			Operator = "󰦒",
+			Operator = "󱓺",
 			TypeParameter = "",
 		}
 

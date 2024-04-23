@@ -21,27 +21,16 @@ return {
 			red = "#ff5189",
 		}
 
-		-- local conditions = {
-		-- 	buffer_not_empty = function()
-		-- 		return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-		-- 	end,
-		-- 	hide_in_width = function()
-		-- 		return vim.fn.winwidth(0) > 80
-		-- 	end,
-		-- 	check_git_workspace = function()
-		-- 		local filepath = vim.fn.expand("%:p:h")
-		-- 		local gitdir = vim.fn.finddir(".git", filepath .. ";")
-		-- 		return gitdir and #gitdir > 0 and #gitdir < #filepath
-		-- 	end,
-		-- }
-
 		local config = {
 			options = {
-				-- icons_enabled = true,
+				icons_enabled = true,
+				-- Disable sections and component separators
+				component_separators = "",
+				disabled_filetypes = {
+					statusline = { "toggleterm", "alpha", "dashboard" },
+					-- winbar = {},
+				},
 				theme = {
-					-- We are going to use lualine_c an lualine_x as left and
-					-- right section, Both are highlighted by c theme, So we
-					-- are just setting default looks o statusline
 					normal = {
 						a = { fg = colors.black, bg = colors.blue },
 						b = { fg = colors.blue, bg = colors.bg },
@@ -72,12 +61,6 @@ return {
 						c = { fg = colors.fg, bg = colors.bg },
 					},
 				},
-				-- Disable sections and component separators
-				component_separators = "",
-				disabled_filetypes = {
-					statusline = { "toggleterm", "alpha", "dashboard" },
-					-- winbar = {},
-				},
 			},
 			sections = {
 				lualine_a = {},
@@ -99,23 +82,20 @@ return {
 			},
 		}
 
-		-- Add component in lualine_c at left section
 		local function ins_left(component)
 			table.insert(config.sections.lualine_c, component)
 		end
 
-		-- Add component in lualine_x at right section
 		local function ins_right(component)
 			table.insert(config.sections.lualine_x, component)
 		end
 
 		ins_left({
-			-- mode component
 			function()
 				return " "
 			end,
 			color = function()
-				-- auto change color according to mode
+				-- change color according to mode
 				local mode_color = {
 					n = colors.blue,
 					i = colors.green,
@@ -159,7 +139,7 @@ return {
 		ins_left({
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
-			symbols = { error = " ", warn = " ", info = " ", hint = "" },
+			symbols = { error = " ", warn = " ", info = " ", hint = "󰰂 " },
 			diagnostics_color = {
 				error = { fg = colors.red },
 				warn = { fg = colors.yellow },
@@ -201,7 +181,6 @@ return {
 				modified = { fg = colors.orange },
 				removed = { fg = colors.red },
 			},
-			-- cond = conditions.hide_in_width,
 		})
 
 		-- ins_right({
@@ -216,7 +195,7 @@ return {
 		-- 		inactive = { fg = colors.fg },
 		-- 	},
 		-- 	symbols = {
-		-- 		modified = " 󰧞",
+		-- 		modified = " ",
 		-- 		alternate_file = "",
 		-- 		directory = "",
 		-- 	},

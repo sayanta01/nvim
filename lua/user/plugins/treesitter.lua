@@ -46,11 +46,9 @@ return {
 					-- "prisma",
 				},
 				sync_install = false,
-				-- auto_install = true, -- must have `tree-sitter` CLI installed locally
+				-- auto_install = true,
 				highlight = {
 					enable = true,
-					-- disable = { "latex" },
-					-- Or use a function for more flexibility, to disable slow treesitter highlight for large files
 					disable = function(_, buf)
 						local max_filesize = 100 * 1024 -- 100 KB
 						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))

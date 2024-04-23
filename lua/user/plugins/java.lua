@@ -29,8 +29,8 @@ return {
 
 		require("jdtls").start_or_attach(config)
 
-		local keymap = vim.keymap.set -- shorten function name
-		local opts = { silent = true } -- silent keymap option
+		local keymap = vim.keymap.set
+		local opts = { silent = true }
 
 		keymap("n", "<leader>ji", ":lua require'jdtls'.organize_imports()<CR>", opts)
 		keymap("n", "<leader>jv", ":lua require('jdtls').extract_variable()<CR>", opts)

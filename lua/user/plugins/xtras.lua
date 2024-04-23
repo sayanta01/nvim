@@ -1,4 +1,24 @@
 return {
+
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	-- vim.notify = require("notify")
+	-- 	require("notify").setup({
+	-- 		fps = 24,
+	-- 		icons = {
+	-- 			DEBUG = " ",
+	-- 			ERROR = " ",
+	-- 			INFO = " 󰋽",
+	-- 			TRACE = " ✎",
+	-- 			WARN = " ",
+	-- 		},
+	-- 		level = 1,
+	-- 		stages = "fade",
+	-- 		render = "compact",
+	-- 		timeout = 1000,
+	-- 	}),
+	-- },
+
 	{
 		"LunarVim/bigfile.nvim",
 		event = "BufReadPre",
