@@ -36,17 +36,10 @@ return {
 				-- ["<cr>"] = "RET",
 				-- ["<tab>"] = "TAB",
 			},
-			-- motions = {
-			-- 	count = true,
-			-- },
 			icons = {
 				breadcrumb = "»",
 				separator = "",
 				group = "",
-			},
-			popup_mappings = {
-				scroll_down = "<c-d>",
-				scroll_up = "<c-u>",
 			},
 			window = {
 				border = "rounded",
@@ -191,9 +184,9 @@ return {
 				h = { ":ColorizerToggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spelling " },
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
-        p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
+				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 				-- u = { ":UfoAttach<cr>", "Ufo" },
-        -- l = { ":set cursorcolumn!<cr>", "Cursor Line" },
+				-- l = { ":set cursorcolumn!<cr>", "Cursor Line" },
 			},
 
 			p = {
@@ -242,8 +235,9 @@ return {
 			},
 		}
 
-		local terminal = require("toggleterm.terminal").Terminal
-		local lazygit = terminal:new({ cmd = "lazygit", hidden = true })
+		local Terminal = require("toggleterm.terminal").Terminal
+		local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+
 		function _LAZYGIT_TOGGLE()
 			lazygit:toggle()
 		end

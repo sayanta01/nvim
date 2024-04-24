@@ -9,10 +9,13 @@ return {
 	opts = {
 		exclude_filetypes = { "netrw", "toggleterm" },
 		show_basename = false,
+		symbols = {
+			separator = "",
+		},
 		kinds = {
 			File = "",
 			Module = "󱒌",
-			Namespace = "",
+			Namespace = "󰦮",
 			Package = "",
 			Class = "",
 			Method = "",
@@ -34,7 +37,7 @@ return {
 			EnumMember = "",
 			Struct = "",
 			Event = "🗲",
-			Operator = "󱓺",
+			Operator = "󰇔",
 			TypeParameter = "",
 		},
 	},

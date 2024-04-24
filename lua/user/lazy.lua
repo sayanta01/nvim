@@ -22,7 +22,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 		notify = false,
 	},
 	change_detection = {
-		-- automatically check for config file changes and reload the ui
+		-- automatically check for config file changes and reload the UI
 		enabled = false,
 		notify = false,
 	},
@@ -44,7 +44,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 				"●",
 				"",
 				"",
-				"‒",
+				"",
 			},
 		},
 	},

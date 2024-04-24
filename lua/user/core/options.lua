@@ -8,17 +8,16 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true -- use spaces instead of tabs
 
--- Search settings
+-- Search
 opt.ignorecase = true
 opt.smartcase = true
 opt.smartindent = true -- autoindent new line
 
--- Split windows
+-- Splits
 opt.splitbelow = true
 opt.splitright = true
 
 opt.clipboard = "unnamedplus" -- sync with system clipboard
-
 opt.swapfile = false
 
 opt.wrap = false
@@ -39,13 +38,11 @@ opt.undofile = true -- enable persistent undo
 opt.updatetime = 200 -- interval for writing swap file to disk, also used by gitsigns
 opt.completeopt = { "menu", "menuone", "noselect" }
 
--- Folding
 opt.foldlevel = 99
 opt.foldmethod = "indent"
 -- vim.opt.termguicolors = true
 
-
-opt.spelllang:append("cjk") -- Disable spellchecking for asian characters (VIM algorithm does not support it)
+opt.spelllang:append("cjk") -- Disable spellchecking for asian characters `VIM algorithm does not support it`
 opt.shortmess:append("c") -- Don't show redundant messages from ins-completion-menu
 opt.whichwrap:append("<,>,[,],h,l")
 

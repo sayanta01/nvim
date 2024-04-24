@@ -17,10 +17,10 @@ return {
 
 		nvimtree.setup({
 			on_attach = "default",
+      hijack_cursor = true,
 			auto_reload_on_write = false,
 			disable_netrw = true,
 			hijack_netrw = true,
-			hijack_cursor = true,
 			hijack_unnamed_buffer_when_opening = false,
 			root_dirs = {},
 			prefer_startup_root = false,
@@ -28,17 +28,17 @@ return {
 			reload_on_bufenter = false,
 			respect_buf_cwd = false,
 			select_prompts = false,
-			sort_by = "name",
+			-- sort_by = "name",
 			view = {
 				width = 29,
 				side = "left",
 			},
 			renderer = {
-				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-				symlink_destination = true,
+				-- special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+				-- symlink_destination = true,
 				highlight_git = true,
-				highlight_opened_files = "none",
-				indent_width = 2,
+				-- highlight_opened_files = "none",
+				-- indent_width = 2,
 				indent_markers = {
 					enable = true,
 					inline_arrows = true,
@@ -92,10 +92,10 @@ return {
 				update_root = true,
 				ignore_list = {},
 			},
-			system_open = {
-				cmd = "",
-				args = {},
-			},
+			-- system_open = {
+			-- 	cmd = "",
+			-- 	args = {},
+			-- },
 			git = {
 				enable = true,
 			},
@@ -106,11 +106,11 @@ return {
 				dotfiles = false,
 				custom = { "^.git$", "node_modules", "\\.cache" },
 			},
-			filesystem_watchers = {
-				enable = true,
-				debounce_delay = 50,
-				ignore_dirs = {},
-			},
+			-- filesystem_watchers = {
+			-- 	enable = true,
+			-- 	debounce_delay = 50,
+			-- 	ignore_dirs = {},
+			-- },
 			actions = {
 				use_system_clipboard = true,
 				open_file = {

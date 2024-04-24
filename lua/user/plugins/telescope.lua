@@ -32,11 +32,9 @@ return {
 
 		telescope.setup({
 			defaults = {
-        prompt_prefix = "   ",
+				prompt_prefix = "   ",
 				selection_caret = "❯ ",
-				initial_mode = "insert",
-				selection_strategy = "reset",
-        sorting_strategy = "ascending", -- descending
+				sorting_strategy = "ascending", -- descending
 				layout_strategy = "horizontal",
 				layout_config = {
 					width = 0.80,
@@ -45,9 +43,6 @@ return {
 					horizontal = {
 						prompt_position = "top",
 						preview_width = 0.60,
-					},
-					vertical = {
-						mirror = false,
 					},
 				},
 				vimgrep_arguments = {
@@ -152,8 +147,8 @@ return {
 			},
 		})
 
-    telescope.load_extension("fzf")
-    -- telescope.load_extension("media_files")
+		telescope.load_extension("fzf")
+		-- telescope.load_extension("media_files")
 		-- telescope.load_extension("projects")
 	end,
 }
