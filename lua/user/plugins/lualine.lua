@@ -13,12 +13,12 @@ return {
 			lazy = "#3B4261",
 			yellow = "#ecbe7b",
 			cyan = "#008080",
-			green = "#c3e88d",
-			orange = "#ff8800",
+			green = "#98be65",
+			orange = "#FF8800",
 			violet = "#a9a1e1",
 			magenta = "#c678dd",
-			blue = "#82aaff",
-			red = "#ff5189",
+			blue = "#51aFeF",
+			red = "#FF5189",
 		}
 
 		local config = {
