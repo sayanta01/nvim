@@ -360,7 +360,7 @@ return {
 			},
 			["less"] = {
 				icon = "",
-				color = "#563d7c",
+        color = "#F3F7EF",
 				cterm_color = "54",
 				name = "Less",
 			},
