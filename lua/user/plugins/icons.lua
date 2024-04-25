@@ -359,7 +359,7 @@ return {
 				name = "Coffee",
 			},
 			["less"] = {
-				icon = "",
+				icon = "",
 				color = "#563d7c",
 				cterm_color = "54",
 				name = "Less",
