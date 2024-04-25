@@ -32,7 +32,7 @@ return {
 				},
 				{
 					filetype = "NvimTree",
-					text = "File",
+					text = "Files",
 					highlight = "PanelHeading",
 					padding = 1,
 				},

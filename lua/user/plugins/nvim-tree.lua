@@ -30,7 +30,7 @@ return {
 			select_prompts = false,
 			-- sort_by = "name",
 			view = {
-				width = 29,
+				width = 27,
 				side = "left",
 			},
 			renderer = {
