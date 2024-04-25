@@ -23,14 +23,14 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 	},
 	change_detection = {
 		-- automatically check for config file changes and reload the UI
-		enabled = false,
-		notify = false,
+		enabled = true,
+		notify = true,
 	},
 	ui = {
 		border = "rounded",
 		icons = {
 			cmd = " ",
-			config = " ",
+			config = " ",
 			event = "🗲 ",
 			ft = " ",
 			init = " ",
@@ -49,11 +49,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 		},
 	},
 	performance = {
-		cache = {
-			enabled = true,
-		},
 		rtp = {
-			-- disable some rtp plugins
 			disabled_plugins = {
 				"gzip",
 				"matchit",

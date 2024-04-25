@@ -15,7 +15,7 @@ return {
 				"google_java_format",
 				"prettier",
 				"gofumpt",
-        "stylua",
+				"stylua",
 				"shfmt",
 				"shellcheck", -- bashls automatically uses
 				"isort",

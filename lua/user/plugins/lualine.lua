@@ -129,7 +129,7 @@ return {
 		ins_left({
 			"branch",
 			icon = "",
-			color = { fg = colors.violet, gui = "bold" },
+			color = { fg = colors.violet },
 		})
 
 		ins_left({

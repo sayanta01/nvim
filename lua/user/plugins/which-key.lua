@@ -102,7 +102,7 @@ return {
 		}
 
 		local mappings = {
-			[";"] = { "<cmd>Alpha<cr>", "Dashboard" },
+			-- [";"] = { "<cmd>Alpha<cr>", "Dashboard" },
 			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle Comment" },
 			-- w = { ":w!<cr>", "Save" },
 			q = { ":q!<cr>", "Quit" },

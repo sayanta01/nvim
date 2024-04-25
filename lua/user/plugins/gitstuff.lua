@@ -11,18 +11,18 @@ return {
 				changedelete = { text = "~" },
 				untracked = { text = "" },
 			},
-			signcolumn = true,
-			numhl = false,
-			linehl = false,
-			word_diff = false,
-			watch_gitdir = {
-				follow_files = true,
-			},
-			current_line_blame = false, -- useful but slow
-			sign_priority = 6,
-			update_debounce = 100,
-			status_formatter = nil,
-			max_file_length = 40000,
+			-- signcolumn = true,
+			-- numhl = false,
+			-- linehl = false,
+			-- word_diff = false,
+			-- watch_gitdir = {
+			-- 	follow_files = true,
+			-- },
+			-- current_line_blame = false, -- useful but slow
+			-- sign_priority = 6,
+			-- update_debounce = 100,
+			-- status_formatter = nil,
+			-- max_file_length = 40000,
 
 			on_attach = function(buffer)
 				local gs = package.loaded.gitsigns

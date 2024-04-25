@@ -1,7 +1,7 @@
 return {
 	"kylechui/nvim-surround",
 	version = "*", -- for stability
-	keys = { "cs", "ds", "ys" }, -- ys<w> - add
+	keys = { "cs", "ds", "ys" }, -- ys<w> - add new
 	config = function()
 		require("nvim-surround").setup({
 			-- use [{( left side surround to add space
