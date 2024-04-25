@@ -39,14 +39,14 @@ return {
 					"dockerfile",
 					"svelte",
 					"graphql",
+					"jsdoc",
 					"json",
 					"jsonc",
 					"yaml",
 					"toml",
-					-- "prisma",
 				},
 				sync_install = false,
-				-- auto_install = true,
+				-- auto_install = vim.fn.executable "tree-sitter" == 1,
 				highlight = {
 					enable = true,
 					disable = function(_, buf)

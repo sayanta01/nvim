@@ -1,6 +1,7 @@
 return {
 	"stevearc/conform.nvim",
-	event = { "BufWritePost" },
+	lazy = false,
+	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
 	keys = {
 		{
@@ -13,17 +14,17 @@ return {
 		},
 	},
 	dependencies = {
-		"jay-babu/mason-null-ls.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		config = function()
-			local mason_null_ls = require("mason-null-ls")
-			mason_null_ls.setup({
+			local mason_tool_installer = require("mason-tool-installer")
+			mason_tool_installer.setup({
 				ensure_installed = {
-					"google_java_format",
+					-- "google_java_format",
 					"prettier",
 					"gofumpt",
+					"stylua",
 					"shfmt",
 					"shellcheck", -- bashls automatically uses
-					"stylua",
 					"isort",
 					"black",
 					-- "pylint",
@@ -34,17 +35,17 @@ return {
 	},
 	opts = {
 		formatters_by_ft = {
-			java = { "google-java-format" },
+			-- java = { "google-java-format" },
 			html = { "prettier" },
 			css = { "prettier" },
-      scss = { "prettier" },
+			scss = { "prettier" },
 			javascript = { "prettier" },
 			typescript = { "prettier" },
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
-      vue = { "prettier" },
+			vue = { "prettier" },
 			json = { "prettier" },
-      jsonc = { "prettier" },
+			jsonc = { "prettier" },
 			yaml = { "prettier" },
 			markdown = { "prettier" },
 			svelte = { "prettier" },
@@ -56,10 +57,10 @@ return {
 			sh = { "shfmt" },
 			python = { "isort", "black" },
 		},
-		format_on_save = {
-			timeout_ms = 500,
-			async = false,
-			lsp_fallback = true,
-		},
+		-- format_on_save = {
+		-- 	timeout_ms = 500,
+		-- 	async = false,
+		-- 	lsp_fallback = true,
+		-- },
 	},
 }

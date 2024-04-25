@@ -15,9 +15,9 @@ return {
 				"google_java_format",
 				"prettier",
 				"gofumpt",
+        "stylua",
 				"shfmt",
 				"shellcheck", -- bashls automatically uses
-				"stylua",
 				"isort",
 				"black",
 				-- "pylint",

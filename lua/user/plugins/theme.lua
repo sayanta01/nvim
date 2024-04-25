@@ -7,13 +7,13 @@ return {
 			style = "moon",
 		},
 	},
-  -- { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = true, priority = 1000 },
+	-- { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = true, priority = 1000 },
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
-    lazy = false,
+		lazy = false,
 	},
-	-- "RRethy/nvim-base16",
-  -- { "olimorris/onedarkpro.nvim", priority = 1000 }, -- Ensure it loads first
+	-- { "RRethy/nvim-base16", lazy = false },
+	-- { "olimorris/onedarkpro.nvim", priority = 1000 }, -- Ensure it loads first
 	-- "lunarvim/synthwave84.nvim",
 }

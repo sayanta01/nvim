@@ -34,7 +34,7 @@ return {
 			defaults = {
 				prompt_prefix = "   ",
 				selection_caret = "❯ ",
-				sorting_strategy = "ascending", -- descending
+				sorting_strategy = "ascending",
 				layout_strategy = "horizontal",
 				layout_config = {
 					width = 0.80,
@@ -47,6 +47,7 @@ return {
 				},
 				vimgrep_arguments = {
 					"rg",
+					"-L",
 					"--color=never",
 					"--no-heading",
 					"--with-filename",
@@ -114,7 +115,7 @@ return {
 					hidden = true,
 				},
 				live_grep = {
-					--[ @usage don't include the filename in the search results ]]
+					-- @usage don't include the filename in the search results
 					only_sort_text = true,
 				},
 				grep_string = {

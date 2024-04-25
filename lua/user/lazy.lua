@@ -31,7 +31,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 		icons = {
 			cmd = " ",
 			config = " ",
-      event = "🗲 ",
+			event = "🗲 ",
 			ft = " ",
 			init = " ",
 			import = " ",
