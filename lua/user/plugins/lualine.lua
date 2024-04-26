@@ -92,7 +92,7 @@ return {
 
 		ins_left({
 			function()
-				return " "
+				return " "
 			end,
 			color = function()
 				-- change color according to mode
