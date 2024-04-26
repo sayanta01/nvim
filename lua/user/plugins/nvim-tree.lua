@@ -1,5 +1,5 @@
 return {
-	-- g? `help menu`
+	-- g?
 	-- o-pen
 	-- a-dd
 	-- r-ename
@@ -17,28 +17,25 @@ return {
 
 		nvimtree.setup({
 			on_attach = "default",
-      hijack_cursor = true,
+			hijack_cursor = true,
 			auto_reload_on_write = false,
 			disable_netrw = true,
 			hijack_netrw = true,
-			hijack_unnamed_buffer_when_opening = false,
-			root_dirs = {},
-			prefer_startup_root = false,
-			sync_root_with_cwd = true,
-			reload_on_bufenter = false,
-			respect_buf_cwd = false,
-			select_prompts = false,
+			-- hijack_unnamed_buffer_when_opening = false,
+			-- root_dirs = {},
+			-- prefer_startup_root = false,
+			-- sync_root_with_cwd = true,
+			-- reload_on_bufenter = false,
+			-- respect_buf_cwd = false,
+			-- select_prompts = false,
 			-- sort_by = "name",
 			view = {
 				width = 27,
 				side = "left",
 			},
 			renderer = {
-				-- special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-				-- symlink_destination = true,
+				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
 				highlight_git = true,
-				-- highlight_opened_files = "none",
-				-- indent_width = 2,
 				indent_markers = {
 					enable = true,
 					inline_arrows = true,
@@ -46,17 +43,18 @@ return {
 						corner = "▏",
 						edge = "▏",
 						item = "▏",
-						bottom = "─",
+						bottom = "",
 						none = " ",
 					},
 				},
 				icons = {
+					git_placement = "after",
 					symlink_arrow = "  ",
 					show = {
 						file = true,
 						folder = true,
 						folder_arrow = true,
-						git = false,
+						git = true,
 					},
 					glyphs = {
 						default = "",
@@ -72,11 +70,11 @@ return {
 							symlink_open = "󰿨",
 						},
 						git = {
-							unstaged = "󱨈",
-							staged = "",
-							unmerged = "",
+							unstaged = "",
+							staged = " ",
+							unmerged = " ",
 							renamed = "󰲶",
-							untracked = "",
+							untracked = "󰰩",
 							deleted = "",
 							ignored = "",
 						},
@@ -92,10 +90,6 @@ return {
 				update_root = true,
 				ignore_list = {},
 			},
-			-- system_open = {
-			-- 	cmd = "",
-			-- 	args = {},
-			-- },
 			git = {
 				enable = true,
 			},
@@ -104,13 +98,8 @@ return {
 			},
 			filters = {
 				dotfiles = false,
-				custom = { "^.git$", "node_modules", "\\.cache" },
+				custom = { ".DS_Store", ".git", "node_modules", "\\.cache" },
 			},
-			-- filesystem_watchers = {
-			-- 	enable = true,
-			-- 	debounce_delay = 50,
-			-- 	ignore_dirs = {},
-			-- },
 			actions = {
 				use_system_clipboard = true,
 				open_file = {

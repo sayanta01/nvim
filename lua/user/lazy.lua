@@ -24,7 +24,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 	change_detection = {
 		-- automatically check for config file changes and reload the UI
 		enabled = true,
-		notify = true,
+		notify = false,
 	},
 	ui = {
 		border = "rounded",
