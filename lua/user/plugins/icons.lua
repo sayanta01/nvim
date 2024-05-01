@@ -713,13 +713,13 @@ return {
 				name = "Localization",
 			},
 			["nfo"] = {
-				icon = "",
+				icon = "󰋽",
 				color = "#FFFFcd",
 				cterm_color = "230",
 				name = "Nfo",
 			},
 			["info"] = {
-				icon = "",
+				icon = "󰋽",
 				color = "#FFFFcd",
 				cterm_color = "230",
 				name = "Info",
