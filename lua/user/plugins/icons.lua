@@ -730,12 +730,12 @@ return {
 				cterm_color = "198",
 				name = "Hurl",
 			},
-			["f90"] = {
-				icon = "󰯼",
-				color = "#734F96",
-				cterm_color = "97",
-				name = "Fortran",
-			},
+			-- ["f90"] = {
+			-- 	icon = "󱈚",
+			-- 	color = "#734F96",
+			-- 	cterm_color = "97",
+			-- 	name = "Fortran",
+			-- },
 			["bib"] = {
 				icon = "",
 				color = "#cbcb41",
@@ -1201,13 +1201,13 @@ return {
 				name = "Rb",
 			},
 			["scala"] = {
-				icon = "",
+				icon = "",
 				color = "#cc3e44",
 				cterm_color = "167",
 				name = "Scala",
 			},
 			["sc"] = {
-				icon = "",
+				icon = "",
 				color = "#cc3e44",
 				cterm_color = "167",
 				name = "ScalaScript",

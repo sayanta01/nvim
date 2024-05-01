@@ -40,7 +40,7 @@ opt.completeopt = { "menu", "menuone", "noselect" }
 
 opt.foldlevel = 99
 opt.foldmethod = "indent"
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 opt.spelllang:append("cjk") -- Disable spellchecking for asian characters `VIM algorithm does not support it`
 opt.shortmess:append("c") -- Don't show redundant messages from ins-completion-menu

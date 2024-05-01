@@ -39,7 +39,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Don't auto commenting new lines
+-- Don't auto comment new line
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	group = augroup("very_useful"),
 	callback = function()

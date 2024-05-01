@@ -82,7 +82,7 @@ return {
 			timeout = 1000,
 		},
 		init = function()
-			vim.opt.termguicolors = true
+			-- vim.opt.termguicolors = true
 			vim.notify = require("notify")
 		end,
 	},

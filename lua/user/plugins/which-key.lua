@@ -167,14 +167,8 @@ return {
 			h = {
 				name = "Harpoon",
 				h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon marks" },
-				m = {
-					":lua require('harpoon.mark').add_file() vim.notify 'Marked file'<cr>",
-					"Mark to harpoon",
-				},
-				r = {
-					":lua require('harpoon.mark').rm_file() vim.notify 'Removed file'<cr>",
-					"Remove mark",
-				},
+				m = { ":lua require('harpoon.mark').add_file() vim.notify 'Marked file'<cr>", "Mark to harpoon" },
+				r = { ":lua require('harpoon.mark').rm_file() vim.notify 'Removed file'<cr>", "Remove mark" },
 				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next harpoon" },
 				p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Prev harpoon" },
 			},
