@@ -71,7 +71,7 @@ return {
 			fps = 24,
 			icons = {
 				DEBUG = " ",
-				ERROR = " ",
+				ERROR = " ",
 				INFO = " 󰋽",
 				TRACE = " 󰲶",
 				WARN = " ",

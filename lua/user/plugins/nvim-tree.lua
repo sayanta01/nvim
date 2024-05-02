@@ -24,7 +24,7 @@ return {
 			-- hijack_unnamed_buffer_when_opening = false,
 			-- root_dirs = {},
 			-- prefer_startup_root = false,
-			-- sync_root_with_cwd = true,
+			sync_root_with_cwd = true,
 			-- reload_on_bufenter = false,
 			-- respect_buf_cwd = false,
 			-- select_prompts = false,
@@ -87,8 +87,10 @@ return {
 			},
 			update_focused_file = {
 				enable = true,
-				update_root = true,
-				ignore_list = {},
+				update_root = {
+					enable = false,
+					ignore_list = {},
+				},
 			},
 			git = {
 				enable = true,

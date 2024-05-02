@@ -32,7 +32,7 @@ return {
 
 		telescope.setup({
 			defaults = {
-				prompt_prefix = "   ",
+				prompt_prefix = " 🔎 ",
 				selection_caret = "❯ ",
 				sorting_strategy = "ascending",
 				layout_strategy = "horizontal",
@@ -57,19 +57,19 @@ return {
 					"--hidden",
 					"--glob=!.git/",
 				},
-				file_sorter = require("telescope.sorters").get_fuzzy_file,
-				file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
-				generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+				-- file_sorter = require("telescope.sorters").get_fuzzy_file,
+				-- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+        file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
 				path_display = { "smart" },
-				winblend = 0,
-				border = {},
-				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-				color_devicons = true,
-				set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-				file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-				grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-				qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-				buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+				-- winblend = 0,
+				-- border = {},
+				-- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+				-- color_devicons = true,
+				-- set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+				-- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+				-- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+				-- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+				-- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 				mappings = {
 					i = {
 						["<C-c>"] = actions.close, -- ESC
@@ -108,7 +108,6 @@ return {
 					},
 				},
 			},
-			file_ignore_patterns = { "node_modules" },
 			pickers = {
 				-- Default configuration for builtin pickers goes here
 				find_files = {

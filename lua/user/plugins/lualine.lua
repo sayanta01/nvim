@@ -23,11 +23,10 @@ return {
 
 		local config = {
 			options = {
-				icons_enabled = true,
 				-- Disable sections and component separators
 				component_separators = "",
 				disabled_filetypes = {
-					statusline = { "toggleterm", "alpha", "dashboard" },
+					statusline = { "alpha", "dashboard" },
 					-- winbar = {},
 				},
 				theme = {
@@ -129,11 +128,11 @@ return {
 		ins_left({
 			"branch",
 			icon = "",
-			color = { fg = colors.violet },
 		})
 
 		ins_left({
 			"location",
+			color = { fg = colors.violet },
 		})
 
 		ins_left({

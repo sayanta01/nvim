@@ -54,8 +54,8 @@ return {
 				focusable = true,
 				border = "rounded",
 				source = "always",
+        prefix = "",
 				header = "",
-				prefix = "",
 				-- scope = "cursor", -- only when cursor is on up
 			},
 		})
@@ -93,7 +93,7 @@ return {
 						allFeatures = true,
 					},
 					checkOnSave = {
-						enable = true,
+						-- enable = true,
 						command = "clippy",
 					},
 				},
@@ -108,13 +108,12 @@ return {
 			on_attach = on_attach,
 			settings = {
 				gopls = {
+          usePlaceholders = true,
 					completeUnimported = true,
-					usePlaceholders = true,
 					analyses = {
 						unusedparams = true,
-						shadow = true,
 					},
-					experimentalPostfixCompletions = true,
+					-- experimentalPostfixCompletions = true,
 					gofumpt = true,
 					staticcheck = true,
 				},
@@ -183,8 +182,8 @@ return {
 		})
 
 		-- lspconfig["tailwindcss"].setup({
-		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
 		-- })
 
 		lspconfig["tsserver"].setup({
@@ -214,13 +213,15 @@ return {
 				"eruby",
 				"html",
 				"htmldjango",
+				"javascript", --
 				"javascriptreact",
+				"typescriptreact",
 				"less",
 				"pug",
 				"sass",
 				"scss",
 				"svelte",
-				"typescriptreact",
+				"vue",
 			},
 		})
 
@@ -247,18 +248,18 @@ return {
 		lspconfig["intelephense"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "php" },
 		})
 
 		lspconfig["sqlls"].setup({
-			filetype = { "sql", "mysql" },
 			on_attach = on_attach,
 			capabilities = capabilities,
+			filetype = { "sql", "mysql" },
 		})
 
 		lspconfig["marksman"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+			-- filetype = { "markdown", "markdown.mdx" },
 		})
 
 		lspconfig["dockerls"].setup({
@@ -284,29 +285,29 @@ return {
 		lspconfig["graphql"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+			filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
 		})
 
-		-- lspconfig["solargraph"].setup({
-		-- 	filetypes = { "ruby", "eruby" },
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- 	root_dir = require("lspconfig").util.root_pattern("Gemfile"),
-		-- 	single_file_support = true,
-		-- 	settings = {
-		-- 		solargraph = {
-		-- 			diagnostics = true,
-		-- 		},
-		-- 		flags = {
-		-- 			debounce_text_changes = 150,
-		-- 		},
-		-- 	},
-		-- })
+		lspconfig["solargraph"].setup({
+			filetypes = { "ruby", "eruby" },
+			on_attach = on_attach,
+			capabilities = capabilities,
+			root_dir = require("lspconfig").util.root_pattern("Gemfile"),
+			single_file_support = true,
+			settings = {
+				solargraph = {
+					diagnostics = true,
+				},
+				flags = {
+					debounce_text_changes = 150,
+				},
+			},
+		})
 
 		lspconfig["jsonls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "json", "jsonc" },
+			-- filetypes = { "json", "jsonc" },
 			on_new_config = function(new_config)
 				new_config.settings.json.schemas = new_config.settings.json.schemas or {}
 				vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
@@ -340,8 +341,6 @@ return {
 						enable = true,
 					},
 					validate = true,
-					hover = true,
-					completion = true,
 					schemaStore = {
 						-- Must disable built-in schemaStore support to use
 						-- schemas from SchemaStore.nvim plugin
