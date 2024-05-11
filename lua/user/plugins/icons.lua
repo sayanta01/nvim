@@ -425,7 +425,7 @@ return {
 				name = "Xul",
 			},
 			["glb"] = {
-				icon = "󰯽",
+				icon = "",
 				color = "#FFB13B",
 				cterm_color = "214",
 				name = "BinaryGLTF",

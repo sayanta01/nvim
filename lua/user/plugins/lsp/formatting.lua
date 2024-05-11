@@ -55,7 +55,9 @@ return {
 	-- 		go = { "gofmt" },
 	-- 		lua = { "stylua" },
 	-- 		sh = { "shfmt" },
-	-- 		python = { "isort", "black" },
+	--      python = { "isort", "black" },
+	-- 		-- terraform = { "terraform_fmt" },
+	--      -- ansible = { "ansible" },
 	-- 	},
 	-- 	-- format_on_save = {
 	-- 	-- 	timeout_ms = 500,

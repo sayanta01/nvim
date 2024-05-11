@@ -157,7 +157,6 @@ return {
 			formatting = {
 				format = function(entry, vim_item)
 					vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
-					-- Custom icons for source
 					local custom_menu_icon = {
 						crates = " Crates",
 						codeium = "󰘦 Codeium",
