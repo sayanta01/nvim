@@ -71,7 +71,7 @@ return {
 						},
 						git = {
 							unstaged = "",
-							staged = "✓",
+							staged = "",
 							unmerged = "",
 							renamed = "󰲶",
 							untracked = "󰰧",

@@ -76,7 +76,7 @@ return {
 						created = "%s",
 						updated_label = " updated        ",
 						updated = "%s",
-						downloads_label = " downloads      ",
+						downloads_label = " downloads      ",
 						downloads = "%s",
 						homepage_label = " homepage       ",
 						homepage = "%s",
@@ -89,7 +89,7 @@ return {
 						categories_label = " categories     ",
 						keywords_label = " keywords       ",
 						version = "  %s",
-						prerelease = " %s",
+						prerelease = "󰈅 %s",
 						yanked = " %s",
 						version_date = "  %s",
 						feature = "  %s",
@@ -106,7 +106,7 @@ return {
 				},
 				src = {
 					text = {
-						prerelease = "  pre-release ",
+						prerelease = " 󰈅 pre-release ",
 						yanked = "  yanked ",
 					},
 					cmp = {

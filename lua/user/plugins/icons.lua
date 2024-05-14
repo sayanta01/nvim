@@ -89,13 +89,13 @@ return {
 				name = "Xaml",
 			},
 			["xls"] = {
-				icon = "󰰰",
+				icon = "",
 				color = "#207245",
 				cterm_color = "29",
 				name = "Xls",
 			},
 			["xlsx"] = {
-				icon = "󰰰",
+				icon = "",
 				color = "#207245",
 				cterm_color = "29",
 				name = "Xlsx",
@@ -360,7 +360,7 @@ return {
 			},
 			["less"] = {
 				icon = "",
-        color = "#F3F7EF",
+				color = "#F3F7EF",
 				cterm_color = "54",
 				name = "Less",
 			},
@@ -919,7 +919,7 @@ return {
 				name = "Cobol",
 			},
 			["cr"] = {
-				icon = "󰍖",
+				icon = "󰡶",
 				color = "#c8c8c8",
 				cterm_color = "251",
 				name = "Crystal",
