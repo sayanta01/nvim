@@ -659,7 +659,7 @@ return {
 				name = "WebOpenFontFormat",
 			},
 			["bak"] = {
-				icon = "",
+				icon = "󱈎",
 				color = "#6d8086",
 				cterm_color = "66",
 				name = "Backup",
@@ -1242,11 +1242,41 @@ return {
 				cterm_color = "74",
 				name = "C",
 			},
+			["cs"] = {
+				icon = "",
+				color = "#596706",
+				cterm_color = "58",
+				name = "Cs",
+			},
 			["dropbox"] = {
 				icon = "",
 				color = "#0061FE",
 				cterm_color = "27",
 				name = "Dropbox",
+			},
+			["h"] = {
+        icon = "H",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "H",
+			},
+			["hh"] = {
+				icon = "H",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Hh",
+			},
+			["hpp"] = {
+				icon = "H",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Hpp",
+			},
+			["hxx"] = {
+				icon = "H",
+				color = "#a074c4",
+				cterm_color = "140",
+				name = "Hxx",
 			},
 		})
 	end,
