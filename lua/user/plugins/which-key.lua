@@ -175,7 +175,8 @@ return {
 
 			o = {
 				name = "Option",
-				h = { ":ColorizerToggle<cr>", "Toggle Colors" },
+				-- h = { ":ColorizerToggle<cr>", "Toggle Colors" },
+				h = { ":lua require('nvim-highlight-colors').toggle()<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spelling " },
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },

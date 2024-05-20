@@ -73,7 +73,7 @@ return {
 			Property = "󰜢",
 			Unit = "",
 			Value = "󰎠",
-			Enum = "ℰ", -- 󰈍
+			Enum = "󰈍",
 			Keyword = "",
 			Snippet = "",
 			Color = "",
@@ -83,7 +83,7 @@ return {
 			EnumMember = "",
 			Constant = "П",
 			Struct = "",
-			Event = "🗲",
+			Event = "",
 			Operator = "",
 			TypeParameter = "",
 		}
