@@ -11,20 +11,6 @@ return {
 				return vim.fn.executable("make") == 1
 			end,
 		},
-		-- "nvim-telescope/telescope-media-files.nvim",
-		-- {
-		-- 	"ahmedkhalf/project.nvim",
-		-- 	config = function()
-		-- 		require("project_nvim").setup({
-		-- 			-- detection_methods = { "lsp", "pattern" }, NOTE: lsp detection will get annoying with multiple langs in one project
-		-- 			detection_methods = { "pattern" },
-		-- 			-- patterns used to detect root dir, when **"pattern"** is in detection_methods
-		-- 			patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "pom.xml" },
-		-- 			show_hidden = false, -- Show hidden files in telescope
-		-- 			silent_chdir = true, -- When set to false, you will get a message when project.nvim changes your directory
-		-- 		})
-		-- 	end,
-		-- },
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -59,7 +45,7 @@ return {
 				},
 				-- file_sorter = require("telescope.sorters").get_fuzzy_file,
 				-- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-        file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
+				file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
 				path_display = { "smart" },
 				-- winblend = 0,
 				-- border = {},

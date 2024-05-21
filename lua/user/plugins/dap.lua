@@ -9,7 +9,7 @@ return {
         -- stylua: ignore
         keys = {
           { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
-          { "<leader>de", function() require("dapui").eval() end, desc = "Evaluate", mode = { "n", "v" } },
+          { "<leader>de", function() require("dapui").eval() end,     desc = "Evaluate", mode = { "n", "v" } },
         },
 				config = function(_, opts)
 					local dap = require("dap")
@@ -30,7 +30,7 @@ return {
 						{ text = "", texthl = "DiagnosticError", linehl = "", numhl = "" }
 					)
 
-					-- configure LLDB adapter
+					-- configure LLDB
 					dap.adapters.lldb = {
 						type = "executable",
 						command = codelldb_path .. ", " .. liblldb_path,
@@ -86,7 +86,6 @@ return {
 				end,
 			},
 
-			-- virtual text for debugger
 			{
 				"theHamsta/nvim-dap-virtual-text",
 				opts = {},

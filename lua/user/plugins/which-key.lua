@@ -104,7 +104,6 @@ return {
 		local mappings = {
 			-- [";"] = { "<cmd>Alpha<cr>", "Dashboard" },
 			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle Comment" },
-			-- w = { ":w!<cr>", "Save" },
 			q = { ":q!<cr>", "Quit" },
 			x = { ":bdelete<cr>", "Close Buffer" },
 			-- y = { "gg<S-v>G", "Copy" },
@@ -153,15 +152,13 @@ return {
 			s = {
 				name = "Telescope",
 				c = { ":Telescope colorscheme<cr>", "Colorscheme" },
-				t = { ":Telescope live_grep<cr>", "Find Text" },
-				g = { ":Telescope grep_string<cr>", "Grep String" },
+				g = { ":Telescope live_grep<cr>", "Live Grep" },
+				w = { ":Telescope grep_string<cr>", "Grep Word" },
 				h = { ":Telescope help_tags<cr>", "Help Pages" },
 				o = { ":Telescope oldfiles<cr>", "Recent Files" },
 				r = { ":Telescope registers<cr>", "Registers" },
 				m = { ":Telescope marks<cr>", "Marks" },
 				z = { ":Telescope command_history<cr>", "Cmd History" },
-				-- i = { ":lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
-				-- p = { ":Telescope projects<cr>", "Projects" },
 			},
 
 			h = {
@@ -176,7 +173,7 @@ return {
 			o = {
 				name = "Option",
 				-- h = { ":ColorizerToggle<cr>", "Toggle Colors" },
-				h = { ":lua require('nvim-highlight-colors').toggle()<cr>", "Toggle Colors" },
+        h = { ":HighlightColors Toggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spelling " },
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },

@@ -102,8 +102,8 @@ return {
 
 			-- Mapping
 			mapping = cmp.mapping.preset.insert({
-				["<C-p>"] = cmp.mapping.select_prev_item(), -- prev suggestion
-				["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
+				["<C-p>"] = cmp.mapping.select_prev_item(),
+				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
@@ -114,7 +114,7 @@ return {
 					fallback()
 				end,
 
-				-- jump to next jumpable in a snippet
+				-- jump to next jumpable
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -127,7 +127,7 @@ return {
 					end
 				end, { "i", "s" }),
 
-				["<S-Tab>"] = cmp.mapping(function(fallback) -- jump to previous jumpable in a snippet
+				["<S-Tab>"] = cmp.mapping(function(fallback) -- jump to previous jumpable
 					if cmp.visible() then
 						cmp.select_prev_item()
 					elseif luasnip.jumpable(-1) then
