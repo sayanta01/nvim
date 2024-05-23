@@ -49,7 +49,7 @@ return {
 				},
 				icons = {
 					git_placement = "after",
-					symlink_arrow = "  ",
+					symlink_arrow = " 󰌷 ",
 					show = {
 						file = true,
 						folder = true,
@@ -58,7 +58,7 @@ return {
 					},
 					glyphs = {
 						default = "",
-						symlink = "",
+						symlink = "󰌷",
 						folder = {
 							arrow_closed = "",
 							arrow_open = "",
@@ -66,7 +66,7 @@ return {
 							open = "",
 							empty = "",
 							empty_open = "󰜌",
-							symlink = "",
+							symlink = "󰌷",
 							symlink_open = "󰿨",
 						},
 						git = {
@@ -74,7 +74,7 @@ return {
 							staged = "",
 							unmerged = "",
 							renamed = "󰲶",
-							untracked = "u",
+							untracked = "U",
 							deleted = "",
 							ignored = "",
 						},
