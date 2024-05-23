@@ -6,11 +6,23 @@ return {
 			{
 				"rcarriga/nvim-dap-ui",
 				dependencies = { "nvim-neotest/nvim-nio" },
-        -- stylua: ignore
-        keys = {
-          { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
-          { "<leader>de", function() require("dapui").eval() end,     desc = "Evaluate", mode = { "n", "v" } },
-        },
+				keys = {
+					{
+						"<leader>du",
+						function()
+							require("dapui").toggle({})
+						end,
+						desc = "Dap UI",
+					},
+					{
+						"<leader>de",
+						function()
+							require("dapui").eval()
+						end,
+						desc = "Evaluate",
+						mode = { "n", "v" },
+					},
+				},
 				config = function(_, opts)
 					local dap = require("dap")
 					local dapui = require("dapui")
@@ -23,7 +35,21 @@ return {
 					local codelldb_path = extension_path .. "adapter/codelldb"
 					local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
-					dapui.setup(opts)
+					dapui.setup({
+						controls = {
+							icons = {
+								disconnect = "",
+								pause = "",
+								play = "",
+								run_last = "",
+								step_back = "",
+								step_into = "",
+								step_out = "",
+								step_over = "",
+								terminate = "□",
+							},
+						},
+					})
 
 					vim.fn.sign_define(
 						"DapBreakpoint",
