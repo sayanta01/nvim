@@ -1392,6 +1392,18 @@ return {
 				cterm_color = "25",
 				name = "Dart",
 			},
+			["swift"] = {
+				icon = "󰀷",
+				color = "#e37933",
+				cterm_color = "166",
+				name = "Swift",
+			},
+			["desktop"] = {
+				icon = "󰟀",
+				color = "#563d7c",
+				cterm_color = "54",
+				name = "DesktopEntry",
+			},
 		})
 	end,
 }
