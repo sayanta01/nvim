@@ -43,7 +43,7 @@ fi
 
 ## Arch
 if [ -f /etc/arch-release ]; then
-	sudo pacman -S --noconfirm npm luarocks cargo \
+	sudo pacman -s --noconfirm npm luarocks cargo \
 		php go ruby \
 		ripgrep lazygit
 	# jdk-openjdk dotnet-sdk julia

@@ -16,11 +16,11 @@ return {
 
 	{
 		"monaqa/dial.nvim",
-    -- stylua: ignore
-    keys = {
-      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Up" },
-      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Down" },
-    },
+		-- stylua: ignore
+		keys = {
+			{ "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Up" },
+			{ "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Down" },
+		},
 		config = function()
 			local augend = require("dial.augend")
 			require("dial.config").augends:register_group({
@@ -57,16 +57,6 @@ return {
 					error = "   Error fetching crate",
 				},
 				popup = {
-					-- autofocus = false,
-					-- hide_on_select = false,
-					-- copy_register = '"',
-					-- style = "minimal",
-					-- border = "none",
-					-- show_version_date = false,
-					-- show_dependency_version = true,
-					-- max_height = 30,
-					-- min_width = 20,
-					-- padding = 1,
 					text = {
 						title = " %s",
 						pill_left = "",
@@ -89,7 +79,7 @@ return {
 						categories_label = " categories     ",
 						keywords_label = " keywords       ",
 						version = "  %s",
-						prerelease = "! %s",
+						prerelease = " %s",
 						yanked = "󰆏 %s",
 						version_date = "  %s",
 						feature = "  %s",
@@ -106,7 +96,7 @@ return {
 				},
 				src = {
 					text = {
-						prerelease = " ! pre-release ",
+						prerelease = "  pre-release ",
 						yanked = " 󰆏 yanked ",
 					},
 					cmp = {

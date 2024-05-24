@@ -19,7 +19,6 @@ return {
 			-- map_bs = true, -- Map the <BS> key
 			-- map_c_h = false, -- Map the <C-h> key to delete a pair
 			-- map_c_w = false, -- Map <C-w> to delete a pair if possible
-
 			-- fast_wrap = {
 			-- 	map = "<M-e>", -- Useful
 			-- },

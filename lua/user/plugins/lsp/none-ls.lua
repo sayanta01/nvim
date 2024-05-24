@@ -28,13 +28,13 @@ return {
 		local formatting = null_ls.builtins.formatting
 		-- local diagnostics = null_ls.builtins.diagnostics
 
-		-- setup format on save
+		-- setup Format on save
 		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 		null_ls.setup({
 			-- add package.json as identifier for root (for typescript monorepos)
 			root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
-			sources = { -- setup formatters & linters
+			sources = {
 				formatting.google_java_format,
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },

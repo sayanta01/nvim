@@ -1,7 +1,7 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
-		cmd = { "DapUIToggle", "DapToggleRepl", "DapToggleBreakpoint" },
+		lazy = true,
 		dependencies = {
 			{
 				"rcarriga/nvim-dap-ui",
@@ -23,7 +23,7 @@ return {
 						mode = { "n", "v" },
 					},
 				},
-				config = function(_, opts)
+				config = function()
 					local dap = require("dap")
 					local dapui = require("dapui")
 
@@ -39,7 +39,7 @@ return {
 						controls = {
 							icons = {
 								disconnect = "",
-								pause = "",
+								pause = "󰏨",
 								play = "",
 								run_last = "",
 								step_back = "",
@@ -62,7 +62,7 @@ return {
 						command = codelldb_path .. ", " .. liblldb_path,
 						name = "lldb",
 					}
-					-- default debug configuration for C, C++ & rust
+					-- for C, C++ & rust
 					dap.configurations.c = {
 						{
 							name = "Launch file",

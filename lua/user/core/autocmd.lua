@@ -67,5 +67,5 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- Json comment function
+-- Comment Json
 vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc")

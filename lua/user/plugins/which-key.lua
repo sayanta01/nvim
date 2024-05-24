@@ -47,7 +47,7 @@ return {
 				margin = { 1, 0, 1, 0 },
 				padding = { 1, 2, 1, 2 },
 				winblend = 0,
-				--[[ zindex = 1000, -- positive value to position WhichKey above other floating windows ]]
+				-- zindex = 1000, -- positive value to position WhichKey above other floating windows
 			},
 			layout = {
 				height = { min = 4, max = 24 },
@@ -113,7 +113,7 @@ return {
 			g = {
 				name = "Git",
 				g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
-				o = { ":Telescope git_status<cr>", "Git Status" },
+				t = { ":Telescope git_status<cr>", "Git Status" },
 				b = { ":Telescope git_branches<cr>", "Checkout Branch" },
 				c = { ":Telescope git_commits<cr>", "Checkout Commit" },
 				C = { ":Telescope git_bcommits<cr>", "Checkout Commit (current file)" },
@@ -165,15 +165,13 @@ return {
 				name = "Harpoon",
 				h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon marks" },
 				m = { ":lua require('harpoon.mark').add_file() vim.notify 'Marked file'<cr>", "Mark to harpoon" },
-				r = { ":lua require('harpoon.mark').rm_file() vim.notify 'Removed file'<cr>", "Remove mark" },
-				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next harpoon" },
-				p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Prev harpoon" },
+				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
+				p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Prev" },
 			},
 
 			o = {
 				name = "Option",
-				-- h = { ":ColorizerToggle<cr>", "Toggle Colors" },
-        h = { ":HighlightColors Toggle<cr>", "Toggle Colors" },
+				h = { ":HighlightColors Toggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spelling " },
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
@@ -204,20 +202,16 @@ return {
 				o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
 				u = { ":lua require'dap'.step_out()<cr>", "Step Out" },
 				r = { ":lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-
 				b = { ":lua require'dap'.step_back()<cr>", "Step Back" },
 				s = { ":lua require'dap'.session()<cr>", "Get Session" },
 				q = { ":lua require'dap'.close()<cr>", "Quit Session" },
-
 				p = { ":lua require'dap'.pause()<cr>", "Pause" },
 				l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
-
 				x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
-				-- d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
+				d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
 				w = { "lua require'dap'.ui.widgets.hover()<cr>", "Widgets" },
-
-				-- j = { ":lua require'dap'.down()<cr>", "Down" },
-				-- k = { ":lua require'dap'.up()<cr>", "Up" },
+				j = { ":lua require'dap'.down()<cr>", "Down" },
+				k = { ":lua require'dap'.up()<cr>", "Up" },
 			},
 
 			t = {

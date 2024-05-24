@@ -12,18 +12,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.lsp" } }, {
-	defaults = { lazy = true }, -- lazy_load all plugins by default
+	defaults = { lazy = true }, -- should plugins be lazy-loaded?
 	install = {
 		colorscheme = { "habamax" },
 	},
 	checker = {
-		-- automatically check for plugin updates
 		enabled = true,
 		notify = false,
 	},
 	change_detection = {
-		-- automatically check for config file changes and reload the UI
-		enabled = true,
+		enabled = false,
 		notify = false,
 	},
 	ui = {

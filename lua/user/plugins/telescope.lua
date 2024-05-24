@@ -119,7 +119,6 @@ return {
 				},
 			},
 			extensions = {
-				-- Extension configuration goes here
 				fzf = {
 					fuzzy = true, -- false will only do exact matching
 					override_generic_sorter = true, -- override the generic sorter
@@ -135,6 +134,5 @@ return {
 
 		telescope.load_extension("fzf")
 		-- telescope.load_extension("media_files")
-		-- telescope.load_extension("projects")
 	end,
 }

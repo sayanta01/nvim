@@ -1,6 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
-	version = false, -- last release is way too old
+	version = false,
 	event = "InsertEnter",
 	keys = { ":", "/", "?" },
 	dependencies = {
@@ -32,7 +32,6 @@ return {
 			return
 		end
 
-		-- cmdline setup
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
@@ -84,15 +83,14 @@ return {
 			Constant = "П",
 			Struct = "",
 			Event = "",
-			Operator = "",
+			Operator = "",
 			TypeParameter = "",
 		}
 
 		cmp.setup({
 			snippet = {
-				-- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)
-					luasnip.lsp_expand(args.body) -- For Luasnip
+					luasnip.lsp_expand(args.body)
 				end,
 			},
 
@@ -100,7 +98,6 @@ return {
 				completeopt = "menu,menuone,noinsert",
 			},
 
-			-- Mapping
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
@@ -108,7 +105,7 @@ return {
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item, Set `select` to `false` to only confirm explicitly selected items
+				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items
 				["<C-CR>"] = function(fallback)
 					cmp.abort()
 					fallback()
@@ -138,7 +135,6 @@ return {
 				end, { "i", "s" }),
 			}),
 
-			-- Sources for completion
 			sources = {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
@@ -153,7 +149,6 @@ return {
 				},
 			},
 
-			-- Formatting
 			formatting = {
 				format = function(entry, vim_item)
 					vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind

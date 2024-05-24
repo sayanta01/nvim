@@ -25,6 +25,7 @@ return {
 			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 			vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+
 			-- Global mappings
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
@@ -54,7 +55,7 @@ return {
 				focusable = true,
 				border = "rounded",
 				source = "always",
-        prefix = "",
+				prefix = "",
 				header = "",
 				-- scope = "cursor", -- only when cursor is on up
 			},
@@ -108,7 +109,7 @@ return {
 			on_attach = on_attach,
 			settings = {
 				gopls = {
-          usePlaceholders = true,
+					usePlaceholders = true,
 					completeUnimported = true,
 					analyses = {
 						unusedparams = true,
@@ -213,7 +214,7 @@ return {
 				"eruby",
 				"html",
 				"htmldjango",
-				"javascript", --
+				"javascript",
 				"javascriptreact",
 				"typescriptreact",
 				"less",

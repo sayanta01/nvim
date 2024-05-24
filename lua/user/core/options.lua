@@ -6,12 +6,11 @@ local opt = vim.opt
 -- Tabs
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true -- use spaces instead of tabs
+-- opt.expandtab = true -- use spaces instead of tabs
 
 -- Search
 opt.ignorecase = true
 opt.smartcase = true
-opt.smartindent = true -- autoindent new line
 
 -- Splits
 opt.splitbelow = true
@@ -23,12 +22,13 @@ opt.swapfile = false
 opt.wrap = false
 opt.showmode = false
 opt.showcmd = false
-
 opt.confirm = true
+opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+
+opt.smartindent = true -- autoindent new line
 opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
-opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
 -- Misc
 opt.fileencoding = "utf-8"
