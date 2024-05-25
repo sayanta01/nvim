@@ -57,7 +57,7 @@ return {
 				source = "always",
 				prefix = "",
 				header = "",
-				-- scope = "cursor", -- only when cursor is on up
+				-- scope = "cursor",
 			},
 		})
 

@@ -919,7 +919,7 @@ return {
 				name = "Cobol",
 			},
 			["cr"] = {
-				icon = "󰡶",
+				icon = "",
 				color = "#c8c8c8",
 				cterm_color = "251",
 				name = "Crystal",
@@ -931,25 +931,25 @@ return {
 				name = "Drools",
 			},
 			["kdenlive"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "Kdenlive",
 			},
 			["kdenlivetitle"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "Kdenlive",
 			},
 			["kdenlive-layoutsrc"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "KdenliveLayoutsrc",
 			},
 			["kdenliverc"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "Kdenliverc",
@@ -1397,6 +1397,12 @@ return {
 				color = "#e37933",
 				cterm_color = "166",
 				name = "Swift",
+			},
+			["xcplayground"] = {
+				icon = "󰀷",
+				color = "#e37933",
+				cterm_color = "166",
+				name = "XcPlayground",
 			},
 			["desktop"] = {
 				icon = "󰟀",

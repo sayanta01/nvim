@@ -69,10 +69,10 @@ return {
 			Class = "",
 			Interface = "",
 			Module = "󱒌",
-			Property = "󰜢",
+			Property = "󰓹",
 			Unit = "",
 			Value = "󰎠",
-			Enum = "󰈍",
+			Enum = "",
 			Keyword = "",
 			Snippet = "",
 			Color = "",
@@ -155,8 +155,6 @@ return {
 					local custom_menu_icon = {
 						crates = " Crates",
 						codeium = "󰘦 Codeium",
-						-- crates = "",
-						-- codeium = "󰘦",
 					}
 					if entry.source.name == "crates" then
 						vim_item.kind = custom_menu_icon.crates
