@@ -3,13 +3,12 @@ return {
 	event = { "InsertEnter", "BufWritePost" }, -- LspAttach
 	config = function()
 		require("illuminate").configure({
-			-- providers: used to get references in the buffer, ordered by priority
-			providers = {
+			providers = { -- used to get references in the buffer, ordered by priority
 				"lsp",
 				"treesitter",
 				"regex",
 			},
-			delay = 200, -- ms
+			delay = 200, -- mS
 			keys = {
 				{
 					"a-n",
@@ -27,21 +26,21 @@ return {
 				},
 			},
 			filetypes_denylist = {
-        "lazy",
+				"lazy",
 				"mason",
-        "DressingInput",
-        "DressingSelect",
-        "TelescopePrompt",
+				"DressingInput",
+				"DressingSelect",
+				"TelescopePrompt",
 				"harpoon",
-        "toggleterm",
-        "fugitive",
-        "dirvish",
+				"toggleterm",
+				"fugitive",
+				"dirvish",
 				"alpha",
 				"dashboard",
-        "neo-tree",
+				"neo-tree",
 				"NvimTree",
 				"Trouble",
-        "Outline",
+				"Outline",
 			},
 			large_file_cutoff = 2000,
 			min_count_to_highlight = 2,

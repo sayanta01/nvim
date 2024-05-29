@@ -102,7 +102,6 @@ return {
 		}
 
 		local mappings = {
-			-- [";"] = { "<cmd>Alpha<cr>", "Dashboard" },
 			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle Comment" },
 			q = { ":q!<cr>", "Quit" },
 			x = { ":bdelete<cr>", "Close Buffer" },
@@ -189,8 +188,6 @@ return {
 			b = {
 				b = { ":Telescope buffers<cr>", "Buf Preview" },
 				n = { ":enew<cr>", "New Buffer" },
-				-- h = { ":BufferLineCloseLeft<cr>", "Close all to Left" },
-				-- l = { ":BufferLineCloseRight<cr>", "Close all to Right" },
 			},
 
 			d = {

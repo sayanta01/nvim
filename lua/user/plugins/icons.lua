@@ -485,7 +485,7 @@ return {
 				name = "AzureCli",
 			},
 			["procfile"] = {
-				icon = "",
+				icon = "",
 				color = "#a074c4",
 				cterm_color = "140",
 				name = "Procfile",
@@ -671,13 +671,13 @@ return {
 				name = "BoundaryRepresentation",
 			},
 			["cast"] = {
-				icon = "",
+				icon = "󰄘",
 				color = "#FD971F",
 				cterm_color = "208",
 				name = "Asciinema",
 			},
 			["mpv.conf"] = {
-				icon = "",
+				icon = "",
 				color = "#3b1342",
 				cterm_color = "53",
 				name = "Mpv",
@@ -749,7 +749,7 @@ return {
 				name = "GIMP",
 			},
 
-			-- ch
+			-- Ch
 			["vue"] = {
 				icon = "",
 				color = "#8dc149",
@@ -1363,19 +1363,19 @@ return {
 				name = "App",
 			},
 			["build"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "BazelBuild",
 			},
 			["workspace"] = {
-				icon = "",
+				icon = "󰟀",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "BazelWorkspace",
 			},
 			["bzl"] = {
-				icon = "",
+				icon = "",
 				color = "#89e051",
 				cterm_color = "113",
 				name = "Bzl",

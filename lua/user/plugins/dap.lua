@@ -42,10 +42,10 @@ return {
 								pause = "󰏨",
 								play = "",
 								run_last = "",
-								step_back = "",
+								step_back = "",
 								step_into = "",
 								step_out = "",
-								step_over = "",
+								step_over = "",
 								terminate = "□",
 							},
 						},
@@ -62,7 +62,7 @@ return {
 						command = codelldb_path .. ", " .. liblldb_path,
 						name = "lldb",
 					}
-					-- for C, C++ & rust
+					-- for C, Cpp & rust
 					dap.configurations.c = {
 						{
 							name = "Launch file",
