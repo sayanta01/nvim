@@ -1,5 +1,5 @@
 return {
-	"nvimtools/none-ls.nvim", -- configure formatters & linters
+	"nvimtools/none-ls.nvim",
 	event = { "BufReadPost", "VeryLazy" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -29,7 +29,7 @@ return {
 		-- local diagnostics = null_ls.builtins.diagnostics
 
 		-- setup Format on save
-		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 		null_ls.setup({
 			-- add package.json as identifier for root (for typescript monorepos)
@@ -48,7 +48,7 @@ return {
 				-- diagnostics.pylint,
 			},
 
-			-- Configure format on save
+			-- configure Format on save
 			-- on_attach = function(current_client, bufnr)
 			-- 	if current_client.supports_method("textDocument/formatting") then
 			-- 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
@@ -58,7 +58,7 @@ return {
 			-- 			callback = function()
 			-- 				vim.lsp.buf.format({
 			-- 					filter = function(client)
-			-- 						--  only use null-ls for formatting instead of lsp server
+			-- 						-- only use null-ls for formatting instead of lsp server
 			-- 						return client.name == "null-ls"
 			-- 					end,
 			-- 					bufnr = bufnr,

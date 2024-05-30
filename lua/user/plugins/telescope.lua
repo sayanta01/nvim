@@ -23,12 +23,12 @@ return {
 				sorting_strategy = "ascending",
 				layout_strategy = "horizontal",
 				layout_config = {
-					width = 0.80,
-					height = 0.90,
-					preview_cutoff = 120,
+					-- width = 0.8,
+					-- height = 0.9,
+					-- preview_cutoff = 120,
 					horizontal = {
 						prompt_position = "top",
-						preview_width = 0.60,
+						preview_width = 0.6,
 					},
 				},
 				vimgrep_arguments = {
@@ -43,7 +43,7 @@ return {
 					"--hidden",
 					"--glob=!.git/",
 				},
-				file_ignore_patterns = { ".git/", "node_modules/", "target/", "docs/", ".settings/" },
+				file_ignore_patterns = { "node_modules" },
 				path_display = { "smart" },
 				mappings = {
 					i = {
@@ -59,6 +59,7 @@ return {
 					},
 					n = {
 						["q"] = actions.close,
+						["dd"] = actions.delete_buffer,
 						-- ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 						-- ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 						-- ["?"] = actions.which_key,
