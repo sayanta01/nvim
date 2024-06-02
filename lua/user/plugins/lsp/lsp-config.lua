@@ -94,7 +94,6 @@ return {
 						allFeatures = true,
 					},
 					checkOnSave = {
-						-- enable = true,
 						command = "clippy",
 					},
 				},
@@ -109,8 +108,8 @@ return {
 			on_attach = on_attach,
 			settings = {
 				gopls = {
-					usePlaceholders = true,
 					completeUnimported = true,
+					usePlaceholders = true,
 					analyses = {
 						unusedparams = true,
 					},
