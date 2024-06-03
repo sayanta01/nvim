@@ -81,4 +81,4 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 })
 
 -- Theme
-vim.cmd([[colorscheme nightfly]])
+vim.cmd([[colorscheme rose-pine]])
