@@ -8,7 +8,7 @@ return {
 				"treesitter",
 				"regex",
 			},
-			delay = 200, -- mS
+			delay = 200,
 			keys = {
 				{
 					"a-n",

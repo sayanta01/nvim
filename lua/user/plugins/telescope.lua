@@ -47,16 +47,16 @@ return {
 				path_display = { "smart" },
 				mappings = {
 					i = {
-						-- ["<C-n>"] = actions.move_selection_next,
-						-- ["<C-p>"] = actions.move_selection_previous,
-						-- ["<C-h>"] = actions.select_horizontal,
-						-- ["<C-v>"] = actions.select_vertical,
-						-- ["<C-t>"] = actions.select_tab,
+						["<C-n>"] = actions.move_selection_next,
+						["<C-p>"] = actions.move_selection_previous,
+						["<C-h>"] = actions.select_horizontal,
+						["<C-v>"] = actions.select_vertical,
+						["<C-t>"] = actions.select_tab,
 					},
 					n = {
 						["q"] = actions.close,
 						["dd"] = actions.delete_buffer,
-						-- ["?"] = actions.which_key,
+						["?"] = actions.which_key,
 					},
 				},
 			},
