@@ -10,24 +10,21 @@ return {
 			fg = "#9399b1",
 			black = "#080808",
 			white = "#c6c6c6",
-			-- lazy = "#3B4261",
 			yellow = "#ecbe7b",
 			cyan = "#008080",
 			green = "#98be65",
 			orange = "#FF8800",
-			violet = "#a9a1e1",
+			violet = "#9991e1",
 			magenta = "#c678dd",
-			blue = "#51aFeF",
+			blue = "#519FeF",
 			red = "#FF5189",
 		}
 
 		local config = {
 			options = {
-				-- Disable sections and component separators
 				component_separators = "",
 				disabled_filetypes = {
 					statusline = { "alpha", "dashboard" },
-					-- winbar = {},
 				},
 				theme = {
 					normal = {

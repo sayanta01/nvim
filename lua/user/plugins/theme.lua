@@ -1,12 +1,12 @@
 return {
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	opts = {
-	-- 		style = "moon",
-	-- 	},
-	-- },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			style = "moon",
+		},
+	},
 	{
 		"bluz71/vim-nightfly-colors",
 		lazy = false,
@@ -22,7 +22,7 @@ return {
 	-- {
 	-- 	"olimorris/onedarkpro.nvim",
 	-- 	lazy = false,
-	-- 	priority = 1000, -- Ensure it loads first
+	-- 	priority = 1000, -- Ensure loads 1st
 	-- },
 	-- {
 	-- 	"lunarvim/synthwave84.nvim",

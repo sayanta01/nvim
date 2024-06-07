@@ -47,7 +47,7 @@ return {
 				margin = { 1, 0, 1, 0 },
 				padding = { 1, 2, 1, 2 },
 				winblend = 0,
-				-- zindex = 1000, -- positive value to position WhichKey above other floating windows
+				zindex = 1000, -- positive value to position WhichKey above other floating windows
 			},
 			layout = {
 				height = { min = 4, max = 24 },

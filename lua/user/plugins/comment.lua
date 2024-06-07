@@ -9,10 +9,9 @@ return {
 
 		local ts_context_commentstring = require("ts_context_commentstring.integrations.comment_nvim")
 
-		-- enable comment
 		comment.setup({
 			enable_autocmd = false,
-			pre_hook = ts_context_commentstring.create_pre_hook(), -- for commenting tsx & jsx
+			pre_hook = ts_context_commentstring.create_pre_hook(), -- commenting tsx & jsx
 		})
 	end,
 }

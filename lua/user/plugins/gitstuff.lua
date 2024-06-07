@@ -11,12 +11,9 @@ return {
 				changedelete = { text = "~" },
 				untracked = { text = "┊" },
 			},
-			-- watch_gitdir = {
-			-- 	follow_files = true,
-			-- },
-			-- current_line_blame = false, -- useful but slow
-			-- update_debounce = 100,
-			-- max_file_length = 40000,
+			current_line_blame = false,
+			update_debounce = 100,
+			max_file_length = 40000,
 
 			on_attach = function(buffer)
 				local gs = package.loaded.gitsigns
@@ -37,7 +34,7 @@ return {
 				map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
 				map("n", "<leader>ghd", gs.diffthis, "Diff This")
 				map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
-				map('n', '<leader>gtd', gs.toggle_deleted, "Toggle Deleted")
+				map("n", "leader>gtd", gs.toggle_deleted, "Toggle Deleted")
 
 				-- Text object
 				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Git Select Hunk")
@@ -45,5 +42,5 @@ return {
 		},
 	},
 
-	{ "tpope/vim-fugitive", cmd = { "G", "Git" } },
+	-- { "tpope/vim-fugitive", cmd = { "G", "Git" } },
 }
