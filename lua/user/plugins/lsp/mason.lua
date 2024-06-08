@@ -34,7 +34,7 @@ return {
 				"tailwindcss",
 				"tsserver",
 				"emmet_ls",
-				"intelephense",
+				-- "intelephense",
 				"sqlls",
 				"marksman",
 				"dockerls",

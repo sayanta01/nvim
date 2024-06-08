@@ -24,7 +24,7 @@ return {
 			options = {
 				component_separators = "",
 				disabled_filetypes = {
-					statusline = { "alpha", "dashboard" },
+					statusline = { "alpha", "dashboard", "NvimTree" },
 				},
 				theme = {
 					normal = {
