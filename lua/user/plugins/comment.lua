@@ -11,7 +11,7 @@ return {
 
 		comment.setup({
 			enable_autocmd = false,
-			pre_hook = ts_context_commentstring.create_pre_hook(), -- commenting tsx & jsx
+			pre_hook = ts_context_commentstring.create_pre_hook(), -- comment tsx/jsx files
 		})
 	end,
 }

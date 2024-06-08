@@ -24,9 +24,7 @@ return {
 			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-			vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
-
-			-- Global mappings
+			vim.keymap.set("n", "<space>d", vim.diagnostic.open_float, opts)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 			-- vim.keymap.set("n", "<space>lf", vim.lsp.buf.format, opts)
@@ -104,17 +102,16 @@ return {
 			cmd = { "gopls" },
 			filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
-			capabilities = capabilities,
 			on_attach = on_attach,
+			capabilities = capabilities,
 			settings = {
 				gopls = {
-					completeUnimported = true,
-					usePlaceholders = true,
+					gofumpt = true,
 					analyses = {
 						unusedparams = true,
 					},
-					-- experimentalPostfixCompletions = true,
-					gofumpt = true,
+					usePlaceholders = true,
+					completeUnimported = true,
 					staticcheck = true,
 				},
 			},
@@ -136,10 +133,10 @@ return {
 						diagnosticMode = "workspace",
 						useLibraryCodeForTypes = true,
 						typeCheckingMode = "basic", -- off
-						inlayHints = {
-							variableTypes = true,
-							functionReturnTypes = true,
-						},
+						-- inlayHints = {
+						-- 	variableTypes = true,
+						-- 	functionReturnTypes = true,
+						-- },
 					},
 				},
 			},
@@ -245,10 +242,10 @@ return {
 		-- 	},
 		-- })
 
-		lspconfig["intelephense"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
+		-- lspconfig["intelephense"].setup({
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- })
 
 		lspconfig["sqlls"].setup({
 			on_attach = on_attach,
@@ -308,6 +305,7 @@ return {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			-- filetypes = { "json", "jsonc" },
+			-- lazy-load schemastore when needed
 			on_new_config = function(new_config)
 				new_config.settings.json.schemas = new_config.settings.json.schemas or {}
 				vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
@@ -325,7 +323,6 @@ return {
 		lspconfig["yamlls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			-- lazy-load schemastore when needed
 			on_new_config = function(new_config)
 				new_config.settings.yaml.schemas = vim.tbl_deep_extend(
 					"force",

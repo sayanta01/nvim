@@ -3,16 +3,20 @@ local opt = vim.opt
 -- opt.number = true
 -- opt.relativenumber = true
 
+-- Tabs
 opt.tabstop = 2
 opt.shiftwidth = 2
+-- opt.expandtab = true -- use spaces instead of tabs
 
+-- Search
 opt.ignorecase = true
 opt.smartcase = true
 
+-- Splits
 opt.splitbelow = true
 opt.splitright = true
 
-opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus" -- sync with system clipboard
 opt.swapfile = false
 
 opt.wrap = false
@@ -26,10 +30,11 @@ opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
 
+-- Misc
 opt.fileencoding = "utf-8"
-opt.backup = false
+opt.backup = false -- creates a backup file
 opt.writebackup = false -- disable making a backup before overwriting a file
-opt.undofile = true
+opt.undofile = true -- enable persistent undo
 opt.updatetime = 200 -- interval for writing swap file to disk, also used by gitsigns
 opt.completeopt = { "menu", "menuone", "noselect" }
 

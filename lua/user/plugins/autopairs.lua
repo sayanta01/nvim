@@ -9,9 +9,9 @@ return {
 		autopairs.setup({
 			check_ts = true, -- treesitter integration
 			ts_config = {
-				lua = { "string", "source" }, -- don't add pair on this treesitter node
+				lua = { "string", "source" }, -- it will not add a pair on that treesitter node
 				javascript = { "string", "template_string" },
-				java = false,
+				java = false, -- don't check treesitter on java
 			},
 
 			disable_filetype = { "TelescopePrompt", "spectre_panel" },

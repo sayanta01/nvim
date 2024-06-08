@@ -14,7 +14,7 @@ return {
 				visual = "S",
 				visual_line = "gS",
 				delete = "ds",
-				change = "cs", -- cst <ch tag> & dst <del tag>
+				change = "cs", -- cst <change tag> & dst <delete tag>
 				change_line = "cS",
 			},
 		})

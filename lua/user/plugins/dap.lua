@@ -62,7 +62,7 @@ return {
 						command = codelldb_path .. ", " .. liblldb_path,
 						name = "lldb",
 					}
-					-- for C, Cpp & rust
+					-- C, Cpp & rust
 					dap.configurations.c = {
 						{
 							name = "Launch file",

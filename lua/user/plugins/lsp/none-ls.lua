@@ -28,8 +28,8 @@ return {
 		local formatting = null_ls.builtins.formatting
 		-- local diagnostics = null_ls.builtins.diagnostics
 
-		-- setup Format on save
-		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		-- setup Format on Save
+		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 		null_ls.setup({
 			-- add package.json as identifier for root (for typescript monorepos)
@@ -38,7 +38,7 @@ return {
 				formatting.google_java_format,
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
-				}), -- js/ts formatter
+				}),
 				formatting.clang_format,
 				formatting.gofmt,
 				formatting.stylua,
@@ -48,7 +48,7 @@ return {
 				-- diagnostics.pylint,
 			},
 
-			-- configure Format on save
+			-- configure Format on Save
 			-- on_attach = function(current_client, bufnr)
 			-- 	if current_client.supports_method("textDocument/formatting") then
 			-- 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
