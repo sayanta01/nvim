@@ -24,7 +24,17 @@ return {
 			options = {
 				component_separators = "",
 				disabled_filetypes = {
-					statusline = { "alpha", "dashboard", "NvimTree" },
+					statusline = {
+						"alpha",
+						"dashboard",
+						"NvimTree",
+						"dapui_scopes",
+						"dapui_breakpoints",
+						"dapui_stacks",
+						"dapui_watches",
+						"dap-repl",
+						"dapui_console",
+					},
 				},
 				theme = {
 					normal = {
