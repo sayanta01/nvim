@@ -17,7 +17,7 @@ return {
 					suggestions = 20, -- how many suggestions should be shown in the list?
 				},
 				presets = {
-					operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+					operators = false, -- adds help for operators like d, y, ...
 					motions = false, -- adds help for motions
 					text_objects = false, -- help for text objects triggered after entering an operator
 					windows = false, -- default bindings on <c-w>
@@ -56,16 +56,15 @@ return {
 				align = "left",
 			},
 			ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-			hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " },
+			-- hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "^:", "^ ", "^call ", "^lua " }, -- hide mapping boilerplate
 			show_help = false,
 			show_keys = false,
-			triggers = "auto",
-			triggers_blacklist = {
-				i = { "j", "k" },
-				v = { "j", "k" },
-			},
+			-- triggers = "auto",
+			-- triggers_blacklist = {
+			-- 	i = { "j", "k" },
+			-- 	v = { "j", "k" },
+			-- },
 			disable = {
-				buftypes = {},
 				filetypes = { "TelescopePrompt" },
 			},
 		})
