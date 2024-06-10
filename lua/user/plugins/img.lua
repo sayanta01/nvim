@@ -1,6 +1,6 @@
 return {
 	"3rd/image.nvim",
-	ft = { "markdown", "vimwiki" },
+	ft = { "markdown", "conf" },
 	dependencies = {
 		{
 			"vhyrro/luarocks.nvim",
@@ -19,7 +19,7 @@ return {
 				clear_in_insert_mode = true,
 				download_remote_images = true,
 				only_render_image_at_cursor = true,
-				filetypes = { "markdown", "vimwiki" },
+				filetypes = { "markdown", "conf" },
 			},
 			neorg = {
 				enabled = true,
