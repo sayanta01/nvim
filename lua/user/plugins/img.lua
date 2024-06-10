@@ -32,6 +32,6 @@ return {
 		editor_only_render_when_focused = false,
 		tmux_show_only_in_active_window = false,
 		max_width_window_percentage = nil,
-		max_height_window_percentage = 96,
+		max_height_window_percentage = 90,
 	},
 }
