@@ -57,12 +57,6 @@ keymap("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev searc
 keymap("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 keymap("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
 
--- Better up/down on wrap
-keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-
 -- Move up/down
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
@@ -70,3 +64,9 @@ keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", opts)
 keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", opts)
+
+-- Better up/down on wrap
+-- keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
