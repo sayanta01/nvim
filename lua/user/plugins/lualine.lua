@@ -28,6 +28,7 @@ return {
 						"alpha",
 						"dashboard",
 						"NvimTree",
+						"TelescopePrompt",
 						"dapui_scopes",
 						"dapui_breakpoints",
 						"dapui_stacks",
