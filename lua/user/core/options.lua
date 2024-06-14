@@ -6,7 +6,7 @@ local opt = vim.opt
 -- Tabs
 opt.tabstop = 2
 opt.shiftwidth = 2
--- opt.expandtab = true -- use spaces instead of tabs
+opt.expandtab = true -- use spaces instead of tabs
 
 -- Search
 opt.ignorecase = true
