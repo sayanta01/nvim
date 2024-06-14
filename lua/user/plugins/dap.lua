@@ -130,7 +130,7 @@ return {
 						"js",
 						"codelldb",
 						"delve",
-						"javadbg",
+            "javadbg",
 					},
 					-- You can provide additional configuration to the handlers,
 					-- see mason-nvim-dap README for more information
@@ -167,52 +167,52 @@ return {
 		end,
 	},
 
-	{
-		"leoluz/nvim-dap-go",
-		ft = "go",
-		keys = {
-			{
-				"<leader>dPt",
-				function()
-					require("dap-go").debug_test()
-				end,
-				desc = "Debug Test",
-				ft = "go",
-			},
-			{
-				"<leader>dPl",
-				function()
-					require("dap-go").debug_last_test()
-				end,
-				desc = "Last Test",
-				ft = "go",
-			},
-		},
-		config = function()
-			require("dap-go").setup({
-				dap_configurations = {
-					{
-						type = "go",
-						name = "Attach remote",
-						mode = "remote",
-						request = "attach",
-					},
-				},
-				delve = {
-					path = "dlv",
-					initialize_timeout_sec = 20,
-					port = "${port}",
-					-- additional args to pass to dlv
-					args = {},
-					-- the build flags that are passed to delve
-					-- defaults to empty string, but can be used to provide flags
-					-- such as "-tags=unit" to make sure the test suite is
-					-- compiled during debugging, for example
-					-- passing build flags using args is ineffective, as those are
-					-- ignored by delve in dap mode
-					build_flags = "",
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"leoluz/nvim-dap-go",
+	-- 	ft = "go",
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>dPt",
+	-- 			function()
+	-- 				require("dap-go").debug_test()
+	-- 			end,
+	-- 			desc = "Debug Test",
+	-- 			ft = "go",
+	-- 		},
+	-- 		{
+	-- 			"<leader>dPl",
+	-- 			function()
+	-- 				require("dap-go").debug_last_test()
+	-- 			end,
+	-- 			desc = "Last Test",
+	-- 			ft = "go",
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		require("dap-go").setup({
+	-- 			dap_configurations = {
+	-- 				{
+	-- 					type = "go",
+	-- 					name = "Attach remote",
+	-- 					mode = "remote",
+	-- 					request = "attach",
+	-- 				},
+	-- 			},
+	-- 			delve = {
+	-- 				path = "dlv",
+	-- 				initialize_timeout_sec = 20,
+	-- 				port = "${port}",
+	-- 				-- additional args to pass to dlv
+	-- 				args = {},
+	-- 				-- the build flags that are passed to delve
+	-- 				-- defaults to empty string, but can be used to provide flags
+	-- 				-- such as "-tags=unit" to make sure the test suite is
+	-- 				-- compiled during debugging, for example
+	-- 				-- passing build flags using args is ineffective, as those are
+	-- 				-- ignored by delve in dap mode
+	-- 				build_flags = "",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 }
