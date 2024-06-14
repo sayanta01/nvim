@@ -22,6 +22,7 @@ opt.swapfile = false
 opt.wrap = false
 opt.showmode = false
 opt.showcmd = false
+opt.laststatus = 3
 opt.confirm = true
 opt.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
 
