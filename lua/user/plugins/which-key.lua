@@ -191,7 +191,7 @@ return {
 			},
 
 			d = {
-				name = "Debug",
+				name = "Debug",
 				t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 				c = { ":lua require'dap'.continue()<cr>", "Continue" },
 				C = { ":lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },

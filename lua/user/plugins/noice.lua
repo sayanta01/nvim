@@ -60,25 +60,25 @@ return {
 		},
 	},
 
-	-- {
-	-- 	"rcarriga/nvim-notify",
-	-- 	opts = {
-	-- 		fps = 24,
-	-- 		icons = {
-	-- 			DEBUG = " ",
-	-- 			ERROR = " ",
-	-- 			INFO = " 󰋽",
-	-- 			TRACE = " 󰲶",
-	-- 			WARN = " ",
-	-- 		},
-	-- 		level = 2,
-	-- 		stages = "fade",
-	-- 		render = "minimal",
-	-- 		timeout = 1000,
-	-- 	},
-	-- 	init = function()
-	-- 		-- vim.opt.termguicolors = true
-	-- 		vim.notify = require("notify")
-	-- 	end,
-	-- },
+	{
+		"rcarriga/nvim-notify",
+		opts = {
+			fps = 24,
+			icons = {
+				DEBUG = " ",
+				ERROR = " ",
+				INFO = " 󰋽",
+				TRACE = " 󰲶",
+				WARN = " ",
+			},
+			level = 2,
+			stages = "fade",
+			render = "minimal",
+			timeout = 1000,
+		},
+		init = function()
+			-- vim.opt.termguicolors = true
+			vim.notify = require("notify")
+		end,
+	},
 }
