@@ -44,7 +44,7 @@ return {
 					"--glob=!.git/",
 				},
 				file_ignore_patterns = { "node_modules" },
-				path_display = { "smart" },
+				path_display = { "truncate" },
 				mappings = {
 					i = {
 						["<C-n>"] = actions.move_selection_next,

@@ -12,7 +12,6 @@ return {
 				untracked = { text = "┊" },
 			},
 			current_line_blame = false, -- useful but slow
-			update_debounce = 100,
 			max_file_length = 40000,
 
 			on_attach = function(buffer)
