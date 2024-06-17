@@ -36,7 +36,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 			not_loaded = "",
 			plugin = " ",
 			source = " ",
-			start = " ",
+			start = " ",
 			task = " ",
 			list = {
 				"●",

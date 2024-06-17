@@ -11,8 +11,8 @@ return {
 				view = "cmdline_popup",
 				format = {
 					cmdline = { icon = "❯" },
-					search_down = { icon = "🔎 " },
-					search_up = { icon = "🔎 " },
+					search_down = { icon = "🔎⌄" },
+					search_up = { icon = "🔎⌃" },
 					help = { icon = "" },
 				},
 			},

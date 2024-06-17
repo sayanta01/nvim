@@ -10,7 +10,7 @@ return {
 		exclude_filetypes = { "netrw", "toggleterm" },
 		show_basename = false,
 		symbols = {
-			separator = "",
+			separator = "›",
 		},
 		kinds = {
 			File = "",
