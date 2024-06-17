@@ -67,8 +67,8 @@ return {
 			icons = {
 				DEBUG = " ",
 				ERROR = " ",
-				INFO = " 󰋽",
-				TRACE = " 󰲶",
+				INFO = " ",
+				TRACE = " ",
 				WARN = " ",
 			},
 			level = 2,

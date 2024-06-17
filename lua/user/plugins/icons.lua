@@ -431,7 +431,7 @@ return {
 				name = "BinaryGLTF",
 			},
 			["twig"] = {
-				icon = "󰥛",
+				icon = "󱋿",
 				color = "#8dc149",
 				cterm_color = "113",
 				name = "Twig",
