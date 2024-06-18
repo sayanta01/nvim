@@ -18,7 +18,7 @@ return {
 
 		telescope.setup({
 			defaults = {
-				prompt_prefix = " 🔎 ",
+				prompt_prefix = " 🔭 ",
 				selection_caret = "❯ ",
 				sorting_strategy = "ascending",
 				layout_strategy = "horizontal",
