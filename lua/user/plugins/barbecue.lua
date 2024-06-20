@@ -27,7 +27,7 @@ return {
 			Function = "ƒ",
 			Variable = "",
 			Constant = "П",
-			String = "",
+			String = "",
 			Number = "󰎠",
 			Boolean = "",
 			Array = "",

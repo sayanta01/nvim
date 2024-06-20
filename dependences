@@ -7,43 +7,29 @@ if [ -f /etc/debian_version ]; then
 	if [ "$choice" = "y" ]; then
 		sudo apt install -y ninja-build gettext cmake unzip curl build-essential
 		git clone --depth=1 https://github.com/neovim/neovim.git ~/.cache/neovim
-		cd ~/.cache/neovim || exit 1
+		cd ~/.cache/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
 		cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 	else
 		:
 	fi
 
 	## Pkgs
-	sudo apt install -y npm luarocks cargo \
+	sudo apt install -y npm cargo luarocks \
 		php golang ruby \
 		ripgrep \
 		python3-pip python3-venv
 	# default-jdk dotnet-sdk-6.0
 
-	# wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+	# curl -Lo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
 	# chmod +x dotnet-install.sh && ./dotnet-install.sh --version latest
-	# git clone --depth=1 https://github.com/jesseduffield/lazygit.git && cd lazygit && go install
+	go install github.com/jesseduffield/lazygit@latest
 	# cargo install bat
-
-	## Julia
-	# curl -s https://api.github.com/repos/JuliaLang/julia/releases | grep -oP '"tag_name": "\K(.*?)(?=")' # check versions
-	printf "Install julia? [y/N]: "
-	read -r choice
-	if [ "$choice" = "y" ]; then
-		wget https://julialang-s3.julialang.org/bin/linux/x64/1.8/julia-1.8.5-linux-x86_64.tar.gz
-		tar -xvzf julia-1.8.5-linux-x86_64.tar.gz
-		sudo mv julai-1.8.5 /opt/
-		sudo ln -s /opt/julia-1.8.5/bin/julia /usr/local/bin/julia
-	else
-		:
-	fi
-else
-	:
+	# curl -fsSL https://install.julialang.org | sh
 fi
 
 ## Arch
 if [ -f /etc/arch-release ]; then
-	sudo pacman -s --noconfirm npm luarocks cargo \
+	sudo pacman -s --noconfirm npm cargo luarocks \
 		php go ruby \
 		ripgrep lazygit
 	# jdk-openjdk dotnet-sdk julia
