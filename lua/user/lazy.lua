@@ -80,5 +80,3 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 		},
 	},
 })
-
-vim.cmd([[colorscheme nightfly]])

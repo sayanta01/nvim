@@ -16,7 +16,7 @@ if [ -f /etc/debian_version ]; then
 	## Pkgs
 	sudo apt install -y npm cargo luarocks \
 		php golang ruby \
-		ripgrep \
+		ripgrep imagemagick \
 		python3-pip python3-venv
 	# default-jdk dotnet-sdk-6.0
 
@@ -31,7 +31,7 @@ fi
 if [ -f /etc/arch-release ]; then
 	sudo pacman -s --noconfirm npm cargo luarocks \
 		php go ruby \
-		ripgrep lazygit
+		ripgrep lazygit imagemagick
 	# jdk-openjdk dotnet-sdk julia
 else
 	:

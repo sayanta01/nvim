@@ -9,7 +9,7 @@ return {
 
 		local on_attach = function(_, bufnr)
 			local function buf_set_option(...)
-				vim.api.nvim_buf_set_option(bufnr, ...)
+        vim.api.nvim_buf_set_option(bufnr, ...)
 			end
 
 			buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc") -- Enable completion triggered by <c-x><c-o>
@@ -43,7 +43,7 @@ return {
 		vim.diagnostic.config({
 			virtual_text = {
 				source = "if_many",
-				prefix = "",
+				prefix = "ﰉ",
 			},
 			signs = false,
 			underline = true,
@@ -52,10 +52,8 @@ return {
 			float = {
 				focusable = true,
 				border = "rounded",
-				source = "always",
+        source = 'always',
 				prefix = "",
-				header = "",
-				-- scope = "cursor",
 			},
 		})
 

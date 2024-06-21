@@ -5,6 +5,7 @@ local opt = vim.opt
 
 -- Tabs
 opt.tabstop = 2
+opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true -- use spaces instead of tabs
 
@@ -33,8 +34,8 @@ opt.sidescrolloff = 8
 
 -- Misc
 opt.fileencoding = "utf-8"
+-- opt.writebackup = false -- disable making a backup before overwriting a file
 opt.backup = false -- creates a backup file
-opt.writebackup = false -- disable making a backup before overwriting a file
 opt.undofile = true -- enable persistent undo
 opt.updatetime = 200 -- interval for writing swap file to disk, also used by gitsigns
 opt.completeopt = { "menu", "menuone", "noselect" }

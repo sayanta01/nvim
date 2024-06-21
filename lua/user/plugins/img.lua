@@ -17,21 +17,19 @@ return {
 			markdown = {
 				enabled = true,
 				clear_in_insert_mode = true,
-				download_remote_images = true,
 				only_render_image_at_cursor = true,
 				filetypes = { "markdown", "conf" },
 			},
 			neorg = {
 				enabled = true,
 				clear_in_insert_mode = true,
-				download_remote_images = true,
 				only_render_image_at_cursor = true,
 				filetypes = { "norg" },
 			},
 		},
 		editor_only_render_when_focused = false,
-		tmux_show_only_in_active_window = false,
+		tmux_show_only_in_active_window = true,
 		max_width_window_percentage = nil,
-		max_height_window_percentage = 90,
+		max_height_window_percentage = 80,
 	},
 }
