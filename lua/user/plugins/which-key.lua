@@ -38,7 +38,7 @@ return {
 			},
 			icons = {
 				breadcrumb = "»",
-				separator = "",
+				separator = "",
 				group = "",
 			},
 			window = {
