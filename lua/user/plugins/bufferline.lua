@@ -2,7 +2,7 @@ return {
 	"akinsho/bufferline.nvim",
 	version = "*",
 	event = "BufAdd",
-  -- event = "VeryLazy",
+	-- event = "VeryLazy",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		{ "<S-Left>", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer to Left" },
@@ -19,8 +19,8 @@ return {
 			show_close_icon = false,
 			show_tab_indicators = false,
 			modified_icon = "",
-			left_trunc_marker = "",
-			right_trunc_marker = "",
+			left_trunc_marker = "←",
+			right_trunc_marker = "→",
 			diagnostics = false,
 			diagnostics_update_in_insert = false,
 			offsets = {
