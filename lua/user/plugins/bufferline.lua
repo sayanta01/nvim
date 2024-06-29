@@ -21,8 +21,8 @@ return {
 			modified_icon = "",
 			left_trunc_marker = "←",
 			right_trunc_marker = "→",
-			diagnostics = false,
-			diagnostics_update_in_insert = false,
+			-- diagnostics = false,
+			-- diagnostics_update_in_insert = false,
 			offsets = {
 				{
 					filetype = "undotree",

@@ -12,7 +12,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"qf",
 		"query",
 		"spectre_panel",
+		"tsplayground",
+		"neotest-output",
 		"checkhealth",
+		"neotest-summary",
+		"neotest-output-panel",
 		"DressingSelect",
 	},
 	callback = function()
@@ -22,20 +26,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Set wrap & spell
--- vim.api.nvim_create_autocmd({ "FileType" }, {
--- 	group = augroup("wrap_spell"),
--- 	pattern = { "gitcommit", "markdown", "conf" },
--- 	callback = function()
--- 		vim.opt_local.spell = true
--- 	end,
--- })
-
--- Fix concealing
-vim.api.nvim_create_autocmd("FileType", {
-	group = augroup("concealing_means_hidden"),
-	pattern = { "json", "jsonc", "json5", "markdown" },
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	group = augroup("wrap_spell"),
+	pattern = { "gitcommit", "markdown", "conf" },
 	callback = function()
-		vim.opt.conceallevel = 0
+		vim.opt_local.spell = true
 	end,
 })
 
@@ -44,6 +39,15 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	group = augroup("very_useful"),
 	callback = function()
 		vim.cmd("set formatoptions-=cro")
+	end,
+})
+
+-- Fix concealing
+vim.api.nvim_create_autocmd("FileType", {
+	group = augroup("concealing_means_hidden"),
+	pattern = { "json", "jsonc", "json5", "markdown" },
+	callback = function()
+		vim.opt.conceallevel = 0
 	end,
 })
 

@@ -7,13 +7,19 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
 		"f3fora/cmp-spell",
 		"hrsh7th/cmp-calc",
+		"hrsh7th/cmp-cmdline",
+		"saadparwaiz1/cmp_luasnip",
 		{
 			"L3MON4D3/LuaSnip",
 			version = "v2.*",
-			build = "make install_jsregexp",
+			build = (function()
+				if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
+					return
+				end
+				return "make install_jsregexp"
+			end)(),
 			dependencies = {
 				"rafamadriz/friendly-snippets",
 				config = function()
@@ -21,16 +27,11 @@ return {
 				end,
 			},
 		},
-		"saadparwaiz1/cmp_luasnip",
 	},
 
 	config = function()
 		local cmp = require("cmp")
-
-		local snip_status_ok, luasnip = pcall(require, "luasnip")
-		if not snip_status_ok then
-			return
-		end
+		local luasnip = require("lualine")
 
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
@@ -99,8 +100,8 @@ return {
 			},
 
 			mapping = cmp.mapping.preset.insert({
-				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),
+				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-u>"] = cmp.mapping.scroll_docs(-4),
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),

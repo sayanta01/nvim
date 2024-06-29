@@ -17,7 +17,7 @@ return {
 			disable_filetype = { "TelescopePrompt", "spectre_panel" },
 			fast_wrap = {
 				map = "<M-e>",
-				pattern = ([[ [%'%"%)%>%]%)%}%,] ]]):gsub("%s+", ""),
+				pattern = [=[[%'%"%>%]%)%}%,]]=],
 			},
 		})
 

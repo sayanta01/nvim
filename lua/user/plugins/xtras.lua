@@ -16,11 +16,11 @@ return {
 
 	{
 		"monaqa/dial.nvim",
-		-- stylua: ignore
-		keys = {
-			{ "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Up" },
-			{ "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Down" },
-		},
+    -- stylua: ignore
+    keys = {
+      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Up" },
+      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Down" },
+    },
 		config = function()
 			local augend = require("dial.augend")
 			require("dial.config").augends:register_group({

@@ -9,22 +9,11 @@ return {
 				"regex",
 			},
 			delay = 200,
-			keys = {
-				{
-					"a-n",
-					function()
-						require("illuminate").goto_next_reference()
-					end,
-					desc = "Next Reference",
-				},
-				{
-					"a-p",
-					function()
-						require("illuminate").goto_prev_reference()
-					end,
-					desc = "Prev Reference",
-				},
-			},
+      -- stylua: ignore
+      keys = {
+        { "a-n", function() require("illuminate").goto_next_reference() end, desc = "Next Reference" },
+        { "a-p", function() require("illuminate").goto_prev_reference() end, desc = "Prev Reference", },
+      },
 			filetypes_denylist = {
 				"lazy",
 				"mason",

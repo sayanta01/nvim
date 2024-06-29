@@ -5,10 +5,10 @@ if [ -f /etc/debian_version ]; then
 	printf "Build neovim? [y/N]: "
 	read -r choice
 	if [ "$choice" = "y" ]; then
-		# sudo apt install -y ninja-build gettext cmake unzip curl build-essential
-		# git clone --depth=1 https://github.com/neovim/neovim.git ~/.cache/neovim
-		# cd ~/.cache/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-		# cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+		sudo apt install -y ninja-build gettext cmake unzip curl build-essential
+		git clone --depth=1 https://github.com/neovim/neovim.git ~/.cache/neovim
+		cd ~/.cache/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+		cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 	else
 		:
 	fi
@@ -21,7 +21,6 @@ if [ -f /etc/debian_version ]; then
 	# default-jdk dotnet-sdk-6.0
 
 	# curl -Lo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
-	# chmod +x dotnet-install.sh && ./dotnet-install.sh --version latest
 	go install github.com/jesseduffield/lazygit@latest
 	# cargo install bat
 	# curl -fsSL https://install.julialang.org | sh
@@ -29,9 +28,9 @@ fi
 
 ## Arch
 if [ -f /etc/arch-release ]; then
-	sudo pacman -s --noconfirm npm cargo luarocks \
+	sudo pacman -S --noconfirm npm cargo luarocks \
 		php go ruby \
-		ripgrep lazygit imagemagick
+		ripgrep imagemagick lazygit
 	# jdk-openjdk dotnet-sdk julia
 else
 	:
@@ -39,9 +38,6 @@ fi
 
 ## Node
 sudo npm i -g live-server tree-sitter-cli
-
-## Python
-pip install pynvim
 
 ## Rust
 rustup component add rustfmt

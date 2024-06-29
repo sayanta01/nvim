@@ -45,7 +45,6 @@ return {
 					"yaml",
 					"toml",
 				},
-				sync_install = false,
 				-- auto_install = vim.fn.executable "tree-sitter" == 1,
 				highlight = {
 					enable = true,

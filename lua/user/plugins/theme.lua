@@ -12,8 +12,8 @@ return {
 	-- },
 	{
 		"bluz71/vim-nightfly-colors",
-		lazy = false,
 		name = "nightfly",
+		lazy = false,
 		priority = 1000,
 		config = function()
 			vim.cmd("colorscheme nightfly")
@@ -21,8 +21,8 @@ return {
 	},
 	-- {
 	-- 	"rose-pine/neovim",
-	-- 	lazy = false,
 	-- 	name = "rose-pine",
+	-- 	lazy = false,
 	-- 	config = function()
 	-- 		vim.cmd("colorscheme rose-pine")
 	-- 	end,

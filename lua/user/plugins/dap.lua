@@ -6,23 +6,11 @@ return {
 			{
 				"rcarriga/nvim-dap-ui",
 				dependencies = { "nvim-neotest/nvim-nio" },
-				keys = {
-					{
-						"<leader>du",
-						function()
-							require("dapui").toggle({})
-						end,
-						desc = "Dap UI",
-					},
-					{
-						"<leader>de",
-						function()
-							require("dapui").eval()
-						end,
-						desc = "Evaluate",
-						mode = { "n", "v" },
-					},
-				},
+        -- stylua: ignore
+        keys = {
+          { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
+          { "<leader>de", function() require("dapui").eval() end,     desc = "Eval",  mode = { "n", "v" } },
+        },
 				config = function()
 					local dap = require("dap")
 					local dapui = require("dapui")
@@ -130,7 +118,7 @@ return {
 						"js",
 						"codelldb",
 						"delve",
-            "javadbg",
+						"javadbg",
 					},
 					-- You can provide additional configuration to the handlers,
 					-- see mason-nvim-dap README for more information
@@ -143,24 +131,11 @@ return {
 	{
 		"mfussenegger/nvim-dap-python",
 		ft = "python",
-		keys = {
-			{
-				"<leader>dPt",
-				function()
-					require("dap-python").test_method()
-				end,
-				desc = "Test Method",
-				ft = "python",
-			},
-			{
-				"<leader>dPc",
-				function()
-					require("dap-python").test_class()
-				end,
-				desc = "Test Class",
-				ft = "python",
-			},
-		},
+    -- stylua: ignore
+    keys = {
+      { "<leader>dPt", function() require("dap-python").test_method() end, desc = "Test Method", ft = "python" },
+      { "<leader>dPc", function() require("dap-python").test_class() end,  desc = "Test Class",  ft = "python" },
+    },
 		config = function()
 			local path = require("mason-registry").get_package("debugpy"):get_install_path()
 			require("dap-python").setup(path .. "/venv/bin/python")
@@ -170,24 +145,11 @@ return {
 	-- {
 	-- 	"leoluz/nvim-dap-go",
 	-- 	ft = "go",
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>dPt",
-	-- 			function()
-	-- 				require("dap-go").debug_test()
-	-- 			end,
-	-- 			desc = "Debug Test",
-	-- 			ft = "go",
-	-- 		},
-	-- 		{
-	-- 			"<leader>dPl",
-	-- 			function()
-	-- 				require("dap-go").debug_last_test()
-	-- 			end,
-	-- 			desc = "Last Test",
-	-- 			ft = "go",
-	-- 		},
-	-- 	},
+	--    -- stylua: ignore
+	--    keys = {
+	--      { "<leader>dPt", function() require("dap-go").debug_test() end,      desc = "Debug Test", ft = "go" },
+	--      { "<leader>dPl", function() require("dap-go").debug_last_test() end, desc = "Last Test",  ft = "go" },
+	--    },
 	-- 	config = function()
 	-- 		require("dap-go").setup({
 	-- 			dap_configurations = {

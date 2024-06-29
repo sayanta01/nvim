@@ -1,6 +1,7 @@
 return {
 	"kylechui/nvim-surround",
-	keys = { "cs", "ds", "ys" }, -- ys<w> add new word
+	version = "*",
+	keys = { "cs", "ds", "ys" }, -- ys<w> new word
 	config = function()
 		require("nvim-surround").setup({
 			-- use [{( left parentheses adds space
