@@ -1,18 +1,18 @@
 return {
-	{
-		"LunarVim/bigfile.nvim",
-		event = "BufReadPre",
-		opts = {
-			filesize = 2,
-			pattern = { "*" },
-			features = {
-				-- "lsp",
-				"treesitter",
-				"filetype",
-				-- "syntax",
-			},
-		},
-	},
+	-- {
+	-- 	"LunarVim/bigfile.nvim",
+	-- 	event = "BufReadPre",
+	-- 	opts = {
+	-- 		filesize = 2,
+	-- 		pattern = { "*" },
+	-- 		features = {
+	-- 			-- "lsp",
+	-- 			"treesitter",
+	-- 			"filetype",
+	-- 			-- "syntax",
+	-- 		},
+	-- 	},
+	-- },
 
 	{
 		"monaqa/dial.nvim",

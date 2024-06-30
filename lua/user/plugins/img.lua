@@ -12,7 +12,6 @@ return {
 	},
 	opts = {
 		backend = "kitty",
-		kitty_method = "normal",
 		integrations = {
 			markdown = {
 				enabled = true,

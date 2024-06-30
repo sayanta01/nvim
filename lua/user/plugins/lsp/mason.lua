@@ -1,10 +1,8 @@
 return {
 	"williamboman/mason.nvim",
-	-- lazy = false,
 	cmd = "Mason",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
-    "nvim-lua/plenary.nvim",
 	},
 	config = function()
 		local mason = require("mason")
