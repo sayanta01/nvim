@@ -170,12 +170,13 @@ return {
 
 			o = {
 				name = "Option",
+				l = { ":terminal live-server<cr>", "Live Server" },
 				h = { ":HighlightColors Toggle<cr>", "Toggle Colors" },
 				s = { ":set spell!<cr>", "Toggle Spelling " },
 				w = { ":set wrap!<cr>", "Toggle Wrap" },
 				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
 				-- u = { ":UfoAttach<cr>", "Ufo" },
-				-- l = { ":set cursorcolumn!<cr>", "Cursor Line" },
+				-- c = { ":set cursorcolumn!<cr>", "Cursor Line" },
 			},
 
 			p = {
