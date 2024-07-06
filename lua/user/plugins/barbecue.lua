@@ -16,7 +16,7 @@ return {
 			File = "",
 			Module = "󱒌",
 			Namespace = "󰦮",
-			Package = "",
+			Package = "",
 			Class = "",
 			Method = "",
 			Property = "󰓹",

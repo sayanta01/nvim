@@ -478,12 +478,6 @@ return {
 				cterm_color = "66",
 				name = "AppleScript",
 			},
-			-- ["azcli"] = {
-			-- 	icon = "",
-			-- 	color = "#0078d4",
-			-- 	cterm_color = "32",
-			-- 	name = "AzureCli",
-			-- },
 			["procfile"] = {
 				icon = "",
 				color = "#a074c4",
@@ -730,12 +724,6 @@ return {
 				cterm_color = "198",
 				name = "Hurl",
 			},
-			-- ["f90"] = {
-			-- 	icon = "󱈚",
-			-- 	color = "#734F96",
-			-- 	cterm_color = "97",
-			-- 	name = "Fortran",
-			-- },
 			["bib"] = {
 				icon = "",
 				color = "#cbcb41",
@@ -931,25 +919,25 @@ return {
 				name = "Drools",
 			},
 			["kdenlive"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "Kdenlive",
 			},
 			["kdenlivetitle"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "Kdenlive",
 			},
 			["kdenlive-layoutsrc"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "KdenliveLayoutsrc",
 			},
 			["kdenliverc"] = {
-				icon = "",
+				icon = "",
 				color = "#83b8F2",
 				cterm_color = "110",
 				name = "Kdenliverc",
@@ -1194,12 +1182,6 @@ return {
 				cterm_color = "185",
 				name = "Babelrc",
 			},
-			-- ["rb"] = {
-			-- 	icon = "",
-			-- 	color = "#701516",
-			-- 	cterm_color = "52",
-			-- 	name = "Rb",
-			-- },
 			["sbt"] = {
 				icon = "",
 				color = "#cc3e44",
