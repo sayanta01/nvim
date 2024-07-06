@@ -71,7 +71,7 @@ return {
 			Interface = "",
 			Module = "󱒌",
 			Property = "󰓹",
-			Unit = "",
+			Unit = "",
 			Value = "󰎠",
 			Enum = "",
 			Keyword = "",

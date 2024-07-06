@@ -2,7 +2,7 @@ return {
 	-- "stevearc/conform.nvim",
 	-- lazy = false,
 	-- event = { "BufWritePre" },
-	-- cmd = { "ConformInfo" },
+	-- cmd = "ConformInfo",
 	-- keys = {
 	-- 	{
 	-- 		"<leader>lm",
@@ -55,9 +55,9 @@ return {
 	-- 		go = { "gofmt" },
 	-- 		lua = { "stylua" },
 	-- 		sh = { "shfmt" },
-	--      python = { "isort", "black" },
+	-- 		python = { "isort", "black" },
 	-- 		-- terraform = { "terraform_fmt" },
-	--      -- ansible = { "ansible" },
+	-- 		-- ansible = { "ansible" },
 	-- 	},
 	-- 	-- format_on_save = {
 	-- 	-- 	timeout_ms = 500,
