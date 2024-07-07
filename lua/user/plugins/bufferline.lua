@@ -1,8 +1,7 @@
 return {
 	"akinsho/bufferline.nvim",
 	version = "*",
-	event = "BufAdd",
-	-- event = "VeryLazy",
+	event = "UIEnter",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		{ "<S-Left>", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer to Left" },
@@ -10,10 +9,6 @@ return {
 	},
 	opts = {
 		options = {
-			-- close_command = "bdelete! %d",
-			-- left_mouse_command = "buffer %d",
-			-- middle_mouse_command = nil,
-			-- right_mouse_command = "bdelete! %d",
 			show_buffer_icons = true,
 			show_buffer_close_icons = false,
 			show_close_icon = false,
@@ -21,8 +16,6 @@ return {
 			modified_icon = "",
 			left_trunc_marker = "←",
 			right_trunc_marker = "→",
-			-- diagnostics = false,
-			-- diagnostics_update_in_insert = false,
 			offsets = {
 				{
 					filetype = "undotree",
@@ -32,7 +25,7 @@ return {
 				},
 				{
 					filetype = "NvimTree",
-					text = "Files",
+					text = "Explorer",
 					highlight = "PanelHeading",
 					padding = 1,
 				},
