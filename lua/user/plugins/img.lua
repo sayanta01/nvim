@@ -19,16 +19,10 @@ return {
 				only_render_image_at_cursor = true,
 				filetypes = { "markdown", "conf" },
 			},
-			neorg = {
-				enabled = true,
-				clear_in_insert_mode = true,
-				only_render_image_at_cursor = true,
-				filetypes = { "norg" },
-			},
 		},
-		editor_only_render_when_focused = false,
-		tmux_show_only_in_active_window = true,
 		max_width_window_percentage = nil,
 		max_height_window_percentage = 80,
+		editor_only_render_when_focused = false,
+		tmux_show_only_in_active_window = true,
 	},
 }
