@@ -1,7 +1,7 @@
 return {
 	{
 		"lewis6991/gitsigns.nvim",
-		event = { "BufReadPost", "VeryLazy" },
+		event = "VeryLazy",
 		opts = {
 			signs = {
 				add = { text = "▎" },
