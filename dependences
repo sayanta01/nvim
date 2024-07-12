@@ -20,8 +20,8 @@ if [ -f /etc/debian_version ]; then
 		python3-pip python3-venv
 	# default-jdk dotnet-sdk-6.0
 
+  go install github.com/jesseduffield/lazygit@latest
 	# curl -Lo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
-	go install github.com/jesseduffield/lazygit@latest
 	# cargo install bat
 	# curl -fsSL https://install.julialang.org | sh
 fi
