@@ -7,6 +7,7 @@ return {
 	end,
 	config = function()
 		require("which-key").setup({
+			preset = "classic",
 			plugins = {
 				marks = false, -- shows a list of your marks on ' and `
 				registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -26,47 +27,22 @@ return {
 					g = false, -- bindings for prefixed with g
 				},
 			},
-			-- add operators that will trigger motion and text object completion
-			-- to enable all native operators, set the preset / operators plugin above
-			operators = { gc = "Comments" },
-			key_labels = {
-				-- override the label used to display some keys. It doesn't effect WK in any other way
-				-- For example:
-				-- ["<space>"] = "SPC",
-				-- ["<cr>"] = "RET",
-				-- ["<tab>"] = "TAB",
-			},
 			icons = {
 				breadcrumb = "»",
 				separator = "",
 				group = "",
-			},
-			window = {
-				border = "rounded",
-				position = "bottom",
-				margin = { 1, 0, 1, 0 },
-				padding = { 1, 2, 1, 2 },
-				winblend = 0,
-				-- zindex = 1000, -- positive value to position WhichKey above other floating windows
+				rules = false,
 			},
 			layout = {
-				height = { min = 4, max = 24 },
-				width = { min = 20, max = 50 },
-				spacing = 4,
-				align = "left",
+				width = { min = 20 }, -- min and max width of the columns
+				spacing = 4, -- spacing between columns
+				align = "left", -- align columns left, center or right
 			},
-			ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-			-- hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "^:", "^ ", "^call ", "^lua " }, -- hide mapping boilerplate
 			show_help = false,
 			show_keys = false,
-			-- triggers = "auto",
-			-- triggers_blacklist = {
-			-- 	i = { "j", "k" },
-			-- 	v = { "j", "k" },
-			-- },
+			triggers = true, -- automatically setup triggers
 			disable = {
-				-- buftypes = {},
-				filetypes = { "TelescopePrompt" },
+				ft = { "TelescopePrompt" },
 			},
 		})
 
@@ -79,27 +55,27 @@ return {
 			nowait = true,
 		}
 
-		local vopts = {
-			mode = "v",
-			prefix = "<leader>",
-			buffer = nil,
-			silent = true,
-			noremap = true,
-			nowait = true,
-		}
+		-- local vopts = {
+		-- 	mode = "v",
+		-- 	prefix = "<leader>",
+		-- 	buffer = nil,
+		-- 	silent = true,
+		-- 	noremap = true,
+		-- 	nowait = true,
+		-- }
 
-		local vmappings = {
-			["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Toggle Comment" },
-			l = {
-				name = "LSP",
-				a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-			},
-			g = {
-				name = "Git",
-				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-			},
-		}
+		-- local vmappings = {
+		-- 	-- ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Toggle Comment" },
+		-- 	l = {
+		-- 		name = "LSP",
+		-- 		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		-- 	},
+		-- 	g = {
+		-- 		name = "Git",
+		-- 		s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+		-- 		r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+		-- 	},
+		-- }
 
 		local mappings = {
 			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle Comment" },
@@ -121,7 +97,7 @@ return {
 				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 				S = { ":lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
-        u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+				u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
 				R = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 				p = { ":lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 				l = { ":lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -227,6 +203,6 @@ return {
 		end
 
 		require("which-key").register(mappings, opts)
-		require("which-key").register(vmappings, vopts)
+		-- require("which-key").register(vmappings, vopts)
 	end,
 }
