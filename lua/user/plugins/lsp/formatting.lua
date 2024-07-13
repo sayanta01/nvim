@@ -1,11 +1,10 @@
 return {
 	-- "stevearc/conform.nvim",
-	-- lazy = false,
-	-- event = { "BufWritePre" },
+	-- event = "BufReadPost",
 	-- cmd = "ConformInfo",
 	-- keys = {
 	-- 	{
-	-- 		"<leader>lm",
+	-- 		"<leader>lf",
 	-- 		function()
 	-- 			require("conform").format({ async = true, lsp_fallback = true })
 	-- 		end,
@@ -19,9 +18,13 @@ return {
 	-- 		local mason_tool_installer = require("mason-tool-installer")
 	-- 		mason_tool_installer.setup({
 	-- 			ensure_installed = {
-	-- 				-- "google_java_format",
+	-- 				-- "debugpy",
+	-- 				-- "codelldb",
+	-- 				-- "delve",
+	-- 				-- "js-debug-adapter",
+	-- 				-- "java-debug-adapter",
+	--
 	-- 				"prettier",
-	-- 				"gofumpt",
 	-- 				"stylua",
 	-- 				"shfmt",
 	-- 				"shellcheck", -- bashls automatically uses
@@ -35,7 +38,8 @@ return {
 	-- },
 	-- opts = {
 	-- 	formatters_by_ft = {
-	-- 		-- java = { "google-java-format" },
+	-- 		java = { "google-java-format" },
+	-- 		go = { "gofmt" },
 	-- 		html = { "prettier" },
 	-- 		css = { "prettier" },
 	-- 		scss = { "prettier" },
@@ -52,7 +56,6 @@ return {
 	-- 		graphql = { "prettier" },
 	-- 		c = { "clang_format" },
 	-- 		cpp = { "clang_format" },
-	-- 		go = { "gofmt" },
 	-- 		lua = { "stylua" },
 	-- 		sh = { "shfmt" },
 	-- 		python = { "isort", "black" },

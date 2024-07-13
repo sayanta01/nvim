@@ -1,0 +1,103 @@
+
+
+Debug Started for v3.2.0
+on_key: <Space>
+State(start): { "Mode(n)", "Node(<Space>)", { keys = "<Space>", update = true, waited = 200 } }
+  getchar
+  on_key: <Esc>
+  got: <Esc>
+on_key: dd
+ModeChanged(n:no)
+ModeChanged(no:n)
+on_key: <Space>lf
+ModeChanged(n:c)
+ModeChanged(c:n)
+on_key: :
+ModeChanged(n:c)
+on_key: w
+on_key: <CR>
+ModeChanged(c:n)
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: k
+on_key: j
+on_key: j
+on_key: j
+on_key: j
+on_key: j
+on_key: j
+on_key: j
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: l
+on_key: d
+ModeChanged(n:no)
+on_key: i
+on_key: w
+ModeChanged(no:n)
+on_key: i
+ModeChanged(n:i)
+on_key: m
+on_key: o
+on_key: d
+on_key: e
+on_key: r
+on_key: n
+on_key: <Esc>
+ModeChanged(i:n)
+on_key: :
+ModeChanged(n:c)
+on_key: w
+on_key: q
+on_key: <CR>
+ModeChanged(c:n)

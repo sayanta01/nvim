@@ -1,6 +1,5 @@
 return {
 	"folke/which-key.nvim",
-	tag = "v1.5.0",
 	keys = { { "<leader>", mode = { "n", "v" } } },
 	init = function()
 		vim.o.timeout = true
@@ -8,12 +7,11 @@ return {
 	end,
 	config = function()
 		require("which-key").setup({
-			preset = "classic",
+			-- preset = "classic",
+			notify = false,
 			plugins = {
 				marks = false, -- shows a list of your marks on ' and `
 				registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-				-- the presets plugin, adds help for a bunch of default keybindings in Neovim
-				-- No actual key bindings are created
 				spelling = {
 					enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
 					suggestions = 20, -- how many suggestions should be shown in the list?
@@ -28,16 +26,16 @@ return {
 					g = false, -- bindings for prefixed with g
 				},
 			},
+			layout = {
+				width = { min = 20 },
+				spacing = 4,
+				align = "left",
+			},
 			icons = {
 				breadcrumb = "»",
 				separator = "",
 				group = "",
 				rules = false,
-			},
-			layout = {
-				width = { min = 20 }, -- min and max width of the columns
-				spacing = 4, -- spacing between columns
-				align = "left", -- align columns left, center or right
 			},
 			show_help = false,
 			show_keys = false,
@@ -169,7 +167,7 @@ return {
 			},
 
 			d = {
-				name = "Debug",
+				name = "Debug",
 				t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 				c = { ":lua require'dap'.continue()<cr>", "Continue" },
 				C = { ":lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
