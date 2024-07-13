@@ -1,5 +1,6 @@
 return {
 	"folke/which-key.nvim",
+	tag = "v1.5.0",
 	keys = { { "<leader>", mode = { "n", "v" } } },
 	init = function()
 		vim.o.timeout = true
@@ -40,7 +41,6 @@ return {
 			},
 			show_help = false,
 			show_keys = false,
-			triggers = true, -- automatically setup triggers
 			disable = {
 				ft = { "TelescopePrompt" },
 			},
@@ -163,6 +163,7 @@ return {
 			},
 
 			b = {
+				name = "Buffer",
 				b = { ":Telescope buffers<cr>", "Buf Preview" },
 				n = { ":enew<cr>", "New Buffer" },
 			},
