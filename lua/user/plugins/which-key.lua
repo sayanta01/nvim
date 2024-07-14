@@ -4,10 +4,19 @@ return {
 	event = "VeryLazy",
 	init = function()
 		vim.o.timeout = true
-		vim.o.timeoutlen = 200
+		vim.o.timeoutlen = 400
 	end,
 	opts = {
-		-- preset = "classic",
+		preset = "modern",
+		modes = {
+			n = true,
+			i = false,
+			x = false,
+			s = false,
+			o = false,
+			t = false,
+			c = false,
+		},
 		plugins = {
 			marks = false, -- shows a list of your marks on ' and `
 			registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -25,10 +34,11 @@ return {
 				g = false, -- bindings for prefixed with g
 			},
 		},
-		layout = {
-			width = { min = 20 },
-			spacing = 4,
-			align = "left",
+		win = {
+			no_overlap = false,
+			border = "rounded",
+			padding = { 1, 2 },
+			title = false,
 		},
 		icons = {
 			breadcrumb = "»",
@@ -46,7 +56,7 @@ return {
 				CR = "↩︎ ",
 				NL = "↩︎ ",
 				BS = " ",
-				Space = "⎵ ", -- ␠
+				Space = "␠ ",
 				Tab = "⇨ ",
 			},
 		},
@@ -59,7 +69,6 @@ return {
       -- stylua: ignore
       {
         mode = { "n", "v" },
-        -- { "<leader>/",  "<Plug>(comment_toggle_linewise_current)",                              desc = "Toggle Comment",                 nowait = true, remap = false },
         { "<leader>e",  ":NvimTreeToggle<cr>",                                                  desc = "Explorer",                       nowait = true, remap = false },
         { "<leader>f",  ":Telescope find_files<cr>",                                            desc = "Find Files",                     nowait = true, remap = false },
         { "<leader>q",  ":q!<cr>",                                                              desc = "Quit",                           nowait = true, remap = false },
@@ -131,6 +140,7 @@ return {
         { "<leader>op", ":MarkdownPreviewToggle<cr>",                                           desc = "Markdown Preview",               nowait = true, remap = false },
         { "<leader>os", ":set spell!<cr>",                                                      desc = "Toggle Spelling ",               nowait = true, remap = false },
         { "<leader>ow", ":set wrap!<cr>",                                                       desc = "Toggle Wrap",                    nowait = true, remap = false },
+        -- { "<leader>ou", ":UfoAttach<cr>",                                                       desc = "Toggle Wrap",                    nowait = true, remap = false },
 
         { "<leader>p",  group = "Plugin",                                                       nowait = true,                           remap = false },
         { "<leader>pl", ":Lazy<cr>",                                                            desc = "Lazy",                           nowait = true, remap = false },

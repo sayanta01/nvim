@@ -139,7 +139,6 @@ return {
 
 		ins_left({
 			"location",
-			color = { fg = colors.violet },
 		})
 
 		ins_left({

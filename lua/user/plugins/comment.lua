@@ -1,6 +1,9 @@
 return {
 	"numToStr/Comment.nvim",
-	keys = { { "<leader>/" }, { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
+	keys = {
+		{ "<leader>/", "gcc", mode = { "n" }, desc = "Toggle Comment", nowait = true, remap = true },
+		{ "<leader>/", "gc", mode = { "v" }, desc = "Toggle Comment", nowait = true, remap = true },
+	},
 	dependencies = {
 		"JoosepAlviste/nvim-ts-context-commentstring",
 	},

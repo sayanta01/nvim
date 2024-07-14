@@ -33,7 +33,7 @@ return {
         map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
         map("n", "<leader>ghd", gs.diffthis, "Diff This")
         map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
-        map('n', '<leader>gtd', gs.toggle_deleted, "Toggle Deleted")
+        -- map('n', '<leader>gtd', gs.toggle_deleted, "Toggle Deleted")
 
         -- Text object
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Git Select Hunk")
