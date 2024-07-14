@@ -1,207 +1,156 @@
 return {
 	"folke/which-key.nvim",
-	keys = { { "<leader>", mode = { "n", "v" } } },
+	-- keys = { { "<leader>", mode = { "n", "v" } } },
+	event = "VeryLazy",
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 200
 	end,
-	config = function()
-		require("which-key").setup({
-			-- preset = "classic",
-			notify = false,
-			plugins = {
-				marks = false, -- shows a list of your marks on ' and `
-				registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-				spelling = {
-					enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-					suggestions = 20, -- how many suggestions should be shown in the list?
-				},
-				presets = {
-					operators = false, -- adds help for operators like d, y, ...
-					motions = false, -- adds help for motions
-					text_objects = false, -- help for text objects triggered after entering an operator
-					windows = false, -- default bindings on <c-w>
-					nav = false, -- misc bindings to work with windows
-					z = false, -- bindings for folds, spelling and others prefixed with z
-					g = false, -- bindings for prefixed with g
-				},
+	opts = {
+		-- preset = "classic",
+		plugins = {
+			marks = false, -- shows a list of your marks on ' and `
+			registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+			spelling = {
+				enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+				suggestions = 20, -- how many suggestions should be shown in the list?
 			},
-			layout = {
-				width = { min = 20 },
-				spacing = 4,
-				align = "left",
+			presets = {
+				operators = false, -- adds help for operators like d, y, ...
+				motions = false, -- adds help for motions
+				text_objects = false, -- help for text objects triggered after entering an operator
+				windows = false, -- default bindings on <c-w>
+				nav = false, -- misc bindings to work with windows
+				z = false, -- bindings for folds, spelling and others prefixed with z
+				g = false, -- bindings for prefixed with g
 			},
-			icons = {
-				breadcrumb = "»",
-				separator = "",
-				group = "",
-				rules = false,
+		},
+		layout = {
+			width = { min = 20 },
+			spacing = 4,
+			align = "left",
+		},
+		icons = {
+			breadcrumb = "»",
+			separator = "",
+			group = "",
+			rules = false,
+			keys = {
+				Up = "↑ ",
+				Down = "↓ ",
+				Left = "← ",
+				Right = "→ ",
+				C = " ",
+				M = "⌥ ",
+				S = "⇪ ",
+				CR = "↩︎ ",
+				NL = "↩︎ ",
+				BS = " ",
+				Space = "⎵ ", -- ␠
+				Tab = "⇨ ",
 			},
-			show_help = false,
-			show_keys = false,
-			disable = {
-				ft = { "TelescopePrompt" },
-			},
-		})
+		},
+		show_help = false,
+		show_keys = false,
+		disable = {
+			ft = { "TelescopePrompt" },
+		},
+		spec = {
+      -- stylua: ignore
+      {
+        mode = { "n", "v" },
+        -- { "<leader>/",  "<Plug>(comment_toggle_linewise_current)",                              desc = "Toggle Comment",                 nowait = true, remap = false },
+        { "<leader>e",  ":NvimTreeToggle<cr>",                                                  desc = "Explorer",                       nowait = true, remap = false },
+        { "<leader>f",  ":Telescope find_files<cr>",                                            desc = "Find Files",                     nowait = true, remap = false },
+        { "<leader>q",  ":q!<cr>",                                                              desc = "Quit",                           nowait = true, remap = false },
+        { "<leader>x",  ":bdelete<cr>",                                                         desc = "Close Buffer",                   nowait = true, remap = false },
+        -- { "<leader>y",  "gg<S-v>G<cr>",                                                         desc = "Close Buffer",                   nowait = true, remap = false },
 
-		local opts = {
-			mode = "n",
-			prefix = "<leader>",
-			buffer = nil,
-			silent = true,
-			noremap = true,
-			nowait = true,
-		}
+        { "<leader>b",  group = "Buffer",                                                       nowait = true,                           remap = false },
+        { "<leader>bb", ":Telescope buffers<cr>",                                               desc = "Buf Preview",                    nowait = true, remap = false },
+        { "<leader>bn", ":enew<cr>",                                                            desc = "New Buffer",                     nowait = true, remap = false },
 
-		-- local vopts = {
-		-- 	mode = "v",
-		-- 	prefix = "<leader>",
-		-- 	buffer = nil,
-		-- 	silent = true,
-		-- 	noremap = true,
-		-- 	nowait = true,
-		-- }
+        { "<leader>d",  group = "Debug",                                                        nowait = true,                           remap = false },
+        { "<leader>dt", ":lua require'dap'.toggle_breakpoint()<cr>",                            desc = "Toggle Breakpoint",              nowait = true, remap = false },
+        { "<leader>dc", ":lua require'dap'.continue()<cr>",                                     desc = "Continue",                       nowait = true, remap = false },
+        { "<leader>dC", ":lua require'dap'.run_to_cursor()<cr>",                                desc = "Run to Cursor",                  nowait = true, remap = false },
+        { "<leader>di", ":lua require'dap'.step_into()<cr>",                                    desc = "Step Into",                      nowait = true, remap = false },
+        { "<leader>do", ":lua require'dap'.step_over()<cr>",                                    desc = "Step Over",                      nowait = true, remap = false },
+        { "<leader>du", ":lua require'dap'.step_out()<cr>",                                     desc = "Step Out",                       nowait = true, remap = false },
+        { "<leader>dr", ":lua require'dap'.repl.toggle()<cr>",                                  desc = "Toggle Repl",                    nowait = true, remap = false },
+        { "<leader>db", ":lua require'dap'.step_back()<cr>",                                    desc = "Step Back",                      nowait = true, remap = false },
+        { "<leader>ds", ":lua require'dap'.session()<cr>",                                      desc = "Get Session",                    nowait = true, remap = false },
+        { "<leader>dq", ":lua require'dap'.close()<cr>",                                        desc = "Quit Session",                   nowait = true, remap = false },
+        { "<leader>dp", ":lua require'dap'.pause()<cr>",                                        desc = "Pause",                          nowait = true, remap = false },
+        { "<leader>dl", ":lua require'dap'.run_last()<cr>",                                     desc = "Last Run",                       nowait = true, remap = false },
+        { "<leader>dx", ":lua require'dap'.terminate()<cr>",                                    desc = "Terminate",                      nowait = true, remap = false },
+        { "<leader>dd", ":lua require'dap'.disconnect()<cr>",                                   desc = "Disconnect",                     nowait = true, remap = false },
+        { "<leader>dw", "lua require'dap'.ui.widgets.hover()<cr>",                              desc = "Widgets",                        nowait = true, remap = false },
+        -- { "<leader>dj", ":lua require'dap'.down()<cr>",                                         desc = "Down",                           nowait = true, remap = false },
+        -- { "<leader>dk", ":lua require'dap'.up()<cr>",                                           desc = "Up",                             nowait = true, remap = false },
 
-		-- local vmappings = {
-		-- 	-- ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Toggle Comment" },
-		-- 	l = {
-		-- 		name = "LSP",
-		-- 		a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		-- 	},
-		-- 	g = {
-		-- 		name = "Git",
-		-- 		s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-		-- 		r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-		-- 	},
-		-- }
+        { "<leader>g",  group = "Git",                                                          nowait = true,                           remap = false },
+        { "<leader>gg", ":lua _LAZYGIT_TOGGLE()<cr>",                                           desc = "Lazygit",                        nowait = true, remap = false },
+        { "<leader>gt", ":Telescope git_status<cr>",                                            desc = "Git Status",                     nowait = true, remap = false },
+        { "<leader>gb", ":Telescope git_branches<cr>",                                          desc = "Checkout Branch",                nowait = true, remap = false },
+        { "<leader>gc", ":Telescope git_commits<cr>",                                           desc = "Checkout Commit",                nowait = true, remap = false },
+        { "<leader>gC", ":Telescope git_bcommits<cr>",                                          desc = "Checkout Commit (current file)", nowait = true, remap = false },
+        { "<leader>gs", ":lua require 'gitsigns'.stage_hunk()<cr>",                             desc = "Stage Hunk",                     nowait = true, remap = false },
+        { "<leader>gr", ":lua require 'gitsigns'.reset_hunk()<cr>",                             desc = "Reset Hunk",                     nowait = true, remap = false },
+        { "<leader>gS", ":lua require 'gitsigns'.stage_buffer()<cr>",                           desc = "Stage Buffer",                   nowait = true, remap = false },
+        { "<leader>gu", ":lua require 'gitsigns'.undo_stage_hunk()<cr>",                        desc = "Undo Stage Hunk",                nowait = true, remap = false },
+        { "<leader>gR", ":lua require 'gitsigns'.reset_buffer()<cr>",                           desc = "Reset Buffer",                   nowait = true, remap = false },
+        { "<leader>gp", ":lua require 'gitsigns'.preview_hunk()<cr>",                           desc = "Preview Hunk",                   nowait = true, remap = false },
+        { "<leader>gl", ":lua require 'gitsigns'.blame_line()<cr>",                             desc = "Blame",                          nowait = true, remap = false },
+        { "<leader>gd", ":lua require 'gitsigns'.toggle_deleted()<cr>",                         desc = "Toggle Deleted",                 nowait = true, remap = false },
+        { "<leader>gD", ":Gitsigns diffthis HEAD<cr>",                                          desc = "Git Diff",                       nowait = true, remap = false },
 
-		local mappings = {
-			["/"] = { "<Plug>(comment_toggle_linewise_current)", "Toggle Comment" },
-			q = { ":q!<cr>", "Quit" },
-			x = { ":bdelete<cr>", "Close Buffer" },
-			-- y = { "gg<S-v>G", "Copy" },
-			e = { ":NvimTreeToggle<cr>", "Explorer" },
-			f = { ":Telescope find_files<cr>", "Find Files" },
+        { "<leader>h",  group = "Harpoon",                                                      nowait = true,                           remap = false },
+        { "<leader>hh", ":lua require('harpoon.ui').toggle_quick_menu()<cr>",                   desc = "Harpoon marks",                  nowait = true, remap = false },
+        { "<leader>hm", ":lua require('harpoon.mark').add_file() vim.notify 'Marked file'<cr>", desc = "Mark to harpoon",                nowait = true, remap = false },
+        { "<leader>hn", ":lua require('harpoon.ui').nav_next()<cr>",                            desc = "Next",                           nowait = true, remap = false },
+        { "<leader>hp", ":lua require('harpoon.ui').nav_prev()<cr>",                            desc = "Prev",                           nowait = true, remap = false },
 
-			g = {
-				name = "Git",
-				g = { ":lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
-				t = { ":Telescope git_status<cr>", "Git Status" },
-				b = { ":Telescope git_branches<cr>", "Checkout Branch" },
-				c = { ":Telescope git_commits<cr>", "Checkout Commit" },
-				C = { ":Telescope git_bcommits<cr>", "Checkout Commit (current file)" },
-				-- j = { ":lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-				-- k = { ":lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-				s = { ":lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-				r = { ":lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-				S = { ":lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
-				u = { ":lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
-				R = { ":lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-				p = { ":lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-				l = { ":lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-				d = { ":lua require 'gitsigns'.toggle_deleted()<cr>", "Toggle Deleted" },
-				D = {
-					":Gitsigns diffthis HEAD<cr>",
-					"Git Diff",
-				},
-			},
+        { "<leader>l",  group = "LSP",                                                          nowait = true,                           remap = false },
+        { "<leader>ld", ":lua vim.lsp.buf.declaration()<cr>",                                   desc = "Goto Declaration",               nowait = true, remap = false },
+        { "<leader>lh", ":lua vim.lsp.buf.signature_help()<cr>",                                desc = "Signature Help",                 nowait = true, remap = false },
+        { "<leader>lt", ":lua vim.lsp.buf.type_definition()<cr>",                               desc = "Type Definition",                nowait = true, remap = false },
+        { "<leader>lr", ":lua vim.lsp.buf.rename()<cr>",                                        desc = "Rename",                         nowait = true, remap = false },
+        { "<leader>la", ":lua vim.lsp.buf.code_action()<cr>",                                   desc = "Code Action",                    nowait = true, remap = false },
+        { "<leader>lw", ":lua vim.lsp.buf.add_workspace_folder()<cr>",                          desc = "Add Workspace Folder",           nowait = true, remap = false },
+        { "<leader>lW", ":lua vim.lsp.buf.remove_workspace_folder()<cr>",                       desc = "Remove Workspace Folder",        nowait = true, remap = false },
+        { "<leader>ll", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>",    desc = "List Workspace Folder",          nowait = true, remap = false },
+        { "<leader>lf", ":lua vim.lsp.buf.format()<CR>",                                        desc = "Format",                         nowait = true, remap = false },
+        { "<leader>lq", ":lua vim.diagnostic.setloclist()<cr>",                                 desc = "Quickfix",                       nowait = true, remap = false },
+        { "<leader>ls", ":Telescope lsp_document_symbols<cr>",                                  desc = "Document Symbols",               nowait = true, remap = false },
+        { "<leader>lS", ":Telescope lsp_dynamic_workspace_symbols<cr>",                         desc = "Workspace Symbols",              nowait = true, remap = false },
 
-			l = {
-				name = "LSP",
-				d = { ":lua vim.lsp.buf.declaration()<cr>", "Goto Declaration" },
-				h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
-				t = { ":lua vim.lsp.buf.type_definition()<cr>", "Type Definition" },
-				r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
-				a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-				w = { ":lua vim.lsp.buf.add_workspace_folder()<cr>", "Add Workspace Folder" },
-				W = { ":lua vim.lsp.buf.remove_workspace_folder()<cr>", "Remove Workspace Folder" },
-				l = { ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List Workspace Folder" },
-				f = { ":lua vim.lsp.buf.format()<CR>", "Format" },
-				q = { ":lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
-				s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
-				S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-			},
+        { "<leader>o",  group = "Option",                                                       nowait = true,                           remap = false },
+        { "<leader>oh", ":HighlightColors Toggle<cr>",                                          desc = "Toggle Colors",                  nowait = true, remap = false },
+        { "<leader>ol", ":terminal live-server<cr>",                                            desc = "Live Server",                    nowait = true, remap = false },
+        { "<leader>op", ":MarkdownPreviewToggle<cr>",                                           desc = "Markdown Preview",               nowait = true, remap = false },
+        { "<leader>os", ":set spell!<cr>",                                                      desc = "Toggle Spelling ",               nowait = true, remap = false },
+        { "<leader>ow", ":set wrap!<cr>",                                                       desc = "Toggle Wrap",                    nowait = true, remap = false },
 
-			s = {
-				name = "Telescope",
-				c = { ":Telescope colorscheme<cr>", "Colorscheme" },
-				g = { ":Telescope live_grep<cr>", "Live Grep" },
-				w = { ":Telescope grep_string<cr>", "Grep Word" },
-				h = { ":Telescope help_tags<cr>", "Help Pages" },
-				o = { ":Telescope oldfiles<cr>", "Recent Files" },
-				r = { ":Telescope registers<cr>", "Registers" },
-				m = { ":Telescope marks<cr>", "Marks" },
-				z = { ":Telescope command_history<cr>", "Cmd History" },
-			},
+        { "<leader>p",  group = "Plugin",                                                       nowait = true,                           remap = false },
+        { "<leader>pl", ":Lazy<cr>",                                                            desc = "Lazy",                           nowait = true, remap = false },
+        { "<leader>pm", ":Mason<cr>",                                                           desc = "Mason",                          nowait = true, remap = false },
+        { "<leader>pn", ":NullLsInfo<cr>",                                                      desc = "NullLs",                         nowait = true, remap = false },
 
-			h = {
-				name = "Harpoon",
-				h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon marks" },
-				m = { ":lua require('harpoon.mark').add_file() vim.notify 'Marked file'<cr>", "Mark to harpoon" },
-				n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
-				p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Prev" },
-			},
+        { "<leader>s",  group = "Telescope",                                                    nowait = true,                           remap = false },
+        { "<leader>sc", ":Telescope colorscheme<cr>",                                           desc = "Colorscheme",                    nowait = true, remap = false },
+        { "<leader>sg", ":Telescope live_grep<cr>",                                             desc = "Live Grep",                      nowait = true, remap = false },
+        { "<leader>sh", ":Telescope help_tags<cr>",                                             desc = "Help Pages",                     nowait = true, remap = false },
+        { "<leader>sm", ":Telescope marks<cr>",                                                 desc = "Marks",                          nowait = true, remap = false },
+        { "<leader>so", ":Telescope oldfiles<cr>",                                              desc = "Recent Files",                   nowait = true, remap = false },
+        { "<leader>sr", ":Telescope registers<cr>",                                             desc = "Registers",                      nowait = true, remap = false },
+        { "<leader>sw", ":Telescope grep_string<cr>",                                           desc = "Grep Word",                      nowait = true, remap = false },
+        { "<leader>sz", ":Telescope command_history<cr>",                                       desc = "Cmd History",                    nowait = true, remap = false },
 
-			o = {
-				name = "Option",
-				l = { ":terminal live-server<cr>", "Live Server" },
-				h = { ":HighlightColors Toggle<cr>", "Toggle Colors" },
-				s = { ":set spell!<cr>", "Toggle Spelling " },
-				w = { ":set wrap!<cr>", "Toggle Wrap" },
-				p = { ":MarkdownPreviewToggle<cr>", "Markdown Preview" },
-				-- u = { ":UfoAttach<cr>", "Ufo" },
-				-- c = { ":set cursorcolumn!<cr>", "Cursor Line" },
-			},
-
-			p = {
-				name = "Plugin",
-				m = { ":Mason<cr>", "Mason" },
-				n = { ":NullLsInfo<cr>", "NullLs" },
-				l = { ":Lazy<cr>", "Lazy" },
-			},
-
-			b = {
-				name = "Buffer",
-				b = { ":Telescope buffers<cr>", "Buf Preview" },
-				n = { ":enew<cr>", "New Buffer" },
-			},
-
-			d = {
-				name = "Debug",
-				t = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-				c = { ":lua require'dap'.continue()<cr>", "Continue" },
-				C = { ":lua require'dap'.run_to_cursor()<cr>", "Run to Cursor" },
-				i = { ":lua require'dap'.step_into()<cr>", "Step Into" },
-				o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
-				u = { ":lua require'dap'.step_out()<cr>", "Step Out" },
-				r = { ":lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-				b = { ":lua require'dap'.step_back()<cr>", "Step Back" },
-				s = { ":lua require'dap'.session()<cr>", "Get Session" },
-				q = { ":lua require'dap'.close()<cr>", "Quit Session" },
-				p = { ":lua require'dap'.pause()<cr>", "Pause" },
-				l = { ":lua require'dap'.run_last()<cr>", "Last Run" },
-				x = { ":lua require'dap'.terminate()<cr>", "Terminate" },
-				d = { ":lua require'dap'.disconnect()<cr>", "Disconnect" },
-				w = { "lua require'dap'.ui.widgets.hover()<cr>", "Widgets" },
-				j = { ":lua require'dap'.down()<cr>", "Down" },
-				k = { ":lua require'dap'.up()<cr>", "Up" },
-			},
-
-			t = {
-				name = "Terminal",
-				h = { ":ToggleTerm size=14 direction=horizontal<cr>", "Horizontal" },
-				v = { ":ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-			},
-		}
-
-		local Terminal = require("toggleterm.terminal").Terminal
-		local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
-
-		function _LAZYGIT_TOGGLE()
-			lazygit:toggle()
-		end
-
-		require("which-key").register(mappings, opts)
-		-- require("which-key").register(vmappings, vopts)
-	end,
+        -- { "<leader>t",  group = "Terminal",                                                     nowait = true,                           remap = false },
+        -- { "<leader>th", ":ToggleTerm size=14 direction=horizontal<cr>",                         desc = "Horizontal",                     nowait = true, remap = false },
+        -- { "<leader>tv", ":ToggleTerm size=80 direction=vertical<cr>",                           desc = "Vertical",                       nowait = true, remap = false },
+      },
+		},
+	},
 }
