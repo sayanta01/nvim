@@ -27,12 +27,12 @@ return {
 						controls = {
 							icons = {
 								disconnect = "",
-								pause = "󰏨",
+								pause = "",
 								play = "",
 								run_last = "",
 								step_back = "⮶",
-								step_into = "",
-								step_out = "",
+								step_into = "↓",
+								step_out = "↑",
 								step_over = "⮷",
 								terminate = "□",
 							},

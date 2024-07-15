@@ -57,6 +57,7 @@ return {
 			"svelte",
 			"xml",
 			"php",
+			"twig",
 			"markdown",
 			"astro",
 		},

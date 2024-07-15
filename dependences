@@ -16,11 +16,11 @@ if [ -f /etc/debian_version ]; then
 	## Pkgs
 	sudo apt install -y npm cargo luarocks \
 		php golang ruby \
-		ripgrep imagemagick \
-		python3-pip python3-venv
+		ripgrep imagemagick
+	# python3-pip python3-venv
 	# default-jdk dotnet-sdk-6.0
 
-  go install github.com/jesseduffield/lazygit@latest
+	go install github.com/jesseduffield/lazygit@latest
 	# curl -Lo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
 	# cargo install bat
 	# curl -fsSL https://install.julialang.org | sh

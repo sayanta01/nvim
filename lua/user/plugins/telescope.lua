@@ -23,13 +23,13 @@ return {
 				sorting_strategy = "ascending",
 				layout_strategy = "horizontal",
 				layout_config = {
-					-- width = 0.8,
-					-- height = 0.9,
-					-- preview_cutoff = 120,
 					horizontal = {
 						prompt_position = "top",
 						preview_width = 0.6,
 					},
+					-- width = 0.8,
+					-- height = 0.9,
+					-- preview_cutoff = 120,
 				},
 				vimgrep_arguments = {
 					"rg",

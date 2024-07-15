@@ -13,7 +13,7 @@ return {
 				"help",
 				"alpha",
 				"dashboard",
-        "NvimTree",
+				"NvimTree",
 				"neo-tree",
 				"lazy",
 				"mason",
