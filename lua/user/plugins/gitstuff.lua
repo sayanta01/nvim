@@ -19,6 +19,7 @@ return {
 
 				local function map(mode, l, r, desc)
 					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+					-- vim.keymap.set(mode, l, r, { buffer = buffer, desc = "which_key_ignore" })
 				end
 
         -- stylua: ignore start
@@ -32,7 +33,7 @@ return {
         map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk")
         map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
         map("n", "<leader>ghB", function() gs.blame() end, "Blame Buffer")
-        map("n", "<leader>qhd", gs.diffthis, "Diff This")
+        map("n", "<leader>ghd", gs.diffthis, "Diff This")
         map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
         -- map('n', '<leader>gtd', gs.toggle_deleted, "Toggle Deleted")
 

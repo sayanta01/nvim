@@ -14,7 +14,8 @@ return {
 
 			buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc") -- Enable completion triggered by <c-x><c-o>
 
-			local opts = { buffer = bufnr, noremap = true, silent = true }
+      local opts = { buffer = bufnr, noremap = true, silent = true, desc = "which_key_ignore" }
+			-- local opts = { buffer = bufnr, noremap = true, silent = true }
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
