@@ -159,24 +159,24 @@ return {
 			end,
 		})
 
-		ins_left({
-			function()
-				local msg = "No Active Lsp"
-				local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-				local clients = vim.lsp.get_active_clients()
-				if next(clients) == nil then
-					return msg
-				end
-				for _, client in ipairs(clients) do
-					local filetypes = client.config.filetypes
-					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-						return client.name
-					end
-				end
-				return msg
-			end,
-			color = { fg = "#44466a" },
-		})
+		-- ins_left({
+		-- 	function()
+		-- 		local msg = "No Active Lsp"
+		-- 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+		-- 		local clients = vim.lsp.get_active_clients()
+		-- 		if next(clients) == nil then
+		-- 			return msg
+		-- 		end
+		-- 		for _, client in ipairs(clients) do
+		-- 			local filetypes = client.config.filetypes
+		-- 			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+		-- 				return client.name
+		-- 			end
+		-- 		end
+		-- 		return msg
+		-- 	end,
+		-- 	color = { fg = "#44466a" },
+		-- })
 
 		ins_right({
 			"diff",
@@ -187,24 +187,6 @@ return {
 				removed = { fg = colors.red },
 			},
 		})
-
-		-- ins_right({
-		-- 	"buffers",
-		-- 	show_filename_only = true,
-		-- 	hide_filename_extension = true,
-		-- 	show_modified_status = true,
-		-- 	mode = 0,
-		-- 	max_length = vim.o.columns * 1 / 2,
-		-- 	buffers_color = {
-		-- 		active = { fg = colors.blue },
-		-- 		inactive = { fg = colors.fg },
-		-- 	},
-		-- 	symbols = {
-		-- 		modified = " ",
-		-- 		alternate_file = "",
-		-- 		directory = "",
-		-- 	},
-		-- })
 
 		lualine.setup(config)
 	end,

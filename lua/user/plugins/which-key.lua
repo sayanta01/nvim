@@ -1,7 +1,7 @@
 return {
 	"folke/which-key.nvim",
-	-- keys = { { "<leader>", mode = { "n", "v" } } },
 	event = "VeryLazy",
+	keys = { { "<leader>", mode = { "n", "v" } } },
 	init = function()
 		vim.o.timeout = true
 		vim.o.timeoutlen = 200
@@ -110,7 +110,7 @@ return {
         -- { "<leader>gp", ":lua require 'gitsigns'.preview_hunk()<cr>",                           desc = "Preview Hunk",            nowait = true, remap = false },
         -- { "<leader>gl", ":lua require 'gitsigns'.blame_line()<cr>",                             desc = "Blame Line",              nowait = true, remap = false },
         { "<leader>gd", ":lua require 'gitsigns'.toggle_deleted()<cr>",                         desc = "Toggle Deleted",          nowait = true, remap = false },
-        { "<leader>gD", ":Gitsigns diffthis HEAD<cr>",                                          desc = "Diff This ~",               nowait = true, remap = false },
+        { "<leader>gD", ":Gitsigns diffthis HEAD<cr>",                                          desc = "Diff This ~",             nowait = true, remap = false },
 
         { "<leader>h",  group = "Harpoon",                                                      nowait = true,                    remap = false },
         { "<leader>hh", ":lua require('harpoon.ui').toggle_quick_menu()<cr>",                   desc = "Harpoon Marks",           nowait = true, remap = false },
@@ -142,9 +142,10 @@ return {
         -- { "<leader>ou", ":UfoAttach<cr>",                                                       desc = "Ufo",                     nowait = true, remap = false },
 
         { "<leader>p",  group = "Plugin",                                                       nowait = true,                    remap = false },
-        { "<leader>pl", ":Lazy<cr>",                                                            desc = "Lazy",                    nowait = true, remap = false },
+        { "<leader>pl", ":LspInfo<cr>",                                                         desc = "Lsp",                     nowait = true, remap = false },
         { "<leader>pm", ":Mason<cr>",                                                           desc = "Mason",                   nowait = true, remap = false },
         { "<leader>pn", ":NullLsInfo<cr>",                                                      desc = "NullLs",                  nowait = true, remap = false },
+        { "<leader>pp", ":Lazy<cr>",                                                            desc = "Lazy",                    nowait = true, remap = false },
 
         { "<leader>s",  group = "Telescope",                                                    nowait = true,                    remap = false },
         { "<leader>sc", ":Telescope colorscheme<cr>",                                           desc = "Colorscheme",             nowait = true, remap = false },
