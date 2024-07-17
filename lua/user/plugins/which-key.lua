@@ -96,7 +96,6 @@ return {
         -- { "<leader>dw", "lua require'dap'.ui.widgets.hover()<cr>",                              desc = "Widgets",                 nowait = true, remap = false },
 
         { "<leader>g",  group = "Git",                                                          nowait = true,                    remap = false },
-        -- { "<leader>gg", ":lua _LAZYGIT_TOGGLE()<cr>",                                           desc = "Lazygit",                 nowait = true, remap = false },
         { "<leader>gt", ":Telescope git_status<cr>",                                            desc = "Status",                  nowait = true, remap = false },
         { "<leader>gb", ":Telescope git_branches<cr>",                                          desc = "Branches",                nowait = true, remap = false },
         { "<leader>gc", ":Telescope git_commits<cr>",                                           desc = "Commits",                 nowait = true, remap = false },
@@ -132,6 +131,7 @@ return {
         { "<leader>lS", ":Telescope lsp_dynamic_workspace_symbols<cr>",                         desc = "Workspace Symbols",       nowait = true, remap = false },
 
         { "<leader>o",  group = "Option",                                                       nowait = true,                    remap = false },
+        { "<leader>oc", ":set cursorcolumn!<cr>",                                               desc = "Cursor Line",             nowait = true, remap = false },
         { "<leader>oh", ":HighlightColors Toggle<cr>",                                          desc = "Toggle Colors",           nowait = true, remap = false },
         { "<leader>ol", ":terminal live-server<cr>",                                            desc = "Live Server",             nowait = true, remap = false },
         { "<leader>op", ":MarkdownPreviewToggle<cr>",                                           desc = "Markdown Preview",        nowait = true, remap = false },
@@ -154,9 +154,7 @@ return {
         { "<leader>sw", ":Telescope grep_string<cr>",                                           desc = "Grep Word",               nowait = true, remap = false },
         { "<leader>sz", ":Telescope command_history<cr>",                                       desc = "Cmd History",             nowait = true, remap = false },
 
-        -- { "<leader>t",  group = "Terminal",                                                     nowait = true,                    remap = false },
-        -- { "<leader>th", ":ToggleTerm size=14 direction=horizontal<cr>",                         desc = "Horizontal",              nowait = true, remap = false },
-        -- { "<leader>tv", ":ToggleTerm size=80 direction=vertical<cr>",                           desc = "Vertical",                nowait = true, remap = false },
+        { "<leader>t",  group = "Terminal",                                                     nowait = true,                    remap = false },
       },
 		},
 	},

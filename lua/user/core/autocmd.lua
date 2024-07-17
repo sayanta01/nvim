@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- Set wrap & spell
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = augroup("wrap_spell"),
-	pattern = { "gitcommit", "markdown", "conf" },
+	pattern = { "text", "gitcommit", "markdown", "conf" },
 	callback = function()
 		vim.opt_local.spell = true
 	end,
