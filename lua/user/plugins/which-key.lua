@@ -63,7 +63,7 @@ return {
 		show_help = false,
 		show_keys = false,
 		disable = {
-			ft = { "TelescopePrompt" },
+			ft = { "lazy", "TelescopePrompt" },
 		},
 		spec = {
       -- stylua: ignore
