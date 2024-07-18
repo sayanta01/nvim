@@ -5,6 +5,10 @@ return {
 		build = ":TSUpdate",
 		event = "BufReadPost",
 		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+		keys = {
+			{ "<C-space>", desc = "Increment Selection" },
+			{ "<bs>", desc = "Decrement Selection", mode = "x" },
+		},
 		dependencies = {
 			-- "nvim-treesitter/nvim-treesitter-textobjects",
 		},
