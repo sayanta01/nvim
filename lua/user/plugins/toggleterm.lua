@@ -24,6 +24,7 @@ return {
 			lazygit:toggle()
 		end
 
+		-- Escape terminal mode
 		vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 		vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
 		vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true, silent = true })
