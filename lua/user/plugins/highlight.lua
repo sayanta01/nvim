@@ -4,7 +4,7 @@ return {
 	opts = {
 		render = "virtual",
 		virtual_symbol = "■",
-		enable_named_colors = true,
+		virtual_symbol_position = "eol",
 		enable_tailwind = true,
 	},
 }

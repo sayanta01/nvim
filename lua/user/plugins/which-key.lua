@@ -133,7 +133,6 @@ return {
         { "<leader>op", ":MarkdownPreviewToggle<cr>",                                           desc = "Markdown Preview", },
         { "<leader>os", ":set spell!<cr>",                                                      desc = "Toggle Spell ", },
         { "<leader>ow", ":set wrap!<cr>",                                                       desc = "Toggle Wrap", },
-        -- { "<leader>ou", ":UfoAttach<cr>",                                                       desc = "Ufo", },
 
         { "<leader>p",  group = "Plugin", },
         { "<leader>pl", ":LspInfo<cr>",                                                         desc = "Lsp", },
