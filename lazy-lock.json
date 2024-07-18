@@ -50,5 +50,5 @@
   "toggleterm.nvim": { "branch": "main", "commit": "48be57eaba817f038d61bbf64d2c597f578c0827" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
   "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
-  "which-key.nvim": { "branch": "main", "commit": "72aba5565ea1a03b1d4df5ede793dae29d874ea0" }
+  "which-key.nvim": { "branch": "main", "commit": "b870152597f4a564148c989c2777325eb6a6ddab" }
 }

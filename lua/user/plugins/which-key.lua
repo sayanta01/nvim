@@ -68,9 +68,9 @@ return {
         { "<leader>x",  ":bdelete<cr>",                                                         desc = "Close Buffer", },
         -- { "<leader>y",  "gg<S-v>G<cr>",                                                         desc = "Select All", },
 
-        { "<leader>b",  group = "Buffer", },
-        { "<leader>bb", ":Telescope buffers<cr>",                                               desc = "Buf Preview", },
-        { "<leader>bn", ":enew<cr>",                                                            desc = "New Buffer", },
+        -- { "<leader>b",  group = "Buffer", },
+        -- { "<leader>bb", ":Telescope buffers<cr>",                                               desc = "Buf Preview", },
+        -- { "<leader>bn", ":enew<cr>",                                                            desc = "New Buffer", },
 
         { "<leader>d",  group = "Debug",                                                        mode = { "n", "v" } },
         { "<leader>dt", function() require("dap").toggle_breakpoint() end,                      desc = "Toggle Breakpoint" },
