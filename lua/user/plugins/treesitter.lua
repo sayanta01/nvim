@@ -9,9 +9,6 @@ return {
 			{ "<C-space>", desc = "Increment Selection" },
 			{ "<bs>", desc = "Decrement Selection", mode = "x" },
 		},
-		dependencies = {
-			-- "nvim-treesitter/nvim-treesitter-textobjects",
-		},
 		config = function()
 			local treesitter = require("nvim-treesitter.configs")
 			treesitter.setup({
@@ -49,7 +46,7 @@ return {
 					"yaml",
 					"toml",
 				},
-				-- auto_install = vim.fn.executable "tree-sitter" == 1,
+				-- auto_install = vim.fn.executable("git") == 1 and vim.fn.executable("tree-sitter") == 1,
 				highlight = {
 					enable = true,
 					disable = function(_, buf)
