@@ -94,7 +94,6 @@ return {
         -- { "<leader>gb", ":Telescope git_branches<cr>",                                          desc = "Branches", },
         { "<leader>gc", ":Telescope git_commits<cr>",                                        desc = "Commits", },
         { "<leader>gC", ":Telescope git_bcommits<cr>",                                       desc = "Commits (current file)", },
-        -- { "<leader>gb", ":lua require 'gitsigns'.blame_line()<cr>",                             desc = "Blame Line", },
         -- { "<leader>gd", ":lua require 'gitsigns'.toggle_deleted()<cr>",                         desc = "Toggle Deleted", },
         -- { "<leader>gD", ":Gitsigns diffthis HEAD<cr>",                                          desc = "Diff This ~", },
 

@@ -67,11 +67,6 @@ return {
 		lazy = true,
 	},
 
-	-- {
-	-- 	"ThePrimeagen/vim-be-good",
-	-- 	cmd = "VimBeGood",
-	-- },
-
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview" },
@@ -89,6 +84,11 @@ return {
 			end
 		end,
 	},
+
+	-- {
+	-- 	"ThePrimeagen/vim-be-good",
+	-- 	cmd = "VimBeGood",
+	-- },
 
 	-- {
 	-- 	"szw/vim-maximizer",

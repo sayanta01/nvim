@@ -17,10 +17,10 @@ return {
 				delete = { text = "" },
 				topdelete = { text = "‾" },
 				changedelete = { text = "~" },
-				untracked = { text = "┊" },
+				untracked = { text = "┆" },
 			},
-			current_line_blame = false, -- useful but slow
-			max_file_length = 40000,
+			-- current_line_blame = true,
+			-- max_file_length = 40000,
 
 			on_attach = function(buffer)
 				local gs = package.loaded.gitsigns

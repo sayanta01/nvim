@@ -17,10 +17,10 @@ return {
 			-- hijack_netrw = true,
 			-- hijack_unnamed_buffer_when_opening = false,
 			sync_root_with_cwd = true,
-			view = {
-				side = "left",
-				width = 29,
-			},
+			-- view = {
+			-- 	side = "left",
+			-- 	width = 30,
+			-- },
 			renderer = {
 				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
 				highlight_git = true,
@@ -83,9 +83,6 @@ return {
 			},
 			git = {
 				enable = true,
-			},
-			diagnostics = {
-				enable = false,
 			},
 			filters = {
 				dotfiles = false,
