@@ -37,12 +37,6 @@ return {
 	},
 
 	{
-		"ThePrimeagen/harpoon",
-		lazy = true,
-		config = true,
-	},
-
-	{
 		"windwp/nvim-ts-autotag",
 		ft = {
 			"html",
