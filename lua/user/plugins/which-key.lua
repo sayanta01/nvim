@@ -86,12 +86,8 @@ return {
         { "<leader>dx", function() require("dap").terminate() end,                           desc = "Terminate" },
 
         { "<leader>g",  group = "Git",                                                       mode = { "n", "v" }, },
-        -- { "<leader>gt", ":Telescope git_status<cr>",                                            desc = "Status", },
-        -- { "<leader>gb", ":Telescope git_branches<cr>",                                          desc = "Branches", },
         { "<leader>gc", ":Telescope git_commits<cr>",                                        desc = "Commits", },
         { "<leader>gC", ":Telescope git_bcommits<cr>",                                       desc = "Commits (current file)", },
-        -- { "<leader>gd", ":lua require 'gitsigns'.toggle_deleted()<cr>",                         desc = "Toggle Deleted", },
-        -- { "<leader>gD", ":Gitsigns diffthis HEAD<cr>",                                          desc = "Diff This ~", },
 
         { "<leader>l",  group = "LSP",                                                       mode = { "n", "v" } },
         { "<leader>ld", ":lua vim.lsp.buf.declaration()<cr>",                                desc = "Goto Declaration", },
