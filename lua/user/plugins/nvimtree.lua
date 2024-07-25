@@ -14,8 +14,6 @@ return {
 			hijack_cursor = true,
 			auto_reload_on_write = false,
 			disable_netrw = true,
-			-- hijack_netrw = true,
-			-- hijack_unnamed_buffer_when_opening = false,
 			sync_root_with_cwd = true,
 			-- view = {
 			-- 	side = "left",
@@ -77,7 +75,7 @@ return {
 			update_focused_file = {
 				enable = true,
 				update_root = {
-					enable = false,
+					enable = true,
 					ignore_list = {},
 				},
 			},
@@ -92,7 +90,6 @@ return {
 				use_system_clipboard = true,
 				open_file = {
 					quit_on_open = false,
-					resize_window = false,
 					window_picker = {
 						enable = false,
 					},

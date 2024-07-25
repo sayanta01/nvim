@@ -112,10 +112,10 @@ return {
         { "<leader>ow", ":set wrap!<cr>",                                                    desc = "Toggle Wrap", },
 
         { "<leader>p",  group = "Plugin", },
-        { "<leader>pl", ":LspInfo<cr>",                                                      desc = "Lsp", },
+        { "<leader>pi", ":LspInfo<cr>",                                                      desc = "Lsp", },
+        { "<leader>pl", ":Lazy<cr>",                                                         desc = "Lazy", },
         { "<leader>pm", ":Mason<cr>",                                                        desc = "Mason", },
         { "<leader>pn", ":NullLsInfo<cr>",                                                   desc = "NullLs", },
-        { "<leader>pp", ":Lazy<cr>",                                                         desc = "Lazy", },
 
         { "<leader>s",  group = "Telescope", },
         { "<leader>sc", ":Telescope colorscheme<cr>",                                        desc = "Colorscheme", },
