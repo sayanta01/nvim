@@ -17,9 +17,6 @@ opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true
 
-opt.clipboard = "unnamedplus" -- sync with system clipboard
-opt.swapfile = false
-
 opt.wrap = false
 opt.showmode = false
 opt.showcmd = false
@@ -32,20 +29,22 @@ opt.cursorline = true
 opt.scrolloff = 6
 opt.sidescrolloff = 8
 
--- Misc
+opt.backup = false -- creates a backup file
+opt.writebackup = false -- disable making a backup before overwriting a file
+
 opt.fileencoding = "utf-8"
--- opt.writebackup = false -- disable making a backup before overwriting a file
-opt.backup = false   -- creates a backup file
-opt.undofile = true  -- enable persistent undo
+opt.undofile = true -- enable persistent undo
 opt.updatetime = 200 -- interval for writing swap file to disk, also used by gitsigns
 opt.completeopt = { "menu", "menuone", "noselect" }
 
 opt.foldlevel = 99
 opt.foldmethod = "indent"
-vim.opt.termguicolors = true
+
+opt.clipboard = "unnamedplus" -- sync with system clipboard
+opt.termguicolors = true
 
 opt.spelllang:append("cjk") -- Disable spellchecking for asian characters `VIM algorithm does not support it`
-opt.shortmess:append("c")   -- Don't show redundant messages from ins-completion-menu
+opt.shortmess:append("c") -- Don't show redundant messages from ins-completion-menu
 opt.whichwrap:append("<,>,[,],h,l")
 
 -- Disable some default providers

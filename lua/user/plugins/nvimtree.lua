@@ -15,10 +15,10 @@ return {
 			auto_reload_on_write = false,
 			disable_netrw = true,
 			sync_root_with_cwd = true,
-			-- view = {
-			-- 	side = "left",
-			-- 	width = 30,
-			-- },
+			view = {
+				side = "left",
+				width = 30,
+			},
 			renderer = {
 				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
 				highlight_git = true,
