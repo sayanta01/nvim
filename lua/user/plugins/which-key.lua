@@ -3,8 +3,8 @@ return {
 	event = "VeryLazy",
 	keys = { { "<leader>", mode = { "n", "v" } } },
 	init = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 400
+		-- vim.o.timeout = true
+		vim.o.timeoutlen = 290
 	end,
 	opts = {
 		preset = "modern",
@@ -30,8 +30,6 @@ return {
 		},
 		win = {
 			no_overlap = false,
-			border = "rounded",
-			padding = { 1, 2 },
 			title = false,
 		},
 		icons = {
@@ -68,16 +66,11 @@ return {
         { "<leader>x",  ":bdelete<cr>",                                                      desc = "Close Buffer", },
         -- { "<leader>y",  "gg<S-v>G<cr>",                                                         desc = "Select All", },
 
-        -- { "<leader>b",  group = "Buffer", },
-        -- { "<leader>bb", ":Telescope buffers<cr>",                                               desc = "Buf Preview", },
-        -- { "<leader>bn", ":enew<cr>",                                                            desc = "New Buffer", },
-
         { "<leader>d",  group = "Debug",                                                     mode = { "n", "v" } },
         { "<leader>db", function() require("dap").toggle_breakpoint() end,                   desc = "Toggle Breakpoint" },
         -- { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
         { "<leader>dc", function() require("dap").continue() end,                            desc = "Continue" },
         { "<leader>dC", function() require("dap").run_to_cursor() end,                       desc = "Run to Cursor" },
-        -- { "<leader>dg", function() require("dap").goto_() end,                               desc = "Go to Line (No Execute)" },
         { "<leader>do", function() require("dap").step_over() end,                           desc = "Step Over" },
         { "<leader>di", function() require("dap").step_into() end,                           desc = "Step Into" },
         { "<leader>du", function() require("dap").step_out() end,                            desc = "Step Out" },

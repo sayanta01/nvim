@@ -19,15 +19,12 @@ return {
 				changedelete = { text = "~" },
 				untracked = { text = "┆" },
 			},
-			-- current_line_blame = true,
-			-- max_file_length = 40000,
 
 			on_attach = function(buffer)
 				local gs = package.loaded.gitsigns
 
 				local function map(mode, l, r, desc)
 					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-					-- vim.keymap.set(mode, l, r, { buffer = buffer, desc = "which_key_ignore" })
 				end
 
 				map("n", "]h", function()
@@ -66,6 +63,4 @@ return {
 			end,
 		},
 	},
-
-	-- { "tpope/vim-fugive", cmd = { "G", "Git" } },
 }

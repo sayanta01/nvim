@@ -12,14 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.lsp" } }, {
-	defaults = { lazy = true }, -- should plugins be lazy-loaded?
-	install = {
-		colorscheme = { "habamax" },
-	},
-	checker = {
-		enabled = false,
-		notify = false,
-	},
 	change_detection = {
 		enabled = false,
 		notify = false,

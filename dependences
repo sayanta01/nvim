@@ -21,7 +21,7 @@ if [ -f /etc/debian_version ]; then
 	# default-jdk dotnet-sdk-6.0
 
 	go install github.com/jesseduffield/lazygit@latest
-	# curl -Lo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
+  # curl -sSLo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
 	# cargo install bat
 	# curl -fsSL https://install.julialang.org | sh
 fi
