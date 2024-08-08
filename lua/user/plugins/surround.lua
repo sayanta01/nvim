@@ -4,7 +4,7 @@ return {
 	keys = { "ys", "ds", "cs" }, -- ysiw" new word
 	config = function()
 		require("nvim-surround").setup({
-			-- use {[( left parentheses adds space
+			-- use {[( left parenthesis adds space
 			keymaps = {
 				insert = "<C-g>s",
 				insert_line = "<C-g>S",

@@ -33,7 +33,7 @@ return {
 		local cmp = require("cmp")
 		local luasnip = require("lualine")
 
-		cmp.setup.cmdline("/", {
+		cmp.setup.cmdline({ "/", "?" }, {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
 				{ name = "buffer" },

@@ -23,10 +23,8 @@ return {
 				sorting_strategy = "ascending",
 				layout_strategy = "horizontal",
 				layout_config = {
-					horizontal = {
-						prompt_position = "top",
-						preview_width = 0.6,
-					},
+					prompt_position = "top",
+					horizontal = { preview_width = 0.6 },
 					-- width = 0.8,
 					-- height = 0.9,
 					-- preview_cutoff = 120,
@@ -55,8 +53,8 @@ return {
 					},
 					n = {
 						["q"] = actions.close,
-						["dd"] = actions.delete_buffer,
-						["?"] = actions.which_key,
+						-- ["dd"] = actions.delete_buffer,
+						-- ["?"] = actions.which_key,
 					},
 				},
 			},

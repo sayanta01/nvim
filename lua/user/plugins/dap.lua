@@ -8,9 +8,9 @@ return {
 				dependencies = { "nvim-neotest/nvim-nio" },
         -- stylua: ignore
         keys = {
-          { "<leader>du", function() require("dapui").toggle({}) end,       desc = "Dap UI" },
+          { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
           -- { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
-          { "<leader>de", function() require("dapui").eval() end,           desc = "Evaluate", mode = { "n", "v" } },
+          { "<leader>de", function() require("dapui").eval() end,     desc = "Evaluate", mode = { "n", "v" } },
         },
 				config = function()
 					local dap = require("dap")
@@ -108,24 +108,6 @@ return {
 				"theHamsta/nvim-dap-virtual-text",
 				opts = {},
 			},
-
-			-- {
-			-- 	"jay-babu/mason-nvim-dap.nvim",
-			-- 	cmd = { "DapInstall", "DapUninstall" },
-			-- 	opts = {
-			-- 		automatic_installation = true,
-			-- 		ensure_installed = {
-			-- 			"python",
-			-- 			"codelldb",
-			-- 			"delve",
-			-- 			"js",
-			-- 			"javadbg",
-			-- 		},
-			-- 		-- You can provide additional configuration to the handlers,
-			-- 		-- see mason-nvim-dap README for more information
-			-- 		handlers = {},
-			-- 	},
-			-- },
 		},
 	},
 
