@@ -1,62 +1,62 @@
 return {
-	"folke/which-key.nvim",
-	event = "VeryLazy",
-	keys = { { "<leader>", mode = { "n", "v" } } },
-	init = function()
-		-- vim.o.timeout = true
-		vim.o.timeoutlen = 290
-	end,
-	opts = {
-		preset = "modern",
-		triggers = {
-			{ "<leader>", mode = { "n", "v" } },
-		},
-		plugins = {
-			marks = false, -- shows a list of your marks on ' and `
-			registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-			spelling = {
-				enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-				suggestions = 20, -- how many suggestions should be shown in the list?
-			},
-			presets = {
-				operators = false, -- adds help for operators like d, y, ...
-				motions = false, -- adds help for motions
-				text_objects = false, -- help for text objects triggered after entering an operator
-				windows = false, -- default bindings on <c-w>
-				nav = false, -- misc bindings to work with windows
-				z = false, -- bindings for folds, spelling and others prefixed with z
-				g = false, -- bindings for prefixed with g
-			},
-		},
-		win = {
-			no_overlap = false,
-			title = false,
-		},
-		icons = {
-			breadcrumb = "»",
-			separator = "",
-			group = "",
-			mappings = false,
-			keys = {
-				Up = "↑ ",
-				Down = "↓ ",
-				Left = "← ",
-				Right = "→ ",
-				C = " ",
-				M = "⌥ ",
-				CR = "↩︎ ",
-				NL = "↩︎ ",
-				BS = " ",
-				Space = "␣ ",
-				Tab = "⇨ ",
-			},
-		},
-		show_help = false,
-		show_keys = false,
-		disable = {
-			ft = { "lazy", "TelescopePrompt" },
-		},
-		spec = {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  keys = { { "<leader>", mode = { "n", "v" } } },
+  init = function()
+    -- vim.o.timeout = true
+    vim.o.timeoutlen = 290
+  end,
+  opts = {
+    preset = "modern",
+    triggers = {
+      { "<leader>", mode = { "n", "v" } },
+    },
+    plugins = {
+      marks = false,  -- shows a list of your marks on ' and `
+      registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+      spelling = {
+        enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+        suggestions = 20, -- how many suggestions should be shown in the list?
+      },
+      presets = {
+        operators = false, -- adds help for operators like d, y, ...
+        motions = false,  -- adds help for motions
+        text_objects = false, -- help for text objects triggered after entering an operator
+        windows = false,  -- default bindings on <c-w>
+        nav = false,      -- misc bindings to work with windows
+        z = false,        -- bindings for folds, spelling and others prefixed with z
+        g = false,        -- bindings for prefixed with g
+      },
+    },
+    win = {
+      no_overlap = false,
+      title = false,
+    },
+    icons = {
+      breadcrumb = "»",
+      separator = "",
+      group = "",
+      mappings = false,
+      keys = {
+        Up = "↑ ",
+        Down = "↓ ",
+        Left = "← ",
+        Right = "→ ",
+        C = " ",
+        M = "⌥ ",
+        CR = "↩︎ ",
+        NL = "↩︎ ",
+        BS = " ",
+        Space = "␣ ",
+        Tab = "⇨ ",
+      },
+    },
+    show_help = false,
+    show_keys = false,
+    disable = {
+      ft = { "lazy", "TelescopePrompt" },
+    },
+    spec = {
       -- stylua: ignore
       {
         mode = { "n" },
@@ -71,9 +71,9 @@ return {
         -- { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
         { "<leader>dc", function() require("dap").continue() end,                            desc = "Continue" },
         { "<leader>dC", function() require("dap").run_to_cursor() end,                       desc = "Run to Cursor" },
-        { "<leader>do", function() require("dap").step_over() end,                           desc = "Step Over" },
         { "<leader>di", function() require("dap").step_into() end,                           desc = "Step Into" },
-        { "<leader>du", function() require("dap").step_out() end,                            desc = "Step Out" },
+        { "<leader>do", function() require("dap").step_over() end,                           desc = "Step Over" },
+        { "<leader>dO", function() require("dap").step_out() end,                            desc = "Step Out" },
         { "<leader>dl", function() require("dap").run_last() end,                            desc = "Run Last" },
         { "<leader>dr", function() require("dap").repl.toggle() end,                         desc = "Toggle REPL" },
         { "<leader>dx", function() require("dap").terminate() end,                           desc = "Terminate" },
@@ -120,6 +120,6 @@ return {
         { "<leader>sw", ":Telescope grep_string<cr>",                                        desc = "Grep Word", },
         { "<leader>sz", ":Telescope command_history<cr>",                                    desc = "Cmd History", },
       },
-		},
-	},
+    },
+  },
 }
