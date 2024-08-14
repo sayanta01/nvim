@@ -8,7 +8,6 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 		"f3fora/cmp-spell",
-		"hrsh7th/cmp-calc",
 		"hrsh7th/cmp-cmdline",
 		"saadparwaiz1/cmp_luasnip",
 		{
@@ -142,7 +141,6 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "spell" },
-				{ name = "calc" },
 				{ name = "crates" },
 				{
 					name = "codeium",
