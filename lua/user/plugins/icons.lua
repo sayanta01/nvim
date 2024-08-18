@@ -352,12 +352,6 @@ return {
 				cterm_color = "26",
 				name = "Docx",
 			},
-			["coffee"] = {
-				icon = "󰛊",
-				color = "#cbcb41",
-				cterm_color = "185",
-				name = "Coffee",
-			},
 			["less"] = {
 				icon = "",
 				color = "#F3F7EF",

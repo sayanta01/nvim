@@ -45,7 +45,7 @@ return {
 	-- 					created = "%s",
 	-- 					updated_label = "↑ updated",
 	-- 					updated = "%s",
-	-- 					downloads_label = "↓ downloads",
+	-- 					downloads_label = " downloads",
 	-- 					downloads = "%s",
 	-- 					homepage_label = " homepage",
 	-- 					homepage = "%s",
