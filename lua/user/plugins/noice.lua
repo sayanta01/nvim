@@ -60,11 +60,11 @@ return {
 	-- 	opts = {
 	-- 		fps = 24,
 	-- 		icons = {
-	-- 			DEBUG = " ",
-	-- 			ERROR = " ",
-	-- 			INFO = " ",
-	-- 			TRACE = " ",
-	-- 			WARN = " ",
+	-- 			DEBUG = "",
+	-- 			ERROR = "",
+	-- 			INFO = "",
+	-- 			TRACE = "",
+	-- 			WARN = "",
 	-- 		},
 	-- 		level = 2,
 	-- 		stages = "fade",

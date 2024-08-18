@@ -671,7 +671,7 @@ return {
 				name = "Asciinema",
 			},
 			["mpv.conf"] = {
-				icon = "",
+				icon = "",
 				color = "#3b1342",
 				cterm_color = "53",
 				name = "Mpv",
@@ -717,12 +717,6 @@ return {
 				color = "#FFFFcd",
 				cterm_color = "230",
 				name = "Info",
-			},
-			["hurl"] = {
-				icon = "",
-				color = "#FF0288",
-				cterm_color = "198",
-				name = "Hurl",
 			},
 			["bib"] = {
 				icon = "",
@@ -912,12 +906,12 @@ return {
 				cterm_color = "251",
 				name = "Crystal",
 			},
-			["drl"] = {
-				icon = "󰧑",
-				color = "#FFaFaF",
-				cterm_color = "217",
-				name = "Drools",
-			},
+			-- ["drl"] = {
+			--      icon = "",
+			-- 	color = "#FFaFaF",
+			-- 	cterm_color = "217",
+			-- 	name = "Drools",
+			-- },
 			["kdenlive"] = {
 				icon = "",
 				color = "#83b8F2",
@@ -1391,6 +1385,12 @@ return {
 				color = "#563d7c",
 				cterm_color = "54",
 				name = "DesktopEntry",
+			},
+			["hurl"] = {
+				icon = "",
+				color = "#FF0288",
+				cterm_color = "198",
+				name = "Hurl",
 			},
 		})
 	end,

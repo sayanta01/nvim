@@ -71,7 +71,7 @@ return {
 				lualine_a = {},
 				lualine_b = {},
 				-- lualine_a = { { "mode", separator = { right = "" }, padding = { left = 1, right = 0 } } },
-        -- lualine_b = { { "branch", icon = "", separator = { right = "" }, padding = { left = 2, right = 0 } } },
+				-- lualine_b = { { "branch", icon = "", separator = { right = "" }, padding = { left = 2, right = 0 } } },
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
@@ -176,7 +176,7 @@ return {
 
 		ins_right({
 			"diff",
-			symbols = { added = " ", modified = " ", removed = " " },
+			symbols = { added = "", modified = "∼", removed = "" },
 			diff_color = {
 				added = { fg = colors.green },
 				modified = { fg = colors.orange },
