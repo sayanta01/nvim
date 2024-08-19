@@ -4,7 +4,7 @@ return {
 	keys = { { "<leader>", mode = { "n", "v" } } },
 	init = function()
 		-- vim.o.timeout = true
-		vim.o.timeoutlen = 290
+		vim.o.timeoutlen = 300
 	end,
 	opts = {
 		preset = "modern",
