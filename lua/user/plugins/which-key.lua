@@ -79,8 +79,8 @@ return {
         { "<leader>dx", function() require("dap").terminate() end,                           desc = "Terminate" },
 
         { "<leader>g",  group = "Git",                                                       mode = { "n", "v" }, },
-        { "<leader>gc", ":Telescope git_commits<cr>",                                        desc = "Commits", },
-        { "<leader>gC", ":Telescope git_bcommits<cr>",                                       desc = "Commits (current file)", },
+        -- { "<leader>gc", ":Telescope git_commits<cr>",                                        desc = "Commits", },
+        -- { "<leader>gC", ":Telescope git_bcommits<cr>",                                       desc = "Commits (current file)", },
 
         { "<leader>l",  group = "LSP",                                                       mode = { "n", "v" } },
         { "<leader>lh", ":lua vim.lsp.buf.signature_help()<cr>",                             desc = "Signature Help", },
