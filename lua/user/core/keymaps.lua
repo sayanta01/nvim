@@ -8,7 +8,7 @@ local opts = { noremap = true, silent = true, desc = "which_key_ignore" }
 -- Space as leader key
 map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " " -- meant for a specific buffer, you generally use it based on a filetype
+vim.g.maplocalleader = "\\" -- meant for a specific buffer, you generally use it based on a filetype
 
 -- Keep centered
 map("n", "<C-d>", "<C-d>zz", opts)
@@ -25,24 +25,22 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
+-- Navigate buffers
+map("n", "<S-l>", ":bnext<CR>", opts)
+map("n", "<S-h>", ":bprev<CR>", opts)
+
 -- Resize window
 map("n", "<C-Up>", ":resize -2<CR>", opts)
 map("n", "<C-Down>", ":resize +2<CR>", opts)
 map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>", opts)
-map("n", "<S-h>", ":bprev<CR>", opts)
-
 -- Delete not cut
 map("n", "dd", '"_dd', opts)
 map("n", "x", '"_x', opts)
 
--- Paste without overwriting register
-map("x", "p", '"_dP', opts)
+map("x", "p", '"_dP', opts) -- Paste without overwriting register
 
--- Clear search
 map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hlsearch" })
 
 -- Better indenting
