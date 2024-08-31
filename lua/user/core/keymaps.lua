@@ -5,12 +5,12 @@ local function map(mode, lhs, rhs, opts)
 end
 local opts = { noremap = true, silent = true, desc = "which_key_ignore" }
 
--- Space as leader key
+-- space as leader key
 map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\" -- meant for a specific buffer, you generally use it based on a filetype
+vim.g.maplocalleader = "\\" -- Meant for a specific buffer, you generally use it based on a filetype
 
--- Keep centered
+-- keep centered
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 map("n", "n", "nzzzv", opts)
@@ -19,23 +19,23 @@ map("n", "}", "}zzzv", opts)
 map("n", "{", "{zzzv", opts)
 map("n", "J", "mzJ`z", opts)
 
--- Switch window
+-- switch window
 map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
--- Navigate buffers
+-- navigate buffers
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprev<CR>", opts)
 
--- Resize window
+-- resize window
 map("n", "<C-Up>", ":resize -2<CR>", opts)
 map("n", "<C-Down>", ":resize +2<CR>", opts)
 map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Delete not cut
+-- delete not cut
 map("n", "dd", '"_dd', opts)
 map("n", "x", '"_x', opts)
 
@@ -43,11 +43,11 @@ map("x", "p", '"_dP', opts) -- Paste without overwriting register
 
 map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hlsearch" })
 
--- Better indenting
+-- better indenting
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
--- Move up/down
+-- move up/down
 map("n", "<A-j>", ":m .+1<CR>==", opts)
 map("n", "<A-k>", ":m .-2<CR>==", opts)
 map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -55,7 +55,7 @@ map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", opts)
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", opts)
 
--- Better up/down on wrap
+-- better up/down on wrap
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "which_key_ignore" })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "which_key_ignore" })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "which_key_ignore" })

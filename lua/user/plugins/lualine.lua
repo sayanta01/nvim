@@ -3,7 +3,7 @@ return {
 	event = "UIEnter",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		local lualine = require("lualine")
+    local lualine = require("lualine")
 
 		local colors = {
 			-- bg = "#",

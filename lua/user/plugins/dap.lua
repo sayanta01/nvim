@@ -8,21 +8,19 @@ return {
 				dependencies = { "nvim-neotest/nvim-nio" },
         -- stylua: ignore
         keys = {
-          { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
-          -- { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
-          { "<leader>de", function() require("dapui").eval() end,     desc = "Evaluate", mode = { "n", "v" } },
+          { "<leader>du", function() require("dapui").toggle({}) end,       desc = "Dap UI" },
+          { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+          { "<leader>de", function() require("dapui").eval() end,           desc = "Evaluate", mode = { "n", "v" } },
         },
 				config = function()
 					local dap = require("dap")
 					local dapui = require("dapui")
 
-					-- CodeLLDB debug adapter location
 					local mason_registry = require("mason-registry")
-					local codelldb = mason_registry.get_package("codelldb")
-					codelldb:get_install_path()
-					local extension_path = codelldb:get_install_path() .. "/extension/"
-					local codelldb_path = extension_path .. "adapter/codelldb"
-					local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
+					local codelldb_path = mason_registry.get_package("codelldb"):get_install_path()
+						.. "/extension/adapter/codelldb"
+
+					local js_debug_path = mason_registry.get_package("js-debug-adapter"):get_install_path()
 
 					dapui.setup({
 						controls = {
@@ -45,16 +43,18 @@ return {
 						{ text = "", texthl = "DiagnosticError", linehl = "", numhl = "" }
 					)
 
-					-- configure LLDB
-					dap.adapters.lldb = {
-						type = "executable",
-						command = codelldb_path .. ", " .. liblldb_path,
-						name = "lldb",
+					dap.adapters.codelldb = {
+						type = "server",
+						port = "${port}",
+						executable = {
+							command = codelldb_path,
+							args = { "--port", "${port}" },
+						},
 					}
-					-- C, Cpp & rust
-					dap.configurations.c = {
+
+					dap.configurations.cpp = {
 						{
-							name = "Launch file",
+							name = "Launch",
 							type = "codelldb",
 							request = "launch",
 							program = function()
@@ -64,18 +64,30 @@ return {
 							stopOnEntry = false,
 						},
 					}
-					dap.configurations.cpp = dap.configurations.c
-					dap.configurations.rust = dap.configurations.c
+					dap.configurations.c = dap.configurations.cpp
+					dap.configurations.rust = dap.configurations.cpp
 
-					-- JS
-					dap.adapters["pwa-node"] = {
-						type = "server",
-						host = "localhost",
-						port = 8123,
-						executable = {
-							command = "js-debug-adapter",
-						},
-					}
+					for _, adapter in ipairs({
+						"pwa-node",
+						"pwa-chrome",
+						"pwa-msedge",
+						"node-terminal",
+						"pwa-extensionHost",
+					}) do
+						dap.adapters[adapter] = {
+							type = "server",
+							host = "localhost",
+							port = "${port}",
+							executable = {
+								command = "node",
+								args = {
+									js_debug_path .. "/js-debug/src/dapDebugServer.js",
+									"${port}",
+								},
+							},
+						}
+					end
+
 					for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
 						dap.configurations[language] = {
 							{
@@ -84,7 +96,21 @@ return {
 								name = "Launch file",
 								program = "${file}",
 								cwd = "${workspaceFolder}",
-								runtimeExecutable = "node",
+							},
+							{
+								type = "pwa-node",
+								request = "attach",
+								name = "Attach",
+								processId = require("dap.utils").pick_process,
+								cwd = "${workspaceFolder}",
+							},
+							{
+								type = "pwa-chrome",
+								request = "launch",
+								name = 'Start Chrome with "localhost"',
+								url = "http://localhost:3000",
+								webRoot = "${workspaceFolder}",
+								userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
 							},
 						}
 					end

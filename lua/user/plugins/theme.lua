@@ -8,6 +8,7 @@ return {
 			vim.cmd("colorscheme nightfly")
 		end,
 	},
+
 	-- {
 	-- 	"folke/tokyonight.nvim",
 	-- 	lazy = false,
@@ -19,6 +20,7 @@ return {
 	-- 		vim.cmd("colorscheme tokyonight")
 	-- 	end,
 	-- },
+
 	-- {
 	-- 	"rose-pine/neovim",
 	-- 	name = "rose-pine",
@@ -27,6 +29,7 @@ return {
 	-- 		vim.cmd("colorscheme rose-pine")
 	-- 	end,
 	-- },
+
 	-- {
 	-- 	"RRethy/nvim-base16",
 	-- 	lazy = false,

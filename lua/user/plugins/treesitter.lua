@@ -46,7 +46,7 @@ return {
 					"yaml",
 					"toml",
 				},
-				-- auto_install = vim.fn.executable("git") == 1 and vim.fn.executable("tree-sitter") == 1,
+				auto_install = vim.fn.executable("git") == 1 and vim.fn.executable("tree-sitter") == 1,
 				highlight = {
 					enable = true,
 					disable = function(_, buf)

@@ -3,10 +3,7 @@ return {
 	main = "ibl",
 	event = { "InsertEnter", "BufWritePost" },
 	opts = {
-		indent = {
-			char = "▏",
-			tab_char = "▏",
-		},
+		indent = { char = "▏" },
 		scope = { enabled = true, show_start = false },
 		exclude = {
 			filetypes = {

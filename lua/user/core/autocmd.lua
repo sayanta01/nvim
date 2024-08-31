@@ -18,10 +18,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"neotest-summary",
 		"neotest-output-panel",
 		"DressingSelect",
+		"gitsigns.blame",
 	},
-	callback = function()
-		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = true })
-		vim.opt_local.buflisted = false
+	callback = function(event)
+		vim.bo[event.buf].buflisted = false
+		vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
 	end,
 })
 

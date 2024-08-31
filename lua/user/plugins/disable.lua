@@ -10,15 +10,10 @@ return {
 	-- },
 
 	-- {
-	-- 	"nvim-cmp",
-	-- 	dependencies = {
-	-- 		{
-	-- 			"Exafunction/codeium.nvim",
-	-- 			enabled = true,
-	-- 			build = ":Codeium Auth",
-	-- 			opts = {},
-	-- 		},
-	-- 	},
+	-- 	"Exafunction/codeium.nvim",
+	-- 	enabled = true,
+	-- 	build = ":Codeium Auth",
+	-- 	config = true,
 	-- },
 
 	-- {
