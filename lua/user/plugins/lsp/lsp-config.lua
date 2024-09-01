@@ -12,10 +12,9 @@ return {
 				vim.api.nvim_buf_set_option(bufnr, ...)
 			end
 
-			buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc") -- Enable completion triggered by <c-x><c-o>
+			buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc") -- Enable completion triggered by <c-x><c-o> ?
 
 			local opts = { buffer = bufnr, noremap = true, silent = true, desc = "which_key_ignore" }
-			-- local opts = { buffer = bufnr, noremap = true, silent = true }
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -165,7 +164,7 @@ return {
 		lspconfig["html"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html", "xml" },
+			filetypes = { "html", "templ" },
 		})
 
 		lspconfig["cssls"].setup({
@@ -190,11 +189,11 @@ return {
 				"typescriptreact",
 				"typescript.tsx",
 			},
-			init_options = {
-				preferences = {
-					disableSuggestions = true,
-				},
-			},
+			-- init_options = {
+			-- 	preferences = {
+			-- 		disableSuggestions = true,
+			-- 	},
+			-- },
 		})
 
 		lspconfig["emmet_ls"].setup({
@@ -206,7 +205,6 @@ return {
 				"eruby",
 				"html",
 				"htmldjango",
-				"javascript",
 				"javascriptreact",
 				"typescriptreact",
 				"less",
@@ -215,6 +213,7 @@ return {
 				"scss",
 				"svelte",
 				"vue",
+				"htmlangular",
 			},
 		})
 
@@ -282,18 +281,17 @@ return {
 		})
 
 		lspconfig["solargraph"].setup({
-			filetypes = { "ruby", "eruby" },
+			filetypes = { "ruby" },
 			on_attach = on_attach,
 			capabilities = capabilities,
 			root_dir = require("lspconfig").util.root_pattern("Gemfile"),
-			single_file_support = true,
 			settings = {
 				solargraph = {
 					diagnostics = true,
 				},
-				flags = {
-					debounce_text_changes = 150,
-				},
+				-- flags = {
+				-- 	debounce_text_changes = 150,
+				-- },
 			},
 		})
 

@@ -40,9 +40,9 @@ return {
 			keys = {
 				Up = "↑ ",
 				Down = "↓ ",
-				Left = "← ",
-				Right = "→ ",
-				C = " ",
+				Left = "« ",
+				Right = "» ",
+				C = "^ ",
 				M = "M ",
 				CR = "↩︎ ",
 				NL = "↩︎ ",
@@ -59,7 +59,6 @@ return {
     -- stylua: ignore
     spec = {
       {
-        mode = { "n" },
         { "<leader>e",  ":NvimTreeToggle<cr>",                                               desc = "Explorer", },
         { "<leader>f",  ":Telescope find_files<cr>",                                         desc = "Find Files", },
         { "<leader>q",  ":q!<cr>",                                                           desc = "Quit", },
@@ -98,9 +97,8 @@ return {
 
         { "<leader>o",  group = "Option", },
         { "<leader>oc", ":set cursorcolumn!<cr>",                                            desc = "Cursor Line", },
-        { "<leader>oh", ":HighlightColors Toggle<cr>",                                       desc = "Toggle Colors", },
         { "<leader>ol", ":terminal live-server<cr>",                                         desc = "Live Server", },
-        { "<leader>op", ":MarkdownPreviewToggle<cr>",                                        desc = "Markdown Preview", },
+        { "<leader>oo", ":MarkdownPreviewToggle<cr>",                                        desc = "Markdown Preview", },
         { "<leader>os", ":set spell!<cr>",                                                   desc = "Toggle Spell ", },
         { "<leader>ow", ":set wrap!<cr>",                                                    desc = "Toggle Wrap", },
 
@@ -110,7 +108,7 @@ return {
         { "<leader>pm", ":Mason<cr>",                                                        desc = "Mason", },
         { "<leader>pn", ":NullLsInfo<cr>",                                                   desc = "NullLs", },
 
-        { "<leader>s",  group = "Telescope", },
+        { "<leader>s",  group = "Search", },
         { "<leader>sc", ":Telescope colorscheme<cr>",                                        desc = "Colorscheme", },
         { "<leader>sg", ":Telescope live_grep<cr>",                                          desc = "Live Grep", },
         { "<leader>sh", ":Telescope help_tags<cr>",                                          desc = "Help Pages", },
