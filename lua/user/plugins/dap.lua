@@ -15,11 +15,10 @@ return {
 				config = function()
 					local dap = require("dap")
 					local dapui = require("dapui")
-
 					local mason_registry = require("mason-registry")
+
 					local codelldb_path = mason_registry.get_package("codelldb"):get_install_path()
 						.. "/extension/adapter/codelldb"
-
 					local js_debug_path = mason_registry.get_package("js-debug-adapter"):get_install_path()
 
 					dapui.setup({
@@ -62,6 +61,13 @@ return {
 							end,
 							cwd = "${workspaceFolder}",
 							stopOnEntry = false,
+						},
+						{
+							type = "codelldb",
+							request = "attach",
+							name = "Attach to process",
+							pid = require("dap.utils").pick_process,
+							cwd = "${workspaceFolder}",
 						},
 					}
 					dap.configurations.c = dap.configurations.cpp
