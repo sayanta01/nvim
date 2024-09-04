@@ -62,13 +62,13 @@ return {
 							cwd = "${workspaceFolder}",
 							stopOnEntry = false,
 						},
-						{
-							type = "codelldb",
-							request = "attach",
-							name = "Attach to process",
-							pid = require("dap.utils").pick_process,
-							cwd = "${workspaceFolder}",
-						},
+						-- {
+						-- 	type = "codelldb",
+						-- 	request = "attach",
+						-- 	name = "Attach to process",
+						-- 	pid = require("dap.utils").pick_process,
+						-- 	cwd = "${workspaceFolder}",
+						-- },
 					}
 					dap.configurations.c = dap.configurations.cpp
 					dap.configurations.rust = dap.configurations.cpp
@@ -103,13 +103,13 @@ return {
 								program = "${file}",
 								cwd = "${workspaceFolder}",
 							},
-							{
-								type = "pwa-node",
-								request = "attach",
-								name = "Attach",
-								processId = require("dap.utils").pick_process,
-								cwd = "${workspaceFolder}",
-							},
+							-- {
+							-- 	type = "pwa-node",
+							-- 	request = "attach",
+							-- 	name = "Attach",
+							-- 	processId = require("dap.utils").pick_process,
+							-- 	cwd = "${workspaceFolder}",
+							-- },
 							{
 								type = "pwa-chrome",
 								request = "launch",
