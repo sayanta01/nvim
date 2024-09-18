@@ -31,7 +31,7 @@ return {
 				"html",
 				"cssls",
 				"tailwindcss",
-				"tsserver",
+				"ts_ls",
 				"emmet_ls",
 				-- "intelephense",
 				"sqlls",
