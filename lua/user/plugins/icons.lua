@@ -317,25 +317,25 @@ return {
 				name = "Txt",
 			},
 			["markdown"] = {
-				icon = "",
+				icon = "",
 				color = "#519aba",
 				cterm_color = "74",
 				name = "Markdown",
 			},
 			["md"] = {
-				icon = "",
+				icon = "",
 				color = "#FFFFFF",
 				cterm_color = "231",
 				name = "Md",
 			},
 			["mdx"] = {
-				icon = "",
+				icon = "",
 				color = "#519aba",
 				cterm_color = "74",
 				name = "Mdx",
 			},
 			["rmd"] = {
-				icon = "",
+				icon = "",
 				color = "#519aba",
 				cterm_color = "74",
 				name = "Rmd",
@@ -900,12 +900,6 @@ return {
 				cterm_color = "251",
 				name = "Crystal",
 			},
-			-- ["drl"] = {
-			--      icon = "",
-			-- 	color = "#FFaFaF",
-			-- 	cterm_color = "217",
-			-- 	name = "Drools",
-			-- },
 			["kdenlive"] = {
 				icon = "",
 				color = "#83b8F2",
