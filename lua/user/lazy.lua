@@ -35,7 +35,7 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 			task = "",
 			list = {
 				"●",
-				"",
+				"›",
 				"",
 				"",
 			},
