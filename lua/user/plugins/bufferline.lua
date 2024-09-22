@@ -14,8 +14,8 @@ return {
 			show_close_icon = false,
 			show_tab_indicators = false,
 			modified_icon = "",
-			left_trunc_marker = "←",
-			right_trunc_marker = "→",
+			left_trunc_marker = "‹",
+			right_trunc_marker = "›",
 			offsets = {
 				{
 					filetype = "undotree",
