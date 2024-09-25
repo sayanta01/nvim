@@ -28,7 +28,6 @@ opt.foldlevel = 99
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- sync with system clipboard
-opt.termguicolors = true
 opt.spelllang:append("cjk") -- disable spellchecking for asian characters `VIM algorithm does not support it`
 opt.shortmess:append({ c = true, C = true })
 opt.whichwrap:append("<,>,[,],h,l")
