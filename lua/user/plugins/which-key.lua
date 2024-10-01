@@ -46,7 +46,7 @@ return {
 				CR = "↩︎ ",
 				NL = "↩︎ ",
 				BS = " ",
-				Space = "␣ ",
+				Space = " ",
 				Tab = "⇨ ",
 			},
 		},

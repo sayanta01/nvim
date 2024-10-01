@@ -1,5 +1,4 @@
 return {
-	-- -- https://github.com/crivotz/nv-ide/blob/master/lua/plugins/nvim-ufo.lua
 	-- "kevinhwang91/nvim-ufo",
 	-- cmd = "UfoAttach",
 	-- keys = {
@@ -12,11 +11,11 @@ return {
 	-- 		config = function()
 	-- 			local builtin = require("statuscol.builtin")
 	-- 			require("statuscol").setup({
-	-- 				relculright = false,
+	-- 				relculright = true,
 	-- 				segments = {
-	-- 					{ text = { builtin.foldfunc, " " }, click = "v:lua.ScFa" },
+	-- 					{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
 	-- 					{ text = { "%s" }, click = "v:lua.ScSa" },
-	-- 					{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+	-- 					{ text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
 	-- 				},
 	-- 			})
 	-- 		end,
@@ -30,11 +29,6 @@ return {
 	--
 	-- 	require("ufo").setup({
 	-- 		preview = {
-	-- 			win_config = {
-	-- 				border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-	-- 				winhighlight = "Normal:Folded",
-	-- 				winblend = 0,
-	-- 			},
 	-- 			mappings = {
 	-- 				scrollU = "<C-p>",
 	-- 				scrollD = "<C-n>",
