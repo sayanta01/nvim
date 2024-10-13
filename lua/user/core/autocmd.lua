@@ -2,7 +2,6 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("lazyVim_" .. name, { clear = true })
 end
 
--- Close some filetypes with `q`
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = augroup("close_with_q"),
 	pattern = {
@@ -10,7 +9,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"help",
 		"notify",
 		"qf",
-		"query",
 		"spectre_panel",
 		"tsplayground",
 		"neotest-output",
@@ -18,7 +16,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"neotest-summary",
 		"neotest-output-panel",
 		"DressingSelect",
-		"gitsigns.blame",
 	},
 	callback = function(event)
 		vim.bo[event.buf].buflisted = false
@@ -26,7 +23,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- Set wrap & spell
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	group = augroup("wrap_spell"),
 	pattern = { "text", "gitcommit", "markdown", "conf" },
@@ -35,20 +31,19 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- Don't auto comment new line
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-	group = augroup("very_useful"),
-	callback = function()
-		vim.cmd("set formatoptions-=cro")
-	end,
-})
-
--- Fix concealing
 vim.api.nvim_create_autocmd("FileType", {
 	group = augroup("concealing_means_hidden"),
 	pattern = { "json", "jsonc", "json5", "markdown" },
 	callback = function()
 		vim.opt.conceallevel = 0
+	end,
+})
+
+-- Don't auto comment new line
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	group = augroup("useful"),
+	callback = function()
+		vim.cmd("set formatoptions-=cro")
 	end,
 })
 

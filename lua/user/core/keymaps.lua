@@ -41,7 +41,7 @@ map("n", "x", '"_x', opts)
 
 map("x", "p", '"_dP', opts) -- Paste without overwriting register
 
-map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for clear hlsearch" })
+map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for Clear hlsearch" })
 
 -- better indenting
 map("v", "<", "<gv", opts)

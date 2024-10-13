@@ -24,12 +24,11 @@ require("lazy").setup({ { import = "user.plugins" }, { import = "user.plugins.ls
 		icons = {
 			cmd = "",
 			config = "",
+			favorite = "",
 			ft = "",
 			init = "",
 			import = "",
 			keys = "",
-			not_loaded = "",
-			plugin = "",
 			source = "",
 			start = "",
 			task = "",
