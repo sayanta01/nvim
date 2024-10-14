@@ -61,7 +61,7 @@ return {
 	-- 					transitive = " %s",
 	-- 					normal_dependencies_title = " Dependencies",
 	-- 					build_dependencies_title = " Build dependencies",
-	-- 					dev_dependencies_title = " Dev dependencies",
+	-- 					dev_dependencies_title = " Dev dependencies",
 	-- 					dependency = "  %s",
 	-- 					optional = " %s",
 	-- 					dependency_version = "  %s",

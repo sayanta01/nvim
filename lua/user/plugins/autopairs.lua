@@ -1,5 +1,5 @@
 return {
-	"windwp/nvim-autopairs", -- works w/cmp & treesitter
+	"windwp/nvim-autopairs",
 	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/nvim-cmp",
@@ -7,7 +7,7 @@ return {
 	config = function()
 		local autopairs = require("nvim-autopairs")
 		autopairs.setup({
-			check_ts = true, -- treesitter integration
+			check_ts = true,
 			ts_config = {
 				lua = { "string", "source" }, -- it will not add a pair on that treesitter node
 				javascript = { "string", "template_string" },

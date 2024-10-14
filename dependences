@@ -35,7 +35,7 @@ else
 fi
 
 ## Node
-# sudo npm i -g live-server tree-sitter-cli
+sudo npm i -g live-server tree-sitter-cli
 
 ## Rust
 # rustup component add rustfmt

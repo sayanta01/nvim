@@ -26,13 +26,13 @@ return {
 							icons = {
 								disconnect = "",
 								pause = "⏸",
-								play = "",
+								play = "",
 								run_last = "",
 								step_back = "",
 								step_into = "",
 								step_over = "",
 								step_out = "",
-								terminate = "□",
+								terminate = "",
 							},
 						},
 					})
