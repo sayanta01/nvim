@@ -16,7 +16,6 @@ return {
 			disable_netrw = true,
 			sync_root_with_cwd = true,
 			view = {
-				side = "left",
 				width = 30,
 			},
 			renderer = {
@@ -68,32 +67,13 @@ return {
 					},
 				},
 			},
-			hijack_directories = {
-				enable = false,
-				auto_open = true,
-			},
 			update_focused_file = {
 				enable = true,
-				update_root = {
-					enable = true,
-					ignore_list = {},
-				},
-			},
-			git = {
-				enable = true,
+				update_root = false,
 			},
 			filters = {
 				dotfiles = false,
-				custom = { ".DS_Store", ".git", "node_modules", "\\.cache" },
-			},
-			actions = {
-				use_system_clipboard = true,
-				open_file = {
-					-- quit_on_open = false,
-					window_picker = {
-						enable = false,
-					},
-				},
+				custom = { ".DS_Store", ".git", "node_modules", ".cache" },
 			},
 			trash = {
 				cmd = "gio trash",
