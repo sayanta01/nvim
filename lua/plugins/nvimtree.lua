@@ -3,7 +3,6 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	version = "*",
 	cmd = "NvimTreeToggle",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local nvimtree = require("nvim-tree")
 		vim.g.loaded_netrw = 1
@@ -20,7 +19,6 @@ return {
 			},
 			renderer = {
 				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
-				highlight_git = true,
 				indent_markers = {
 					enable = true,
 					inline_arrows = true,

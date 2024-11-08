@@ -1375,7 +1375,7 @@ return {
 				name = "DesktopEntry",
 			},
 			["hurl"] = {
-				icon = "",
+				icon = "󰴽",
 				color = "#FF0288",
 				cterm_color = "198",
 				name = "Hurl",

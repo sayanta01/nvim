@@ -1,25 +1,25 @@
 return {
-	{
-		"bluz71/vim-nightfly-colors",
-		name = "nightfly",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme nightfly")
-		end,
-	},
-
 	-- {
-	-- 	"folke/tokyonight.nvim",
+	-- 	"bluz71/vim-nightfly-colors",
+	-- 	name = "nightfly",
 	-- 	lazy = false,
 	-- 	priority = 1000,
-	-- 	opts = {
-	-- 		style = "moon",
-	-- 	},
 	-- 	config = function()
-	-- 		vim.cmd("colorscheme tokyonight")
+	-- 		vim.cmd("colorscheme nightfly")
 	-- 	end,
 	-- },
+
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			style = "moon",
+		},
+		config = function()
+			vim.cmd("colorscheme tokyonight")
+		end,
+	},
 
 	-- {
 	-- 	"rose-pine/neovim",

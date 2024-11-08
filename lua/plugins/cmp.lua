@@ -30,7 +30,7 @@ return {
 
 	config = function()
 		local cmp = require("cmp")
-		local luasnip = require("lualine")
+		local luasnip = require("luasnip")
 
 		cmp.setup.cmdline({ "/", "?" }, {
 			mapping = cmp.mapping.preset.cmdline(),
