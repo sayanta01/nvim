@@ -5,7 +5,7 @@ return {
     local jdtls = require("jdtls")
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
     local home = os.getenv('HOME')
-    local workspace_dir = home .. "/.cache/jdtls/workspace" .. project_name
+    local workspace_dir = home .. "/.cache/jdtls/workspace/" .. project_name
     local jdtls_path = require("mason-registry").get_package("jdtls"):get_install_path()
     local launcher_jar = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
     local sysname = vim.fn.system('uname -s'):gsub("\n", ""):lower()
@@ -31,6 +31,7 @@ return {
       },
 
       root_dir = require('jdtls.setup').find_root({ ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }),
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
       init_options = {
         bundles = {
           vim.fn.glob(home ..
@@ -42,20 +43,20 @@ return {
     }
 
     config["on_attach"] = function(client, bufnr)
-      local _, _ = pcall(vim.lsp.codelens.refresh)
+      -- require("plugins.lsp.lsp-config").on_attach(client, bufnr)
+      -- pcall(vim.lsp.codelens.refresh)
       jdtls.setup_dap({ hotcodereplace = "auto" })
       require("jdtls.dap").setup_dap_main_class_configs()
-      require("plugins.lsp.lsp-config").on_attach(client, bufnr)
     end
 
     require("jdtls").start_or_attach(config)
 
     local keymap = vim.keymap.set
     local opts = { noremap = true, silent = true }
-    keymap("n", "<leader>ji", ":lua require'jdtls'.organize_imports()<CR>", opts)
-    keymap("n", "<leader>jv", ":lua require('jdtls').extract_variable()<CR>", opts)
+    keymap("n", "<leader>ji", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
+    keymap("n", "<leader>jv", "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
     keymap("v", "<leader>jv", "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
-    keymap("n", "<leader>jc", ":lua require('jdtls').extract_constant()<CR>", opts)
+    keymap("n", "<leader>jc", "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
     keymap("v", "<leader>jc", "<Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
     keymap("v", "<leader>jm", "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
     -- Dap

@@ -15,8 +15,8 @@ return {
         config = function()
           local dap = require("dap")
           local dapui = require("dapui")
-          local mason_registry = require("mason-registry")
 
+          local mason_registry = require("mason-registry")
           local codelldb_path = mason_registry.get_package("codelldb"):get_install_path()
               .. "/extension/adapter/codelldb"
           local js_debug_path = mason_registry.get_package("js-debug-adapter"):get_install_path()
@@ -158,33 +158,33 @@ return {
   },
 
   -- {
-  -- 	"leoluz/nvim-dap-go",
-  -- 	ft = "go",
-  --    -- stylua: ignore
-  --    keys = {
-  --      { "<leader>dPt", function() require("dap-go").debug_test() end,      desc = "Debug Test", ft = "go" },
-  --      { "<leader>dPl", function() require("dap-go").debug_last_test() end, desc = "Last Test",  ft = "go" },
-  --    },
-  -- 	config = function()
-  -- 		require("dap-go").setup({
-  -- 			dap_configurations = {
-  -- 				{
-  -- 					type = "go",
-  -- 					name = "Attach remote",
-  -- 					mode = "remote",
-  -- 					request = "attach",
-  -- 				},
-  -- 			},
-  -- 			delve = {
-  -- 				path = "dlv",
-  -- 				initialize_timeout_sec = 20,
-  -- 				port = "${port}",
-  -- 				args = {},
-  -- 				build_flags = "",
-  -- 				detached = vim.fn.has("win32") == 0,
-  -- 				cwd = nil,
-  -- 			},
-  -- 		})
-  -- 	end,
+  --   "leoluz/nvim-dap-go",
+  --   ft = "go",
+  --   -- stylua: ignore
+  --   keys = {
+  --     { "<leader>dPt", function() require("dap-go").debug_test() end,      desc = "Debug Test", ft = "go" },
+  --     { "<leader>dPl", function() require("dap-go").debug_last_test() end, desc = "Last Test",  ft = "go" },
+  --   },
+  --   config = function()
+  --     require("dap-go").setup({
+  --       dap_configurations = {
+  --         {
+  --           type = "go",
+  --           name = "Attach remote",
+  --           mode = "remote",
+  --           request = "attach",
+  --         },
+  --       },
+  --       delve = {
+  --         path = "dlv",
+  --         initialize_timeout_sec = 20,
+  --         port = "${port}",
+  --         args = {},
+  --         build_flags = "",
+  --         detached = vim.fn.has("win32") == 0,
+  --         cwd = nil,
+  --       },
+  --     })
+  --   end,
   -- },
 }

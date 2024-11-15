@@ -9,7 +9,7 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
     local on_attach = function(_, bufnr)
-      -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc") -- Enable completion triggered by <c-x><c-o> ?
+      -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc") -- Enable completion triggered by <c-x><c-o>
       local opts = { buffer = bufnr, noremap = true, silent = true, desc = "which_key_ignore" }
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
