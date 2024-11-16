@@ -19,6 +19,9 @@ require("lazy").setup({
 		{ import = "plugins" },
 		{ import = "plugins.lsp" },
 	},
+	rocks = {
+		hererocks = true,
+	},
 	change_detection = {
 		enabled = false,
 		notify = false,
