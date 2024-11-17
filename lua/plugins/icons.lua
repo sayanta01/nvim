@@ -1338,6 +1338,12 @@ return {
 				cterm_color = "185",
 				name = "Babelrc",
 			},
+			["astro"] = {
+				icon = "",
+				color = "#e23f67",
+				cterm_color = "197",
+				name = "Astro",
+			},
 		})
 	end,
 }
