@@ -51,7 +51,7 @@ return {
 							empty = "",
 							empty_open = "󰜌",
 							symlink = "󰌷",
-							symlink_open = "󰴛",
+							symlink_open = "",
 						},
 						git = {
 							unstaged = "∼",
