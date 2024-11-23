@@ -1062,30 +1062,6 @@ return {
 				cterm_color = "160",
 				name = "FreeCADConfig",
 			},
-			["sbt"] = {
-				icon = "",
-				color = "#cc3e44",
-				cterm_color = "167",
-				name = "sbt",
-			},
-			["scala"] = {
-				icon = "",
-				color = "#cc3e44",
-				cterm_color = "167",
-				name = "Scala",
-			},
-			["sc"] = {
-				icon = "",
-				color = "#cc3e44",
-				cterm_color = "167",
-				name = "ScalaScript",
-			},
-			["php"] = {
-				icon = "",
-				color = "#a074c4",
-				cterm_color = "140",
-				name = "Php",
-			},
 			["cp"] = {
 				icon = "",
 				color = "#519aba",
@@ -1109,12 +1085,6 @@ return {
 				color = "#599eFF",
 				cterm_color = "74",
 				name = "C",
-			},
-			["cs"] = {
-				icon = "",
-				color = "#596706",
-				cterm_color = "58",
-				name = "Cs",
 			},
 			["dropbox"] = {
 				icon = "",
