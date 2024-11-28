@@ -38,7 +38,7 @@ return {
 				"emmet_ls",
 				"jsonls",
 				"yamlls",
-				"sqlls",
+				-- "sqlls",
 				"marksman",
 				"dockerls",
 			},
