@@ -24,7 +24,6 @@ return {
 				disabled_filetypes = {
 					statusline = {
 						"alpha",
-						"dashboard",
 						"NvimTree",
 						"dapui_scopes",
 						"dapui_breakpoints",

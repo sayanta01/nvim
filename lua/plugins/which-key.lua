@@ -41,7 +41,7 @@ return {
 				Down = "↓ ",
 				Left = "« ",
 				Right = "» ",
-				C = "^ ",
+				C = "⌃ ",
 				M = "M ",
 				CR = "↩︎ ",
 				NL = "↩︎ ",

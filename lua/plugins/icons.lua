@@ -640,12 +640,6 @@ return {
 				cterm_color = "230",
 				name = "Nfo",
 			},
-			["nim"] = {
-				icon = "",
-				color = "#F3d400",
-				cterm_color = "220",
-				name = "Nim",
-			},
 			["nu"] = {
 				icon = "",
 				color = "#3aa675",
@@ -873,12 +867,6 @@ return {
 				color = "#e37933",
 				cterm_color = "166",
 				name = "XcPlayground",
-			},
-			["templ"] = {
-				icon = "",
-				color = "#dbbd30",
-				cterm_color = "178",
-				name = "Templ",
 			},
 			["terminal"] = {
 				icon = "",

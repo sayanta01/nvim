@@ -17,16 +17,10 @@ return {
 			right_trunc_marker = "›",
 			offsets = {
 				{
-					filetype = "undotree",
-					text = "Undo",
-					highlight = "PanelHeading",
-					padding = 1,
-				},
-				{
 					filetype = "NvimTree",
 					text = "Explorer",
-					highlight = "PanelHeading",
-					padding = 1,
+					highlight = "Directory",
+					text_align = "center",
 				},
 			},
 			separator_style = "thin",

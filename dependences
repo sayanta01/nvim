@@ -2,36 +2,36 @@
 
 ## Debian
 if [ -f /etc/debian_version ]; then
-  printf "Build neovim? [y/N]: "
-  read -r choice
-  if [ "$choice" = "y" ]; then
-    sudo apt install -y ninja-build gettext cmake unzip curl build-essential
-    git clone --depth=1 https://github.com/neovim/neovim.git ~/.cache/neovim
-    cd ~/.cache/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-    cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
-  else
-    :
-  fi
+	printf "Build neovim? [y/N]: "
+	read -r choice
+	if [ "$choice" = "y" ]; then
+		sudo apt install -y ninja-build gettext cmake unzip curl build-essential
+		git clone --depth=1 https://github.com/neovim/neovim.git ~/.cache/neovim
+		cd ~/.cache/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+		cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+	else
+		:
+	fi
 
-  sudo apt install -y npm cargo luarocks \
-    php golang ruby \
-    ripgrep fd-find imagemagick
-  # python3-pip python3-venv
-  # default-jdk dotnet-sdk-6.0
+	sudo apt install -y npm cargo luarocks \
+		php golang ruby \
+		ripgrep fd-find imagemagick
+	# python3-pip python3-venv
+	# default-jdk dotnet-sdk-6.0
 
-  go install github.com/jesseduffield/lazygit@latest
-  # curl -sSLo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
-  # curl -fsSL https://install.julialang.org | sh
+	go install github.com/jesseduffield/lazygit@latest
+	# curl -sSLo dotnet-install.sh https://dot.net/v1/dotnet-install.sh
+	# curl -fsSL https://install.julialang.org | sh
 fi
 
 ## Arch
 if [ -f /etc/arch-release ]; then
-  sudo pacman -S --noconfirm npm cargo luarocks \
-    php go ruby \
-    ripgrep fd imagemagick lazygit
-  # jdk-openjdk dotnet-sdk julia
+	sudo pacman -S --noconfirm npm cargo luarocks \
+		php go ruby \
+		ripgrep fd imagemagick lazygit
+	# jdk-openjdk dotnet-sdk julia
 else
-  :
+	:
 fi
 
 ## Node

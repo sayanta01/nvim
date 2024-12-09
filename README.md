@@ -1,3 +1,3 @@
 ## PDE
-![desktop](doc/pde.png)
-![desktop](doc/setup.png)
+![](doc/pde.png)
+![](doc/setup.png)

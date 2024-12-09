@@ -1,47 +1,47 @@
 return {
-  {
-    "lewis6991/gitsigns.nvim",
-    event = "VeryLazy",
-    opts = {
-      signs = {
-        add = { text = "▎" },
-        change = { text = "▏" },
-        delete = { text = "" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "∼" },
-        untracked = { text = "┊" },
-      },
-      signs_staged = {
-        add = { text = "▎" },
-        change = { text = "▏" },
-        delete = { text = "" },
-        topdelete = { text = "‾" },
-        changedelete = { text = "~" },
-        untracked = { text = "┆" },
-      },
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "VeryLazy",
+		opts = {
+			signs = {
+				add = { text = "▎" },
+				change = { text = "▏" },
+				delete = { text = "" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "∼" },
+				untracked = { text = "┊" },
+			},
+			signs_staged = {
+				add = { text = "▎" },
+				change = { text = "▏" },
+				delete = { text = "" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
+			},
 
-      on_attach = function(buffer)
-        local gs = package.loaded.gitsigns
+			on_attach = function(buffer)
+				local gs = package.loaded.gitsigns
 
-        local function map(mode, l, r, desc)
-          vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-        end
+				local function map(mode, l, r, desc)
+					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+				end
 
-        map("n", "]h", function()
-          if vim.wo.diff then
-            vim.cmd.normal({ "]c", bang = true })
-          else
-            gs.nav_hunk("next")
-          end
-        end, "Next Hunk")
+				map("n", "]h", function()
+					if vim.wo.diff then
+						vim.cmd.normal({ "]c", bang = true })
+					else
+						gs.nav_hunk("next")
+					end
+				end, "Next Hunk")
 
-        map("n", "[h", function()
-          if vim.wo.diff then
-            vim.cmd.normal({ "[c", bang = true })
-          else
-            gs.nav_hunk("prev")
-          end
-        end, "Prev Hunk")
+				map("n", "[h", function()
+					if vim.wo.diff then
+						vim.cmd.normal({ "[c", bang = true })
+					else
+						gs.nav_hunk("prev")
+					end
+				end, "Prev Hunk")
 
         -- stylua: ignore start
         map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
@@ -60,7 +60,7 @@ return {
 
         -- Text object
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Git Select Hunk")
-      end,
-    },
-  },
+			end,
+		},
+	},
 }
