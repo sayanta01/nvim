@@ -47,25 +47,6 @@ return {
 			},
 		})
 
-		lspconfig["gopls"].setup({
-			cmd = { "gopls" },
-			filetypes = { "go", "gomod", "gowork", "gotmpl" },
-			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				gopls = {
-					gofumpt = true,
-					analyses = {
-						unusedparams = true,
-					},
-					usePlaceholders = true,
-					completeUnimported = true,
-					staticcheck = true,
-				},
-			},
-		})
-
 		lspconfig["clangd"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -99,9 +80,23 @@ return {
 			},
 		})
 
-		lspconfig["bashls"].setup({
+		lspconfig["gopls"].setup({
+			cmd = { "gopls" },
+			filetypes = { "go", "gomod", "gowork", "gotmpl" },
+			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
 			on_attach = on_attach,
 			capabilities = capabilities,
+			settings = {
+				gopls = {
+					gofumpt = true,
+					analyses = {
+						unusedparams = true,
+					},
+					usePlaceholders = true,
+					completeUnimported = true,
+					staticcheck = true,
+				},
+			},
 		})
 
 		lspconfig["lua_ls"].setup({
@@ -126,6 +121,11 @@ return {
 					},
 				},
 			},
+		})
+
+		lspconfig["bashls"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
 		})
 
 		lspconfig["pyright"].setup({
@@ -240,12 +240,6 @@ return {
 		-- 	},
 		-- })
 
-		lspconfig["sqlls"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetype = { "sql", "mysql" },
-		})
-
 		lspconfig["marksman"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -254,6 +248,12 @@ return {
 		lspconfig["dockerls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
+		})
+
+		lspconfig["sqlls"].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetype = { "sql", "mysql" },
 		})
 
 		lspconfig["solargraph"].setup({
