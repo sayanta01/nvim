@@ -21,7 +21,7 @@ return {
 	-- 	config = function()
 	-- 		require("crates").setup({
 	-- 			text = {
-	-- 				loading = "   Loading",
+	-- 				loading = "   Loading",
 	-- 				version = "   %s",
 	-- 				prerelease = "   %s",
 	-- 				yanked = "   %s",
@@ -37,7 +37,7 @@ return {
 	-- 					description = "%s",
 	-- 					created_label = " created",
 	-- 					created = "%s",
-	-- 					updated_label = "↑ updated",
+	-- 					updated_label = "⌃ updated",
 	-- 					updated = "%s",
 	-- 					downloads_label = " downloads",
 	-- 					downloads = "%s",
@@ -64,7 +64,7 @@ return {
 	-- 					dependency = "  %s",
 	-- 					optional = " %s",
 	-- 					dependency_version = "  %s",
-	-- 					loading = "  ",
+	-- 					loading = "  ",
 	-- 				},
 	-- 			},
 	-- 			src = {

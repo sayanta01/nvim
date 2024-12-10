@@ -77,12 +77,6 @@ return {
 			},
 		})
 
-		-- lspconfig["omnisharp"].setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- 	filetypes = { "cs", "vb" },
-		-- })
-
 		lspconfig["rust_analyzer"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -154,11 +148,6 @@ return {
 			},
 		})
 
-		-- lspconfig["intelephense"].setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
-
 		lspconfig["html"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -170,11 +159,6 @@ return {
 			capabilities = capabilities,
 			filetypes = { "css", "scss", "less" },
 		})
-
-		-- lspconfig["tailwindcss"].setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
 
 		lspconfig["ts_ls"].setup({
 			on_attach = on_attach,
@@ -265,7 +249,6 @@ return {
 		lspconfig["marksman"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			-- filetype = { "markdown", "markdown.mdx" },
 		})
 
 		lspconfig["dockerls"].setup({

@@ -13,12 +13,7 @@ return {
 		{
 			"L3MON4D3/LuaSnip",
 			version = "v2.*",
-			build = (function()
-				if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-					return
-				end
-				return "make install_jsregexp"
-			end)(),
+			build = "make install_jsregexp",
 			dependencies = {
 				"rafamadriz/friendly-snippets",
 				config = function()
@@ -29,8 +24,8 @@ return {
 	},
 
 	config = function()
-		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local cmp = require("cmp")
 
 		cmp.setup.cmdline({ "/", "?" }, {
 			mapping = cmp.mapping.preset.cmdline(),
@@ -52,12 +47,6 @@ return {
 				},
 			}),
 		})
-
-		local has_words_before = function()
-			unpack = unpack or table.unpack
-			local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-		end
 
 		local kind_icons = {
 			Text = "",
@@ -111,23 +100,20 @@ return {
 					fallback()
 				end,
 
-				-- jump to next jumpable
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
-					elseif require("luasnip").expand_or_jumpable() then
-						luasnip.expand_or_jump()
-					elseif has_words_before() then
-						cmp.complete()
+					elseif luasnip.locally_jumpable(1) then
+						luasnip.jump(1)
 					else
 						fallback()
 					end
 				end, { "i", "s" }),
 
-				["<S-Tab>"] = cmp.mapping(function(fallback) -- jump to previous jumpable
+				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
-					elseif luasnip.jumpable(-1) then
+					elseif luasnip.locally_jumpable(-1) then
 						luasnip.jump(-1)
 					else
 						fallback()
@@ -135,31 +121,23 @@ return {
 				end, { "i", "s" }),
 			}),
 
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "spell" },
-				{ name = "crates" },
-				{
-					name = "codeium",
-					priority = 100,
-				},
-			},
+				{ name = "codeium", priority = 100 },
+			}),
 
 			formatting = {
 				format = function(entry, vim_item)
 					vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
 					local custom_menu_icon = {
 						codeium = "󰘦 Codeium",
-						crates = " Crates",
 					}
 					if entry.source.name == "codeium" then
 						vim_item.kind = custom_menu_icon.codeium
-					end
-					if entry.source.name == "crates" then
-						vim_item.kind = custom_menu_icon.crates
 					end
 					return vim_item
 				end,
