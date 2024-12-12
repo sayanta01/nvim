@@ -2,6 +2,11 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
+		keys = {
+			{ "<leader>g", "", desc = "Git", mode = { "n", "v" } },
+			-- { "<leader>gc", ":Telescope git_commits<cr>", desc = "Commits" },
+			-- { "<leader>gC", ":Telescope git_bcommits<cr>", desc = "Commits (current file)" },
+		},
 		opts = {
 			signs = {
 				add = { text = "▎" },

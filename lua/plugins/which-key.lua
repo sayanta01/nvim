@@ -61,25 +61,6 @@ return {
         { "<leader>f",  ":Telescope find_files<cr>",                                         desc = "Find Files", },
         { "<leader>q",  ":q!<cr>",                                                           desc = "Quit", },
         { "<leader>x",  ":bdelete<cr>",                                                      desc = "Close Buffer", },
-        -- { "<leader>y",  "gg<S-v>G<cr>",                                                         desc = "Select All", },
-
-        { "<leader>h",  group = "Harpoon" },
-        { "<leader>t",  group = "Terminal" },
-        { "<leader>g",  group = "Git",                                                       mode = { "n", "v" }, },
-        -- { "<leader>gc", ":Telescope git_commits<cr>",                                        desc = "Commits", },
-        -- { "<leader>gC", ":Telescope git_bcommits<cr>",                                       desc = "Commits (current file)", },
-
-        { "<leader>d",  group = "Debug",                                                     mode = { "n", "v" } },
-        { "<leader>db", function() require("dap").toggle_breakpoint() end,                   desc = "Toggle Breakpoint" },
-        -- { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
-        { "<leader>dc", function() require("dap").continue() end,                            desc = "Continue" },
-        { "<leader>dC", function() require("dap").run_to_cursor() end,                       desc = "Run to Cursor" },
-        { "<leader>di", function() require("dap").step_into() end,                           desc = "Step Into" },
-        { "<leader>do", function() require("dap").step_over() end,                           desc = "Step Over" },
-        { "<leader>dO", function() require("dap").step_out() end,                            desc = "Step Out" },
-        { "<leader>dl", function() require("dap").run_last() end,                            desc = "Run Last" },
-        { "<leader>dr", function() require("dap").repl.toggle() end,                         desc = "Toggle REPL" },
-        { "<leader>dx", function() require("dap").terminate() end,                           desc = "Terminate" },
 
         { "<leader>l",  group = "LSP",                                                       mode = { "n", "v" } },
         { "<leader>lh", ":lua vim.lsp.buf.signature_help()<cr>",                             desc = "Signature Help", },
@@ -98,7 +79,6 @@ return {
         { "<leader>o",  group = "Option", },
         { "<leader>oc", ":set cursorcolumn!<cr>",                                            desc = "Cursor Line", },
         { "<leader>ol", ":terminal live-server<cr>",                                         desc = "Live Server", },
-        { "<leader>oo", ":MarkdownPreviewToggle<cr>",                                        desc = "Markdown Preview", },
         { "<leader>os", ":set spell!<cr>",                                                   desc = "Toggle Spell ", },
         { "<leader>ow", ":set wrap!<cr>",                                                    desc = "Toggle Wrap", },
 

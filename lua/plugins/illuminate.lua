@@ -25,7 +25,6 @@ return {
 				"alpha",
 				"NvimTree",
 				"Trouble",
-				"Outline",
 			},
 			large_file_cutoff = 2000,
 			min_count_to_highlight = 2,
