@@ -50,7 +50,6 @@ return {
 		lspconfig["clangd"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 			cmd = {
 				"clangd",
 				"--offset-encoding=utf-16",
@@ -61,7 +60,6 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "rust" },
 			cmd = {
 				"rustup",
 				"run",
@@ -82,7 +80,6 @@ return {
 
 		lspconfig["gopls"].setup({
 			cmd = { "gopls" },
-			filetypes = { "go", "gomod", "gowork", "gotmpl" },
 			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -131,7 +128,6 @@ return {
 		lspconfig["pyright"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetype = { "python" },
 			settings = {
 				python = {
 					analysis = {
@@ -151,26 +147,16 @@ return {
 		lspconfig["html"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "html", "templ" },
 		})
 
 		lspconfig["cssls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { "css", "scss", "less" },
 		})
 
 		lspconfig["ts_ls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetype = {
-				"javascript",
-				"javascriptreact",
-				"javascript.jsx",
-				"typescript",
-				"typescriptreact",
-				"typescript.tsx",
-			},
 			-- init_options = {
 			-- 	preferences = {
 			-- 		disableSuggestions = true,
@@ -211,17 +197,6 @@ return {
 		-- 			command = "EslintFixAll",
 		-- 		})
 		-- 	end,
-		-- 	filetypes = {
-		-- 		"javascript",
-		-- 		"javascriptreact",
-		-- 		"javascript.jsx",
-		-- 		"typescript",
-		-- 		"typescriptreact",
-		-- 		"typescript.tsx",
-		-- 		"vue",
-		-- 		"svelte",
-		-- 		"astro",
-		-- 	},
 		-- })
 
 		lspconfig["marksman"].setup({
@@ -237,11 +212,9 @@ return {
 		lspconfig["sqlls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetype = { "sql", "mysql" },
 		})
 
 		lspconfig["solargraph"].setup({
-			filetypes = { "ruby" },
 			on_attach = on_attach,
 			capabilities = capabilities,
 			root_dir = require("lspconfig").util.root_pattern("Gemfile"),
