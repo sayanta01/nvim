@@ -1,15 +1,17 @@
 return {
 	"neovim/nvim-lspconfig",
 	event = "BufReadPost",
+	-- event = "LspAttach",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
-		local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 		local on_attach = function(_, bufnr)
-			-- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc") -- Enable completion triggered by <c-x><c-o>
 			local opts = { buffer = bufnr, noremap = true, silent = true, desc = "which_key_ignore" }
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -48,8 +50,8 @@ return {
 		})
 
 		lspconfig["clangd"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			cmd = {
 				"clangd",
 				"--offset-encoding=utf-16",
@@ -58,8 +60,8 @@ return {
 		})
 
 		lspconfig["rust_analyzer"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			cmd = {
 				"rustup",
 				"run",
@@ -81,8 +83,8 @@ return {
 		lspconfig["gopls"].setup({
 			cmd = { "gopls" },
 			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			settings = {
 				gopls = {
 					gofumpt = true,
@@ -97,8 +99,8 @@ return {
 		})
 
 		lspconfig["lua_ls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			settings = {
 				Lua = {
 					runtime = {
@@ -121,13 +123,13 @@ return {
 		})
 
 		lspconfig["bashls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 
 		lspconfig["pyright"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			settings = {
 				python = {
 					analysis = {
@@ -145,18 +147,18 @@ return {
 		})
 
 		lspconfig["html"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 
 		lspconfig["cssls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 
 		lspconfig["ts_ls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			-- init_options = {
 			-- 	preferences = {
 			-- 		disableSuggestions = true,
@@ -200,23 +202,23 @@ return {
 		-- })
 
 		lspconfig["marksman"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 
 		lspconfig["dockerls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 
 		lspconfig["sqlls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 		})
 
 		lspconfig["solargraph"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			root_dir = require("lspconfig").util.root_pattern("Gemfile"),
 			settings = {
 				solargraph = {
@@ -229,8 +231,8 @@ return {
 		})
 
 		lspconfig["jsonls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			-- lazy-load schemastore when needed
 			on_new_config = function(new_config)
 				new_config.settings.json.schemas = new_config.settings.json.schemas or {}
@@ -247,8 +249,8 @@ return {
 		})
 
 		lspconfig["yamlls"].setup({
-			on_attach = on_attach,
 			capabilities = capabilities,
+			on_attach = on_attach,
 			on_new_config = function(new_config)
 				new_config.settings.yaml.schemas = vim.tbl_deep_extend(
 					"force",

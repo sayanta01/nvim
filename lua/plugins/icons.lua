@@ -23,13 +23,13 @@ return {
 				name = "Babelrc",
 			},
 			[".env"] = {
-				icon = "",
+				icon = "",
 				color = "#FaF743",
 				cterm_color = "227",
 				name = "Env",
 			},
 			["env"] = {
-				icon = "",
+				icon = "",
 				color = "#faf743",
 				cterm_color = "227",
 				name = "Env",
