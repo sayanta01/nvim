@@ -33,7 +33,7 @@ return {
 				"ts_ls",
 				"svelte",
 				"graphql",
-				"emmet_ls",
+				"emmet_language_server",
 				"marksman",
 				"dockerls",
 				"jsonls",

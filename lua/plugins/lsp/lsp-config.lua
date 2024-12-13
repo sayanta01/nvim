@@ -199,25 +199,9 @@ return {
 			filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
 		})
 
-		lspconfig["emmet_ls"].setup({
+		lspconfig["emmet_language_server"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = {
-				"astro",
-				"css",
-				"eruby",
-				"html",
-				"htmldjango",
-				"javascriptreact",
-				"typescriptreact",
-				"less",
-				"pug",
-				"sass",
-				"scss",
-				"svelte",
-				"vue",
-				"htmlangular",
-			},
 		})
 
 		-- lspconfig.eslint.setup({
@@ -274,7 +258,6 @@ return {
 		lspconfig["jsonls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			-- filetypes = { "json", "jsonc" },
 			-- lazy-load schemastore when needed
 			on_new_config = function(new_config)
 				new_config.settings.json.schemas = new_config.settings.json.schemas or {}

@@ -29,22 +29,16 @@ return {
 
 		cmp.setup.cmdline({ "/", "?" }, {
 			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = "buffer" },
-			},
+			sources = { { name = "buffer" } },
 		})
 
 		cmp.setup.cmdline(":", {
+			completion = { completeopt = "menu,menuone,noselect" },
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
 				{ name = "path" },
 			}, {
-				{
-					name = "cmdline",
-					option = {
-						ignore_cmds = { "Man", "!" },
-					},
-				},
+				{ name = "cmdline" },
 			}),
 		})
 
@@ -83,9 +77,7 @@ return {
 				end,
 			},
 
-			completion = {
-				completeopt = "menu,menuone,noinsert",
-			},
+			completion = { completeopt = "menu,menuone" },
 
 			mapping = cmp.mapping.preset.insert({
 				["<C-n>"] = cmp.mapping.select_next_item(),
