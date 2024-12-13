@@ -62,6 +62,11 @@ return {
         { "<leader>q",  ":q!<cr>",                                                           desc = "Quit", },
         { "<leader>x",  ":bdelete<cr>",                                                      desc = "Close Buffer", },
 
+        { "<leader>d",  group = "Debug",                                                     mode = { "n", "v" } },
+        { "<leader>g",  group = "Git",                                                       mode = { "n", "v" }, },
+        { "<leader>h",  group = "Harpoon" },
+        { "<leader>t",  group = "Terminal" },
+
         { "<leader>l",  group = "LSP",                                                       mode = { "n", "v" } },
         { "<leader>lh", ":lua vim.lsp.buf.signature_help()<cr>",                             desc = "Signature Help", },
         { "<leader>lt", ":lua vim.lsp.buf.type_definition()<cr>",                            desc = "Type Definition", },

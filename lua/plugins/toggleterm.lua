@@ -3,7 +3,6 @@ return {
 	version = "*",
 	keys = {
 		{ "<C-/>", desc = "Terminal" },
-		{ "<leader>t", "", desc = "Terminal" },
 		{ "<leader>th", ":ToggleTerm size=14 direction=horizontal<cr>", desc = "Horizontal" },
 		{ "<leader>tv", ":ToggleTerm size=80 direction=vertical<cr>", desc = "Vertical" },
 		{ "<leader>gg", ":lua _LAZYGIT_TOGGLE()<cr>", desc = "Lazygit" },

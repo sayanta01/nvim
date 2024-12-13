@@ -8,7 +8,6 @@ return {
 	-- 			dependencies = { "nvim-neotest/nvim-nio" },
 	--        -- stylua: ignore
 	--        keys = {
-	--          { "<leader>d",  "",                                                desc = "Debug",            mode = { "n", "v" } },
 	--          { "<leader>du", function() require("dapui").toggle({}) end,        desc = "Dap UI" },
 	--          { "<leader>dw", function() require("dap.ui.widgets").hover() end,  desc = "Widgets" },
 	--          { "<leader>de", function() require("dapui").eval() end,            desc = "Evaluate",         mode = { "n", "v" } },
