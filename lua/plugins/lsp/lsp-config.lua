@@ -1,12 +1,12 @@
 return {
 	"neovim/nvim-lspconfig",
 	event = "BufReadPost",
-	-- event = "LspAttach",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
+
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -50,12 +50,13 @@ return {
 		})
 
 		lspconfig["clangd"].setup({
-			capabilities = capabilities,
+			capabilities = vim.tbl_deep_extend("force", capabilities, {
+				offsetEncoding = { "utf-16" },
+			}),
 			on_attach = on_attach,
 			cmd = {
 				"clangd",
-				"--offset-encoding=utf-16",
-				"-header-insertion=never",
+				"-header-insertion=iwyu",
 			},
 		})
 
@@ -240,16 +241,21 @@ return {
 			end,
 			settings = {
 				json = {
-					format = {
-						enable = true,
-					},
+					format = { enable = true },
 					validate = { enable = true },
 				},
 			},
 		})
 
 		lspconfig["yamlls"].setup({
-			capabilities = capabilities,
+			capabilities = vim.tbl_deep_extend("force", capabilities, {
+				textDocument = {
+					foldingRange = {
+						dynamicRegistration = false,
+						lineFoldingOnly = true,
+					},
+				},
+			}),
 			on_attach = on_attach,
 			on_new_config = function(new_config)
 				new_config.settings.yaml.schemas = vim.tbl_deep_extend(
@@ -262,9 +268,7 @@ return {
 				redhat = { telemetry = { enabled = false } },
 				yaml = {
 					keyOrdering = false,
-					format = {
-						enable = true,
-					},
+					format = { enable = true },
 					validate = true,
 					schemaStore = {
 						-- Must disable built-in schemaStore support to use

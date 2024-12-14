@@ -42,10 +42,8 @@ return {
 			"html",
 			"javascript",
 			"typescript",
-			"javascriptreact",
-			"typescriptreact",
+      "jsx",
 			"tsx",
-			"jsx",
 			"vue",
 			"svelte",
 			"xml",
@@ -54,11 +52,6 @@ return {
 			"markdown",
 			"astro",
 		},
-		config = function()
-			require("nvim-ts-autotag").setup({
-				skip_tags = "",
-			})
-		end,
 	},
 
 	{
