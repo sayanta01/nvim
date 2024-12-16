@@ -82,8 +82,6 @@ return {
 		})
 
 		lspconfig["gopls"].setup({
-			cmd = { "gopls" },
-			root_dir = require("lspconfig").util.root_pattern("go.work", "go.mod", ".git"),
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = {
@@ -160,11 +158,6 @@ return {
 		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			-- init_options = {
-			-- 	preferences = {
-			-- 		disableSuggestions = true,
-			-- 	},
-			-- },
 		})
 
 		lspconfig["svelte"].setup({
@@ -220,14 +213,11 @@ return {
 		lspconfig["solargraph"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			root_dir = require("lspconfig").util.root_pattern("Gemfile"),
+			root_dir = require("lspconfig").util.root_pattern("Gemfile", ".git"),
 			settings = {
 				solargraph = {
 					diagnostics = true,
 				},
-				-- flags = {
-				-- 	debounce_text_changes = 150,
-				-- },
 			},
 		})
 

@@ -29,11 +29,8 @@ return {
 		-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 		null_ls.setup({
-			root_dir = require("null-ls.utils").root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
 			sources = {
-				formatting.prettier.with({
-					extra_filetypes = { "svelte" },
-				}),
+				formatting.prettier.with({ extra_filetypes = { "svelte" } }),
 				formatting.google_java_format,
 				formatting.gofmt,
 				formatting.clang_format,
