@@ -42,7 +42,7 @@ return {
 			"html",
 			"javascript",
 			"typescript",
-      "jsx",
+			"jsx",
 			"tsx",
 			"vue",
 			"svelte",

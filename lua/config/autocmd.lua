@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	group = augroup("concealing_means_hidden"),
+	group = augroup("concealed_means_hidden"),
 	pattern = { "json", "jsonc", "json5", "markdown" },
 	callback = function()
 		vim.opt.conceallevel = 0
@@ -51,7 +51,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	group = augroup("highlight_yank"),
 	callback = function()
-		vim.highlight.on_yank()
+		(vim.hl or vim.highlight).on_yank()
 	end,
 })
 

@@ -8,7 +8,7 @@ local opts = { noremap = true, silent = true, desc = "which_key_ignore" }
 -- space as leader key
 map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\" -- Meant for a specific buffer, you generally use it based on a filetype
+vim.g.maplocalleader = "\\"
 
 -- keep centered
 map("n", "<C-d>", "<C-d>zz", opts)
@@ -43,7 +43,7 @@ map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for Clear hlsea
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
--- move up/down
+-- move lines
 map("n", "<A-j>", ":m .+1<CR>==", opts)
 map("n", "<A-k>", ":m .-2<CR>==", opts)
 map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
