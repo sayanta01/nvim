@@ -119,6 +119,7 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "spell" },
+				{ name = "vim-dadbod-completion" },
 				{ name = "codeium", priority = 100 },
 			}),
 
