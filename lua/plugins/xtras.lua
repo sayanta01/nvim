@@ -37,24 +37,6 @@ return {
 	},
 
 	{
-		"windwp/nvim-ts-autotag",
-		ft = {
-			"html",
-			"javascript",
-			"typescript",
-			"jsx",
-			"tsx",
-			"vue",
-			"svelte",
-			"xml",
-			"php",
-			"twig",
-			"markdown",
-			"astro",
-		},
-	},
-
-	{
 		"b0o/SchemaStore.nvim",
 		version = false,
 		lazy = true,
