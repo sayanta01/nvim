@@ -1,7 +1,7 @@
 return {
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPost", "BufNewFile" },
 		keys = {
 			-- { "<leader>gc", ":Telescope git_commits<cr>", desc = "Commits" },
 			-- { "<leader>gC", ":Telescope git_bcommits<cr>", desc = "Commits (current file)" },
