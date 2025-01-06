@@ -15,7 +15,6 @@ return {
 			direction = "float",
 			float_opts = {
 				border = "curved",
-				winblend = 20,
 			},
 		})
 
@@ -36,7 +35,6 @@ return {
 			direction = "float",
 			float_opts = {
 				border = "curved",
-				winblend = 20,
 			},
 		}
 	end,

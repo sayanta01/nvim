@@ -14,13 +14,10 @@ return {
 	--          { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
 	--          -- { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
 	--          { "<leader>dc", function() require("dap").continue() end,          desc = "Continue" },
-	--          { "<leader>dC", function() require("dap").run_to_cursor() end,     desc = "Run to Cursor" },
+	--          -- { "<leader>dC", function() require("dap").run_to_cursor() end,     desc = "Run to Cursor" },
 	--          { "<leader>di", function() require("dap").step_into() end,         desc = "Step Into" },
 	--          { "<leader>do", function() require("dap").step_over() end,         desc = "Step Over" },
 	--          { "<leader>dO", function() require("dap").step_out() end,          desc = "Step Out" },
-	--          { "<leader>dl", function() require("dap").run_last() end,          desc = "Run Last" },
-	--          { "<leader>dr", function() require("dap").repl.toggle() end,       desc = "Toggle REPL" },
-	--          { "<leader>dx", function() require("dap").terminate() end,         desc = "Terminate" },
 	--        },
 	-- 			config = function()
 	-- 				local dap = require("dap")
@@ -47,10 +44,8 @@ return {
 	-- 					},
 	-- 				})
 	--
-	-- 				vim.fn.sign_define(
-	-- 					"DapBreakpoint",
-	-- 					{ text = "", texthl = "DiagnosticError", linehl = "", numhl = "" }
-	-- 				)
+	-- 				vim.fn.sign_define("DapStopped", { text = "›", texthl = "DiagnosticInfo" })
+	-- 				vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticError" })
 	--
 	-- 				dap.adapters.codelldb = {
 	-- 					type = "server",
@@ -63,22 +58,21 @@ return {
 	--
 	-- 				dap.configurations.cpp = {
 	-- 					{
-	-- 						name = "Launch",
+	-- 						name = "Launch file",
 	-- 						type = "codelldb",
 	-- 						request = "launch",
 	-- 						program = function()
 	-- 							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 	-- 						end,
 	-- 						cwd = "${workspaceFolder}",
-	-- 						stopOnEntry = false,
 	-- 					},
-	-- 					-- {
-	-- 					-- 	type = "codelldb",
-	-- 					-- 	request = "attach",
-	-- 					-- 	name = "Attach to process",
-	-- 					-- 	pid = require("dap.utils").pick_process,
-	-- 					-- 	cwd = "${workspaceFolder}",
-	-- 					-- },
+	-- 					{
+	-- 						type = "codelldb",
+	-- 						request = "attach",
+	-- 						name = "Attach to process",
+	-- 						pid = require("dap.utils").pick_process,
+	-- 						cwd = "${workspaceFolder}",
+	-- 					},
 	-- 				}
 	-- 				dap.configurations.c = dap.configurations.cpp
 	-- 				dap.configurations.rust = dap.configurations.cpp
@@ -87,7 +81,6 @@ return {
 	-- 					"pwa-node",
 	-- 					"pwa-chrome",
 	-- 					"pwa-msedge",
-	-- 					"node-terminal",
 	-- 					"pwa-extensionHost",
 	-- 				}) do
 	-- 					dap.adapters[adapter] = {
@@ -113,20 +106,12 @@ return {
 	-- 							program = "${file}",
 	-- 							cwd = "${workspaceFolder}",
 	-- 						},
-	-- 						-- {
-	-- 						-- 	type = "pwa-node",
-	-- 						-- 	request = "attach",
-	-- 						-- 	name = "Attach",
-	-- 						-- 	processId = require("dap.utils").pick_process,
-	-- 						-- 	cwd = "${workspaceFolder}",
-	-- 						-- },
 	-- 						{
-	-- 							type = "pwa-chrome",
-	-- 							request = "launch",
-	-- 							name = 'Start Chrome with "localhost"',
-	-- 							url = "http://localhost:3000",
-	-- 							webRoot = "${workspaceFolder}",
-	-- 							userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+	-- 							type = "pwa-node",
+	-- 							request = "attach",
+	-- 							name = "Attach",
+	-- 							processId = require("dap.utils").pick_process,
+	-- 							cwd = "${workspaceFolder}",
 	-- 						},
 	-- 					}
 	-- 				end
@@ -168,33 +153,33 @@ return {
 	-- },
 
 	-- {
-	--   "leoluz/nvim-dap-go",
-	--   ft = "go",
-	--   -- stylua: ignore
-	--   keys = {
-	--     { "<leader>dPt", function() require("dap-go").debug_test() end,      desc = "Debug Test", ft = "go" },
-	--     { "<leader>dPl", function() require("dap-go").debug_last_test() end, desc = "Last Test",  ft = "go" },
-	--   },
-	--   config = function()
-	--     require("dap-go").setup({
-	--       dap_configurations = {
-	--         {
-	--           type = "go",
-	--           name = "Attach remote",
-	--           mode = "remote",
-	--           request = "attach",
-	--         },
-	--       },
-	--       delve = {
-	--         path = "dlv",
-	--         initialize_timeout_sec = 20,
-	--         port = "${port}",
-	--         args = {},
-	--         build_flags = "",
-	--         detached = vim.fn.has("win32") == 0,
-	--         cwd = nil,
-	--       },
-	--     })
-	--   end,
+	-- 	"leoluz/nvim-dap-go",
+	-- 	ft = "go",
+	--    -- stylua: ignore
+	--    keys = {
+	--      { "<leader>dPt", function() require("dap-go").debug_test() end,      desc = "Debug Test", ft = "go" },
+	--      { "<leader>dPl", function() require("dap-go").debug_last_test() end, desc = "Last Test",  ft = "go" },
+	--    },
+	-- 	config = function()
+	-- 		require("dap-go").setup({
+	-- 			dap_configurations = {
+	-- 				{
+	-- 					type = "go",
+	-- 					name = "Attach remote",
+	-- 					mode = "remote",
+	-- 					request = "attach",
+	-- 				},
+	-- 			},
+	-- 			delve = {
+	-- 				path = "dlv",
+	-- 				initialize_timeout_sec = 20,
+	-- 				port = "${port}",
+	-- 				args = {},
+	-- 				build_flags = {},
+	-- 				detached = vim.fn.has("win32") == 0,
+	-- 				cwd = nil,
+	-- 			},
+	-- 		})
+	-- 	end,
 	-- },
 }
