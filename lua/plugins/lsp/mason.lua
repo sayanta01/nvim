@@ -21,8 +21,8 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"jdtls",
-				"clangd",
+				-- "jdtls",
+				-- "clangd",
 				-- "rust_analyzer",
 				-- "gopls",
 				"lua_ls",
@@ -35,7 +35,7 @@ return {
 				-- "graphql",
 				"emmet_language_server",
 				"marksman",
-				"dockerls",
+				-- "dockerls",
 				"jsonls",
 				"yamlls",
 			},
