@@ -4,16 +4,13 @@ return {
 	event = { "InsertEnter", "BufWritePost" },
 	opts = {
 		indent = { char = "▏" },
-		scope = { enabled = true, show_start = false },
+		scope = { show_start = false },
 		exclude = {
 			filetypes = {
-				"help",
-				"alpha",
-				"NvimTree",
 				"Trouble",
-				"trouble",
 				"lazy",
 				"mason",
+				"NvimTree",
 				"notify",
 				"toggleterm",
 			},
