@@ -3,7 +3,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = "BufReadPost",
-		cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
 		keys = {
 			{ "<C-space>", desc = "Increment Selection" },
 			{ "<bs>", desc = "Decrement Selection", mode = "x" },
@@ -37,8 +36,8 @@ return {
 				highlight = {
 					enable = true,
 					disable = function(_, buf)
-						local max_filesize = 1024 * 1024 -- 100 KB
-						local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+						local max_filesize = 1024 * 1024
+            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
 						if ok and stats and stats.size > max_filesize then
 							return true
 						end

@@ -1,14 +1,59 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	dependencies = { "SmiteshP/nvim-navic" },
 	event = "UIEnter",
 	config = function()
 		local lualine = require("lualine")
+		local navic = require("nvim-navic")
+
+		vim.g.navic_silence = true
+		vim.api.nvim_create_autocmd("LspAttach", {
+			callback = function(args)
+				local client = vim.lsp.get_client_by_id(args.data.client_id)
+				if client and client.supports_method("textDocument/documentSymbol") then
+					navic.attach(client, args.buf)
+				end
+			end,
+		})
+
+		navic.setup({
+			icons = {
+				File = " ",
+				Module = " ",
+				Namespace = "󰦮 ",
+				Package = " ",
+				Class = " ",
+				Method = " ",
+				Property = "󰓹 ",
+				Field = " ",
+				Constructor = " ",
+				Enum = " ",
+				Interface = " ",
+				Function = "ƒ ",
+				Variable = " ",
+				Constant = "П ",
+				String = " ",
+				Number = "󰎠 ",
+				Boolean = " ",
+				Array = " ",
+				Object = " ",
+				Key = " ",
+				Null = " ",
+				EnumMember = " ",
+				Struct = " ",
+				Event = " ",
+				Operator = "± ",
+				TypeParameter = " ",
+			},
+			separator = " › ",
+			highlight = true,
+			depth_limit = 5,
+			lazy_update_context = true,
+		})
 
 		local colors = {
-			-- bg = "#",
+			bg = "#",
 			fg = "#9399b1",
-			black = "#080808",
-			white = "#d0d5e3",
 			yellow = "#ecbe7b",
 			cyan = "#008080",
 			green = "#98be65",
@@ -18,12 +63,25 @@ return {
 			red = "#FF5189",
 		}
 
+		local conditions = {
+			hide_in_width = function()
+				return vim.fn.winwidth(0) > 80
+			end,
+		}
+
 		local config = {
 			options = {
 				component_separators = "",
+				section_separators = "",
+				theme = {
+					normal = {
+						a = { fg = colors.fg, bg = colors.bg },
+						b = { fg = colors.fg, bg = colors.bg },
+						c = { fg = colors.fg, bg = colors.bg },
+					},
+				},
 				disabled_filetypes = {
 					statusline = {
-						"alpha",
 						"NvimTree",
 						"dapui_scopes",
 						"dapui_breakpoints",
@@ -33,135 +91,80 @@ return {
 						"dapui_console",
 					},
 				},
-				theme = {
-					normal = {
-						a = { fg = colors.black, bg = colors.blue },
-						b = { fg = colors.blue, bg = colors.bg },
-						c = { fg = colors.fg, bg = colors.bg },
-					},
-					insert = {
-						a = { fg = colors.black, bg = colors.green },
-						b = { fg = colors.green, bg = colors.bg },
-					},
-					visual = {
-						a = { fg = colors.black, bg = colors.magenta },
-						b = { fg = colors.magenta, bg = colors.bg },
-					},
-					replace = {
-						a = { fg = colors.black, bg = colors.red },
-						b = { fg = colors.red, bg = colors.bg },
-					},
-					command = {
-						a = { fg = colors.black, bg = colors.yellow },
-						b = { fg = colors.yellow, bg = colors.bg },
-					},
-					terminal = {
-						a = { fg = colors.black, bg = colors.green },
-						b = { fg = colors.green, bg = colors.bg },
-					},
-					inactive = {
-						a = { fg = colors.blue, bg = colors.white },
-						c = { fg = colors.bg, bg = colors.white },
-					},
-				},
 			},
 			sections = {
-				lualine_a = {},
-				lualine_b = {},
-				-- lualine_a = { { "mode", separator = { right = "" }, padding = { left = 1, right = 0 } } },
-				-- lualine_b = { { "branch", icon = "", separator = { right = "" }, padding = { left = 2, right = 0 } } },
-				lualine_c = {},
-				lualine_x = {},
-				lualine_y = {},
-				lualine_z = {},
-			},
-			inactive_sections = {
-				lualine_a = {},
-				lualine_b = {},
-				lualine_c = {},
-				lualine_x = {},
-				lualine_y = {},
+				lualine_a = {
+					{
+						function()
+							return " "
+						end,
+						color = function()
+							local mode_color = {
+								n = colors.blue,
+								no = colors.green,
+								v = colors.magenta,
+								V = colors.magenta,
+								[""] = colors.magenta,
+								s = colors.orange,
+								S = colors.orange,
+								[""] = colors.orange,
+								i = colors.green,
+								ic = colors.yellow,
+								R = colors.red,
+								Rv = colors.red,
+								c = colors.yellow,
+								cv = colors.green,
+								ce = colors.green,
+								r = colors.cyan,
+								rm = colors.cyan,
+								["r?"] = colors.cyan,
+								["!"] = colors.green,
+								t = colors.green,
+							}
+							return { fg = mode_color[vim.fn.mode()] }
+						end,
+						padding = { right = 1 },
+					},
+				},
+				lualine_b = { "location" },
+				lualine_c = {
+					{
+						"diagnostics",
+						sources = { "nvim_diagnostic" },
+						symbols = { error = " ", warn = " ", info = " ", hint = " " },
+						diagnostics_color = {
+							error = { fg = colors.red },
+							warn = { fg = colors.yellow },
+							info = { fg = colors.cyan },
+							hint = { fg = colors.blue },
+						},
+					},
+					{
+						function()
+							return navic.get_location()
+						end,
+						cond = function()
+							return navic.is_available() and navic.get_location() ~= "" and conditions.hide_in_width()
+						end,
+					},
+				},
+
+				lualine_x = { { "branch", icon = "" } },
+				lualine_y = {
+					{
+						"diff",
+						symbols = { added = "⊠ ", modified = "⊡ ", removed = "⊟ " },
+						diff_color = {
+							added = { fg = colors.green },
+							modified = { fg = colors.orange },
+							removed = { fg = colors.red },
+						},
+						cond = conditions.hide_in_width,
+					},
+				},
 				lualine_z = {},
 			},
 		}
-
-		local function ins_left(component)
-			table.insert(config.sections.lualine_c, component)
-		end
-
-		local function ins_right(component)
-			table.insert(config.sections.lualine_x, component)
-		end
-
-		ins_left({
-			function()
-				return " "
-			end,
-			color = function()
-				-- change color according to mode
-				local mode_color = {
-					n = colors.blue,
-					no = colors.green,
-					v = colors.magenta,
-					V = colors.magenta,
-					[""] = colors.magenta,
-					s = colors.orange,
-					S = colors.orange,
-					[""] = colors.orange,
-					i = colors.green,
-					ic = colors.yellow,
-					R = colors.red,
-					Rv = colors.red,
-					c = colors.yellow,
-					cv = colors.green,
-					ce = colors.green,
-					r = colors.cyan,
-					rm = colors.cyan,
-					["r?"] = colors.cyan,
-					["!"] = colors.green,
-					t = colors.green,
-				}
-				return { fg = mode_color[vim.fn.mode()] }
-			end,
-			padding = { right = 2 },
-		})
-
-		ins_left({
-			"branch",
-			icon = "",
-		})
-
-		ins_left({
-			"location",
-		})
-
-		ins_left({
-			"diagnostics",
-			sources = { "nvim_diagnostic" },
-			symbols = { error = " ", warn = " ", info = " ", hint = " " },
-			diagnostics_color = {
-				error = { fg = colors.red },
-				warn = { fg = colors.yellow },
-				info = { fg = colors.cyan },
-				hint = { fg = colors.green },
-			},
-		})
-
-		ins_left({
-			function()
-				return "%="
-			end,
-		})
-
-		ins_right({
-			"diff",
-			symbols = { added = "⊠ ", modified = "⊡ ", removed = "⊟ " },
-			diff_color = {
-				added = { fg = colors.green },
-				modified = { fg = colors.orange },
-				removed = { fg = colors.red },
-			},
-		})
 
 		lualine.setup(config)
 	end,

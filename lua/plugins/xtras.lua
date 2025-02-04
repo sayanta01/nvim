@@ -1,30 +1,18 @@
 return {
 	-- {
-	-- 	"LunarVim/bigfile.nvim",
-	-- 	event = "BufReadPre",
-	-- 	opts = {
-	-- 		filesize = 1,
-	-- 		pattern = { "*" },
-	-- 		features = {
-	-- 			-- "lsp",
-	-- 			"treesitter",
-	-- 			"filetype",
-	-- 			-- "syntax",
-	-- 		},
-	-- 	},
-	-- },
-
-	-- {
 	-- 	"folke/snacks.nvim",
 	-- 	priority = 1000,
 	-- 	lazy = false,
 	-- 	opts = {
-	-- 		indent = {
-	-- 			animate = { enabled = false },
-	-- 			scope = { enabled = false },
-	-- 		},
-	-- 		input = { enabled = true },
+	-- 		bigfile = { enabled = true },
 	-- 	},
+	-- },
+
+	-- {
+	-- 	"Exafunction/codeium.nvim",
+	-- 	enabled = true,
+	-- 	build = ":Codeium Auth",
+	-- 	config = true,
 	-- },
 
 	{
@@ -76,16 +64,4 @@ return {
 			end
 		end,
 	},
-
-	-- {
-	-- 	"ThePrimeagen/vim-be-good",
-	-- 	cmd = "VimBeGood",
-	-- },
-
-	-- {
-	-- 	"szw/vim-maximizer",
-	-- 	keys = {
-	-- 		{ "<leader>ms", ":MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
-	-- 	},
-	-- },
 }
