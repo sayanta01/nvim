@@ -65,7 +65,7 @@ return {
 
 		local conditions = {
 			hide_in_width = function()
-				return vim.fn.winwidth(0) > 80
+				return vim.fn.winwidth(0) > 90
 			end,
 		}
 
@@ -136,7 +136,7 @@ return {
 							error = { fg = colors.red },
 							warn = { fg = colors.yellow },
 							info = { fg = colors.cyan },
-							hint = { fg = colors.blue },
+							hint = { fg = colors.green },
 						},
 					},
 					{
