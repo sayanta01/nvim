@@ -3,12 +3,15 @@ return {
 	event = "BufReadPost",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
 	},
 	config = function()
 		local lspconfig = require("lspconfig")
+		require("mason").setup({ ui = { border = "rounded" } })
+		local mason_lspconfig = require("mason-lspconfig")
 
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 		local on_attach = function(_, bufnr)
@@ -33,241 +36,165 @@ return {
 		end
 
 		vim.diagnostic.config({
-			virtual_text = {
-				source = "if_many",
-				prefix = "▪",
-			},
+			virtual_text = { source = "if_many", prefix = "▪" },
 			signs = false,
 			underline = true,
 			update_in_insert = false,
 			severity_sort = true,
-			float = {
-				focusable = true,
-				border = "rounded",
-				source = "if_many",
-				prefix = "",
-			},
+			float = { focusable = true, border = "rounded", source = "if_many", prefix = "" },
 		})
 
-		lspconfig["clangd"].setup({
-			capabilities = vim.tbl_deep_extend("force", capabilities, {
-				offsetEncoding = { "utf-16" },
-			}),
-			on_attach = on_attach,
-			cmd = {
-				"clangd",
-				"-header-insertion=iwyu",
+		local servers = {
+			clangd = {
+				capabilities = vim.tbl_deep_extend("force", capabilities, {
+					offsetEncoding = { "utf-16" },
+				}),
+				cmd = { "clangd", "-header-insertion=iwyu" },
 			},
-		})
 
-		lspconfig["rust_analyzer"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			cmd = {
-				"rustup",
-				"run",
-				"stable",
-				"rust-analyzer",
-			},
-			settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						allFeatures = true,
-					},
-					checkOnSave = {
-						command = "clippy",
+			-- rust_analyzer = {
+			-- 	cmd = { "rustup", "run", "stable", "rust-analyzer" },
+			-- 	settings = {
+			-- 		["rust-analyzer"] = {
+			-- 			cargo = { allFeatures = true },
+			-- 			checkOnSave = { command = "clippy" },
+			-- 		},
+			-- 	},
+			-- },
+
+			-- gopls = {
+			-- 	settings = {
+			-- 		gopls = {
+			-- 			gofumpt = true,
+			-- 			analyses = { unusedparams = true },
+			-- 			usePlaceholders = true,
+			-- 			completeUnimported = true,
+			-- 			staticcheck = true,
+			-- 		},
+			-- 	},
+			-- },
+
+			lua_ls = {
+				settings = {
+					Lua = {
+						runtime = { version = "LuaJIT" },
+						diagnostics = {
+							globals = { "vim", "it", "describe", "before_each", "after_each" },
+						},
+						workspace = {
+							library = {
+								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+								[vim.fn.stdpath("config") .. "/lua"] = true,
+							},
+						},
+						telemetry = { enable = false },
 					},
 				},
 			},
-		})
 
-		lspconfig["gopls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = {
-				gopls = {
-					gofumpt = true,
-					analyses = {
-						unusedparams = true,
-					},
-					usePlaceholders = true,
-					completeUnimported = true,
-					staticcheck = true,
-				},
-			},
-		})
-
-		lspconfig["lua_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = {
-				Lua = {
-					runtime = {
-						version = "LuaJIT",
-					},
-					diagnostics = {
-						globals = { "vim", "it", "describe", "before_each", "after_each" },
-					},
-					workspace = {
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
+			pyright = {
+				settings = {
+					python = {
+						analysis = {
+							diagnosticMode = "workspace",
+							typeCheckingMode = "basic",
+							-- inlayHints = {
+							-- 	variableTypes = true,
+							-- 	functionReturnTypes = true,
+							-- },
 						},
 					},
-					telemetry = {
-						enable = false,
+				},
+			},
+
+			-- svelte = {
+			--   on_attach = function(client, bufnr)
+			--     on_attach(client, bufnr)
+			--     vim.api.nvim_create_autocmd("BufWritePost", {
+			--       pattern = { "*.js", "*.ts" },
+			--       callback = function(ctx)
+			--         if client.name == "svelte" then
+			--           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+			--         end
+			--       end,
+			--     })
+			--   end,
+			-- },
+
+			-- solargraph = {
+			--   root_dir = require("lspconfig").util.root_pattern("Gemfile", ".git"),
+			--   settings = {
+			--     solargraph = {
+			--       diagnostics = true,
+			--     },
+			--   },
+			-- },
+
+			jsonls = {
+				-- lazy-load schemastore when needed
+				on_new_config = function(new_config)
+					new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+					vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+				end,
+				settings = {
+					json = {
+						format = { enable = true },
+						validate = { enable = true },
 					},
 				},
 			},
-		})
 
-		lspconfig["bashls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["pyright"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			settings = {
-				python = {
-					analysis = {
-						autoSearchPaths = true,
-						diagnosticMode = "workspace",
-						useLibraryCodeForTypes = true,
-						typeCheckingMode = "basic", -- off
-						-- inlayHints = {
-						-- 	variableTypes = true,
-						-- 	functionReturnTypes = true,
-						-- },
+			yamlls = {
+				capabilities = vim.tbl_deep_extend("force", capabilities, {
+					textDocument = {
+						foldingRange = {
+							dynamicRegistration = false,
+							lineFoldingOnly = true,
+						},
+					},
+				}),
+				on_new_config = function(new_config)
+					new_config.settings.yaml.schemas = vim.tbl_deep_extend(
+						"force",
+						new_config.settings.yaml.schemas or {},
+						require("schemastore").yaml.schemas()
+					)
+				end,
+				settings = {
+					redhat = { telemetry = { enabled = false } },
+					yaml = {
+						keyOrdering = false,
+						format = { enable = true },
+						validate = true,
+						schemaStore = {
+							-- Must disable built-in schemaStore support to use
+							-- schemas from SchemaStore.nvim plugin
+							enable = false,
+							url = "",
+						},
 					},
 				},
 			},
-		})
+		}
 
-		lspconfig["html"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["cssls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["ts_ls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["svelte"].setup({
-			capabilities = capabilities,
-			on_attach = function(client, bufnr)
-				on_attach(client, bufnr)
-				vim.api.nvim_create_autocmd("BufWritePost", {
-					pattern = { "*.js", "*.ts" },
-					callback = function(ctx)
-						if client.name == "svelte" then
-							client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-						end
-					end,
-				})
+		mason_lspconfig.setup_handlers({
+			function(server_name)
+				lspconfig[server_name].setup(vim.tbl_deep_extend("force", {
+					capabilities = capabilities,
+					on_attach = on_attach,
+				}, servers[server_name] or {}))
 			end,
 		})
 
-		lspconfig["graphql"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
-		})
-
-		lspconfig["emmet_language_server"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		-- lspconfig.eslint.setup({
-		-- 	on_attach = function(bufnr)
-		-- 		vim.api.nvim_create_autocmd("BufWritePre", {
-		-- 			buffer = bufnr,
-		-- 			command = "EslintFixAll",
-		-- 		})
-		-- 	end,
-		-- })
-
-		lspconfig["marksman"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["dockerls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["sqlls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-
-		lspconfig["solargraph"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			root_dir = require("lspconfig").util.root_pattern("Gemfile", ".git"),
-			settings = {
-				solargraph = {
-					diagnostics = true,
-				},
-			},
-		})
-
-		lspconfig["jsonls"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			-- lazy-load schemastore when needed
-			on_new_config = function(new_config)
-				new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-				vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
-			end,
-			settings = {
-				json = {
-					format = { enable = true },
-					validate = { enable = true },
-				},
-			},
-		})
-
-		lspconfig["yamlls"].setup({
-			capabilities = vim.tbl_deep_extend("force", capabilities, {
-				textDocument = {
-					foldingRange = {
-						dynamicRegistration = false,
-						lineFoldingOnly = true,
-					},
-				},
-			}),
-			on_attach = on_attach,
-			on_new_config = function(new_config)
-				new_config.settings.yaml.schemas = vim.tbl_deep_extend(
-					"force",
-					new_config.settings.yaml.schemas or {},
-					require("schemastore").yaml.schemas()
-				)
-			end,
-			settings = {
-				redhat = { telemetry = { enabled = false } },
-				yaml = {
-					keyOrdering = false,
-					format = { enable = true },
-					validate = true,
-					schemaStore = {
-						-- Must disable built-in schemaStore support to use
-						-- schemas from SchemaStore.nvim plugin
-						enable = false,
-						url = "",
-					},
-				},
-			},
+		mason_lspconfig.setup({
+			ensure_installed = vim.list_extend({
+				"bashls",
+				"html",
+				"cssls",
+				"ts_ls",
+				"emmet_language_server",
+				"marksman",
+			}, vim.tbl_keys(servers) or {}),
 		})
 	end,
 }

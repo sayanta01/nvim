@@ -22,7 +22,6 @@ return {
 				"TelescopePrompt",
 				"toggleterm",
 				"fugitive",
-				"alpha",
 				"NvimTree",
 				"Trouble",
 			},
