@@ -1,7 +1,7 @@
 local function map(mode, lhs, rhs, opts)
-  opts = opts or {}
-  opts.silent = opts.silent ~= false
-  vim.keymap.set(mode, lhs, rhs, opts)
+	opts = opts or {}
+	opts.silent = opts.silent ~= false
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
 local opts = { noremap = true, silent = true, desc = "which_key_ignore" }
 
@@ -35,13 +35,16 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 map("n", "dd", '"_dd', opts)
 map("n", "x", '"_x', opts)
 
-map("x", "p", '"_dP', opts) -- Paste without overwriting register
+map("x", "p", '"_dP', opts) -- paste without overwriting register
 
 map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for Clear hlsearch" })
 
+map("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+map("t", "<C-/>", "<cmd>close<cr>", opts)
+
 -- better indenting
-map("v", "<", "<gv", opts)
-map("v", ">", ">gv", opts)
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
 -- move lines
 map("n", "<A-j>", ":m .+1<CR>==", opts)
