@@ -1,7 +1,7 @@
 local function map(mode, lhs, rhs, opts)
-	opts = opts or {}
-	opts.silent = opts.silent ~= false
-	vim.keymap.set(mode, lhs, rhs, opts)
+  opts = opts or {}
+  opts.silent = opts.silent ~= false
+  vim.keymap.set(mode, lhs, rhs, opts)
 end
 local opts = { noremap = true, silent = true, desc = "which_key_ignore" }
 
@@ -41,6 +41,11 @@ map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for Clear hlsea
 
 map("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<C-/>", "<cmd>close<cr>", opts)
+vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { noremap = true, silent = true })
 
 -- better indenting
 map("v", "<", "<gv")

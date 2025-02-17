@@ -1,14 +1,5 @@
 return {
 	-- {
-	-- 	"folke/snacks.nvim",
-	-- 	priority = 1000,
-	-- 	lazy = false,
-	-- 	opts = {
-	-- 		bigfile = { enabled = true },
-	-- 	},
-	-- },
-
-	-- {
 	--   "Exafunction/codeium.nvim",
 	--   enabled = false,
 	--   build = ":Codeium Auth",
