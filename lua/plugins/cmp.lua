@@ -25,6 +25,7 @@ return {
       local cmp = require("cmp")
 
       cmp.setup.cmdline({ "/", "?" }, {
+        completion = { completeopt = "noselect" },
         mapping = cmp.mapping.preset.cmdline(),
         sources = { { name = "buffer" } },
       })
@@ -115,8 +116,7 @@ return {
           { name = "buffer" },
           { name = "path" },
           { name = "spell" },
-          { name = "vim-dadbod-completion" },
-          { name = "codeium",              priority = 100 },
+          { name = "codeium", priority = 100 },
         }),
 
         formatting = {
