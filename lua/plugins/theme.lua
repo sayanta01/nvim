@@ -9,26 +9,26 @@ return {
 	--   end,
 	-- },
 
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			style = "moon",
-		},
-		config = function()
-			vim.cmd("colorscheme tokyonight")
-		end,
-	},
-
 	-- {
-	-- 	"rose-pine/neovim",
-	-- 	name = "rose-pine",
+	-- 	"folke/tokyonight.nvim",
 	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {
+	-- 		style = "moon",
+	-- 	},
 	-- 	config = function()
-	-- 		vim.cmd("colorscheme rose-pine")
+	-- 		vim.cmd("colorscheme tokyonight")
 	-- 	end,
 	-- },
+
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		lazy = false,
+		config = function()
+			vim.cmd("colorscheme rose-pine")
+		end,
+	},
 
 	-- {
 	-- 	"RRethy/nvim-base16",
