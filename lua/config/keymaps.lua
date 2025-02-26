@@ -41,11 +41,6 @@ map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for Clear hlsea
 
 map("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<C-/>", "<cmd>close<cr>", opts)
-vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
-vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
-vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true, silent = true })
-vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true, silent = true })
-vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { noremap = true, silent = true })
 
 -- better indenting
 map("v", "<", "<gv")
