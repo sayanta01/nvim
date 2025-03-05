@@ -1,5 +1,6 @@
 return {
 	"numToStr/Comment.nvim",
+  -- stylua: ignore
 	keys = {
 		{ "gcc", mode = "n", desc = "Toggle Comment" },
 		{ "gc", mode = "v", desc = "Toggle Comment" },
