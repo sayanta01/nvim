@@ -167,7 +167,7 @@ return {
 		}
 
 		mason_lspconfig.setup({
-			ensure_installed = { "bashls", "html", "cssls", "ts_ls", "emmet_language_server", "marksman" },
+      ensure_installed = vim.list_extend( { "bashls", "html", "cssls", "ts_ls", "emmet_language_server", "marksman" }, vim.tbl_keys(servers)),
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
