@@ -29,7 +29,12 @@ return {
       ["i18n.config.ts"] = { icon = "󰊿", color = "#7986cb", cterm_color = "104", name = "I18nConfig" },
       ["kdenlive"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "Kdenlive" },
       ["kdenlivetitle"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "Kdenlive" },
-      ["kdenlive-layoutsrc"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "KdenliveLayoutsrc", },
+      ["kdenlive-layoutsrc"] = {
+        icon = "",
+        color = "#83b8F2",
+        cterm_color = "110",
+        name = "KdenliveLayoutsrc",
+      },
       ["kdenliverc"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "Kdenliverc" },
       ["kritadisplayrc"] = { icon = "", color = "#F245Fb", cterm_color = "201", name = "Kritadisplayrc" },
       ["kritarc"] = { icon = "", color = "#F245Fb", cterm_color = "201", name = "Kritarc" },

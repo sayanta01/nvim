@@ -23,7 +23,9 @@ opt.updatetime = 200 -- save swap file and trigger CursorHold
 opt.foldlevel = 99
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-opt.clipboard = "unnamedplus" -- sync with system clipboard
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)
 opt.spelllang:append("cjk") -- disable spellchecking for asian characters `VIM algorithm does not support it`
 opt.shortmess:append({ c = true, C = true })
 opt.whichwrap:append("<,>,[,],h,l")

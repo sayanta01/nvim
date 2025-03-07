@@ -15,15 +15,15 @@ return {
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		local on_attach = function(_, bufnr)
-			local opts = { buffer = bufnr, noremap = true, silent = true, desc = "which_key_ignore" }
+			local opts = { buffer = bufnr, noremap = true, silent = true }
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 			vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
 			vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
-			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
@@ -167,7 +167,10 @@ return {
 		}
 
 		mason_lspconfig.setup({
-      ensure_installed = vim.list_extend( { "bashls", "html", "cssls", "ts_ls", "emmet_language_server", "marksman" }, vim.tbl_keys(servers)),
+			ensure_installed = vim.list_extend(
+				{ "bashls", "html", "cssls", "ts_ls", "emmet_language_server", "marksman" },
+				vim.tbl_keys(servers)
+			),
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}

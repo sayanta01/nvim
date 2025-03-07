@@ -1,11 +1,10 @@
 local function map(mode, lhs, rhs, opts)
-	opts = opts or {}
-	opts.silent = opts.silent ~= false
-	vim.keymap.set(mode, lhs, rhs, opts)
+  opts = opts or {}
+  opts.silent = opts.silent ~= false
+  vim.keymap.set(mode, lhs, rhs, opts)
 end
-local opts = { noremap = true, silent = true, desc = "which_key_ignore" }
+local opts = { noremap = true, silent = true }
 
--- space as leader key
 map("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -37,7 +36,7 @@ map("n", "x", '"_x', opts)
 
 map("x", "p", '"_dP', opts) -- paste without overwriting register
 
-map({ "i", "n" }, "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Escape for Clear hlsearch" })
+map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
 
 map("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<C-/>", "<cmd>close<cr>", opts)
@@ -55,15 +54,15 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", opts)
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", opts)
 
 -- better up/down on wrap
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "which_key_ignore" })
-map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "which_key_ignore" })
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "which_key_ignore" })
-map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "which_key_ignore" })
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "which_key_ignore" })
-map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "which_key_ignore" })
-map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "which_key_ignore" })
-map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "which_key_ignore" })
-map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "which_key_ignore" })
-map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "which_key_ignore" })
+map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next Search Result" })
+map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev Search Result" })
+map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
+map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev Search Result" })
