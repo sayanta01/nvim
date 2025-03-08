@@ -43,13 +43,11 @@ return {
     -- stylua: ignore
     spec = {
       {
-        { "<leader>e",  ":NvimTreeToggle<cr>",                                               desc = "Explorer", },
-        { "<leader>f",  ":Telescope find_files<cr>",                                         desc = "Find Files", },
         { "<leader>q",  ":q!<cr>",                                                           desc = "Quit", },
         { "<leader>x",  ":bdelete<cr>",                                                      desc = "Close Buffer", },
 
         { "<leader>d",  group = "Debug",                                                     mode = { "n", "v" } },
-        { "<leader>g",  group = "Git",                                                       mode = { "n", "v" }, },
+        { "<leader>g",  group = "Git",                                                       mode = { "n", "v" } },
         { "<leader>t",  group = "Terminal" },
 
         { "<leader>l",  group = "LSP",                                                       mode = { "n", "v" } },
