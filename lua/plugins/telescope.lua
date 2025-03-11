@@ -2,7 +2,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	cmd = "Telescope",
 	keys = {
-    { "<leader>f", ":Telescope find_files<cr>", desc = "Find Files" },
+		{ "<leader>f", ":Telescope find_files cwd=%:p:h<cr>", desc = "Find Files" },
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
