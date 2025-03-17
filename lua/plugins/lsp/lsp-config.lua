@@ -192,7 +192,7 @@ return {
     }
 
     servers.vtsls.settings.javascript =
-        vim.tbl_deep_extend("force", {}, servers.vtsls.settings.typescript, servers.vtsls.settings.javascript or {})
+      vim.tbl_deep_extend("force", {}, servers.vtsls.settings.typescript, servers.vtsls.settings.javascript or {})
 
     require("mason-lspconfig").setup({
       ensure_installed = vim.list_extend(
