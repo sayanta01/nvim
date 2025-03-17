@@ -3,19 +3,15 @@ return {
   event = "BufReadPost",
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-    "williamboman/mason.nvim",
+    { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
-    local lspconfig = require("lspconfig")
-    require("mason").setup({ ui = { border = "rounded" } })
-    local mason_lspconfig = require("mason-lspconfig")
-
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-    local on_attach = function(_, bufnr)
-      local opts = { buffer = bufnr, noremap = true, silent = true }
+    local on_attach = function(client, bufnr)
+      local opts = { buffer = bufnr, silent = true }
       vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -27,9 +23,11 @@ return {
       vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
       vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
       vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-      vim.keymap.set("n", "<leader>uh", function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
-      end)
+      if client.supports_method("textDocument/inlayHint") then
+        vim.keymap.set("n", "<leader>uh", function()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
+        end)
+      end
     end
 
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -196,7 +194,7 @@ return {
     servers.vtsls.settings.javascript =
         vim.tbl_deep_extend("force", {}, servers.vtsls.settings.typescript, servers.vtsls.settings.javascript or {})
 
-    mason_lspconfig.setup({
+    require("mason-lspconfig").setup({
       ensure_installed = vim.list_extend(
         { "bashls", "html", "cssls", "emmet_language_server" },
         vim.tbl_keys(servers)
@@ -206,7 +204,7 @@ return {
           local server = servers[server_name] or {}
           server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
           server.on_attach = server.on_attach or on_attach
-          lspconfig[server_name].setup(server)
+          require("lspconfig")[server_name].setup(server)
         end,
       },
     })
