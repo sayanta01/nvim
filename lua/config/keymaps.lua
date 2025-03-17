@@ -3,57 +3,54 @@ local function map(mode, lhs, rhs, opts)
   opts.silent = opts.silent ~= false
   vim.keymap.set(mode, lhs, rhs, opts)
 end
-local opts = { noremap = true, silent = true }
 
-map("", "<Space>", "<Nop>", opts)
+map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- keep centered
-map("n", "<C-d>", "<C-d>zz", opts)
-map("n", "<C-u>", "<C-u>zz", opts)
-map("n", "n", "nzzzv", opts)
-map("n", "N", "NNzzv", opts)
-map("n", "}", "}zzzv", opts)
-map("n", "{", "{zzzv", opts)
-map("n", "J", "mzJ`z", opts)
+-- Keep centered
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "NNzzv")
+map("n", "}", "}zzzv")
+map("n", "{", "{zzzv")
+map("n", "J", "mzJ`z")
 
--- switch window
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-map("n", "<C-l>", "<C-w>l", opts)
+-- Switch window
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
 
--- resize window
-map("n", "<C-Up>", ":resize -2<CR>", opts)
-map("n", "<C-Down>", ":resize +2<CR>", opts)
-map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+-- Resize window
+map("n", "<C-Up>", ":resize -2<CR>")
+map("n", "<C-Down>", ":resize +2<CR>")
+map("n", "<C-Left>", ":vertical resize -2<CR>")
+map("n", "<C-Right>", ":vertical resize +2<CR>")
 
--- delete not cut
-map("n", "dd", '"_dd', opts)
-map("n", "x", '"_x', opts)
-
-map("x", "p", '"_dP', opts) -- paste without overwriting register
+-- Delete not cut
+map("n", "dd", '"_dd')
+map("n", "x", '"_x')
+map("x", "p", '"_dP') -- Paste without overwriting register
 
 map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
-
 map("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-map("t", "<C-/>", "<cmd>close<cr>", opts)
+map("t", "<C-/>", "<cmd>close<cr>")
 
--- better indenting
+-- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
--- move lines
-map("n", "<A-j>", ":m .+1<CR>==", opts)
-map("n", "<A-k>", ":m .-2<CR>==", opts)
-map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
-map("v", "<A-j>", ":m '>+1<cr>gv=gv", opts)
-map("v", "<A-k>", ":m '<-2<cr>gv=gv", opts)
+-- Move lines
+map("n", "<A-j>", ":m .+1<CR>==")
+map("n", "<A-k>", ":m .-2<CR>==")
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
+map("v", "<A-j>", ":m '>+1<cr>gv=gv")
+map("v", "<A-k>", ":m '<-2<cr>gv=gv")
 
--- better up/down on wrap
+-- Better up/down on wrap
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
