@@ -12,7 +12,6 @@ return {
 				javascript = { "string", "template_string" },
 				java = false, -- don't check treesitter on java
 			},
-
 			fast_wrap = {
 				map = "<M-e>",
 				pattern = [=[[%'%"%>%]%)%}%,]]=],
