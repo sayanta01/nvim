@@ -1,21 +1,10 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
+  -- stylua: ignore
   keys = {
-    {
-      "<C-_>",
-      function()
-        require("toggleterm").toggle()
-      end,
-      desc = "Toggle Terminal",
-    },
-    {
-      "<C-/>",
-      function()
-        require("toggleterm").toggle()
-      end,
-      desc = "Toggle Terminal",
-    },
+    { "<C-_>", function() require("toggleterm").toggle() end,  desc = "Toggle Terminal" },
+    { "<C-/>", function() require("toggleterm").toggle() end,  desc = "Toggle Terminal" },
     { "<leader>th", ":ToggleTerm size=14 direction=horizontal<cr>", desc = "Horizontal" },
     { "<leader>tv", ":ToggleTerm size=80 direction=vertical<cr>",   desc = "Vertical" },
     { "<leader>gg", ":lua _LAZYGIT_TOGGLE()<cr>",                   desc = "Lazygit" },

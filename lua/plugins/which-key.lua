@@ -1,45 +1,45 @@
 return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  init = function()
-    vim.o.timeoutlen = 200
-  end,
-  opts = {
-    preset = "modern",
-    filter = function(mapping)
-      return mapping.desc and mapping.desc ~= ""
-    end,
-    triggers = {
-      { "<leader>", mode = { "n", "v" } },
-    },
-    win = {
-      no_overlap = false,
-      title = false,
-    },
-    icons = {
-      breadcrumb = "»",
-      separator = "",
-      group = "",
-      mappings = false,
-      keys = {
-        Up = "↑",
-        Down = "↓",
-        Left = "«",
-        Right = "»",
-        C = "⌃",
-        M = "M",
-        CR = "↩︎",
-        NL = "↩︎",
-        BS = "󰭜",
-        Space = "",
-        Tab = "⇨",
-      },
-    },
-    show_help = false,
-    show_keys = false,
-    disable = {
-      ft = { "TelescopePrompt" },
-    },
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = function()
+		vim.o.timeoutlen = 200
+	end,
+	opts = {
+		preset = "modern",
+		filter = function(mapping)
+			return mapping.desc and mapping.desc ~= ""
+		end,
+		triggers = {
+			{ "<leader>", mode = { "n", "v" } },
+		},
+		win = {
+			no_overlap = false,
+			title = false,
+		},
+		icons = {
+			breadcrumb = "»",
+			separator = "",
+			group = "",
+			mappings = false,
+			keys = {
+				Up = "↑",
+				Down = "↓",
+				Left = "«",
+				Right = "»",
+				C = "⌃",
+				M = "M",
+				CR = "↩︎",
+				NL = "↩︎",
+				BS = "󰭜",
+				Space = "",
+				Tab = "⇨",
+			},
+		},
+		show_help = false,
+		show_keys = false,
+		disable = {
+			ft = { "TelescopePrompt" },
+		},
     -- stylua: ignore
     spec = {
       {
@@ -54,7 +54,7 @@ return {
         { "<leader>lh", ":lua vim.lsp.buf.signature_help()<cr>",                             desc = "Signature Help" },
         { "<leader>lt", ":lua vim.lsp.buf.type_definition()<cr>",                            desc = "Type Definition" },
         { "<leader>lr", ":lua vim.lsp.buf.rename()<cr>",                                     desc = "Rename" },
-        { "<leader>la", ":lua vim.lsp.buf.code_action()<cr>",                                desc = "Code Action", mode = { "n", "v" } },
+        { "<leader>la", ":lua vim.lsp.buf.code_action()<cr>",                                desc = "Code Action",            mode = { "n", "v" } },
         { "<leader>lw", ":lua vim.lsp.buf.add_workspace_folder()<cr>",                       desc = "Add Workspace Folder" },
         { "<leader>lW", ":lua vim.lsp.buf.remove_workspace_folder()<cr>",                    desc = "Remove Workspace Folder" },
         { "<leader>ll", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", desc = "List Workspace Folder" },
@@ -75,16 +75,16 @@ return {
         { "<leader>pl", ":Lazy<cr>",                                                         desc = "Lazy" },
         { "<leader>pm", ":Mason<cr>",                                                        desc = "Mason" },
 
-        { "<leader>s",  group = "Search", mode = { "n", "x" } },
+        { "<leader>s",  group = "Search",                                                    mode = { "n", "x" } },
         { "<leader>sc", function() Snacks.picker.command_history() end,                      desc = "Cmd History" },
         { "<leader>sC", function() Snacks.picker.colorschemes() end,                         desc = "Colors" },
         { "<leader>so", ":Telescope oldfiles<cr>",                                           desc = "Recent Files" },
         { "<leader>sh", ":Telescope help_tags<cr>",                                          desc = "Help Pages" },
         { "<leader>sg", function() Snacks.picker.grep() end,                                 desc = "Grep" },
-        { "<leader>sw", function() Snacks.picker.grep_word() end,                            desc = "Grep Word", mode = { "n", "x" } },
+        { "<leader>sw", function() Snacks.picker.grep_word() end,                            desc = "Grep Word",              mode = { "n", "x" } },
         { "<leader>sm", function() Snacks.picker.marks() end,                                desc = "Marks" },
         { "<leader>sr", function() Snacks.picker.registers() end,                            desc = "Registers" },
       },
     },
-  },
+	},
 }

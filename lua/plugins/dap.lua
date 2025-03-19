@@ -117,10 +117,7 @@ return {
 				end,
 			},
 
-			{
-				"theHamsta/nvim-dap-virtual-text",
-				opts = {},
-			},
+			{ "theHamsta/nvim-dap-virtual-text", opts = {} },
 		},
 	},
 
@@ -129,43 +126,12 @@ return {
 	-- 	ft = "python",
 	--    -- stylua: ignore
 	--    keys = {
-	--      { "<leader>dPt", function() require("dap-python").test_method() end, desc = "Test Method", ft = "python" },
-	--      { "<leader>dPc", function() require("dap-python").test_class() end,  desc = "Test Class",  ft = "python" },
+	--      { "<leader>dpt", function() require("dap-python").test_method() end, desc = "Test Method", ft = "python" },
+	--      { "<leader>dpc", function() require("dap-python").test_class() end,  desc = "Test Class",  ft = "python" },
 	--    },
 	-- 	config = function()
 	-- 		local path = require("mason-registry").get_package("debugpy"):get_install_path()
 	-- 		require("dap-python").setup(path .. "/venv/bin/python")
-	-- 	end,
-	-- },
-
-	-- {
-	-- 	"leoluz/nvim-dap-go",
-	-- 	ft = "go",
-	--    -- stylua: ignore
-	--    keys = {
-	--      { "<leader>dPt", function() require("dap-go").debug_test() end,      desc = "Debug Test", ft = "go" },
-	--      { "<leader>dPl", function() require("dap-go").debug_last_test() end, desc = "Last Test",  ft = "go" },
-	--    },
-	-- 	config = function()
-	-- 		require("dap-go").setup({
-	-- 			dap_configurations = {
-	-- 				{
-	-- 					type = "go",
-	-- 					name = "Attach remote",
-	-- 					mode = "remote",
-	-- 					request = "attach",
-	-- 				},
-	-- 			},
-	-- 			delve = {
-	-- 				path = "dlv",
-	-- 				initialize_timeout_sec = 20,
-	-- 				port = "${port}",
-	-- 				args = {},
-	-- 				build_flags = {},
-	-- 				detached = vim.fn.has("win32") == 0,
-	-- 				cwd = nil,
-	-- 			},
-	-- 		})
 	-- 	end,
 	-- },
 }
