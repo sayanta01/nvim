@@ -51,10 +51,6 @@ return {
         { "<leader>t",  group = "Terminal" },
 
         { "<leader>l",  group = "LSP",                                                       mode = { "n", "v" } },
-        -- { "<leader>lh", ":lua vim.lsp.buf.signature_help()<cr>",                             desc = "Signature Help" },
-        -- { "<leader>lt", ":lua vim.lsp.buf.type_definition()<cr>",                            desc = "Type Definition" },
-        -- { "<leader>lr", ":lua vim.lsp.buf.rename()<cr>",                                     desc = "Rename" },
-        -- { "<leader>la", ":lua vim.lsp.buf.code_action()<cr>",                                desc = "Code Action",            mode = { "n", "v" } },
         { "<leader>lw", ":lua vim.lsp.buf.add_workspace_folder()<cr>",                       desc = "Add Workspace Folder" },
         { "<leader>lW", ":lua vim.lsp.buf.remove_workspace_folder()<cr>",                    desc = "Remove Workspace Folder" },
         { "<leader>ll", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", desc = "List Workspace Folder" },
