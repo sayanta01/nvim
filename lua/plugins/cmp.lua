@@ -139,7 +139,7 @@ return {
 
   {
     "hrsh7th/cmp-cmdline",
-    dependencies = { "f3fora/cmp-spell" },
+    -- dependencies = { "f3fora/cmp-spell" },
     keys = { ":", "/", "?" },
   },
 }

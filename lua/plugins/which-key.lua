@@ -18,7 +18,7 @@ return {
 		},
 		icons = {
 			breadcrumb = "»",
-			separator = "",
+			separator = "•",
 			group = "",
 			mappings = false,
 			keys = {
