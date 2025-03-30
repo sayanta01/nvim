@@ -9,8 +9,8 @@ return {
         -- stylua: ignore
         keys = {
           { "<leader>du", function() require("dapui").toggle({}) end,        desc = "Dap UI" },
-          { "<leader>dw", function() require("dap.ui.widgets").hover() end,  desc = "Widgets" },
           { "<leader>de", function() require("dapui").eval() end,            desc = "Evaluate",         mode = { "n", "v" } },
+          { "<leader>dw", function() require("dap.ui.widgets").hover() end,  desc = "Widgets" },
           { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
           -- { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
           { "<leader>dc", function() require("dap").continue() end,          desc = "Continue" },

@@ -18,11 +18,16 @@ return {
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 			vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
 			vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-			-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+			if client.supports_method("textDocument/codeAction") then
+				vim.keymap.set("n", "<leader>cA", function()
+					vim.lsp.buf.code_action({ context = { only = { "source" }, diagnostics = {} } })
+				end, opts)
+			end
+			vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { buffer = bufnr, nowait = true })
+			-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+			-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 			if client.supports_method("textDocument/inlayHint") then
 				vim.keymap.set("n", "<leader>uh", function()
 					vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr }))
@@ -95,7 +100,7 @@ return {
 				settings = {
 					python = {
 						analysis = {
-							diagnosticMode = "workspace",
+              diagnosticMode = "openFilesOnly",
 							typeCheckingMode = "basic",
 						},
 					},
@@ -126,38 +131,6 @@ return {
 					json = {
 						format = { enable = true },
 						validate = { enable = true },
-					},
-				},
-			},
-
-			yamlls = {
-				capabilities = vim.tbl_deep_extend("force", capabilities, {
-					textDocument = {
-						foldingRange = {
-							dynamicRegistration = false,
-							lineFoldingOnly = true,
-						},
-					},
-				}),
-				on_new_config = function(new_config)
-					new_config.settings.yaml.schemas = vim.tbl_deep_extend(
-						"force",
-						new_config.settings.yaml.schemas or {},
-						require("schemastore").yaml.schemas()
-					)
-				end,
-				settings = {
-					redhat = { telemetry = { enabled = false } },
-					yaml = {
-						keyOrdering = false,
-						format = { enable = true },
-						validate = true,
-						schemaStore = {
-							-- Must disable built-in schemaStore support to use
-							-- schemas from SchemaStore.nvim plugin
-							enable = false,
-							url = "",
-						},
 					},
 				},
 			},

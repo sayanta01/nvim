@@ -5,8 +5,7 @@ return {
   -- stylua: ignore start
   keys = {
     -- { "<leader>f", function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end, desc = "Find Files" },
-    { "gr", function() Snacks.picker.lsp_references() end, nowait = true },
-    -- { "<leader>z", function() Snacks.zen.zoom() end },
+    { "<leader>z", function() Snacks.zen.zoom() end },
   },
   opts = {
     bigfile = { notify = false, size = 1.5 * 1024 * 1024 },
@@ -14,7 +13,8 @@ return {
     picker = { icons = { ui = { live = "" } } },
     image = { doc = { inline = false } },
   },
-  -- config = function()
-  --   Snacks.config.style("zoom_indicator", { text = "📌" })
-  -- end,
+  config = function(_, opts)
+    require("snacks").setup(opts)
+    Snacks.config.style("zoom_indicator", { text = "zoom 📌" })
+  end,
 }
