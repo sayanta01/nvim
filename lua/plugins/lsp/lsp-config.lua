@@ -16,7 +16,7 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-			vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
+			vim.keymap.set("n", "gh", vim.lsp.buf.signature_help, opts)
 			vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
 			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
