@@ -20,11 +20,6 @@ return {
 			vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
 			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-			if client.supports_method("textDocument/codeAction") then
-				vim.keymap.set("n", "<leader>cA", function()
-					vim.lsp.buf.code_action({ context = { only = { "source" }, diagnostics = {} } })
-				end, opts)
-			end
 			vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { buffer = bufnr, nowait = true })
 			-- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			-- vim.keymap.set("n", "]d", vim.diagnostic.goto_next)

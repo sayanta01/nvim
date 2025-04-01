@@ -1,45 +1,32 @@
 return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  init = function()
-    vim.o.timeoutlen = 200
-  end,
-  opts = {
-    preset = "modern",
-    filter = function(mapping)
-      return mapping.desc and mapping.desc ~= ""
-    end,
-    triggers = {
-      { "<leader>", mode = { "n", "v" } },
-    },
-    win = {
-      no_overlap = false,
-      title = false,
-    },
-    icons = {
-      breadcrumb = "»",
-      separator = "•",
-      group = "",
-      mappings = false,
-      keys = {
-        Up = "↑",
-        Down = "↓",
-        Left = "«",
-        Right = "»",
-        C = "⌃",
-        M = "M",
-        CR = "↩︎",
-        NL = "↩︎",
-        BS = "󰭜",
-        Space = "",
-        Tab = "⇨",
-      },
-    },
-    show_help = false,
-    show_keys = false,
-    disable = {
-      ft = { "TelescopePrompt" },
-    },
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = function()
+		vim.o.timeoutlen = 200
+	end,
+	opts = {
+		preset = "modern",
+		filter = function(mapping)
+			return mapping.desc and mapping.desc ~= ""
+		end,
+		triggers = {
+			{ "<leader>", mode = { "n", "v" } },
+		},
+		win = {
+			no_overlap = false,
+			title = false,
+		},
+		icons = {
+			breadcrumb = "»",
+			separator = "•",
+			group = "",
+			mappings = false,
+		},
+		show_help = false,
+		show_keys = false,
+		disable = {
+			ft = { "TelescopePrompt" },
+		},
     -- stylua: ignore
     spec = {
       {
@@ -57,8 +44,6 @@ return {
         { "<leader>cf", ":lua vim.lsp.buf.format()<CR>",                                     desc = "Format" },
         { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",                              desc = "Line Diagnostics" },
         { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",                              desc = "Quickfix" },
-        { "<leader>cs", ":Telescope lsp_document_symbols<cr>",                               desc = "Document Symbols" },
-        { "<leader>cS", ":Telescope lsp_dynamic_workspace_symbols<cr>",                      desc = "Workspace Symbols" },
 
         { "<leader>o",  group = "Option", },
         { "<leader>ol", ":terminal live-server<cr>",                                         desc = "Live Server" },
@@ -77,7 +62,9 @@ return {
         { "<leader>sw", function() Snacks.picker.grep_word() end,                            desc = "Grep Word",              mode = { "n", "x" } },
         { "<leader>sm", function() Snacks.picker.marks() end,                                desc = "Marks" },
         { '<leader>s"', function() Snacks.picker.registers() end,                            desc = "Registers" },
+        { "<leader>ss", function() Snacks.picker.lsp_symbols() end,                          desc = "LSP Symbols" },
+        { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end,                desc = "LSP Workspace Symbols" },
       },
     },
-  },
+	},
 }

@@ -8,6 +8,9 @@ map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+map("n", "<leader>/", "gcc", { remap = true, desc = "Toggle Comment" })
+map("x", "<leader>/", "gc", { remap = true, desc = "Toggle Comment" })
+
 -- Keep centered
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
@@ -35,6 +38,7 @@ map("n", "x", '"_x')
 map("x", "p", '"_dP') -- Paste without overwriting register
 
 map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
+
 map("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<C-/>", "<cmd>close<cr>")
 

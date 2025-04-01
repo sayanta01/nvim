@@ -18,37 +18,6 @@ return {
   -- 	end,
   -- },
 
-  -- {
-  -- 	"iamcco/markdown-preview.nvim",
-  -- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  -- 	build = function()
-  -- 		require("lazy").load({ plugins = { "markdown-preview.nvim" } })
-  -- 		vim.fn["mkdp#util#install"]()
-  -- 	end,
-  -- 	keys = { { "<leader>op", ft = "markdown", ":MarkdownPreviewToggle<CR>", desc = "Markdown Preview" } },
-  -- 	config = function()
-  -- 		vim.cmd([[do FileType]])
-  -- 	end,
-  -- },
-
-  -- {
-  -- 	"luukvbaal/statuscol.nvim",
-  -- 	dependencies = {
-  -- 		"kevinhwang91/promise-async",
-  -- 	},
-  -- 	config = function()
-  -- 		local builtin = require("statuscol.builtin")
-  -- 		require("statuscol").setup({
-  -- 			relculright = true,
-  -- 			segments = {
-  -- 				{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-  -- 				{ text = { "%s" }, click = "v:lua.ScSa" },
-  -- 				{ text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
-  -- 			},
-  -- 		})
-  -- 	end,
-  -- },
-
   {
     "folke/flash.nvim",
     -- stylua: ignore
