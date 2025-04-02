@@ -39,7 +39,7 @@ map("x", "p", '"_dP') -- Paste without overwriting register
 
 map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
 
-map("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+map("t", "<C-_>", "<cmd>close<cr>")
 map("t", "<C-/>", "<cmd>close<cr>")
 
 -- Better indenting

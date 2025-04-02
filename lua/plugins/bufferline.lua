@@ -25,7 +25,7 @@ return {
           text_align = "center",
         },
       },
-      separator_style = "thin",
+      separator_style = "thick",
       always_show_bufferline = false,
     },
   },
