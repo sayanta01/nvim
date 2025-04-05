@@ -47,10 +47,10 @@ return {
 				Variable = "",
 				Class = "",
 				Interface = "",
-				Module = "",
+				Module = "󰩦",
 				Property = "󰓹",
 				Unit = "",
-				Value = "",
+				Value = "",
 				Enum = "",
 				Keyword = "",
 				Snippet = "",
@@ -62,7 +62,7 @@ return {
 				Constant = "П",
 				Struct = "",
 				Event = "",
-				Operator = "±",
+				Operator = "",
 				TypeParameter = "",
 			}
 

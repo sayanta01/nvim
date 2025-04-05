@@ -1,32 +1,32 @@
 return {
-	"folke/which-key.nvim",
-	event = "VeryLazy",
-	init = function()
-		vim.o.timeoutlen = 200
-	end,
-	opts = {
-		preset = "modern",
-		filter = function(mapping)
-			return mapping.desc and mapping.desc ~= ""
-		end,
-		triggers = {
-			{ "<leader>", mode = { "n", "v" } },
-		},
-		win = {
-			no_overlap = false,
-			title = false,
-		},
-		icons = {
-			breadcrumb = "»",
-			separator = "•",
-			group = "",
-			mappings = false,
-		},
-		show_help = false,
-		show_keys = false,
-		disable = {
-			ft = { "TelescopePrompt" },
-		},
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  init = function()
+    vim.o.timeoutlen = 200
+  end,
+  opts = {
+    preset = "modern",
+    filter = function(mapping)
+      return mapping.desc and mapping.desc ~= ""
+    end,
+    triggers = {
+      { "<leader>", mode = { "n", "v" } },
+    },
+    win = {
+      no_overlap = false,
+      title = false,
+    },
+    icons = {
+      breadcrumb = "»",
+      separator = "•",
+      group = "",
+      mappings = false,
+    },
+    show_help = false,
+    show_keys = false,
+    disable = {
+      ft = { "TelescopePrompt" },
+    },
     -- stylua: ignore
     spec = {
       { "<leader>q",  ":q!<cr>",                                                           desc = "Quit" },
@@ -49,11 +49,6 @@ return {
       { "<leader>os", ":set spell!<cr>",                                                   desc = "Toggle Spell " },
       { "<leader>ow", ":set wrap!<cr>",                                                    desc = "Toggle Wrap" },
 
-      { "<leader>p",  group = "Plugin", },
-      { "<leader>pi", ":LspInfo<cr>",                                                      desc = "Lsp" },
-      { "<leader>pl", ":Lazy<cr>",                                                         desc = "Lazy" },
-      { "<leader>pm", ":Mason<cr>",                                                        desc = "Mason" },
-
       { "<leader>s",  group = "Search",                                                    mode = { "n", "x" } },
       { "<leader>sc", function() Snacks.picker.command_history() end,                      desc = "Cmd History" },
       { "<leader>sC", function() Snacks.picker.colorschemes() end,                         desc = "Colors" },
@@ -64,5 +59,5 @@ return {
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,                          desc = "LSP Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end,                desc = "LSP Workspace Symbols" },
     },
-	},
+  },
 }
