@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "SmiteshP/nvim-navic" },
-  event = "VeryLazy",
+	event = "VeryLazy",
 	config = function()
 		local lualine = require("lualine")
 		local navic = require("nvim-navic")
@@ -38,11 +38,11 @@ return {
 				Array = " ",
 				Object = " ",
 				Key = " ",
-				Null = "",
+				Null = " ",
 				EnumMember = " ",
 				Struct = " ",
 				Event = " ",
-				Operator = "",
+				Operator = " ",
 				TypeParameter = " ",
 			},
 			separator = " › ",
