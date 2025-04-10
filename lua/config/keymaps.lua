@@ -8,8 +8,8 @@ map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-map("n", "<leader>/", "gcc", { remap = true, desc = "Toggle Comment" })
-map("x", "<leader>/", "gc", { remap = true, desc = "Toggle Comment" })
+-- map("n", "<leader>/", "gcc", { remap = true, desc = "Toggle Comment" })
+-- map("x", "<leader>/", "gc", { remap = true, desc = "Toggle Comment" })
 
 -- Keep centered
 map("n", "<C-d>", "<C-d>zz")

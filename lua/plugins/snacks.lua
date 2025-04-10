@@ -5,6 +5,22 @@ return {
   -- stylua: ignore start
   keys = {
     { "<leader>f",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end, desc = "Find Files" },
+    {
+      "<leader>F",
+      function()
+        local git_dir = vim.fs.find(".git", { upward = true })[1]
+        local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
+        Snacks.picker.files({ cwd = root })
+      end,
+    },
+    {
+      "<leader>sG",
+      function()
+        local git_dir = vim.fs.find(".git", { upward = true })[1]
+        local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
+        Snacks.picker.grep({ cwd = root })
+      end,
+    },
     { "<leader>z",  function() Snacks.zen.zoom() end },
     { "<leader>gl", function() Snacks.picker.git_log() end,                               desc = "Log" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end,                          desc = "File Log" },
@@ -21,10 +37,10 @@ return {
     },
     picker = {
       icons = {
-        files = { dir = "", dir_open = "", file = "" },
+        files = { dir_open = "", file = "" },
         ui = { live = "" },
         git = {
-          enabled   = true,
+          enabled   = false,
           commit    = " ",
           added     = "⊠",
           modified  = "⊡",
