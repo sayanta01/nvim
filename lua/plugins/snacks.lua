@@ -4,26 +4,37 @@ return {
 	lazy = false,
   -- stylua: ignore start
   keys = {
-    { "<leader>f",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end, desc = "Find Files" },
     {
-      "<leader>F",
+      "<leader>f",
       function()
         local git_dir = vim.fs.find(".git", { upward = true })[1]
         local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
         Snacks.picker.files({ cwd = root })
       end,
+      desc = "Find Files"
     },
     {
-      "<leader>sG",
+      "<leader>sg",
       function()
         local git_dir = vim.fs.find(".git", { upward = true })[1]
         local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
         Snacks.picker.grep({ cwd = root })
       end,
+      desc = "Grep"
+    },
+    {
+      "<leader>sw",
+      function()
+        local git_dir = vim.fs.find(".git", { upward = true })[1]
+        local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
+        Snacks.picker.grep({ cwd = root })
+      end,
+      desc = "Grep Word",
+      mode = { "n", "x" }
     },
     { "<leader>z",  function() Snacks.zen.zoom() end },
-    { "<leader>gl", function() Snacks.picker.git_log() end,                               desc = "Log" },
-    { "<leader>gf", function() Snacks.picker.git_log_file() end,                          desc = "File Log" },
+    { "<leader>gl", function() Snacks.picker.git_log() end,      desc = "Log" },
+    { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "File Log" },
   },
   opts = {
     bigfile = { notify = false },
