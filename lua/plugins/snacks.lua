@@ -4,6 +4,7 @@ return {
 	lazy = false,
   -- stylua: ignore start
   keys = {
+    { "<leader>F",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end },
     {
       "<leader>f",
       function()
@@ -32,15 +33,13 @@ return {
       desc = "Grep Word",
       mode = { "n", "x" }
     },
-    { "<leader>z",  function() Snacks.zen.zoom() end },
-    { "<leader>gl", function() Snacks.picker.git_log() end,      desc = "Log" },
-    { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "File Log" },
+    { "<leader>gl", function() Snacks.picker.git_log() end,                               desc = "Log" },
+    { "<leader>gf", function() Snacks.picker.git_log_file() end,                          desc = "File Log" },
   },
   opts = {
     bigfile = { notify = false },
     input = { icon = "" },
     image = { doc = { inline = false } },
-    styles = { zoom_indicator = { text = "zoom 📌" } },
     indent = {
       indent = { char = "▏" },
       scope = { char = "▏" },

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+## Debian
+if [ -f /etc/debian_version ]; then
+	printf "Build neovim? [y/N]: "
+	read -r choice
+	if [ "$choice" = "y" ]; then
+		sudo apt install -y ninja-build gettext cmake curl build-essential
+		git clone --depth=1 https://github.com/neovim/neovim.git ~/.cache/neovim
+		cd ~/.cache/neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+		cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+	fi
+
+	sudo apt install -y npm fd-find imagemagick
+	# go install github.com/jesseduffield/lazygit@latest
+fi
+
+## Arch
+[ -f /etc/arch-release ] && sudo pacman -S --noconfirm npm fd imagemagick lazygit
+
+## Node
+sudo npm i -g live-server tree-sitter-cli

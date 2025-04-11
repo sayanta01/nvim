@@ -41,7 +41,7 @@ return {
       { "<leader>cl", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", desc = "List Workspace Folder" },
       { "<leader>cf", ":lua vim.lsp.buf.format()<CR>",                                     desc = "Format" },
       { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",                              desc = "Line Diagnostics" },
-      { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",                              desc = "Quickfix" },
+      { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",                              desc = "Quickfix List" },
 
       { "<leader>o",  group = "Option", },
       { "<leader>ol", ":terminal live-server<cr>",                                         desc = "Live Server" },
