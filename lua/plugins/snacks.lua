@@ -1,7 +1,7 @@
 return {
-	"folke/snacks.nvim",
-	priority = 1000,
-	lazy = false,
+  "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
   -- stylua: ignore start
   keys = {
     { "<leader>F",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end },
@@ -33,18 +33,22 @@ return {
       desc = "Grep Word",
       mode = { "n", "x" }
     },
-    { "<leader>gl", function() Snacks.picker.git_log() end,                               desc = "Log" },
-    { "<leader>gf", function() Snacks.picker.git_log_file() end,                          desc = "File Log" },
+    { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log" },
+    { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "File Log" },
+    { "<leader>gg", function() Snacks.lazygit() end,                                     desc = "Lazygit" },
+    { "<C-/>",      function() Snacks.terminal() end,                                    desc = "Toggle Terminal" },
+    { "<C-_>",      function() Snacks.terminal() end,                                    desc = "which_key_ignore" },
   },
   opts = {
     bigfile = { notify = false },
-    input = { icon = "" },
     image = { doc = { inline = false } },
+    input = { icon = "✎" },
     indent = {
       indent = { char = "▏" },
       scope = { char = "▏" },
       animate = { enabled = false },
     },
+    lazygit = { configure = false },
     picker = {
       icons = {
         files = { dir_open = "", file = "" },
@@ -55,7 +59,7 @@ return {
           added     = "⊠",
           modified  = "⊡",
           deleted   = "",
-          ignored   = "",
+          ignored   = "",
           renamed   = "✎",
           unmerged  = "",
           untracked = "∪",

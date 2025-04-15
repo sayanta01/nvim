@@ -39,8 +39,12 @@ map("x", "p", '"_dP') -- Paste without overwriting register
 
 map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
 
-map("t", "<C-_>", "<cmd>close<cr>")
 map("t", "<C-/>", "<cmd>close<cr>")
+map("t", "<C-_>", "<cmd>close<cr>")
+map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
+map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true, silent = true })
+map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true, silent = true })
+map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], { noremap = true, silent = true })
 
 -- Better indenting
 map("v", "<", "<gv")
