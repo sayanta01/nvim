@@ -10,14 +10,12 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     nvimtree.setup({
-      on_attach = "default",
+      filters = { dotfiles = true },
       hijack_cursor = true,
-      auto_reload_on_write = false,
       disable_netrw = true,
       sync_root_with_cwd = true,
       view = { width = 30 },
       renderer = {
-        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
         indent_markers = {
           enable = true,
           icons = {
@@ -37,9 +35,9 @@ return {
             folder = {
               arrow_closed = "›",
               arrow_open = "",
-              default = "",
+              default = "",
               open = "",
-              empty = "",
+              empty = "",
               empty_open = "󰜌",
               symlink = "",
               symlink_open = "",
@@ -58,11 +56,7 @@ return {
       },
       update_focused_file = {
         enable = true,
-        update_root = false,
-      },
-      filters = {
-        dotfiles = true,
-        custom = { ".DS_Store", ".git", "node_modules", ".cache" },
+        update_root = true,
       },
     })
   end,

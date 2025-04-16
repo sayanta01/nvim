@@ -32,7 +32,7 @@ map("n", "<C-Down>", ":resize +2<CR>")
 map("n", "<C-Left>", ":vertical resize -2<CR>")
 map("n", "<C-Right>", ":vertical resize +2<CR>")
 
--- Delete not cut
+-- Delete not yank
 map("n", "dd", '"_dd')
 map("n", "x", '"_x')
 map("x", "p", '"_dP') -- Paste without overwriting register
