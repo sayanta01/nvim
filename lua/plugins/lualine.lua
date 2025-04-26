@@ -52,7 +52,7 @@ return {
     })
 
     local colors = {
-      bg = "#",
+      -- bg = "#",
       fg = "#9399b1",
       yellow = "#ffc777",
       cyan = "#008080",

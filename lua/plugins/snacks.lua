@@ -33,6 +33,8 @@ return {
       desc = "Grep Word",
       mode = { "n", "x" }
     },
+    { "<leader>sG", function() Snacks.picker.grep() end },
+    { "<leader>sW", function() Snacks.picker.grep_word() end,                            mode = { "n", "x" } },
     { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "File Log" },
     { "<leader>gg", function() Snacks.lazygit() end,                                     desc = "Lazygit" },

@@ -28,7 +28,7 @@ vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
 end)
 opt.spelllang:append("cjk") -- disable spellchecking for asian characters `VIM algorithm does not support it`
-opt.shortmess:append "cC"
+opt.shortmess:append("cC")
 opt.whichwrap:append("<>[]hl")
 vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3

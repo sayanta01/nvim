@@ -2,14 +2,11 @@ return {
   "neovim/nvim-lspconfig",
   event = "BufReadPost",
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
     local on_attach = function(client, bufnr)
       local opts = { buffer = bufnr, silent = true }
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -28,12 +25,6 @@ return {
       end
     end
 
-    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
-
     vim.diagnostic.config({
       virtual_text = { source = "if_many", prefix = "▪" },
       signs = false,
@@ -49,16 +40,6 @@ return {
       --     offsetEncoding = { "utf-16" },
       --   }),
       --   cmd = { "clangd", "-header-insertion=iwyu" },
-      -- },
-
-      -- rust_analyzer = {
-      -- 	cmd = { "rustup", "run", "stable", "rust-analyzer" },
-      -- 	settings = {
-      -- 		["rust-analyzer"] = {
-      -- 			cargo = { allFeatures = true },
-      -- 			checkOnSave = { command = "clippy" },
-      -- 		},
-      -- 	},
       -- },
 
       -- gopls = {
@@ -100,22 +81,7 @@ return {
         },
       },
 
-      -- svelte = {
-      --   on_attach = function(client, bufnr)
-      --     on_attach(client, bufnr)
-      --     vim.api.nvim_create_autocmd("BufWritePost", {
-      --       pattern = { "*.js", "*.ts" },
-      --       callback = function(ctx)
-      --         if client.name == "svelte" then
-      --           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-      --         end
-      --       end,
-      --     })
-      --   end,
-      -- },
-
       jsonls = {
-        -- lazy-load schemastore when needed
         on_new_config = function(new_config)
           new_config.settings.json.schemas = new_config.settings.json.schemas or {}
           vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
