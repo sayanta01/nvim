@@ -4,7 +4,6 @@ return {
 		event = "InsertEnter",
 		opts = {
 			modes = { insert = true, command = true },
-			skip_next = [=[[%w%%%'%[%"%.%`%$]]=],
 		},
 	},
 
