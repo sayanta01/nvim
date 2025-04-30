@@ -51,7 +51,16 @@ return {
     },
     cmdline = {
       keymap = { preset = "cmdline" },
-      completion = { menu = { auto_show = true } },
+      sources = function()
+        local type = vim.fn.getcmdtype()
+        if type == "/" or type == "?" then
+          return { "buffer" }
+        end
+        if type == ":" or type == "@" then
+          return { "cmdline" }
+        end
+        return {}
+      end,
     },
     completion = {
       documentation = { auto_show = true, auto_show_delay_ms = 200 },
