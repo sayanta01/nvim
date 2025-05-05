@@ -2,7 +2,7 @@ return {
 	"brenoprata10/nvim-highlight-colors",
 	keys = {
 		{
-			"<leader>oh",
+			"<leader>uc",
 			function()
 				local hc = require("nvim-highlight-colors")
 				if hc.is_on then

@@ -43,10 +43,10 @@ return {
       { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",                              desc = "Line Diagnostics" },
       { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",                              desc = "Quickfix List" },
 
-      { "<leader>o",  group = "Option", },
-      { "<leader>ol", ":terminal live-server<cr>",                                         desc = "Live Server" },
-      { "<leader>os", ":set spell!<cr>",                                                   desc = "Toggle Spell " },
-      { "<leader>ow", ":set wrap!<cr>",                                                    desc = "Toggle Wrap" },
+      { "<leader>u",  group = "U𝗂", },
+      { "<leader>ul", ":terminal live-server<cr>",                                         desc = "Live Server" },
+      { "<leader>us", ":set spell!<cr>",                                                   desc = "Toggle Spell " },
+      { "<leader>uw", ":set wrap!<cr>",                                                    desc = "Toggle Wrap" },
 
       { "<leader>s",  group = "Search",                                                    mode = { "n", "x" } },
       { "<leader>sc", function() Snacks.picker.command_history() end,                      desc = "Cmd History" },
