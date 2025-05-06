@@ -44,7 +44,7 @@ return {
       { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",                              desc = "Quickfix List" },
 
       { "<leader>u",  group = "Ui", },
-      { "<leader>ul", ":terminal live-server<cr>",                                         desc = "Live Server" },
+      -- { "<leader>ul", ":terminal live-server<cr>",                                         desc = "Live Server" },
       { "<leader>us", ":set spell!<cr>",                                                   desc = "Toggle Spell " },
       { "<leader>uw", ":set wrap!<cr>",                                                    desc = "Toggle Wrap" },
 

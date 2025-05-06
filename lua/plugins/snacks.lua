@@ -1,3 +1,11 @@
+local function term_nav(dir)
+  return function(self)
+    return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
+      vim.cmd.wincmd(dir)
+    end)
+  end
+end
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -37,7 +45,6 @@ return {
     { "<leader>sW", function() Snacks.picker.grep_word() end,                            mode = { "n", "x" } },
     { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "File Log" },
-    { "<leader>gg", function() Snacks.lazygit() end,                                     desc = "Lazygit" },
     { "<C-/>",      function() Snacks.terminal() end,                                    desc = "Toggle Terminal" },
     { "<C-_>",      function() Snacks.terminal() end,                                    desc = "which_key_ignore" },
   },
@@ -45,6 +52,16 @@ return {
     bigfile = { notify = false },
     image = { doc = { inline = false } },
     input = { icon = "✎" },
+    terminal = {
+      win = {
+        keys = {
+          nav_h = { "<C-h>", term_nav("h"), expr = true, mode = "t" },
+          nav_j = { "<C-j>", term_nav("j"), expr = true, mode = "t" },
+          nav_k = { "<C-k>", term_nav("k"), expr = true, mode = "t" },
+          nav_l = { "<C-l>", term_nav("l"), expr = true, mode = "t" },
+        },
+      },
+    },
     indent = {
       indent = { char = "▏" },
       scope = { char = "▏" },
@@ -87,7 +104,6 @@ return {
           Struct      = "",
           Text        = "",
           Unit        = "",
-          Unknown     = "",
           Variable    = "",
         },
       }

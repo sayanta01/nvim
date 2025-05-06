@@ -19,4 +19,4 @@ fi
 [ -f /etc/arch-release ] && sudo pacman -S --noconfirm npm fd imagemagick lazygit
 
 ## Node
-sudo npm i -g live-server tree-sitter-cli
+command -v npm >/dev/null 2>&1 && sudo npm i -g live-server tree-sitter-cli
