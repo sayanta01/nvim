@@ -5,7 +5,7 @@ return {
     vim.o.timeoutlen = 200
   end,
   opts = {
-    preset = "modern",
+    preset = "helix",
     filter = function(mapping)
       return mapping.desc and mapping.desc ~= ""
     end,
@@ -32,10 +32,10 @@ return {
       { "<leader>q",  ":q!<cr>",                                                           desc = "Quit" },
       { "<leader>x",  ":bdelete<cr>",                                                      desc = "Close Buffer" },
 
-      { "<leader>d",  group = "Debug",                                                     mode = { "n", "v" } },
-      { "<leader>g",  group = "Git",                                                       mode = { "n", "v" } },
+      { "<leader>d",  group = "debug",                                                     mode = { "n", "v" } },
+      { "<leader>g",  group = "git",                                                       mode = { "n", "v" } },
 
-      { "<leader>c",  group = "Code",                                                      mode = { "n", "v" } },
+      { "<leader>c",  group = "code",                                                      mode = { "n", "v" } },
       { "<leader>cw", ":lua vim.lsp.buf.add_workspace_folder()<cr>",                       desc = "Add Workspace Folder" },
       { "<leader>cW", ":lua vim.lsp.buf.remove_workspace_folder()<cr>",                    desc = "Remove Workspace Folder" },
       { "<leader>cl", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", desc = "List Workspace Folder" },
@@ -43,12 +43,12 @@ return {
       { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",                              desc = "Line Diagnostics" },
       { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",                              desc = "Quickfix List" },
 
-      { "<leader>u",  group = "Ui", },
-      -- { "<leader>ul", ":terminal live-server<cr>",                                         desc = "Live Server" },
+      { "<leader>u",  group = "ui", },
+      { "<leader>ul", ":terminal live-server<cr>",                                         desc = "Live Server" },
       { "<leader>us", ":set spell!<cr>",                                                   desc = "Toggle Spell " },
       { "<leader>uw", ":set wrap!<cr>",                                                    desc = "Toggle Wrap" },
 
-      { "<leader>s",  group = "Search",                                                    mode = { "n", "x" } },
+      { "<leader>s",  group = "search",                                                    mode = { "n", "x" } },
       { "<leader>sc", function() Snacks.picker.command_history() end,                      desc = "Cmd History" },
       { "<leader>sC", function() Snacks.picker.colorschemes() end,                         desc = "Colors" },
       { "<leader>sm", function() Snacks.picker.marks() end,                                desc = "Marks" },
