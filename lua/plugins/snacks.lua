@@ -1,15 +1,15 @@
 local function term_nav(dir)
-	return function(self)
-		return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
-			vim.cmd.wincmd(dir)
-		end)
-	end
+  return function(self)
+    return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
+      vim.cmd.wincmd(dir)
+    end)
+  end
 end
 
 return {
-	"folke/snacks.nvim",
-	priority = 1000,
-	lazy = false,
+  "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
   -- stylua: ignore start
   keys = {
     { "<leader>F",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end },
@@ -43,8 +43,8 @@ return {
     },
     { "<leader>sG", function() Snacks.picker.grep() end },
     { "<leader>sW", function() Snacks.picker.grep_word() end,                            mode = { "n", "x" } },
-    { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log" },
-    { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "File Log" },
+    { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log (cwd)" },
+    { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "Current File Log" },
     { "<C-/>",      function() Snacks.terminal() end,                                    desc = "Toggle Terminal" },
     { "<C-_>",      function() Snacks.terminal() end,                                    desc = "which_key_ignore" },
   },

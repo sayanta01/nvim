@@ -9,24 +9,15 @@ return {
     filter = function(mapping)
       return mapping.desc and mapping.desc ~= ""
     end,
-    triggers = {
-      { "<leader>", mode = { "n", "v" } },
-    },
-    win = {
-      no_overlap = false,
-      title = false,
-    },
+    triggers = { { "<leader>", mode = { "n", "v" } } },
+    win = { title = false },
     icons = {
-      breadcrumb = "»",
       separator = "•",
       group = "",
       mappings = false,
     },
     show_help = false,
     show_keys = false,
-    disable = {
-      ft = { "TelescopePrompt" },
-    },
     -- stylua: ignore
     spec = {
       { "<leader>q",  ":q!<cr>",                                                           desc = "Quit" },
@@ -53,8 +44,8 @@ return {
       { "<leader>sC", function() Snacks.picker.colorschemes() end,                         desc = "Colors" },
       { "<leader>sm", function() Snacks.picker.marks() end,                                desc = "Marks" },
       { '<leader>s"', function() Snacks.picker.registers() end,                            desc = "Registers" },
-      { "<leader>ss", function() Snacks.picker.lsp_symbols() end,                          desc = "LSP Symbols" },
-      { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end,                desc = "LSP Workspace Symbols" },
+      { "<leader>ss", function() Snacks.picker.lsp_symbols() end,                          desc = "Symbols" },
+      { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end,                desc = "Workspace Symbols" },
     },
   },
 }
