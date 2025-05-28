@@ -1,7 +1,6 @@
 local opt = vim.opt
 
 opt.tabstop = 2
-opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true -- spaces instead of tabs
 opt.ignorecase = true
@@ -11,7 +10,6 @@ opt.splitbelow = true
 opt.splitright = true
 opt.wrap = false
 opt.showmode = false
-opt.showcmd = false
 opt.laststatus = 3
 opt.confirm = true
 opt.signcolumn = "yes"

@@ -14,8 +14,6 @@ map("x", "<leader>/", "gc", { remap = true, desc = "Toggle Comment" })
 -- Keep centered
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
-map("n", "n", "nzzzv")
-map("n", "N", "NNzzv")
 map("n", "}", "}zzzv")
 map("n", "{", "{zzzv")
 map("n", "J", "mzJ`z")
@@ -27,10 +25,10 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
 -- Resize window
-map("n", "<C-Up>", ":resize -2<CR>")
-map("n", "<C-Down>", ":resize +2<CR>")
-map("n", "<C-Left>", ":vertical resize -2<CR>")
-map("n", "<C-Right>", ":vertical resize +2<CR>")
+map("n", "<C-Up>", ":resize -2<cr>")
+map("n", "<C-Down>", ":resize +2<cr>")
+map("n", "<C-Left>", ":vertical resize -2<cr>")
+map("n", "<C-Right>", ":vertical resize +2<cr>")
 
 -- Delete not yank
 map("n", "dd", '"_dd')
@@ -52,12 +50,12 @@ map("v", "<", "<gv")
 map("v", ">", ">gv")
 
 -- Move lines
-map("n", "<A-j>", ":m .+1<CR>==")
-map("n", "<A-k>", ":m .-2<CR>==")
-map("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
-map("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
-map("v", "<A-j>", ":m '>+1<cr>gv=gv")
-map("v", "<A-k>", ":m '<-2<cr>gv=gv")
+map("n", "<A-j>", ":m .+1<cr>==")
+map("n", "<A-k>", ":m .-2<cr>==")
+map("i", "<A-j>", "<Esc>:m .+1<cr>==gi")
+map("i", "<A-k>", "<Esc>:m .-2<cr>==gi")
+map("x", "<A-j>", ":m '>+1<cr>gv=gv")
+map("x", "<A-k>", ":m '<-2<cr>gv=gv")
 
 -- Better up/down on wrap
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })

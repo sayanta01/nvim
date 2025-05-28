@@ -14,7 +14,6 @@ return {
       hijack_cursor = true,
       disable_netrw = true,
       sync_root_with_cwd = true,
-      view = { width = 30 },
       renderer = {
         indent_markers = {
           enable = true,
