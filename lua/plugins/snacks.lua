@@ -45,7 +45,6 @@ return {
     { "<leader>sW", function() Snacks.picker.grep_word() end,                            mode = { "n", "x" } },
     { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log (cwd)" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "Current File Log" },
-    { "gr",         function() Snacks.picker.lsp_references() end,                       nowait = true, desc = "References" },
     { "<C-/>",      function() Snacks.terminal() end,                                    desc = "Toggle Terminal" },
     { "<C-_>",      function() Snacks.terminal() end,                                    desc = "which_key_ignore" },
   },
