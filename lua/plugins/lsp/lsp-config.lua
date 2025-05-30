@@ -8,7 +8,7 @@ return {
 	config = function()
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 		vim.api.nvim_create_autocmd("LspAttach", {
-			group = vim.api.nvim_create_augroup("lsp-keymaps", { clear = true }),
+			group = vim.api.nvim_create_augroup("lsp_keymaps", { clear = true }),
 			callback = function(event)
 				local opts = { buffer = event.buf }
 				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)

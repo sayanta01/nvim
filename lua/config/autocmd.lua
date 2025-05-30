@@ -1,5 +1,5 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup("lV_" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("lv_" .. name, { clear = true })
 end
 
 vim.api.nvim_create_autocmd({ "FileType" }, {

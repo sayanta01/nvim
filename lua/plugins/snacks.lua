@@ -1,15 +1,15 @@
 local function term_nav(dir)
-	return function(self)
-		return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
-			vim.cmd.wincmd(dir)
-		end)
-	end
+  return function(self)
+    return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
+      vim.cmd.wincmd(dir)
+    end)
+  end
 end
 
 return {
-	"folke/snacks.nvim",
-	priority = 1000,
-	lazy = false,
+  "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
   -- stylua: ignore start
   keys = {
     { "<leader>F",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end },
