@@ -39,11 +39,13 @@ return {
     })
 
     local mr = require("mason-registry")
-    for _, tool in ipairs({ "prettier", "stylua", "shellcheck", "shfmt", "isort", "black" }) do
-      local p = mr.get_package(tool)
-      if not p:is_installed() then
-        p:install()
+    mr.refresh(function()
+      for _, tool in ipairs({ "prettier", "stylua", "shellcheck", "shfmt", "isort", "black" }) do
+        local p = mr.get_package(tool)
+        if not p:is_installed() then
+          p:install()
+        end
       end
-    end
+    end)
   end,
 }

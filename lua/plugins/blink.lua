@@ -1,4 +1,3 @@
--- TODO: Ai, Sql
 return {
   "saghen/blink.cmp",
   version = "1.*",
