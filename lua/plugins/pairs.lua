@@ -8,26 +8,18 @@ return {
 	},
 
 	{
-		"kylechui/nvim-surround",
-		version = "^3.0.0",
-		keys = { "ys", "ds", "cs" },
-		config = function()
-			require("nvim-surround").setup({
-				keymaps = {
-					insert = "<C-g>s",
-					insert_line = "<C-g>S",
-					normal = "ys",
-					normal_cur = "yss", -- entire line
-					normal_line = "yS",
-					normal_cur_line = "ySS",
-					visual = "S",
-					visual_line = "gS",
-					delete = "ds",
-					change = "cs", -- <tag>
-					change_line = "cS",
-				},
-			})
-		end,
+		"echasnovski/mini.surround",
+		keys = { "sa", "sd", "sr" },
+		opts = {
+			mappings = {
+				add = "sa",
+				delete = "sd",
+				find = "sf",
+				findleft = "sF",
+				highlight = "sh",
+				replace = "sr",
+			},
+		},
 	},
 
 	{

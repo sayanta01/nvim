@@ -1,47 +1,27 @@
 local function term_nav(dir)
-  return function(self)
-    return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
-      vim.cmd.wincmd(dir)
-    end)
-  end
+	return function(self)
+		return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
+			vim.cmd.wincmd(dir)
+		end)
+	end
+end
+
+local function get_root()
+	local git_dir = vim.fs.find(".git", { upward = true })[1]
+	return git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
 end
 
 return {
-  "folke/snacks.nvim",
-  priority = 1000,
-  lazy = false,
+	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
   -- stylua: ignore start
   keys = {
+    { "<leader>f",  function() Snacks.picker.files({ cwd = get_root() }) end,            desc = "Find Files" },
     { "<leader>F",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end },
-    {
-      "<leader>f",
-      function()
-        local git_dir = vim.fs.find(".git", { upward = true })[1]
-        local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
-        Snacks.picker.files({ cwd = root })
-      end,
-      desc = "Find Files"
-    },
-    {
-      "<leader>sg",
-      function()
-        local git_dir = vim.fs.find(".git", { upward = true })[1]
-        local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
-        Snacks.picker.grep({ cwd = root })
-      end,
-      desc = "Grep"
-    },
-    {
-      "<leader>sw",
-      function()
-        local git_dir = vim.fs.find(".git", { upward = true })[1]
-        local root = git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
-        Snacks.picker.grep({ cwd = root })
-      end,
-      desc = "Grep Word",
-      mode = { "n", "x" }
-    },
+    { "<leader>sg", function() Snacks.picker.grep({ cwd = get_root() }) end,             desc = "Grep" },
     { "<leader>sG", function() Snacks.picker.grep() end },
+    { "<leader>sw", function() Snacks.picker.grep({ cwd = get_root() }) end,             desc = "Grep Word",       mode = { "n", "x" } },
     { "<leader>sW", function() Snacks.picker.grep_word() end,                            mode = { "n", "x" } },
     { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log (cwd)" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "Current File Log" },
