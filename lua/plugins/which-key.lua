@@ -32,9 +32,6 @@ return {
       { "<leader>cf", ":lua vim.lsp.buf.format()<CR>",                      desc = "Format" },
       { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",               desc = "Line Diagnostics" },
       { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",               desc = "Quickfix List" },
-      -- { "<leader>cw", ":lua vim.lsp.buf.add_workspace_folder()<cr>",                       desc = "Add Workspace Folder" },
-      -- { "<leader>cW", ":lua vim.lsp.buf.remove_workspace_folder()<cr>",                    desc = "Remove Workspace Folder" },
-      -- { "<leader>cl", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", desc = "List Workspace Folder" },
 
       { "<leader>u",  group = "ui", },
       { "<leader>ul", ":terminal live-server<cr>",                          desc = "Live Server" },
