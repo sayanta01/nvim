@@ -6,9 +6,10 @@ local function term_nav(dir)
 	end
 end
 
-local function get_root()
-	local git_dir = vim.fs.find(".git", { upward = true })[1]
-	return git_dir and vim.fn.fnamemodify(git_dir, ":h") or vim.uv.cwd()
+local function find_root()
+	local path = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+	local root = vim.fs.find({ ".git", "package.json" }, { path = path, upward = true })[1]
+	return vim.fs.dirname(root or path)
 end
 
 return {
@@ -17,11 +18,11 @@ return {
 	lazy = false,
   -- stylua: ignore start
   keys = {
-    { "<leader>f",  function() Snacks.picker.files({ cwd = get_root() }) end,            desc = "Find Files" },
+    { "<leader>f",  function() Snacks.picker.files({ cwd = find_root() }) end,           desc = "Find Files" },
     { "<leader>F",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end },
-    { "<leader>sg", function() Snacks.picker.grep({ cwd = get_root() }) end,             desc = "Grep" },
+    { "<leader>sg", function() Snacks.picker.grep({ cwd = find_root() }) end,            desc = "Grep" },
     { "<leader>sG", function() Snacks.picker.grep() end },
-    { "<leader>sw", function() Snacks.picker.grep({ cwd = get_root() }) end,             desc = "Grep Word",       mode = { "n", "x" } },
+    { "<leader>sw", function() Snacks.picker.grep({ cwd = find_root() }) end,            desc = "Grep Word",       mode = { "n", "x" } },
     { "<leader>sW", function() Snacks.picker.grep_word() end,                            mode = { "n", "x" } },
     { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log (cwd)" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "Current File Log" },
