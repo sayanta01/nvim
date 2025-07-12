@@ -39,23 +39,10 @@ return {
 				TypeParameter = "",
 			},
 		},
-		cmdline = {
-			keymap = { preset = "cmdline" },
-			sources = function()
-				local type = vim.fn.getcmdtype()
-				if type == "/" or type == "?" then
-					return { "buffer" }
-				end
-				if type == ":" or type == "@" then
-					return { "cmdline" }
-				end
-				return {}
-			end,
-		},
 		completion = {
 			accept = { auto_brackets = { enabled = true } },
 			menu = { draw = { treesitter = { "lsp" } } },
-			documentation = { auto_show = true, auto_show_delay_ms = 200 },
+			documentation = { auto_show = true, auto_show_delay_ms = 300 },
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
