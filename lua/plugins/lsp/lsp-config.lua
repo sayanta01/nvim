@@ -4,9 +4,11 @@ return {
   dependencies = {
     { "mason-org/mason.nvim", config = true },
     "mason-org/mason-lspconfig.nvim",
+    -- "b0o/SchemaStore.nvim",
   },
   config = function()
     local capabilities = require("blink.cmp").get_lsp_capabilities()
+
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("lsp_keymaps", { clear = true }),
       callback = function(event)
@@ -72,18 +74,18 @@ return {
         },
       },
 
-      jsonls = {
-        on_new_config = function(new_config)
-          new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-          vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
-        end,
-        settings = {
-          json = {
-            format = { enable = true },
-            validate = { enable = true },
-          },
-        },
-      },
+      -- jsonls = {
+      -- 	on_new_config = function(new_config)
+      -- 		new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+      -- 		vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+      -- 	end,
+      -- 	settings = {
+      -- 		json = {
+      -- 			format = { enable = true },
+      -- 			validate = { enable = true },
+      -- 		},
+      -- 	},
+      -- },
 
       vtsls = {
         settings = {
@@ -95,7 +97,6 @@ return {
               enableServerSideFuzzyMatch = true,
             },
           },
-
           typescript = {
             updateImportsOnFileMove = { enabled = "always" },
             suggest = {

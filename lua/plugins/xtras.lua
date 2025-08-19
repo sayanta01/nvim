@@ -22,12 +22,6 @@ return {
   },
 
   {
-    "b0o/SchemaStore.nvim",
-    lazy = true,
-    version = false,
-  },
-
-  {
     "christoomey/vim-tmux-navigator",
     event = function()
       if vim.fn.exists("$TMUX") == 1 then

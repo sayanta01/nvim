@@ -43,4 +43,4 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc") -- Comment json
+-- vim.cmd("au! BufRead,BufNewFile *.json set filetype=jsonc") -- Comment json
