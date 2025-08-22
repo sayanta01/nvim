@@ -14,6 +14,10 @@ return {
 			disable_netrw = true,
 			hijack_cursor = true,
 			sync_root_with_cwd = true,
+			update_focused_file = {
+				enable = true,
+				update_root = true,
+			},
 			renderer = {
 				indent_markers = {
 					enable = true,
@@ -45,7 +49,7 @@ return {
 							unstaged = "⊡",
 							staged = "",
 							unmerged = "",
-							renamed = "✎",
+							renamed = "➜",
 							untracked = "∪",
 							deleted = "",
 							ignored = "",
@@ -53,7 +57,6 @@ return {
 					},
 				},
 			},
-			update_focused_file = { enable = true },
 		})
 	end,
 }

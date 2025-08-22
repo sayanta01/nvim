@@ -1,23 +1,23 @@
 return {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  init = function()
-    vim.o.timeoutlen = 300
-  end,
-  opts = {
-    preset = "helix",
-    filter = function(mapping)
-      return mapping.desc and mapping.desc ~= ""
-    end,
-    triggers = { { "<leader>", mode = { "n", "v" } } },
-    win = { title = false },
-    icons = {
-      separator = "•",
-      group = "",
-      mappings = false,
-    },
-    show_help = false,
-    show_keys = false,
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = function()
+		vim.o.timeoutlen = 300
+	end,
+	opts = {
+		preset = "helix",
+		filter = function(mapping)
+			return mapping.desc and mapping.desc ~= ""
+		end,
+		triggers = { { "<leader>", mode = { "n", "v" } } },
+		win = { title = false },
+		icons = {
+			separator = "•",
+			group = "",
+			mappings = false,
+		},
+		show_help = false,
+		show_keys = false,
     -- stylua: ignore
     spec = {
       { "<leader>q",  ":q!<cr>",                                            desc = "Quit" },
@@ -46,5 +46,5 @@ return {
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
     },
-  },
+	},
 }

@@ -32,7 +32,7 @@ return {
   opts = {
     bigfile = { notify = false },
     image = { doc = { inline = false } },
-    input = { icon = "✎" },
+    input = { icon = "➜" },
     terminal = {
       win = {
         keys = {
