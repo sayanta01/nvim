@@ -52,10 +52,10 @@ return {
     picker = {
       icons = {
         files = { dir_open = "", file = "" },
-        ui = { live = "" },
+        ui = { live = "⚡" },
         git = {
           enabled   = false,
-          commit    = " ",
+          commit    = "",
           added     = "⊠",
           modified  = "⊡",
           deleted   = "",

@@ -12,7 +12,6 @@ return {
 		triggers = { { "<leader>", mode = { "n", "v" } } },
 		win = { title = false },
 		icons = {
-			separator = "•",
 			group = "",
 			mappings = false,
 		},

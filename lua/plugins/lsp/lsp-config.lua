@@ -2,7 +2,7 @@ return {
   "neovim/nvim-lspconfig",
   event = "BufReadPost",
   dependencies = {
-    { "mason-org/mason.nvim", config = true },
+    { "mason-org/mason.nvim", opts = {} },
     "mason-org/mason-lspconfig.nvim",
     -- "b0o/SchemaStore.nvim",
   },
@@ -36,7 +36,6 @@ return {
 
     local servers = {
       -- clangd = { cmd = { "clangd", "-header-insertion=iwyu" }, },
-
       -- gopls = {
       --   settings = {
       --     gopls = {
