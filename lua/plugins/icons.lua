@@ -4,11 +4,11 @@ return {
 	config = function()
 		local devicons = require("nvim-web-devicons")
 		devicons.set_default_icon("", "#6d8086", 65)
-		local icon_replacements = {
+		local icon_override = {
 			[""] = "",
 		}
 		for filetype, icon_data in pairs(devicons.get_icons()) do
-			local new_icon = icon_replacements[icon_data.icon]
+			local new_icon = icon_override[icon_data.icon]
 			if new_icon then
 				devicons.set_icon({
 					[filetype] = vim.tbl_extend("force", icon_data, { icon = new_icon }),
@@ -29,7 +29,7 @@ return {
 			["i18n.config.ts"] = { icon = "󰊿", color = "#7986cb", cterm_color = "104", name = "I18nConfig" },
 			["kdenlive"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "Kdenlive" },
 			["kdenlivetitle"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "Kdenlive" },
-      ["kdenlive-layoutsrc"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "KdenliveLayoutsrc" },
+			["kdenlive-layoutsrc"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "KdenliveLayoutsrc" },
 			["kdenliverc"] = { icon = "", color = "#83b8F2", cterm_color = "110", name = "Kdenliverc" },
 			["kritadisplayrc"] = { icon = "", color = "#F245Fb", cterm_color = "201", name = "Kritadisplayrc" },
 			["kritarc"] = { icon = "", color = "#F245Fb", cterm_color = "201", name = "Kritarc" },
@@ -152,7 +152,7 @@ return {
 			["swift"] = { icon = "󰀷", color = "#e37933", cterm_color = "166", name = "Swift" },
 			["xcplayground"] = { icon = "󰀷", color = "#e37933", cterm_color = "166", name = "XcPlayground" },
 			["terminal"] = { icon = "", color = "#31B53E", cterm_color = "34", name = "Terminal" },
-			["toml"] = { icon = "", color = "#FFFFFF", cterm_color = "236", name = "Toml" },
+			["toml"] = { icon = "", color = "#ffffff", cterm_color = "236", name = "Toml" },
 			["twig"] = { icon = "󰪂", color = "#8dc149", cterm_color = "113", name = "Twig" },
 			["txt"] = { icon = "", color = "#89e051", cterm_color = "113", name = "Txt" },
 			["vue"] = { icon = "", color = "#8dc149", cterm_color = "113", name = "Vue" },
@@ -164,7 +164,7 @@ return {
 			["xlsx"] = { icon = "󱎏", color = "#207245", cterm_color = "29", name = "Xlsx" },
 			["xml"] = { icon = "", color = "#e37933", cterm_color = "166", name = "Xml" },
 			["xul"] = { icon = "", color = "#e37933", cterm_color = "166", name = "Xul" },
-			["c"] = { icon = "", color = "#599eFF", cterm_color = "74", name = "C" },
+			["c"] = { icon = "", color = "#599eff", cterm_color = "74", name = "C" },
 			["cp"] = { icon = "", color = "#519aba", cterm_color = "74", name = "Cp" },
 			["cpp"] = { icon = "", color = "#519aba", cterm_color = "74", name = "Cpp" },
 		})

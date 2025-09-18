@@ -59,7 +59,7 @@ return {
 			green = "#c3e88d",
 			orange = "#ff8800",
 			magenta = "#c678dd",
-			blue1 = "#65bcff",
+			blue = "#65bcff",
 			red = "#ff5189",
 		}
 
@@ -128,7 +128,7 @@ return {
 					{ "branch", icon = "" },
 					{
 						"diff",
-						symbols = { added = "⊠ ", modified = "⊡ ", removed = " " },
+						symbols = { added = "", modified = "~", removed = "—" },
 						cond = conditions.hide_in_width,
 					},
 				},
