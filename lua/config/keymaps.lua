@@ -1,7 +1,7 @@
 local function map(mode, lhs, rhs, opts)
-  opts = opts or {}
-  opts.silent = opts.silent ~= false
-  vim.keymap.set(mode, lhs, rhs, opts)
+	opts = opts or {}
+	opts.silent = opts.silent ~= false
+	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 map("", "<Space>", "<Nop>")
@@ -35,7 +35,7 @@ map("n", "dd", '"_dd')
 map("n", "x", '"_x')
 map("x", "p", '"_dP') -- Paste without overwriting register
 
-map({ "i", "n", "s" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
+map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
 
 -- stylua: ignore start
 if vim.fn.executable("lazygit") == 1 then
