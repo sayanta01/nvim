@@ -1,6 +1,6 @@
 return {
 	"RRethy/vim-illuminate",
-	event = { "InsertEnter", "BufWritePost" },
+	event = "InsertEnter",
 	config = function()
 		require("illuminate").configure({
 			delay = 200,

@@ -1,21 +1,21 @@
 local function term_nav(dir)
-  return function(self)
-    return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
-      vim.cmd.wincmd(dir)
-    end)
-  end
+	return function(self)
+		return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
+			vim.cmd.wincmd(dir)
+		end)
+	end
 end
 
 local function find_root()
-  local path = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
-  local root = vim.fs.find({ ".git", "package.json" }, { path = path, upward = true })[1]
-  return vim.fs.dirname(root or path)
+	local path = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+	local root = vim.fs.find({ ".git", "package.json" }, { path = path, upward = true })[1]
+	return vim.fs.dirname(root or path)
 end
 
 return {
-  "folke/snacks.nvim",
-  priority = 1000,
-  lazy = false,
+	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
   -- stylua: ignore start
   keys = {
     { "<leader>f",  function() Snacks.picker.files({ cwd = find_root() }) end,           desc = "Find Files" },

@@ -9,7 +9,7 @@ return {
 		filter = function(mapping)
 			return mapping.desc and mapping.desc ~= ""
 		end,
-		triggers = { { "<leader>", mode = { "n", "v" } } },
+		triggers = { { "<leader>", mode = "nv" } },
 		win = { title = false },
 		icons = {
 			group = "",
@@ -28,7 +28,7 @@ return {
       { "<leader>c",  group = "code",                                       mode = { "n", "v" } },
       { "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>",                 desc = "Code Action" },
       { "<leader>cr", ":lua vim.lsp.buf.rename()<cr>",                      desc = "Rename" },
-      { "<leader>cf", ":lua vim.lsp.buf.format()<CR>",                      desc = "Format" },
+      -- { "<leader>cf", ":lua vim.lsp.buf.format()<CR>",                      desc = "Format" },
       { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",               desc = "Line Diagnostics" },
       { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",               desc = "Quickfix List" },
 

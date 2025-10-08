@@ -2,14 +2,10 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	event = { "BufReadPost", "BufNewFile" },
-	keys = {
-		{ "<C-space>", desc = "Increment Selection" },
-		{ "<bs>", desc = "Decrement Selection", mode = "x" },
-	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown_inline" },
-			auto_install = vim.fn.executable("git") == 1 and vim.fn.executable("tree-sitter") == 1,
+			auto_install = vim.fn.executable("tree-sitter") == 1,
 			highlight = {
 				enable = true,
 				disable = function(_, buf)

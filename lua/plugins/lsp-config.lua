@@ -1,10 +1,9 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = "BufReadPost",
+	event = { "BufReadPost", "BufNewFile" },
 	dependencies = {
 		{ "mason-org/mason.nvim", opts = {} },
 		"mason-org/mason-lspconfig.nvim",
-		-- "b0o/SchemaStore.nvim",
 	},
 	config = function()
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
@@ -74,7 +73,7 @@ return {
 			},
 
 			-- jsonls = {
-			-- 	on_new_config = function(new_config)
+			-- 	before_init = function(_, new_config)
 			-- 		new_config.settings.json.schemas = new_config.settings.json.schemas or {}
 			-- 		vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
 			-- 	end,
@@ -85,40 +84,11 @@ return {
 			-- 		},
 			-- 	},
 			-- },
-
-			vtsls = {
-				settings = {
-					complete_function_calls = true,
-					autoUseWorkspaceTsdk = true,
-					experimental = {
-						maxInlayHintLength = 30,
-						completion = {
-							enableServerSideFuzzyMatch = true,
-						},
-					},
-					typescript = {
-						updateImportsOnFileMove = { enabled = "always" },
-						suggest = {
-							completeFunctionCalls = true,
-						},
-						inlayHints = {
-							enumMemberValues = { enabled = true },
-							functionLikeReturnTypes = { enabled = true },
-							parameterNames = { enabled = "literals" },
-							parameterTypes = { enabled = true },
-							propertyDeclarationTypes = { enabled = true },
-							variableTypes = { enabled = false },
-						},
-					},
-				},
-			},
 		}
-
-		servers.vtsls.settings.javascript = vim.tbl_deep_extend("force", {}, servers.vtsls.settings.typescript, servers.vtsls.settings.javascript or {})
 
 		require("mason-lspconfig").setup({
 			ensure_installed = vim.list_extend(
-				{ "bashls", "html", "cssls", "emmet_language_server" },
+				{ "bashls", "html", "cssls", "emmet_language_server", "vtsls", "marksman" },
 				vim.tbl_keys(servers)
 			),
 			handlers = {
