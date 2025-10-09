@@ -32,18 +32,6 @@ return {
 		})
 
 		local servers = {
-			-- clangd = { cmd = { "clangd", "-header-insertion=iwyu" }, },
-			-- gopls = {
-			--   settings = {
-			--     gopls = {
-			--       gofumpt = true,
-			--       analyses = { unusedparams = true },
-			--       usePlaceholders = true,
-			--       staticcheck = true,
-			--     },
-			--   },
-			-- },
-
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -72,18 +60,18 @@ return {
 				},
 			},
 
-			-- jsonls = {
-			-- 	before_init = function(_, new_config)
-			-- 		new_config.settings.json.schemas = new_config.settings.json.schemas or {}
-			-- 		vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
-			-- 	end,
-			-- 	settings = {
-			-- 		json = {
-			-- 			format = { enable = true },
-			-- 			validate = { enable = true },
-			-- 		},
-			-- 	},
-			-- },
+			jsonls = {
+				before_init = function(_, new_config)
+					new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+					vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+				end,
+				settings = {
+					json = {
+						format = { enable = true },
+						validate = { enable = true },
+					},
+				},
+			},
 		}
 
 		require("mason-lspconfig").setup({
