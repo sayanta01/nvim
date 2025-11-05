@@ -16,7 +16,7 @@ if [ -f /etc/debian_version ]; then
 fi
 
 ## Arch
-[ -f /etc/arch-release ] && sudo pacman -S --noconfirm nodejs fd imagemagick lazygit
+[ -f /etc/arch-release ] && sudo pacman -S --noconfirm npm fd imagemagick lazygit
 
 ## Node
 command -v npm >/dev/null 2>&1 && sudo npm i -g tree-sitter-cli live-server
