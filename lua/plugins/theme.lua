@@ -5,7 +5,7 @@ return {
 	-- 	priority = 1000,
 	-- 	opts = { style = "moon" },
 	-- 	config = function()
-	-- 		vim.cmd("colorscheme tokyonight")
+	-- 		vim.cmd.colorscheme("tokyonight")
 	-- 	end,
 	-- },
 
@@ -13,7 +13,7 @@ return {
 	--   "rose-pine/neovim",
 	--   name = "rose-pine",
 	--   config = function()
-	--     vim.cmd("colorscheme rose-pine")
+	--     vim.cmd.colorscheme("rose-pine")
 	--   end,
 	-- },
 
@@ -23,14 +23,14 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme nightfly")
+			vim.cmd.colorscheme("nightfly")
 		end,
 	},
 
 	-- {
 	-- 	"shaunsingh/nord.nvim",
 	-- 	config = function()
-	-- 		vim.cmd("colorscheme nord")
+	-- 		vim.cmd.colorscheme("nord")
 	-- 	end,
 	-- },
 }

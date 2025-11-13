@@ -44,5 +44,5 @@ return {
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
     },
-	},
+	}
 }

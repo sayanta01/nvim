@@ -4,17 +4,6 @@ return {
 	config = function()
 		local devicons = require("nvim-web-devicons")
 		devicons.set_default_icon("", "#6d8086", 65)
-		local icon_override = {
-			[""] = "",
-		}
-		for filetype, icon_data in pairs(devicons.get_icons()) do
-			local new_icon = icon_override[icon_data.icon]
-			if new_icon then
-				devicons.set_icon({
-					[filetype] = vim.tbl_extend("force", icon_data, { icon = new_icon }),
-				})
-			end
-		end
 		devicons.set_icon({
 			[".babelrc"] = { icon = "ʙ", color = "#cbcb41", cterm_color = "185", name = "Babelrc" },
 			[".env"] = { icon = "", color = "#FaF743", cterm_color = "227", name = "Env" },

@@ -13,8 +13,6 @@ map("x", "<leader>/", "gc", { remap = true, desc = "Toggle Comment" })
 -- Keep centered
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
-map("n", "}", "}zzzv")
-map("n", "{", "{zzzv")
 map("n", "J", "mzJ`z")
 
 -- Switch window
@@ -29,20 +27,12 @@ map("n", "<C-Down>", ":resize +2<cr>")
 map("n", "<C-Left>", ":vertical resize -2<cr>")
 map("n", "<C-Right>", ":vertical resize +2<cr>")
 
--- Delete not yank
+-- Delete without yank
 map("n", "dd", '"_dd')
 map("n", "x", '"_x')
 map("x", "p", '"_dP') -- Paste without overwriting register
 
 map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
-
--- stylua: ignore start
-if vim.fn.executable("lazygit") == 1 then
-  map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit" })
-end
-
-map("t", "<C-/>", "<cmd>close<cr>")
-map("t", "<C-_>", "<cmd>close<cr>")
 
 -- Better indenting
 map("v", "<", "<gv")
@@ -55,6 +45,15 @@ map("i", "<A-j>", "<Esc>:m .+1<cr>==gi")
 map("i", "<A-k>", "<Esc>:m .-2<cr>==gi")
 map("x", "<A-j>", ":m '>+1<cr>gv=gv")
 map("x", "<A-k>", ":m '<-2<cr>gv=gv")
+
+-- stylua: ignore start
+if vim.fn.executable("lazygit") == 1 then
+  map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit" })
+end
+
+-- Clone terminal
+map("t", "<C-/>", "<cmd>close<cr>")
+map("t", "<C-_>", "<cmd>close<cr>")
 
 -- Better up/down on wrap
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })

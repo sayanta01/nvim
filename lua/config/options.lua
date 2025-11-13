@@ -16,8 +16,8 @@ opt.scrolloff = 4
 opt.sidescrolloff = 8
 opt.undofile = true
 opt.updatetime = 250
-opt.foldlevel = 99
 opt.foldmethod = "expr"
+opt.foldlevel = 99
 opt.foldtext = ""
 opt.fillchars = { foldopen = "", foldclose = "", fold = " ", foldsep = " ", diff = "╱", eob = " " }
 vim.schedule(function()

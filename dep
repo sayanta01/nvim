@@ -11,12 +11,12 @@ if [ -f /etc/debian_version ]; then
     cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
   fi
 
-  sudo apt install -y npm fd-find imagemagick
+  sudo apt install -y npm fd-find ripgrep imagemagick
   # go install github.com/jesseduffield/lazygit@latest
 fi
 
 ## Arch
-[ -f /etc/arch-release ] && sudo pacman -S --noconfirm npm fd imagemagick lazygit
+[ -f /etc/arch-release ] && sudo pacman -S --noconfirm npm fd ripgrep imagemagick lazygit
 
 ## Node
 command -v npm >/dev/null 2>&1 && sudo npm i -g tree-sitter-cli live-server
