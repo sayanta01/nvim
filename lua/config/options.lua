@@ -17,6 +17,7 @@ opt.sidescrolloff = 8
 opt.undofile = true
 opt.updatetime = 250
 opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevel = 99
 opt.foldtext = ""
 opt.fillchars = { foldopen = "", foldclose = "", fold = " ", foldsep = " ", diff = "╱", eob = " " }

@@ -22,7 +22,7 @@ return {
     { "<leader>F",  function() Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") }) end },
     { "<leader>sg", function() Snacks.picker.grep({ cwd = find_root() }) end,            desc = "Grep" },
     { "<leader>sG", function() Snacks.picker.grep() end },
-    { "<leader>sw", function() Snacks.picker.grep({ cwd = find_root() }) end,            desc = "Grep Word",       mode = { "n", "x" } },
+    { "<leader>sw", function() Snacks.picker.grep_word({ cwd = find_root() }) end,       desc = "Grep Word",       mode = { "n", "x" } },
     { "<leader>sW", function() Snacks.picker.grep_word() end,                            mode = { "n", "x" } },
     { "<leader>gl", function() Snacks.picker.git_log() end,                              desc = "Log (cwd)" },
     { "<leader>gf", function() Snacks.picker.git_log_file() end,                         desc = "Current File Log" },

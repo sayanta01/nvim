@@ -9,7 +9,11 @@ return {
 		filter = function(mapping)
 			return mapping.desc and mapping.desc ~= ""
 		end,
-		triggers = { { "<leader>", mode = "nv" } },
+		triggers = {
+			{ "<leader>", mode = "nvso" },
+			{ "z", mode = { "n", "v" } },
+			{ "g", mode = { "n", "v" } },
+		},
 		win = { title = false },
 		icons = {
 			group = "",
@@ -44,5 +48,5 @@ return {
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
     },
-	}
+	},
 }
