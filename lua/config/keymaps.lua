@@ -28,7 +28,7 @@ map("n", "<C-Left>", ":vertical resize -2<cr>")
 map("n", "<C-Right>", ":vertical resize +2<cr>")
 
 -- Delete without yank
-map("n", "dd", '"_dd')
+map("n", "dd", '"_dd') -- ?
 map("n", "x", '"_x')
 map("x", "p", '"_dP') -- Paste without overwriting register
 

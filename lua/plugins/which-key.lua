@@ -12,7 +12,6 @@ return {
 		triggers = {
 			{ "<leader>", mode = "nvso" },
 			{ "z", mode = { "n", "v" } },
-			{ "g", mode = { "n", "v" } },
 		},
 		win = { title = false },
 		icons = {
@@ -23,27 +22,30 @@ return {
 		show_keys = false,
     -- stylua: ignore
     spec = {
-      { "<leader>q",  ":q!<cr>",                                            desc = "Quit" },
-      { "<leader>x",  ":bdelete<cr>",                                       desc = "Close Buffer" },
+      { "<leader>q",  ":q!<cr>",                                            desc = "Qu!t" },
+      { "<leader>x",  ":bdelete<cr>",                                       desc = "Delete Buffer" },
 
-      { "<leader>d",  group = "debug",                                      mode = { "n", "v" } },
-      { "<leader>g",  group = "git",                                        mode = { "n", "v" } },
+      { "<leader>d",  group = "debug",                                      mode = { "n", "x" } },
+      { "<leader>g",  group = "git",                                        mode = { "n", "x" } },
 
-      { "<leader>c",  group = "code",                                       mode = { "n", "v" } },
+      { "<leader>c",  group = "code",                                       mode = { "n", "x" } },
       { "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>",                 desc = "Code Action" },
+      { "<leader>cA", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source" } }, }) end },
       { "<leader>cr", ":lua vim.lsp.buf.rename()<cr>",                      desc = "Rename" },
-      { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",               desc = "Line Diagnostics" },
-      { "<leader>cq", ":lua vim.diagnostic.setloclist()<cr>",               desc = "Quickfix List" },
+      { "<leader>cR", function() Snacks.rename.rename_file() end },
+      { "<leader>cl", ":lua vim.diagnostic.setloclist()<cr>",               desc = "Location List" },
+      { "<leader>cq", ":lua vim.diagnostic.setqflist()<cr>",                desc = "Quickfix List" },
 
       { "<leader>u",  group = "ui", },
       { "<leader>ul", ":terminal live-server<cr>",                          desc = "Live Server" },
       { "<leader>us", ":set spell!<cr>",                                    desc = "Toggle Spell " },
       { "<leader>uw", ":set wrap!<cr>",                                     desc = "Toggle Wrap" },
+      { "<leader>uC", function() Snacks.picker.colorschemes() end,          desc = "Colorschemes" },
 
       { "<leader>s",  group = "search",                                     mode = { "n", "x" } },
-      { "<leader>sc", function() Snacks.picker.command_history() end,       desc = "Cmd History" },
-      { "<leader>sC", function() Snacks.picker.colorschemes() end,          desc = "Colors" },
+      { "<leader>s/", function() Snacks.picker.command_history() end,       desc = "Cmd History" },
       { "<leader>sm", function() Snacks.picker.marks() end,                 desc = "Marks" },
+      { "<leader>sM", function() Snacks.picker.man() end },
       { '<leader>s"', function() Snacks.picker.registers() end,             desc = "Registers" },
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
