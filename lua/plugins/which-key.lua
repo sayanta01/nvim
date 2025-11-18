@@ -38,7 +38,7 @@ return {
 
       { "<leader>u",  group = "ui", },
       { "<leader>ul", ":terminal live-server<cr>",                          desc = "Live Server" },
-      { "<leader>us", ":set spell!<cr>",                                    desc = "Toggle Spell " },
+      { "<leader>us", ":set spell!<cr>",                                    desc = "Toggle Spell" },
       { "<leader>uw", ":set wrap!<cr>",                                     desc = "Toggle Wrap" },
       { "<leader>uC", function() Snacks.picker.colorschemes() end,          desc = "Colorschemes" },
 

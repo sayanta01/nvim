@@ -13,12 +13,12 @@ return {
       group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
       callback = function(event)
         local opts = { buffer = event.buf }
-        vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, { buffer = event.buf, nowait = true })
-        vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, { buffer = event.buf, nowait = true })
+        vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
+        vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, opts)
         vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { buffer = event.buf, nowait = true })
-        vim.keymap.set("n", "gy", function() Snacks.picker.lsp_type_definitions() end, { buffer = event.buf, nowait = true })
-        vim.keymap.set("n", "gai", function() Snacks.picker.lsp_incoming_calls() end, { buffer = event.buf, nowait = true })
-        vim.keymap.set("n", "gao", function() Snacks.picker.lsp_outgoing_calls() end, { buffer = event.buf, nowait = true })
+        vim.keymap.set("n", "gy", function() Snacks.picker.lsp_type_definitions() end, opts)
+        vim.keymap.set("n", "gai", function() Snacks.picker.lsp_incoming_calls() end, opts)
+        vim.keymap.set("n", "gao", function() Snacks.picker.lsp_outgoing_calls() end, opts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
