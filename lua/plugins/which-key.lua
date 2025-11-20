@@ -23,7 +23,7 @@ return {
     -- stylua: ignore
     spec = {
       { "<leader>q",  ":q!<cr>",                                            desc = "Qu!t" },
-      { "<leader>x",  ":bdelete<cr>",                                       desc = "Delete Buffer" },
+      { "<leader>x",  function() Snacks.bufdelete() end,                    desc = "Delete Buffer" },
 
       { "<leader>d",  group = "debug",                                      mode = { "n", "x" } },
       { "<leader>g",  group = "git",                                        mode = { "n", "x" } },

@@ -33,7 +33,8 @@ return {
   opts = {
     bigfile = { notify = false },
     image = { doc = { inline = false } },
-    input = { icon = "➜" },
+    input = { icon = "" },
+    lazygit = { configure = false },
     terminal = {
       win = {
         keys = {
@@ -49,7 +50,6 @@ return {
       scope = { char = "▏" },
       animate = { enabled = false },
     },
-    lazygit = { configure = false },
     picker = {
       icons = {
         files = { dir_open = "", file = "" },
@@ -61,7 +61,7 @@ return {
           modified  = "~",
           deleted   = "—",
           ignored   = "",
-          renamed   = "➜",
+          renamed   = "",
           unmerged  = "",
           untracked = "∪",
         },

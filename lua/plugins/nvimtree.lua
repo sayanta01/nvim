@@ -88,7 +88,7 @@ return {
 							unstaged = "~",
 							staged = "",
 							unmerged = "",
-							renamed = "➜",
+							renamed = "",
 							untracked = "∪",
 							deleted = "—",
 							ignored = "",
