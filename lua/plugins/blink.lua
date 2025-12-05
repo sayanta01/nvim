@@ -11,7 +11,6 @@ return {
 		appearance = {
 			kind_icons = {
 				Text = "",
-				Method = "",
 				Function = "ƒ",
 				Constructor = "",
 				Field = "",

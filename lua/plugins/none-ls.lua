@@ -17,8 +17,8 @@ return {
 
 		local mr = require("mason-registry")
 		mr.refresh(function()
-			for _, tool in ipairs({ "prettier", "stylua", "shfmt", "shellcheck", "black" }) do
-				local p = mr.get_package(tool)
+			for _, name in ipairs({ "prettier", "stylua", "shfmt", "shellcheck" }) do
+				local p = mr.get_package(name)
 				if not p:is_installed() then
 					p:install()
 				end

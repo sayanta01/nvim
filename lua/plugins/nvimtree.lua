@@ -78,7 +78,7 @@ return {
 							arrow_closed = "›",
 							arrow_open = "",
 							default = "",
-							open = "",
+							open = "",
 							empty = "",
 							empty_open = "󰜌",
 							symlink = "",
