@@ -30,9 +30,7 @@ return {
 
       { "<leader>c",  group = "code",                                       mode = { "n", "x" } },
       { "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>",                 desc = "Code Action" },
-      { "<leader>cA", function() vim.lsp.buf.code_action({ apply = true, context = { only = { "source" } }, }) end },
       { "<leader>cr", ":lua vim.lsp.buf.rename()<cr>",                      desc = "Rename" },
-      { "<leader>cR", function() Snacks.rename.rename_file() end },
       { "<leader>cl", ":lua vim.diagnostic.setloclist()<cr>",               desc = "Location List" },
       { "<leader>cq", ":lua vim.diagnostic.setqflist()<cr>",                desc = "Quickfix List" },
 
