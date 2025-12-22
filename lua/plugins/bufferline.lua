@@ -7,7 +7,6 @@ return {
 		{ "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
 		{ "[B", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer to Left" },
 		{ "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer to Right" },
-		{ "<leader>,", function() Snacks.picker.buffers() end, desc = "Buffers" },
 	},
 	opts = {
 		options = {

@@ -15,8 +15,6 @@ if [ -f /etc/debian_version ]; then
   # go install github.com/jesseduffield/lazygit@latest
 fi
 
-## Arch
+# Requirements
 [ -f /etc/arch-release ] && sudo pacman -S --noconfirm npm fd ripgrep imagemagick lazygit
-
-## Node
 command -v npm >/dev/null 2>&1 && sudo npm i -g tree-sitter-cli live-server

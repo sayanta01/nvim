@@ -4,8 +4,8 @@ return {
 	event = "VeryLazy",
 	config = function()
 		local lualine = require("lualine")
-		-- local navic = require("nvim-navic")
 
+		-- local navic = require("nvim-navic")
 		-- vim.g.navic_silence = true
 		-- vim.api.nvim_create_autocmd("LspAttach", {
 		-- 	callback = function(args)
@@ -37,7 +37,7 @@ return {
 		-- 		Boolean = " ",
 		-- 		Array = " ",
 		-- 		Object = " ",
-		-- 		Key = " ",
+		-- 		Key = "󰬴 ",
 		-- 		Null = " ",
 		-- 		EnumMember = " ",
 		-- 		Struct = " ",

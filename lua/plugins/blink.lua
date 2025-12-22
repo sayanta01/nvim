@@ -4,13 +4,11 @@ return {
 	dependencies = { "rafamadriz/friendly-snippets" },
 	event = "VeryLazy",
 	opts = {
-		keymap = {
-			preset = "enter",
-			["<C-y>"] = { "select_and_accept" },
-		},
+		keymap = { preset = "enter" },
 		appearance = {
 			kind_icons = {
 				Text = "",
+				Method = "",
 				Function = "ƒ",
 				Constructor = "",
 				Field = "",
@@ -38,9 +36,11 @@ return {
 		},
 		completion = {
 			menu = { draw = { treesitter = { "lsp" } } },
-			documentation = { auto_show = true, auto_show_delay_ms = 300 },
+			documentation = { auto_show = true, auto_show_delay_ms = 500 },
 		},
-		sources = { default = { "lsp", "path", "snippets", "buffer" } },
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+		},
 	},
 	opts_extend = { "sources.default" },
 }

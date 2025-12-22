@@ -51,8 +51,8 @@ return {
 			},
 		}
 
-		for server_name, config in pairs(servers) do
-			vim.lsp.config(server_name, config)
+		for server, config in pairs(servers) do
+			vim.lsp.config(server, config)
 		end
 
 		require("mason-lspconfig").setup({

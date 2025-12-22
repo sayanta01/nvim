@@ -9,10 +9,7 @@ return {
 		filter = function(mapping)
 			return mapping.desc and mapping.desc ~= ""
 		end,
-		triggers = {
-			{ "<leader>", mode = "nvso" },
-			{ "z", mode = { "n", "v" } },
-		},
+		triggers = { { "<leader>", mode = "nxso" } },
 		win = { title = false },
 		icons = {
 			group = "",
@@ -24,6 +21,7 @@ return {
     spec = {
       { "<leader>q",  ":q!<cr>",                                            desc = "Qu!t" },
       { "<leader>x",  function() Snacks.bufdelete() end,                    desc = "Delete Buffer" },
+      { "<leader>,",  function() Snacks.picker.buffers() end,               desc = "Buffers" },
 
       { "<leader>d",  group = "debug",                                      mode = { "n", "x" } },
       { "<leader>g",  group = "git",                                        mode = { "n", "x" } },
@@ -42,9 +40,9 @@ return {
 
       { "<leader>s",  group = "search",                                     mode = { "n", "x" } },
       { "<leader>s/", function() Snacks.picker.command_history() end,       desc = "Cmd History" },
-      { "<leader>sm", function() Snacks.picker.marks() end,                 desc = "Marks" },
-      { "<leader>sM", function() Snacks.picker.man() end },
       { '<leader>s"', function() Snacks.picker.registers() end,             desc = "Registers" },
+      { "<leader>sm", function() Snacks.picker.marks() end,                 desc = "Marks" },
+      { "<leader>sM", function() Snacks.picker.man() end,                   desc = "Man Pages" },
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
     },

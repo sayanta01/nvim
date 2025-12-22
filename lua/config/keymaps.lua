@@ -27,11 +27,9 @@ map("n", "<C-Down>", ":resize +2<cr>")
 map("n", "<C-Left>", ":vertical resize -2<cr>")
 map("n", "<C-Right>", ":vertical resize +2<cr>")
 
--- Delete without yank
-map("n", "dd", '"_dd') -- ?
+map("n", "d", '"_d')
 map("n", "x", '"_x')
-map("x", "p", '"_dP') -- Paste without overwriting register
-
+map("x", "p", [["_dP]])
 map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
 
 -- Better indenting
