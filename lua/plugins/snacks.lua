@@ -52,17 +52,6 @@ return {
       icons = {
         files = { dir_open = "", file = "" },
         ui = { live = "⚡" },
-        git = {
-          enabled   = false,
-          commit    = "",
-          added     = "",
-          modified  = "~",
-          deleted   = "—",
-          ignored   = "",
-          renamed   = "",
-          unmerged  = "",
-          untracked = "∪",
-        },
         kinds = {
           Boolean     = "",
           Constant    = "П",
