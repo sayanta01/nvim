@@ -19,9 +19,11 @@ return {
 		show_keys = false,
     -- stylua: ignore
     spec = {
-      { "<leader>q",  ":q!<cr>",                                            desc = "Qu!t" },
+      { "<leader>q",  ":q!<cr>",                                            desc = "Quit" },
       { "<leader>x",  function() Snacks.bufdelete() end,                    desc = "Delete Buffer" },
       { "<leader>,",  function() Snacks.picker.buffers() end,               desc = "Buffers" },
+      { "<leader>`",  ":e #<cr>",                                           desc = "Switch to Other Buffer" },
+      { "<leader>:",  function() Snacks.picker.command_history() end,       desc = "Command History" },
 
       { "<leader>d",  group = "debug",                                      mode = { "n", "x" } },
       { "<leader>g",  group = "git",                                        mode = { "n", "x" } },
@@ -39,10 +41,9 @@ return {
       { "<leader>uC", function() Snacks.picker.colorschemes() end,          desc = "Colorschemes" },
 
       { "<leader>s",  group = "search",                                     mode = { "n", "x" } },
-      { "<leader>s/", function() Snacks.picker.command_history() end,       desc = "Cmd History" },
       { '<leader>s"', function() Snacks.picker.registers() end,             desc = "Registers" },
       { "<leader>sm", function() Snacks.picker.marks() end,                 desc = "Marks" },
-      { "<leader>sM", function() Snacks.picker.man() end,                   desc = "Man Pages" },
+      -- { "<leader>sM", function() Snacks.picker.man() end,                   desc = "Man Pages" },
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
     },

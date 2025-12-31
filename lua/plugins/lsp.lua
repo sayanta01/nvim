@@ -57,7 +57,7 @@ return {
 
 		require("mason-lspconfig").setup({
 			ensure_installed = vim.list_extend(
-				{ "html", "cssls", "vtsls", "marksman", "bashls", "basedpyright" },
+				{ "html", "cssls", "vtsls", "marksman", "bashls", "pyright" },
 				vim.tbl_keys(servers)
 			),
 		})

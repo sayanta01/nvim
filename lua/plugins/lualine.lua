@@ -128,8 +128,7 @@ return {
 					{ "branch", icon = "" },
 					{
 						"diff",
-						symbols = { added = "", modified = "~", removed = "—" },
-						cond = conditions.hide_in_width,
+						symbols = { added = " ", modified = "~ ", removed = "— " },
 					},
 				},
 				lualine_y = {},

@@ -21,10 +21,9 @@ require("lazy").setup({
 		notify = false,
 	},
 	ui = {
-		border = "rounded",
 		icons = {
 			cmd = "",
-			config = "",
+			config = "",
 			favorite = "",
 			ft = "",
 			init = "",
@@ -33,7 +32,7 @@ require("lazy").setup({
 			source = "",
 			start = "",
 			task = "",
-			list = { "", "", "", "" },
+			list = { "", "", "", "—" },
 		},
 	},
 })
