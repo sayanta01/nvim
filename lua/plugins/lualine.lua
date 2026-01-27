@@ -128,7 +128,7 @@ return {
 					{ "branch", icon = "" },
 					{
 						"diff",
-						symbols = { added = " ", modified = "~ ", removed = "— " },
+						symbols = { added = "", modified = "~", removed = "—" },
 					},
 				},
 				lualine_y = {},

@@ -26,11 +26,4 @@ return {
 			vim.cmd.colorscheme("nightfly")
 		end,
 	},
-
-	-- {
-	-- 	"shaunsingh/nord.nvim",
-	-- 	config = function()
-	-- 		vim.cmd.colorscheme("nord")
-	-- 	end,
-	-- },
 }

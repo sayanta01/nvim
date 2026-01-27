@@ -20,10 +20,9 @@ return {
 	-- init = function()
 	-- 	local data_path = vim.fn.stdpath("data")
 	-- 	vim.g.db_ui_auto_execute_table_helpers = 1
-	-- 	vim.g.db_ui_icons = { expanded = "", collapsed = ""}
-  -- 	vim.g.db_ui_save_location = data_path .. "/dadbod_u"
-  -- 	vim.g.db_ui_tmp_query_location = data_path .. "/dadbod_ui/tm"
-  -- 	vim.g.db_ui_use_nvim_notify = false
-  -- 	vim.g.db_ui_execute_on_save = false
-  -- end,
+	-- 	vim.g.db_ui_icons = { expanded = "", collapsed = "", new_query = "" }
+	-- 	vim.g.db_ui_save_location = data_path .. "/dadbod_ui"
+	-- 	vim.g.db_ui_tmp_query_location = data_path .. "/dadbod_ui/tmp"
+	-- 	-- vim.g.db_ui_execute_on_save = false -- default keymap: <leader>S
+	-- end,
 }

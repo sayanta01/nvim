@@ -27,11 +27,6 @@ map("n", "<C-Down>", ":resize +2<cr>")
 map("n", "<C-Left>", ":vertical resize -2<cr>")
 map("n", "<C-Right>", ":vertical resize +2<cr>")
 
-map("n", "d", '"_d')
-map("n", "x", '"_x')
-map("x", "p", [["_dP]])
-map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
-
 -- Better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
@@ -43,6 +38,11 @@ map("i", "<A-j>", "<Esc>:m .+1<cr>==gi")
 map("i", "<A-k>", "<Esc>:m .-2<cr>==gi")
 map("x", "<A-j>", ":m '>+1<cr>gv=gv")
 map("x", "<A-k>", ":m '<-2<cr>gv=gv")
+
+map("n", "d", '"_d')
+map("n", "x", '"_x')
+map("x", "p", [["_dP]])
+map({ "i", "n" }, "<Esc>", "<cmd>noh<cr><esc>", { desc = "Escape for Clear hlsearch" })
 
 -- stylua: ignore start
 if vim.fn.executable("lazygit") == 1 then

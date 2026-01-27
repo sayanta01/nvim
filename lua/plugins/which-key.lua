@@ -10,6 +10,10 @@ return {
 			return mapping.desc and mapping.desc ~= ""
 		end,
 		triggers = { { "<leader>", mode = "nxso" } },
+		plugins = {
+			marks = false,
+			registers = false,
+		},
 		win = { title = false },
 		icons = {
 			group = "",
@@ -22,8 +26,6 @@ return {
       { "<leader>q",  ":q!<cr>",                                            desc = "Quit" },
       { "<leader>x",  function() Snacks.bufdelete() end,                    desc = "Delete Buffer" },
       { "<leader>,",  function() Snacks.picker.buffers() end,               desc = "Buffers" },
-      { "<leader>`",  ":e #<cr>",                                           desc = "Switch to Other Buffer" },
-      { "<leader>:",  function() Snacks.picker.command_history() end,       desc = "Command History" },
 
       { "<leader>d",  group = "debug",                                      mode = { "n", "x" } },
       { "<leader>g",  group = "git",                                        mode = { "n", "x" } },
@@ -31,6 +33,7 @@ return {
       { "<leader>c",  group = "code",                                       mode = { "n", "x" } },
       { "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>",                 desc = "Code Action" },
       { "<leader>cr", ":lua vim.lsp.buf.rename()<cr>",                      desc = "Rename" },
+      { "<leader>cd", ":lua vim.diagnostic.open_float()<cr>",               desc = "Line Diagnostic" },
       { "<leader>cl", ":lua vim.diagnostic.setloclist()<cr>",               desc = "Location List" },
       { "<leader>cq", ":lua vim.diagnostic.setqflist()<cr>",                desc = "Quickfix List" },
 
@@ -38,12 +41,9 @@ return {
       { "<leader>ul", ":terminal live-server<cr>",                          desc = "Live Server" },
       { "<leader>us", ":set spell!<cr>",                                    desc = "Toggle Spell" },
       { "<leader>uw", ":set wrap!<cr>",                                     desc = "Toggle Wrap" },
-      { "<leader>uC", function() Snacks.picker.colorschemes() end,          desc = "Colorschemes" },
 
       { "<leader>s",  group = "search",                                     mode = { "n", "x" } },
-      { '<leader>s"', function() Snacks.picker.registers() end,             desc = "Registers" },
-      { "<leader>sm", function() Snacks.picker.marks() end,                 desc = "Marks" },
-      -- { "<leader>sM", function() Snacks.picker.man() end,                   desc = "Man Pages" },
+      -- { "<leader>sM", function() Snacks.picker.man() end,         desc = "Man Pages" },
       { "<leader>ss", function() Snacks.picker.lsp_symbols() end,           desc = "Symbols" },
       { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace Symbols" },
     },

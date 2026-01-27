@@ -75,7 +75,7 @@ return {
 						symlink = "󰌷",
 						bookmark = "",
 						folder = {
-							arrow_closed = "›",
+							arrow_closed = "",
 							arrow_open = "",
 							default = "",
 							open = "",

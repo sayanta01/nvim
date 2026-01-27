@@ -1,5 +1,6 @@
 return {
 	"nvimtools/none-ls.nvim",
+	event = "VeryLazy",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	keys = {
 		{ "<leader>cf", ":lua vim.lsp.buf.format()<CR>", desc = "Format" },
