@@ -17,7 +17,7 @@ return {
         vim.keymap.set("n", "gy", function() Snacks.picker.lsp_type_definitions() end, opts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, opts)
+        vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, opts)
       end,
     })
 

@@ -1,11 +1,10 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	init = function()
-		vim.o.timeoutlen = 300
-	end,
 	opts = {
-		preset = "helix",
+		delay = function(ctx)
+			return ctx.plugin and 0 or 200
+		end,
 		filter = function(mapping)
 			return mapping.desc and mapping.desc ~= ""
 		end,
@@ -14,10 +13,10 @@ return {
 			marks = false,
 			registers = false,
 		},
-		win = { title = false },
 		icons = {
+			separator = "",
 			group = "",
-			mappings = false,
+			rules = false,
 		},
 		show_help = false,
 		show_keys = false,
