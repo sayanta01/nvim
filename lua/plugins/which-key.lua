@@ -15,7 +15,7 @@ return {
 		},
 		icons = {
 			separator = "",
-			group = "",
+			group = "›",
 			rules = false,
 		},
 		show_help = false,

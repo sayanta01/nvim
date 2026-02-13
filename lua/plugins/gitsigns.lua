@@ -5,13 +5,13 @@ return {
 		signs = {
 			add = { text = "ǀ" },
 			change = { text = "⦚" },
-			delete = { text = "—" },
+			delete = { text = "_" },
 			topdelete = { text = "‾" },
 		},
 		signs_staged = {
 			add = { text = "ǀ" },
 			change = { text = "⦚" },
-			delete = { text = "—" },
+			delete = { text = "_" },
 			topdelete = { text = "‾" },
 		},
 
