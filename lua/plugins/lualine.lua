@@ -1,56 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	-- dependencies = { "SmiteshP/nvim-navic" },
 	event = "VeryLazy",
 	config = function()
 		local lualine = require("lualine")
-
-		-- local navic = require("nvim-navic")
-		-- vim.g.navic_silence = true
-		-- vim.api.nvim_create_autocmd("LspAttach", {
-		-- 	callback = function(args)
-		-- 		local client = vim.lsp.get_client_by_id(args.data.client_id)
-		-- 		if client:supports_method("textDocument/documentSymbol") then
-		-- 			navic.attach(client, args.buf)
-		-- 		end
-		-- 	end,
-		-- })
-
-		-- navic.setup({
-		-- 	icons = {
-		-- 		File = " ",
-		-- 		Module = "󰩦 ",
-		-- 		Namespace = "󰦮 ",
-		-- 		Package = " ",
-		-- 		Class = " ",
-		-- 		Method = " ",
-		-- 		Property = "󰓹 ",
-		-- 		Field = " ",
-		-- 		Constructor = " ",
-		-- 		Enum = " ",
-		-- 		Interface = " ",
-		-- 		Function = "ƒ ",
-		-- 		Variable = " ",
-		-- 		Constant = "П ",
-		-- 		String = " ",
-		-- 		Number = "󰎠 ",
-		-- 		Boolean = " ",
-		-- 		Array = " ",
-		-- 		Object = " ",
-		-- 		Key = "󰬴 ",
-		-- 		Null = " ",
-		-- 		EnumMember = " ",
-		-- 		Struct = " ",
-		-- 		Event = " ",
-		-- 		Operator = " ",
-		-- 		TypeParameter = "Ţ",
-		-- 	},
-		-- 	highlight = true,
-		-- 	separator = " › ",
-		-- 	depth_limit = 5,
-		-- 	lazy_update_context = true,
-		-- })
-
 		local colors = {
 			bg = "#",
 			fg = "#9399b1",
@@ -61,12 +13,6 @@ return {
 			magenta = "#c678dd",
 			blue = "#65bcff",
 			red = "#ff5189",
-		}
-
-		local conditions = {
-			hide_in_width = function()
-				return vim.fn.winwidth(0) > 90
-			end,
 		}
 
 		local config = {
@@ -114,22 +60,12 @@ return {
 						"diagnostics",
 						symbols = { error = " ", warn = " ", info = " ", hint = " " },
 					},
-					-- {
-					-- 	function()
-					-- 		return navic.get_location()
-					-- 	end,
-					-- 	cond = function()
-					-- 		return navic.is_available() and navic.get_location() ~= "" and conditions.hide_in_width()
-					-- 	end,
-					-- },
 				},
-
 				lualine_x = {
 					{ "branch", icon = "" },
 					{
 						"diff",
-						-- symbols = { added = "", modified = "~", removed = "—" },
-						-- symbols = { added = "🞡", modified = "~", removed = "—" },
+						symbols = { added = "⊠ ", modified = "⊡ ", removed = "⊟ " },
 					},
 				},
 				lualine_y = {},
